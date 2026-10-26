@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "frozen_at": "2026-09-20",
+  "decision": "CVPR_THESIS_FROZEN",
+  "canonical_non_gold_stage": "MACHINE_ADJUDICATED_PROVISIONAL",
+  "historical_stage_aliases": {
+    "MACHINE_ADJUDICATED_PROVISIONAL_MVP": "MACHINE_ADJUDICATED_PROVISIONAL",
+    "MACHINE_ADJUDICATED_PROVISIONAL_SCALE1A": "MACHINE_ADJUDICATED_PROVISIONAL",
+    "machine-provisional": "MACHINE_ADJUDICATED_PROVISIONAL"
+  },
+  "current_gate_state": {
+    "INFRASTRUCTURE_PROVEN": true,
+    "CONSTRUCT_VALIDITY_MINI_PILOT_GO": false,
+    "LEARNED_GENERATION_READY": false,
+    "LEARNED_AGENT_READY": false,
+    "END_TO_END_DIAGNOSTIC_GO": false,
+    "DATA_SCALE_UP_GO": false,
+    "PAPER_CLAIM_READY": false,
+    "FINAL_BENCHMARK_VALIDATED": false
+  },
+  "supporting_readiness": {
+    "LEARNED_VISUAL_RETRIEVAL_READY": true,
+    "LEARNED_AUDIO_RETRIEVAL_READY": true,
+    "LEARNED_RETRIEVAL_READY": true,
+    "WAVE_R_DIAGNOSTIC_GO": true,
+    "interpretation": "A low-N descriptive difference gate for learned modality retrieval, not a superiority or end-to-end agent gate."
+  },
+  "status_vocabulary": [
+    "SUPPORTED_ENGINEERING",
+    "SUPPORTED_LOW_N_DESCRIPTIVE",
+    "HYPOTHESIS_ONLY",
+    "BLOCKED_BY_HUMAN_VALIDATION",
+    "BLOCKED_BY_LEARNED_SYSTEMS",
+    "PROHIBITED"
+  ],
+  "claims": [
+    {
+      "claim_id": "C001",
+      "claim_candidate": "AV-TRACE can execute and replay matched CLEAN/BLOCKED/RESTORED long-video audiovisual episodes with full action traces, fixed budgets, strict claim/citation scoring, and final-point route certificates.",
+      "claim_type": "diagnostic_protocol",
+      "current_evidence": [
+        "docs/review/scale1a_final_audit.md",
+        "docs/review/noaa01_real_av_semantic_metrics_repair.md"
+      ],
+      "current_status": "SUPPORTED_ENGINEERING",
+      "minimum_missing_experiment": "None for the bounded engineering claim; human construct validation is still required before calling the episode semantics benchmark-valid.",
+      "allowed_wording_now": "The audited infrastructure executes and deterministically replays matched C/B/R protocol episodes on real long audiovisual media.",
+      "wording_forbidden_now": "AV-TRACE is a validated benchmark of real agent recovery.",
+      "promotion_gate": "INFRASTRUCTURE_PROVEN"
+    },
+    {
+      "claim_id": "C002",
+      "claim_candidate": "Answer accuracy alone is inadequate for evaluating long-video agent reliability.",
+      "claim_type": "paper_thesis",
+      "current_evidence": [
+        "Deterministic Pilot-0 and Scale-1A traces demonstrate that answer, support, citation, and stopping can be computed separately.",
+        "No learned end-to-end comparison on human-valid families currently establishes empirical divergence."
+      ],
+      "current_status": "HYPOTHESIS_ONLY",
+      "minimum_missing_experiment": "On human-valid families, show nonzero answer-versus-supported-answer or answer-versus-citation divergence across at least two videos and an intervention-aware system difference not explained by retrieval recall.",
+      "allowed_wording_now": "AV-TRACE is designed to test whether answer accuracy hides failures in evidence acquisition, attribution, diagnosis, and stopping.",
+      "wording_forbidden_now": "We show that answer accuracy is inadequate for learned long-video agents.",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO"
+    },
+    {
+      "claim_id": "C003",
+      "claim_candidate": "AV-TRACE provides human-valid minimally sufficient evidence sets and necessity groups for long audiovisual videos.",
+      "claim_type": "benchmark",
+      "current_evidence": [
+        "Current retained families are MACHINE_ADJUDICATED_PROVISIONAL.",
+        "human_reviewed=false and gold_annotation=false in current authoritative results."
+      ],
+      "current_status": "BLOCKED_BY_HUMAN_VALIDATION",
+      "minimum_missing_experiment": "Complete the independent 8–12-family, at-least-five-video human construct mini-pilot with alternative search, leave-one-out minimality, hitting-set necessity, two validators, and adjudication.",
+      "allowed_wording_now": "The repository contains machine-provisional SES and necessity hypotheses for protocol development.",
+      "wording_forbidden_now": "The current dataset contains gold minimal evidence or validated necessity labels.",
+      "promotion_gate": "CONSTRUCT_VALIDITY_MINI_PILOT_GO"
+    },
+    {
+      "claim_id": "C004",
+      "claim_candidate": "Matched evidence blocking and restoration causally isolate insufficiency recognition and recovery.",
+      "claim_type": "diagnostic_protocol",
+      "current_evidence": [
+        "C/B/R mechanics, transitive blocking, no-trigger controls, and deterministic restoration pass engineering audits.",
+        "Human validity of the blocked necessity routes is not established."
+      ],
+      "current_status": "BLOCKED_BY_HUMAN_VALIDATION",
+      "minimum_missing_experiment": "Human-validate all accepted SESs and necessity groups, pair isolation, derived-leak closure, and restoration feasibility on the mini-pilot.",
+      "allowed_wording_now": "The protocol mechanically isolates a registered evidence route under provisional annotations.",
+      "wording_forbidden_now": "The current interventions causally remove all semantically sufficient evidence.",
+      "promotion_gate": "CONSTRUCT_VALIDITY_MINI_PILOT_GO"
+    },
+    {
+      "claim_id": "C005",
+      "claim_candidate": "A common supported-answer endpoint yields an interpretable paired restoration response.",
+      "claim_type": "metric_semantics",
+      "current_evidence": [
+        "The semantic inconsistency in heterogeneous state-target subtraction was identified in independent scientific reviews.",
+        "The common endpoint is now normatively frozen in docs/spec/metrics_protocol.md and D-024."
+      ],
+      "current_status": "SUPPORTED_ENGINEERING",
+      "minimum_missing_experiment": "Run the frozen estimand on human-valid families with learned agents for an empirical recovery claim.",
+      "allowed_wording_now": "AV-TRACE defines restoration gain using the same supported-answer endpoint in BLOCKED and RESTORED.",
+      "wording_forbidden_now": "Current results prove learned-agent causal recovery.",
+      "promotion_gate": "INFRASTRUCTURE_PROVEN"
+    },
+    {
+      "claim_id": "C006",
+      "claim_candidate": "Final-point route certificates distinguish premature stopping from justified abstention.",
+      "claim_type": "metric_semantics",
+      "current_evidence": [
+        "Scale-1A persists action-level trajectories and route-feasibility certificates.",
+        "Task-107 semantics now apply the rule to abstention and require typed terminal declarations."
+      ],
+      "current_status": "SUPPORTED_ENGINEERING",
+      "minimum_missing_experiment": "Validate certificates and any allowed typed declaration classes on human-valid episodes, then compare learned controllers.",
+      "allowed_wording_now": "The protocol can score premature stopping against an evaluator-certified route at the final decision point.",
+      "wording_forbidden_now": "Learned agents are shown to stop prematurely or abstain correctly.",
+      "promotion_gate": "INFRASTRUCTURE_PROVEN"
+    },
+    {
+      "claim_id": "C007",
+      "claim_candidate": "Pinned learned visual and audio retrievers can be evaluated without a trained fusion model.",
+      "claim_type": "learned_retrieval",
+      "current_evidence": [
+        "docs/review/scale1b_wave_r_final_audit.md",
+        "SigLIP and CLAP exact snapshots, full-timeline checkpoints, matched controls, fixed RRF, and independent metric replay passed."
+      ],
+      "current_status": "SUPPORTED_ENGINEERING",
+      "minimum_missing_experiment": "None for Wave-R readiness; a disjoint training split is required before any learned fusion claim.",
+      "allowed_wording_now": "Wave R has reproducible learned modality retrieval and uses fixed preregistered RRF as its no-training fusion baseline.",
+      "wording_forbidden_now": "Wave R includes learned multimodal fusion.",
+      "promotion_gate": "INFRASTRUCTURE_PROVEN"
+    },
+    {
+      "claim_id": "C008",
+      "claim_candidate": "Generic SigLIP and CLAP retrieval does not automatically outperform the task-aligned controls on the current routes.",
+      "claim_type": "empirical_retrieval",
+      "current_evidence": [
+        "Five retained machine-provisional families in Wave R.",
+        "Source-scoped paired differences and fusion-boundary changes passed the preregistered descriptive gate.",
+        "The dominant observed direction was degradation."
+      ],
+      "current_status": "SUPPORTED_LOW_N_DESCRIPTIVE",
+      "minimum_missing_experiment": "Human-audit the support registry and model top results, repeat on a larger source-disjoint human-valid set, and report video-cluster uncertainty.",
+      "allowed_wording_now": "On five machine-provisional Wave-R families, replacing controls with the pinned generic learned encoders changed and often degraded evidence ranks.",
+      "wording_forbidden_now": "SigLIP or CLAP is generally worse for long-video retrieval.",
+      "promotion_gate": "PAPER_CLAIM_READY"
+    },
+    {
+      "claim_id": "C009",
+      "claim_candidate": "Full-timeline retrieval is materially harder than bounded shortlisted-window retrieval.",
+      "claim_type": "empirical_retrieval",
+      "current_evidence": [
+        "Scale-1A retained five families and observed bounded-to-full degradation on provisional routes.",
+        "One family was excluded because its support did not reach top 20."
+      ],
+      "current_status": "SUPPORTED_LOW_N_DESCRIPTIVE",
+      "minimum_missing_experiment": "Repeat matched bounded/full comparison after human support adjudication over more source-disjoint families.",
+      "allowed_wording_now": "The machine-provisional Scale-1A migration exposed retrieval degradation when the candidate universe expanded to full timelines.",
+      "wording_forbidden_now": "Full-timeline retrieval is universally harder by the reported amount.",
+      "promotion_gate": "PAPER_CLAIM_READY"
+    },
+    {
+      "claim_id": "C010",
+      "claim_candidate": "Learned evidence-sufficiency control reduces unsupported claims and premature stopping relative to learned ReAct.",
+      "claim_type": "empirical_agent",
+      "current_evidence": [
+        "Only deterministic protocol controllers have been compared.",
+        "No learned generator or learned controller has run."
+      ],
+      "current_status": "BLOCKED_BY_LEARNED_SYSTEMS",
+      "minimum_missing_experiment": "Run learned ReAct and learned sufficiency controllers using the same pinned backbone/backend/budget on human-valid C/B/R families.",
+      "allowed_wording_now": "This is a preregisterable hypothesis for the learned-agent study.",
+      "wording_forbidden_now": "The evidence-sufficiency agent outperforms ReAct.",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO"
+    },
+    {
+      "claim_id": "C011",
+      "claim_candidate": "Learned agents recognize access failure, change search policy, and recover after restoration.",
+      "claim_type": "empirical_agent",
+      "current_evidence": [
+        "Restoration is proven only for deterministic protocol controls.",
+        "Wave R probes are retrieval-only clean-top-20 suppression projections."
+      ],
+      "current_status": "BLOCKED_BY_LEARNED_SYSTEMS",
+      "minimum_missing_experiment": "Execute learned action-generating controllers on human-valid matched episodes with no-trigger controls and common-endpoint recovery metrics.",
+      "allowed_wording_now": "The infrastructure is ready to test learned-agent access diagnosis and recovery.",
+      "wording_forbidden_now": "Wave R or Scale-1A demonstrates learned-agent recovery.",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO"
+    },
+    {
+      "claim_id": "C012",
+      "claim_candidate": "AV-TRACE separates retrieval failure, evidence-utilization failure, citation failure, diagnosis failure, and stopping failure.",
+      "claim_type": "paper_thesis",
+      "current_evidence": [
+        "The protocol and strict metrics separately represent these outcomes.",
+        "No human-valid learned end-to-end result yet demonstrates distinct empirical failure populations."
+      ],
+      "current_status": "HYPOTHESIS_ONLY",
+      "minimum_missing_experiment": "Show at least two non-retrieval failure categories on human-valid learned-system trajectories and independently adjudicate the taxonomy.",
+      "allowed_wording_now": "AV-TRACE operationalizes separate measurements for acquisition, grounding, diagnosis, and action.",
+      "wording_forbidden_now": "We empirically disentangle all long-video agent failure causes.",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO"
+    },
+    {
+      "claim_id": "C013",
+      "claim_candidate": "Specific modalities are necessary for the current retained families.",
+      "claim_type": "construct",
+      "current_evidence": [
+        "Task-85 correctly reset likely-necessary V/S/A counts to zero.",
+        "Current modality roles are routing or corroboration hypotheses."
+      ],
+      "current_status": "BLOCKED_BY_HUMAN_VALIDATION",
+      "minimum_missing_experiment": "Human answerability review plus modality-drop counterfactuals over every accepted alternative SES.",
+      "allowed_wording_now": "Current cases contain provisional modality-routing hypotheses.",
+      "wording_forbidden_now": "Vision, speech, or ambient audio is proven necessary in the current benchmark.",
+      "promotion_gate": "CONSTRUCT_VALIDITY_MINI_PILOT_GO"
+    },
+    {
+      "claim_id": "C014",
+      "claim_candidate": "AV-TRACE supports population-level model rankings or state-of-the-art claims.",
+      "claim_type": "empirical_ranking",
+      "current_evidence": [
+        "Five scored Wave-R families, machine-provisional labels, and LOW_N_DESCRIPTIVE_WAVE_R.",
+        "No learned end-to-end agents or video-cluster-powered study."
+      ],
+      "current_status": "PROHIBITED",
+      "minimum_missing_experiment": "Reach PAPER_CLAIM_READY with a powered, source-disjoint, human-valid, preregistered evaluation; even then wording must remain bounded to tested systems and data.",
+      "allowed_wording_now": "No population-level ranking claim is made.",
+      "wording_forbidden_now": "Model X is state of the art, generally superior, or generally inferior on long-video agentic RAG.",
+      "promotion_gate": "PAPER_CLAIM_READY"
+    },
+    {
+      "claim_id": "C015",
+      "claim_candidate": "AV-TRACE is the first or unique long-video audiovisual agentic benchmark with retrieval, evidence, stopping, or recovery.",
+      "claim_type": "novelty",
+      "current_evidence": [
+        "The novelty audit documents substantial overlap with LongVidSearch, FLARE, V-RAGBench, LongShOTBench, REVEAL, TRACE/VES-Bench, VideoGAIA, and related work."
+      ],
+      "current_status": "PROHIBITED",
+      "minimum_missing_experiment": "Experiments cannot establish priority. A dated camera-ready literature audit may justify only a narrowly qualified comparison.",
+      "allowed_wording_now": "AV-TRACE combines matched evidence-access interventions with trace-level acquisition, grounding, diagnosis, recovery, and stopping evaluation.",
+      "wording_forbidden_now": "First, unique, or the only benchmark of long-video agentic RAG, multimodal evidence, sufficiency, stopping, or recovery.",
+      "promotion_gate": "PAPER_CLAIM_READY"
+    },
+    {
+      "claim_id": "C016",
+      "claim_candidate": "The current NOAA assets and annotations form a release-ready public benchmark core.",
+      "claim_type": "release",
+      "current_evidence": [
+        "Assets are internally acquired and integrity-audited.",
+        "Current reports explicitly retain restricted/provisional and release boundaries."
+      ],
+      "current_status": "PROHIBITED",
+      "minimum_missing_experiment": "Complete asset-level rights, derivative, transcript, annotation, privacy, attribution, takedown, and public-release review for the final selected corpus.",
+      "allowed_wording_now": "The current NOAA assets support restricted internal research and engineering.",
+      "wording_forbidden_now": "The current media, transcripts, annotations, vectors, or model weights are authorized for public redistribution.",
+      "promotion_gate": "FINAL_BENCHMARK_VALIDATED"
+    },
+    {
+      "claim_id": "C017",
+      "claim_candidate": "The current work is already a complete CVPR-main-level benchmark paper.",
+      "claim_type": "publication_readiness",
+      "current_evidence": [
+        "Infrastructure and learned retrieval are proven.",
+        "Human construct validity, learned generation, learned agents, end-to-end diagnostic separation, and scale are missing."
+      ],
+      "current_status": "PROHIBITED",
+      "minimum_missing_experiment": "Pass CONSTRUCT_VALIDITY_MINI_PILOT_GO, LEARNED_GENERATION_READY, LEARNED_AGENT_READY, END_TO_END_DIAGNOSTIC_GO, DATA_SCALE_UP_GO, and PAPER_CLAIM_READY.",
+      "allowed_wording_now": "AV-TRACE is audited research infrastructure with a real-A/V MVP and a low-N learned-retrieval diagnostic.",
+      "wording_forbidden_now": "The CVPR benchmark and its main empirical claims are complete.",
+      "promotion_gate": "PAPER_CLAIM_READY"
+    }
+  ],
+  "authoritative_sources": [
+    "docs/paper/cvpr_thesis_and_evidence_gates.md",
+    "docs/project_charter.md",
+    "docs/decisions.md",
+    "docs/spec/metrics_protocol.md",
+    "docs/review/scale1a_final_audit.md",
+    "docs/review/scale1b_wave_r_final_audit.md",
+    "docs/overview/av_trace_project_status_for_owner.md",
+    "docs/research/novelty_boundary.md"
+  ]
+}

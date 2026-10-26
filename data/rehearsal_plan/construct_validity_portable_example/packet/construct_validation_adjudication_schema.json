@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:construct-validation-adjudication:1.0.0",
+  "title": "AV-TRACE deferred construct-validation adjudication form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "form_id",
+    "packet_id",
+    "family_id",
+    "source_id",
+    "completion_status",
+    "reviewer",
+    "inputs",
+    "adjudication"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "construct_validation_adjudication"},
+    "form_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "packet_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "family_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "completion_status": {"enum": ["not_started", "completed"]},
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "declared_role",
+        "independent_of_author_and_validators",
+        "started_at",
+        "completed_at",
+        "active_minutes"
+      ],
+      "properties": {
+        "reviewer_id": {"type": ["string", "null"], "minLength": 1},
+        "declared_role": {"const": "adjudicator"},
+        "independent_of_author_and_validators": {"type": ["boolean", "null"]},
+        "started_at": {"type": ["string", "null"], "format": "date-time"},
+        "completed_at": {"type": ["string", "null"], "format": "date-time"},
+        "active_minutes": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1440
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotation_form_ids",
+        "all_required_roles_complete",
+        "role_independence_verified"
+      ],
+      "properties": {
+        "annotation_form_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+          },
+          "uniqueItems": true
+        },
+        "all_required_roles_complete": {"type": ["boolean", "null"]},
+        "role_independence_verified": {"type": ["boolean", "null"]}
+      }
+    },
+    "adjudication": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "not_started"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "null"},
+              "independent_of_author_and_validators": {"type": "null"},
+              "started_at": {"type": "null"},
+              "completed_at": {"type": "null"},
+              "active_minutes": {"type": "null"}
+            }
+          },
+          "adjudication": {"maxProperties": 0}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "completed"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "string", "minLength": 1},
+              "independent_of_author_and_validators": {"const": true},
+              "started_at": {"type": "string", "format": "date-time"},
+              "completed_at": {"type": "string", "format": "date-time"},
+              "active_minutes": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1440
+              }
+            }
+          },
+          "inputs": {
+            "properties": {
+              "annotation_form_ids": {"minItems": 4},
+              "all_required_roles_complete": {"const": true},
+              "role_independence_verified": {"const": true}
+            }
+          },
+          "adjudication": {"$ref": "#/$defs/completed_adjudication"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "verdict": {"enum": ["pass", "fail", "uncertain", "not_applicable"]},
+    "completed_adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "disagreement_codes",
+        "resolutions",
+        "question_answerability",
+        "answer_claim_correctness",
+        "exact_evidence_support",
+        "alternative_search_complete",
+        "all_accepted_ses_minimal",
+        "necessity_groups_valid",
+        "modality_counterfactuals_valid",
+        "shortcuts_absent",
+        "pair_isolation",
+        "recovery_feasibility",
+        "rights_release",
+        "privacy",
+        "safety",
+        "unresolved_critical_disagreements",
+        "recommended_outcome",
+        "confidence",
+        "reason_codes",
+        "required_repairs",
+        "notes"
+      ],
+      "properties": {
+        "disagreement_codes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "ANSWERABILITY",
+              "AMBIGUITY",
+              "ANSWER_OR_CLAIM",
+              "EVIDENCE_SUPPORT",
+              "TEMPORAL_INTERVAL",
+              "ALTERNATIVE_SES",
+              "MINIMALITY",
+              "NECESSITY_GROUP",
+              "MODALITY_COUNTERFACTUAL",
+              "SHORTCUT",
+              "PAIR_ISOLATION",
+              "RECOVERY_FEASIBILITY",
+              "RIGHTS_PRIVACY_SAFETY",
+              "NONE",
+              "OTHER"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "resolutions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["issue", "decision", "evidence_considered"],
+            "properties": {
+              "issue": {"type": "string", "minLength": 1},
+              "decision": {"type": "string", "minLength": 1},
+              "evidence_considered": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        },
+        "question_answerability": {"$ref": "#/$defs/verdict"},
+        "answer_claim_correctness": {"$ref": "#/$defs/verdict"},
+        "exact_evidence_support": {"$ref": "#/$defs/verdict"},
+        "alternative_search_complete": {"$ref": "#/$defs/verdict"},
+        "all_accepted_ses_minimal": {"$ref": "#/$defs/verdict"},
+        "necessity_groups_valid": {"$ref": "#/$defs/verdict"},
+        "modality_counterfactuals_valid": {"$ref": "#/$defs/verdict"},
+        "shortcuts_absent": {"$ref": "#/$defs/verdict"},
+        "pair_isolation": {"$ref": "#/$defs/verdict"},
+        "recovery_feasibility": {"$ref": "#/$defs/verdict"},
+        "rights_release": {"$ref": "#/$defs/verdict"},
+        "privacy": {"$ref": "#/$defs/verdict"},
+        "safety": {"$ref": "#/$defs/verdict"},
+        "unresolved_critical_disagreements": {"type": "integer", "minimum": 0},
+        "recommended_outcome": {
+          "enum": ["accept_h2", "accept_h1_only", "repair", "reject"]
+        },
+        "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+        "reason_codes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "required_repairs": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

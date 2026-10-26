@@ -1,0 +1,304 @@
+{
+  "schema_version": "av-trace.epic-p23-102-zero-candidate-audit/1.0",
+  "audit_id": "AV-TRACE-EPIC-P23-102-ZERO-CANDIDATE-AUDIT-V1",
+  "audit_date": "2026-10-14",
+  "decision": "MINER_REPAIR",
+  "completion_token": "EPIC_P23_102_ZERO_CANDIDATE_AUDIT_READY",
+  "scope": {
+    "source_id": "P23_102",
+    "method": "LIGHTWEIGHT_STRUCTURAL_JSON_ONLY",
+    "models_run": false,
+    "media_opened_or_decoded": false,
+    "semantic_annotations_inspected": false,
+    "candidates_fabricated": false
+  },
+  "inputs": [
+    {
+      "path": "data/rehearsal_plan/epic_p23_102_family_mining_v1.json",
+      "sha256": "sha256:51a4b1b170e80e76c319d93f30c8dd4f4259003a11491e006fc1cb3e8e6f88dc",
+      "size_bytes": 5881
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/segment_manifest.json",
+      "sha256": "sha256:c9f5e9c1ca9673ad4cb8ed56eb5b127f64c42de9f53945eb588e6463b44de830",
+      "size_bytes": 513040
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/observation_manifest.json",
+      "sha256": "sha256:81625528a39013513b4453d94bb191e6667bbfd05a94b453533208e81323e7e7",
+      "size_bytes": 3418
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/full_timeline_index.json",
+      "sha256": "sha256:061781dc7f32381990529d9fc9832f32c83d0be8c13f38dece1198fff8c7160a",
+      "size_bytes": 6678582
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/resource_manifest.json",
+      "sha256": "sha256:ca5a8125d44f0f484570f5672833c2512b22f448685e2fd65d4e795f75e16468",
+      "size_bytes": 3087
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/checkpoint_manifest.json",
+      "sha256": "sha256:767650cfc97f778cb2b6016e4f8c3b2be67d72998f2ed16184bfdd1dd3aa4490",
+      "size_bytes": 2542
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/build_manifest.json",
+      "sha256": "sha256:a935e9214c64b5a545492223c728b8293715d5584516f4d615f15e82e7f051a6",
+      "size_bytes": 3014
+    },
+    {
+      "path": "data/restricted/epic_p23_102_family_mining_v1_dev/candidate_registry.json",
+      "sha256": "sha256:a8ad30515047c3b441db7fe908a98f7ec5dbb87bc9a580f43159be770ffb7198",
+      "size_bytes": 5344
+    },
+    {
+      "path": "tools/epic_p23_102_family_mining_v1.py",
+      "sha256": "sha256:b59f82ced6e15aba5da956184bbe306abc90b539d87d61340f43ac43cf60e341",
+      "size_bytes": 79519
+    },
+    {
+      "path": "scripts/build_epic_p23_102_full_timeline.py",
+      "sha256": "sha256:491bd5ad9b696ee6ca267f2f262c4cce2fc187ffcb0cf9cece454e5528559905",
+      "size_bytes": 59800
+    }
+  ],
+  "integrity": {
+    "build_status": "COMPLETE",
+    "checkpoint_count": 4,
+    "checkpoint_manifest_file_hashes_match": true,
+    "checkpoint_manifest_sizes_match": true,
+    "checkpoint_payload_hashes_match": true,
+    "checkpoint_record_counts_match": true,
+    "speech_checkpoint_matches_index_core_fields": true,
+    "visual_checkpoint_matches_index_documents": true,
+    "audio_checkpoint_matches_index_documents": true,
+    "fine_segment_ids_match_visual_ids": true,
+    "fine_segment_ids_match_audio_ids": true,
+    "all_segment_ids_match_visual_ids": true,
+    "all_segment_ids_match_audio_ids": true,
+    "path_or_schema_mismatch_found": false
+  },
+  "inventory": {
+    "duration_us": 3569520000,
+    "duration_seconds": 3569.52,
+    "base_cells": 893,
+    "fine_windows": 892,
+    "context_windows": 223,
+    "temporal_segments": 1115,
+    "speech_chunks": 119,
+    "visual_documents": 1115,
+    "visual_fine_searchable": 892,
+    "audio_documents": 1115,
+    "audio_fine_searchable": 892
+  },
+  "speech_quality": {
+    "chunks_total": 119,
+    "chunks_with_nonempty_text": 119,
+    "quality_gate_pass": 1,
+    "searchable_chunks": 1,
+    "searchable_fraction": 0.008403361344537815,
+    "low_generated_token_logprob_count": 116,
+    "too_few_lexical_tokens_count": 31,
+    "flag_combinations": {
+      "LOW_GENERATED_TOKEN_LOGPROB": 87,
+      "LOW_GENERATED_TOKEN_LOGPROB+TOO_FEW_LEXICAL_TOKENS": 29,
+      "TOO_FEW_LEXICAL_TOKENS": 2,
+      "NONE": 1
+    },
+    "chunks_with_at_least_5_generated_lexical_tokens": 88,
+    "chunks_with_mean_log_probability_at_least_minus_0_85": 3,
+    "chunks_passing_both_frozen_quality_floors": 1,
+    "mean_generated_token_log_probability_percentiles": {
+      "minimum": -3.38961482,
+      "median": -1.66908217,
+      "p95": -0.923962953,
+      "maximum": -0.64745213
+    },
+    "searchable_document_lengths": [
+      4
+    ],
+    "finding": "The index is structurally complete, but its frozen Whisper quality route leaves only 1 of 119 chunks searchable. This is a severe coverage bottleneck, not a schema or path failure."
+  },
+  "vector_coverage": {
+    "visual": {
+      "fine_windows_total": 892,
+      "fine_windows_searchable": 892,
+      "coverage_fraction": 1.0,
+      "dimension": 768
+    },
+    "audio": {
+      "fine_windows_total": 892,
+      "fine_windows_searchable": 892,
+      "coverage_fraction": 1.0,
+      "dimension": 512,
+      "near_silence_count": 0,
+      "rms_floor_pass_count": 892
+    }
+  },
+  "visual_transition_diagnostics": {
+    "miner_definition": "max(1-cosine(previous,current),1-cosine(current,next))",
+    "frozen_minimum": 0.18,
+    "minimum": 0.0058059692,
+    "median": 0.0362027884,
+    "p95": 0.0809319466,
+    "p99": 0.090018509,
+    "maximum": 0.0962067246,
+    "counts_at_or_above_threshold": {
+      "0.18": 0,
+      "0.10": 0,
+      "0.05": 273,
+      "0.02": 675,
+      "0.01": 882
+    },
+    "searchable_speech_overlap_counts_at_or_above_threshold": {
+      "0.18": 0,
+      "0.10": 0,
+      "0.05": 2,
+      "0.02": 9,
+      "0.01": 9
+    },
+    "finding": "The frozen 0.18 transition floor is above the observed maximum 0.0962067246, so no local anchor can exist on this completed index."
+  },
+  "audio_structural_diagnostics": {
+    "novelty_floor": 0.16,
+    "novelty_minimum": 0.030320406,
+    "novelty_median": 0.1653000116,
+    "novelty_p95": 0.3762025237,
+    "novelty_maximum": 0.5662916899,
+    "novelty_pass_count": 459,
+    "rms_floor": 0.00001,
+    "rms_pass_count": 892,
+    "not_near_silence_count": 892,
+    "novelty_rms_and_silence_pass_count": 459,
+    "fine_windows_overlapping_the_single_searchable_speech_chunk": 9,
+    "fine_windows_passing_novelty_rms_silence_and_sparse_searchable_speech": 5,
+    "finding": "Audio geometry is not globally absent. Five fine windows clear every frozen audio structural floor when evaluated with the sole searchable speech chunk. They never become candidates because the upstream visual transition gate yields zero anchors."
+  },
+  "candidate_generation_funnel": {
+    "local": [
+      {
+        "gate": "searchable_fine_visual",
+        "count": 892
+      },
+      {
+        "gate": "visual_transition_at_least_0_18",
+        "count": 0
+      },
+      {
+        "gate": "overlapping_searchable_speech",
+        "count": 0
+      },
+      {
+        "gate": "speech_quality_at_least_0_2",
+        "count": 0
+      },
+      {
+        "gate": "raw_local_rows",
+        "count": 0
+      },
+      {
+        "gate": "after_12_second_center_deduplication",
+        "count": 0
+      }
+    ],
+    "far_exact_miner": [
+      {
+        "gate": "anchor_pool_derived_only_from_raw_local_rows",
+        "count": 0
+      },
+      {
+        "gate": "anchor_pairs",
+        "count": 0
+      },
+      {
+        "gate": "far_rows",
+        "count": 0
+      }
+    ],
+    "far_all_fine_counterfactual_structural_counts": {
+      "pairs_at_least_120_seconds_apart": 371952,
+      "pairs_also_visual_continuity_at_least_0_88": 61084,
+      "pairs_also_visual_continuity_at_least_0_96": 289,
+      "continuity_pairs_with_searchable_speech_at_both_components": 0,
+      "pairs_passing_lexical_or_strong_visual_bridge_with_speech_at_both_components": 0
+    },
+    "recurrence": {
+      "pairs_at_least_16_seconds_apart_and_visual_similarity_at_least_0_985": 3,
+      "is_candidate_generation_gate": false,
+      "role": "status_and_alternative_route_annotation_after_candidate_creation",
+      "effect_on_zero": "NONE_BECAUSE_NO_CANDIDATE_REACHED_RECURRENCE_EVALUATION"
+    }
+  },
+  "registry_accuracy": {
+    "candidate_count": 0,
+    "resource_counts_match_recomputation": true,
+    "accurate_statements": [
+      "No candidate is accepted, assigned SES/H tier, or granted Gate-A credit.",
+      "No qualifying local row or exact far row was emitted.",
+      "No raw media, model inference, network, or semantic annotation access was used by the miner."
+    ],
+    "misleading_or_false_explanations": [
+      {
+        "field": "profile_accounting.V+S.zero_reason",
+        "issue": "It says every retained V+S route clears the audio floor, but there are no retained routes. The actual first failing gate is visual_transition_at_least_0_18."
+      },
+      {
+        "field": "profile_accounting.V+S+A.zero_reason and independent_work_accounting.ambient_non_speech.reason",
+        "issue": "They say no CLAP window clears the structural floors. Recalculation finds 459 windows clear novelty/RMS/silence and 5 also satisfy sparse searchable speech. Upstream visual gating prevented candidate attachment."
+      },
+      {
+        "field": "profile_accounting.coherent_far_multi_hop.zero_reason",
+        "issue": "It implies all far pairs were tested and failed continuity. The implementation tests only pairs from local_rows; that anchor pool is empty. Across all fine windows, 61084 far-separated pairs clear continuity 0.88, but none has searchable speech at both components."
+      }
+    ]
+  },
+  "cause_classification": {
+    "actual_index_evidence": {
+      "present": true,
+      "evidence": [
+        "The index has complete visual/audio vector coverage and matching checkpoint/index IDs.",
+        "The frozen visual transition statistic never reaches 0.18.",
+        "Only 1 of 119 speech chunks is searchable, so independent speech joining is effectively absent."
+      ]
+    },
+    "overly_strict_or_buggy_miner_logic": {
+      "present": true,
+      "evidence": [
+        "The visual threshold is unreachable on this index.",
+        "The far search is coupled to local V+S rows rather than independently searching far continuity.",
+        "Zero-reason accounting infers gate failure from empty final candidates and reports false or vacuous explanations."
+      ]
+    },
+    "path_or_schema_mismatch": {
+      "present": false,
+      "evidence": [
+        "All checkpoint hashes, payload hashes, sizes, counts, modality IDs, and index/checkpoint records match."
+      ]
+    },
+    "honest_absence_of_independent_modality_work": {
+      "proven": false,
+      "evidence": [
+        "No semantic or media review was performed, so answer-bearing modality work cannot be established or ruled out.",
+        "Structural audio evidence exists, but no candidate can reach it through the frozen visual gate.",
+        "Searchable speech coverage is too sparse to support a confident source-level absence claim."
+      ]
+    }
+  },
+  "recommendation": {
+    "primary": "MINER_REPAIR",
+    "keep_zero_until_repaired": true,
+    "index_repair_secondary": true,
+    "required_actions": [
+      "Keep the current registry at zero; do not fabricate candidates or reinterpret structural vectors semantically.",
+      "Calibrate the visual transition gate to the observed index distribution or replace it with a deterministic relative/rank-based gate, then rerun the miner.",
+      "Decouple far-anchor discovery from local V+S rows so far continuity is tested independently before speech joining.",
+      "Emit per-gate funnel counts and compute zero reasons from the actual first failing gates.",
+      "Correct V+S, V+S+A, far, speech, and ambient independent-work accounting so empty final candidates are not treated as proof that upstream modality floors failed.",
+      "Separately review or rebuild the speech routing/index quality policy because 1/119 searchable chunks is inadequate for this miner's required speech joins; this is secondary INDEX_REPAIR work, not evidence for KEEP_ZERO."
+    ],
+    "why_not_keep_zero": "The produced zero is reproducible, but the miner gate is unreachable and its profile explanations are inaccurate; therefore the zero is not a trustworthy absence result.",
+    "why_not_primary_index_repair": "The index is structurally intact with full visual/audio coverage and no path/schema mismatch. Speech routing needs review, but miner thresholding, far coupling, and accounting must be repaired even if speech is rebuilt."
+  }
+}

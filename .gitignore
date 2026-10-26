@@ -1,0 +1,108 @@
+# Python, test, and tool caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.nox/
+.coverage
+coverage.*
+htmlcov/
+
+# Local environments, packaging, and build products
+.venv/
+venv/
+build/
+dist/
+*.whl
+
+# Logs, runtime outputs, and resumable/interrupted state
+*.log
+*.pid
+*.partial
+*.partial.json
+*.tmp
+*.swp
+*.out
+logs/
+output/
+outputs/
+results/
+attempts/
+attempt_markers/
+failure_capsules/
+*.failure-capsule.*
+**/raw_attempts.*
+**/*attempt_marker*
+**/failure_capsule.*
+
+# Credentials, tokens, authorizations, and local secret material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials/
+secrets/
+tokens/
+authorizations/
+authorization/
+*_credentials.json
+*_credential.json
+*_tokens.json
+*_token.json
+*_authorization.json
+*_authorization_claim.json
+
+# Restricted/private data, real media, and model payloads. Public plans are
+# deliberately not ignored: /data/rehearsal_plan/ remains reviewable.
+/data/restricted/
+/data/access_review/
+/data/acquisition_preflight/
+/data/hf_recon/
+/data/rehearsal_review/
+/data/source_recon/
+media/
+models/
+checkpoints/
+*.avi
+*.ckpt
+*.flac
+*.m4a
+*.m4v
+*.mkv
+*.mov
+*.mp3
+*.mp4
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.wav
+*.webm
+*.weights
+
+# Generated experiment trees and internal orchestration material
+/mvp/generated/
+/mvp/results/
+/mvp/media_backed/fixtures/
+/orchestration/logs/
+/orchestration/prompts/
+/orchestration/results/
+/data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/
+
+# Public repository snapshots are built outside the repository. Keep an
+# accidental in-tree staging directory out of Git without hiding its policy.
+/av-trace-public/
+
+# Private governance records and execution attempts. Public commitment
+# documents with an explicit public_commitment suffix remain eligible.
+/data/rehearsal_plan/*raw_attempt*
+/data/rehearsal_plan/*failure_capsule*
+/data/rehearsal_plan/*private*
+/data/rehearsal_plan/untouched_test_group_ledger_*.json
+!/data/rehearsal_plan/untouched_test_group_ledger_*_public_commitment.json

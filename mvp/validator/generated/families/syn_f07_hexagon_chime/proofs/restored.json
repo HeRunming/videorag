@@ -1,0 +1,60 @@
+{
+  "blocking_intervention_id": "block_syn_f07_hexagon_chime",
+  "exact_inverse": true,
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f07_hexagon_chime",
+  "pretrigger_state_equal": true,
+  "restoration_intervention_id": "restore_syn_f07_hexagon_chime",
+  "restoration_successful": true,
+  "restored_proof_id": "restored-proof.syn_f07_hexagon_chime",
+  "schema_version": "1.0.0",
+  "terminal_accessible_evidence_ids": [
+    "s4_chime",
+    "s4_orange_hexagon"
+  ],
+  "terminal_reachable_ses_ids": [
+    "ses_syn_f07_hexagon_chime_1"
+  ],
+  "trigger_type": "get_channel_status",
+  "trigger_value": null,
+  "validator_results": [
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f07_hexagon_chime_1"
+      ],
+      "observed_evidence_ids": [
+        "s4_chime",
+        "s4_orange_hexagon"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 6.25,
+      "total_steps": 6,
+      "trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f07_hexagon_chime"
+      ],
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f07_hexagon_chime_1"
+      ],
+      "observed_evidence_ids": [
+        "s4_chime",
+        "s4_orange_hexagon"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 4.25,
+      "total_steps": 4,
+      "trajectory_hash": "sha256:ff8a83524775c57b64b6fad23f81a0968788cb4d69fb48b6c8f583b35ecc33d1",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f07_hexagon_chime"
+      ],
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

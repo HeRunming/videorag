@@ -1,0 +1,66 @@
+{
+  "blocking_intervention_id": "block_syn_f05_alternative_route",
+  "exact_inverse": true,
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f05_alternative_route",
+  "pretrigger_state_equal": true,
+  "restoration_intervention_id": "restore_syn_f05_alternative_route",
+  "restoration_successful": true,
+  "restored_proof_id": "restored-proof.syn_f05_alternative_route",
+  "schema_version": "1.0.0",
+  "terminal_accessible_evidence_ids": [
+    "s3_cobalt_arrow",
+    "s3_speech_route_a",
+    "s3_speech_route_b"
+  ],
+  "terminal_reachable_ses_ids": [
+    "ses_syn_f05_alternative_route_1",
+    "ses_syn_f05_alternative_route_2"
+  ],
+  "trigger_type": "get_channel_status",
+  "trigger_value": null,
+  "validator_results": [
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f05_alternative_route_1",
+        "ses_syn_f05_alternative_route_2"
+      ],
+      "observed_evidence_ids": [
+        "s3_cobalt_arrow",
+        "s3_speech_route_a",
+        "s3_speech_route_b"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 7.25,
+      "total_steps": 8,
+      "trajectory_hash": "sha256:62b887505034a455bc2f0791cf058cca8d0dcdc849e5841fd7027fbe067901fe",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f05_alternative_route.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f05_alternative_route"
+      ],
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f05_alternative_route_1",
+        "ses_syn_f05_alternative_route_2"
+      ],
+      "observed_evidence_ids": [
+        "s3_cobalt_arrow",
+        "s3_speech_route_a",
+        "s3_speech_route_b"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 4.25,
+      "total_steps": 5,
+      "trajectory_hash": "sha256:71627a6f19b1f7b6f4d5c67c8197212d84094461b3c5d3948de46321a4831970",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f05_alternative_route.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f05_alternative_route"
+      ],
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

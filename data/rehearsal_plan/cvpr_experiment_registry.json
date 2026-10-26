@@ -1,0 +1,1130 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "av-trace-cvpr-experiment-preregistration-v1",
+  "frozen_at": "2026-09-20",
+  "status": "PLANNED_NOT_EXECUTED",
+  "results_in_this_registry": false,
+  "human_validation": {
+    "status": "DEFERRED_NOT_EXECUTED",
+    "human_review_completed": false,
+    "H1_HUMAN_VALIDATED_count": 0,
+    "H2_HUMAN_ADJUDICATED_GOLD_count": 0
+  },
+  "annotation_firewall": {
+    "machine_non_gold": "MACHINE_ADJUDICATED_PROVISIONAL",
+    "human_validated": "H1_HUMAN_VALIDATED",
+    "human_adjudicated_gold": "H2_HUMAN_ADJUDICATED_GOLD",
+    "primary_paper_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+    "rule": "MACHINE_ADJUDICATED_PROVISIONAL, H1 and H2 results must be reported separately and never pooled in a primary score."
+  },
+  "current_gate_state": {
+    "INFRASTRUCTURE_PROVEN": true,
+    "LEARNED_RETRIEVAL_READY": true,
+    "WAVE_R_DIAGNOSTIC_GO": true,
+    "CONSTRUCT_VALIDITY_MINI_PILOT_GO": false,
+    "LEARNED_GENERATION_READY": false,
+    "LEARNED_AGENT_READY": false,
+    "END_TO_END_DIAGNOSTIC_GO": false,
+    "DATA_SCALE_UP_GO": false,
+    "PAPER_CLAIM_READY": false,
+    "FINAL_BENCHMARK_VALIDATED": false
+  },
+  "task_110_boundary": {
+    "status": "IMPLEMENTATION_AND_FROZEN_MACHINE_PROVISIONAL_CONTRACT_PRESENT_NO_COMPLETED_PILOT_RESULT",
+    "run_or_rerun_authorized_by_this_registry": false,
+    "interpretation": "Code, prompts, a pinned Qwen snapshot and a 185-case contract are technical/planning artifacts, not learned-generation, learned-agent or end-to-end results."
+  },
+  "authoritative_inputs": [
+    "docs/overview/av_trace_project_status_for_owner.md",
+    "docs/paper/cvpr_thesis_and_evidence_gates.md",
+    "data/rehearsal_plan/cvpr_claim_evidence_ledger.json",
+    "docs/spec/metrics_protocol.md",
+    "docs/review/scale1b_wave_r_final_audit.md",
+    "docs/project_charter.md",
+    "docs/decisions.md",
+    "docs/annotation/construct_validity_protocol.md",
+    "data/rehearsal_plan/construct_validity_mini_pilot_plan.json",
+    "docs/review/scale1b_ga_model_acquisition.md",
+    "data/restricted/scale1b/ga_pilot/experiment_contract.json",
+    "data/restricted/scale1b/ga_pilot/experiment_manifest.json"
+  ],
+  "statistical_contract": {
+    "causal_unit": "matched_family",
+    "resampling_unit": "source_video_or_source_group",
+    "aggregation_order": [
+      "episode_outcome",
+      "within_family_state_contrast",
+      "family_average_within_source",
+      "source_video_inference"
+    ],
+    "primary_uncertainty": "video_cluster_bootstrap_95_percent_interval",
+    "bootstrap_resamples_minimum": 10000,
+    "minimum_sources_for_cluster_inference": 20,
+    "small_sample_rule": "Below 20 source videos all model comparisons are descriptive and carry a low-source warning.",
+    "confirmatory_multiplicity": "Holm correction over frozen primary learned-controller contrasts",
+    "exploratory_multiplicity": "BH only for explicitly exploratory secondary analyses",
+    "invalid_run_primary_rule": "fail_closed_intention_to_evaluate",
+    "invalid_run_sensitivity": "valid_run_only",
+    "premature_stop_without_valid_certificate": null
+  },
+  "minimum_viable_scale": {
+    "source_videos": 20,
+    "preferred_source_video_range": [
+      20,
+      30
+    ],
+    "H2_families": 60,
+    "episodes_per_system": 180,
+    "primary_learned_system_classes": 4,
+    "minimum_core_runs": 720,
+    "provisional_candidate_pool_range": [
+      100,
+      200
+    ],
+    "initial_scaled_human_sample_range": [
+      30,
+      50
+    ]
+  },
+  "source_disjoint_split": {
+    "group_key": "source_group_id",
+    "group_definition": "All mirrors, alternate encodings, excerpts, transcript variants, near-duplicate edits and families derived from one source program share one group.",
+    "minimum_20_video_assignment": {
+      "development_train": {
+        "source_videos": 8,
+        "target_H2_families": 24
+      },
+      "validation": {
+        "source_videos": 4,
+        "target_H2_families": 12
+      },
+      "test": {
+        "source_videos": 8,
+        "target_H2_families": 24
+      }
+    },
+    "preferred_30_video_assignment": {
+      "development_train_source_videos": 12,
+      "validation_source_videos": 6,
+      "test_source_videos": 12
+    },
+    "rules": [
+      "Assign complete source groups before prompt, retriever, fusion, threshold or mapper tuning on H2 outcomes.",
+      "No source group may occur in more than one split.",
+      "Every family, interval, transcript chunk, feature, query paraphrase and alternative SES inherits its source split.",
+      "Rejected candidates from test sources remain test-private and cannot be training negatives.",
+      "Do not duplicate a scarce modality or mechanism source across splits; acquire more sources or mark the stratum exploratory.",
+      "Public compatibility suites remain separate and unpooled."
+    ]
+  },
+  "practical_effect_thresholds": {
+    "clean_supported_answer_noninferiority_margin_absolute": 0.1,
+    "minimum_directional_improvement_absolute": 0.15,
+    "eligible_directional_metrics": [
+      "blocked_false_sufficient_rate",
+      "premature_stop_rate",
+      "common_endpoint_restoration_gain"
+    ],
+    "minimum_nonretrieval_failure_categories": 2,
+    "minimum_source_videos_per_nonretrieval_category": 2,
+    "minimum_source_videos_for_mini_end_to_end_separation": 3,
+    "interpretation": "These are practical-effect gates. Low-N mini-pilot results remain descriptive rather than significance claims."
+  },
+  "claims": [
+    {
+      "claim_id": "MC1",
+      "ledger_claim_ids": [
+        "C003",
+        "C004",
+        "C013"
+      ],
+      "claim": "AV-TRACE provides human-adjudicated matched evidence-access interventions that preserve the question, evidence graph, backend and budget while changing the reachability of a validated necessary route.",
+      "current_status": "BLOCKED_BY_HUMAN_VALIDATION",
+      "promotion_gate": "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+      "experiment_ids": [
+        "E-CV-01",
+        "E-CV-02",
+        "E-CV-03",
+        "E-AUDIT-01"
+      ],
+      "acceptance_summary": "H2 SES, necessity, modality and pair-isolation validation with no unresolved critical governance hold."
+    },
+    {
+      "claim_id": "MC2",
+      "ledger_claim_ids": [
+        "C002"
+      ],
+      "claim": "Answer correctness and supported-answer correctness diverge on held-out H2 families, so answer accuracy alone misses intervention-induced failures.",
+      "current_status": "HYPOTHESIS_ONLY",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "experiment_ids": [
+        "E-E2E-01",
+        "E-MAIN-01",
+        "E-MAIN-02"
+      ],
+      "acceptance_summary": "Nonzero answer-correct but unsupported or invalid-citation cases across at least three source videos plus an intervention-aware practical separation not explained by retrieval recall."
+    },
+    {
+      "claim_id": "MC3",
+      "ledger_claim_ids": [
+        "C012"
+      ],
+      "claim": "Complete traces distinguish acquisition, utilization, citation, access-diagnosis and stopping failures.",
+      "current_status": "HYPOTHESIS_ONLY",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "experiment_ids": [
+        "E-E2E-01",
+        "E-MAIN-02",
+        "E-MAIN-05"
+      ],
+      "acceptance_summary": "At least two independently adjudicated non-retrieval failure categories, each represented on at least two source videos and not wholly attributable to retrieval recall."
+    },
+    {
+      "claim_id": "MC4",
+      "ledger_claim_ids": [
+        "C005",
+        "C006",
+        "C011"
+      ],
+      "claim": "Matched restoration response is measurable with a common supported-answer endpoint and can be separated from BLOCKED diagnosis, no-trigger behavior and recovery cost.",
+      "current_status": "BLOCKED_BY_LEARNED_SYSTEMS",
+      "current_blockers": [
+        "BLOCKED_BY_HUMAN_VALIDATION",
+        "BLOCKED_BY_LEARNED_SYSTEMS"
+      ],
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "experiment_ids": [
+        "E-CV-02",
+        "E-GA-02",
+        "E-E2E-01",
+        "E-MAIN-03"
+      ],
+      "acceptance_summary": "H2 pair isolation, learned action traces, no-trigger controls, common-endpoint restoration and independent replay across at least three source videos."
+    },
+    {
+      "claim_id": "MC5",
+      "ledger_claim_ids": [
+        "C010"
+      ],
+      "claim": "With shared backbone, backend, retrieval and budget, explicit evidence-sufficiency control improves at least one intervention-aware reliability metric without an unacceptable CLEAN supported-answer loss relative to learned ReAct.",
+      "current_status": "BLOCKED_BY_LEARNED_SYSTEMS",
+      "promotion_gate": "PAPER_CLAIM_READY",
+      "experiment_ids": [
+        "E-GA-02",
+        "E-E2E-01",
+        "E-MAIN-03",
+        "E-MAIN-04"
+      ],
+      "acceptance_summary": "CLEAN loss no worse than 0.10 absolute and at least 0.15 absolute favorable difference in BLOCKED FSR, premature stop or common-endpoint restoration, with video-cluster uncertainty."
+    },
+    {
+      "claim_id": "MC6",
+      "ledger_claim_ids": [
+        "C002",
+        "C012"
+      ],
+      "claim": "Retrieval coverage does not fully determine grounded success or recovery because systems with matched acquired observations differ in evidence use, citation, stopping or recovery.",
+      "current_status": "HYPOTHESIS_ONLY",
+      "promotion_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "experiment_ids": [
+        "E-E2E-01",
+        "E-MAIN-02",
+        "E-MAIN-04"
+      ],
+      "acceptance_summary": "A non-retrieval separation persists under identical-observation or all-evidence-acquired analysis across multiple source videos."
+    },
+    {
+      "claim_id": "MC7",
+      "ledger_claim_ids": [
+        "C008",
+        "C009"
+      ],
+      "claim": "For the tested encoders and corpus, generic learned modality retrieval does not consistently improve localization over task-aligned controls and may propagate degradation to grounded outcomes.",
+      "current_status": "SUPPORTED_LOW_N_DESCRIPTIVE",
+      "promotion_gate": "PAPER_CLAIM_READY",
+      "experiment_ids": [
+        "E-RET-01",
+        "E-MAIN-04"
+      ],
+      "acceptance_summary": "Human-revalidated support registry, source-disjoint F-CTRL versus F-VA replication and end-to-end propagation analysis with bounded wording."
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "E-STATE-00",
+      "title": "Current-state provenance and semantic freeze",
+      "phase": 0,
+      "execution_status": "DOCUMENTATION_ONLY",
+      "annotation_stage": "MACHINE_ADJUDICATED_PROVISIONAL",
+      "inputs": [
+        "docs/paper/cvpr_thesis_and_evidence_gates.md",
+        "data/rehearsal_plan/cvpr_claim_evidence_ledger.json",
+        "docs/spec/metrics_protocol.md",
+        "docs/review/scale1b_wave_r_final_audit.md",
+        "data/restricted/scale1b/ga_pilot/experiment_contract.json",
+        "data/restricted/scale1b/ga_pilot/experiment_manifest.json"
+      ],
+      "systems": [],
+      "metrics": [
+        "artifact_hash_match",
+        "stage_vocabulary_consistency",
+        "gate_state_consistency"
+      ],
+      "acceptance_criteria": [
+        "No machine-provisional artifact is labeled H1 or H2.",
+        "Task-110 implementation and contract are not represented as completed learned-agent results.",
+        "Restoration and premature-stop semantics match metrics protocol v0.3.0."
+      ],
+      "dependencies": [],
+      "unlocks": [
+        "E-CV-01",
+        "E-GA-01"
+      ]
+    },
+    {
+      "experiment_id": "E-CV-01",
+      "title": "Deferred human construct-validity mini-pilot",
+      "phase": 1,
+      "execution_status": "DEFERRED_NOT_EXECUTED",
+      "annotation_stage": "P_TIER_INPUT_TO_H1_H2_OUTPUT",
+      "inputs": [
+        "docs/annotation/construct_validity_protocol.md",
+        "data/rehearsal_plan/construct_validity_mini_pilot_plan.json",
+        "construct validation schemas",
+        "candidate registry with 8-12 families from 5-6 source videos"
+      ],
+      "sampling": {
+        "families_min": 8,
+        "families_target": 12,
+        "families_max": 12,
+        "source_videos_min": 5,
+        "source_videos_max": 6,
+        "required_strata": [
+          "vision",
+          "speech",
+          "ambient",
+          "cross_modal",
+          "necessity_group_withholding",
+          "modality_channel_outage",
+          "random_low_risk_control"
+        ]
+      },
+      "systems": [
+        "five_role_human_validation_workflow"
+      ],
+      "metrics": [
+        "H1_acceptance_rate",
+        "H2_acceptance_rate",
+        "validator_raw_agreement",
+        "Cohen_kappa",
+        "temporal_IoU",
+        "boundary_absolute_error",
+        "evidence_set_Jaccard",
+        "alternative_SES_discovery_rate",
+        "leave_one_out_minimality_pass_rate",
+        "necessity_group_pass_rate",
+        "pair_isolation_failure_rate",
+        "rights_privacy_safety_hold_rate",
+        "active_minutes_by_role"
+      ],
+      "acceptance_criteria": [
+        "8-12 families and at least 5 source-disjoint videos complete.",
+        "All five required identities complete their role for every family.",
+        "At least 75% of completed families reach H1.",
+        "At least 60% of completed families reach H2.",
+        "Pair-isolation failure is at most 10%.",
+        "No unresolved critical rights, privacy or safety hold.",
+        "No systematic minimality or modality failure affects more than 25% of completed families."
+      ],
+      "failure_decisions": {
+        "CONSTRUCT_VALIDITY_REPAIR": "At least 40% reach H1 or failures are localized and repairable.",
+        "CONSTRUCT_VALIDITY_NO_GO": "Fewer than 40% reach H1, at least half are rejected, or systematic construct or governance failure occurs."
+      },
+      "dependencies": [
+        "E-STATE-00"
+      ],
+      "unlocks": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+        "E-CV-02"
+      ]
+    },
+    {
+      "experiment_id": "E-CV-02",
+      "title": "H2 pair-isolation, recovery-route and certificate audit",
+      "phase": 1,
+      "execution_status": "PLANNED_NOT_EXECUTED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "H2 mini-pilot families",
+        "CLEAN BLOCKED RESTORED manifests",
+        "no-trigger controls",
+        "final-point route-feasibility certificates"
+      ],
+      "systems": [
+        "independent_human_validators",
+        "deterministic_protocol_probes"
+      ],
+      "metrics": [
+        "CLEAN_SES_reachable_rate",
+        "BLOCKED_accepted_route_closure_rate",
+        "RESTORED_exact_route_restoration_rate",
+        "derived_leak_failure_rate",
+        "no_trigger_false_restoration_rate",
+        "route_certificate_validity",
+        "deterministic_replay_rate"
+      ],
+      "acceptance_criteria": [
+        "Every accepted H2 family has at least one reachable CLEAN SES.",
+        "Every BLOCKED episode closes all accepted routes through the selected necessity group or channel.",
+        "Every RESTORED episode begins identically to BLOCKED and restores only the registered route.",
+        "No-trigger controls do not restore complete support.",
+        "Two validator trajectories succeed per accepted family.",
+        "All primary premature-stop episodes have valid route certificates or are explicitly null."
+      ],
+      "dependencies": [
+        "E-CV-01"
+      ],
+      "unlocks": [
+        "E-E2E-01"
+      ]
+    },
+    {
+      "experiment_id": "E-GA-01",
+      "title": "Learned evidence-conditioned generator readiness audit",
+      "phase": 2,
+      "execution_status": "IMPLEMENTED_NOT_RUN_OR_AUDITED",
+      "annotation_stage": "MACHINE_ADJUDICATED_PROVISIONAL_FOR_TECHNICAL_READINESS_ONLY",
+      "run_by_this_registry": false,
+      "inputs": [
+        "data/restricted/scale1b/manifests/ga_model_acquisition.json",
+        "docs/review/scale1b_ga_model_acquisition.md",
+        "src/av_trace_scale1b_agent/",
+        "data/restricted/scale1b/ga_pilot/experiment_contract.json"
+      ],
+      "systems": [
+        "single_shot_learned_generator",
+        "learned_generator_diagnostic"
+      ],
+      "metrics": [
+        "structured_completion_rate",
+        "Answer_Score",
+        "Citation_F1",
+        "Supported_Claim_Rate",
+        "unsupported_claim_rate",
+        "partial_evidence_hallucination_rate",
+        "false_sufficient_rate",
+        "invalid_output_rate",
+        "deterministic_replay_rate"
+      ],
+      "acceptance_criteria": [
+        "Actual pinned Qwen inference is used through the isolated JSONL boundary.",
+        "Model-authored claims, citations, sufficiency and diagnosis pass strict validation.",
+        "Complete evidence, partial evidence, blocked evidence, distractor and malformed-output cases are completed.",
+        "At most one bounded repair is used.",
+        "Timeout and OOM handling are typed and fail closed.",
+        "Independent metric recomputation and leakage audit pass.",
+        "No deterministic answer substitution occurs."
+      ],
+      "dependencies": [
+        "E-STATE-00",
+        "QWEN_GROUNDED_GENERATOR_SNAPSHOT_READY"
+      ],
+      "unlocks": [
+        "LEARNED_GENERATION_READY",
+        "E-GA-02"
+      ]
+    },
+    {
+      "experiment_id": "E-GA-02",
+      "title": "Learned ReAct and evidence-sufficiency controller readiness audit",
+      "phase": 2,
+      "execution_status": "IMPLEMENTED_NOT_RUN_OR_AUDITED",
+      "annotation_stage": "MACHINE_ADJUDICATED_PROVISIONAL_FOR_TECHNICAL_READINESS_ONLY",
+      "run_by_this_registry": false,
+      "inputs": [
+        "data/restricted/scale1b/ga_pilot/experiment_contract.json",
+        "data/restricted/scale1b/ga_pilot/experiment_manifest.json",
+        "src/av_trace_scale1b_agent/",
+        "scripts/run_scale1b_ga_pilot.py",
+        "scripts/verify_scale1b_ga.py"
+      ],
+      "systems": [
+        "learned_react",
+        "learned_evidence_sufficiency",
+        "deterministic_react_control",
+        "deterministic_evidence_sufficiency_control"
+      ],
+      "metrics": [
+        "CLEAN_BLOCKED_RESTORED_completion",
+        "no_trigger_completion",
+        "model_selected_action_rate",
+        "distinct_state_transition_audit",
+        "Success_at_Budget",
+        "false_sufficient_rate",
+        "premature_stop_rate",
+        "access_failure_diagnosis",
+        "common_endpoint_restoration_gain",
+        "no_trigger_false_recovery",
+        "failure_injection_pass_rate",
+        "semantic_replay_rate"
+      ],
+      "acceptance_criteria": [
+        "Both learned controllers use the same frozen backbone, backend, candidate universe, tool schema, budget and failure handling.",
+        "Actions are genuinely model-selected and prompts and configurations are independently hashed.",
+        "Complete action traces exist for all states and no-trigger controls.",
+        "Timeout, malformed action, unavailable channel, OOM, over-budget and process-crash cases fail closed.",
+        "Strict final-point feasibility and premature-stop scoring pass independent audit.",
+        "Evaluator-private state, family, intervention, evidence, answer and trigger fields are not exposed."
+      ],
+      "dependencies": [
+        "E-GA-01"
+      ],
+      "unlocks": [
+        "LEARNED_AGENT_READY",
+        "E-E2E-01"
+      ]
+    },
+    {
+      "experiment_id": "E-E2E-01",
+      "title": "H2-primary end-to-end matched mini diagnostic",
+      "phase": 3,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_PRIMARY_H1_SENSITIVITY_ONLY",
+      "inputs": [
+        "all H2 mini-pilot families",
+        "F-CTRL retrieval",
+        "F-VA retrieval",
+        "frozen learned generator",
+        "frozen learned ReAct",
+        "frozen learned evidence-sufficiency controller",
+        "no-trigger controls",
+        "route-feasibility certificates"
+      ],
+      "systems": [
+        "single_shot_learned_generator",
+        "learned_react",
+        "learned_evidence_sufficiency",
+        "deterministic_react_control",
+        "deterministic_evidence_sufficiency_control",
+        "oracle_H2_evidence_generator",
+        "partial_evidence_generator"
+      ],
+      "metrics": [
+        "Evidence_Recall",
+        "All_Evidence_Success",
+        "Answer_Score",
+        "Citation_F1",
+        "Supported_Claim_Rate",
+        "supported_answer_endpoint",
+        "correct_answer_wrong_citation_rate",
+        "BLOCKED_false_sufficient_rate",
+        "sufficiency_Brier",
+        "access_failure_diagnosis",
+        "premature_stop_rate",
+        "common_endpoint_restoration_gain",
+        "trigger_conditioned_recovery",
+        "no_trigger_false_recovery",
+        "recovery_cost",
+        "invalid_run_rate"
+      ],
+      "acceptance_criteria": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO, LEARNED_GENERATION_READY and LEARNED_AGENT_READY are all true.",
+        "Intervention effects are visible across at least three source-disjoint videos and are not wholly attributable to one family.",
+        "At least one separation is not explained by retrieval recall alone.",
+        "There is a nonzero set of H2 cases where answer correctness differs from supported-answer correctness or citation validity.",
+        "At least two non-retrieval failure categories are observed, each on at least two source videos.",
+        "Video-cluster descriptive uncertainty and complete invalid and missing-run accounting are reported."
+      ],
+      "dependencies": [
+        "E-CV-02",
+        "E-GA-01",
+        "E-GA-02"
+      ],
+      "unlocks": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "E-SCALE-01"
+      ]
+    },
+    {
+      "experiment_id": "E-SCALE-01",
+      "title": "Scale-up feasibility and throughput gate",
+      "phase": 4,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "MIXED_P_TIER_INPUT_H2_OUTPUT_REPORTED_SEPARATELY",
+      "inputs": [
+        "construct mini-pilot funnel and labor",
+        "end-to-end mini diagnostic",
+        "rights-review throughput",
+        "compute and storage measurements"
+      ],
+      "systems": [],
+      "metrics": [
+        "candidate_to_H1_yield",
+        "candidate_to_H2_yield",
+        "rejection_causes",
+        "annotation_labor",
+        "adjudication_labor",
+        "rights_review_throughput",
+        "compute_cost",
+        "storage_cost"
+      ],
+      "acceptance_criteria": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO and END_TO_END_DIAGNOSTIC_GO are true.",
+        "A credible unchanged-threshold route exists to 20-30 rights-cleared videos and 60 H2 families.",
+        "Reviewer and rights-review capacity is documented.",
+        "Sampling, split, modality and mechanism strata, reserve and precision plans are frozen.",
+        "Scale is not justified by a desired model ranking."
+      ],
+      "dependencies": [
+        "E-E2E-01"
+      ],
+      "unlocks": [
+        "DATA_SCALE_UP_GO",
+        "E-SPLIT-01",
+        "E-CV-03"
+      ]
+    },
+    {
+      "experiment_id": "E-SPLIT-01",
+      "title": "Source-group deduplication and split freeze",
+      "phase": 4,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_ELIGIBLE",
+      "inputs": [
+        "source provenance graph",
+        "near-duplicate audit",
+        "candidate and H2 family registry"
+      ],
+      "systems": [],
+      "metrics": [
+        "source_group_overlap_count",
+        "near_duplicate_unresolved_count",
+        "modality_stratum_coverage_by_split",
+        "intervention_stratum_coverage_by_split"
+      ],
+      "acceptance_criteria": [
+        "Zero source-group overlap across development, validation and test.",
+        "Zero unresolved near-duplicate cross-split finding.",
+        "At least 8, 4 and 8 source videos and 24, 12 and 24 target H2 families in development, validation and test at minimum scale.",
+        "Any unavailable split stratum is labeled exploratory rather than duplicated across splits."
+      ],
+      "dependencies": [
+        "E-SCALE-01"
+      ],
+      "unlocks": [
+        "E-CV-03"
+      ]
+    },
+    {
+      "experiment_id": "E-CV-03",
+      "title": "Scaled H2 corpus construction and freeze",
+      "phase": 4,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "100-200 provisional-family pool",
+        "frozen source split",
+        "construct validation protocol",
+        "rights and release records"
+      ],
+      "systems": [
+        "five_role_human_validation_workflow"
+      ],
+      "metrics": [
+        "H1_and_H2_funnel",
+        "alternative_SES_discovery",
+        "minimality_pass",
+        "necessity_pass",
+        "pair_isolation_failure",
+        "rights_hold_rate",
+        "labor",
+        "source_and_stratum_counts"
+      ],
+      "acceptance_criteria": [
+        "At least 60 frozen H2 families from at least 20 source-disjoint videos.",
+        "No construct threshold is weakened to fill quotas.",
+        "Every test family is H2 before test execution.",
+        "Every primary source has an approved rights decision for the intended use.",
+        "All rejection, repair and hold reasons are retained."
+      ],
+      "dependencies": [
+        "E-SPLIT-01"
+      ],
+      "unlocks": [
+        "E-MAIN-00"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-00",
+      "title": "Main-study system, threshold and artifact freeze",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "frozen H2 corpus and splits",
+        "model snapshots",
+        "prompts",
+        "retrieval configurations",
+        "budgets",
+        "metric implementation",
+        "invalid-run reserve"
+      ],
+      "systems": [
+        "direct_long_context_learned",
+        "single_shot_learned_RAG",
+        "learned_ReAct",
+        "learned_evidence_sufficiency"
+      ],
+      "metrics": [
+        "hash_completeness",
+        "test_access_audit",
+        "system_class_completeness",
+        "threshold_freeze_completeness"
+      ],
+      "acceptance_criteria": [
+        "At least four learned system classes are frozen.",
+        "At least two model or backbone families appear in the final paper evaluation.",
+        "All prompts, models, retrieval, budgets, practical thresholds and invalid-run rules are frozen before test outcomes.",
+        "No test family or test-derived artifact has been used for tuning."
+      ],
+      "dependencies": [
+        "E-CV-03"
+      ],
+      "unlocks": [
+        "E-MAIN-01",
+        "E-MAIN-02",
+        "E-MAIN-03",
+        "E-RET-01",
+        "E-MAIN-04",
+        "E-MAIN-05",
+        "E-MAIN-06"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-01",
+      "title": "Primary held-out Acquire Ground Act dashboard",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "frozen test split",
+        "four primary learned systems",
+        "CLEAN BLOCKED RESTORED episodes"
+      ],
+      "systems": [
+        "direct_long_context_learned",
+        "single_shot_learned_RAG",
+        "learned_ReAct",
+        "learned_evidence_sufficiency"
+      ],
+      "metrics": [
+        "primary_Acquire_dashboard",
+        "primary_Ground_dashboard",
+        "primary_Act_dashboard",
+        "cost_dashboard",
+        "completion_and_invalid_run_rates"
+      ],
+      "acceptance_criteria": [
+        "All metrics use preregistered denominators and H2 test families only.",
+        "Family contrasts are aggregated within source before video-cluster inference.",
+        "Every state, modality, mechanism and invalid-run denominator is disclosed.",
+        "No weighted primary scalar is used."
+      ],
+      "dependencies": [
+        "E-MAIN-00"
+      ],
+      "unlocks": [
+        "E-MAIN-02",
+        "E-MAIN-03",
+        "E-MAIN-04"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-02",
+      "title": "Answer-versus-supported-answer and failure-stage analysis",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "E-MAIN-01 trajectories",
+        "claim-citation mappings",
+        "accepted SES registry"
+      ],
+      "systems": [
+        "all_primary_learned_systems"
+      ],
+      "metrics": [
+        "answer_correct_supported_incorrect_count",
+        "correct_answer_wrong_citation_rate",
+        "acquisition_failure_rate",
+        "utilization_failure_rate",
+        "citation_failure_rate",
+        "diagnosis_failure_rate",
+        "stopping_failure_rate"
+      ],
+      "acceptance_criteria": [
+        "A nonzero answer-versus-supported-answer or citation divergence occurs across at least three source videos for MC2.",
+        "At least two non-retrieval failure categories occur across at least two source videos each for MC3.",
+        "The taxonomy is independently audited from complete traces."
+      ],
+      "dependencies": [
+        "E-MAIN-01"
+      ],
+      "unlocks": [
+        "MC2",
+        "MC3",
+        "MC6"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-03",
+      "title": "Matched intervention and learned-controller contrast",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "frozen test CBR families",
+        "learned ReAct",
+        "learned evidence-sufficiency",
+        "no-trigger controls",
+        "route certificates"
+      ],
+      "systems": [
+        "learned_ReAct",
+        "learned_evidence_sufficiency"
+      ],
+      "metrics": [
+        "CLEAN_supported_answer_difference",
+        "BLOCKED_false_sufficient_difference",
+        "premature_stop_difference",
+        "common_endpoint_restoration_difference",
+        "no_trigger_false_recovery_difference",
+        "recovery_cost_difference"
+      ],
+      "acceptance_criteria": [
+        "For a directional MC5 claim, CLEAN supported-answer loss is no worse than 0.10 absolute.",
+        "For a directional MC5 claim, at least one eligible intervention metric improves by at least 0.15 absolute.",
+        "The effect is not driven by one source under leave-one-source-out analysis.",
+        "Video-cluster confidence intervals and Holm-adjusted confirmatory inference are reported."
+      ],
+      "dependencies": [
+        "E-MAIN-01"
+      ],
+      "unlocks": [
+        "MC4",
+        "MC5"
+      ]
+    },
+    {
+      "experiment_id": "E-RET-01",
+      "title": "Human-revalidated retrieval replication",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "H2 accepted SES registry",
+        "V-CLIP",
+        "V-SIGLIP2",
+        "A-AST",
+        "A-CLAP",
+        "S-BM25",
+        "F-CTRL",
+        "F-VA"
+      ],
+      "systems": [
+        "frozen_retrieval_systems"
+      ],
+      "metrics": [
+        "Recall_at_5",
+        "Recall_at_20",
+        "All_Evidence_at_20",
+        "MRR",
+        "nDCG",
+        "alternative_SES_aware_recall",
+        "source_video_paired_difference"
+      ],
+      "acceptance_criteria": [
+        "Support labels are H2 and include all adjudicated alternative SESs.",
+        "At least five source videos contribute to any reported modality stratum.",
+        "F-CTRL and F-VA are evaluated without test-family tuning.",
+        "Any claim is bounded to the tested encoders, query construction and corpus."
+      ],
+      "dependencies": [
+        "E-CV-03",
+        "E-MAIN-00"
+      ],
+      "unlocks": [
+        "E-MAIN-04",
+        "MC7"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-04",
+      "title": "Retrieval propagation and identical-observation ablation",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "F-CTRL and F-VA runs",
+        "oracle H2 evidence",
+        "partial evidence",
+        "identical acquired-observation bundles"
+      ],
+      "systems": [
+        "single_shot_learned_RAG",
+        "learned_ReAct",
+        "learned_evidence_sufficiency"
+      ],
+      "metrics": [
+        "retrieval_to_supported_answer_propagation",
+        "grounding_conditional_on_All_Evidence",
+        "identical_observation_utilization_difference",
+        "partial_evidence_hallucination",
+        "oracle_evidence_grounding_ceiling"
+      ],
+      "acceptance_criteria": [
+        "For MC6, at least one Ground or Act difference persists when acquired observations are identical or All-Evidence Success is one.",
+        "For MC7, any retrieval degradation or improvement is traced to end-to-end outcomes without claiming universal encoder quality.",
+        "Alternative-SES-aware scoring is the primary retrieval interpretation."
+      ],
+      "dependencies": [
+        "E-MAIN-01",
+        "E-RET-01"
+      ],
+      "unlocks": [
+        "MC6",
+        "MC7"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-05",
+      "title": "Stopping, sufficiency-component and budget ablations",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "learned evidence-sufficiency controller",
+        "component-removed prompts",
+        "status-tool-disabled condition",
+        "separately capped budget runs"
+      ],
+      "systems": [
+        "learned_evidence_sufficiency_full",
+        "without_claim_slot_coverage",
+        "without_missingness_fields",
+        "without_calibrated_sufficiency",
+        "without_status_tool"
+      ],
+      "metrics": [
+        "false_sufficient_rate",
+        "sufficiency_Brier",
+        "premature_stop_rate",
+        "access_failure_diagnosis",
+        "restoration_gain",
+        "over_search_and_cost",
+        "Success_at_Budget"
+      ],
+      "acceptance_criteria": [
+        "Every ablation changes only the preregistered component.",
+        "Budget curves use separate frozen runs rather than retrospective truncation.",
+        "Normative stopping results use valid route certificates and typed terminal exceptions only."
+      ],
+      "dependencies": [
+        "E-MAIN-00"
+      ],
+      "unlocks": [
+        "MC3",
+        "MC5"
+      ]
+    },
+    {
+      "experiment_id": "E-MAIN-06",
+      "title": "Failure injection, replay and invalid-run audit",
+      "phase": 5,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_WITH_SYNTHETIC_FAILURE_INJECTIONS",
+      "inputs": [
+        "timeout injection",
+        "malformed output or action injection",
+        "unavailable channel injection",
+        "OOM injection",
+        "over-budget injection",
+        "process-crash injection"
+      ],
+      "systems": [
+        "all_primary_learned_systems"
+      ],
+      "metrics": [
+        "typed_failure_accuracy",
+        "fail_closed_rate",
+        "resume_success_rate",
+        "semantic_replay_rate",
+        "invalid_run_rate"
+      ],
+      "acceptance_criteria": [
+        "No injected failure produces a silent success or deterministic answer substitution.",
+        "All failures are typed and included in primary invalid-run accounting.",
+        "Independent replay reproduces valid completed trajectories within declared tolerance."
+      ],
+      "dependencies": [
+        "E-MAIN-00"
+      ],
+      "unlocks": [
+        "E-AUDIT-01"
+      ]
+    },
+    {
+      "experiment_id": "E-AUDIT-01",
+      "title": "Independent paper-claim, leakage, metric and release audit",
+      "phase": 6,
+      "execution_status": "BLOCKED",
+      "annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+      "inputs": [
+        "all frozen main results",
+        "claim ledger",
+        "paper draft",
+        "source and model manifests",
+        "release records",
+        "replay package"
+      ],
+      "systems": [],
+      "metrics": [
+        "claim_to_artifact_coverage",
+        "metric_recomputation_match",
+        "leakage_findings",
+        "replay_match",
+        "rights_release_hold_count",
+        "unreported_negative_or_invalid_count"
+      ],
+      "acceptance_criteria": [
+        "Every abstract and conclusion claim maps to a passed claim entry and frozen result.",
+        "Independent metric recomputation matches within declared tolerance.",
+        "No unresolved critical evaluator-private leakage exists.",
+        "Negative, null, excluded and invalid strata are disclosed.",
+        "A dated related-work audit rejects unsupported first, unique and SOTA language.",
+        "Release claims match asset-level authorization and restricted artifacts are not called public."
+      ],
+      "dependencies": [
+        "E-MAIN-01",
+        "E-MAIN-02",
+        "E-MAIN-03",
+        "E-MAIN-04",
+        "E-MAIN-05",
+        "E-MAIN-06"
+      ],
+      "unlocks": [
+        "PAPER_CLAIM_READY",
+        "FINAL_BENCHMARK_VALIDATED_IF_RELEASE_AND_BLIND_AUDIT_ALSO_PASS"
+      ]
+    }
+  ],
+  "required_baselines": [
+    "deterministic_react_control",
+    "deterministic_evidence_sufficiency_control",
+    "direct_long_context_learned",
+    "single_shot_learned_RAG_F_CTRL",
+    "single_shot_learned_RAG_F_VA",
+    "learned_ReAct_F_CTRL",
+    "learned_evidence_sufficiency_F_CTRL",
+    "oracle_H2_evidence_generator",
+    "partial_evidence_generator",
+    "RESTORED_no_trigger_control"
+  ],
+  "required_ablations": [
+    "answer_only_vs_supported_answer_scoring",
+    "identical_observed_evidence_lock",
+    "oracle_H2_evidence_vs_retrieved_evidence",
+    "partial_evidence",
+    "F_CTRL_vs_F_VA",
+    "eligible_unimodal_retrieval_controls",
+    "remove_claim_slot_coverage",
+    "remove_missingness_fields",
+    "remove_calibrated_sufficiency",
+    "remove_get_channel_status",
+    "RESTORED_no_trigger",
+    "route_certificate_and_typed_terminal_semantics",
+    "separately_capped_budget_runs",
+    "all_SES_vs_single_preferred_route_scoring",
+    "leave_one_source_out",
+    "claim_mapper_sensitivity"
+  ],
+  "paper_outputs": {
+    "tables": [
+      "T1 corpus construct funnel and labor",
+      "T2 system and configuration matrix",
+      "T3 primary Acquire Ground Act dashboard",
+      "T4 matched intervention effects and recovery",
+      "T5 failure taxonomy and answer-support divergence",
+      "T6 ablations and sensitivity"
+    ],
+    "figures": [
+      "F1 matched family intervention schematic",
+      "F2 trace and failure-stage decomposition",
+      "F3 answer accuracy versus supported reliability",
+      "F4 trigger-aligned restoration trajectories",
+      "F5 source-level effect and leave-one-source-out plot",
+      "F6 candidate to H1 H2 construct funnel"
+    ]
+  },
+  "negative_result_branches": [
+    {
+      "condition": "CONSTRUCT_VALIDITY_MINI_PILOT_NO_GO",
+      "action": "Stop scale-up and do not make benchmark-valid, minimality, necessity or modality claims."
+    },
+    {
+      "condition": "CONSTRUCT_VALIDITY_REPAIR",
+      "action": "Version and rerun the affected protocol and do not pool incompatible pre- and post-repair records."
+    },
+    {
+      "condition": "HIGH_ALTERNATIVE_SES_DISCOVERY",
+      "action": "Rebuild support registries before interpreting retrieval misses and consider provisional-label incompleteness as a finding."
+    },
+    {
+      "condition": "MODALITY_NECESSITY_RARE",
+      "action": "Treat modalities as routing or corroboration strata and drop necessity claims."
+    },
+    {
+      "condition": "LEARNED_GENERATION_OR_AGENT_NO_GO",
+      "action": "Do not claim end-to-end learned-agent behavior and do not substitute deterministic outputs."
+    },
+    {
+      "condition": "NO_NONRETRIEVAL_SEPARATION",
+      "action": "Reject the strong end-to-end thesis and reframe around retrieval localization, protocol construction or a null agent-policy result."
+    },
+    {
+      "condition": "SUFFICIENCY_CONTROLLER_NULL_OR_ADVERSE",
+      "action": "Report the null or adverse result and retain only supported protocol and cross-system findings."
+    },
+    {
+      "condition": "WAVE_R_DEGRADATION_DISAPPEARS_AFTER_H2",
+      "action": "Drop the encoder degradation claim and report provisional support-registry error."
+    },
+    {
+      "condition": "ONE_SOURCE_DRIVES_EFFECT",
+      "action": "Remove headline generalization and acquire more sources before submission."
+    },
+    {
+      "condition": "RIGHTS_OR_SCALE_GATE_FAILS",
+      "action": "Do not call the assets a public benchmark core or make population ranking claims."
+    }
+  ],
+  "prohibited_claims": [
+    "AV-TRACE is already a validated benchmark.",
+    "Current NOAA families contain human-gold minimal SESs or necessity groups.",
+    "Machine agreement or machine counterfactual validation equals H1 or H2.",
+    "Current modality-routing labels prove modality necessity.",
+    "Wave R proves learned-agent recovery.",
+    "The current benchmark distinguishes source evidence absence from access failure.",
+    "Task-110 implementation or its frozen contract proves learned generation or learned-agent readiness.",
+    "SigLIP2 or CLAP is generally superior or inferior for long-video retrieval.",
+    "F-VA is learned multimodal fusion.",
+    "RESTORED supported-answer success minus BLOCKED diagnostic success is restoration gain.",
+    "Abstention is never premature.",
+    "Any first, unique, only, SOTA, universal reliability or population-wide superiority claim.",
+    "Current restricted media, transcripts, annotations, vectors or model weights are authorized for redistribution.",
+    "Machine-provisional, H1 and H2 outcomes may be pooled in a primary score.",
+    "Episodes or families from one source video are statistically independent.",
+    "Held-out test families may be used for prompt, retriever, fusion, threshold or mapper tuning.",
+    "Negative, null, excluded or invalid strata may be omitted."
+  ]
+}

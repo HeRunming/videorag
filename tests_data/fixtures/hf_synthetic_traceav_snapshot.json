@@ -1,0 +1,63 @@
+{
+  "fixture_kind": "synthetic_behavioral",
+  "synthetic_values": true,
+  "provider": "huggingface",
+  "repository": {
+    "id": "Heinz217/TraceAV-Bench",
+    "url": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench",
+    "revision": "cc96f31000000000000000000000000000000000",
+    "publisher": "Heinz217",
+    "technical_access_status": "public_ungated_annotations",
+    "media_rights_status": "unknown_hold",
+    "license_resolution_status": "consistent",
+    "license_evidence": [
+      {
+        "source": "release_readme",
+        "artifact_class": "annotations_and_code",
+        "name": "CC-BY-4.0",
+        "version": "4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "Annotations and accompanying code only",
+        "observed_revision": "cc96f31000000000000000000000000000000000"
+      }
+    ]
+  },
+  "card": {
+    "title": "Synthetic TraceAV mapped-source fixture",
+    "fixture_notice": "The row is synthetic and tests a reviewed mapping to an upstream OmniVideoBench identity."
+  },
+  "configs": [],
+  "files": [
+    {
+      "path": "data/video_name_mapping.jsonl",
+      "blob_sha": "0123456789abcdef0123456789abcdef01234567",
+      "size": 2048
+    }
+  ],
+  "rows": [
+    {
+      "asset_id": "synthetic-traceav-001",
+      "partition": "train",
+      "duration_ms": 3300000,
+      "source_url": "https://huggingface.co/datasets/NJU-LINK/OmniVideoBench",
+      "video_available": true,
+      "audio_available": true,
+      "speech_available": true,
+      "ambient_audio_available": true,
+      "subtitles_available": false,
+      "temporal_evidence_available": true,
+      "upstream_namespace": "traceav",
+      "upstream_asset_id": "synthetic-traceav-video-77",
+      "identity_resolution_status": "resolved",
+      "lineage_relation": "mapped_from",
+      "parent_dataset_id": "omnivideobench",
+      "parent_upstream_namespace": "omnivideobench",
+      "parent_upstream_asset_id": "synthetic-omni-77",
+      "fingerprint": "synthetic-phash-77",
+      "source_metadata": {
+        "fixture_is_synthetic": true,
+        "mapping_revision": "22ea02b000000000000000000000000000000000"
+      }
+    }
+  ]
+}

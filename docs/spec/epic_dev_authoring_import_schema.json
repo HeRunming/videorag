@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:epic-dev-authoring-import:1.0.0",
+  "title": "AV-TRACE EPIC development authoring packet import report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "packet_status",
+    "readiness_token",
+    "schema_validation_pass",
+    "manifest_validation_pass",
+    "semantic_firewall_pass",
+    "source_level_blindness_enforced",
+    "distribution_authorized",
+    "human_review_occurred",
+    "identity_count",
+    "human_decision_count",
+    "proposal_count",
+    "calibration_rejection_count",
+    "source_count",
+    "prescreen_results",
+    "author_form_results",
+    "future_test_eligible",
+    "gate_a_eligible",
+    "necessity_assigned",
+    "minimality_assigned",
+    "h1_assigned",
+    "h2_assigned",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "epic_dev_authoring_packet_import"},
+    "packet_id": {"type": "string", "minLength": 1},
+    "packet_status": {"const": "DRAFT_NOT_DISTRIBUTABLE"},
+    "readiness_token": {
+      "enum": [
+        "EPIC_DEV_AUTHORING_PACKETS_READY",
+        "EPIC_DEV_AUTHORING_PACKETS_REPAIR",
+        "EPIC_DEV_AUTHORING_PACKETS_NO_GO"
+      ]
+    },
+    "schema_validation_pass": {"type": "boolean"},
+    "manifest_validation_pass": {"type": "boolean"},
+    "semantic_firewall_pass": {"type": "boolean"},
+    "source_level_blindness_enforced": {"const": true},
+    "distribution_authorized": {"const": false},
+    "human_review_occurred": {"const": false},
+    "identity_count": {"const": 0},
+    "human_decision_count": {"const": 0},
+    "proposal_count": {"const": 5},
+    "calibration_rejection_count": {"const": 2},
+    "source_count": {"const": 2},
+    "prescreen_results": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "plan_id",
+          "sample_count",
+          "completion_status",
+          "task153_readiness_token",
+          "exposure_event_count"
+        ],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "plan_id": {"type": "string", "minLength": 1},
+          "sample_count": {"type": "integer", "minimum": 1},
+          "completion_status": {"const": "incomplete"},
+          "task153_readiness_token": {
+            "const": "SEMANTIC_AV_SOURCE_PRESCREEN_REPAIR"
+          },
+          "exposure_event_count": {"const": 0}
+        }
+      }
+    },
+    "author_form_results": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "proposal_id",
+          "completion_status",
+          "reviewer_id_present",
+          "human_findings_recorded"
+        ],
+        "properties": {
+          "proposal_id": {"type": "string", "minLength": 1},
+          "completion_status": {"const": "not_started"},
+          "reviewer_id_present": {"const": false},
+          "human_findings_recorded": {"const": false}
+        }
+      }
+    },
+    "future_test_eligible": {"const": false},
+    "gate_a_eligible": {"const": false},
+    "necessity_assigned": {"const": false},
+    "minimality_assigned": {"const": false},
+    "h1_assigned": {"const": false},
+    "h2_assigned": {"const": false},
+    "errors": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "readiness_token": {"const": "EPIC_DEV_AUTHORING_PACKETS_READY"}
+        },
+        "required": ["readiness_token"]
+      },
+      "then": {
+        "properties": {
+          "schema_validation_pass": {"const": true},
+          "manifest_validation_pass": {"const": true},
+          "semantic_firewall_pass": {"const": true},
+          "prescreen_results": {"minItems": 2},
+          "author_form_results": {"minItems": 5},
+          "errors": {"maxItems": 0}
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "schema_version": "2.0.0",
+  "protocol_id": "exogenous_restoration_protocol_v2",
+  "frozen_date": "2026-09-23",
+  "status": "FROZEN_PRE_ANNOTATION",
+  "decision_token": "CAUSAL_INTERVENTION_V2_READY",
+  "scope": {
+    "included": [
+      "intervention scheduling",
+      "state-surface isolation",
+      "causal evaluation semantics",
+      "pre-execution leakage gate"
+    ],
+    "excluded": [
+      "canonical indexes",
+      "candidate registry",
+      "family mining",
+      "human reviewer schemas",
+      "scientific episode execution",
+      "human labels",
+      "model results"
+    ]
+  },
+  "terminology": {
+    "required_phrase": "all accepted SESs discovered under the frozen saturation protocol",
+    "forbidden_phrases": [
+      "all possible SESs",
+      "exhaustive SESs"
+    ]
+  },
+  "primary_schedule": {
+    "trigger_class": "fixed_action_index",
+    "index_base": "zero",
+    "action_index": 4,
+    "delivery_boundary": "after_completed_action_response_cycles_before_next_model_decision",
+    "shared_scope": "same_family_across_all_systems",
+    "freeze_timing": "before_model_execution",
+    "depends_on_action_identity": false,
+    "depends_on_system_identity": false,
+    "depends_on_output_or_correctness": false,
+    "depends_on_get_channel_status": false,
+    "event": {
+      "event_type": "protocol_checkpoint",
+      "event_version": "2.0.0",
+      "message": "Scheduled protocol checkpoint completed.",
+      "cost": 0.0,
+      "public_bytes_identical_r_n": true,
+      "reveals_restoration": false
+    }
+  },
+  "paired_prefix": {
+    "construction": "single_blocked_prefix_then_fresh_replayed_fork",
+    "initial_state_identical": true,
+    "public_transcript_identical_through_event": true,
+    "fresh_continuation_sessions": true,
+    "early_terminal_policy": "retain_both_assignments_copy_terminal_prefix_no_post_terminal_event"
+  },
+  "states": [
+    {
+      "state": "CLEAN",
+      "initial_access": "at_least_one_accepted_ses_reachable",
+      "scheduled_event": "none",
+      "terminal_target": "common_supported_answer"
+    },
+    {
+      "state": "BLOCKED",
+      "initial_access": "registered_route_inaccessible",
+      "scheduled_event": "none",
+      "terminal_target": "calibrated_insufficiency_and_access_diagnosis"
+    },
+    {
+      "state": "RESTORED",
+      "initial_access": "identical_to_blocked_prefix",
+      "scheduled_event": "checkpoint_with_hidden_restoration",
+      "terminal_target": "common_supported_answer"
+    },
+    {
+      "state": "NO_TRIGGER",
+      "initial_access": "identical_to_restored_prefix",
+      "scheduled_event": "byte_identical_checkpoint_without_restoration",
+      "terminal_target": "blocked_continuation"
+    }
+  ],
+  "mechanisms": [
+    {
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "visibility": "no_explicit_outage_marker",
+      "primary_estimand_id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+      "pooled_primary_allowed": false
+    },
+    {
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "visibility": "standardized_typed_unavailable_response",
+      "primary_estimand_id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+      "pooled_primary_allowed": false
+    }
+  ],
+  "state_surface": {
+    "manifest_required": true,
+    "classifications": [
+      "INVARIANT_ALL_STATES",
+      "INTENDED_MECHANISM_DIFFERENCE",
+      "POST_EVENT_TREATMENT_MEDIATOR",
+      "FORBIDDEN_PRIVATE_FIELD"
+    ],
+    "private_fields_forbidden": [
+      "state_role",
+      "assignment_arm",
+      "intervention_id",
+      "necessity_group_id",
+      "trigger_enabled",
+      "hidden_route_availability",
+      "accepted_ses_labels",
+      "answer_keys",
+      "order_sequence_id"
+    ],
+    "r_n_prefix_hash_match_required": true,
+    "unaffected_result_order_invariant": true,
+    "latency_bucket_invariant": true,
+    "result_shape_invariant": true
+  },
+  "isolation": {
+    "fresh_provider_session_per_state": true,
+    "fresh_continuation_session_per_arm": true,
+    "model_kv_cache_shared": false,
+    "prompt_cache_shared": false,
+    "retrieval_cache_shared": false,
+    "tool_response_cache_shared": false,
+    "cross_state_memory_allowed": false,
+    "shared_read_only_artifacts": [
+      "model_weights",
+      "immutable_indexes",
+      "read_only_media_bytes"
+    ],
+    "failure_code": "INVALID_CROSS_STATE_CONTAMINATION"
+  },
+  "order_plan": {
+    "design": "four_state_williams_counterbalance",
+    "sequences": [
+      "C-B-N-R",
+      "B-R-C-N",
+      "R-N-B-C",
+      "N-C-R-B"
+    ],
+    "assignment_seed": 14520260923,
+    "stratify_by": [
+      "intervention_mechanism"
+    ],
+    "immutable_ids": [
+      "source_group_id",
+      "family_id",
+      "system_config_id"
+    ],
+    "freeze_timing": "before_outcomes",
+    "post_outcome_change_allowed": false
+  },
+  "analysis": {
+    "population": "all_preregistered_assignments_intention_to_treat",
+    "early_terminators_included": true,
+    "invalid_runs_included_fail_closed": true,
+    "trigger_conditioning_primary_allowed": false,
+    "primary_estimands": [
+      {
+        "estimand_id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "contrast": "RESTORED_minus_NO_TRIGGER",
+        "endpoint": "common_supported_answer",
+        "population": "all_preregistered_assignments_intention_to_treat",
+        "aggregation": "family_within_source_then_equal_source"
+      },
+      {
+        "estimand_id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "contrast": "RESTORED_minus_NO_TRIGGER",
+        "endpoint": "common_supported_answer",
+        "population": "all_preregistered_assignments_intention_to_treat",
+        "aggregation": "family_within_source_then_equal_source"
+      }
+    ],
+    "pooled_primary_estimand_allowed": false,
+    "restored_minus_blocked_role": "secondary_mechanism_specific_state_contrast",
+    "system_eligibility": {
+      "primary_matrix_requires_staged_adapter": true,
+      "ineligible_status": "STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT",
+      "eligibility_frozen_before_assignment": true,
+      "synthetic_outcomes_allowed": false
+    },
+    "action_contingent_condition": {
+      "trigger": "get_channel_status",
+      "role": "SECONDARY_PER_PROTOCOL_ACTION_CONTINGENT",
+      "primary_causal_claim_allowed": false,
+      "pooled_with_exogenous_allowed": false,
+      "report_assigned_and_triggered_denominators": true
+    }
+  },
+  "leakage_gate": {
+    "status": "NOT_RUN_BLOCKS_SCIENTIFIC_EXECUTION",
+    "uses_human_labels": false,
+    "feature_class": "non_semantic_public_surface_metadata_only",
+    "forbidden_features": [
+      "question_text",
+      "answer_text",
+      "transcript_or_asr_content",
+      "ocr_or_caption_content",
+      "media_features",
+      "embeddings",
+      "retrieval_scores",
+      "semantic_result_payloads",
+      "claim_or_ses_labels",
+      "source_identity"
+    ],
+    "classifier": "l2_logistic_regression_frozen_no_test_tuning",
+    "cross_validation": "leave_one_source_group_out",
+    "primary_task": "R_vs_N_through_checkpoint",
+    "secondary_tasks": [
+      "B_vs_R_pretrigger",
+      "B_vs_N_pretrigger",
+      "C_vs_B_silent_route_withholding_only"
+    ],
+    "pass_criteria": {
+      "balanced_accuracy_not_above_majority_baseline": true,
+      "source_group_blocked_permutation_p_min": 0.05,
+      "deterministic_single_feature_predictor_allowed": false,
+      "r_n_prefix_hashes_match": true
+    },
+    "repair_token": "LEAKAGE_GATE_REPAIR",
+    "no_go_conditions": [
+      "deterministic_state_feature",
+      "private_field_exposure",
+      "cache_namespace_collision",
+      "unresolved_r_n_prefix_or_event_mismatch"
+    ]
+  },
+  "execution_gate": {
+    "scientific_execution_authorized": false,
+    "required_before_execution": [
+      "H2_construct_eligibility",
+      "saturation_protocol_complete",
+      "mechanism_specific_intervention_manifest",
+      "state_surface_manifest",
+      "route_closure_and_restoration_feasibility",
+      "r_n_prefix_fork_replay",
+      "fresh_session_cache_attestations",
+      "counterbalanced_order_assignment",
+      "metadata_only_leakage_gate_pass",
+      "complete_itt_assignment_manifest"
+    ]
+  },
+  "results_boundary": {
+    "scientific_episodes_executed": false,
+    "human_labels_created": false,
+    "model_results_claimed": false,
+    "statement": "This artifact freezes a prospective protocol only; it contains no invented result or human label."
+  }
+}

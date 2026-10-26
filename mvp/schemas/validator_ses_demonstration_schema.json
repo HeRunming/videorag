@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-ses-demonstration:1.0.0",
+  "title": "AV-TRACE SES demonstration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "demonstration_id",
+    "family_id",
+    "family_annotation_version",
+    "set_id",
+    "claim_ids",
+    "evidence_ids",
+    "hop_ids",
+    "satisfiable",
+    "validator_demonstrations"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "demonstration_id": {"$ref": "#/$defs/id"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "family_annotation_version": {"type": "string", "minLength": 1},
+    "set_id": {"$ref": "#/$defs/id"},
+    "claim_ids": {"$ref": "#/$defs/ids"},
+    "evidence_ids": {"$ref": "#/$defs/ids"},
+    "hop_ids": {"$ref": "#/$defs/ids"},
+    "satisfiable": {"const": true},
+    "validator_demonstrations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "validator_id",
+          "clean_trajectory_id",
+          "clean_trajectory_hash",
+          "clean_observation_ids_by_evidence",
+          "restored_trajectory_id",
+          "restored_trajectory_hash",
+          "restored_observation_ids_by_evidence"
+        ],
+        "properties": {
+          "validator_id": {"$ref": "#/$defs/id"},
+          "clean_trajectory_id": {"$ref": "#/$defs/id"},
+          "clean_trajectory_hash": {"$ref": "#/$defs/hash"},
+          "clean_observation_ids_by_evidence": {"$ref": "#/$defs/observation_map"},
+          "restored_trajectory_id": {"$ref": "#/$defs/id"},
+          "restored_trajectory_hash": {"$ref": "#/$defs/hash"},
+          "restored_observation_ids_by_evidence": {"$ref": "#/$defs/observation_map"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/id"}, "uniqueItems": true},
+    "observation_map": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"$ref": "#/$defs/id"},
+        "uniqueItems": true
+      }
+    }
+  }
+}

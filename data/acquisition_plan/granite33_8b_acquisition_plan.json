@@ -1,0 +1,134 @@
+{
+  "caps": {
+    "minimum_available_disk_bytes": 53687091200,
+    "minimum_available_ram_bytes": 68719476736,
+    "selected_payload_bytes": 21474836480,
+    "total_acquisition_bytes": 23622320128
+  },
+  "created_date": "2026-10-02",
+  "model": {
+    "allowlist": [
+      {
+        "expected_bytes": 207,
+        "git_oid": "944f7a55b05d9c0ce245208d27cb11b67b986d6b",
+        "lfs_sha256": null,
+        "path": "added_tokens.json"
+      },
+      {
+        "expected_bytes": 790,
+        "git_oid": "f731a4bb85cf7b086c16f012773e68c7b9349b37",
+        "lfs_sha256": null,
+        "path": "config.json"
+      },
+      {
+        "expected_bytes": 132,
+        "git_oid": "7bafee951796bccef681ff2072a248dc679d0b0b",
+        "lfs_sha256": null,
+        "path": "generation_config.json"
+      },
+      {
+        "expected_bytes": 441810,
+        "git_oid": "f8479fb696fe07332c55300a6accf8cc191acc6a",
+        "lfs_sha256": null,
+        "path": "merges.txt"
+      },
+      {
+        "expected_bytes": 4974694288,
+        "git_oid": "f14c62459d90617615dc5f84030afc7de896da76",
+        "lfs_sha256": "b309f7b9e116fafc27c1100629bfcccbcebdab18a4bf7df7accfa728260dc57e",
+        "path": "model-00001-of-00004.safetensors"
+      },
+      {
+        "expected_bytes": 4991447808,
+        "git_oid": "56eafe014440f800d17ec845d588466b1a9bb751",
+        "lfs_sha256": "f2e40f157f0139e4b67bbaa4b10efa351162c062771cb543b143c6916a687266",
+        "path": "model-00002-of-00004.safetensors"
+      },
+      {
+        "expected_bytes": 4970460032,
+        "git_oid": "1fb7e364ab61636372315ef3adce09a290050da9",
+        "lfs_sha256": "5cf5203a027b7055c995a9d4bdb3a4c9dd44849ae6c9eefa6a16852a816bea76",
+        "path": "model-00003-of-00004.safetensors"
+      },
+      {
+        "expected_bytes": 1405169256,
+        "git_oid": "a33ee1a94a22f22a64a21f4bbafd964422ccaf58",
+        "lfs_sha256": "76ac0c0dbd790a1e003d2fc098a297bfe82a422c129046e9d4e67e6ed3d820f0",
+        "path": "model-00004-of-00004.safetensors"
+      },
+      {
+        "expected_bytes": 29836,
+        "git_oid": "0a44141ea4f7cc08815fc8fee6542e4c3bcf0508",
+        "lfs_sha256": null,
+        "path": "model.safetensors.index.json"
+      },
+      {
+        "expected_bytes": 801,
+        "git_oid": "4ccaca4ecb4010d47211e47ab421192ad7923c30",
+        "lfs_sha256": null,
+        "path": "special_tokens_map.json"
+      },
+      {
+        "expected_bytes": 3476578,
+        "git_oid": "4dbede017f0aa7bd21a51925fefd87fe788eb6d1",
+        "lfs_sha256": null,
+        "path": "tokenizer.json"
+      },
+      {
+        "expected_bytes": 9930,
+        "git_oid": "1ad83527e5d46456be211e7391ecae541401fda6",
+        "lfs_sha256": null,
+        "path": "tokenizer_config.json"
+      },
+      {
+        "expected_bytes": 776995,
+        "git_oid": "0a11f2016e660fd490f7bf168e6d1f9c86a8f744",
+        "lfs_sha256": null,
+        "path": "vocab.json"
+      }
+    ],
+    "expected_payload_bytes": 16346508463,
+    "expected_weight_bytes": 16341771384,
+    "metadata_dir": "data/restricted/strong_baselines/acquisition_records/granite33-8b-51dd4bc2ade4",
+    "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+    "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+    "snapshot_dir": "data/restricted/strong_baselines/models/ibm-granite--granite-3.3-8b-instruct--51dd4bc2ade4",
+    "staging_dir": "data/restricted/strong_baselines/models/.task169-granite33-8b.stage",
+    "weight_layout": {
+      "index": "model.safetensors.index.json",
+      "kind": "sharded_safetensors",
+      "required_shards": [
+        "model-00001-of-00004.safetensors",
+        "model-00002-of-00004.safetensors",
+        "model-00003-of-00004.safetensors",
+        "model-00004-of-00004.safetensors"
+      ]
+    }
+  },
+  "network": {
+    "official_metadata_api": "https://huggingface.co/api/models",
+    "ordinary_retry_only": true,
+    "required_hf_endpoint": "https://hf-mirror.com",
+    "required_proxy": "https://proxy.example.invalid:3128",
+    "resume_required": true
+  },
+  "runtime_canary": {
+    "address_space_limit_bytes": 51539607552,
+    "case_ids": [
+      "sbc-controller-001",
+      "sbc-finalizer-001"
+    ],
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "local_files_only": true,
+    "max_new_tokens_per_case": 512,
+    "schema_only_retries_per_case": 1,
+    "task158_suite": "data/rehearsal_plan/strong_baseline_competence_suite_v1.json",
+    "task158_suite_hash": "sha256:7b8f8d021b24cb244f0df0f6b02b3da91120df3817a5366350895eb24f4646dc",
+    "threads": 8,
+    "timeout_seconds": 900,
+    "trust_remote_code": false
+  },
+  "schema_version": "av-trace.granite33-acquisition-plan/1.0",
+  "task": 169
+}

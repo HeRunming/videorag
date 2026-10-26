@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "av-trace"
+version = "0.1.0"
+description = "Pilot-0 synthetic validation and deterministic replay reference package"
+requires-python = ">=3.11"
+dependencies = [
+  "av>=12",
+  "jsonschema>=4.18",
+  "numpy>=1.26",
+  "Pillow>=10",
+]
+
+[project.scripts]
+av-trace = "av_trace.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"av_trace_data/docs/spec" = [
+  "docs/spec/agent_action_schema.json",
+  "docs/spec/episode_schema.json",
+  "docs/spec/final_answer_schema.json",
+  "docs/spec/tool_response_schema.json",
+  "docs/spec/trajectory_schema.json",
+]
+"av_trace_data/docs/data" = ["docs/data/acquisition_manifest_schema.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

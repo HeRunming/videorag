@@ -1,0 +1,931 @@
+{
+  "schema_version": "scale1a-full-timeline-plan/1.0",
+  "plan_id": "AV-TRACE-SCALE1A-FULL-TIMELINE",
+  "created_date": "2026-09-11",
+  "decision": "READY_TO_IMPLEMENT",
+  "stage": "MACHINE_ADJUDICATED_PROVISIONAL_SCALE1A",
+  "human_reviewed": false,
+  "gold_annotation": false,
+  "final_benchmark_status": "FINAL_BENCHMARK_NOT_YET_VALIDATED",
+  "authoritative_inputs": [
+    "data/acquisition_plan/noaa01_exact_asset_plan.json",
+    "data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json",
+    "data/restricted/noaa01/manifests/noaa01_media_audit.json",
+    "data/restricted/noaa01/machine_review/noaa01_model_manifest.json",
+    "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+    "data/restricted/noaa01/real_av_mvp/frozen_index.json",
+    "data/restricted/noaa01/real_av_mvp/interventions.json",
+    "data/restricted/noaa01/real_av_mvp/validation.json",
+    "mvp/results/noaa01_real_av_mvp/report.json",
+    "mvp/results/noaa01_real_av_mvp/run_manifest.json",
+    "docs/spec/agent_action_schema.json",
+    "docs/spec/tool_response_schema.json",
+    "docs/spec/final_answer_schema.json",
+    "docs/spec/trajectory_schema.json"
+  ],
+  "scope": {
+    "source_count": 5,
+    "family_count_before_migration": 6,
+    "retrieval_primary": "source_scoped",
+    "retrieval_secondary": "cross_source",
+    "paired_baseline": "frozen 18-window Pilot-0",
+    "non_claims": [
+      "human-validated answers or evidence",
+      "minimal sufficient evidence",
+      "modality necessity",
+      "learned-agent performance unless separately executed",
+      "public release readiness"
+    ]
+  },
+  "sources": [
+    {
+      "candidate_id": "cand-045",
+      "stable_source_id": "NOAA-OceanToday-webinar1",
+      "basename": "oceantodaywebinar_040720-lg.mp4",
+      "duration_s": 1772.44,
+      "size_bytes": 58576631,
+      "sha256": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6",
+      "fine_count": 443,
+      "context_count": 110,
+      "cell_and_frame_count": 444,
+      "whisper_call_count": 60,
+      "ast_call_count": 443
+    },
+    {
+      "candidate_id": "cand-047",
+      "stable_source_id": "NOAA-OceanToday-webinar3",
+      "basename": "oceantoday-watchparty-050720b-sm.mp4",
+      "duration_s": 1983.7818,
+      "size_bytes": 284515787,
+      "sha256": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160",
+      "fine_count": 495,
+      "context_count": 123,
+      "cell_and_frame_count": 496,
+      "whisper_call_count": 67,
+      "ast_call_count": 495
+    },
+    {
+      "candidate_id": "cand-049",
+      "stable_source_id": "NOAA-OceanToday-webinar5",
+      "basename": "05_archive_070620_sm.mp4",
+      "duration_s": 2465.329542,
+      "size_bytes": 491943858,
+      "sha256": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+      "fine_count": 616,
+      "context_count": 154,
+      "cell_and_frame_count": 617,
+      "whisper_call_count": 83,
+      "ast_call_count": 616
+    },
+    {
+      "candidate_id": "cand-051",
+      "stable_source_id": "NOAA-OceanToday-webinar7",
+      "basename": "07_trashtalk_archive_0902_smc.mp4",
+      "duration_s": 3718.581542,
+      "size_bytes": 558522234,
+      "sha256": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+      "fine_count": 929,
+      "context_count": 232,
+      "cell_and_frame_count": 930,
+      "whisper_call_count": 124,
+      "ast_call_count": 929
+    },
+    {
+      "candidate_id": "cand-052",
+      "stable_source_id": "NOAA-OceanToday-webinar8",
+      "basename": "08_climatealive_archive_1001_smc.mp4",
+      "duration_s": 3781.144042,
+      "size_bytes": 561739683,
+      "sha256": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+      "fine_count": 945,
+      "context_count": 236,
+      "cell_and_frame_count": 946,
+      "whisper_call_count": 127,
+      "ast_call_count": 945
+    }
+  ],
+  "totals": {
+    "duration_s": 13721.276926,
+    "duration_hours": 3.811466,
+    "source_bytes": 1955298193,
+    "cell_and_frame_count": 3433,
+    "fine_count": 3428,
+    "context_count": 855,
+    "temporal_segment_count": 4283,
+    "maximum_modality_segment_record_count": 12849,
+    "whisper_call_count": 461,
+    "whisper_input_audio_s": 13721.276926,
+    "ast_call_count": 3428,
+    "ast_input_audio_s": 27413.276926,
+    "clip_frame_forward_count": 3433
+  },
+  "segmentation": {
+    "time_unit": "integer_microseconds_in_storage; six-decimal seconds in JSON",
+    "base_lattice": {
+      "cell_length_s": 4,
+      "start_rule": "4*i",
+      "end_rule": "min(4*(i+1), duration)",
+      "terminal_rule": "retain final sub-four-second cell for coverage/frame sampling only"
+    },
+    "fine": {
+      "nominal_length_s": 8,
+      "stride_s": 4,
+      "start_rule": "4*i",
+      "admission_rule": "duration-start >= 4",
+      "end_rule": "min(start+8,duration)",
+      "terminal_length_range_s": [4, 8]
+    },
+    "context": {
+      "nominal_length_s": 32,
+      "stride_s": 16,
+      "start_rule": "16*i",
+      "admission_rule": "duration-start >= 16",
+      "end_rule": "min(start+32,duration)",
+      "terminal_length_range_s": [16, 32]
+    },
+    "segment_id": "seg.<first12_source_sha256>.<fine_or_context>.<zero_padded_lattice_index>",
+    "segment_id_forbidden_inputs": [
+      "question",
+      "answer",
+      "family_id",
+      "review_id",
+      "evidence_id",
+      "state_role",
+      "intervention_id"
+    ],
+    "vision_frame_rule": "one frame per base cell at min(cell_start+2s,duration-one_video_timebase_tick)",
+    "decode_policy": "one sequential source decode feeding bounded in-memory modality buffers; no persisted media derivatives"
+  },
+  "observation_layers": {
+    "speech": {
+      "layer_version": "whisper-tiny-en-timestamped/1.0",
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "weight_sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad",
+      "sampling_rate_hz": 16000,
+      "chunk_length_s": 30,
+      "stride_s": 30,
+      "terminal_rule": "retain final short chunk; searchable only if quality gate passes",
+      "timestamp_requirement": "segment timestamps mandatory; word timestamps optional",
+      "inference": {
+        "local_files_only": true,
+        "do_sample": false,
+        "num_beams": 1,
+        "torch_deterministic_algorithms": true
+      },
+      "searchable": "timestamped ASR pieces projected to fine/context records after quality gate",
+      "citable": "exact interval output only after read_transcript and media verification"
+    },
+    "ambient": {
+      "layer_version": "ast-audioset-top15/1.0",
+      "model_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "weight_sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+      "sampling_rate_hz": 16000,
+      "inference_unit": "each fine window",
+      "top_k_labels": 15,
+      "probability_transform": "sigmoid",
+      "context_aggregation": "deterministic max and mean over child fine windows",
+      "generic_label_discount": "frozen Task-84-compatible versioned table",
+      "claim_boundary": "provisional event-model observation, not human audible-event gold",
+      "citable": "exact interval audio observation only after inspect_clip and media verification"
+    },
+    "vision": {
+      "routing_layer": {
+        "version": "opencv-routing/1.0",
+        "features": [
+          "luminance",
+          "color_histogram",
+          "edge_density",
+          "motion_or_change",
+          "blank_frame",
+          "pinned_haar_face_presence"
+        ],
+        "semantic_claim_allowed": false
+      },
+      "embedding_layer": {
+        "version": "clip-visual/1.0",
+        "model_id": "openai/clip-vit-base-patch32",
+        "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+        "current_local_status": "NOT_PRESENT_IMPLEMENTATION_GATE",
+        "acquisition_cap_bytes": 1073741824,
+        "requirements": [
+          "restricted local snapshot",
+          "all files hashed",
+          "local-only inference",
+          "L2-normalized frame vectors",
+          "float16 serialization",
+          "float32 similarity"
+        ]
+      },
+      "fine_pooling": "L2-normalized mean of constituent four-second cell frame embeddings",
+      "context_pooling": "L2-normalized mean of constituent cell embeddings",
+      "generated_caption_searchable": false,
+      "legacy_codex_description_searchable": false,
+      "citable": "tool-time decoded frames only"
+    },
+    "binding": {
+      "version": "temporal-binding/1.0",
+      "key": "source_sha256 and four-second cell index",
+      "uses_labels_or_answers": false,
+      "context_rule": "list child binding groups"
+    }
+  },
+  "index": {
+    "backend_protocol_version": "0.3.0",
+    "record_policy": "inventory every modality/segment; omit empty or low-information records from postings with explicit reason",
+    "speech": {
+      "ranker": "bm25-okapi/1.0",
+      "tokenizer": "unicode-nfkc-casefold-ascii-alnum/1.0",
+      "token_pattern": "[a-z0-9]+",
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "ambient": {
+      "ranker": "weighted-sparse-cosine/1.0",
+      "features": "canonical AudioSet class IDs with discounted AST probabilities",
+      "query_expansion": "frozen audioset-synonyms/1.0; no family answer aliases"
+    },
+    "vision": {
+      "ranker": "clip-text-image-cosine/1.0",
+      "embedding_dtype": "float16",
+      "similarity_dtype": "float32",
+      "dimension": 512
+    },
+    "fused": {
+      "ranker": "weighted-rrf/1.0",
+      "rrf_k": 60,
+      "modality_weights": {
+        "vision": 1.0,
+        "speech": 1.0,
+        "ambient": 1.0
+      },
+      "deduplication": "source plus overlapping temporal binding group"
+    },
+    "tie_break": [
+      "descending_score",
+      "ascending_source_id",
+      "ascending_start_us",
+      "ascending_end_us",
+      "ascending_segment_id",
+      "ascending_modality"
+    ],
+    "search_modes": {
+      "primary": "source_scoped",
+      "secondary_unpooled": "cross_source"
+    },
+    "tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "search_fused",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "search_arguments": [
+      "query",
+      "top_k",
+      "time_range",
+      "exclude_result_ids",
+      "search_scope"
+    ],
+    "pointer_payload_fields": [
+      "result_type",
+      "result_id",
+      "source_ref",
+      "interval",
+      "modality",
+      "scale",
+      "score",
+      "generic_preview"
+    ],
+    "pointer_forbidden_fields": [
+      "filename",
+      "title",
+      "url",
+      "transcript_excerpt",
+      "ast_labels",
+      "generated_caption",
+      "family_id",
+      "review_id",
+      "evidence_id",
+      "claim_id",
+      "state_role",
+      "intervention_id"
+    ],
+    "tool_time_verification": [
+      "restricted path confinement",
+      "source size",
+      "source SHA256",
+      "requested stream presence",
+      "PyAV interval decode",
+      "finite samples or frames",
+      "interval coverage",
+      "temporary buffer deletion"
+    ],
+    "freeze_manifest_required_fields": [
+      "source_hashes",
+      "model_file_hashes",
+      "code_hash",
+      "runtime_versions",
+      "segmentation",
+      "layer_configs",
+      "record_counts_and_exclusions",
+      "rankers_and_tokenizers",
+      "synonym_tables",
+      "vector_dtype_and_dimension",
+      "tie_break",
+      "per_shard_hashes",
+      "root_index_hash",
+      "fixed_query_suite_ranking_hash"
+    ]
+  },
+  "hard_negatives": {
+    "classes": [
+      "same_video_near_temporal",
+      "same_topic_lexical",
+      "same_modality_semantic",
+      "cross_modal_mismatch",
+      "repeated_or_duplicate_content",
+      "title_credit_metadata_shortcut"
+    ],
+    "near_temporal": {
+      "maximum_center_distance_s": 120,
+      "minimum_center_distance_s": 32,
+      "support_exclusion_expansion_s": 16
+    },
+    "admission_checks": [
+      "source and segment provenance valid",
+      "no overlap with provisional or alternative support expanded by 16 seconds",
+      "normalized answer aliases absent from visible text labels",
+      "two independent machine checks find no support",
+      "duplicate cluster not split across support and negative",
+      "title credit and metadata candidates separately tagged"
+    ],
+    "machine_disagreement_disposition": "unsafe_negative",
+    "annotation_timing": "negative labels attached only after content index freeze",
+    "minimum_admitted_per_retained_family": 5,
+    "contamination_failures": [
+      "annotation IDs or state fields in searchable content",
+      "visual or ambient pointer transcript leakage",
+      "ranking changes when evaluator annotations removed",
+      "state role predictable from response mechanics",
+      "metadata-only route to support",
+      "BLOCKED direct context fused duplicate or alternative route remains"
+    ]
+  },
+  "families": [
+    {
+      "family_id": "noaa01-r004-surf-av",
+      "asset_id": "cand-049",
+      "legacy_interval_s": [1011.842, 1019.842],
+      "primary_fine_interval_s": [1012.0, 1020.0],
+      "legacy_coverage": 0.98025,
+      "disposition": "retain_high_risk_provisional",
+      "rewrite_question": null,
+      "provisional_modalities": ["vision", "ambient"],
+      "expected_route": [
+        "search_visual with question-derived water-condition query",
+        "inspect visual candidate",
+        "search_ambient_audio bound to visual interval",
+        "inspect audio candidate"
+      ],
+      "distractor_pressure": [
+        "repeated surf and coastal footage",
+        "speech-dominated AST labels",
+        "nearby beach-safety narration"
+      ],
+      "query_families": [
+        "person water conditions near shore",
+        "environmental sounds same interval water"
+      ],
+      "forbidden_seed_aliases": ["surf", "ocean", "waves", "wind"],
+      "clean_gate": "both provisional routes reachable within top20 and unchanged budget",
+      "blocked": {
+        "mechanism": "modality_channel_outage",
+        "channel": "ambient",
+        "suppression": "all ambient fine context fused and derived records"
+      },
+      "restored": {
+        "trigger": "get_channel_status ambient",
+        "must_reacquire": true
+      },
+      "no_trigger": "same actions with restoration hook disabled cannot recover",
+      "failure_criteria": [
+        "visual anchor absent",
+        "specific AST event absent at interval",
+        "ambient alternative remains unblocked",
+        "answer supported only by speech"
+      ],
+      "metric_limits": ["exclude from modality necessity"]
+    },
+    {
+      "family_id": "noaa01-r007-opening-plastic-waste",
+      "asset_id": "cand-051",
+      "legacy_interval_s": [0.0, 8.0],
+      "primary_fine_interval_s": [0.0, 8.0],
+      "legacy_coverage": 1.0,
+      "disposition": "rewrite_then_retain_or_exclude",
+      "rewrite_question": "Which discarded material appears in the introductory montage?",
+      "provisional_modalities": ["vision"],
+      "expected_route": [
+        "search_visual with question-derived montage query",
+        "inspect 0-8 second visual candidate"
+      ],
+      "distractor_pressure": [
+        "repeated debris and plastic imagery",
+        "opening title frames",
+        "lexical waste references in speech",
+        "absolute-start shortcut"
+      ],
+      "query_families": [
+        "discarded material introductory montage",
+        "waste material shown in montage"
+      ],
+      "forbidden_seed_aliases": ["plastic waste", "plastic bottle"],
+      "clean_gate": "top20 reachability in ordinary and temporal-term-masked diagnostics",
+      "blocked": {
+        "mechanism": "necessity_group_withholding",
+        "suppression": "all overlapping fine context fused and duplicate support routes"
+      },
+      "restored": {
+        "trigger": "second distinct visual query before dispatch",
+        "must_reacquire": true
+      },
+      "no_trigger": "same two searches cannot reach withheld or duplicate support",
+      "failure_criteria": [
+        "only timestamp or opening term retrieves support",
+        "alternative plastic footage not catalogued",
+        "duplicate answer route remains"
+      ]
+    },
+    {
+      "family_id": "noaa01-r011-bag-by-fence",
+      "asset_id": "cand-051",
+      "legacy_interval_s": [3055.773, 3063.773],
+      "primary_fine_interval_s": [3056.0, 3064.0],
+      "legacy_coverage": 0.971625,
+      "disposition": "retain_subject_to_visibility_gate",
+      "rewrite_question": null,
+      "provisional_modalities": ["vision"],
+      "expected_route": [
+        "search_visual for walking person beside fence",
+        "inspect visual candidate"
+      ],
+      "distractor_pressure": [
+        "people and webinar panes",
+        "other waste objects",
+        "same-interval speech mentioning plastic bottle"
+      ],
+      "query_families": [
+        "person carrying object beside fence",
+        "walking beside fence carrying something"
+      ],
+      "forbidden_seed_aliases": ["large bag", "bag"],
+      "clean_gate": "visual support reachable within top20",
+      "blocked": {
+        "mechanism": "necessity_group_withholding",
+        "suppression": "all overlapping fine context fused and duplicate support routes"
+      },
+      "restored": {
+        "trigger": "second distinct visual query before dispatch",
+        "must_reacquire": true
+      },
+      "no_trigger": "same sequence cannot recover",
+      "failure_criteria": [
+        "speech leaks answer",
+        "duplicate shot remains",
+        "object not resolvable in decoded frames"
+      ]
+    },
+    {
+      "family_id": "noaa01-r014-aircraft-storm-view",
+      "asset_id": "cand-052",
+      "legacy_interval_s": [443.899, 451.899],
+      "primary_fine_interval_s": [444.0, 452.0],
+      "legacy_coverage": 0.987375,
+      "disposition": "rewrite_then_retain_or_exclude",
+      "rewrite_question": "What view is shown during the segment about collecting observations inside a hurricane?",
+      "provisional_modalities": ["vision"],
+      "expected_route": [
+        "speech localization or direct visual search",
+        "temporal binding to visual segment",
+        "inspect visual candidate"
+      ],
+      "distractor_pressure": [
+        "storm and cloud graphics",
+        "other aircraft references",
+        "weather title montage",
+        "other weather footage"
+      ],
+      "query_families": [
+        "view shown collecting observations inside hurricane",
+        "hurricane observation segment visual scene"
+      ],
+      "forbidden_seed_aliases": ["aircraft wing", "storm clouds"],
+      "clean_gate": "measure one direct visual and one speech-to-visual route without claiming joint necessity",
+      "blocked": {
+        "mechanism": "necessity_group_withholding",
+        "suppression": "all visual fine context fused duplicate support routes; speech localization may remain non-supporting"
+      },
+      "restored": {
+        "trigger": "second distinct visual query before dispatch",
+        "must_reacquire": true
+      },
+      "no_trigger": "speech localization alone cannot satisfy visual claim",
+      "failure_criteria": [
+        "only metadata title or OCR supplies answer",
+        "no top20 clean route",
+        "alternative aircraft footage remains"
+      ]
+    },
+    {
+      "family_id": "noaa01-r016-three-factors-vs",
+      "asset_id": "cand-052",
+      "legacy_interval_s": [1331.698, 1339.698],
+      "primary_fine_interval_s": [1332.0, 1340.0],
+      "legacy_coverage": 0.96225,
+      "disposition": "retain_as_corroboration_not_necessity",
+      "rewrite_question": null,
+      "provisional_modalities": ["vision", "speech"],
+      "expected_route": [
+        "search_speech for stated factors",
+        "read transcript",
+        "temporally bound visual search",
+        "inspect graphic"
+      ],
+      "distractor_pressure": [
+        "repeated hurricane explanations",
+        "other numbered lists",
+        "r017 hurricane speech in same source"
+      ],
+      "query_families": [
+        "how many hurricane formation factors stated",
+        "formation factors educational graphic"
+      ],
+      "forbidden_seed_aliases": ["three factors"],
+      "clean_gate": "speech and vision candidate support both reachable within top20",
+      "blocked": {
+        "mechanism": "modality_channel_outage",
+        "channel": "speech",
+        "suppression": "all speech transcript and speech-contributed fused records"
+      },
+      "restored": {
+        "trigger": "get_channel_status speech and transcript",
+        "must_reacquire": true
+      },
+      "no_trigger": "speech cannot return",
+      "failure_criteria": [
+        "number unavailable in decoded frame or transcript",
+        "remaining modality independently answers via uncatalogued route",
+        "binding uses evaluator-private IDs"
+      ],
+      "metric_limits": [
+        "All-Evidence is hypothesis-conditioned",
+        "Modality Recall is null"
+      ]
+    },
+    {
+      "family_id": "noaa01-r017-north-atlantic-basin",
+      "asset_id": "cand-052",
+      "legacy_interval_s": [2663.396, 2671.396],
+      "primary_fine_interval_s": [2664.0, 2672.0],
+      "legacy_coverage": 0.9245,
+      "disposition": "retain_subject_to_alternative_utterance_scan",
+      "rewrite_question": null,
+      "provisional_modalities": ["speech"],
+      "expected_route": [
+        "search_speech for main hurricane-activity basin",
+        "read transcript"
+      ],
+      "distractor_pressure": [
+        "repeated hurricane and basin discussion",
+        "r016 speech",
+        "generic webinar narration"
+      ],
+      "query_families": [
+        "speaker main area hurricane activity basin",
+        "which basin main hurricane activity"
+      ],
+      "forbidden_seed_aliases": ["north atlantic", "north atlantic basin"],
+      "clean_gate": "transcript support reachable within top20",
+      "blocked": {
+        "mechanism": "modality_channel_outage",
+        "channel": "speech",
+        "suppression": "all speech transcript and speech-contributed context or fused records"
+      },
+      "restored": {
+        "trigger": "get_channel_status speech and transcript",
+        "must_reacquire": true
+      },
+      "no_trigger": "no speech result or citation can be produced",
+      "failure_criteria": [
+        "metadata supplies basin",
+        "no top20 route",
+        "uncatalogued alternate utterance remains in BLOCKED"
+      ]
+    }
+  ],
+  "interventions": {
+    "budgets": {
+      "primary": {
+        "max_steps": 10,
+        "cost_limit": 12.0
+      },
+      "sensitivity_unpooled": {
+        "max_steps": 20,
+        "cost_limit": 24.0
+      },
+      "tool_costs": {
+        "finalize": 0.0,
+        "get_channel_status": 0.25,
+        "inspect_clip": 2.0,
+        "read_transcript": 1.0,
+        "search_visual": 1.0,
+        "search_speech": 1.0,
+        "search_ambient_audio": 1.0,
+        "search_fused": 1.25
+      }
+    },
+    "common_invariants": [
+      "identical immutable index ranker budget costs shapes and seed across CLEAN BLOCKED RESTORED",
+      "CLEAN has reachable provisional support",
+      "BLOCKED suppresses direct context fused duplicate and alternative routes",
+      "BLOCKED retains at least five hard negatives",
+      "RESTORED pretrigger is byte-identical to BLOCKED",
+      "trigger is deterministic and answer-independent",
+      "posttrigger availability equals CLEAN",
+      "evidence must be searched and observed again",
+      "matched no-trigger cannot recover"
+    ],
+    "hard_negative_displacement_shadow": {
+      "pooled_with_cbr": false,
+      "operation": "on first eligible query demote first accepted result below top_k and substitute one admitted hard negative; later rankings unchanged",
+      "required_controls": [
+        "same trajectory without displacement",
+        "same displacement with recovery disabled"
+      ]
+    }
+  },
+  "metrics": {
+    "retained_task90": [
+      "Evidence Recall",
+      "All-Evidence Success",
+      "Answer Score",
+      "Citation F1",
+      "Supported-Claim Rate",
+      "Success@Budget",
+      "Premature Stop",
+      "Recovery"
+    ],
+    "forced_null": {
+      "Modality Recall": "no human-validated modality necessity"
+    },
+    "full_timeline": [
+      {
+        "name": "Recall@K",
+        "k": [1, 5, 10, 20],
+        "denominator": "registered provisional evidence units with at least one indexed support route",
+        "hit_rule": "same modality and temporal IoU >= 0.5 or registered-interval coverage >= 0.8; accepted alternatives count",
+        "null_rule": "null when denominator is zero"
+      },
+      {
+        "name": "Rank of first accepted evidence",
+        "denominator": "queries with indexed accepted support",
+        "value": "minimum accepted-support rank",
+        "null_rule": "null when no accepted support exists in corpus; no_hit when not retrieved to evaluated depth",
+        "report": ["hit_rate", "conditional_median_rank"]
+      },
+      {
+        "name": "All-Evidence@K",
+        "k": [1, 5, 10, 20],
+        "denominator": "families with at least one indexed provisional support set",
+        "hit_rule": "union of top-K results covers one complete accepted support set",
+        "eligibility": "hypothesis_conditioned"
+      },
+      {
+        "name": "Inspected-video fraction",
+        "denominator": "source duration",
+        "numerator": "union duration of unique inspected or read intervals",
+        "zero_rule": "zero for no inspection"
+      },
+      {
+        "name": "Distractor burden",
+        "denominator": "inspected observations",
+        "numerator": "inspected observations supporting no registered or accepted alternative claim",
+        "null_rule": "null when no observations inspected"
+      },
+      {
+        "name": "Query reformulation gain",
+        "denominator": "trajectories with at least two content searches",
+        "value": "best evidence recall after searches 2..N minus recall after first search",
+        "null_rule": "null for fewer than two content searches"
+      },
+      {
+        "name": "Cross-modal routing switches",
+        "denominator": "content search and observation action transitions",
+        "value": "count modality changes; also report per-content-action rate",
+        "ignored_actions": ["get_channel_status", "finalize"]
+      },
+      {
+        "name": "Bounded-to-full degradation",
+        "denominator": "exact family state policy budget metric pairs",
+        "value": "full_timeline_value minus pilot0_value",
+        "null_rule": "null for missing pair; never impute"
+      },
+      {
+        "name": "Recovery after hard-negative displacement",
+        "denominator": "eligible displaced trajectories",
+        "numerator": "supported successful finalizations after displacement",
+        "also_report": ["evidence_reacquisition", "answer_recovery"]
+      }
+    ],
+    "alternative_support_policy": "immutable evaluator-private accepted sets; new credible alternative invalidates pair until both indices and interventions regenerate",
+    "row_fields": [
+      "numerator",
+      "denominator",
+      "eligible_family_count",
+      "eligible_source_count",
+      "scope",
+      "state",
+      "policy",
+      "k_or_budget",
+      "eligibility_status",
+      "eligibility_reason",
+      "LOW_N_DESCRIPTIVE_SCALE1A"
+    ],
+    "non_pooling": [
+      "source_scoped versus cross_source",
+      "primary versus sensitivity budget",
+      "rewritten versus original question"
+    ]
+  },
+  "compute_and_storage": {
+    "resources": {
+      "cpu_cores": "8-16",
+      "ram_gib": "16-32",
+      "gpu": "one CUDA device >=8 GiB; models loaded sequentially",
+      "initial_gpu_hour_reservation": 12,
+      "initial_cpu_hour_reservation": 24,
+      "cpu_only_wall_hour_cap": 72
+    },
+    "derived_storage_estimates": {
+      "clip_cell_vectors_mb": 3.52,
+      "clip_segment_vectors_mb": 4.39,
+      "ast_sparse_target_mb": 8,
+      "asr_and_bm25_target_mb": 40,
+      "manifests_and_fusion_target_mb": 80,
+      "checkpoints_and_results_target_mb": 120,
+      "planned_total_cap_mib": 256,
+      "hard_fail_cap_mib": 512,
+      "excludes": ["source media", "model snapshots"]
+    },
+    "clip_snapshot_cap_bytes": 1073741824,
+    "measurement_gate": [
+      "calls_per_second",
+      "peak_ram",
+      "peak_vram",
+      "bytes_per_record",
+      "decode_overhead"
+    ],
+    "pause_thresholds": {
+      "projected_gpu_hours": 12,
+      "projected_cpu_hours": 24,
+      "peak_ram_gib": 32,
+      "peak_vram_gib": 8,
+      "derived_storage_mib": 512
+    },
+    "checkpoint": {
+      "key": "source_sha256/layer_version/scale/shard_index/config_hash",
+      "commit": "temporary file then fsync hash verification atomic rename",
+      "reuse": "only exact key count byte and hash match",
+      "partial_policy": "delete partial shard",
+      "decoded_media_allowed": false
+    }
+  },
+  "execution_stages": [
+    {
+      "id": "dry_run_inventory",
+      "requirements": [
+        "verify five size SHA256 stream and duration bindings",
+        "materialize segment tables only",
+        "assert 3433 cells 3428 fine 855 context"
+      ]
+    },
+    {
+      "id": "small_shard_smoke",
+      "source": "cand-049",
+      "interval_s": [0, 120],
+      "expected": {
+        "fine": 30,
+        "context": 7,
+        "frames": 30,
+        "whisper_calls": 4,
+        "ast_calls": 30
+      },
+      "requirements": [
+        "exercise all layers APIs checkpoints empty paths and cleanup",
+        "measure compute and storage"
+      ]
+    },
+    {
+      "id": "one_video_pilot",
+      "source": "cand-049",
+      "expected": {
+        "fine": 616,
+        "context": 154,
+        "frames": 617,
+        "whisper_calls": 83,
+        "ast_calls": 616
+      },
+      "requirements": [
+        "run r004 CLEAN BLOCKED RESTORED",
+        "run no-trigger and displacement controls"
+      ]
+    },
+    {
+      "id": "all_five_build",
+      "requirements": [
+        "one source and one model layer at a time",
+        "atomic source modality shard commits",
+        "resource projections within caps"
+      ]
+    },
+    {
+      "id": "migration_run",
+      "requirements": [
+        "all retained families source_scoped",
+        "separate cross_source stress run",
+        "paired Pilot-0 results"
+      ]
+    },
+    {
+      "id": "deterministic_replay",
+      "requirements": [
+        "fresh restricted output root",
+        "segment output root index and fixed query ranking hashes match",
+        "family trajectories match"
+      ]
+    },
+    {
+      "id": "independent_red_team",
+      "requirements": [
+        "recompute counts hashes and metrics",
+        "leakage and negative admission audit",
+        "verify no media derivatives",
+        "challenge family migration and CBR proofs"
+      ]
+    }
+  ],
+  "go_no_go": {
+    "SCALE1A_ENGINEERING_GO": {
+      "all_required": true,
+      "criteria": [
+        "all five exact sources verify and exact segment counts match",
+        "all layers and indices build within resource caps",
+        "no media derivative or restricted leakage",
+        "deterministic APIs hashes restart and replay pass",
+        "at least four families retained including speech and cross-modal or ambient",
+        "every retained family passes CBR and no-trigger with at least five hard negatives",
+        "all metrics independently recompute"
+      ]
+    },
+    "SCALE1A_DIAGNOSTIC_GO": {
+      "requires": "SCALE1A_ENGINEERING_GO",
+      "all_required": true,
+      "criteria": [
+        "at least two retained families have nonzero bounded-to-full degradation in Recall@5 All-Evidence@5 inspected-video fraction or distractor burden",
+        "at least one family recovers after hard-negative displacement and matched no-recovery control does not",
+        "at least two policies differ on at least two Acquire Ground Act axes across at least two families",
+        "at least one answer/evidence/grounding diagnostic separation is observed",
+        "effect survives r007 temporal-shortcut masking and is not solely source title metadata or one family",
+        "all claims descriptive paired machine-provisional and low-N"
+      ]
+    },
+    "SCALE1A_DIAGNOSTIC_INCONCLUSIVE": {
+      "when": "engineering passes but one or more diagnostic criteria fail"
+    },
+    "SCALE1A_NO_GO": {
+      "when_any": [
+        "engineering invariant failure",
+        "non-deterministic source or index replay",
+        "leakage",
+        "BLOCKED support remains",
+        "RESTORED cannot reacquire",
+        "unapproved resource cap excess",
+        "fewer than four retained families"
+      ]
+    },
+    "always_report": "FINAL_BENCHMARK_NOT_YET_VALIDATED"
+  },
+  "implementation_constraints": [
+    "do not reinterpret duplicated normative JSON values from prose",
+    "do not call provisional support gold or minimal",
+    "do not persist extracted frames audio or clips",
+    "do not mutate Pilot-0 artifacts",
+    "fail closed on missing exact CLIP revision or model integrity",
+    "red-team before final Scale-1A decision"
+  ]
+}

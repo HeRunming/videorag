@@ -1,0 +1,491 @@
+{
+  "annotation": {
+    "adjudicator": "synthetic_adjudicator",
+    "alternative_evidence_finder": "synthetic_alternative_finder",
+    "alternative_search_completed": true,
+    "authors": [
+      "synthetic_author"
+    ],
+    "shortcut_audits": [
+      {
+        "audit_type": "question_only",
+        "notes": "Answers are arbitrary registered tokens.",
+        "status": "pass"
+      },
+      {
+        "audit_type": "intervention_artifact",
+        "notes": "No condition marker is embedded in source media.",
+        "status": "pass"
+      }
+    ],
+    "status": "accepted",
+    "validators": [
+      "synthetic_validator_a",
+      "synthetic_validator_b"
+    ],
+    "version": "synthetic-v1"
+  },
+  "answer_spec": {
+    "display_answer": "The inspector reported five units and later reported status CLEAR.",
+    "forbidden_claim_ids": [],
+    "optional_claim_ids": [],
+    "required_claim_ids": [
+      "claim_syn_f08_count_status"
+    ]
+  },
+  "claim_evidence_graph": {
+    "accepted_sufficient_sets": [
+      {
+        "claim_ids": [
+          "claim_syn_f08_count_status"
+        ],
+        "evidence_ids": [
+          "s4_speech_count",
+          "s4_speech_status"
+        ],
+        "hop_ids": [
+          "hop_extract_s4_speech_count",
+          "hop_extract_s4_speech_status",
+          "hop_syn_f08_count_status_route_1"
+        ],
+        "minimality_validated": true,
+        "satisfiability_validated": true,
+        "set_id": "ses_syn_f08_count_status_1",
+        "validator_ids": [
+          "synthetic_validator_a",
+          "synthetic_validator_b"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "accepted_aliases": [
+          "The inspector reported five units and later reported status CLEAR."
+        ],
+        "answer_value": {
+          "status": "CLEAR",
+          "units": 5
+        },
+        "claim_id": "claim_syn_f08_count_status",
+        "contradiction_claim_ids": [],
+        "proposition": "The inspector reported five units and later reported status CLEAR.",
+        "requirement": "required"
+      }
+    ],
+    "evidence_units": [
+      {
+        "evidence_id": "s4_speech_count",
+        "intervals": [
+          {
+            "end_s": 152.0,
+            "start_s": 146.0
+          }
+        ],
+        "modality": "speech",
+        "observation": "inspector says FIVE UNITS",
+        "provenance": {
+          "asset_id": "syn_source_04",
+          "stream_hash": "sha256:6dc71a8dee38eeeb71b9295367e12c78728965712127dc2ca938f0db8ed66535",
+          "transformation_ids": [
+            "exact_transcript_v1"
+          ]
+        },
+        "stream_id": "syn_source_04_audio"
+      },
+      {
+        "evidence_id": "s4_speech_status",
+        "intervals": [
+          {
+            "end_s": 438.0,
+            "start_s": 432.0
+          }
+        ],
+        "modality": "speech",
+        "observation": "inspector says STATUS CLEAR",
+        "provenance": {
+          "asset_id": "syn_source_04",
+          "stream_hash": "sha256:6dc71a8dee38eeeb71b9295367e12c78728965712127dc2ca938f0db8ed66535",
+          "transformation_ids": [
+            "exact_transcript_v1"
+          ]
+        },
+        "stream_id": "syn_source_04_audio"
+      }
+    ],
+    "hops": [
+      {
+        "description": "Extract the registered speech observation: inspector says FIVE UNITS.",
+        "hop_id": "hop_extract_s4_speech_count",
+        "hop_type": "speech_content",
+        "input_evidence_ids": [
+          "s4_speech_count"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Extract the registered speech observation: inspector says STATUS CLEAR.",
+        "hop_id": "hop_extract_s4_speech_status",
+        "hop_type": "speech_content",
+        "input_evidence_ids": [
+          "s4_speech_status"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Combine temporally registered evidence for accepted route 1.",
+        "hop_id": "hop_syn_f08_count_status_route_1",
+        "hop_type": "temporal_order",
+        "input_evidence_ids": [],
+        "input_hop_ids": [
+          "hop_extract_s4_speech_count",
+          "hop_extract_s4_speech_status"
+        ]
+      }
+    ],
+    "necessity_groups": [
+      {
+        "claim_ids": [
+          "claim_syn_f08_count_status"
+        ],
+        "group_id": "ng_syn_f08_count_status",
+        "intersects_all_accepted_sets": true,
+        "member_evidence_ids": [
+          "s4_speech_count",
+          "s4_speech_status"
+        ],
+        "removal_validated": true,
+        "required_hop_ids": [
+          "hop_extract_s4_speech_count",
+          "hop_extract_s4_speech_status",
+          "hop_syn_f08_count_status_route_1"
+        ],
+        "required_modalities": [
+          "speech"
+        ]
+      }
+    ],
+    "support_edges": [
+      {
+        "edge_id": "edge_s4_speech_count_extract",
+        "from_ids": [
+          "s4_speech_count"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s4_speech_count"
+      },
+      {
+        "edge_id": "edge_s4_speech_status_extract",
+        "from_ids": [
+          "s4_speech_status"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s4_speech_status"
+      },
+      {
+        "edge_id": "edge_syn_f08_count_status_route_1",
+        "from_ids": [
+          "hop_extract_s4_speech_count",
+          "hop_extract_s4_speech_status"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_syn_f08_count_status_route_1"
+      },
+      {
+        "edge_id": "edge_syn_f08_count_status_claim_1",
+        "from_ids": [
+          "hop_syn_f08_count_status_route_1"
+        ],
+        "relation": "hop_supports_claim",
+        "to_id": "claim_syn_f08_count_status"
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "anchor_episode_id": null,
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f08_count_status.clean",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s4_speech_count",
+          "s4_speech_status"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f08_count_status",
+      "interventions": [],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f08_count_status_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [],
+        "gold_missing_hop_types": [],
+        "gold_missing_modality_sets": [],
+        "gold_missing_necessity_group_ids": [],
+        "initial_accessible_sufficient": true,
+        "missingness_cause": "not_missing",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:2edfc90ad62228142b63426b02ef6204275de53b53e954b4c840b9b5595ac870",
+        "seed": 20260905
+      },
+      "state_role": "CLEAN"
+    },
+    {
+      "anchor_episode_id": "syn_f08_count_status.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f08_count_status.blocked",
+      "initial_state": {
+        "accessible_evidence_ids": [],
+        "enabled_channels": [
+          "visual",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f08_count_status",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": "speech",
+          "affected_evidence_ids": [
+            "s4_speech_count",
+            "s4_speech_status"
+          ],
+          "affected_necessity_group_id": null,
+          "intervention_id": "block_syn_f08_count_status",
+          "mechanism": "modality_channel_outage",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [],
+        "expected_final_sufficiency": "insufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s4_speech_count",
+          "hop_extract_s4_speech_status",
+          "hop_syn_f08_count_status_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "speech_content",
+          "temporal_order"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "speech"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f08_count_status"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:2edfc90ad62228142b63426b02ef6204275de53b53e954b4c840b9b5595ac870",
+        "seed": 20260905
+      },
+      "state_role": "BLOCKED"
+    },
+    {
+      "anchor_episode_id": "syn_f08_count_status.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f08_count_status.restored",
+      "initial_state": {
+        "accessible_evidence_ids": [],
+        "enabled_channels": [
+          "visual",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f08_count_status",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": "speech",
+          "affected_evidence_ids": [
+            "s4_speech_count",
+            "s4_speech_status"
+          ],
+          "affected_necessity_group_id": null,
+          "intervention_id": "block_syn_f08_count_status",
+          "mechanism": "modality_channel_outage",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        },
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "on_restore"
+          },
+          "affected_channel": "speech",
+          "affected_evidence_ids": [
+            "s4_speech_count",
+            "s4_speech_status"
+          ],
+          "affected_necessity_group_id": null,
+          "intervention_id": "restore_syn_f08_count_status",
+          "mechanism": "modality_channel_outage",
+          "phase": "restoration",
+          "restoration": {
+            "enabled": true,
+            "restores_intervention_id": "block_syn_f08_count_status",
+            "trigger_type": "fixed_call_index",
+            "trigger_value": 0
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f08_count_status_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s4_speech_count",
+          "hop_extract_s4_speech_status",
+          "hop_syn_f08_count_status_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "speech_content",
+          "temporal_order"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "speech"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f08_count_status"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:2edfc90ad62228142b63426b02ef6204275de53b53e954b4c840b9b5595ac870",
+        "seed": 20260905
+      },
+      "state_role": "RESTORED"
+    }
+  ],
+  "family_id": "syn_f08_count_status",
+  "intervention_family_id": "if_syn_f08_count_status",
+  "intervention_mechanism": "modality_channel_outage",
+  "question": {
+    "answer_type": "structured_claims",
+    "question_only_risk": "low",
+    "requested_granularity": "Return the exact registered values for both linked observations.",
+    "text": "How many units did the inspector report, and what status did the inspector report later?"
+  },
+  "schema_version": "0.2.0",
+  "source": {
+    "access_class": "restricted_compatibility",
+    "asset_id": "syn_source_04",
+    "content_hash": "sha256:b3a5ecfeadad10aa3db58d77e4d2cea47c9a743d0e0957cbdcb2fc5d6c1ea0e1",
+    "duration_s": 480.0,
+    "manifest_asset_id": "syn_source_04",
+    "manifest_revision": "synthetic-v1",
+    "rights_decision_id": "rights_syn_source_04",
+    "streams": [
+      {
+        "hash": "sha256:1549b29966e13ba98cd51c1e7f4c31508f157c8c1e2c4a637918331e72e1f92b",
+        "kind": "video",
+        "language": null,
+        "stream_id": "syn_source_04_video"
+      },
+      {
+        "hash": "sha256:6dc71a8dee38eeeb71b9295367e12c78728965712127dc2ca938f0db8ed66535",
+        "kind": "audio",
+        "language": "en-x-synthetic",
+        "stream_id": "syn_source_04_audio"
+      }
+    ]
+  },
+  "split": "development"
+}

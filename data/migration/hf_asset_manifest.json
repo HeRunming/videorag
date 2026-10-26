@@ -1,0 +1,847 @@
+{
+  "schema_version": "av-trace.hf-asset-manifest/1.0",
+  "generated_date": "2026-10-23",
+  "repository_root": ".",
+  "scope_note": "Logical migration assets; no upload was performed. Counts are logical groups, not every filesystem file. Overlap is avoided except that source provenance groups intentionally summarize source-side metadata separately from media.",
+  "repositories": {
+    "public_metadata_dataset": {
+      "repo_id": "blackBOX25I47/videorag",
+      "repo_id_placeholder": "ORG/av-trace-public-metadata",
+      "repo_type": "dataset",
+      "visibility": "public",
+      "gated": false,
+      "purpose": "Redacted metadata, provenance pointers, immutable revisions/hashes, and reconstruction instructions only."
+    },
+    "private_restricted_media_dataset": {
+      "repo_id_placeholder": "ORG/av-trace-restricted-media",
+      "repo_type": "dataset",
+      "visibility": "private_and_access_controlled",
+      "gated": "optional_for_future_external_access",
+      "purpose": "Reserved architecture only. Current manifest has no media authorized for upload; private status is not a license override."
+    },
+    "private_derived_index_dataset": {
+      "repo_id_placeholder": "ORG/av-trace-private-derived",
+      "repo_type": "dataset",
+      "visibility": "private",
+      "gated": false,
+      "purpose": "Approved private indexes/derived artifacts only, excluding local model weights and private governance/authorization records."
+    }
+  },
+  "policy_definitions": {
+    "never_upload": "Do not upload to any HF repository under current authorization.",
+    "delete_after_verified_migration": "Do not upload; delete local duplicate staging only after final asset and independent backups verify.",
+    "public_metadata_only": "Eligible only as redacted/non-substitutive metadata after item-level review.",
+    "private_derived_index": "May be staged only to the named private derived repo after owner approval and dependency checks.",
+    "redownload_upstream": "Migrate identity/manifest only; reconstruct from pinned upstream rather than uploading bytes.",
+    "rebuild_from_code": "Do not migrate bytes; rerun deterministic/project code."
+  },
+  "assets": [
+    {
+      "logical_id": "public.metadata.hf_recon",
+      "local_path": "data/hf_recon",
+      "bytes": 13147697,
+      "file_count": 84,
+      "sha256_or_manifest_hash": "sha256:c9ce9ae08dbd3ae57fcd0d2d1c4440a4086412f5023d48161f5b012e7836d9b2",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Mixed third-party metadata snapshots; publish only redacted facts/URLs/hashes after item-level review, never copied payloads or credential evidence.",
+      "sensitivity": "public_candidate_needs_redaction_and_rights_review",
+      "target_repo_type": "dataset_public_metadata",
+      "proposed_hf_path": "metadata/hf_recon/",
+      "upload_policy": "public_metadata_only",
+      "reconstruction_command": "python scripts/prepare_hf_upload.py --policy public_metadata_only --format json",
+      "dependencies": [
+        "docs/migration/THIRD_PARTY_DATA_NOTICE.md"
+      ],
+      "notes": [
+        "Current local tree includes raw HTTP/API snapshots; the public repository must use an explicitly reviewed subset."
+      ],
+      "release_review_status": "pending"
+    },
+    {
+      "logical_id": "public.metadata.source_recon",
+      "local_path": "data/source_recon",
+      "bytes": 5837652,
+      "file_count": 327,
+      "sha256_or_manifest_hash": "sha256:9299b3e4938241135e90c786df68705e722b8f21b67b5a1d45d829087b99e8c6",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Mixed official-source metadata, license snapshots, and route evidence; source terms remain controlling.",
+      "sensitivity": "public_candidate_needs_redaction_and_rights_review",
+      "target_repo_type": "dataset_public_metadata",
+      "proposed_hf_path": "metadata/source_recon/",
+      "upload_policy": "public_metadata_only",
+      "reconstruction_command": "python scripts/prepare_hf_upload.py --policy public_metadata_only --format json",
+      "dependencies": [
+        "docs/migration/THIRD_PARTY_DATA_NOTICE.md"
+      ],
+      "notes": [
+        "Do not publish internal proxy headers, cookies, authorization records, or copyrighted payload bodies."
+      ],
+      "release_review_status": "pending"
+    },
+    {
+      "logical_id": "media.epic.p23_102",
+      "local_path": "data/restricted/epic_p23_102_source_v1/media/P23/P23_102.MP4",
+      "bytes": 10814161307,
+      "file_count": 1,
+      "sha256_or_manifest_hash": "sha256:58f53a4ae0089bb3df4299d112d3e16740a36febd7da9aabea76bf17963da822",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "EPIC-KITCHENS-100; project record says CC-BY-NC-4.0/noncommercial, but the exact acquisition manifest expressly withholds public release and redistribution.",
+      "sensitivity": "identifiable participant home video and voice; noncommercial restricted research",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "never_upload",
+      "reconstruction_command": "Use the official EPIC/Bristol route and exact official object P23/videos/P23_102.MP4 after terms review.",
+      "dependencies": [
+        "data/restricted/epic_p23_102_source_v1/manifests/epic_p23_102_exact_manifest.json"
+      ],
+      "notes": [
+        "Do not treat a private HF repository as permission to redistribute."
+      ]
+    },
+    {
+      "logical_id": "scratch.epic.p23_102.parallel_segments",
+      "local_path": "data/restricted/epic_p23_102_source_v1/staging",
+      "bytes": 10273904267,
+      "file_count": 157,
+      "sha256_or_manifest_hash": "sha256:f142be3701cceff8f92f6afc13b9b2be238c7c7d12044d4554f8e18cefeb3b33",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Duplicate/resume staging for the EPIC P23_102 source; same EPIC restrictions, not an independent asset.",
+      "sensitivity": "restricted duplicate media chunks and transfer state",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "delete_after_verified_migration",
+      "reconstruction_command": "Recreate only by rerunning the approved exact-byte-range acquisition; do not migrate staging segments.",
+      "dependencies": [
+        "media.epic.p23_102"
+      ],
+      "notes": [
+        "Migration source cleanup candidate only after the final media hash and backups are independently verified."
+      ]
+    },
+    {
+      "logical_id": "media.epic.wave1",
+      "local_path": "data/restricted/epic_wave1_sources_v1/media",
+      "bytes": 9649898920,
+      "file_count": 2,
+      "sha256_or_manifest_hash": "sha256:d20fbb8b4e85bb14679f560fa1ef5ad719eea9ee4cb6e7484b1d0c4581d3c974",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "EPIC-KITCHENS-100 P27_101 and P28_103; CC-BY-NC/source-specific terms with no local public redistribution approval.",
+      "sensitivity": "identifiable participant home video and voice; noncommercial restricted research",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "never_upload",
+      "reconstruction_command": "Reacquire exact P27_101 and P28_103 files from the official EPIC/Bristol route using recorded MD5/SHA-256 identities.",
+      "dependencies": [
+        "data/restricted/epic_wave1_sources_v1/manifests/epic_wave1_acquisition_manifest.json"
+      ],
+      "notes": [
+        "Private HF storage is still onward copying and is blocked absent written authorization."
+      ]
+    },
+    {
+      "logical_id": "media.captaincook4d.wave0",
+      "local_path": "data/restricted/captaincook4d_wave0_sources_v3",
+      "bytes": 543574826,
+      "file_count": 3,
+      "sha256_or_manifest_hash": "sha256:eb3b0e44b4e5bc19fa6b1c6e483b12b5ec9c61c83f535e50bdbe198c2cfbf00b",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "CaptainCook4D records an Apache-2.0 dataset statement and consent/IRB statements, but operative linked consent/IRB documents are not archived; Task188 authorizes restricted internal research only and no redistribution.",
+      "sensitivity": "identifiable egocentric people, homes/workspaces, and voices",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "never_upload",
+      "reconstruction_command": "Use the official CaptainCook4D downloader/Box route for recording IDs 16_20, 15_29, and 26_22 after rights approval.",
+      "dependencies": [
+        "data/restricted/captaincook4d_wave0_sources_v3/manifests/captaincook4d_wave0_acquisition_manifest.json"
+      ],
+      "notes": [
+        "Apache-2.0 on downloader/code or a dataset statement does not itself clear participant media redistribution."
+      ]
+    },
+    {
+      "logical_id": "media.longvideobench.exact_five",
+      "local_path": "data/restricted/lvb01",
+      "bytes": 581748049,
+      "file_count": 23,
+      "sha256_or_manifest_hash": "sha256:1ec8f7555bfa3b6a0883124fa1c2d3490ef74458aec37c2481f4e745a19857b6",
+      "hash_basis": "manifest hash of data/restricted/lvb01/manifests/lvb01_acquisition_manifest.json (3402 bytes); that manifest carries verified per-file identities and aggregate sizes, so large payloads were not re-hashed for migration preparation",
+      "license_source": "LongVideoBench pinned repository acquisition; local authorization explicitly excludes release or redistribution and underlying video rights vary.",
+      "sensitivity": "third-party videos, subtitles, possible faces/voices/copyrighted content",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "never_upload",
+      "reconstruction_command": "python tools/lvb_exact_asset_downloader.py --execute  # only after renewed authorization and HF access setup",
+      "dependencies": [
+        "data/access_review/lvb01_acquisition_authorization.json"
+      ],
+      "notes": [
+        "Do not mirror the five videos or subtitles to a project HF repository."
+      ]
+    },
+    {
+      "logical_id": "media.mini_pilot.four_sources",
+      "local_path": "data/restricted/mini_pilot_sources_v1",
+      "bytes": 1134111459,
+      "file_count": 39,
+      "sha256_or_manifest_hash": "sha256:36bdc5efd973189f14f1876d4bb753617c254f1f12267cbc83934be96d680e90",
+      "hash_basis": "manifest hash of data/restricted/mini_pilot_sources_v1/acquisition_manifest.json (87251 bytes); that manifest carries verified per-file identities and aggregate sizes, so large payloads were not re-hashed for migration preparation",
+      "license_source": "Mixed Oxford CC BY-NC-SA 2.0 UK, MIT OCW, Yale/Open Media, and item-specific source terms; acquisition manifest does not authorize redistribution.",
+      "sensitivity": "lecturer faces/voices, captions, mixed attribution/share-alike obligations",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "never_upload",
+      "reconstruction_command": "Re-download each exact official URL in acquisition_manifest.json after item-level license/release review.",
+      "dependencies": [
+        "data/restricted/mini_pilot_sources_v1/acquisition_manifest.json"
+      ],
+      "notes": [
+        "Mixed-source folder must not be blanket-relicensed or mirrored."
+      ]
+    },
+    {
+      "logical_id": "media.noaa01.raw",
+      "local_path": "data/restricted/noaa01/raw",
+      "bytes": 1955309147,
+      "file_count": 10,
+      "sha256_or_manifest_hash": "sha256:92b7a1ff740d79a4253071018dc18cc3cb41570ccc62dfb08ff2a9c1c48fe2a1",
+      "hash_basis": "manifest hash of data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json (2392 bytes); that manifest carries verified per-file identities and aggregate sizes, so large payloads were not re-hashed for migration preparation",
+      "license_source": "NOAA official CDN sources, but local authorization states rights/public redistribution are held and item-level third-party/trademark/privacy review is incomplete.",
+      "sensitivity": "public-source recordings with faces/voices and unresolved item-level release status",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/noaa_exact_asset_downloader.py --execute  # only under the recorded exact-five authorization or renewed approval",
+      "dependencies": [
+        "data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json"
+      ],
+      "notes": [
+        "Public source does not equal cleared rehosting; prefer exact upstream re-download."
+      ]
+    },
+    {
+      "logical_id": "model.openai.whisper_tiny_en",
+      "local_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102",
+      "bytes": 155015248,
+      "file_count": 13,
+      "sha256_or_manifest_hash": "sha256:9bfcd976b7d3cac3affbde733a5599b660b4ef683066e446361afe4751d49548",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "openai/whisper-tiny.en exact revision 87c7102498dcde7456f24cfd30239ca606ed9063; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.openai.whisper_tiny_en.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python -c \"from huggingface_hub import snapshot_download; snapshot_download(repo_id='openai/whisper-tiny.en', revision='87c7102498dcde7456f24cfd30239ca606ed9063', local_dir='data/restricted/noaa01/models/whisper-tiny.en-87c7102')\"",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.mit.ast_audioset",
+      "local_path": "data/restricted/noaa01/models/ast-audioset-f826b80",
+      "bytes": 346433706,
+      "file_count": 5,
+      "sha256_or_manifest_hash": "sha256:f54843be579822596d1b06cb8c3732e9b205aeb9117b5a63991a93c6d87d2d8e",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "MIT/ast-finetuned-audioset-10-10-0.4593 exact revision f826b80d28226b62986cc218e5cec390b1096902; declared BSD-3-Clause. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.mit.ast_audioset.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python -c \"from huggingface_hub import snapshot_download; snapshot_download(repo_id='MIT/ast-finetuned-audioset-10-10-0.4593', revision='f826b80d28226b62986cc218e5cec390b1096902', local_dir='data/restricted/noaa01/models/ast-audioset-f826b80')\"",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.openai.clip_vit_b32",
+      "local_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf",
+      "bytes": 608872264,
+      "file_count": 10,
+      "sha256_or_manifest_hash": "sha256:6ec3978afad499705f0fee097cdc9c7ebe39c946f266dfc9e7c882ec275b55ee",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "openai/clip-vit-base-patch32 exact revision 3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268; declared License undeclared in the archived exact-revision model metadata; verify upstream terms before download/use. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.openai.clip_vit_b32.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/scale1a_model_downloader.py --execute",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.qwen.qwen2_5_1_5b",
+      "local_path": "data/restricted/scale1b/models/Qwen--Qwen2.5-1.5B-Instruct--989aa7980e4c",
+      "bytes": 3098972652,
+      "file_count": 10,
+      "sha256_or_manifest_hash": "sha256:3df8dd1565faba45c31db227c99781ecf438e9430368d73cabcc6b930d2ad78e",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Qwen/Qwen2.5-1.5B-Instruct exact revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.qwen.qwen2_5_1_5b.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/scale1b_ga_model_downloader.py --execute",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.qwen.qwen2_5_7b",
+      "local_path": "data/restricted/scale1b/models/Qwen--Qwen2.5-7B-Instruct--a09a35458c70",
+      "bytes": 15238339496,
+      "file_count": 9,
+      "sha256_or_manifest_hash": "sha256:179cf77f40450e51ec1fce7671cf512819df916ff5a62dba8761d6da6136cf4c",
+      "hash_basis": "manifest hash of data/restricted/scale1b/manifests/strong_controller_model_acquisition.json (9316 bytes); that manifest carries verified per-file identities and aggregate sizes, so large payloads were not re-hashed for migration preparation",
+      "license_source": "Qwen/Qwen2.5-7B-Instruct exact revision a09a35458c702b33eeacc393d103063234e8bc28; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.qwen.qwen2_5_7b.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "Re-download from Qwen/Qwen2.5-7B-Instruct at revision a09a35458c702b33eeacc393d103063234e8bc28 using the file allowlist in strong_controller_model_acquisition.json.",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.google.siglip2_b16",
+      "local_path": "data/restricted/scale1b/models/google--siglip2-base-patch16-224--75de2d55ec2d",
+      "bytes": 1539457438,
+      "file_count": 9,
+      "sha256_or_manifest_hash": "sha256:08299dc26a675f5ce5c2ddfc9b0871f4845163d7236fceb26d65026fdaa03fb8",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "google/siglip2-base-patch16-224 exact revision 75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.google.siglip2_b16.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/scale1b_wave_r_model_downloader.py --execute --model siglip2",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.laion.clap",
+      "local_path": "data/restricted/scale1b/models/laion--clap-htsat-unfused--8fa0f1c6d043",
+      "bytes": 617901019,
+      "file_count": 10,
+      "sha256_or_manifest_hash": "sha256:0244c61a747456a76619f38e64450b902e1d368f4b4a437ca8d63bfeef431f4d",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "laion/clap-htsat-unfused exact revision 8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.laion.clap.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/scale1b_wave_r_model_downloader.py --execute --model clap",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.qwen.qwen3_8b",
+      "local_path": "data/restricted/strong_baselines/models/Qwen--Qwen3-8B--b968826d9c46",
+      "bytes": 16392987159,
+      "file_count": 12,
+      "sha256_or_manifest_hash": "sha256:23a104f20968fb18436c996ac037f1a752672fb4a03d73b55f6d913fb2b23e4a",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Qwen/Qwen3-8B exact revision b968826d9c46dd6066d109eabc6255188de91218; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.qwen.qwen3_8b.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/qwen3_8b_acquisition.py --execute",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.qwen.qwen2_5_omni_7b",
+      "local_path": "data/restricted/strong_baselines/models/Qwen--Qwen2.5-Omni-7B--ae9e1690543f",
+      "bytes": 22374804859,
+      "file_count": 17,
+      "sha256_or_manifest_hash": "sha256:d8cd3145ba3b220debd8d1b092f4c0056b46777e5893800623a33e4d0a4c502b",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Qwen/Qwen2.5-Omni-7B exact revision ae9e1690543ffd5c0221dc27f79834d0294cba00; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.qwen.qwen2_5_omni_7b.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/qwen25_omni7b_acquisition.py --execute",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "model.ibm_granite.granite_3_3_8b",
+      "local_path": "data/restricted/strong_baselines/models/ibm-granite--granite-3.3-8b-instruct--51dd4bc2ade4",
+      "bytes": 16346513607,
+      "file_count": 15,
+      "sha256_or_manifest_hash": "sha256:66438cf4e80993e66f3a9b045d663fc8ffe2c875cb2493e5be1c2d03ca601f3f",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "ibm-granite/granite-3.3-8b-instruct exact revision 51dd4bc2ade4059a6bd87649d68aa11e4fb2529b; declared Apache-2.0. Local acquisition records mark redistribution not authorized/pending review.",
+      "sensitivity": "third-party model weights; no secrets expected; supply-chain and license controlled",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.ibm_granite.granite_3_3_8b.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "python tools/granite33_8b_acquisition.py --execute",
+      "dependencies": [],
+      "notes": [
+        "Migrate only this manifest record; do not upload local weights or create a duplicate model repository."
+      ]
+    },
+    {
+      "logical_id": "derived.captaincook4d.index_and_candidates",
+      "local_path": "data/restricted/captaincook4d_*",
+      "bytes": 24113303,
+      "file_count": 35,
+      "sha256_or_manifest_hash": "sha256:40bb127d0e2b43d5d9777cd53dced911997546b16c8bb0f0d416f8568f393e06",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated indexes/candidates derived from CaptainCook4D restricted media; source restrictions and privacy flow through.",
+      "sensitivity": "dense derived features may reveal restricted participant media",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "captaincook4d/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python scripts/build_captaincook4d_wave0_full_timeline.py",
+      "dependencies": [
+        "media.captaincook4d.wave0"
+      ],
+      "local_members": [
+        "data/restricted/captaincook4d_family_candidates_v1_dev",
+        "data/restricted/captaincook4d_wave0_index_v1",
+        "data/restricted/captaincook4d_wave0_index_v1_smoke"
+      ],
+      "staging_review_status": "candidate"
+    },
+    {
+      "logical_id": "derived.epic.indexes_and_candidates",
+      "local_path": "data/restricted/epic_*index* and candidate/family outputs",
+      "bytes": 34464161,
+      "file_count": 45,
+      "sha256_or_manifest_hash": "sha256:b37a8f5a9a12aef5846d0503d4f78d0f945dd8b6d889c843597e53960186ba89",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated indexes/candidates derived from EPIC restricted noncommercial media.",
+      "sensitivity": "dense temporal, speech, audio, and visual derivatives from identifiable home media",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "epic/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python scripts/build_epic_wave1_full_timeline.py && python scripts/build_epic_p23_102_full_timeline.py",
+      "dependencies": [
+        "media.epic.p23_102",
+        "media.epic.wave1"
+      ],
+      "local_members": [
+        "data/restricted/epic_family_candidates_v1_dev",
+        "data/restricted/epic_family_candidates_v2_dev",
+        "data/restricted/epic_p23_102_family_mining_v1_dev",
+        "data/restricted/epic_p23_102_full_timeline_index_v1",
+        "data/restricted/epic_p23_102_machine_provisional_families_v1",
+        "data/restricted/epic_wave1_index_v1",
+        "data/restricted/epic_wave1_index_v1_smoke"
+      ],
+      "staging_review_status": "candidate"
+    },
+    {
+      "logical_id": "derived.mini_pilot.index_and_candidates",
+      "local_path": "data/restricted/mini_pilot_*",
+      "bytes": 69102795,
+      "file_count": 44,
+      "sha256_or_manifest_hash": "sha256:7911c18774f02d4fbab45a7da4d87113de27e175e0f923fef6f0e742c8c16a1c",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated derivatives of mixed-license university media; no blanket public release.",
+      "sensitivity": "dense speech/visual/audio derivatives and candidate identities",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "mini_pilot/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python scripts/build_mini_pilot_full_timeline.py",
+      "dependencies": [
+        "media.mini_pilot.four_sources"
+      ],
+      "local_members": [
+        "data/restricted/mini_pilot_family_candidates_v1",
+        "data/restricted/mini_pilot_family_candidates_v2_dev",
+        "data/restricted/mini_pilot_index_v1",
+        "data/restricted/mini_pilot_index_v1_smoke"
+      ],
+      "staging_review_status": "candidate"
+    },
+    {
+      "logical_id": "derived.noaa01.outputs",
+      "local_path": "data/restricted/noaa01/{machine_review,manifests,real_av_mvp,recon,review,scale1a} plus targeted candidates",
+      "bytes": 74716094,
+      "file_count": 58,
+      "sha256_or_manifest_hash": "sha256:84d71b77249b22af12cac0a7e018f0939eec1466a7f1302cc640dfbcc3301ab5",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated NOAA-derived outputs; source media release is held and human/third-party content remains item-level restricted.",
+      "sensitivity": "machine transcripts/features, candidate identities, review outputs",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "noaa01/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python scripts/build_noaa_real_av_mvp.py && python scripts/build_scale1a_full_timeline.py",
+      "dependencies": [
+        "media.noaa01.raw",
+        "model.openai.whisper_tiny_en",
+        "model.mit.ast_audioset",
+        "model.openai.clip_vit_b32"
+      ],
+      "local_members": [
+        "data/restricted/noaa01/machine_review",
+        "data/restricted/noaa01/manifests",
+        "data/restricted/noaa01/real_av_mvp",
+        "data/restricted/noaa01/recon",
+        "data/restricted/noaa01/review",
+        "data/restricted/noaa01/scale1a",
+        "data/restricted/noaa_targeted_family_candidates_v5_dev"
+      ],
+      "staging_review_status": "pending",
+      "notes": [
+        "Includes review and machine transcript outputs; owner must approve a narrower artifact allowlist."
+      ]
+    },
+    {
+      "logical_id": "derived.scale1b",
+      "local_path": "data/restricted/scale1b excluding models",
+      "bytes": 64294976,
+      "file_count": 127,
+      "sha256_or_manifest_hash": "sha256:761a8ce778326fb811d3ba82984d4e4b799c8998e915e191dd377fe0c6a8a9f2",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated experiments, learned indexes, evaluations, and acquisition records; includes private holdout/run material.",
+      "sensitivity": "private labels, evaluation integrity, model outputs, internal run provenance",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "scale1b/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python scripts/run_scale1b_wave_r.py && python scripts/run_scale1b_ga_pilot.py",
+      "dependencies": [
+        "model.qwen.qwen2_5_1_5b",
+        "model.qwen.qwen2_5_7b",
+        "model.google.siglip2_b16",
+        "model.laion.clap"
+      ],
+      "local_members": [
+        "data/restricted/scale1b/acquisition_records",
+        "data/restricted/scale1b/controller_dev",
+        "data/restricted/scale1b/controller_dev_qwen7b",
+        "data/restricted/scale1b/controller_v2",
+        "data/restricted/scale1b/controller_v2_holdout_evaluation",
+        "data/restricted/scale1b/controller_v2_holdout_run",
+        "data/restricted/scale1b/controller_v3_dev",
+        "data/restricted/scale1b/ga_pilot",
+        "data/restricted/scale1b/manifests",
+        "data/restricted/scale1b/wave_r"
+      ],
+      "staging_review_status": "pending",
+      "notes": [
+        "Contains private holdout/evaluation material and acquisition records; requires a narrower approved allowlist before staging."
+      ]
+    },
+    {
+      "logical_id": "derived.strong_baselines",
+      "local_path": "data/restricted/strong_baselines excluding models",
+      "bytes": 3404441,
+      "file_count": 149,
+      "sha256_or_manifest_hash": "sha256:1bc32a64b3068e0a067478b7777e6b4dc6064c8248955c7f2940262b3654ce9e",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated competence/holdout outputs and model acquisition records.",
+      "sensitivity": "private labels, holdout integrity, raw model outputs and internal provenance",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "strong_baselines/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "Run the corresponding competence and holdout scripts after model restoration.",
+      "dependencies": [
+        "model.qwen.qwen3_8b",
+        "model.qwen.qwen2_5_omni_7b",
+        "model.ibm_granite.granite_3_3_8b"
+      ],
+      "local_members": [
+        "data/restricted/strong_baselines/acquisition_records",
+        "data/restricted/strong_baselines/granite33_competence_v1",
+        "data/restricted/strong_baselines/granite_v2_holdout",
+        "data/restricted/strong_baselines/granite_v2_holdout_run",
+        "data/restricted/strong_baselines/manifests",
+        "data/restricted/strong_baselines/qwen25_omni_direct_competence_v1",
+        "data/restricted/strong_baselines/qwen3_v2_holdout",
+        "data/restricted/strong_baselines/qwen3_v2_holdout_run"
+      ],
+      "staging_review_status": "pending",
+      "notes": [
+        "Contains private labels, holdouts, raw model outputs, and run provenance; requires a narrower approved allowlist."
+      ]
+    },
+    {
+      "logical_id": "derived.semantic_audio",
+      "local_path": "data/restricted/semantic_audio_discovery_v1",
+      "bytes": 7921804,
+      "file_count": 8,
+      "sha256_or_manifest_hash": "sha256:4656d26f43fd4bfde0452b3ac8a036f5155fd3045c537b0054728532170a3877",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated semantic/audio discovery artifacts over restricted sources.",
+      "sensitivity": "semantic rankings, embeddings, source bindings and machine review packets",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "semantic_audio_discovery_v1/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python scripts/build_semantic_audio_discovery_v1.py",
+      "dependencies": [
+        "derived.noaa01.outputs"
+      ],
+      "staging_review_status": "candidate"
+    },
+    {
+      "logical_id": "derived.source_dossiers",
+      "local_path": "data/restricted/source_dossiers",
+      "bytes": 2679504,
+      "file_count": 194,
+      "sha256_or_manifest_hash": "sha256:ded7d2127ff60b0374eaf7c58cfdae0c633719eb10359323f89c1b0464a5bb2a",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-internal source dossiers; source terms vary and records may include sensitive provenance.",
+      "sensitivity": "private source selection, exposure, rights, and review evidence",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "source_dossiers/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "Rebuild from reviewed public source metadata and the relevant dossier tooling; no single canonical command.",
+      "dependencies": [
+        "public.metadata.source_recon"
+      ],
+      "staging_review_status": "pending",
+      "notes": [
+        "Contains mixed rights/exposure/review evidence; requires item-level private allowlist."
+      ]
+    },
+    {
+      "logical_id": "derived.holoassist.private_timing",
+      "local_path": "data/restricted/holoassist_opaque_group_universe_v1.json and holoassist_technical_timing_cache_v1",
+      "bytes": 26650,
+      "file_count": 42,
+      "sha256_or_manifest_hash": "sha256:9c9c3826637ba2d1f4cf15897a9fd0a4f2fde550b965dbb7967be0d909b15b82",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "HoloAssist official declaration CDLA-Permissive-2.0 conflicts with a third-party HF mirror field of Apache-2.0; official declaration controls until reconciled.",
+      "sensitivity": "sealed identities and private timing-only evidence; no media content",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "holoassist/private_timing/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "python tools/holoassist_neutral_lineage_preflight.py --plan-only",
+      "dependencies": [],
+      "notes": [
+        "Do not upload HoloAssist media; do not rely on the mirror license field."
+      ],
+      "local_members": [
+        "data/restricted/holoassist_opaque_group_universe_v1.json",
+        "data/restricted/holoassist_technical_timing_cache_v1"
+      ],
+      "staging_review_status": "candidate"
+    },
+    {
+      "logical_id": "derived.restricted_governance_and_runs",
+      "local_path": "data/restricted remaining governance/run artifacts",
+      "bytes": 16747240,
+      "file_count": 268,
+      "sha256_or_manifest_hash": "sha256:7c894bc1e295a248c6face51a0e064b8572bc95b99a986207e1cbd568dd33110",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-private authorization, holdout, canary, failure, and governance records; mixed dependencies.",
+      "sensitivity": "authorization receipts, private ledgers, attempts, prompts, evaluator keys, and scientific integrity material",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "never_upload",
+      "reconstruction_command": "Regenerate only through the specific authorized run protocol; no blanket reconstruction command.",
+      "dependencies": [],
+      "notes": [
+        "Excluded even from private HF migration by default because least-privilege and integrity risks exceed portability value."
+      ]
+    },
+    {
+      "logical_id": "rebuild.mvp.generated",
+      "local_path": "mvp/generated",
+      "bytes": 6508471,
+      "file_count": 50,
+      "sha256_or_manifest_hash": "sha256:a167abd2cef702736c1c2211426d2ad6142cf1fd96b7e551e54c8e83ebfc9937",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-owned synthetic fixtures generated from repository code.",
+      "sensitivity": "low; synthetic, but binary fixtures need no migration",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "rebuild_from_code",
+      "reconstruction_command": "python scripts/run_mvp.py generate --probe",
+      "dependencies": []
+    },
+    {
+      "logical_id": "rebuild.mvp.results",
+      "local_path": "mvp/results",
+      "bytes": 12343778,
+      "file_count": 319,
+      "sha256_or_manifest_hash": "sha256:87a87e2bacae4fe42b1d6f8be1454c3e5a01d363879995ec7986823a1be92804",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-generated MVP reports and trajectories.",
+      "sensitivity": "low to moderate run outputs; reproducible",
+      "target_repo_type": "none",
+      "proposed_hf_path": null,
+      "upload_policy": "rebuild_from_code",
+      "reconstruction_command": "python scripts/run_mvp.py all --probe",
+      "dependencies": [
+        "rebuild.mvp.generated"
+      ]
+    },
+    {
+      "logical_id": "derived.mvp.media_backed",
+      "local_path": "mvp/media_backed and mvp/media_backed_v2",
+      "bytes": 3305197,
+      "file_count": 8,
+      "sha256_or_manifest_hash": "sha256:01218534a1c9a99d6fb2840d269873be5f25c0cfbb69e5a394cbd67c9d772628",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "Project-owned synthetic media-backed fixtures; code-rebuildable.",
+      "sensitivity": "low; synthetic binaries and generated index",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "synthetic_media_backed/",
+      "upload_policy": "rebuild_from_code",
+      "reconstruction_command": "Use the media-backed MVP generation/run scripts documented under mvp/.",
+      "dependencies": [],
+      "local_members": [
+        "mvp/media_backed",
+        "mvp/media_backed_v2"
+      ]
+    },
+    {
+      "logical_id": "metadata.epic.private_provenance",
+      "local_path": "data/restricted/epic source logs/manifests/prescreen",
+      "bytes": 796602,
+      "file_count": 86,
+      "sha256_or_manifest_hash": "sha256:bebe38a537b7e1ef97e533e6b90fb68b82c6da53e2f9de3a3e7cf61b517ddc38",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "EPIC source-specific provenance and technical records; contains restricted paths/routes and acquisition history.",
+      "sensitivity": "restricted provenance and infrastructure records",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "provenance/epic/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "Recreate during authorized EPIC acquisition and validation.",
+      "dependencies": [
+        "media.epic.p23_102",
+        "media.epic.wave1"
+      ],
+      "local_members": [
+        "data/restricted/epic_p23_102_source_v1/logs",
+        "data/restricted/epic_p23_102_source_v1/manifests",
+        "data/restricted/epic_p23_102_source_v1/post_acquisition_orchestrator_v1",
+        "data/restricted/epic_wave1_sources_v1/logs",
+        "data/restricted/epic_wave1_sources_v1/manifests",
+        "data/restricted/epic_wave1_sources_v1/prescreen"
+      ],
+      "staging_review_status": "pending",
+      "notes": [
+        "Contains acquisition logs and infrastructure/provenance records; review/redact before private staging."
+      ]
+    },
+    {
+      "logical_id": "metadata.captaincook4d.private_provenance",
+      "local_path": "data/restricted/captaincook4d source logs/manifests/prescreen",
+      "bytes": 179719,
+      "file_count": 23,
+      "sha256_or_manifest_hash": "sha256:ddea90f0f054233a1d5591ccf3384fe5bbb879015d818604c9026264c7ac94e5",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "CaptainCook4D acquisition, route, consent/IRB summary, and technical provenance; media release remains unauthorized.",
+      "sensitivity": "restricted provenance and possible infrastructure details",
+      "target_repo_type": "dataset_private_derived",
+      "proposed_hf_path": "provenance/captaincook4d/",
+      "upload_policy": "private_derived_index",
+      "reconstruction_command": "Recreate during authorized CaptainCook4D acquisition and validation.",
+      "dependencies": [
+        "media.captaincook4d.wave0"
+      ],
+      "local_members": [
+        "data/restricted/captaincook4d_wave0_sources_v1",
+        "data/restricted/captaincook4d_wave0_sources_v2",
+        "data/restricted/captaincook4d_wave0_sources_v3/logs",
+        "data/restricted/captaincook4d_wave0_sources_v3/manifests",
+        "data/restricted/captaincook4d_wave0_sources_v3/prescreen"
+      ],
+      "staging_review_status": "pending",
+      "notes": [
+        "Contains route/acquisition logs and governance summaries; review/redact before private staging."
+      ]
+    },
+    {
+      "logical_id": "model.misc.noaa_fallback",
+      "local_path": "data/restricted/noaa01/models/{download attempts,OpenCV cascade}",
+      "bytes": 931729,
+      "file_count": 3,
+      "sha256_or_manifest_hash": "sha256:c2c5c05fb69a6b44cd3cebd995574a74302a525aa57db3c118f49778365ce533",
+      "hash_basis": "existing verified file hashes and small-file SHA-256 identities; directory manifest hash is SHA-256 over sorted path, byte count, and identity records",
+      "license_source": "OpenCV Apache-2.0 distribution plus local download-attempt records.",
+      "sensitivity": "low model artifact plus internal attempt metadata",
+      "target_repo_type": "upstream_model_reference_only",
+      "proposed_hf_path": "model_inventory/model.misc.noaa_fallback.json",
+      "upload_policy": "redownload_upstream",
+      "reconstruction_command": "Install the pinned OpenCV package and use cv2.data.haarcascades; do not mirror the XML or attempt logs.",
+      "dependencies": []
+    }
+  ],
+  "summary_by_policy": {
+    "delete_after_verified_migration": {
+      "asset_count": 1,
+      "bytes": 10273904267,
+      "file_count": 157
+    },
+    "never_upload": {
+      "asset_count": 6,
+      "bytes": 22740241801,
+      "file_count": 336
+    },
+    "private_derived_index": {
+      "asset_count": 11,
+      "bytes": 281700049,
+      "file_count": 811
+    },
+    "public_metadata_only": {
+      "asset_count": 2,
+      "bytes": 18985349,
+      "file_count": 411
+    },
+    "rebuild_from_code": {
+      "asset_count": 3,
+      "bytes": 22157446,
+      "file_count": 377
+    },
+    "redownload_upstream": {
+      "asset_count": 12,
+      "bytes": 78675538324,
+      "file_count": 123
+    }
+  },
+  "license_blockers": [
+    {
+      "subject": "EPIC-KITCHENS/EPIC-SOUNDS",
+      "blocker": "CC BY-NC/source-specific status and local manifests do not grant public release or redistribution of participant media; identifiable homes/voices add privacy risk."
+    },
+    {
+      "subject": "CaptainCook4D",
+      "blocker": "Apache-2.0 dataset/downloader statements do not close participant-media redistribution; linked operative consent/IRB documents are not archived and Task188 says no redistribution."
+    },
+    {
+      "subject": "HoloAssist",
+      "blocker": "Official CDLA-Permissive-2.0 declaration conflicts with an HF mirror Apache-2.0 field; exact operative official text/media route is not closed. Only sealed timing metadata is considered private-derived."
+    },
+    {
+      "subject": "NOAA",
+      "blocker": "Government/public origin is not blanket rehosting permission; current exact-five authorization holds public release pending item-level credits, third-party, trademark, privacy, and endorsement review."
+    },
+    {
+      "subject": "LongVideoBench and mixed university media",
+      "blocker": "Underlying video rights and local acquisition authorizations do not permit project rehosting."
+    },
+    {
+      "subject": "Third-party models",
+      "blocker": "Local acquisition records mark redistribution pending/not authorized; revision-pinned upstream download is safer and avoids duplicate weight hosting."
+    }
+  ],
+  "inventory_source": {
+    "restricted_files": 1427,
+    "restricted_bytes": 111971384441,
+    "scan_date": "2026-10-23",
+    "large_file_hash_rule": "Use existing verified hashes/manifests for large video/model files; this migration preparation did not re-hash large payloads."
+  }
+}

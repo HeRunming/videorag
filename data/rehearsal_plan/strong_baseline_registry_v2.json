@@ -1,0 +1,714 @@
+{
+  "schema_version": "av-trace.strong-baseline-registry/2.0",
+  "task": 148,
+  "created_date": "2026-09-23",
+  "timezone": "Asia/Shanghai",
+  "decision": "STRONG_BASELINE_REFRESH_REPAIR",
+  "execution_status": "PLANNING_AND_LIGHTWEIGHT_RECON_ONLY",
+  "results_boundary": {
+    "large_weights_downloaded": false,
+    "model_inference_run": false,
+    "paid_api_called": false,
+    "gpu_reserved": false,
+    "unrelated_ray_or_h20_jobs_touched": false,
+    "scientific_family_opened": false,
+    "evaluator_private_key_opened": false,
+    "human_labels_created": false,
+    "scientific_evaluation_authorized": false
+  },
+  "authoritative_local_inputs": [
+    "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+    "docs/paper/av_trace_cvpr_evaluation_preregistration.md",
+    "docs/paper/av_trace_cvpr_main_blueprint_v2.md",
+    "docs/review/cvpr_main_blueprint_v2_redteam.md",
+    "docs/review/strong_agent_baseline_plan.md",
+    "docs/review/gpt_oss_20b_acquisition_preflight.md",
+    "docs/design/scale1b_learned_baseline_inventory.md",
+    "docs/design/controller_interface_v2.md",
+    "docs/design/controller_v3_factorized_state.md",
+    "docs/review/controller_synthetic_competence.md",
+    "docs/review/controller_capacity_sensitivity_qwen7b_audit.md",
+    "docs/review/controller_v2_holdout_evaluation.md",
+    "docs/design/exogenous_restoration_protocol_v2.md",
+    "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+    "docs/spec/agent_action_schema.json",
+    "docs/spec/final_answer_schema.json",
+    "docs/spec/controller_v2_state_schema.json"
+  ],
+  "status_vocabulary": {
+    "model_or_route_discovered": "An official model, API, paper, or repository route was identified.",
+    "exact_snapshot_reachable": "Exact immutable model metadata or exact primary-source version was retrieved on the stated date.",
+    "license_privacy_acceptable": "The exact artifact and intended data path have completed applicable legal/privacy/retention review.",
+    "acquisition_authorized": "A named decision authorizes weight transfer or paid API use.",
+    "technically_loadable": "Exact bytes load offline under the frozen processor/runtime/dtype/resource/security contract.",
+    "competence_passed": "All frozen sealed fictional-suite gates pass.",
+    "scientific_evaluation_authorized": "All H2, split, intervention-v2, leakage, and execution gates independently authorize evaluation."
+  },
+  "host_inventory": {
+    "observed_at": "2026-09-23T20:04:22+08:00",
+    "kernel": "Linux 5.4.241-1-tlinux4-0017.7 x86_64",
+    "cpu": {
+      "model": "AMD EPYC 9K84 96-Core Processor",
+      "sockets": 2,
+      "cores_per_socket": 96,
+      "logical_cpus": 384
+    },
+    "memory": {
+      "total_kb": 2375285080,
+      "available_kb": 1641949800,
+      "swap_total_kb": 0
+    },
+    "disk": {
+      "workspace_available_bytes": 5890387084312576,
+      "tmp_available_bytes": 18273922768896
+    },
+    "gpu": {
+      "nvidia_smi_present": true,
+      "nvidia_smi_status": "FAILED_CANNOT_COMMUNICATE_WITH_DRIVER",
+      "torch_cuda_available": false,
+      "torch_cuda_device_count": 0,
+      "per_device_occupancy_verified": false,
+      "unrelated_process_observation": "An unrelated Ray raylet advertised accelerator_type:H20 and GPU=7.",
+      "availability_decision": "ALL_ACCELERATORS_UNAVAILABLE_TO_TASK_148",
+      "non_interference_rule": "Do not attach to, reserve, query through Ray, kill, alter, or slow the unrelated job."
+    },
+    "runtime": {
+      "python": "3.13.11",
+      "torch": "2.10.0",
+      "torchvision": "0.25.0+8ac84ee",
+      "torchaudio": "2.10.0+27b7ebd",
+      "transformers": "5.2.0",
+      "tokenizers": "0.22.2",
+      "accelerate": "1.9.0",
+      "datasets": "4.0.0",
+      "huggingface_hub": "1.5.0",
+      "safetensors": "0.7.0",
+      "pyav": "16.1.0",
+      "numpy": "1.26.4",
+      "scipy": "1.18.0",
+      "openai_sdk": "2.24.0",
+      "vllm": "0.16.0.post1+a572baff5",
+      "openai_harmony_installed": true,
+      "qwen_vl_utils_installed": true,
+      "flash_attn": "2.8.3",
+      "missing_relevant": [
+        "ffmpeg",
+        "ffprobe",
+        "decord",
+        "soundfile",
+        "librosa",
+        "bitsandbytes",
+        "sglang",
+        "faiss",
+        "sentence_transformers"
+      ],
+      "warning": "The shared environment emitted a NumPy/SciPy compatibility warning; selected models require isolated pinned runtimes."
+    }
+  },
+  "local_snapshots": [
+    {
+      "repo_id": "openai/whisper-tiny.en",
+      "local_revision_label": "87c7102",
+      "local_size": "148MiB",
+      "role": "speech observation support"
+    },
+    {
+      "repo_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "local_revision_label": "f826b80",
+      "local_size": "331MiB",
+      "role": "audio event label diagnostic"
+    },
+    {
+      "repo_id": "openai/clip-vit-base-patch32",
+      "local_revision_label": "3d74acf",
+      "local_size": "581MiB",
+      "role": "legacy visual retrieval"
+    },
+    {
+      "repo_id": "google/siglip2-base-patch16-224",
+      "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+      "local_size": "1.5GiB",
+      "role": "learned visual retrieval"
+    },
+    {
+      "repo_id": "laion/clap-htsat-unfused",
+      "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+      "local_size": "590MiB",
+      "role": "learned audio-text retrieval"
+    },
+    {
+      "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "local_size": "2.9GiB",
+      "role": "historical failed weak generator/controller"
+    },
+    {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "local_size": "15GiB",
+      "role": "historical failed controller comparator"
+    }
+  ],
+  "historical_controller_results": {
+    "qwen25_15b_v1": {
+      "valid_structured_outputs": "10/16",
+      "oracle_supported_answers": "1/4",
+      "decision": "NO_GO"
+    },
+    "qwen25_7b_capacity": {
+      "valid_structured_outputs": "11/16",
+      "oracle_supported_answers": "1/4",
+      "decision": "NO_GO"
+    },
+    "qwen25_7b_v2": {
+      "action_syntax": "28/28",
+      "action_correct": "15/28",
+      "exact_six_field_state": "0/28",
+      "terminal_correct": "0/8",
+      "decision": "CONTROLLER_V2_HOLDOUT_NO_GO"
+    },
+    "qwen25_7b_v3_consumed_development": {
+      "action_correct": "14/16",
+      "joint_state": "0/16",
+      "terminal_correct": "1/8",
+      "decision": "NO_GO"
+    },
+    "unsupported_required_claims": 0,
+    "interpretation": "Safety-only evidence; does not establish semantic competence."
+  },
+  "recommended_matrix": {
+    "primary": {
+      "minimum_model_families": 2,
+      "families": [
+        "Qwen Omni",
+        "IBM Granite"
+      ],
+      "roles": {
+        "DIRECT_AV_MODEL": {
+          "system_id": "DLC-B-QWEN25OMNI7B",
+          "repo_id": "Qwen/Qwen2.5-Omni-7B",
+          "revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00",
+          "family": "Qwen Omni",
+          "input": "native video with in-video audio under deterministic question-independent chronological packing",
+          "weight_bytes": 22362861192,
+          "model_or_route_discovered": true,
+          "exact_snapshot_reachable": true,
+          "exact_snapshot_checked_date": "2026-09-23",
+          "license_privacy_acceptable": false,
+          "license_status": "APACHE_2_0_TEXT_REACHED__PROJECT_LEGAL_REVIEW_PENDING",
+          "acquisition_authorized": false,
+          "technically_loadable": false,
+          "competence_passed": false,
+          "scientific_evaluation_authorized": false
+        },
+        "TOOL_CONTROLLER_BACKBONE": {
+          "system_ids": [
+            "RAG-A-GRANITE33-8B",
+            "REACT-A-GRANITE33-8B",
+            "SUFF-A-GRANITE33-8B"
+          ],
+          "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+          "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+          "family": "IBM Granite",
+          "weight_bytes": 16341771384,
+          "model_or_route_discovered": true,
+          "exact_snapshot_reachable": true,
+          "exact_snapshot_checked_date": "2026-09-23",
+          "license_privacy_acceptable": false,
+          "license_status": "APACHE_2_0_METADATA_AND_CARD_REACHED__EXACT_ARCHIVE_AND_PROJECT_REVIEW_PENDING",
+          "acquisition_authorized": false,
+          "technically_loadable": false,
+          "competence_passed": false,
+          "scientific_evaluation_authorized": false
+        },
+        "GROUNDED_FINALIZER": {
+          "system_ids": [
+            "RAG-A-GRANITE33-8B",
+            "REACT-A-GRANITE33-8B",
+            "SUFF-A-GRANITE33-8B",
+            "ORACLE-A-GRANITE33-8B",
+            "PARTIAL-A-GRANITE33-8B"
+          ],
+          "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+          "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+          "same_exact_snapshot_as_controller": true,
+          "acquisition_authorized": false,
+          "technically_loadable": false,
+          "competence_passed": false,
+          "scientific_evaluation_authorized": false
+        }
+      },
+      "published_style_comparator": {
+        "system_id": "TRACE-STYLE-A-GRANITE33-8B",
+        "description": "AV-TRACE-authored visual-subset adapter with iterative retrieval, growing evidence bundle, consecutive answer convergence, and a final same-evidence verification pass.",
+        "official_reproduction_claim_allowed": false,
+        "reason": "Official TRACE repository checked 2026-09-23 still states Method Coming soon.",
+        "same_finalizer_as_primary_agents": true,
+        "scientific_evaluation_authorized": false
+      },
+      "deterministic_controls": [
+        "DET-REACT",
+        "DET-SUFF",
+        "NO-TRIGGER"
+      ]
+    },
+    "fallback": {
+      "activation_rule": "Requires a versioned pre-sealed-suite registry amendment; no outcome-conditioned mixing.",
+      "families": [
+        "Microsoft Phi",
+        "Qwen3"
+      ],
+      "roles": {
+        "DIRECT_AV_MODEL": {
+          "system_id": "DLC-B-PHI4MM",
+          "repo_id": "microsoft/Phi-4-multimodal-instruct",
+          "revision": "93f923e1a7727d1c4f446756212d9d3e8fcc5d81",
+          "family": "Microsoft Phi",
+          "known_weight_and_adapter_bytes": 12810242408,
+          "route": "deterministic sampled frames plus audio",
+          "strict_native_video_equivalence": false,
+          "remote_code_review_required": true,
+          "model_or_route_discovered": true,
+          "exact_snapshot_reachable": true,
+          "license_privacy_acceptable": false,
+          "license_status": "MIT_METADATA_REACHED__EXACT_ARCHIVE_AND_PROJECT_REVIEW_PENDING",
+          "acquisition_authorized": false,
+          "technically_loadable": false,
+          "competence_passed": false,
+          "scientific_evaluation_authorized": false
+        },
+        "TOOL_CONTROLLER_BACKBONE_AND_FINALIZER": {
+          "system_ids": [
+            "RAG-A-QWEN3-8B",
+            "REACT-A-QWEN3-8B",
+            "SUFF-A-QWEN3-8B",
+            "ORACLE-A-QWEN3-8B",
+            "PARTIAL-A-QWEN3-8B"
+          ],
+          "repo_id": "Qwen/Qwen3-8B",
+          "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+          "family": "Qwen3",
+          "weight_bytes": 16381516776,
+          "model_or_route_discovered": true,
+          "exact_snapshot_reachable": true,
+          "license_privacy_acceptable": false,
+          "license_status": "APACHE_2_0_METADATA_REACHED__EXACT_ARCHIVE_AND_PROJECT_REVIEW_PENDING",
+          "acquisition_authorized": false,
+          "technically_loadable": false,
+          "competence_passed": false,
+          "scientific_evaluation_authorized": false
+        }
+      },
+      "published_style_comparator": {
+        "system_id": "LONGVT-STYLE-A-QWEN3-8B",
+        "description": "AV-TRACE adaptation of a sequential native crop loop on the eligible visual subset.",
+        "official_reproduction_claim_allowed": false,
+        "reason": "Different backend, action space, budget, model, and evaluation contract."
+      }
+    }
+  },
+  "candidate_routes_not_required": [
+    {
+      "id": "gpt_oss_20b_reserve",
+      "repo_id": "openai/gpt-oss-20b",
+      "revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+      "exact_snapshot_reachable": true,
+      "checked_date": "2026-09-23",
+      "selected_primary_or_fallback": false,
+      "controlling_decision": "GPT_OSS_20B_ACQUISITION_NO_GO",
+      "acquisition_authorized": false,
+      "technically_loadable": false,
+      "competence_passed": false,
+      "reason": "Fresh metadata does not repair import, dtype, kernel, accelerator, load, or competence blockers."
+    },
+    {
+      "id": "openai_api_optional",
+      "provider": "OpenAI",
+      "endpoint": "POST /v1/responses",
+      "prior_planned_snapshot": "gpt-5.4-2026-03-05",
+      "fresh_check_date": "2026-09-23",
+      "fresh_check_status": "OFFICIAL_DEVELOPER_PAGES_RETURNED_HTTP_403",
+      "exact_snapshot_reachable": "PRIOR_DATED_ONLY_2026-09-22",
+      "license_privacy_acceptable": false,
+      "paid_use_authorized": false,
+      "technically_callable": false,
+      "competence_passed": false,
+      "scientific_evaluation_authorized": false,
+      "current_price": "UNVERIFIED_CURRENT",
+      "primary_claim_may_depend_on_route": false
+    }
+  ],
+  "stack_evaluation": {
+    "native_video_plus_audio": {
+      "primary": "Qwen/Qwen2.5-Omni-7B@ae9e1690543ffd5c0221dc27f79834d0294cba00",
+      "fallback": "microsoft/Phi-4-multimodal-instruct@93f923e1a7727d1c4f446756212d9d3e8fcc5d81 as packed-frame-plus-audio only",
+      "strict_fallback_cleared": false
+    },
+    "video_plus_text_no_audio": {
+      "candidate": "HuggingFaceTB/SmolVLM2-2.2B-Instruct@482adb537c021c86670beed01cd58990d01e72e4",
+      "role": "visual/video direct ablation only",
+      "may_be_called_native_audiovisual": false
+    },
+    "text_tool_controller_over_frozen_av_observations": {
+      "primary": "ibm-granite/granite-3.3-8b-instruct@51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "fallback": "Qwen/Qwen3-8B@b968826d9c46dd6066d109eabc6255188de91218"
+    },
+    "api": {
+      "required": false,
+      "current_status": "BLOCKED_STALE_AND_GOVERNANCE_UNRESOLVED"
+    }
+  },
+  "frozen_experiment_contract": {
+    "agent_budget": {
+      "max_canonical_actions_including_finalize": 10,
+      "cost_limit": 12.0,
+      "top_k": 5,
+      "context_cap_processor_tokens": 32768,
+      "max_new_tokens_per_call": 512,
+      "max_model_invocations_including_repair": 12,
+      "schema_only_repairs": 1,
+      "semantic_repairs": 0,
+      "best_of_n": 1
+    },
+    "tool_costs": {
+      "search_visual": 1.0,
+      "search_speech": 1.0,
+      "search_ambient_audio": 1.0,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "get_channel_status": 0.25,
+      "finalize": 0.0
+    },
+    "same_backbone_requirements": [
+      "RAG, ReAct, sufficiency, oracle, and partial rows use the same exact controller/finalizer snapshot within a matrix.",
+      "ReAct and sufficiency share backend, candidate universe, tools, observations, finalizer, budget, decoding, repair, and failure policy."
+    ],
+    "single_shot_rag": "One frozen question-derived search per visual, speech, and ambient channel; F-CTRL fusion; inspect/read under cost 12; one finalizer.",
+    "direct_packing": "Question-independent source-uniform chronological packing of state-accessible media to the 32768 processor-token cap.",
+    "oracle_partial_selection": "Use the preregistered deterministic canonical SES and proper-subset rule; do not expose selection rationale.",
+    "deterministic_controls_are_learned": false
+  },
+  "adapter_boundaries": {
+    "structured_tool_actions": {
+      "allowed": [
+        "search_visual",
+        "search_speech",
+        "search_ambient_audio",
+        "inspect_clip",
+        "read_transcript",
+        "get_channel_status",
+        "finalize"
+      ],
+      "mapping": "mechanical_lossless_to_agent_action_schema",
+      "adapter_may_infer_or_rewrite": false
+    },
+    "six_field_evidence_state": [
+      "p_sufficient",
+      "covered_claim_handles",
+      "missing_modalities",
+      "missing_hops",
+      "missingness_cause",
+      "recovery_intent"
+    ],
+    "claim_citation_finalization": {
+      "schema": "docs/spec/final_answer_schema.json",
+      "model_authored_claims_and_answer": true,
+      "citations_must_be_observed_ids": true,
+      "evaluator_support_mapping_private": true,
+      "unsupported_or_invalid_fails_closed": true
+    },
+    "staged_exogenous_restoration_v2": {
+      "trigger": "after_four_completed_canonical_action_response_cycles",
+      "r_n_shared_blocked_prefix": true,
+      "fresh_continuation_sessions": true,
+      "public_checkpoint_bytes_identical": true,
+      "hidden_route_restored_only_in_r": true,
+      "action_contingent_trigger_primary_allowed": false
+    },
+    "observed_evidence_lock": {
+      "allowlist_derived_from_current_trajectory": true,
+      "search_pointers_citable": false,
+      "unknown_or_future_observation_rejected": true,
+      "private_fields_rejected": true
+    },
+    "deterministic_failure_behavior": {
+      "answer_substitution": false,
+      "action_inference": false,
+      "failure_result": "TYPED_INVALID_WITHOUT_SUBSTITUTE_ANSWER",
+      "deterministic_controls_are_separate_systems": true
+    }
+  },
+  "competence": {
+    "controller_finalizer_suite": {
+      "minimum_sealed_cases": 48,
+      "evaluation_content_allowed": false,
+      "evaluator_private_key_allowed": false,
+      "gates": {
+        "deterministic_parser_schema_failure_fixtures": 1.0,
+        "valid_structured_model_calls_min": 0.9,
+        "correct_first_actions_overall_min": 0.85,
+        "correct_first_actions_each_stratum_min": 0.75,
+        "exact_six_field_state_min": 0.75,
+        "each_state_component_min": 0.8,
+        "oracle_supported_answer_min": 0.8,
+        "blocked_partial_correct_abstention_min": 0.8,
+        "restoration_reacquisition_min": 0.8,
+        "unsupported_required_claims_max": 0,
+        "private_field_exposures_max": 0,
+        "deterministic_answer_substitutions_max": 0,
+        "identity_and_injected_failure_fail_closed": 1.0
+      }
+    },
+    "direct_av_suite": {
+      "minimum_sealed_cases": 24,
+      "media": "fictional_generated_primitives_only",
+      "gates": {
+        "processor_manifest_failure_fixtures": 1.0,
+        "valid_final_outputs_min": 0.9,
+        "complete_evidence_supported_answer_min": 0.8,
+        "each_modality_stratum_supported_answer_min": 0.75,
+        "partial_masked_correct_abstention_min": 0.8,
+        "unsupported_required_claims_max": 0,
+        "out_of_exposure_citations_max": 0,
+        "observed_evidence_lock": 1.0,
+        "required_modality_drop_counterfactuals": 1.0,
+        "deterministic_local_replay_parsed_output": 1.0
+      }
+    },
+    "current_status": "NOT_RUN"
+  },
+  "resource_estimates": {
+    "qwen25_omni_7b": {
+      "disk_reservation_gib": 32,
+      "cpu_ram_reservation_gib": "64-96",
+      "official_bf16_min_gpu_gb": {
+        "15s_video": 31.11,
+        "30s_video": 41.85,
+        "60s_video": 60.19
+      },
+      "practical_factor_from_card_min": 1.2,
+      "conservative_60s_gpu_class": "80GB",
+      "available_here": false
+    },
+    "granite33_8b": {
+      "disk_reservation_gib": 24,
+      "cpu_ram_reservation_gib": "24-32",
+      "throughput": "UNMEASURED",
+      "bounded_cpu_smoke_plausible": true
+    },
+    "phi4_multimodal": {
+      "disk_reservation_gib": 20,
+      "ram_or_vram_planning_gib": "32-48",
+      "throughput": "UNMEASURED",
+      "remote_code_review_required": true
+    },
+    "qwen3_8b": {
+      "disk_reservation_gib": 24,
+      "cpu_ram_reservation_gib": "24-32",
+      "throughput": "UNMEASURED",
+      "bounded_cpu_smoke_plausible": true
+    },
+    "api": {
+      "current_price": "UNVERIFIED_CURRENT",
+      "spend_authorized": false
+    }
+  },
+  "acquisition_and_smoke_plan": [
+    "Archive exact official metadata, card, license, config/tokenizer/processor tree, sizes, Git/LFS identities, required code, and security allowlist; no weights.",
+    "Create an isolated pinned runtime and load only reviewed small config/tokenizer/processor files offline.",
+    "Obtain named license/privacy/retention/compute and acquisition authorization.",
+    "Download only allowlisted files sequentially under umask 077; verify upstream identity, local SHA-256, safetensors, and index consistency.",
+    "Run offline load-only canary with network denial, reviewed code, fixed dtype, strict RSS, and timeout.",
+    "Run one tiny fictional generation/action smoke; no scientific source.",
+    "Run unscored public adapter, citation-lock, restoration-fork, and failure fixtures.",
+    "Freeze and run sealed fictional competence suites without tuning.",
+    "Conduct independent technical gate review.",
+    "Only after separate H2/intervention/leakage/split approval may scientific evaluation be considered."
+  ],
+  "stop_rules": [
+    "exact revision, file identity, license, or required code cannot be archived",
+    "payload exceeds approved cap",
+    "runtime silently changes model, processor, dtype, quantization, or kernel",
+    "remote code, pickle, executable, or dynamic binary is unreviewed",
+    "no dedicated usable compute route exists",
+    "model or API identity differs from the pinned value",
+    "raw media or evaluator-private data would leave the approved boundary",
+    "peak RSS exceeds the approved allocation",
+    "p95 synthetic episode wall time exceeds 60 minutes",
+    "any competence floor fails",
+    "unsupported required claims are nonzero",
+    "deterministic answer substitution occurs",
+    "R/N transcript equality or cache isolation fails",
+    "metadata-only leakage gate is not passed",
+    "scientific execution is not separately authorized"
+  ],
+  "blockers": [
+    {
+      "id": "B148-01_SELECTED_SNAPSHOTS_NOT_ACQUIRED",
+      "severity": "BLOCKING"
+    },
+    {
+      "id": "B148-02_NO_USABLE_DEDICATED_GPU",
+      "severity": "BLOCKING_DIRECT_AV"
+    },
+    {
+      "id": "B148-03_RUNTIME_ENVIRONMENT_NOT_FROZEN",
+      "severity": "BLOCKING"
+    },
+    {
+      "id": "B148-04_EXACT_LICENSE_SECURITY_ARCHIVE_INCOMPLETE",
+      "severity": "BLOCKING_ACQUISITION"
+    },
+    {
+      "id": "B148-05_STRICT_NATIVE_AV_FALLBACK_NOT_CLEARED",
+      "severity": "BLOCKING_FALLBACK"
+    },
+    {
+      "id": "B148-06_COMPETENCE_NOT_RUN",
+      "severity": "BLOCKING_TECHNICAL_READY"
+    },
+    {
+      "id": "B148-07_TRACE_NOT_OFFICIAL_REPRODUCTION",
+      "severity": "DISCLOSURE_AND_IMPLEMENTATION_BLOCKER"
+    },
+    {
+      "id": "B148-08_API_FRESHNESS_AND_GOVERNANCE_UNRESOLVED",
+      "severity": "BLOCKING_API_ONLY"
+    },
+    {
+      "id": "B148-09_H2_AND_CAUSAL_GATES_BLOCK_EXECUTION",
+      "severity": "BLOCKING_SCIENTIFIC_EXECUTION"
+    }
+  ],
+  "official_sources": [
+    {
+      "id": "qwen25_omni_api",
+      "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-Omni-7B?blobs=true",
+      "owner": "Qwen",
+      "access_date": "2026-09-23",
+      "http_status": 200,
+      "exact_revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00"
+    },
+    {
+      "id": "qwen25_omni_card_exact",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Omni-7B/raw/ae9e1690543ffd5c0221dc27f79834d0294cba00/README.md",
+      "owner": "Qwen",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "qwen25_omni_license_exact",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Omni-7B/raw/ae9e1690543ffd5c0221dc27f79834d0294cba00/LICENSE",
+      "owner": "Qwen",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "granite33_8b_api",
+      "url": "https://huggingface.co/api/models/ibm-granite/granite-3.3-8b-instruct?blobs=true",
+      "owner": "IBM",
+      "access_date": "2026-09-23",
+      "http_status": 200,
+      "exact_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+    },
+    {
+      "id": "granite33_8b_card_exact",
+      "url": "https://huggingface.co/ibm-granite/granite-3.3-8b-instruct/raw/51dd4bc2ade4059a6bd87649d68aa11e4fb2529b/README.md",
+      "owner": "IBM",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "phi4_multimodal_api",
+      "url": "https://huggingface.co/api/models/microsoft/Phi-4-multimodal-instruct?blobs=true",
+      "owner": "Microsoft",
+      "access_date": "2026-09-23",
+      "http_status": 200,
+      "exact_revision": "93f923e1a7727d1c4f446756212d9d3e8fcc5d81"
+    },
+    {
+      "id": "phi4_multimodal_card_exact",
+      "url": "https://huggingface.co/microsoft/Phi-4-multimodal-instruct/raw/93f923e1a7727d1c4f446756212d9d3e8fcc5d81/README.md",
+      "owner": "Microsoft",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "qwen3_8b_api",
+      "url": "https://huggingface.co/api/models/Qwen/Qwen3-8B?blobs=true",
+      "owner": "Qwen",
+      "access_date": "2026-09-23",
+      "http_status": 200,
+      "exact_revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    },
+    {
+      "id": "qwen3_8b_card_exact",
+      "url": "https://huggingface.co/Qwen/Qwen3-8B/raw/b968826d9c46dd6066d109eabc6255188de91218/README.md",
+      "owner": "Qwen",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "gpt_oss_20b_api",
+      "url": "https://huggingface.co/api/models/openai/gpt-oss-20b?blobs=true",
+      "owner": "OpenAI",
+      "access_date": "2026-09-23",
+      "http_status": 200,
+      "exact_revision": "6cee5e81ee83917806bbde320786a8fb61efebee"
+    },
+    {
+      "id": "longvt_official_repository",
+      "url": "https://raw.githubusercontent.com/EvolvingLMMs-Lab/LongVT/main/README.md",
+      "owner": "EvolvingLMMs-Lab",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "trace_official_repository",
+      "url": "https://raw.githubusercontent.com/buaa-colalab/TRACE/main/README.md",
+      "owner": "BUAA CoLab",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "reveal_primary_paper",
+      "url": "https://arxiv.org/abs/2608.08612",
+      "owner": "REVEAL authors",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "trace_primary_paper",
+      "url": "https://arxiv.org/abs/2608.22516",
+      "owner": "TRACE authors",
+      "access_date": "2026-09-23",
+      "http_status": 200
+    },
+    {
+      "id": "openai_gpt54_model_doc",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+      "owner": "OpenAI",
+      "access_date": "2026-09-23",
+      "http_status": 403,
+      "freshness_claim_allowed": false
+    },
+    {
+      "id": "openai_data_guide",
+      "url": "https://developers.openai.com/api/docs/guides/your-data",
+      "owner": "OpenAI",
+      "access_date": "2026-09-23",
+      "http_status": 403,
+      "freshness_claim_allowed": false
+    },
+    {
+      "id": "openai_function_calling_guide",
+      "url": "https://developers.openai.com/api/docs/guides/function-calling",
+      "owner": "OpenAI",
+      "access_date": "2026-09-23",
+      "http_status": 403,
+      "freshness_claim_allowed": false
+    }
+  ],
+  "final_token": "STRONG_BASELINE_REFRESH_REPAIR"
+}
+

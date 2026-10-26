@@ -1,0 +1,106 @@
+{
+  "caps": {
+    "model_bytes": 4294967296,
+    "total_acquisition_bytes": 5368709120
+  },
+  "created_date": "2026-09-20",
+  "expected_payload_bytes": 3098971928,
+  "license_expected": "apache-2.0",
+  "metadata_precondition": "The downloader must re-fetch and archive the official exact-revision API, recursive tree, README, and LICENSE before transferring model payloads.",
+  "model": {
+    "allowlist": [
+      {
+        "expected_bytes": 11343,
+        "git_oid": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+        "lfs_sha256": null,
+        "path": "LICENSE"
+      },
+      {
+        "expected_bytes": 4917,
+        "git_oid": "b3327a17e2ffa52e0fd941a2810b18a9fd0e7d94",
+        "lfs_sha256": null,
+        "path": "README.md"
+      },
+      {
+        "expected_bytes": 660,
+        "git_oid": "f81ead14ab072d65a07817f83a3ee0e5a1890d10",
+        "lfs_sha256": null,
+        "path": "config.json"
+      },
+      {
+        "expected_bytes": 242,
+        "git_oid": "dfc11073787daf1b0f9c0f1499487ab5f4c93738",
+        "lfs_sha256": null,
+        "path": "generation_config.json"
+      },
+      {
+        "expected_bytes": 1671839,
+        "git_oid": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+        "lfs_sha256": null,
+        "path": "merges.txt"
+      },
+      {
+        "expected_bytes": 3087467144,
+        "git_oid": "9127f71e7314df0064f469223749e5f237e06463",
+        "lfs_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+        "path": "model.safetensors"
+      },
+      {
+        "expected_bytes": 7031645,
+        "git_oid": "443909a61d429dff23010e5bddd28ff530edda00",
+        "lfs_sha256": null,
+        "path": "tokenizer.json"
+      },
+      {
+        "expected_bytes": 7305,
+        "git_oid": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+        "lfs_sha256": null,
+        "path": "tokenizer_config.json"
+      },
+      {
+        "expected_bytes": 2776833,
+        "git_oid": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "lfs_sha256": null,
+        "path": "vocab.json"
+      }
+    ],
+    "expected_payload_bytes": 3098971928,
+    "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "selected_weight_representation": "model.safetensors",
+    "snapshot_dir": "data/restricted/scale1b/models/Qwen--Qwen2.5-1.5B-Instruct--989aa7980e4c",
+    "weight_layout": {
+      "index_files_at_exact_revision": [],
+      "kind": "single_unsharded_safetensors",
+      "required_shards": [
+        "model.safetensors"
+      ],
+      "shard_index_required": false
+    }
+  },
+  "release_boundary": {
+    "redistribution_authorized": false,
+    "redistribution_decision": "NOT_AUTHORIZED_PENDING_RELEASE_REVIEW",
+    "technical_internal_use_requires_snapshot_and_smoke": true
+  },
+  "schema_version": "1.0",
+  "stage": "SCALE1B_WAVE_GA_MODEL_ACQUISITION",
+  "task": 109,
+  "technical_validation": {
+    "allowed_repair_attempts_per_case": 1,
+    "cases": [
+      "normal_grounded_finalization",
+      "insufficiency_abstention"
+    ],
+    "device": "cpu",
+    "do_sample": false,
+    "local_files_only": true,
+    "max_new_tokens": 128,
+    "network_guard_required": true,
+    "prompts_contain_restricted_project_content": false,
+    "replay_requires_identical_raw_output": true,
+    "seed": 0,
+    "strict_json": true,
+    "torch_threads": 4
+  }
+}

@@ -1,0 +1,1332 @@
+{
+  "schema_version": "av-trace.p23-102-technical-smoke/2.0",
+  "freeze_id": "P23_102_TECHNICAL_SMOKE_V2",
+  "frozen_date": "2026-10-14",
+  "status": "TECHNICAL_SMOKE_ONLY_FROZEN_NOT_AUTHORIZED",
+  "decision_token": "P23_102_TECHNICAL_SMOKE_V2_FROZEN_NOT_AUTHORIZED",
+  "supersession": {
+    "supersedes_for_technical_smoke_only": "data/rehearsal_plan/p23_102_acquire_ground_act_rehearsal_v1.json",
+    "does_not_modify_or_invalidate_old_artifacts": true,
+    "not_the_640_assignment_run": true,
+    "scientific_protocol_replacement": false,
+    "statement": "This prospective v2 freeze narrows a future wiring smoke to 32 assignments and binds repaired current code hashes. It is not authorization to execute models and is not a scientific run."
+  },
+  "scope": {
+    "source_id": "P23_102",
+    "source_group_id": "P23",
+    "dataset": "EPIC-KITCHENS-100",
+    "mode": "TECHNICAL_SMOKE_ONLY",
+    "development_only": true,
+    "machine_provisional_or_weak_model_permitted_for_smoke_only": true,
+    "execution_authorized": false,
+    "live_wiring_authorization_required": true,
+    "redteam_authorization_required": true,
+    "models_or_media_executed_by_this_freeze": false,
+    "human_review_performed": false,
+    "human_labels_created": false,
+    "claim_boundary": "Only mechanical plumbing may be assessed: checkpoint delivery/hash, state routing, typed outage, silent withholding, fresh R/N sessions, raw failures, citations, metrics, replay, and output completeness."
+  },
+  "claim_firewall": {
+    "forbidden_claims": [
+      "answer_quality",
+      "model_competence",
+      "model_performance",
+      "system_superiority",
+      "causal_effect",
+      "causal_identification",
+      "H2",
+      "Gate_A",
+      "human_family_validity",
+      "human_evidence_validity",
+      "accepted_SES",
+      "source_generalization",
+      "scientific_execution_readiness"
+    ],
+    "machine_provisional_labels_may_be_used_only_as_routing_fixtures": true,
+    "non_evaluable_outputs_must_not_be_interpreted_as_wrong_answers": true,
+    "runtime_leakage_classifier": {
+      "status": "NOT_ESTIMABLE_SINGLE_SOURCE",
+      "pass_allowed": false,
+      "reason": "P23_102 supplies one source group, so leave-one-source-group-out runtime state classification is not estimable. Prefix byte equality is a mechanical invariant, not a classifier PASS."
+    }
+  },
+  "frozen_bindings": [
+    {
+      "path": "scripts/run_p23_102_acquire_ground_act_rehearsal.py",
+      "sha256": "sha256:f3d3f4b1c7a30b09b30b54a8c802d9d33e36c1c50c96de5e355d661d335e1546",
+      "bytes": 101691,
+      "role": "repaired_current_runner"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/backend.py",
+      "sha256": "sha256:620ae6003f7a3cdc0124bfc19d4a7639e3f2a0e61f1d2a53a0edc73149ad3718",
+      "bytes": 25469,
+      "role": "backend"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/controller.py",
+      "sha256": "sha256:e4f1acd34ce3af160e0e827eddeb3afd401d6a31ee141b811d28b1eac2feb773",
+      "bytes": 21403,
+      "role": "controller"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/process.py",
+      "sha256": "sha256:f011ee6a24aaabd4c13f534f7d64c5363abf42e06e4839e6bcead0152cb7892c",
+      "bytes": 19278,
+      "role": "isolated_model_process"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/checkpoint.py",
+      "sha256": "sha256:83a165e2b9d10e952486e3f5261edfc574c32696e29d34c88768a4445287676d",
+      "bytes": 1755,
+      "role": "canonical_checkpoint_and_semantic_hash"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/evaluation.py",
+      "sha256": "sha256:2932e8fb9e8781aebdd36a979bb92f898df6572969d3350a8dac6fba5e51db12",
+      "bytes": 16062,
+      "role": "evaluation_and_metric_record_helpers"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/schema.py",
+      "sha256": "sha256:74dbe26165fb48197542622fa4cb6ce985adee818bf49ad03c86aa64ed603b19",
+      "bytes": 16202,
+      "role": "public_action_and_final_output_validation"
+    },
+    {
+      "path": "src/av_trace_scale1b_retrieval/core.py",
+      "sha256": "sha256:1d8b23d3c914dab2afd290a9bb283948787cffba9525598cebf93d3b63fef9b8",
+      "bytes": 108081,
+      "role": "learned_retrieval"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/prompts/react_v1.txt",
+      "sha256": "sha256:d3f22925ac34fe6186b416ed393daac31b2766af09b5842f9e31da02cf03fc35",
+      "bytes": 1228,
+      "role": "react_prompt"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/prompts/sufficiency_v1.txt",
+      "sha256": "sha256:02d786f5b6bc75b0ce50abe93a4c3004801da363a7b0fb4bbe6b247b9618ab1a",
+      "bytes": 1489,
+      "role": "evidence_sufficiency_prompt"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/prompts/generator_v1.txt",
+      "sha256": "sha256:a9c8448cfbcda218f8904debb5d0e651af5a84ad5fd4fc64734a44ab2dc34fc4",
+      "bytes": 1135,
+      "role": "grounded_generator_prompt"
+    },
+    {
+      "path": "src/av_trace_scale1b_agent/prompts/repair_v1.txt",
+      "sha256": "sha256:e6cb1fa4c6e4ffd44eda3155414ac4ce6c1c956eb25c5a75e318cda84e51ce26",
+      "bytes": 970,
+      "role": "single_repair_prompt"
+    },
+    {
+      "path": "docs/spec/metrics_protocol_v2.md",
+      "sha256": "sha256:b162182b129d1b392200c565e81591dde826ebc14331aedd416f53b63da40314",
+      "bytes": 7600,
+      "role": "metric_semantics"
+    },
+    {
+      "path": "docs/spec/agent_action_schema.json",
+      "sha256": "sha256:a1adb2c69705bf032fb4f344add9211dfa213928241d05abe1448da77ffbc5f3",
+      "bytes": 7758,
+      "role": "action_schema"
+    },
+    {
+      "path": "docs/spec/tool_response_schema.json",
+      "sha256": "sha256:6c217e3a2e21507739859476a6e67cdfb9776d620de237eb1f27ff5f95dff9a5",
+      "bytes": 5184,
+      "role": "tool_response_schema"
+    },
+    {
+      "path": "docs/spec/final_answer_schema.json",
+      "sha256": "sha256:54b99097a2030f68c0660ea2405500636cf26e1381f40afdaf23679b1f9abf83",
+      "bytes": 5309,
+      "role": "final_answer_schema"
+    },
+    {
+      "path": "docs/spec/trajectory_schema.json",
+      "sha256": "sha256:dcf6a5c979500e50c6b7035215c2772791cd23b14a2c4c177334588cd25a3243",
+      "bytes": 4942,
+      "role": "trajectory_schema"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_source_v1/manifests/epic_p23_102_exact_manifest.json",
+      "sha256": "sha256:6b3d94d93abaf8dc427832c6a7ebb2bd8ec93ce044622a023f1109ea1f9a2dc9",
+      "bytes": 3948,
+      "role": "exact_source_manifest"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/build_manifest.json",
+      "sha256": "sha256:a935e9214c64b5a545492223c728b8293715d5584516f4d615f15e82e7f051a6",
+      "bytes": 3014,
+      "role": "exact_index_build_manifest"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/full_timeline_index.json",
+      "sha256": "sha256:061781dc7f32381990529d9fc9832f32c83d0be8c13f38dece1198fff8c7160a",
+      "bytes": 6678582,
+      "role": "exact_full_timeline_index"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/resource_manifest.json",
+      "sha256": "sha256:ca5a8125d44f0f484570f5672833c2512b22f448685e2fd65d4e795f75e16468",
+      "bytes": 3087,
+      "role": "index_resource_manifest"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/segment_manifest.json",
+      "sha256": "sha256:c9f5e9c1ca9673ad4cb8ed56eb5b127f64c42de9f53945eb588e6463b44de830",
+      "bytes": 513040,
+      "role": "index_segment_manifest"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/observation_manifest.json",
+      "sha256": "sha256:81625528a39013513b4453d94bb191e6667bbfd05a94b453533208e81323e7e7",
+      "bytes": 3418,
+      "role": "index_observation_manifest"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_full_timeline_index_v1/checkpoint_manifest.json",
+      "sha256": "sha256:767650cfc97f778cb2b6016e4f8c3b2be67d72998f2ed16184bfdd1dd3aa4490",
+      "bytes": 2542,
+      "role": "index_checkpoint_manifest"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/family_registry.json",
+      "sha256": "sha256:ff7c6b08f63d68738c222d5c916843ec0164add9a9f09a0893eba35530008c57",
+      "bytes": 102229,
+      "role": "machine_provisional_family_bundle"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/evidence_registry.json",
+      "sha256": "sha256:70a5ccf4e1d44cb7967bfc51cf1aa40473cabd091b0797f3af2fc61e2f39cdf4",
+      "bytes": 68788,
+      "role": "machine_provisional_evidence_bundle"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/intervention_manifest.json",
+      "sha256": "sha256:53b7451fa7600951b492e7178eafcd73cc1639a460d79574abee99782b627169",
+      "bytes": 112679,
+      "role": "mechanism_intervention_bundle"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/state_surface_manifest.json",
+      "sha256": "sha256:d14d35e0d3bae5ecd6f198de2616011ab31bcb466511bc4f8777cbd02a551e7d",
+      "bytes": 380812,
+      "role": "state_surface_bundle"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/source_split_manifest.json",
+      "sha256": "sha256:24a8de73e6c5e4cfe2bf8ab9435660cd88ad6f40930499c1310d2ab79a7f0da9",
+      "bytes": 3488,
+      "role": "development_source_split"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/leakage_gate.json",
+      "sha256": "sha256:fe2353bd073a5b8d6998c7c9be2a5d08b1141c9a2eae5c5fa4e4bd90908f134f",
+      "bytes": 5077,
+      "role": "bundle_provenance_firewall_not_runtime_classifier"
+    },
+    {
+      "path": "data/restricted/scale1b/manifests/ga_model_acquisition.json",
+      "sha256": "sha256:f39ee3bbb957672b2708866f1de649b453408b4c4f309b110b66f009140c888a",
+      "bytes": 7984,
+      "role": "generator_and_controller_model_manifest"
+    },
+    {
+      "path": "data/restricted/scale1b/manifests/wave_r_model_acquisition.json",
+      "sha256": "sha256:0d22c8f2499e563911aa75a5ccb85f9f29009305f8117f38579f07efe45d05de",
+      "bytes": 13379,
+      "role": "retrieval_model_manifest"
+    },
+    {
+      "path": "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+      "sha256": "sha256:aede6e80596feaa3a483d63b9941dcd854df5a511c193cec14295b5e1a8ac654",
+      "bytes": 8444,
+      "role": "restoration_protocol"
+    }
+  ],
+  "model_identities": {
+    "generator_controller": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "competence_status": "WEAK_OR_MACHINE_PROVISIONAL_PERMITTED_FOR_SMOKE_ONLY"
+    },
+    "visual_retrieval": {
+      "model_id": "google/siglip2-base-patch16-224",
+      "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2"
+    },
+    "ambient_retrieval": {
+      "model_id": "laion/clap-htsat-unfused",
+      "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a"
+    },
+    "speech_control": {
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "role": "inventory_only_control_not_promoted_to_V+A_semantics"
+    }
+  },
+  "checkpoint_contract": {
+    "canonicalization": "UTF-8 JSON; json.dumps(sort_keys=true,separators=(',',':'),ensure_ascii=false,allow_nan=false); SHA-256 over bytes with no trailing newline; hash rendered as sha256:<64 lowercase hex>",
+    "canonical_implementation_path": "src/av_trace_scale1b_agent/checkpoint.py",
+    "hash_function": "semantic_hash",
+    "index_base": "zero",
+    "fixed_action_index": 4,
+    "delivery_boundary": "after_four_completed_action_response_cycles_before_fifth_model_decision",
+    "event": {
+      "event_type": "protocol_checkpoint",
+      "event_version": "2.0.0",
+      "message": "Scheduled protocol checkpoint completed.",
+      "cost": 0.0
+    },
+    "event_canonical_bytes_utf8": "{\"cost\":0.0,\"event_type\":\"protocol_checkpoint\",\"event_version\":\"2.0.0\",\"message\":\"Scheduled protocol checkpoint completed.\"}",
+    "event_canonical_sha256": "sha256:c580c16af6401b4d12df1d39085bbddee6f63e6d81772f6b3186a0fcc84c996c",
+    "single_canonical_hash_rule": "Every config, attestation, assignment verifier, prefix-pair row, and run manifest must use event_canonical_sha256 exactly; alternate serialization or hash is invalid.",
+    "r_n_prefix_serialization_fields_in_order": [
+      "start",
+      "pointers",
+      "observations",
+      "events",
+      "no_progress_rounds"
+    ],
+    "r_n_public_prefix_byte_identical_required": true,
+    "fresh_continuation_session_per_arm": true,
+    "fresh_provider_session_per_assignment": true,
+    "shared_model_kv_or_prompt_or_retrieval_or_tool_response_cache_forbidden": true,
+    "get_channel_status_cannot_trigger_restoration": true
+  },
+  "selection": {
+    "selection_rule": "Freeze the first structurally valid REPAIR V+A near-local family and the first structurally valid REPAIR V+A coherent-far family by source registry rank; no answer or outcome information used.",
+    "exact_family_count": 2,
+    "families": [
+      {
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "family_rank": 9,
+        "source_candidate_id": "EPIC-P23-102-LOCAL-VA-868305a6e1e4ff38",
+        "route_group_id": "mpr.a821550cd47fb5fab0aa",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "candidate_kind": "near_local",
+        "profile_hypothesis": "V+A",
+        "machine_provisional_status": "REPAIR",
+        "accepted_family": false,
+        "accepted_ses": false,
+        "human_validated": false,
+        "structurally_valid_for_smoke": true,
+        "record_ids": [
+          "P23_102.fine.000065"
+        ],
+        "evidence_handle_ids": [
+          "eh.967cbba43a109948ec1d",
+          "eh.4f6b3be0a9356cdbd530"
+        ],
+        "modalities": [
+          "ambient_audio",
+          "vision"
+        ],
+        "temporal_structure": {
+          "evidence_center_separation_seconds": 0.0,
+          "far_coherence": null,
+          "hop_hypothesis": "one_hop",
+          "temporal_hypothesis": "near_local"
+        },
+        "question_template": "What visual state transition occurs in the exact interval, and which localized non-speech audio change may distinguish it?",
+        "interventions": {
+          "SILENT_ROUTE_WITHHOLDING": {
+            "intervention_id": "mpi.e766a9dec4f5da6b35cd",
+            "necessity_group_id": "mpn.e766a9dec4f5da6b35cd",
+            "suppressed_segment_ids": [
+              "P23_102.fine.000065"
+            ],
+            "surface_ids": {
+              "C": "mps.516133a9fd7f30105ed1",
+              "B": "mps.a306ef1c6d0321e7c0b2",
+              "R": "mps.a184ab70d43060206688",
+              "N": "mps.7eb496dc011b48d5ef74"
+            },
+            "typed_error_code": null,
+            "typed_error_message": null,
+            "response_shape_hash": null
+          },
+          "EXPLICIT_CHANNEL_OUTAGE": {
+            "intervention_id": "mpi.c530a60666c171a4ca17",
+            "necessity_group_id": "mpn.c530a60666c171a4ca17",
+            "suppressed_segment_ids": [
+              "P23_102.fine.000065"
+            ],
+            "surface_ids": {
+              "C": "mps.5e720765fabc7f23d215",
+              "B": "mps.6342f67c6e0038b984f8",
+              "R": "mps.47ae9f6cb47e5f3bfcb4",
+              "N": "mps.27ea9c3d142b5a7b05cb"
+            },
+            "typed_error_code": "REGISTERED_ROUTE_CHANNEL_UNAVAILABLE",
+            "typed_error_message": "The registered evidence route is currently unavailable.",
+            "response_shape_hash": "sha256:b5ebdfe5a5b27ce035269034b27fbbdf1be3ee67ddca4a43d046184a9b7e18bf"
+          }
+        }
+      },
+      {
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "family_rank": 1,
+        "source_candidate_id": "EPIC-P23-102-FAR-VA-8bdff129c91c5571",
+        "route_group_id": "mpr.f3658b1362612403bc63",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "candidate_kind": "coherent_far_multi_hop",
+        "profile_hypothesis": "V+A",
+        "machine_provisional_status": "REPAIR",
+        "accepted_family": false,
+        "accepted_ses": false,
+        "human_validated": false,
+        "structurally_valid_for_smoke": true,
+        "record_ids": [
+          "P23_102.fine.000009",
+          "P23_102.fine.000340"
+        ],
+        "evidence_handle_ids": [
+          "eh.138d7d7e165e40949dcd",
+          "eh.1c026637cb8273177888",
+          "eh.84f1a4238fdc927ccb63",
+          "eh.e6be5e606b10fe050b6f"
+        ],
+        "modalities": [
+          "ambient_audio",
+          "vision"
+        ],
+        "temporal_structure": {
+          "evidence_center_separation_seconds": 1324.0,
+          "far_coherence": {
+            "audio_structural_continuity_cosine": 0.92268848,
+            "coherence_hypothesis": "The pair clears independently computed visual and audio continuity floors without using speech inventory text.",
+            "distance_alone_is_not_credited": true,
+            "human_source_world_coherence_validation": "REQUIRED",
+            "shared_salient_asr_terms": [],
+            "shared_term_count": 0,
+            "visual_object_or_state_continuity_cosine": 0.93786621
+          },
+          "hop_hypothesis": "multi_hop",
+          "temporal_hypothesis": "far_separated"
+        },
+        "question_template": "How might the earlier and later visual states form one chain, and which localized non-speech audio change may distinguish the two components?",
+        "interventions": {
+          "SILENT_ROUTE_WITHHOLDING": {
+            "intervention_id": "mpi.4c48dad383873f73da10",
+            "necessity_group_id": "mpn.4c48dad383873f73da10",
+            "suppressed_segment_ids": [
+              "P23_102.fine.000009",
+              "P23_102.fine.000340"
+            ],
+            "surface_ids": {
+              "C": "mps.63b34dfeb3778a7676a8",
+              "B": "mps.f9e2f711777865fb68d5",
+              "R": "mps.40c5b1f92ba88e4b30a6",
+              "N": "mps.e862390c1475d4c6a991"
+            },
+            "typed_error_code": null,
+            "typed_error_message": null,
+            "response_shape_hash": null
+          },
+          "EXPLICIT_CHANNEL_OUTAGE": {
+            "intervention_id": "mpi.1bcb9139b0474fbd6289",
+            "necessity_group_id": "mpn.1bcb9139b0474fbd6289",
+            "suppressed_segment_ids": [
+              "P23_102.fine.000009",
+              "P23_102.fine.000340"
+            ],
+            "surface_ids": {
+              "C": "mps.52e3dd3f40dd80cfa083",
+              "B": "mps.21665925fb168f75789b",
+              "R": "mps.ba2d648129267d53f212",
+              "N": "mps.ce4e4913070f99a02bc6"
+            },
+            "typed_error_code": "REGISTERED_ROUTE_CHANNEL_UNAVAILABLE",
+            "typed_error_message": "The registered evidence route is currently unavailable.",
+            "response_shape_hash": "sha256:b5ebdfe5a5b27ce035269034b27fbbdf1be3ee67ddca4a43d046184a9b7e18bf"
+          }
+        }
+      }
+    ],
+    "balance_assertions": {
+      "one_local": true,
+      "one_far": true,
+      "both_V_plus_A": true,
+      "both_REPAIR": true,
+      "both_mechanisms_present_for_each_family": true
+    }
+  },
+  "systems": {
+    "required": [
+      "single_shot_rag",
+      "learned_react",
+      "learned_evidence_sufficiency"
+    ],
+    "direct_long_context": {
+      "included": false,
+      "permission": "OPTIONAL_ENDPOINT_SANITY_ONLY",
+      "reason": "Excluded to keep the smoke at the 32-assignment cap; it cannot exercise staged R/N plumbing."
+    }
+  },
+  "assignment_plan": {
+    "assignment_count": 32,
+    "cap": 32,
+    "fixed_execution_order": true,
+    "order_rule": "Exactly the listed ordinal order; no shuffle, balancing rewrite, retries appended as assignments, or post-outcome reordering.",
+    "coverage": {
+      "r_n_pairs": 12,
+      "r_n_assignments": 24,
+      "c_assignments": 4,
+      "b_assignments": 4,
+      "systems": 3,
+      "mechanisms": 2,
+      "families": 2
+    },
+    "minimality": "R/N is present for every family × mechanism × required-system cell. C/B is present once per family × mechanism, assigned across systems to cover endpoint plumbing without expanding to the 640-run matrix.",
+    "assignments": [
+      {
+        "ordinal": 1,
+        "assignment_id": "p23s2.12c89d29237630117365472e",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:single_shot_rag",
+        "pair_id": "p23s2pair.ad5ec238eb2d07d102b5",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "single_shot_rag",
+        "arm": "R",
+        "surface_id": "mps.a184ab70d43060206688",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 2,
+        "assignment_id": "p23s2.d411a09d7af09d570f300acc",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:single_shot_rag",
+        "pair_id": "p23s2pair.ad5ec238eb2d07d102b5",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "single_shot_rag",
+        "arm": "N",
+        "surface_id": "mps.7eb496dc011b48d5ef74",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 3,
+        "assignment_id": "p23s2.a0aeaeed86ee0433d6559463",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:single_shot_rag",
+        "pair_id": null,
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "single_shot_rag",
+        "arm": "C",
+        "surface_id": "mps.516133a9fd7f30105ed1",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "silent_withholding",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 4,
+        "assignment_id": "p23s2.e56cb3789b07362528683897",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:single_shot_rag",
+        "pair_id": null,
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "single_shot_rag",
+        "arm": "B",
+        "surface_id": "mps.a306ef1c6d0321e7c0b2",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "silent_withholding",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 5,
+        "assignment_id": "p23s2.97062edb416423c68e28acca",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:learned_react",
+        "pair_id": "p23s2pair.ed52271364a523d91635",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_react",
+        "arm": "R",
+        "surface_id": "mps.a184ab70d43060206688",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 6,
+        "assignment_id": "p23s2.3f0838285801ef4265e19a98",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:learned_react",
+        "pair_id": "p23s2pair.ed52271364a523d91635",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_react",
+        "arm": "N",
+        "surface_id": "mps.7eb496dc011b48d5ef74",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 7,
+        "assignment_id": "p23s2.bba8117da97144cb5d76d8c8",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.1d2fd49eeb5fe0a6560d",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "R",
+        "surface_id": "mps.a184ab70d43060206688",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 8,
+        "assignment_id": "p23s2.f454475935bb3db3d9a086bb",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:SILENT_ROUTE_WITHHOLDING:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.1d2fd49eeb5fe0a6560d",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "N",
+        "surface_id": "mps.7eb496dc011b48d5ef74",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 9,
+        "assignment_id": "p23s2.ac170efac064ab3a1d75cc39",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:single_shot_rag",
+        "pair_id": "p23s2pair.6b3b98bab54079c70f58",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "single_shot_rag",
+        "arm": "R",
+        "surface_id": "mps.47ae9f6cb47e5f3bfcb4",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 10,
+        "assignment_id": "p23s2.4b14835eb2635903977d4661",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:single_shot_rag",
+        "pair_id": "p23s2pair.6b3b98bab54079c70f58",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "single_shot_rag",
+        "arm": "N",
+        "surface_id": "mps.27ea9c3d142b5a7b05cb",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 11,
+        "assignment_id": "p23s2.7b7368e593e304a1e6b74b49",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:learned_react",
+        "pair_id": "p23s2pair.19a1258839e27e9e3402",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_react",
+        "arm": "R",
+        "surface_id": "mps.47ae9f6cb47e5f3bfcb4",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 12,
+        "assignment_id": "p23s2.5e74398af81d735103c6a263",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:learned_react",
+        "pair_id": "p23s2pair.19a1258839e27e9e3402",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_react",
+        "arm": "N",
+        "surface_id": "mps.27ea9c3d142b5a7b05cb",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 13,
+        "assignment_id": "p23s2.f825e99f7e59c7ab7def78ee",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:learned_react",
+        "pair_id": null,
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_react",
+        "arm": "C",
+        "surface_id": "mps.5e720765fabc7f23d215",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "typed_outage",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 14,
+        "assignment_id": "p23s2.a099740cdc77d51079832b4a",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:learned_react",
+        "pair_id": null,
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_react",
+        "arm": "B",
+        "surface_id": "mps.6342f67c6e0038b984f8",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "typed_outage",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 15,
+        "assignment_id": "p23s2.3bb6d9a22f8dae51d284718c",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.8fdcea49605516c74571",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "R",
+        "surface_id": "mps.47ae9f6cb47e5f3bfcb4",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 16,
+        "assignment_id": "p23s2.1d7b8342511fab3b1c073bdc",
+        "cell_id": "P23_102_SMOKE_V2:mpf.5814848825c9fad469ad:EXPLICIT_CHANNEL_OUTAGE:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.8fdcea49605516c74571",
+        "selection_id": "P23S2-LOCAL-VA-01",
+        "family_id": "mpf.5814848825c9fad469ad",
+        "distance_class": "LOCAL_NEAR_ONE_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "N",
+        "surface_id": "mps.27ea9c3d142b5a7b05cb",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 17,
+        "assignment_id": "p23s2.b92200d24db0c0730970805a",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:single_shot_rag",
+        "pair_id": "p23s2pair.dbfe87cb8947e7c2920f",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "single_shot_rag",
+        "arm": "R",
+        "surface_id": "mps.40c5b1f92ba88e4b30a6",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 18,
+        "assignment_id": "p23s2.d4005ce9cea37d61beea79f3",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:single_shot_rag",
+        "pair_id": "p23s2pair.dbfe87cb8947e7c2920f",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "single_shot_rag",
+        "arm": "N",
+        "surface_id": "mps.e862390c1475d4c6a991",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 19,
+        "assignment_id": "p23s2.87d69954721ad05664b36b8b",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:learned_react",
+        "pair_id": "p23s2pair.059b4312af391e8da522",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_react",
+        "arm": "R",
+        "surface_id": "mps.40c5b1f92ba88e4b30a6",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 20,
+        "assignment_id": "p23s2.a6de29bbdf2e8069d5bbe9af",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:learned_react",
+        "pair_id": "p23s2pair.059b4312af391e8da522",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_react",
+        "arm": "N",
+        "surface_id": "mps.e862390c1475d4c6a991",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 21,
+        "assignment_id": "p23s2.bc31cb5b623fe482af9060d2",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.6a9ab44d1e760162a59d",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "R",
+        "surface_id": "mps.40c5b1f92ba88e4b30a6",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 22,
+        "assignment_id": "p23s2.05340c6af66dd258f2562c26",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.6a9ab44d1e760162a59d",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "N",
+        "surface_id": "mps.e862390c1475d4c6a991",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 23,
+        "assignment_id": "p23s2.95484638d4ac0db4e471f58d",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:learned_evidence_sufficiency",
+        "pair_id": null,
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "C",
+        "surface_id": "mps.63b34dfeb3778a7676a8",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "silent_withholding",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 24,
+        "assignment_id": "p23s2.69d44466e70a91bd1b7aded5",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:SILENT_ROUTE_WITHHOLDING:learned_evidence_sufficiency",
+        "pair_id": null,
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "B",
+        "surface_id": "mps.f9e2f711777865fb68d5",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "silent_withholding",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 25,
+        "assignment_id": "p23s2.8aee43c74d130c3a8f0c8d96",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:single_shot_rag",
+        "pair_id": "p23s2pair.e1bfdb89e8a66143d88b",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "single_shot_rag",
+        "arm": "R",
+        "surface_id": "mps.ba2d648129267d53f212",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 26,
+        "assignment_id": "p23s2.58d12ccd011682ec5e76aa8c",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:single_shot_rag",
+        "pair_id": "p23s2pair.e1bfdb89e8a66143d88b",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "single_shot_rag",
+        "arm": "N",
+        "surface_id": "mps.ce4e4913070f99a02bc6",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 27,
+        "assignment_id": "p23s2.50001f0d470ce91b3f07c719",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:single_shot_rag",
+        "pair_id": null,
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "single_shot_rag",
+        "arm": "C",
+        "surface_id": "mps.52e3dd3f40dd80cfa083",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "typed_outage",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 28,
+        "assignment_id": "p23s2.947ac03680bfa6d8b28c098b",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:single_shot_rag",
+        "pair_id": null,
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "single_shot_rag",
+        "arm": "B",
+        "surface_id": "mps.21665925fb168f75789b",
+        "session_policy": "FRESH_INDEPENDENT_ENDPOINT_SESSION",
+        "required_probe_roles": [
+          "state_endpoint_sanity",
+          "typed_outage",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 29,
+        "assignment_id": "p23s2.770b4c6a572659a8ad51753a",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:learned_react",
+        "pair_id": "p23s2pair.8c380cf0f50a1e6ee0ed",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_react",
+        "arm": "R",
+        "surface_id": "mps.ba2d648129267d53f212",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 30,
+        "assignment_id": "p23s2.8055abd054fac6b4949998bf",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:learned_react",
+        "pair_id": "p23s2pair.8c380cf0f50a1e6ee0ed",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_react",
+        "arm": "N",
+        "surface_id": "mps.ce4e4913070f99a02bc6",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 31,
+        "assignment_id": "p23s2.cd9e370c6bf784eb5de8cb0b",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.36c157acbaf3ce6d1f8c",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "R",
+        "surface_id": "mps.ba2d648129267d53f212",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      },
+      {
+        "ordinal": 32,
+        "assignment_id": "p23s2.67321e770409b6e3d4e56f01",
+        "cell_id": "P23_102_SMOKE_V2:mpf.bfda23807de4cb85f04b:EXPLICIT_CHANNEL_OUTAGE:learned_evidence_sufficiency",
+        "pair_id": "p23s2pair.36c157acbaf3ce6d1f8c",
+        "selection_id": "P23S2-FAR-VA-01",
+        "family_id": "mpf.bfda23807de4cb85f04b",
+        "distance_class": "FAR_SEPARATED_MULTI_HOP",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "system_id": "learned_evidence_sufficiency",
+        "arm": "N",
+        "surface_id": "mps.ce4e4913070f99a02bc6",
+        "session_policy": "FRESH_CONTINUATION_FROM_BYTE_IDENTICAL_BLOCKED_PREFIX",
+        "required_probe_roles": [
+          "checkpoint",
+          "fresh_r_n_session",
+          "raw_failure_retention",
+          "citations",
+          "metrics_output_contract"
+        ]
+      }
+    ],
+    "assignment_ids_sha256": "sha256:8f124f76fb9bed1d822019882a5a2474bf34c0a814344376f757596532941054",
+    "assignments_sha256": "sha256:40166c20200c9cac0ea7c96c7968910c50342ba38282af58b1b50b713363a6c9"
+  },
+  "budgets": {
+    "tool_budget": {
+      "max_steps": 10,
+      "cost_limit": 12.0,
+      "tool_costs": {
+        "search_visual": 1.0,
+        "search_speech": 1.0,
+        "search_ambient_audio": 1.0,
+        "inspect_clip": 2.0,
+        "read_transcript": 1.0,
+        "get_channel_status": 0.25,
+        "finalize": 0.0
+      }
+    },
+    "generation": {
+      "input_context_token_cap": 24576,
+      "max_new_tokens": 512,
+      "repair_attempts": 1,
+      "repair_max_new_tokens": 512,
+      "do_sample": false
+    },
+    "model_invocation_budget": {
+      "definition": "One provider generation request, including a repair request, counts as one invocation. Retrieval embedding/index operations are not generator invocations.",
+      "per_assignment_max_provider_invocations": 11,
+      "per_assignment_rationale": "At most 10 controller or generator turns under max_steps=10 plus at most one schema-repair request; single-shot RAG normally uses at most two.",
+      "global_max_provider_invocations": 352,
+      "global_formula": "32 assignments × 11 provider invocations",
+      "no_retry_beyond_single_schema_repair": true,
+      "abort_before_next_assignment_if_global_cap_would_be_exceeded": true
+    },
+    "wall_clock_and_process": {
+      "per_provider_call_timeout_seconds": 120,
+      "per_assignment_timeout_seconds": 900,
+      "max_concurrent_assignments": 1,
+      "network_fallback_for_model_or_index_artifacts": false
+    }
+  },
+  "abort_thresholds": {
+    "immediate_abort_codes": [
+      "HASH_BINDING_MISMATCH",
+      "ASSIGNMENT_ORDER_MISMATCH",
+      "CHECKPOINT_EVENT_HASH_MISMATCH",
+      "INVALID_RN_PREFIX_MISMATCH",
+      "R_N_SESSION_ID_REUSE",
+      "CROSS_ASSIGNMENT_CACHE_NAMESPACE_COLLISION",
+      "PRIVATE_FIELD_EXPOSURE",
+      "OUTPUT_ROOT_NOT_EMPTY_OR_COMPLETED",
+      "MODEL_INVOCATION_BUDGET_EXCEEDED",
+      "MISSING_RAW_MODEL_CALL_RETENTION",
+      "NONDETERMINISTIC_REPLAY"
+    ],
+    "count_thresholds": {
+      "model_process_crash_or_timeout": 2,
+      "malformed_after_repair": 3,
+      "typed_tool_contract_violation": 2,
+      "missing_terminal_ledger_row": 1,
+      "missing_required_output_file": 1,
+      "citation_contract_serialization_failure": 1
+    },
+    "rule": "Stop before starting the next assignment when an immediate condition occurs or a count reaches its threshold. Preserve all completed and failed raw records; never delete or overwrite partial evidence."
+  },
+  "non_evaluable_outputs": {
+    "codes": [
+      "MACHINE_PROVISIONAL_SEMANTICS",
+      "MODEL_PROCESS_CRASH",
+      "MODEL_TIMEOUT",
+      "MODEL_OOM",
+      "MALFORMED_AFTER_REPAIR",
+      "EARLY_TERMINAL_BEFORE_CHECKPOINT",
+      "NO_FINALIZATION_WITHIN_STEP_LIMIT",
+      "OVER_BUDGET_STEPS",
+      "OVER_BUDGET_COST",
+      "TOOL_ACCESS_FAILURE",
+      "MISSING_CITATION_OUTPUT",
+      "INVALID_CITATION_REFERENCE",
+      "STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT"
+    ],
+    "retention": "Retain assignment, raw attempts, public trajectory, failure ledger row, citation validation row when serializable, metric-ready row with answer-quality fields null, and file inventory hashes.",
+    "answer_quality_scoring": "PROHIBITED",
+    "positive_or_negative_scientific_endpoint_assignment": "PROHIBITED",
+    "plumbing_denominator": "included unless the run is globally invalidated by a binding or privacy failure"
+  },
+  "output_contract": {
+    "required_files": [
+      "run_manifest.json",
+      "assignments.jsonl",
+      "raw_trajectories.jsonl",
+      "raw_model_calls.jsonl",
+      "factor_model_raw_outputs.jsonl",
+      "citation_outputs.jsonl",
+      "r_n_prefix_pairs.jsonl",
+      "episode_metrics.jsonl",
+      "metric_ready_records.jsonl",
+      "failure_ledger.jsonl",
+      "aggregate_metrics.json",
+      "replay_manifest.json",
+      "file_inventory.json"
+    ],
+    "required_per_assignment_terminal_rows": [
+      "raw_trajectories.jsonl",
+      "citation_outputs.jsonl",
+      "episode_metrics.jsonl",
+      "metric_ready_records.jsonl",
+      "failure_ledger.jsonl"
+    ],
+    "raw_failure_retention_required": true,
+    "raw_model_text_or_bytes_hash_required_for_malformed_or_process_failures": true,
+    "citations_must_reference_acquired_observation_ids": true,
+    "search_pointers_are_not_citations": true,
+    "missing_citations_are_recorded_not_repaired_by_evaluator": true,
+    "metrics_contract": "All 32 assignments receive a terminal metric-ready record; answer quality, competence, performance, causal, H2, Gate, and human-validity fields are absent or null.",
+    "directory_mode": "0700",
+    "file_mode": "0600",
+    "no_overwrite_completed_run": true
+  },
+  "smoke_success_criteria": {
+    "basis": "PLUMBING_ONLY_NOT_ANSWER_QUALITY",
+    "required": [
+      "all frozen hashes match before any model invocation",
+      "exact listed assignment IDs and order emitted",
+      "all 12 R/N pairs use fresh continuation sessions and byte-identical public prefixes through the canonical checkpoint",
+      "canonical checkpoint hash matches on every delivered checkpoint",
+      "silent-withholding and typed-outage surfaces are both observed in the expected mechanism-specific records",
+      "raw failures and malformed attempts are retained without substitution",
+      "citation validation runs against acquired observation IDs",
+      "all required per-assignment terminal rows and required files are present",
+      "file inventory and replay hashes close",
+      "runtime leakage classifier reported as NOT_ESTIMABLE_SINGLE_SOURCE"
+    ],
+    "allowed_without_failure": [
+      "unsupported answers",
+      "abstentions",
+      "empty evidence after a correctly typed blocked surface",
+      "machine-provisional wording",
+      "weak model behavior",
+      "non-evaluable outputs retained under the frozen contract"
+    ],
+    "forbidden_success_interpretations": [
+      "answer quality passed",
+      "model competent",
+      "model performance established",
+      "restoration caused answer improvement",
+      "H2 supported",
+      "Gate A passed",
+      "human validity established",
+      "ready for scientific execution"
+    ]
+  },
+  "authorization": {
+    "execution_authorized": false,
+    "live_wiring_authorization_present": false,
+    "redteam_authorization_present": false,
+    "required_separate_authorizations": [
+      "versioned live wiring authorization binding this exact freeze and output root",
+      "versioned redteam authorization covering private-field exposure, cache/session isolation, and outage/restoration leakage"
+    ],
+    "authorization_must_not_be_inferred_from_hash_match_or_test_pass": true,
+    "models_must_not_run_under_this_freeze_alone": true
+  },
+  "results_boundary": {
+    "configuration_only": true,
+    "model_runs_performed": false,
+    "scientific_episodes_performed": false,
+    "answer_results_present": false,
+    "claims_present": false
+  },
+  "deterministic_hashes": {
+    "canonicalization": "UTF-8 JSON; json.dumps(sort_keys=true,separators=(',',':'),ensure_ascii=false,allow_nan=false); SHA-256 over bytes with no trailing newline; hash rendered as sha256:<64 lowercase hex>",
+    "frozen_bindings_sha256": "sha256:9e6cacc88dfc603135ca96ee187a094d7c0a092dc1873d1fbac1357b702ca532",
+    "selected_families_sha256": "sha256:5ca8aba38b803a336316a8907330d2e4ee51469cca2c7a757296959aea2429af",
+    "assignments_sha256": "sha256:40166c20200c9cac0ea7c96c7968910c50342ba38282af58b1b50b713363a6c9",
+    "smoke_success_criteria_sha256": "sha256:913388c2eeb8934d8ad0eebc16ab960e4a93517c9476aba4c967907b54784063",
+    "plan_sha256_excluding_this_field": "sha256:08636fbcb60771274f87f8e8289f404b74d47fa4b7861710e6a696535a04c940"
+  }
+}

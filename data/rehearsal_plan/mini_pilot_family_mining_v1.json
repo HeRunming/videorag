@@ -1,0 +1,1174 @@
+{
+  "authoritative_contracts": [
+    "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+    "docs/review/human_mini_pilot_source_pool_plan.md",
+    "docs/annotation/construct_validity_protocol.md",
+    "docs/design/scale1a_full_timeline_design.md",
+    "docs/design/mini_pilot_full_timeline_index_v1.md"
+  ],
+  "created_date": "2026-09-23",
+  "input_contract": {
+    "canonical_index_must_be_complete_non_smoke": true,
+    "canonical_new_source_index": "data/restricted/mini_pilot_index_v1",
+    "controller_evaluator_keys_or_labels_accessed": false,
+    "frozen_noaa_index": "data/restricted/noaa01/scale1a",
+    "human_review_restricted_key_accessed": false,
+    "official_sidecars": "derived_route_challenge_only"
+  },
+  "prohibitions": {
+    "H1_or_H2_assignment": true,
+    "final_family_acceptance": true,
+    "human_minimality_or_necessity_assertion": true,
+    "mining_on_incomplete_or_smoke_index": true,
+    "quota_forcing": true
+  },
+  "registry_hash": "sha256:ca9d5455b5140784d8915f92a903afce05231554c7813bfba7f59a4bfaeb56a1",
+  "registry_id": "mini-pilot-family-mining-v1-dry-run",
+  "registry_kind": "DETERMINISTIC_DRY_RUN_FIXTURE",
+  "schema_version": "av-trace.mini-pilot-family-mining/1.0",
+  "slot_matrix": {
+    "excluded_calibration_slot_count": 2,
+    "new_source_reported_slots": 8,
+    "noaa_development_reported_slots": 4,
+    "reported_slot_count": 12,
+    "reported_source_count": 6,
+    "slot_count": 14,
+    "target_hop_counts": {
+      "multi_hop": 6,
+      "one_hop": 6
+    },
+    "target_intervention_counts": {
+      "modality_channel_outage": 6,
+      "necessity_group_withholding": 6
+    },
+    "target_modality_profile_counts": {
+      "A": 2,
+      "S": 2,
+      "V": 2,
+      "V+A/S+A": 2,
+      "V+S": 2,
+      "V+S+A": 2
+    },
+    "target_temporal_counts": {
+      "far_separated": 6,
+      "near_local": 6
+    },
+    "two_reported_slots_per_source": true
+  },
+  "slots": [
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f01",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-OXFORD-QM-001",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "V",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "vision": "lecture apparatus blackboard quantum demonstration"
+      },
+      "slot_id": "F01",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-OXFORD-QM-001",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "V",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f02",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-OXFORD-QM-001",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "multi_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "V+A/S+A",
+            "temporal_stratum": "far_separated"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "ambient": "applause writing chalk sound",
+        "speech": "quantum mechanics explanation probability"
+      },
+      "slot_id": "F02",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-OXFORD-QM-001",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "multi_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "V+A/S+A",
+        "temporal_stratum": "far_separated"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f03",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "S",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "speech": "lawrence consciousness literature argument"
+      },
+      "slot_id": "F03",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "S",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f04",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "multi_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "V+S",
+            "temporal_stratum": "far_separated"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "speech": "speaker interpretation lawrence quotation",
+        "vision": "lecture slide literary quotation"
+      },
+      "slot_id": "F04",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "multi_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "V+S",
+        "temporal_stratum": "far_separated"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f05",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-MIT-RES12-003-L01",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "A",
+            "temporal_stratum": "far_separated"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "ambient": "writing chalk impact demonstration sound"
+      },
+      "slot_id": "F05",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-MIT-RES12-003-L01",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "A",
+        "temporal_stratum": "far_separated"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f06",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-MIT-RES12-003-L01",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "multi_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "V+S+A",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "ambient": "water writing impact sound",
+        "speech": "fluid flow explanation demonstration",
+        "vision": "fluid dynamics demonstration apparatus"
+      },
+      "slot_id": "F06",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-MIT-RES12-003-L01",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "multi_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "V+S+A",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f07",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-YALE-PHYS200-L01",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "V",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "vision": "physics lecture experiment apparatus blackboard"
+      },
+      "slot_id": "F07",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-YALE-PHYS200-L01",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "V",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f08",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-YALE-PHYS200-L01",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "multi_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "V+A/S+A",
+            "temporal_stratum": "far_separated"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "ambient": "impact mechanical writing sound",
+        "vision": "physics demonstration moving apparatus"
+      },
+      "slot_id": "F08",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-YALE-PHYS200-L01",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "multi_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "V+A/S+A",
+        "temporal_stratum": "far_separated"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f09",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": "noaa01-r004-surf-av"
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NOAA_CONSUMED_DEVELOPMENT_ONLY",
+          "future_primary_test_eligible": false,
+          "source_group_id": "cand-049",
+          "source_group_split_required": true,
+          "source_kind": "noaa_development"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "A",
+            "temporal_stratum": "far_separated"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "ambient": "ocean waves surf wind"
+      },
+      "slot_id": "F09",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "cand-049",
+      "source_kind": "noaa_development",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "A",
+        "temporal_stratum": "far_separated"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f10",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": "noaa01-r004-surf-av"
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NOAA_CONSUMED_DEVELOPMENT_ONLY",
+          "future_primary_test_eligible": false,
+          "source_group_id": "cand-049",
+          "source_group_split_required": true,
+          "source_kind": "noaa_development"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "multi_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "V+S+A",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "ambient": "ocean waves surf wind",
+        "speech": "beach bay safety instruction",
+        "vision": "person water safety near shore"
+      },
+      "slot_id": "F10",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "cand-049",
+      "source_kind": "noaa_development",
+      "target_hypothesis": {
+        "hop_stratum": "multi_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "V+S+A",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f11",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": "noaa01-r017-north-atlantic-basin"
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NOAA_CONSUMED_DEVELOPMENT_ONLY",
+          "future_primary_test_eligible": false,
+          "source_group_id": "cand-052",
+          "source_group_split_required": true,
+          "source_kind": "noaa_development"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "S",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "speech": "main area hurricane activity basin"
+      },
+      "slot_id": "F11",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "cand-052",
+      "source_kind": "noaa_development",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "S",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": null,
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.f12",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": "noaa01-r016-three-factors-vs"
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NOAA_CONSUMED_DEVELOPMENT_ONLY",
+          "future_primary_test_eligible": false,
+          "source_group_id": "cand-052",
+          "source_group_split_required": true,
+          "source_kind": "noaa_development"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "multi_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "V+S",
+            "temporal_stratum": "far_separated"
+          }
+        }
+      },
+      "excluded_calibration": false,
+      "included_in_reported_denominator": true,
+      "queries": {
+        "speech": "three hurricane formation factors",
+        "vision": "hurricane formation factors educational graphic"
+      },
+      "slot_id": "F12",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "cand-052",
+      "source_kind": "noaa_development",
+      "target_hypothesis": {
+        "hop_stratum": "multi_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "V+S",
+        "temporal_stratum": "far_separated"
+      }
+    },
+    {
+      "calibration_purpose": "excluded_low_risk_visual_anchor",
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.cal01",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": "noaa01-r007-opening-plastic-waste"
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NOAA_CONSUMED_DEVELOPMENT_ONLY",
+          "future_primary_test_eligible": false,
+          "source_group_id": "cand-051",
+          "source_group_split_required": true,
+          "source_kind": "noaa_development"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "necessity_group_withholding",
+            "modality_profile": "V",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": true,
+      "included_in_reported_denominator": false,
+      "queries": {
+        "vision": "discarded plastic introductory montage"
+      },
+      "slot_id": "CAL01",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "cand-051",
+      "source_kind": "noaa_development",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "necessity_group_withholding",
+        "modality_profile": "V",
+        "temporal_stratum": "near_local"
+      }
+    },
+    {
+      "calibration_purpose": "excluded_wording_and_timing_calibration",
+      "candidate": {
+        "answer_hypothesis": "FIXTURE_ONLY_NOT_VERIFIED",
+        "atomic_claims": [],
+        "candidate_family_id": "fixture.mpf.cal02",
+        "cbr_no_trigger_templates": {
+          "human_pair_isolation_asserted": false,
+          "states": [
+            "CLEAN",
+            "BLOCKED",
+            "RESTORED",
+            "NO_TRIGGER"
+          ],
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "current_tier": "P0_MACHINE_CANDIDATE",
+        "derived_route_closure_registry": {
+          "human_route_saturation_asserted": false,
+          "status": "FIXTURE_ONLY_NOT_EXECUTED"
+        },
+        "evidence_intervals": [],
+        "final_accepted": false,
+        "human_gold": false,
+        "human_minimality_asserted": false,
+        "human_necessity_asserted": false,
+        "human_reviewed": false,
+        "machine_leave_one_out_checks": [],
+        "machine_modality_drop_checks": [],
+        "provenance": {
+          "real_family_generated": false,
+          "real_index_accessed": false,
+          "record_origin": "deterministic_planning_fixture",
+          "seed_family_id": null
+        },
+        "question_hypothesis": "FIXTURE_ONLY_NOT_AUTHORED",
+        "record_kind": "dry_run_slot_fixture_not_a_real_family",
+        "risk_flags": {
+          "human_minimality_unverified": true,
+          "human_necessity_unverified": true,
+          "status": "NOT_MINED"
+        },
+        "ses_hypotheses": [],
+        "source_split": {
+          "construction_split": "NEW_SOURCE_MINI_PILOT_CONSTRUCTION",
+          "future_primary_test_eligible": true,
+          "source_group_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+          "source_group_split_required": true,
+          "source_kind": "new_source"
+        },
+        "strata": {
+          "observed": null,
+          "outcome": "NOT_MINED",
+          "quota_forcing_forbidden": true,
+          "target": {
+            "hop_stratum": "one_hop",
+            "intervention": "modality_channel_outage",
+            "modality_profile": "S",
+            "temporal_stratum": "near_local"
+          }
+        }
+      },
+      "excluded_calibration": true,
+      "included_in_reported_denominator": false,
+      "queries": {
+        "speech": "lecture opening statement"
+      },
+      "slot_id": "CAL02",
+      "slot_status": "DRY_RUN_FIXTURE_ONLY",
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "source_kind": "new_source",
+      "target_hypothesis": {
+        "hop_stratum": "one_hop",
+        "intervention": "modality_channel_outage",
+        "modality_profile": "S",
+        "temporal_stratum": "near_local"
+      }
+    }
+  ],
+  "status": "DRY_RUN_FIXTURE_NOT_REAL_FAMILIES",
+  "summary": {
+    "excluded_calibration_fixture_count": 2,
+    "final_accepted_family_count": 0,
+    "fixture_slot_count": 14,
+    "human_gold_count": 0,
+    "human_reviewed_count": 0,
+    "real_family_count": 0,
+    "real_index_access_count": 0,
+    "reported_fixture_count": 12,
+    "tier_counts": {
+      "P0_MACHINE_CANDIDATE": 14
+    }
+  }
+}

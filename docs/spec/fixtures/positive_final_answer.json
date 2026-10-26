@@ -1,0 +1,40 @@
+{
+  "p_sufficient": 0.96,
+  "verdict": "sufficient",
+  "answer_mode": "answer",
+  "claims": [
+    {
+      "claim_id": "agent_c1",
+      "registered_claim_id": "c1",
+      "text": "The spoken warning identifies the cause.",
+      "confidence": 0.95,
+      "citations": [
+        {
+          "observation_id": "obs1",
+          "interval": {"start_s": 100.0, "end_s": 110.0},
+          "modalities": ["speech"]
+        }
+      ]
+    }
+  ],
+  "diagnosis": {
+    "modality_probabilities": {
+      "vision": 0.02,
+      "speech": 0.02,
+      "ambient": 0.01
+    },
+    "hop_types": [],
+    "cause_probabilities": {
+      "source_evidence_absent": 0.01,
+      "evidence_in_source_but_inaccessible": 0.01,
+      "evidence_accessible_but_not_found": 0.01,
+      "not_missing": 0.96,
+      "uncertain": 0.01
+    },
+    "recovery_route_declared": false,
+    "description": ""
+  },
+  "natural_language_answer": "The spoken warning identifies the cause.",
+  "termination_reason": "sufficient_evidence"
+}
+

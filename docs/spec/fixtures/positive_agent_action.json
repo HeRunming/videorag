@@ -1,0 +1,29 @@
+{
+  "protocol_version": "0.2.0",
+  "episode_id": "syn_family.restored",
+  "request_id": "r1",
+  "step_index": 0,
+  "belief_state": {
+    "p_sufficient": 0.2,
+    "verdict": "insufficient",
+    "missing_modality_probabilities": {
+      "vision": 0.1,
+      "speech": 0.9,
+      "ambient": 0.1
+    },
+    "missing_hop_types": ["speech_content"],
+    "missingness_cause_probabilities": {
+      "source_evidence_absent": 0.02,
+      "evidence_in_source_but_inaccessible": 0.88,
+      "evidence_accessible_but_not_found": 0.04,
+      "not_missing": 0.01,
+      "uncertain": 0.05
+    },
+    "next_action_rationale": "Check the registered speech route."
+  },
+  "action": {
+    "tool": "get_channel_status",
+    "arguments": {"channels": ["speech", "transcript"]}
+  }
+}
+

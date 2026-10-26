@@ -1,0 +1,42 @@
+{
+  "id": "example/metadata-release",
+  "sha": "0123456789abcdef0123456789abcdef01234567",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "format:jsonl",
+    "modality:text"
+  ],
+  "cardData": {
+    "license": "cc-by-4.0",
+    "dataset_info": {
+      "config_name": "default",
+      "features": [
+        {
+          "name": "id",
+          "dtype": "string"
+        },
+        {
+          "name": "modality",
+          "dtype": "string"
+        }
+      ],
+      "splits": [
+        {
+          "name": "test",
+          "num_examples": 2,
+          "num_bytes": 94
+        }
+      ]
+    }
+  },
+  "siblings": [
+    {
+      "rfilename": "records.jsonl",
+      "blobId": "89abcdef0123456789abcdef0123456789abcdef",
+      "size": 93
+    }
+  ],
+  "usedStorage": 94
+}

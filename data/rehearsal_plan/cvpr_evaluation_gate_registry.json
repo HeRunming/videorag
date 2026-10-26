@@ -1,0 +1,738 @@
+{
+  "schema_version": "av-trace.cvpr-evaluation-preregistration/1.0",
+  "registry_id": "av-trace-cvpr-evaluation-preregistration-20260923",
+  "created_date": "2026-09-23",
+  "status": "PLANNING_ONLY_NOT_EXECUTED",
+  "readiness_token": "CVPR_EVALUATION_PREREGISTRATION_READY__EXECUTION_BLOCKED",
+  "current_decision": "PLANNING_GO__SCIENTIFIC_EXECUTION_NO_GO",
+  "results_created": false,
+  "model_runs_performed": false,
+  "human_labels_created": false,
+  "authoritative_inputs": [
+    "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+    "docs/paper/cvpr_thesis_and_evidence_gates.md",
+    "docs/paper/cvpr_execution_blueprint.md",
+    "docs/spec/metrics_protocol.md",
+    "docs/annotation/construct_validity_protocol.md",
+    "docs/decisions.md",
+    "data/rehearsal_plan/cvpr_pivot_gate_registry.json",
+    "data/rehearsal_plan/cvpr_experiment_registry.json",
+    "data/rehearsal_plan/cvpr_claim_evidence_ledger.json",
+    "data/rehearsal_plan/strong_agent_baseline_registry.json",
+    "docs/review/cvpr_pivot_review_data_construct.md",
+    "docs/review/cvpr_pre_submission_risk_register.md"
+  ],
+  "immutable_boundaries": {
+    "current_noaa_families": {
+      "stage": "MACHINE_ADJUDICATED_PROVISIONAL",
+      "use": "DEVELOPMENT_ONLY",
+      "primary_test_eligible": false
+    },
+    "twelve_family_pilot": {
+      "label": "LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY",
+      "confirmatory_testing_allowed": false,
+      "population_ranking_allowed": false
+    },
+    "primary_annotation_stage": "H2_HUMAN_ADJUDICATED_GOLD",
+    "pooling_machine_H1_H2": false,
+    "win_assumed": false,
+    "weighted_primary_scalar": false
+  },
+  "units": {
+    "primary_independent_unit": "source_group",
+    "matched_causal_unit": "family",
+    "outcome_unit": "episode_run",
+    "trace_diagnostic_unit": "action",
+    "aggregation_order": [
+      "episode_outcome",
+      "within_family_state_or_system_contrast",
+      "equal_weight_family_average_within_source_group",
+      "equal_weight_source_group_average"
+    ]
+  },
+  "states": {
+    "CLEAN": "At least one accepted H2 SES is reachable.",
+    "BLOCKED": "All accepted routes through the adjudicated necessity group or necessary channel are inaccessible, including derived routes.",
+    "RESTORED": "Starts identically to BLOCKED and a deterministic policy-blind trigger restores exactly the registered route.",
+    "NO_TRIGGER": "Starts identically to RESTORED but restoration remains disabled."
+  },
+  "split_policy": {
+    "group_key": "source_group_id",
+    "whole_source_assignment": true,
+    "source_group_definition": "Earliest verified source lineage plus mirrors, excerpts, alternate encodings, transcripts, near-duplicate edits, and all descendants.",
+    "minimum_corpus": {
+      "source_groups": 20,
+      "H2_families": 60,
+      "splits": {
+        "DEVELOPMENT_TRAIN": {
+          "minimum_source_groups": 8,
+          "target_H2_families": 24
+        },
+        "VALIDATION": {
+          "minimum_source_groups": 4,
+          "target_H2_families": 12
+        },
+        "TEST": {
+          "minimum_source_groups": 8,
+          "target_H2_families": 24
+        }
+      }
+    },
+    "preferred_30_source_split": {
+      "DEVELOPMENT_TRAIN": 12,
+      "VALIDATION": 6,
+      "TEST": 12
+    },
+    "confirmatory_comparative_source_rule": {
+      "minimum_untouched_test_source_groups_for_population_comparison": 20,
+      "below_minimum_label": "LOW_TEST_SOURCE_COUNT_DESCRIPTIVE_COMPARISON",
+      "benchmark_protocol_claims_may_use_8_test_sources_if_nonranking_gates_pass": true
+    },
+    "assignment": {
+      "timing": "BEFORE_SCALED_H2_ADJUDICATION_AFTER_SOURCE_LINEAGE_RIGHTS_AND_PROVISIONAL_COMPOSITION_FREEZE",
+      "stratification_fields": [
+        "content_domain",
+        "available_intervention_mechanism",
+        "coarse_modality_route_coverage"
+      ],
+      "learned_outcomes_allowed_in_assignment": false,
+      "selection": "enumerate_valid_assignments_then_select_with_recorded_SHA256_seed",
+      "inheritance": "every_candidate_H1_H2_and_derivative_inherits_the_preassigned_source_split",
+      "underfilled_split_rule": "fill_only_from_groups_prospectively_assigned_to_that_split_or_its_split_specific_blind_reserve",
+      "final_freeze": "verify_H2_counts_and_freeze_manifest_before_validation_model_selection"
+    },
+    "development_only_sources": [
+      "all_current_NOAA_source_groups",
+      "all_sources_used_in_family_construction",
+      "all_sources_used_in_retrieval_prompt_controller_metric_mapper_or_threshold_development"
+    ],
+    "no_test_replacement_after_outcomes": true,
+    "blind_reserve_replacement_only": true
+  },
+  "system_matrix": {
+    "required_learned_classes": [
+      {
+        "system_id": "DLC-B",
+        "class": "DIRECT_LONG_CONTEXT_LEARNED",
+        "backbone_family": "B",
+        "primary": true
+      },
+      {
+        "system_id": "RAG-A",
+        "class": "SINGLE_SHOT_LEARNED_RAG",
+        "backbone_family": "A",
+        "primary": true
+      },
+      {
+        "system_id": "REACT-A",
+        "class": "LEARNED_REACT",
+        "backbone_family": "A",
+        "primary": true
+      },
+      {
+        "system_id": "SUFF-A",
+        "class": "LEARNED_EVIDENCE_SUFFICIENCY",
+        "backbone_family": "A",
+        "primary": true
+      }
+    ],
+    "minimum_backbone_families": 2,
+    "second_backbone_minimum": [
+      "DLC-B_distinct_from_A",
+      "or_RAG-B"
+    ],
+    "cross_backbone_controller_claim_requires": [
+      "REACT-B",
+      "SUFF-B"
+    ],
+    "mandatory_diagnostics_controls": [
+      "ORACLE_H2_EVIDENCE_GENERATOR",
+      "PARTIAL_EVIDENCE_GENERATOR",
+      "DETERMINISTIC_REACT_PROTOCOL_CONTROL",
+      "DETERMINISTIC_SUFFICIENCY_PROTOCOL_CONTROL",
+      "RESTORED_NO_TRIGGER_CONTROL",
+      "F_VA_RETRIEVAL_SENSITIVITY"
+    ],
+    "fairness_contract": [
+      "REACT-A and SUFF-A share backbone, backend, candidate universe, tools, observations, finalizer, budget, decoding, repair, and failure policy.",
+      "Deterministic controls are never called learned systems.",
+      "Exact model snapshots remain unset until competence, license, resource, and data-boundary gates pass.",
+      "No system receives evaluator-private SES, necessity, state, trigger, route-certificate, or answer-key data."
+    ]
+  },
+  "budgets": {
+    "tool_using_primary": {
+      "max_canonical_actions_including_finalize": 10,
+      "cost_limit": 12.0,
+      "search_top_k": 5,
+      "context_cap_processor_tokens": 32768,
+      "max_new_tokens_per_decision_or_finalization": 512,
+      "max_model_invocations_including_repair": 12,
+      "schema_only_repairs": 1,
+      "semantic_repairs": 0,
+      "best_of_n": 1,
+      "tool_costs": {
+        "search_visual": 1.0,
+        "search_speech": 1.0,
+        "search_ambient_audio": 1.0,
+        "inspect_clip": 2.0,
+        "read_transcript": 1.0,
+        "get_channel_status": 0.25,
+        "finalize": 0.0
+      }
+    },
+    "budget_sensitivity_unpooled": {
+      "max_canonical_actions_including_finalize": 20,
+      "cost_limit": 24.0,
+      "retrospective_truncation_allowed": false
+    },
+    "single_shot_RAG": {
+      "searches": [
+        "one_visual_top5",
+        "one_speech_top5",
+        "one_ambient_top5"
+      ],
+      "fusion": "F_CTRL_PRIMARY",
+      "acquisition": "traverse_fused_order_under_cost_12",
+      "generation_calls": 1,
+      "context_cap_processor_tokens": 32768,
+      "max_new_tokens": 512,
+      "schema_only_repairs": 1
+    },
+    "direct_long_context": {
+      "generation_calls": 1,
+      "context_cap_processor_tokens": 32768,
+      "max_new_tokens": 512,
+      "schema_only_repairs": 1,
+      "packing": "question_independent_source_uniform_chronological_until_cap",
+      "tool_cost_comparison_eligible": false
+    },
+    "oracle_partial": {
+      "generation_calls": 1,
+      "context_cap_processor_tokens": 32768,
+      "max_new_tokens": 512,
+      "schema_only_repairs": 1,
+      "retrieval_cost": "NOT_APPLICABLE_DIAGNOSTIC"
+    }
+  },
+  "estimands": {
+    "primary_dashboard": [
+      "CLEAN_supported_answer_rate",
+      "BLOCKED_diagnostic_success_rate",
+      "BLOCKED_false_sufficient_rate",
+      "BLOCKED_false_sufficient_or_invalid_rate",
+      "RESTORED_supported_answer_rate",
+      "common_endpoint_RESTORED_minus_BLOCKED_supported_answer_gain",
+      "trigger_specific_RESTORED_minus_NO_TRIGGER_supported_answer_effect",
+      "NO_TRIGGER_false_recovery_rate",
+      "certificate_eligible_premature_stop_rate"
+    ],
+    "confirmatory_controller_contrast": {
+      "comparison": "SUFF-A_minus_REACT-A",
+      "hypotheses": [
+        {
+          "id": "H-C1",
+          "endpoint": "CLEAN_supported_answer",
+          "test": "noninferiority",
+          "margin": -0.1
+        },
+        {
+          "id": "H-C2",
+          "endpoint": "BLOCKED_false_sufficient_rate",
+          "direction": "lower",
+          "practical_threshold": -0.15
+        },
+        {
+          "id": "H-C3",
+          "endpoint": "premature_stop_rate",
+          "direction": "lower",
+          "practical_threshold": -0.15
+        },
+        {
+          "id": "H-C4",
+          "endpoint": "common_endpoint_restoration_gain",
+          "direction": "higher",
+          "practical_threshold": 0.15
+        }
+      ],
+      "directional_claim_requires": [
+        "H-C1_noninferiority",
+        "at_least_one_H-C2_to_H-C4_Holm_adjusted_pass",
+        "corresponding_0.15_practical_threshold",
+        "no_leave_one_source_out_reversal",
+        "complete_invalid_and_certificate_accounting",
+        "wording_bounded_to_tested_backbone_unless_B_pair_replication"
+      ]
+    },
+    "secondary_domains": {
+      "Acquire": [
+        "alternative_SES_aware_Recall_at_5_and_20",
+        "All_Evidence_at_5_and_20",
+        "all_SES_coverage",
+        "necessity_route_coverage",
+        "first_accepted_rank",
+        "MRR",
+        "nDCG",
+        "decoded_fraction",
+        "retrieval_burden",
+        "policy_features"
+      ],
+      "Ground": [
+        "Answer_Score",
+        "Citation_precision_recall_F1",
+        "Supported_Claim_Rate",
+        "unsupported_claim_rate",
+        "correct_answer_wrong_citation_rate",
+        "answer_correct_but_unsupported_rate",
+        "oracle_grounding_ceiling",
+        "partial_evidence_unsupported_completion"
+      ],
+      "Act": [
+        "high_confidence_FSR",
+        "stepwise_and_final_sufficiency_Brier",
+        "access_state_accuracy_and_Brier",
+        "missing_modality_and_hop_metrics",
+        "trigger_reacquisition",
+        "recovery_actions_cost_decoded_duration",
+        "claim_response_consistency"
+      ],
+      "CostReliability": [
+        "calls",
+        "tokens",
+        "tool_cost",
+        "decoded_seconds",
+        "wall_time",
+        "peak_memory",
+        "monetary_cost",
+        "cost_per_supported_answer",
+        "completion",
+        "typed_invalid",
+        "replay"
+      ]
+    }
+  },
+  "statistics": {
+    "point_estimate_weighting": "equal_source_after_equal_family_within_source",
+    "primary_interval": {
+      "method": "paired_source_cluster_bootstrap_percentile_95",
+      "minimum_resamples": 10000,
+      "pairing_preserved": true
+    },
+    "hierarchical_sensitivity": "resample_sources_then_families_within_source_preserving_system_state_pairs",
+    "paired_test": {
+      "unit": "source_level_paired_difference",
+      "method_up_to_12_sources": "exhaustive_sign_flip",
+      "method_above_12_sources": "seeded_sign_flip",
+      "minimum_random_sign_flips": 100000
+    },
+    "multiplicity": {
+      "confirmatory_family": [
+        "H-C1",
+        "H-C2",
+        "H-C3",
+        "H-C4"
+      ],
+      "method": "Holm_step_down",
+      "familywise_alpha": 0.05,
+      "exploratory_method": "Benjamini_Hochberg_within_named_family",
+      "exploratory_q": 0.1
+    },
+    "sparse_stratum_rule": {
+      "minimum_source_groups": 5,
+      "below_minimum_label": "SPARSE_STRATUM_DESCRIPTIVE_ONLY"
+    },
+    "required_sensitivity": [
+      "leave_one_source_out",
+      "leave_one_domain_out_when_eligible",
+      "family_weighted",
+      "valid_run_only",
+      "event_or_invalid",
+      "all_SES_vs_preferred_SES",
+      "F_CTRL_vs_F_VA",
+      "backbone",
+      "direct_exposure",
+      "identical_observed_evidence",
+      "oracle_partial",
+      "route_certificate_semantics",
+      "doubled_budget_separate_runs"
+    ]
+  },
+  "failure_policy": {
+    "behavioral_failures": [
+      "ACQUIRE_NOT_FOUND",
+      "ACQUIRE_PARTIAL",
+      "GROUND_UTILIZATION",
+      "GROUND_UNSUPPORTED_CLAIM",
+      "GROUND_CITATION",
+      "DIAGNOSIS_FALSE_SUFFICIENT",
+      "DIAGNOSIS_WRONG_ACCESS_CAUSE",
+      "ACT_PREMATURE_STOP",
+      "ACT_NO_RECOVERY_AFTER_TRIGGER",
+      "ACT_FALSE_RECOVERY_NO_TRIGGER",
+      "ACT_OVERSEARCH_REDUNDANT",
+      "FINAL_VALID_WRONG_ANSWER",
+      "FINAL_VALID_SUPPORTED_ABSTENTION"
+    ],
+    "invalid_primary_codes": [
+      "INVALID_MODEL_IDENTITY",
+      "INVALID_CONFIG_OR_HASH",
+      "INVALID_PRIVATE_FIELD_EXPOSURE",
+      "INVALID_RIGHTS_OR_DATA_BOUNDARY",
+      "INVALID_INPUT_SERIALIZATION",
+      "INVALID_CONTEXT_OVERFLOW",
+      "INVALID_MODEL_TIMEOUT",
+      "INVALID_PROVIDER_ERROR_OR_REFUSAL",
+      "INVALID_MALFORMED_AFTER_REPAIR",
+      "INVALID_ILLEGAL_ACTION",
+      "INVALID_TOOL_TIMEOUT_OR_ERROR",
+      "INVALID_BACKEND_OR_INDEX_MISMATCH",
+      "INVALID_OOM",
+      "INVALID_PROCESS_CRASH",
+      "INVALID_OVER_BUDGET",
+      "INVALID_FINALIZER_SCHEMA",
+      "INVALID_UNKNOWN_CITATION",
+      "INVALID_TRIGGER_OR_INTERVENTION",
+      "INVALID_REPLAY_MISMATCH",
+      "INVALID_OTHER_PREDECLARED"
+    ],
+    "single_primary_invalid_code_per_run": true,
+    "silent_retry_selection": false,
+    "deterministic_answer_substitution": false
+  },
+  "missing_invalid_handling": {
+    "primary_population": "intention_to_evaluate",
+    "positive_success_invalid_value": 0,
+    "lower_is_better_reporting": [
+      "semantic_rate_with_invalid_count",
+      "conservative_event_or_invalid_rate",
+      "valid_run_only_sensitivity"
+    ],
+    "favorable_claim_must_survive_conservative_analysis": true,
+    "premature_stop_missing_or_invalid_certificate": null,
+    "confirmatory_premature_stop_requires_certificate_coverage": 1.0,
+    "structural_ineligibility": "NULL_WITH_REASON_NOT_ZERO",
+    "source_withdrawal": "FROZEN_BLIND_RESERVE_OR_REDUCED_DENOMINATOR_NO_OUTCOME_BASED_REPLACEMENT"
+  },
+  "power_scope": {
+    "current_numerical_power_claim": false,
+    "reason": "Zero H2 families and no H2 source-level variance estimate.",
+    "pilot_use_for_power": false,
+    "pretest_simulation_source": "DEVELOPMENT_AND_VALIDATION_ONLY",
+    "absolute_effect_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "required_outputs": [
+      "Holm_adjusted_power",
+      "interval_width",
+      "one_source_reversal_probability",
+      "invalid_rate_sensitivity",
+      "intracluster_correlation_grid"
+    ],
+    "allowed_pretest_decisions": [
+      "add_untouched_test_sources",
+      "retain_minimum_and_mark_comparisons_descriptive",
+      "drop_directional_controller_claim"
+    ],
+    "prohibited_claims": [
+      "SOTA",
+      "universal_reliability",
+      "population_wide_ranking",
+      "broad_domain_representativeness",
+      "out_of_domain_generalization",
+      "first_unique_only"
+    ]
+  },
+  "claim_evidence_minima": [
+    {
+      "claim_id": "EC1",
+      "claim": "audited_execution_infrastructure",
+      "minimum_evidence": "existing_exact_hash_replay_budget_and_typed_failure_audits",
+      "failure_action": "engineering_only_wording"
+    },
+    {
+      "claim_id": "EC2",
+      "claim": "common_supported_answer_restoration_endpoint",
+      "minimum_evidence": "metrics_protocol_0.3.0_implementation_and_independent_recomputation",
+      "failure_action": "definition_only_wording"
+    },
+    {
+      "claim_id": "EC3",
+      "claim": "final_point_route_certificates",
+      "minimum_evidence": "valid_implementation_and_independent_audit; empirical_claim_requires_complete_certificate_coverage",
+      "failure_action": "definition_only_or_drop_stopping_result"
+    },
+    {
+      "claim_id": "EC4",
+      "claim": "frozen_learned_retrieval",
+      "minimum_evidence": "exact_snapshots_and_audited_F_CTRL_F_VA_execution",
+      "failure_action": "engineering_only_wording"
+    },
+    {
+      "claim_id": "MC1",
+      "claim": "human_adjudicated_matched_benchmark_protocol_validity",
+      "minimum_evidence": "60_H2_20_sources_frozen_split_pair_isolation_derived_leak_exact_restoration_no_trigger_rights_and_blind_construct_audit",
+      "failure_action": "do_not_call_benchmark_valid"
+    },
+    {
+      "claim_id": "MC2",
+      "claim": "answer_accuracy_is_incomplete",
+      "minimum_evidence": "answer_correct_but_unsupported_or_wrong_citation_on_at_least_3_test_sources_and_2_learned_classes",
+      "failure_action": "measurement_only_no_empirical_inadequacy_claim"
+    },
+    {
+      "claim_id": "MC3",
+      "claim": "failure_stage_separation",
+      "minimum_evidence": "at_least_2_nonretrieval_categories_each_on_2_test_sources_independently_audited_and_not_removed_by_complete_acquisition_conditioning",
+      "failure_action": "retrieval_focus_or_no_stage_separation"
+    },
+    {
+      "claim_id": "MC4",
+      "claim": "matched_recovery_is_measurable",
+      "minimum_evidence": "valid_CBRN_isolation_trigger_replay_R_minus_B_R_minus_N_no_trigger_and_cost_on_at_least_3_test_sources",
+      "failure_action": "state_endpoints_only_no_causal_recovery_wording"
+    },
+    {
+      "claim_id": "MC5",
+      "claim": "sufficiency_control_improves_behavior",
+      "minimum_evidence": "H_C1_noninferiority_plus_Holm_adjusted_H_C2_to_H_C4_plus_0.15_effect_no_source_reversal_and_complete_invalid_accounting",
+      "failure_action": "report_null_adverse_or_inconclusive"
+    },
+    {
+      "claim_id": "MC6",
+      "claim": "retrieval_is_not_the_whole_story",
+      "minimum_evidence": "Ground_or_Act_separation_on_2_test_sources_under_identical_observations_or_All_Evidence_success_and_2_learned_classes",
+      "failure_action": "attribute_observed_difference_to_acquisition"
+    },
+    {
+      "claim_id": "MC7",
+      "claim": "generic_learned_retrieval_not_automatically_beneficial",
+      "minimum_evidence": "H2_alternative_SES_aware_source_disjoint_F_CTRL_F_VA_replication_with_5_sources_per_claimed_modality_and_end_to_end_propagation",
+      "failure_action": "drop_encoder_claim_or_report_registry_error"
+    },
+    {
+      "claim_id": "RELEASE",
+      "claim": "public_benchmark_release",
+      "minimum_evidence": "asset_level_authority_privacy_component_attribution_takedown_public_evaluator_and_reproduction_package",
+      "failure_action": "restricted_internal_evaluation_wording_only"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "A",
+      "name": "MINI_PILOT_INPUT_READY",
+      "current_status": "BLOCKED",
+      "go": [
+        "12 eligible candidates plus 2 excluded calibration families",
+        "exactly 6 sources and at least 3 domains",
+        "at most 4 gate-defining NOAA families from 2 NOAA sources",
+        "8 candidates from 4 new non-NOAA sources",
+        "complete dossiers, hashes, lineage, technical checks, and annotation authority",
+        "frozen protocol, seed, forms, and at least 6 role-separated trained reviewers",
+        "no unresolved critical governance hold"
+      ],
+      "repair": [
+        "six-source design remains feasible but candidate, role, technical, or noncritical governance records are incomplete"
+      ],
+      "no_go": [
+        "six eligible sources require weaker source, governance, technical, or stratum rules"
+      ]
+    },
+    {
+      "gate_id": "B",
+      "name": "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+      "current_status": "NOT_RUN",
+      "go": [
+        "12 of 12 complete across 6 frozen sources",
+        "all 6 roles complete",
+        "at least 9 H1 and at least 8 H2",
+        "pair-isolation failures at most 1",
+        "systematic minimality or modality failures at most 3",
+        "no unresolved critical governance hold",
+        "at least 2 accepted non-NOAA sources",
+        "ambient and V+S+A H2 coverage or prospective stratum removal",
+        "saturation discoveries repaired and re-audited",
+        "unchanged-criteria route to 60 H2"
+      ],
+      "repair": [
+        "at least 5 H1 or localized versionably repairable failures with the central construct still reviewable"
+      ],
+      "no_go": [
+        "fewer than 5 H1",
+        "at least 6 rejected",
+        "systematic alternative-support, minimality, necessity, isolation, rights, or privacy failure"
+      ],
+      "reporting_label": "LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY"
+    },
+    {
+      "gate_id": "C",
+      "name": "STRONG_BASELINE_TECHNICAL_READY",
+      "current_status": "NOT_READY",
+      "go": [
+        "all required learned classes pass frozen source-free competence",
+        "direct, RAG, ReAct, and sufficiency adapters hash-frozen",
+        "at least two backbone/model families feasible",
+        "shared budget, schemas, finalizer, failure policy, and data boundaries pass",
+        "zero evaluator-private exposure and deterministic answer substitution",
+        "independent replay and metric audit pass"
+      ],
+      "repair": [
+        "technical or competence-localized repair using only synthetic or development data under a new version"
+      ],
+      "no_go": [
+        "required strong learned class cannot pass without evaluator assistance, silent fallback, label changes, or test access"
+      ]
+    },
+    {
+      "gate_id": "D",
+      "name": "H2_MINI_DIAGNOSTIC_GO",
+      "current_status": "NOT_AUTHORIZED",
+      "go": [
+        "learned RAG, ReAct, and sufficiency complete frozen CBR and no-trigger contracts",
+        "one intervention-aware separation across at least 3 sources and not one-family-driven",
+        "one answer-support or citation divergence",
+        "two nonretrieval failure categories each on at least 2 sources",
+        "complete invalid and source-level accounting"
+      ],
+      "repair": [
+        "construct and technical gates pass but descriptive diagnostic is inconclusive or a typed execution defect is repairable without outcome-selected replacement"
+      ],
+      "no_go": [
+        "intervention isolation fails",
+        "all differences are retrieval-only or metric artifacts",
+        "no answer-support divergence",
+        "no audited nonretrieval separation",
+        "strong execution requires private assistance"
+      ]
+    },
+    {
+      "gate_id": "E",
+      "name": "FIRST_40_SCALED_REVIEWS_AUTHORIZED",
+      "current_status": "NOT_AUTHORIZED",
+      "go": [
+        "Gates B through D are GO",
+        "120 to 160 P-tier candidates from 30 to 40 sources",
+        "at least 25 rights-eligible sources and 25 percent reserve",
+        "source-disjoint rules frozen",
+        "staffing, labor, compute, storage, and rights capacity approved",
+        "no construct threshold relaxed"
+      ],
+      "repair": [
+        "science gates pass but pool, reserve, staffing, or governance capacity is incomplete without weaker rules"
+      ],
+      "no_go": [
+        "a prerequisite is NO_GO",
+        "pool requires weaker construct or governance rules"
+      ]
+    },
+    {
+      "gate_id": "F",
+      "name": "FULL_60_H2_PRODUCTION_AUTHORIZED",
+      "current_status": "NOT_AUTHORIZED",
+      "go": [
+        "H2 yield after first 40 reviews at least 60 percent",
+        "at least 5 completed reviews in every high-risk stratum",
+        "no construct threshold weakened",
+        "measured labor, rights, compute, and storage feasible",
+        "rights reserve at least 25 percent",
+        "unchanged-criteria path to 60 H2 and 20 sources"
+      ],
+      "repair": [
+        "localized versionable throughput or yield issue repairable without test outcomes"
+      ],
+      "no_go": [
+        "yield below 60 percent without localized repair",
+        "source, rights, or reviewer capacity infeasible",
+        "required stratum infeasible",
+        "principal diagnostic premise no longer survives"
+      ]
+    },
+    {
+      "gate_id": "G",
+      "name": "60_H2_CORPUS_FREEZE",
+      "current_status": "NOT_RUN",
+      "go": [
+        "at least 60 H2 families from at least 20 sources",
+        "minimum 8/4/8 source split and target 24/12/24 family split",
+        "complete rights decisions and no applicable unknown_hold",
+        "25 percent source and family reserve",
+        "no test-source tuning",
+        "experiment contracts ready to freeze"
+      ],
+      "repair": [
+        "valid production has a fillable count, stratum, or governance deficit repairable from blind reserve"
+      ],
+      "no_go": [
+        "minima require weaker rules",
+        "source disjointness or test privacy broken",
+        "irreparable critical rights, construct, or isolation defect"
+      ]
+    },
+    {
+      "gate_id": "H",
+      "name": "MAIN_EVALUATION_FREEZE",
+      "current_status": "NOT_RUN",
+      "go": [
+        "source, system, prompt, adapter, processor, retrieval, budget, seed, metric, hypothesis, correction, power, and environment hashes frozen",
+        "competence and data-boundary audits pass",
+        "no test outcome viewed",
+        "complete primary, no-trigger, diagnostic, deterministic-control, and invalid-reserve run matrix"
+      ],
+      "repair": [
+        "missing non-outcome technical artifact can be frozen before test unlock"
+      ],
+      "no_go": [
+        "test leakage",
+        "exact system identity cannot be frozen",
+        "unapproved system-specific run matrix or budget difference"
+      ]
+    },
+    {
+      "gate_id": "I",
+      "name": "PAPER_CLAIM_READY",
+      "current_status": "NOT_RUN",
+      "go": [
+        "Gates A through H are GO",
+        "four learned classes and two backbone/model families complete",
+        "dashboard, matched effects, uncertainty, multiplicity, invalids, ablations, and source/domain sensitivity complete",
+        "nonretrieval separation across at least 3 test sources",
+        "answer-support or citation divergence across at least 3 test sources",
+        "no headline conclusion one-source-driven",
+        "independent metric, replay, leakage, construct, rights, novelty, and sentence-level claim audits pass",
+        "claim wording obeys claim_evidence_minima"
+      ],
+      "repair": [
+        "valid corpus/evaluation has a noncritical missing baseline, audit, uncertainty analysis, or wording defect repairable without outcome-selected test reruns"
+      ],
+      "no_go": [
+        "matched construct fails",
+        "principal result explained by one source, one domain, retrieval alone, leakage, or invalid scoring",
+        "strong baselines or source-level analysis absent",
+        "release or headline wording exceeds evidence"
+      ]
+    }
+  ],
+  "current_blockers": [
+    "zero_completed_human_reviews",
+    "zero_H1_families",
+    "zero_H2_families",
+    "twelve_family_pilot_not_run",
+    "current_NOAA_development_only",
+    "canonical_new_source_full_timeline_index_incomplete",
+    "real_mini_pilot_family_mining_not_run",
+    "no_accepted_real_twelve_family_candidate_set",
+    "strong_learned_agent_competence_not_passed",
+    "direct_long_context_baseline_not_frozen",
+    "two_backbone_matrix_not_frozen",
+    "no_60_H2_20_source_corpus",
+    "no_source_disjoint_split",
+    "no_pretest_power_simulation",
+    "public_release_rights_incomplete",
+    "main_run_matrix_and_test_firewall_not_frozen"
+  ],
+  "next_authorized_activity": "planning_review_and_versioned_freeze_only; no model runs or human-label creation authorized"
+}

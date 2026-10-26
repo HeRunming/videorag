@@ -1,0 +1,18 @@
+{
+  "conflict_attestation": {
+    "independent_of_validator_ids": [
+      "synthetic_validator_b"
+    ],
+    "not_adjudicator": true,
+    "not_alternative_evidence_finder": true,
+    "not_family_author": true
+  },
+  "display_name": "Synthetic validator 1",
+  "identity_version": "synthetic-validator-v1",
+  "independence_group": "synthetic_validator_a",
+  "organization": "av-trace-synthetic-independent-validator",
+  "permitted_private_oracle_access": true,
+  "role": "validator",
+  "schema_version": "1.0.0",
+  "validator_id": "synthetic_validator_a"
+}

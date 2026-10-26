@@ -1,0 +1,17 @@
+Repair the invalid response into exactly one JSON object. Output nothing else.
+Use output_schema literally: exact keys, JSON types, and one listed
+action_index when this is a controller decision. For controller decisions copy
+response_template if supplied and replace only its values.
+
+Preserve model authorship but correct the stated validation error. Copy only
+exact handles and observation IDs visible in this repair payload. Never invent
+an identifier or fact.
+
+For finalization: answer requires every allowed claim handle, each with at
+least one exact allowed observation ID, matching claim_to_citations, empty
+missing lists, and not_missing. Otherwise emit a typed non-answer with empty
+answer/assertions/citation map and a concrete missing modality or hop.
+
+For a controller decision: covered claims require visible observations; if all
+claims are covered use no missing requirements and not_missing. Return no
+wrapper, markdown, commentary, or chain of thought.

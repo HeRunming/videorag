@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": 155,
+  "registry_id": "licensed_dataset_hf_access_registry_v1",
+  "created_date": "2026-09-23",
+  "decision_token": "LICENSED_DATASET_HF_ACCESS_REPAIR",
+  "decision_scope": "Metadata/listing and access-route readiness only. This registry authorizes no media acquisition, decoding, annotation, model evaluation, or release.",
+  "network_stop": {
+    "ordered_by_user": true,
+    "network_activity_after_order": false,
+    "successful_task155_provider_responses": 0,
+    "remote_metadata_payloads_saved": 0,
+    "media_downloads": 0
+  },
+  "authentication": {
+    "existing_hf_login_present": true,
+    "identity_omitted": true,
+    "secret_printed": false,
+    "current_remote_authentication_verified": false,
+    "current_token_tree_listing_proven_repo_count": 0
+  },
+  "counts": {
+    "named_dataset_subjects": 9,
+    "exact_official_hf_repo_ids_confirmed": 1,
+    "exact_official_hf_repo_ids_confirmed_live_in_task155": 0,
+    "exact_official_hf_repo_ids_from_preexisting_pinned_evidence": 1,
+    "historically_public_exact_official_hf_repos": 1,
+    "historically_gated_exact_official_hf_repos": 0,
+    "historically_private_exact_official_hf_repos": 0,
+    "current_token_listable_exact_official_hf_repos": 0,
+    "current_token_listability_unknown_exact_official_hf_repos": 1,
+    "subjects_without_exact_official_hf_repo_id": 8,
+    "third_party_mirrors_accepted_as_authoritative": 0,
+    "next_completion_queue_datasets": 4
+  },
+  "repositories": [
+    {
+      "repo_id": "lmms-lab/EgoLife",
+      "dataset_subject": "EgoLife",
+      "officiality": "OFFICIAL_PROJECT_MAINTAINED",
+      "officiality_confidence": "HIGH_FROM_PREEXISTING_OFFICIAL_SOURCE_RECON",
+      "full_commit_sha": null,
+      "observed_revision": "143fb31",
+      "observed_revision_kind": "SHORT_VISIBLE_TREE_REVISION_PREFIX",
+      "full_commit_sha_status": "UNRESOLVED",
+      "revision_evidence_date": "2026-09-07",
+      "historical_access_status": "PUBLIC_UNGATED_HIGH_RISK",
+      "gated": false,
+      "private": false,
+      "current_token_can_list_tree_files": null,
+      "current_token_listing_status": "NOT_VERIFIED_NO_SUCCESSFUL_TASK155_PROVIDER_RESPONSE",
+      "readme_metadata": {
+        "task155_readme_fetched": false,
+        "historical_card_license_field": "mit",
+        "known_layout_summary": "Six participant directories; EgoLifeCap DenseCaption and Transcript trees; EgoLifeQA; EgoIT; Xet-backed media."
+      },
+      "license_metadata": {
+        "hf_card": "mit",
+        "official_project_repository": "S-Lab License 1.0",
+        "official_project_license_revision": "c0545c1",
+        "conflict": true,
+        "status": "UNKNOWN_HOLD_STRICTER_TERMS_CONTROL_PENDING_WRITTEN_CLARIFICATION"
+      },
+      "file_summary": {
+        "exact_file_count": null,
+        "exact_file_count_status": "NOT_CAPTURED",
+        "historical_viewer_rows": 32001,
+        "viewer_rows_are_not_treated_as_file_count": true,
+        "approx_total_size": "about 512 GB",
+        "exact_total_size": null,
+        "known_small_tree_size": "EgoLifeCap about 49.6 MB"
+      },
+      "media_packaging": {
+        "hosted_media": true,
+        "storage": "Xet-backed participant video objects",
+        "organization": "participant directories plus annotation/text subtrees",
+        "exact_shard_or_archive_inventory": "UNKNOWN"
+      },
+      "audio_evidence": {
+        "dataset_level": "PROJECT_DESCRIBES_VIDEO_AUDIO_AND_ENVIRONMENTAL_AUDIO",
+        "annotation_level": "need_audio QA field plus timestamped transcript/dense-caption SRT",
+        "selected_file_stream_verified": false,
+        "status": "UNVERIFIED_PER_FILE"
+      },
+      "rights_status": "UNKNOWN_HOLD",
+      "privacy_status": "VERY_HIGH_REVIEW_REQUIRED",
+      "task155_disposition": "DO_NOT_ACQUIRE"
+    }
+  ],
+  "subject_resolution": [
+    {
+      "subject": "EgoLife",
+      "exact_official_hf_repo_ids": [
+        "lmms-lab/EgoLife"
+      ],
+      "hf_disposition": "REPAIR_LICENSE_AND_FULL_REVISION"
+    },
+    {
+      "subject": "Assembly101",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "UNRESOLVED_USE_OFFICIAL_PROJECT_ROUTE_ONLY"
+    },
+    {
+      "subject": "HD-EPIC",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "UNRESOLVED_USE_OFFICIAL_PROJECT_ROUTE_ONLY"
+    },
+    {
+      "subject": "Ego4D",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "NO_OFFICIAL_HF_MIRROR_PROVEN_USE_OFFICIAL_PORTAL_ONLY"
+    },
+    {
+      "subject": "Ego-Exo4D",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "NO_OFFICIAL_HF_MIRROR_PROVEN_USE_OFFICIAL_PORTAL_ONLY"
+    },
+    {
+      "subject": "EPIC-KITCHENS",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "UNRESOLVED_USE_OFFICIAL_EPIC_ROUTE_ONLY"
+    },
+    {
+      "subject": "EPIC-SOUNDS",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "UNRESOLVED_USE_OFFICIAL_EPIC_ROUTE_ONLY"
+    },
+    {
+      "subject": "MECCANO",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "NO_PRIMARY_HF_EVIDENCE_HOLD"
+    },
+    {
+      "subject": "CaptainCook4D",
+      "exact_official_hf_repo_ids": [],
+      "hf_disposition": "NO_PRIMARY_HF_EVIDENCE_HOLD"
+    }
+  ],
+  "next_completion_queue": [
+    {
+      "priority": 1,
+      "dataset": "Assembly101",
+      "why_realistic_next": "Preexisting official-source inventory records active official project download scripts and a possible Hugging Face route, while the exact official repository ID and package terms remain the bounded missing facts.",
+      "user_actions": [
+        "Open the official Assembly101 project download page and record the exact maintained Hugging Face repository ID if the project links one.",
+        "Archive the exact package-level license or terms and record any checkbox, form, or acceptance timestamp.",
+        "If no official project link identifies a Hugging Face repository, use only the official project/cloud route and reject similarly named mirrors."
+      ],
+      "admin_actions": [
+        "Review research, derivative-annotation, privacy, retention, and redistribution clauses for the exact package.",
+        "Approve a metadata-only listing command for the exact official repository or official cloud manifest.",
+        "Create an allowlist limited to file names, sizes, revisions, checksums, and one selected view; do not approve multi-terabyte transfer."
+      ],
+      "gate_type": "EXTERNAL_GATE_NOT_YET_PROVEN",
+      "ready_after_actions": "METADATA_LISTING_ONLY"
+    },
+    {
+      "priority": 2,
+      "dataset": "EPIC-KITCHENS-100 plus EPIC-SOUNDS",
+      "why_realistic_next": "The official portal and downloader route are known, and annotation licensing is partially documented; the remaining work is to archive and accept the raw-media terms separately.",
+      "user_actions": [
+        "Register or sign in through the official EPIC project route using the institutionally authorized identity.",
+        "Open and archive the current raw video/audio terms separately from the annotation repository license.",
+        "Accept the gate only after institutional review and retain the confirmation, date, covered release, and account-independent evidence of acceptance."
+      ],
+      "admin_actions": [
+        "Confirm that the intended use is compatible with any non-commercial restriction and that new annotations and internal audio extraction are permitted.",
+        "Approve the official downloader only for metadata or a minimal participant/kitchen manifest before any media transfer.",
+        "Record EPIC-KITCHENS and EPIC-SOUNDS artifact scopes separately; do not apply the annotation CC BY-NC notice automatically to raw media."
+      ],
+      "gate_type": "OFFICIAL_EXTERNAL_TERMS_AND_DOWNLOADER",
+      "ready_after_actions": "OFFICIAL_METADATA_LISTING_THEN_EXACT_ASSET_REVIEW"
+    },
+    {
+      "priority": 3,
+      "dataset": "Ego4D v2.1",
+      "why_realistic_next": "The official agreement, temporary AWS credential, and CLI route are well-defined even though no official Hugging Face media repository is proven.",
+      "user_actions": [
+        "Use the official Ego4D portal to request v2.1 access and have an institutionally authorized person accept the exact current Ego4D License Agreement.",
+        "Retain the agreement text, submitted purpose, acceptance date, approval email, and release scope.",
+        "Obtain temporary AWS credentials through the official route without placing credentials in repository files."
+      ],
+      "admin_actions": [
+        "Approve the intended internal research, new-annotation, deletion, and publication plan against the exact agreement.",
+        "Install and pin the official Ego4D CLI in a controlled environment and store credentials in the approved secret mechanism.",
+        "Run metadata-only CLI listing for exact video_uid, origin_video_id, component IDs, sizes, and audio metadata before authorizing any object transfer."
+      ],
+      "gate_type": "OFFICIAL_EXTERNAL_LICENSE_AND_TEMPORARY_AWS_CREDENTIALS",
+      "ready_after_actions": "OFFICIAL_METADATA_LISTING_ONLY"
+    },
+    {
+      "priority": 4,
+      "dataset": "Ego-Exo4D V2",
+      "why_realistic_next": "The official V2 agreement and download route are known, but current acceptance and tooling are absent.",
+      "user_actions": [
+        "Register through the official Ego-Exo4D V2 portal and submit the exact intended-use statement.",
+        "Have an authorized person execute the current V2 agreement and retain its text, approval, date, and release coverage.",
+        "Request only metadata needed to identify non-kitchen source groups before requesting synchronized media."
+      ],
+      "admin_actions": [
+        "Classify the project correctly under the agreement's research or commercial-use provisions and review redistribution restrictions.",
+        "Approve the official downloader in a controlled environment for metadata-only enumeration.",
+        "Require source grouping across participant, team, take, synchronized views, poses, and derivatives before any selected-file request."
+      ],
+      "gate_type": "OFFICIAL_EXTERNAL_V2_AGREEMENT",
+      "ready_after_actions": "OFFICIAL_METADATA_LISTING_ONLY"
+    }
+  ],
+  "held_candidates": [
+    {
+      "dataset": "EgoLife",
+      "reason": "MIT versus S-Lab License 1.0 conflict, unresolved full HF commit SHA, unverified current listing, and very high privacy risk."
+    },
+    {
+      "dataset": "HD-EPIC",
+      "reason": "Exact release, operative terms, official route details, and any exact official Hugging Face repository remain unresolved."
+    },
+    {
+      "dataset": "MECCANO",
+      "reason": "No retained official primary-source or exact official Hugging Face repository evidence."
+    },
+    {
+      "dataset": "CaptainCook4D",
+      "reason": "No retained official primary-source or exact official Hugging Face repository evidence."
+    }
+  ],
+  "readiness_requirements": [
+    "A full immutable provider revision or commit SHA is recorded.",
+    "The exact official repository or official non-HF route is verified from the project-maintained source.",
+    "The current token or official account can list only metadata/files without media transfer.",
+    "README and exact operative license or agreement text are archived.",
+    "Exact file count and total size are obtained from listing/API metadata.",
+    "Media packaging and per-file audio declarations are recorded without downloading media.",
+    "Acquisition, processing, annotation, and release permissions are reviewed separately.",
+    "Third-party mirrors remain excluded unless the official project expressly owns or maintains them."
+  ],
+  "snapshots": [
+    "data/hf_recon/licensed_source_access_v1/run_summary.json",
+    "data/hf_recon/licensed_source_access_v1/repo_lmms-lab__EgoLife.json",
+    "data/hf_recon/licensed_source_access_v1/subject_resolution.json"
+  ],
+  "final_disposition": "REPAIR_BEFORE_ANY_ACQUISITION"
+}

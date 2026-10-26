@@ -1,0 +1,64 @@
+{
+  "bindings": {
+    "design_doc_sha256": "sha256:2619b98a934adf4a371c17cf886c9850cbbc0d0dfbede232feba5541d836b845",
+    "plan_payload_sha256": "sha256:26356f73707ae8767d2ea8afd7113ebf4335b13fc08fa0b3b76a721abd529273",
+    "principal_registry_manifest": {
+      "principals": [
+        {
+          "principal_id": "opaque-reviewer-a",
+          "role": "reviewer",
+          "subject_commitment": "sha256:ead6d7276c51e3419cda2e7fe73d182ae05e980cb1eb80b3d179187f568039dd"
+        },
+        {
+          "principal_id": "opaque-reviewer-b",
+          "role": "reviewer",
+          "subject_commitment": "sha256:0428aa1762b63f7db6cad021bda3cc9ccc30cfe4a772a3ce4b85dffd70f64d23"
+        },
+        {
+          "principal_id": "opaque-adjudicator-c",
+          "role": "adjudicator",
+          "subject_commitment": "sha256:e7c4f6eaa1e16bc4e8bd7a98ec8ac08c1d9ffdbcb287b2b36c8d47a24d6f113a"
+        }
+      ],
+      "provisioning_status": "SYNTHETIC_OPAQUE_CURRENT_INTEGRITY_ONLY",
+      "real_human_identity_proven": false,
+      "registry_id": "synthetic-opaque-r23b-v6-principals",
+      "registry_payload_sha256": "sha256:799a500f80d663322292592e57a8ba1c378ecbdd731d79faa29ff806111715fe",
+      "schema_version": "av-trace.p23-102-r23b-principal-registry/1.0"
+    },
+    "principal_registry_manifest_payload_sha256": "sha256:799a500f80d663322292592e57a8ba1c378ecbdd731d79faa29ff806111715fe",
+    "principal_registry_schema": {
+      "$id": "av-trace.p23-102-r23b-principal-registry/1.0",
+      "identity_claim": "externally provisioned registry consistency only; no real-human proof",
+      "lookup": "submission must already equal normalized form; exact registry match",
+      "normalization": "strip + Unicode casefold + collapse whitespace",
+      "role_exclusivity": true,
+      "roles": [
+        "reviewer",
+        "adjudicator"
+      ],
+      "unique_subject_commitment": true
+    },
+    "principal_registry_schema_sha256": "sha256:344d24e735d6eb319f0103f97de2b7c63ce555a5009475a222626d1b625f045c",
+    "runtime_constants": {
+      "human_review_rate": 0.2,
+      "raw_audit_encoding_version": 3,
+      "review_packet_version": 6,
+      "unknown_public_key": "unknown"
+    },
+    "runtime_constants_sha256": "sha256:5a04ee8c3acc1703e86c02526d02c489c3af10ee52d6717364759f922041b8aa",
+    "slot_manifest_schema_sha256": "sha256:6b6ba6bc8ef251502ca72d3e8e115aafe6fd3843622ff92f0a6158daa7c7a7ea",
+    "tests_source_sha256": "sha256:e871c94b0bab154df8a6252bd61ffb130b8b996fd03963cbffd02809d8135785",
+    "tool_source_sha256": "sha256:537addf1a9d2aeda91ff4c553a2d5405db477492fba30e8af0788eeaabe09d21",
+    "v5_semantic_parent_source_sha256": "sha256:46da4d0ba443d3ca66cacf8c671f8eb0b4791e647d42fabb7fbf9572406633d8"
+  },
+  "commitment_request_payload_sha256": "sha256:399539eae1f1d4f64b81395dcff5e632bd71f9ca670ec038b4fbba4dec2d37d2",
+  "date": "2026-10-23",
+  "decision": "R23_B_V6_DESIGN_READY",
+  "execution": false,
+  "external_attested": false,
+  "identity_disclaimer": "tool verifies externally-provisioned registry consistency only; it does not prove a principal is a real human",
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "request_purpose": "REQUEST_FUTURE_INDEPENDENT_EXTERNAL_AUTHORIZATION_BINDING",
+  "schema_version": "av-trace.p23-102-r23b-external-commitment-request/4.0"
+}

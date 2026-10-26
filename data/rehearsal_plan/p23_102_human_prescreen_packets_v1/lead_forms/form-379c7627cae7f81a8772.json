@@ -1,0 +1,134 @@
+{
+  "distribution_authorized": false,
+  "form_id": "P23-102-FORM-3EF4E2A62AFEA189",
+  "form_sha256": "sha256:9fbe16d4f6b74f09f4051240c2e5fbd438d55a660d27b7c5a40377ed15f9f623",
+  "format_version": "1.0.0",
+  "free_rationale": "",
+  "lead_id": "P23-102-LEAD-D995207D8CB5C155",
+  "neutral_modality_hypotheses": [
+    {
+      "hypothesis": "Inspect the supplied interval or intervals for an observable source-world change, relation, or continuity.",
+      "modality": "visual"
+    },
+    {
+      "hypothesis": "Inspect synchronized non-speech audio for a concrete source-world event without presuming that it is necessary.",
+      "modality": "ambient_audio"
+    }
+  ],
+  "packet_id": "p23-102-human-prescreen-v1",
+  "prescreen_choice": {
+    "options": [
+      "RETAIN_FOR_AUTHORING",
+      "REPAIR_AND_RECHECK",
+      "REJECT"
+    ],
+    "selection": null
+  },
+  "record_type": "p23_102_neutral_lead_form",
+  "review_checks": {
+    "alternative_route": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "Check the source for a shorter, clearer, or modality-substituting route to the same source-world fact.",
+      "selection": null
+    },
+    "duplicate": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "Check whether this lead duplicates another reviewed lead or repeats the same underlying source event.",
+      "selection": null
+    },
+    "far_coherence": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "When separated intervals are supplied, check whether they form one coherent source-world route; otherwise use NOT_APPLICABLE.",
+      "selection": null
+    },
+    "ocr_text": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "Check whether visible text, labels, displays, or OCR-readable content supplies an easier route.",
+      "selection": null
+    },
+    "recurrence": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "Check whether the same or a materially similar event recurs elsewhere in the source.",
+      "selection": null
+    },
+    "source_world_audio": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "Check whether synchronized non-speech audio carries a concrete source-world event rather than incidental recording noise.",
+      "selection": null
+    },
+    "substitution": {
+      "notes": "",
+      "options": [
+        "OBSERVED",
+        "NOT_OBSERVED",
+        "UNCERTAIN",
+        "NOT_APPLICABLE"
+      ],
+      "prompt": "Check whether another available modality or a simpler cue could replace the proposed route.",
+      "selection": null
+    }
+  },
+  "source_exposure_ledger_id": "p23-source-exposure-ledger-v1",
+  "source_group_id": "P23",
+  "source_id": "P23_102",
+  "timestamp_handles": [
+    {
+      "available_modalities": [
+        "ambient_audio",
+        "vision"
+      ],
+      "end_timecode": "00:34:12.000000",
+      "end_us": 2052000000,
+      "start_timecode": "00:34:04.000000",
+      "start_us": 2044000000,
+      "timestamp_handle_id": "TH-F60529479B20"
+    },
+    {
+      "available_modalities": [
+        "ambient_audio",
+        "vision"
+      ],
+      "end_timecode": "00:36:56.000000",
+      "end_us": 2216000000,
+      "start_timecode": "00:36:48.000000",
+      "start_us": 2208000000,
+      "timestamp_handle_id": "TH-471BD3ED8144"
+    }
+  ]
+}

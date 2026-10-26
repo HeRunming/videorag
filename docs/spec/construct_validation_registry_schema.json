@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:construct-validation-registry:1.0.0",
+  "title": "AV-TRACE provisional-family registry for deferred construct validation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "registry_id",
+    "registry_status",
+    "created_at",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_id": {"$ref": "#/$defs/id"},
+    "registry_status": {
+      "enum": [
+        "PLANNING_FIXTURE_NOT_REAL_ANNOTATION",
+        "MACHINE_PROVISIONAL_REGISTRY"
+      ]
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "notes": {"type": "string"},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/record"}
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_id",
+        "source_id",
+        "domain",
+        "candidate_status",
+        "current_tier",
+        "modality_profile_candidate",
+        "hop_count_candidate",
+        "signals",
+        "provenance"
+      ],
+      "properties": {
+        "family_id": {"$ref": "#/$defs/id"},
+        "source_id": {"$ref": "#/$defs/id"},
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "candidate_status": {
+          "enum": ["eligible", "deferred", "excluded", "quarantined"]
+        },
+        "current_tier": {
+          "enum": [
+            "P0_MACHINE_CANDIDATE",
+            "P1_MACHINE_CROSS_VALIDATED",
+            "P2_MACHINE_COUNTERFACTUAL_VALIDATED"
+          ]
+        },
+        "modality_profile_candidate": {
+          "enum": [
+            "V",
+            "S",
+            "A",
+            "V+S",
+            "V+A",
+            "S+A",
+            "V+S+A",
+            "UNKNOWN"
+          ]
+        },
+        "hop_count_candidate": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "machine_question": {
+          "type": ["string", "null"],
+          "maxLength": 4000
+        },
+        "source_reference": {
+          "type": ["string", "null"],
+          "maxLength": 2000
+        },
+        "source_duration_s": {
+          "type": ["number", "null"],
+          "exclusiveMinimum": 0
+        },
+        "review_payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "claims",
+            "candidate_evidence",
+            "preferred_ses",
+            "pair_blueprint_reference"
+          ],
+          "properties": {
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["claim_id", "text"],
+                "properties": {
+                  "claim_id": {"$ref": "#/$defs/id"},
+                  "text": {"type": "string", "minLength": 1}
+                }
+              }
+            },
+            "candidate_evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "evidence_id",
+                  "intervals",
+                  "modalities",
+                  "claim_ids"
+                ],
+                "properties": {
+                  "evidence_id": {"$ref": "#/$defs/id"},
+                  "intervals": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["start_s", "end_s"],
+                      "properties": {
+                        "start_s": {"type": "number", "minimum": 0},
+                        "end_s": {"type": "number", "exclusiveMinimum": 0}
+                      }
+                    }
+                  },
+                  "modalities": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {"enum": ["vision", "speech", "ambient"]},
+                    "uniqueItems": true
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/id"},
+                    "uniqueItems": true
+                  }
+                }
+              }
+            },
+            "preferred_ses": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["ses_id", "evidence_ids", "claim_ids"],
+                "properties": {
+                  "ses_id": {"$ref": "#/$defs/id"},
+                  "evidence_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {"$ref": "#/$defs/id"},
+                    "uniqueItems": true
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {"$ref": "#/$defs/id"},
+                    "uniqueItems": true
+                  }
+                }
+              }
+            },
+            "pair_blueprint_reference": {
+              "type": ["string", "null"],
+              "maxLength": 2000
+            }
+          }
+        },
+        "tier_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_decode_verified",
+            "machine_proposal_versions",
+            "independent_machine_validator_ids",
+            "answer_evidence_check",
+            "question_only_shortcut_check",
+            "metadata_shortcut_check",
+            "alternative_support_scan",
+            "leave_one_out_counterfactual",
+            "modality_drop_counterfactual",
+            "blocked_route_closure",
+            "restored_recovery_check",
+            "counterfactual_validator_ids"
+          ],
+          "properties": {
+            "source_decode_verified": {"type": "boolean"},
+            "machine_proposal_versions": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            },
+            "independent_machine_validator_ids": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/id"},
+              "uniqueItems": true
+            },
+            "answer_evidence_check": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "question_only_shortcut_check": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "metadata_shortcut_check": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "alternative_support_scan": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "leave_one_out_counterfactual": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "modality_drop_counterfactual": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "blocked_route_closure": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "restored_recovery_check": {
+              "enum": ["pass", "fail", "not_run"]
+            },
+            "counterfactual_validator_ids": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/id"},
+              "uniqueItems": true
+            }
+          }
+        },
+        "signals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ambient_candidate",
+            "triple_modal_candidate",
+            "machine_validator_disagreement",
+            "learned_control_ranking_disagreement",
+            "correct_answer_wrong_citation",
+            "uncertain_minimality",
+            "multiple_alternative_supports",
+            "pair_isolation_risk",
+            "rights_privacy_risk",
+            "low_risk_control"
+          ],
+          "properties": {
+            "ambient_candidate": {"type": "boolean"},
+            "triple_modal_candidate": {"type": "boolean"},
+            "machine_validator_disagreement": {"type": "boolean"},
+            "learned_control_ranking_disagreement": {"type": "boolean"},
+            "correct_answer_wrong_citation": {"type": "boolean"},
+            "uncertain_minimality": {"type": "boolean"},
+            "multiple_alternative_supports": {"type": "boolean"},
+            "pair_isolation_risk": {"type": "boolean"},
+            "rights_privacy_risk": {"type": "boolean"},
+            "low_risk_control": {"type": "boolean"}
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "record_origin",
+            "machine_record_ids",
+            "artifact_references",
+            "content_hashes",
+            "human_review_completed"
+          ],
+          "properties": {
+            "record_origin": {
+              "enum": [
+                "planning_fixture",
+                "machine_mined",
+                "machine_cross_validated",
+                "machine_counterfactual_validated"
+              ]
+            },
+            "machine_record_ids": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/id"},
+              "uniqueItems": true
+            },
+            "artifact_references": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            },
+            "content_hashes": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/sha256"},
+              "uniqueItems": true
+            },
+            "human_review_completed": {"const": false}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "status_id": "mini-pilot-source-dossier-status-v1",
+  "created_at": "2026-09-22",
+  "decision": "MINI_PILOT_NEW_SOURCE_DOSSIERS_REPAIR",
+  "evidence_mode": "SAVED_LOCAL_EVIDENCE_ONLY",
+  "boundary": {
+    "network_access_performed_by_finalization": false,
+    "downloads_performed_by_finalization": false,
+    "new_probes_performed_by_finalization": false,
+    "full_media_downloaded": false,
+    "media_segment_or_media_range_downloaded": false,
+    "media_payload_bytes_saved": 0,
+    "human_annotation_performed": false,
+    "controller_keys_or_labels_accessed": false
+  },
+  "inputs": {
+    "frozen_source_pool_plan": "data/rehearsal_plan/human_mini_pilot_source_pool_plan.json",
+    "evidence_root": "data/restricted/source_dossiers/mini_pilot_v1/evidence",
+    "evidence_file_count": 44,
+    "saved_evidence_bytes": 645319,
+    "recorded_response_body_bytes": 624677,
+    "media_payload_response_bytes": 0
+  },
+  "eligibility": {
+    "required_new_source_groups": 4,
+    "eligible_source_groups": 0,
+    "minimum_eligible_replacements_if_no_repairs_succeed": 4,
+    "ready_rule": "Overall READY requires four source groups individually eligible for bounded acquisition.",
+    "ready_rule_satisfied": false
+  },
+  "sources": [
+    {
+      "source_group_id": "SG-USGS-SHIFT-CURVES",
+      "dossier_path": "data/restricted/source_dossiers/mini_pilot_v1/SG-USGS-SHIFT-CURVES.json",
+      "decision": "REPAIR_METADATA_OR_RIGHTS",
+      "eligible_for_bounded_acquisition": false,
+      "recorded_response_body_bytes": 7974,
+      "saved_evidence_bytes": 13294,
+      "blocking_summary": [
+        "No saved successful item-level USGS page proves the advertised Public Domain marking or exact download controls.",
+        "No exact official video or transcript object was discovered.",
+        "No object identity, size, MIME, ETag, Last-Modified, range support, container metadata, or A/V synchronization evidence exists.",
+        "Processing and human-annotation authority cannot be grounded in the saved WAF/403 evidence."
+      ]
+    },
+    {
+      "source_group_id": "SG-USGS-SIX-ERUPTIONS",
+      "dossier_path": "data/restricted/source_dossiers/mini_pilot_v1/SG-USGS-SIX-ERUPTIONS.json",
+      "decision": "REPAIR_METADATA_OR_RIGHTS",
+      "eligible_for_bounded_acquisition": false,
+      "recorded_response_body_bytes": 6447,
+      "saved_evidence_bytes": 9688,
+      "blocking_summary": [
+        "The saved archive contains no successful item-level or copyright-policy response.",
+        "No exact official video or transcript object was discovered.",
+        "No object identity, size, MIME, ETag, Last-Modified, range support, or bounded container metadata exists.",
+        "Photograph, map, observatory/partner footage, music, audience, processing, and annotation boundaries remain unresolved."
+      ]
+    },
+    {
+      "source_group_id": "SG-NASA-PATHFINDERS",
+      "dossier_path": "data/restricted/source_dossiers/mini_pilot_v1/SG-NASA-PATHFINDERS.json",
+      "decision": "REPAIR_METADATA_OR_RIGHTS",
+      "eligible_for_bounded_acquisition": false,
+      "recorded_response_body_bytes": 598661,
+      "saved_evidence_bytes": 608582,
+      "blocking_summary": [
+        "An exact first-party NASA+ HLS master route and stable NASA+ IDs are supported.",
+        "No media segments or bounded container ranges were fetched, so exact decoded duration, time base, synchronization, and media hashes remain unverified.",
+        "The JPL/Caltech item and policy evidence is only 403 material.",
+        "General NASA guidance is not item/component clearance for documentary music, archival/partner footage, marks, or likenesses.",
+        "A credible component-level internal processing and human-annotation boundary is therefore not established."
+      ]
+    },
+    {
+      "source_group_id": "SG-COMMONS-BLOCKCHAIN",
+      "dossier_path": "data/restricted/source_dossiers/mini_pilot_v1/SG-COMMONS-BLOCKCHAIN.json",
+      "decision": "REPAIR_METADATA_OR_RIGHTS",
+      "eligible_for_bounded_acquisition": false,
+      "recorded_response_body_bytes": 11595,
+      "saved_evidence_bytes": 13755,
+      "blocking_summary": [
+        "Exact Commons metadata identity, current oldid, original URL, size, MIME, SHA-1, duration, and A/V codecs are established.",
+        "The exact duration conflicts with the frozen plan and must be corrected from 3656 to 2354.101 seconds.",
+        "The file is a YouTube import and the saved API explicitly exposes an unresolved video license-review category/template.",
+        "The saved evidence does not affirmatively prove recording-owner authority or component rights for slides, websites, marks, and sensitive examples.",
+        "No original-object range response or local bounded container parse was performed."
+      ]
+    }
+  ],
+  "replacement_or_repair_slots_needed": [
+    {
+      "slot": "instructional_procedural_field_demonstration",
+      "count": 1,
+      "preferred_resolution": "Repair SG-USGS-SHIFT-CURVES.",
+      "replacement_requirement": "If repair fails, select one distinct 20–90 minute low-privacy institutional procedural video with a successful official item snapshot, exact first-party A/V and transcript routes, affirmative processing/annotation authority, and component review. It must not reuse SG-USGS-SIX-ERUPTIONS."
+    },
+    {
+      "slot": "expert_public_information_volcanology",
+      "count": 1,
+      "preferred_resolution": "Repair SG-USGS-SIX-ERUPTIONS.",
+      "replacement_requirement": "If repair fails, preflight a distinct USGS Public Lecture such as Volcano Watchers or Unrest at Long Valley Caldera, requiring successful item-level rights evidence, exact official A/V route, transcript identity, and map/photo/footage/music/audience review."
+    },
+    {
+      "slot": "observational_engineering_mission_history",
+      "count": 1,
+      "preferred_resolution": "Repair SG-NASA-PATHFINDERS only if JPL/Caltech and component authority can be established.",
+      "replacement_requirement": "Otherwise replace it. Frozen named candidates are cand-005 Planetary Defenders and cand-008 The Changing Face of Mars, but each needs an independent exact-route, processing/annotation, score, archive/partner-footage, mark, and likeness dossier before eligibility."
+    },
+    {
+      "slot": "expert_public_lecture_technology_policy",
+      "count": 1,
+      "preferred_resolution": "Repair SG-COMMONS-BLOCKCHAIN by resolving recording-owner authority and component scope for oldid 1032015587.",
+      "replacement_requirement": "Otherwise replace it with an owner-controlled or institutional 20–90 minute technology-policy lecture with exact official identity, explicit recording license, attribution terms, processing/annotation authority, and slide/privacy/component clearance. cand-059 Before Vermont remains only an unapproved fallback lead."
+    }
+  ],
+  "next_authorized_action": "No bounded media acquisition is authorized. In a separately authorized task, repair the four metadata/rights records or dossier four qualifying replacements, then rerun this gate from archived evidence.",
+  "dossiers": [
+    "data/restricted/source_dossiers/mini_pilot_v1/SG-USGS-SHIFT-CURVES.json",
+    "data/restricted/source_dossiers/mini_pilot_v1/SG-USGS-SIX-ERUPTIONS.json",
+    "data/restricted/source_dossiers/mini_pilot_v1/SG-NASA-PATHFINDERS.json",
+    "data/restricted/source_dossiers/mini_pilot_v1/SG-COMMONS-BLOCKCHAIN.json"
+  ],
+  "validation": {
+    "json_parse_required": true,
+    "expected_dossier_count": 4
+  }
+}

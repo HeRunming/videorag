@@ -1,0 +1,107 @@
+{
+  "canonicalization_contract": {
+    "fallback_envelope_utf8_stable": true,
+    "persisted_reload_verification_stable": true,
+    "total_native_exception_boundary": true,
+    "unpaired_utf16_surrogate_rejected_as_typed_string": true
+  },
+  "complete_scientific_go": false,
+  "date": "2026-10-23",
+  "decision": "R23_B_V8_DESIGN_READY",
+  "dependency_count": 22,
+  "dependency_manifest_payload_sha256": "sha256:c006774f7bd75989630e3f1187a2853d6c051c3afdc59a2da7b598ffe1899ac8",
+  "design_doc": "docs/design/p23_102_global_distinctiveness_v8.md",
+  "execution": false,
+  "experiment": "R23-B-v8",
+  "external_attested": false,
+  "inherited_tests": [
+    "tooling/tests/test_p23_102_global_distinctiveness_v5.py",
+    "tooling/tests/test_p23_102_global_distinctiveness_v6.py",
+    "tooling/tests/test_p23_102_global_distinctiveness_v7.py"
+  ],
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "plan_payload_sha256": "sha256:4d692d570bc2e1bb318f2f092a5edc30bb53755927d5fb53b9c25c492cf689e3",
+  "public_key_contract": {
+    "audit_pair_values_and_positions_preserved": true,
+    "duplicate_or_invalid": "hard_global_identity_failure",
+    "states": [
+      "UNIQUE",
+      "MISSING",
+      "DUPLICATE_OR_INVALID"
+    ]
+  },
+  "review_contract": {
+    "$id": "av-trace.p23-102-r23b-review-receipt/5.0",
+    "agreement_adjudication": "canonical null; any supplied record is rejected",
+    "builder_material": "validated canonical records only",
+    "conflict_adjudication": "required and fully validated"
+  },
+  "runtime_constants": {
+    "human_review_rate": 0.2,
+    "raw_audit_encoding_version": 5,
+    "review_packet_version": 8,
+    "typed_mapping_extraction_states": [
+      "UNIQUE",
+      "MISSING",
+      "DUPLICATE_OR_INVALID"
+    ],
+    "unknown_public_key": "unknown",
+    "unpaired_utf16_surrogate_policy": "reject typed string; preserve only UTF-8-safe diagnostic envelope"
+  },
+  "schema_version": "av-trace.p23-102-r23b-global-distinctiveness-plan/8.0",
+  "scope": {
+    "authorization_calls": 0,
+    "execution": false,
+    "existing_authoring_modified": false,
+    "existing_canary_selection_modified": false,
+    "existing_capsules_modified": false,
+    "existing_markers_modified": false,
+    "external_attested": false,
+    "external_signature_verified": false,
+    "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+    "media_decode": false,
+    "model_calls": 0,
+    "real_human_identity_proven": false
+  },
+  "synthetic_principal_registry": {
+    "principals": [
+      {
+        "principal_id": "opaque-reviewer-a",
+        "role": "reviewer",
+        "subject_commitment": "sha256:ead6d7276c51e3419cda2e7fe73d182ae05e980cb1eb80b3d179187f568039dd"
+      },
+      {
+        "principal_id": "opaque-reviewer-b",
+        "role": "reviewer",
+        "subject_commitment": "sha256:0428aa1762b63f7db6cad021bda3cc9ccc30cfe4a772a3ce4b85dffd70f64d23"
+      },
+      {
+        "principal_id": "opaque-adjudicator-c",
+        "role": "adjudicator",
+        "subject_commitment": "sha256:e7c4f6eaa1e16bc4e8bd7a98ec8ac08c1d9ffdbcb287b2b36c8d47a24d6f113a"
+      }
+    ],
+    "provisioning_status": "SYNTHETIC_OPAQUE_CURRENT_INTEGRITY_ONLY",
+    "real_human_identity_proven": false,
+    "registry_id": "synthetic-opaque-r23b-v6-principals",
+    "registry_payload_sha256": "sha256:799a500f80d663322292592e57a8ba1c378ecbdd731d79faa29ff806111715fe",
+    "schema_version": "av-trace.p23-102-r23b-principal-registry/1.0"
+  },
+  "synthetic_principal_registry_payload_sha256": "sha256:799a500f80d663322292592e57a8ba1c378ecbdd731d79faa29ff806111715fe",
+  "tests": "tooling/tests/test_p23_102_global_distinctiveness_v8.py",
+  "tool": "tools/p23_102_global_distinctiveness_v8.py",
+  "typed_audit_contract": {
+    "$id": "av-trace.p23-102-r23b-canonical-typed-raw-audit/5.0",
+    "malformed_boundary": "ContractError only across encode/validate/render/hash",
+    "mapping_contract": "sorted typed pair-list; duplicates preserved",
+    "scalar_contract": {
+      "INVALID_UNICODE_SURROGATE": "UTF-8-safe failure, positions, codepoint hex, and ASCII escaped form",
+      "bool": "exact Python bool",
+      "bytes": "canonical RFC4648 base64",
+      "float": "exact float.hex() or NaN/+Infinity/-Infinity",
+      "int": "canonical decimal; no leading zero or negative zero",
+      "null": "tag only",
+      "str": "exact Python string with no codepoint U+D800..U+DFFF"
+    }
+  }
+}

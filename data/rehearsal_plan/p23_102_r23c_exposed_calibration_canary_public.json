@@ -1,0 +1,51 @@
+{
+  "artifact_id": "P23_102_R23C_EXPOSED_CALIBRATION_CANARY_PUBLIC",
+  "budget": {
+    "ambient": 5,
+    "relation": 3,
+    "total": 13,
+    "visual": 5
+  },
+  "counts": {
+    "clips": 5,
+    "families": 3,
+    "primary_queries": 13
+  },
+  "date": "2026-10-23",
+  "experiment_class": "EXPOSED_DEVELOPMENT_CALIBRATION_NOT_FRESH_EVALUATION",
+  "fresh_reserve_consumed": false,
+  "implementation_only": true,
+  "maximum_future_run_status": "MACHINE_CALIBRATION_PASS_HUMAN_PENDING",
+  "pipeline_id": "AV-TRACE-P23-102-R23-C-EXPOSED-DEVELOPMENT-CALIBRATION-CANARY-V1",
+  "public_summary_payload_sha256": "sha256:2bd7ee8b159feca5e942a4286d15fe36dc703bc7e82f036066fc5a02847af56e",
+  "retrieval_or_embedding_permitted": false,
+  "schema_version": "av-trace.p23-102-r23c-exposed-calibration-public/1.0",
+  "scientific_go": false,
+  "selected_families": [
+    {
+      "clip_keys": [
+        "clip-003"
+      ],
+      "family_key": "family-009",
+      "family_role": "local_v15_structure"
+    },
+    {
+      "clip_keys": [
+        "clip-011",
+        "clip-019"
+      ],
+      "family_key": "family-005",
+      "family_role": "far_vocalization_asr_ambiguity"
+    },
+    {
+      "clip_keys": [
+        "clip-007",
+        "clip-010"
+      ],
+      "family_key": "family-003",
+      "family_role": "far_continuity_anaphora"
+    }
+  ],
+  "status": "R23_C_EXPOSED_CALIBRATION_IMPLEMENTATION_READY",
+  "unselected_reserve_disclosed": false
+}

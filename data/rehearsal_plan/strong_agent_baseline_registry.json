@@ -1,0 +1,603 @@
+{
+  "schema_version": "av-trace.strong-agent-baseline-registry/1.0",
+  "task": 124,
+  "created_date": "2026-09-22",
+  "decision": "STRONG_AGENT_BASELINE_PLAN_READY",
+  "execution_status": "PLANNING_ONLY_NOT_AUTHORIZED",
+  "claim_boundary": {
+    "role": [
+      "representative stronger open-weight controller sensitivity",
+      "pinned closed-API provider and capacity sensitivity"
+    ],
+    "paper_contribution": false,
+    "primary_claim_may_depend_on_api_only": false,
+    "scientific_evaluation_authorized": false,
+    "downloads_authorized": false,
+    "api_calls_authorized": false,
+    "evaluation_families_authorized": false,
+    "evaluation_keys_authorized": false
+  },
+  "repository_evidence": {
+    "normative": [
+      "docs/paper/cvpr_thesis_and_evidence_gates.md",
+      "docs/paper/cvpr_execution_blueprint.md",
+      "docs/review/cvpr_pre_submission_risk_register.md"
+    ],
+    "inventory": [
+      "docs/design/scale1b_learned_baseline_inventory.md",
+      "docs/review/strong_controller_model_acquisition.md",
+      "data/restricted/scale1b/manifests/strong_controller_model_acquisition.json"
+    ],
+    "safe_results": [
+      "docs/review/controller_synthetic_competence.md",
+      "docs/review/controller_capacity_sensitivity_qwen7b.md",
+      "docs/review/controller_capacity_sensitivity_qwen7b_audit.md",
+      "docs/review/controller_v2_holdout_evaluation.md",
+      "data/restricted/scale1b/controller_v2_holdout_evaluation/safe_aggregate.json",
+      "docs/design/controller_v3_factorized_state.md",
+      "data/restricted/scale1b/controller_v3_dev/summary.json"
+    ],
+    "summary": {
+      "v1_qwen15": {
+        "valid_structured_output": {
+          "count": 10,
+          "total": 16
+        },
+        "oracle_supported_answer": {
+          "count": 1,
+          "total": 4
+        },
+        "decision": "NO_GO"
+      },
+      "v1_qwen7_capacity": {
+        "valid_structured_output": {
+          "count": 11,
+          "total": 16
+        },
+        "oracle_supported_answer": {
+          "count": 1,
+          "total": 4
+        },
+        "decision": "NO_GO"
+      },
+      "v2_qwen7_holdout": {
+        "action_syntax": {
+          "count": 28,
+          "total": 28
+        },
+        "action_correct": {
+          "count": 15,
+          "total": 28
+        },
+        "state_exact": {
+          "count": 0,
+          "total": 28
+        },
+        "terminal_correct": {
+          "count": 0,
+          "total": 8
+        },
+        "decision": "CONTROLLER_V2_HOLDOUT_NO_GO"
+      },
+      "v3_qwen7_development": {
+        "action_correct": {
+          "count": 14,
+          "total": 16
+        },
+        "joint_state": {
+          "count": 0,
+          "total": 16
+        },
+        "terminal_correct": {
+          "count": 1,
+          "total": 8
+        },
+        "decision": "NO_GO"
+      }
+    }
+  },
+  "official_online_verification": {
+    "checked_date": "2026-09-22",
+    "source_policy": "official_primary_only",
+    "sources": [
+      {
+        "id": "openai_gpt_oss_model_card",
+        "url": "https://huggingface.co/openai/gpt-oss-20b",
+        "owner": "OpenAI"
+      },
+      {
+        "id": "openai_gpt_oss_exact_tree",
+        "url": "https://huggingface.co/openai/gpt-oss-20b/tree/6cee5e81ee83917806bbde320786a8fb61efebee",
+        "owner": "OpenAI"
+      },
+      {
+        "id": "openai_gpt54_model_doc",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "owner": "OpenAI"
+      },
+      {
+        "id": "openai_latest_model_guide",
+        "url": "https://developers.openai.com/api/docs/guides/latest-model",
+        "owner": "OpenAI"
+      },
+      {
+        "id": "openai_api_data_guide",
+        "url": "https://developers.openai.com/api/docs/guides/your-data",
+        "owner": "OpenAI"
+      },
+      {
+        "id": "qwen3_alternative_model_card",
+        "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "owner": "Qwen"
+      }
+    ],
+    "reverify_before": [
+      "open snapshot acquisition",
+      "every API execution date",
+      "paper artifact freeze"
+    ]
+  },
+  "selected_baselines": [
+    {
+      "id": "strong_open_gpt_oss_20b",
+      "kind": "open_weight_local",
+      "selected": true,
+      "model": {
+        "repo_id": "openai/gpt-oss-20b",
+        "revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+        "moving_revision_allowed": false,
+        "license_metadata": "apache-2.0",
+        "license_status": "REVERIFY_AND_ARCHIVE_BEFORE_ACQUISITION",
+        "parameter_description": "21B total, 3.6B active MoE per official model card",
+        "format": "Harmony",
+        "weight_format": "official MXFP4 safetensors"
+      },
+      "selection_reason": [
+        "different model family from the failed Qwen2.5 controller sequence",
+        "substantially larger total capacity than the existing 7B controller",
+        "officially documented reasoning, function calling, agentic use and Structured Outputs",
+        "official MXFP4 distribution is sized for local use and fits the inventoried host RAM"
+      ],
+      "claim_limit": "Stronger representative candidate by scale and official agentic capability; no AV-TRACE superiority or competence claim before preflight.",
+      "acquisition": {
+        "authorized": false,
+        "minimal_allowlist_policy": "MXFP4 model shards, safetensors index, config, generation config, tokenizer files, chat template, license, usage policy and model card only",
+        "observed_selected_weight_bytes_approx": 13760000000,
+        "observed_repository_bytes_approx": 41300000000,
+        "selected_payload_cap_bytes": 21474836480,
+        "staged_total_cap_bytes": 25769803776,
+        "snapshot_root_future": "data/restricted/strong_agent/models/openai--gpt-oss-20b--6cee5e81ee83",
+        "permissions": {
+          "directories": "0700",
+          "files": "0600",
+          "umask": "077"
+        },
+        "validation": [
+          "archive exact official metadata, model card, license and usage policy",
+          "freeze exact selected file allowlist and upstream identities",
+          "stage under restricted root",
+          "compute SHA-256 for every file",
+          "validate safetensors and index consistency",
+          "reject symlinks, pickle weights, executable code and unexpected files",
+          "atomically promote only after validation"
+        ]
+      },
+      "runtime": {
+        "primary": "pinned_transformers_with_snapshot_chat_template",
+        "fallback_runtime": "pinned_vllm_or_sglang_requires_new_runtime_id_and_full_competence_rerun",
+        "offline": true,
+        "network_namespace_denied": true,
+        "local_files_only": true,
+        "trust_remote_code": false,
+        "reasoning_effort": "medium",
+        "sampling": "greedy_where_supported",
+        "context_cap_tokens": 32768,
+        "native_tool_calling": true,
+        "structured_output": true,
+        "hidden_reasoning_scored": false,
+        "hidden_reasoning_publicly_logged": false
+      },
+      "estimated_resources": {
+        "disk_reservation_bytes": 21474836480,
+        "minimum_ram_bytes": 34359738368,
+        "recommended_ram_bytes": 68719476736,
+        "gpu_assumed_available": false,
+        "preferred_gpu_vram_bytes": 25769803776,
+        "cpu_generated_tokens_per_second_planning_range": [
+          0.5,
+          5.0
+        ],
+        "episode_wall_minutes_planning_range": [
+          10,
+          45
+        ],
+        "must_measure": [
+          "load time",
+          "peak RSS",
+          "peak VRAM if used",
+          "prompt and generation latency",
+          "tokens per second",
+          "p50 and p95 episode wall time"
+        ]
+      }
+    },
+    {
+      "id": "strong_api_openai_gpt54_20260305",
+      "kind": "closed_api",
+      "selected": true,
+      "provider": "OpenAI",
+      "model": {
+        "family_alias": "gpt-5.4",
+        "exact_snapshot": "gpt-5.4-2026-03-05",
+        "alias_allowed_for_scored_runs": false,
+        "snapshot_availability_status": "OFFICIAL_DOC_VERIFIED_2026-09-22_ACCOUNT_PREFLIGHT_REQUIRED"
+      },
+      "api": {
+        "endpoint": "POST /v1/responses",
+        "sdk_policy": "pin exact SDK version and lockfile before competence execution",
+        "reasoning_effort": "medium",
+        "service_tier": "default",
+        "store": false,
+        "parallel_tool_calls": false,
+        "provider_hosted_tools_allowed": false,
+        "native_function_calling": true,
+        "strict_schemas": true,
+        "full_explicit_history": true,
+        "silent_fallback_allowed": false
+      },
+      "identity_gate": {
+        "availability_probe_may_use_alias": true,
+        "scored_request_model": "gpt-5.4-2026-03-05",
+        "required_response_model": "gpt-5.4-2026-03-05",
+        "mismatch_outcome": "INVALID_MODEL_IDENTITY_STOP"
+      },
+      "data_boundary": {
+        "allowed": [
+          "authorized question",
+          "public claim-slot descriptions",
+          "public action and tool-response history",
+          "frozen tool schemas and budget state",
+          "pointer previews",
+          "textualized citable observations already returned by the common backend"
+        ],
+        "forbidden": [
+          "raw video",
+          "raw audio",
+          "source files",
+          "evaluator-private claim graph",
+          "accepted SESs",
+          "necessity groups",
+          "hidden state role",
+          "restoration trigger",
+          "answer key",
+          "reviewer forms",
+          "private route certificates",
+          "credentials"
+        ],
+        "rights_privacy_approval_required": true,
+        "zero_retention_claim_allowed_without_account_evidence": false,
+        "account_controls_to_archive": [
+          "training-use policy",
+          "abuse-monitoring retention",
+          "Modified Abuse Monitoring status if any",
+          "Zero Data Retention status if any",
+          "regional processing setting",
+          "endpoint and feature eligibility"
+        ]
+      },
+      "pricing_snapshot": {
+        "verified_date": "2026-09-22",
+        "currency": "USD",
+        "per_million_tokens": {
+          "input": 2.5,
+          "cached_input": 0.25,
+          "output": 15.0
+        },
+        "per_episode_token_envelope": {
+          "input": 64000,
+          "output_and_reasoning": 6000
+        },
+        "uncached_upper_estimate_usd_per_episode": 0.25,
+        "core_episode_count_from_blueprint": 720,
+        "core_upper_estimate_usd": 180.0,
+        "reserve_fraction": 0.15,
+        "core_plus_reserve_upper_estimate_usd": 207.0,
+        "p95_stop_usd_per_episode": 0.35,
+        "reverify_before_execution": true
+      }
+    }
+  ],
+  "shared_contract": {
+    "backend": {
+      "primary": "frozen_F-CTRL",
+      "retrieval_sensitivity": "frozen_F-VA_separate_unpooled_condition",
+      "same_indexes": true,
+      "same_candidate_universe": true,
+      "same_decoder_and_asr": true,
+      "same_result_order_and_shapes": true,
+      "same_intervention_manifest": true,
+      "same_restoration_trigger": true,
+      "same_error_vocabulary": true
+    },
+    "model_inputs": {
+      "raw_media": false,
+      "public_textualized_observations_only": true,
+      "search_results_citable": false,
+      "inspect_and_transcript_observations_citable": true,
+      "context_cap_tokens": 32768,
+      "compaction_policy": "frozen_model_agnostic_oldest_event_compaction_preserving_all_citable_observations_and_budget_status_events"
+    },
+    "budget": {
+      "primary": {
+        "max_steps": 10,
+        "cost_limit": 12.0
+      },
+      "sensitivity_unpooled": {
+        "max_steps": 20,
+        "cost_limit": 24.0
+      },
+      "tool_costs": {
+        "search_visual": 1.0,
+        "search_speech": 1.0,
+        "search_ambient_audio": 1.0,
+        "inspect_clip": 2.0,
+        "read_transcript": 1.0,
+        "get_channel_status": 0.25,
+        "finalize": 0.0
+      },
+      "repair": {
+        "maximum_per_malformed_decision": 1,
+        "schema_only": true,
+        "counts_as_model_call": true,
+        "counts_as_backend_step": false,
+        "semantic_correction_allowed": false
+      }
+    },
+    "tools": {
+      "source_schema": "docs/spec/agent_action_schema.json",
+      "native_functions": [
+        "search_visual",
+        "search_speech",
+        "search_ambient_audio",
+        "inspect_clip",
+        "read_transcript",
+        "get_channel_status",
+        "finalize"
+      ],
+      "one_action_per_turn": true,
+      "lossless_mapping_required": true,
+      "semantic_filling_forbidden": true,
+      "external_tools_forbidden": true
+    },
+    "finalizer": {
+      "schema": "docs/spec/final_answer_schema.json",
+      "model_authored_claims": true,
+      "citations_must_reference_returned_observation_ids": true,
+      "citation_interval_and_modality_must_match": true,
+      "private_support_mapping_posthoc_only": true,
+      "route_certificate_private": true,
+      "invalid_fails_closed": true
+    }
+  },
+  "competence_preflight": {
+    "scientific_family_content_allowed": false,
+    "existing_evaluation_key_allowed": false,
+    "r017_allowed": false,
+    "task111_as_unseen_gate_allowed": false,
+    "suite": {
+      "kind": "new_source_free_fictional_sealed",
+      "minimum_case_count": 48,
+      "required_strata": [
+        "initial_visual_speech_ambient_routing",
+        "pointer_inspection_and_transcript_reading",
+        "exact_observation_id_citation",
+        "complete_one_and_two_claim_finalization",
+        "partial_evidence_non_answer",
+        "absent_inaccessible_not_found_diagnosis",
+        "no_progress_guard",
+        "restoration_status_and_reacquisition",
+        "no_trigger_control",
+        "adversarial_tool_order",
+        "distractor_and_conflict_handling",
+        "malformed_timeout_budget_and_provider_failures"
+      ]
+    },
+    "gates": {
+      "deterministic_parser_and_failure_fixtures_rate": 1.0,
+      "valid_structured_calls_after_at_most_one_repair_min_rate": 0.9,
+      "first_action_accuracy_min_rate": 0.85,
+      "first_action_accuracy_each_stratum_min_rate": 0.75,
+      "exact_public_state_min_rate": 0.75,
+      "each_public_state_component_min_rate": 0.8,
+      "complete_evidence_supported_answer_min_rate": 0.8,
+      "blocked_partial_correct_non_answer_min_rate": 0.8,
+      "restoration_reacquisition_min_rate": 0.8,
+      "unsupported_required_claims_max": 0,
+      "private_field_exposures_max": 0,
+      "deterministic_answer_substitutions_max": 0,
+      "failure_injection_fail_closed_rate": 1.0
+    },
+    "api_variance": {
+      "canary_repeats": 3,
+      "sealed_case_repeat_fraction": 0.2,
+      "endpoint_success_rate_range_max": 0.05,
+      "supported_to_unsupported_flip_allowed": false,
+      "failure_status": "NONDETERMINISTIC_NOT_READY"
+    }
+  },
+  "api_cache_and_replay": {
+    "cache_key_algorithm": "sha256",
+    "cache_key_fields": [
+      "provider",
+      "exact_model_snapshot",
+      "endpoint",
+      "sdk_and_api_version",
+      "reasoning_effort",
+      "service_tier",
+      "output_limits",
+      "storage_flag",
+      "prompt_bytes",
+      "full_ordered_input_and_tool_history",
+      "tool_definitions_and_schema_hashes",
+      "backend_version",
+      "episode_public_packet_hash",
+      "observation_serializer_version"
+    ],
+    "cache_policy": {
+      "hit": "return_immutable_archived_response_without_network",
+      "miss": "API_request_allowed_only_if_separately_authorized",
+      "cross_configuration_reuse": false,
+      "provider_prompt_cache_is_reproducibility_cache": false
+    },
+    "restricted_record_fields": [
+      "canonical_request_json",
+      "raw_response_json",
+      "request_sha256",
+      "response_sha256",
+      "response_model_identity",
+      "provider_request_id",
+      "relevant_response_headers",
+      "usage_tokens",
+      "cached_tokens",
+      "latency",
+      "retries",
+      "error_body",
+      "calculated_cost",
+      "parsed_action_or_finalization",
+      "validator_result"
+    ],
+    "forbidden_record_fields": [
+      "API_key",
+      "authorization_header",
+      "proxy_credentials"
+    ],
+    "replay_modes": [
+      "offline_exact_response_parse_replay",
+      "frozen_backend_action_replay",
+      "separately_authorized_provider_variance_sample"
+    ]
+  },
+  "drift_policy": {
+    "verify_each_execution_date": [
+      "official model snapshot listing",
+      "pricing",
+      "endpoint and parameters",
+      "data controls and retention",
+      "account and regional availability"
+    ],
+    "new_configuration_if_changed": [
+      "prompt",
+      "tool schema",
+      "SDK",
+      "API parameter",
+      "provider model",
+      "region",
+      "serializer",
+      "backend",
+      "local runtime or kernel"
+    ],
+    "snapshot_retired": "retain_as_dated_nonrerunnable_sensitivity_and_exclude_from_decisive_api-dependent_claims",
+    "silent_substitution": "FORBIDDEN"
+  },
+  "stop_rules": [
+    "exact snapshot or revision cannot be verified",
+    "license usage rights privacy retention or residency unresolved",
+    "requested and returned model identity differ",
+    "runtime or provider silently falls back",
+    "undeclared tool is used",
+    "native call cannot map losslessly to canonical action",
+    "private evaluator or intervention data reaches model",
+    "raw media would leave local environment",
+    "any competence floor fails",
+    "unsupported required claims are nonzero",
+    "open baseline p95 synthetic episode wall time exceeds 60 minutes",
+    "open baseline resource use exceeds approved allocation",
+    "API p95 cost exceeds 0.35 USD per episode",
+    "API cumulative spend reaches approved hard cap",
+    "API variance exceeds frozen tolerance",
+    "after-freeze tuning would be needed",
+    "principal claim would depend on API row alone"
+  ],
+  "alternatives": {
+    "open_weight": {
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "revision": "13b91ea9539e6cc1c464d15a6e053e40f3ca1845",
+      "license_metadata": "apache-2.0",
+      "observed_repository_bytes_approx": 61200000000,
+      "status": "ALTERNATIVE_REQUIRES_REGISTRY_AMENDMENT_ACQUISITION_AND_NEW_COMPETENCE",
+      "reason_not_primary": "materially larger acquisition and working-set burden"
+    },
+    "historical_qwen25_7b": {
+      "status": "HISTORICAL_WEAK_CONTROLLER_COMPARATOR_NOT_STRONG_FALLBACK",
+      "reason": "already failed v1-v3 competence gates"
+    },
+    "closed_api": {
+      "automatic_fallback": false,
+      "unavailable_status": "UNAVAILABLE_PINNED_SNAPSHOT",
+      "replacement_requirement": "new dated official verification, exact snapshot pin, registry version, cost and privacy review, and fresh competence preflight"
+    }
+  },
+  "future_tasks": [
+    {
+      "order": 1,
+      "id": "freeze_registry",
+      "action": "Hash plan, registry, canonical schemas, prompts, context policy, budgets and competence thresholds."
+    },
+    {
+      "order": 2,
+      "id": "open_metadata_preflight",
+      "action": "Archive exact official metadata, model card, license, usage policy and minimal MXFP4 allowlist; issue no-download decision."
+    },
+    {
+      "order": 3,
+      "id": "open_snapshot_acquisition",
+      "action": "After authorization, stage allowlisted files, verify identities and SHA-256, validate safetensors, and atomically promote."
+    },
+    {
+      "order": 4,
+      "id": "open_runtime_preflight",
+      "action": "Network-denied Harmony tool/finalizer smoke with deterministic replay and resource measurements."
+    },
+    {
+      "order": 5,
+      "id": "native_tool_adapter",
+      "action": "Implement provider-neutral strict functions and lossless mapping into the canonical agent action schema."
+    },
+    {
+      "order": 6,
+      "id": "shared_observation_finalizer_adapter",
+      "action": "Freeze serializer, context compaction, citation allowlist and exact final-answer validator."
+    },
+    {
+      "order": 7,
+      "id": "api_governance_preflight",
+      "action": "Approve provider project, spend, region, uploaded fields, retention controls, response storage and secret handling."
+    },
+    {
+      "order": 8,
+      "id": "api_snapshot_preflight",
+      "action": "Synthetic-only request verifies exact snapshot identity, strict functions, store=false, usage accounting and failure behavior."
+    },
+    {
+      "order": 9,
+      "id": "api_cache_replay",
+      "action": "Implement canonical request hashing, immutable restricted cache, offline replay, backend replay and mismatch rejection."
+    },
+    {
+      "order": 10,
+      "id": "new_fictional_competence_suite",
+      "action": "Author and seal at least 48 source-free cases without scientific families, r017, consumed holdouts as unseen data, or current evaluator keys."
+    },
+    {
+      "order": 11,
+      "id": "independent_competence_run_and_audit",
+      "action": "Run both models under identical public packets, seal outputs before scoring, and publish safe aggregates plus resources and costs."
+    },
+    {
+      "order": 12,
+      "id": "scientific_run_amendment",
+      "action": "Only after all scientific, rights, split and competence gates pass, create a separate preregistered evaluation manifest."
+    }
+  ],
+  "final_decision": "STRONG_AGENT_BASELINE_PLAN_READY"
+}

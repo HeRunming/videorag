@@ -1,0 +1,487 @@
+{
+  "artifact_classification": "AUTHORITATIVE_PAPER_FACING_NO_GO_DISPOSITION_PRESERVING_V1_ARTIFACT_INTEGRITY",
+  "audit_method": {
+    "bounded_local_artifact_review_only": true,
+    "existing_rankings_decompressed_for_deterministic_audit": true,
+    "media_accessed": false,
+    "models_executed": false,
+    "network_accessed": false,
+    "v1_code_executed": false,
+    "v1_files_modified": false
+  },
+  "authority": {
+    "effect": "Supersedes P23_102_REAL_RETRIEVAL_DIAGNOSTIC_READY only as authorization for paper-facing Acquire evidence. Preserves the historical v1 engineering and artifact-integrity READY status.",
+    "historical_v1_status_strings_preserved": true,
+    "in_place_v1_repair_allowed": false,
+    "precedence": "AUTHORITATIVE_FOR_PAPER_FACING_ACQUIRE_INTERPRETATION",
+    "required_successor": "V2",
+    "v1_allowed_uses": [
+      "provenance",
+      "reproducibility",
+      "artifact_integrity",
+      "debugging",
+      "v2_repair_planning"
+    ],
+    "v1_forbidden_uses": [
+      "paper_result",
+      "paper_table",
+      "paper_figure",
+      "abstract_claim",
+      "benchmark_claim",
+      "Acquire_effectiveness_claim",
+      "model_comparison",
+      "modality_comparison",
+      "near_local_vs_far_separated_comparison",
+      "RRF_or_fusion_comparison",
+      "oracle_routing_claim",
+      "semantic_support_claim",
+      "generalization_claim"
+    ]
+  },
+  "binding_decision": {
+    "artifact_integrity_gate": "READY",
+    "decision": "PAPER_FACING_ACQUIRE_EVIDENCE_NO_GO",
+    "decision_token": "P23_102_REAL_RETRIEVAL_V1_PAPER_NO_GO_V2_REQUIRED",
+    "new_version_required": "V2",
+    "paper_facing_acquire_gate": "NO_GO",
+    "v1_readiness_marker_authoritative_for_artifact_integrity": true,
+    "v1_readiness_marker_authoritative_for_paper_evidence": false
+  },
+  "created_date": "2026-10-15",
+  "disposition_id": "AV-TRACE-P23-102-REAL-RETRIEVAL-DIAGNOSTIC-V1-DISPOSITION",
+  "final_marker": "P23_102_REAL_RETRIEVAL_V1_PAPER_NO_GO_V2_REQUIRED",
+  "independent_audit": {
+    "defensible_result": "The 76 nominal queries are only seven generic placeholder templates. Queries sharing a template produce identical complete learned rankings and cannot identify their intended families or evidence targets. No literal target-record ID, source ID, timestamp, or exact stored ASR text leakage was detected in query text.",
+    "identifiability": {
+      "all_nominal_queries_are_in_duplicate_text_groups": true,
+      "duplicate_group_sizes": [
+        16,
+        12,
+        12,
+        12,
+        8,
+        8,
+        8
+      ],
+      "duplicate_query_text_group_count": 7,
+      "learned_query_ranker_records": 228,
+      "learned_rankers_audited": [
+        "visual_only",
+        "audio_only",
+        "equal_weight_rrf_joint"
+      ],
+      "same_text_complete_ranking_pair_collisions_across_three_learned_rankers": 1206,
+      "same_text_query_pair_count": 402,
+      "status": "FAIL_HIGH_NON_IDENTIFIABILITY",
+      "unique_learned_ranking_lists_after_template_collapse": 21,
+      "unique_query_text_count": 7
+    },
+    "leakage_checks": {
+      "direct_query_to_index_text_leakage_detected": false,
+      "exact_query_equals_stored_asr_text": false,
+      "source_id_literal_in_query_text": false,
+      "target_record_id_literal_in_query_text": false,
+      "timestamp_literal_in_query_text": false
+    },
+    "nominal_query_count": 76,
+    "only_defensible_interpretation": "NEGATIVE_IDENTIFIABILITY_RESULT_WITH_NEGATIVE_LITERAL_LEAKAGE_CHECKS",
+    "prohibited_inferences": {
+      "Acquire_success_or_failure": true,
+      "RRF_help_or_harm": true,
+      "local_vs_far_effect": true,
+      "modality_quality_or_necessity": true,
+      "model_quality_or_ordering": true
+    },
+    "template_groups": [
+      {
+        "query_count": 16,
+        "query_scope": "handle",
+        "query_text_sha256": "sha256:9b97b0c3c8c8a86f4653da4afe3e83c7cd702cbaee4c0920938f5b44d6a6be6d",
+        "temporal_stratum": "far_separated"
+      },
+      {
+        "query_count": 12,
+        "query_scope": "family",
+        "query_text_sha256": "sha256:028800855cb5103cf459de7f62e1696c66db568ea5ba297ee0c0db310445632b",
+        "temporal_stratum": "near_local"
+      },
+      {
+        "query_count": 12,
+        "query_scope": "handle",
+        "query_text_sha256": "sha256:3deaaba61c80beb659cd71d76dc980dd6cef66e3d5c766826dfd71e6bfb61e43",
+        "temporal_stratum": "near_local"
+      },
+      {
+        "query_count": 12,
+        "query_scope": "handle",
+        "query_text_sha256": "sha256:3ead1b05a3de8bda12f68cbbb505c971475791c0e9f9b211faeaa25a8ba3c037",
+        "temporal_stratum": "near_local"
+      },
+      {
+        "query_count": 8,
+        "query_scope": "family",
+        "query_text_sha256": "sha256:0dc7199c63a2125b0af642608ac4965f28982d4605528e641f11027609bc0c3c",
+        "temporal_stratum": "far_separated"
+      },
+      {
+        "query_count": 8,
+        "query_scope": "handle",
+        "query_text_sha256": "sha256:844eb65d5c05bdb1a68a9dbdfdcf7ab9b52b9f948e77547b508c4d0eddd11d1c",
+        "temporal_stratum": "far_separated"
+      },
+      {
+        "query_count": 8,
+        "query_scope": "handle",
+        "query_text_sha256": "sha256:b87844fb75d4998ef4aa15238cebe98600ad9f9f506d25be817585402067259a",
+        "temporal_stratum": "far_separated"
+      }
+    ]
+  },
+  "legacy_metrics_quarantined": {
+    "aggregate_metric_row_count": 36,
+    "all_evidence_success_family_all_methods": {
+      "at_1": 0.0,
+      "at_5": 0.0,
+      "at_10": 0.0
+    },
+    "family_all_strata": [
+      {
+        "all_evidence_success_at_1": 0.0,
+        "all_evidence_success_at_5": 0.0,
+        "all_evidence_success_at_10": 0.0,
+        "evidence_recall_at_1": 0.0,
+        "evidence_recall_at_5": 0.0,
+        "evidence_recall_at_10": 0.0125,
+        "mean_distractors_before_first_target": 437.5,
+        "mean_first_target_rank": 438.5,
+        "median_first_target_rank": 489.0,
+        "method": "audio_only",
+        "query_count": 20,
+        "target_count": 56
+      },
+      {
+        "all_evidence_success_at_1": 0.0,
+        "all_evidence_success_at_5": 0.0,
+        "all_evidence_success_at_10": 0.0,
+        "evidence_recall_at_1": 0.0,
+        "evidence_recall_at_5": 0.0,
+        "evidence_recall_at_10": 0.0,
+        "mean_distractors_before_first_target": 376.9,
+        "mean_first_target_rank": 377.9,
+        "median_first_target_rank": 327.0,
+        "method": "equal_weight_rrf_joint",
+        "query_count": 20,
+        "target_count": 56
+      },
+      {
+        "all_evidence_success_at_1": 0.0,
+        "all_evidence_success_at_5": 0.0,
+        "all_evidence_success_at_10": 0.0,
+        "evidence_recall_at_1": 0.0,
+        "evidence_recall_at_5": 0.0,
+        "evidence_recall_at_10": 0.0125,
+        "mean_distractors_before_first_target": 237.25,
+        "mean_first_target_rank": 238.25,
+        "median_first_target_rank": 180.0,
+        "method": "oracle_modality_routing",
+        "query_count": 20,
+        "target_count": 56
+      },
+      {
+        "all_evidence_success_at_1": 0.0,
+        "all_evidence_success_at_5": 0.0,
+        "all_evidence_success_at_10": 0.0,
+        "evidence_recall_at_1": 0.0,
+        "evidence_recall_at_5": 0.0,
+        "evidence_recall_at_10": 0.0,
+        "mean_distractors_before_first_target": 410.05,
+        "mean_first_target_rank": 411.05,
+        "median_first_target_rank": 330.0,
+        "method": "random_baseline",
+        "query_count": 20,
+        "target_count": 56
+      },
+      {
+        "all_evidence_success_at_1": 0.0,
+        "all_evidence_success_at_5": 0.0,
+        "all_evidence_success_at_10": 0.0,
+        "evidence_recall_at_1": 0.0,
+        "evidence_recall_at_5": 0.0,
+        "evidence_recall_at_10": 0.0,
+        "mean_distractors_before_first_target": 512.9,
+        "mean_first_target_rank": 513.9,
+        "median_first_target_rank": 589.5,
+        "method": "temporal_midpoint_baseline",
+        "query_count": 20,
+        "target_count": 56
+      },
+      {
+        "all_evidence_success_at_1": 0.0,
+        "all_evidence_success_at_5": 0.0,
+        "all_evidence_success_at_10": 0.0,
+        "evidence_recall_at_1": 0.0,
+        "evidence_recall_at_5": 0.0,
+        "evidence_recall_at_10": 0.0,
+        "mean_distractors_before_first_target": 405.2,
+        "mean_first_target_rank": 406.2,
+        "median_first_target_rank": 293.5,
+        "method": "visual_only",
+        "query_count": 20,
+        "target_count": 56
+      }
+    ],
+    "full_aggregate_tables_binding": {
+      "metric_tables_path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/metric_tables.json",
+      "metric_tables_sha256": "sha256:c71d228ccb0b0a2f6aba6e02f7bac3ce23a4e9bf42ab2f3b85cc99d5ad4e8d94",
+      "per_query_metrics_path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/per_query_metrics.json",
+      "per_query_metrics_sha256": "sha256:62e82461e441f8c487cdadc512524cf5621cf64ebf8cb82a2f0c7b806c81b914"
+    },
+    "joint_minus_best_unimodal_family_all": {
+      "at_1": 0.0,
+      "at_5": 0.0,
+      "at_10": -0.0125
+    },
+    "paper_interpretation_allowed": false,
+    "reason": "Target ranks were computed from seven generic texts that cannot identify the evaluator-assigned targets."
+  },
+  "runtime_and_persistence_metrics": {
+    "audio_index_records": 1115,
+    "deterministic_rerun_sha256": "sha256:1e2cffceb6a4670cc5bcea53699b8405c75c8e9b1b30f23cee1a07a7b1f6c595",
+    "elapsed_seconds": 18.322274,
+    "per_query_metric_row_count": 456,
+    "peak_rss_kib": 1623556,
+    "ranking_item_count": 423700,
+    "ranking_record_count": 380,
+    "text_embedding_seconds": 12.56659,
+    "threads": 1,
+    "unique_query_texts_embedded_per_model": 7,
+    "visual_index_records": 1115
+  },
+  "schema_version": "av-trace.p23-102-real-retrieval-diagnostic-v1-disposition/1.0",
+  "source_boundary": {
+    "development_only": true,
+    "evaluation_eligible": false,
+    "future_test_eligible": false,
+    "source_disjoint_from_evaluation": true,
+    "source_group_id": "P23",
+    "source_id": "P23_102"
+  },
+  "target_accounting": {
+    "family_query_view": {
+      "far_separated_families": 8,
+      "far_separated_target_handles": 32,
+      "family_queries": 20,
+      "near_local_families": 12,
+      "near_local_target_handles": 24,
+      "target_handles_total": 56
+    },
+    "handle_query_view": {
+      "far_separated_handle_queries": 32,
+      "handle_queries": 56,
+      "near_local_handle_queries": 24,
+      "target_handles_total": 56
+    },
+    "modality": {
+      "ambient_audio_handles": 28,
+      "vision_handles": 28
+    },
+    "unique_evidence_handle_ids": 56,
+    "unique_index_record_ids": 28
+  },
+  "v1_bindings": {
+    "artifact_files": [
+      {
+        "path": "docs/review/p23_102_real_retrieval_diagnostic_v1.md",
+        "sha256": "sha256:af99b5dabe219a334a141c87d1f1c7d12570f83a7551f4fae6c45b30c28cdcf0"
+      },
+      {
+        "path": "data/rehearsal_plan/p23_102_real_retrieval_diagnostic_v1.json",
+        "sha256": "sha256:6c5b6e5d4c80236bcfde1fc1fa483ecc54ea43a72fd00a02e64138778dcbee4e"
+      },
+      {
+        "path": "tools/p23_102_real_retrieval_diagnostic_v1.py",
+        "sha256": "sha256:e3b49e7fc449153316d2cb10a575e5f71811db46f32a8eeebaf5317f8961d5fc"
+      },
+      {
+        "path": "tooling/tests/test_p23_102_real_retrieval_diagnostic_v1.py",
+        "sha256": "sha256:78e45bbd7b3811a417614c0e8512702b041848259f9a10105d7361c12ac7ac61"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/audit.json",
+        "sha256": "sha256:51c8eecb2656968f8df473af02d624af2341f797ffffeabfd3cb63bffc39a050"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/config.json",
+        "sha256": "sha256:3beedad2a147fe38475d0cc445493d5aa4173b208b3019fb80e911bc9a98f0c9"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/deterministic_payload.json",
+        "sha256": "sha256:3de4f248eb15b574fe77e6afa9686596a81b6093782ec8615ba261b1bbb65777"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/leakage_audit.json",
+        "sha256": "sha256:838b157317d9294199455353a312fce0563393593d559462864445c796fcd9d7"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/metric_tables.json",
+        "sha256": "sha256:c71d228ccb0b0a2f6aba6e02f7bac3ce23a4e9bf42ab2f3b85cc99d5ad4e8d94"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/per_query_metrics.json",
+        "sha256": "sha256:62e82461e441f8c487cdadc512524cf5621cf64ebf8cb82a2f0c7b806c81b914"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/queries.json",
+        "sha256": "sha256:c57318513bc727ef25723f5f1b2f99fd7d800c0cc080c16656c9888203b32a8f"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/rankings.jsonl.gz",
+        "sha256": "sha256:f835f7fe9c86b02d2072f0a5df11be88bbab108e389b20e89d6ac5fa1dcc0ce2"
+      },
+      {
+        "path": "data/restricted/p23_102_real_retrieval_diagnostic_v1/resource_runtime.json",
+        "sha256": "sha256:ec87847d8eed301d1e42bb3c23c1013270b0f54a2f776e36e7eb476892ddc758"
+      }
+    ],
+    "configured_input_files": [
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/build_manifest.json",
+        "sha256": "sha256:a935e9214c64b5a545492223c728b8293715d5584516f4d615f15e82e7f051a6"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/full_timeline_index.json",
+        "sha256": "sha256:061781dc7f32381990529d9fc9832f32c83d0be8c13f38dece1198fff8c7160a"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/resource_manifest.json",
+        "sha256": "sha256:ca5a8125d44f0f484570f5672833c2512b22f448685e2fd65d4e795f75e16468"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/segment_manifest.json",
+        "sha256": "sha256:c9f5e9c1ca9673ad4cb8ed56eb5b127f64c42de9f53945eb588e6463b44de830"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/evidence_registry.json",
+        "sha256": "sha256:70a5ccf4e1d44cb7967bfc51cf1aa40473cabd091b0797f3af2fc61e2f39cdf4"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/family_registry.json",
+        "sha256": "sha256:ff7c6b08f63d68738c222d5c916843ec0164add9a9f09a0893eba35530008c57"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/leakage_gate.json",
+        "sha256": "sha256:fe2353bd073a5b8d6998c7c9be2a5d08b1141c9a2eae5c5fa4e4bd90908f134f"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/source_split_manifest.json",
+        "sha256": "sha256:24a8de73e6c5e4cfe2bf8ab9435660cd88ad6f40930499c1310d2ab79a7f0da9"
+      },
+      {
+        "path": "data/restricted/scale1b/manifests/wave_r_model_acquisition.json",
+        "sha256": "sha256:0d22c8f2499e563911aa75a5ccb85f9f29009305f8117f38579f07efe45d05de"
+      }
+    ],
+    "model_inventories": {
+      "clap": {
+        "inventory_sha256": "sha256:9d669a0b6d64875504bc8007aeaa4658f97a0083cbf34dd0a4345069cd482a33",
+        "model_id": "laion/clap-htsat-unfused",
+        "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a"
+      },
+      "siglip2": {
+        "inventory_sha256": "sha256:72567833128cc923571620ac9586d5d8ebe3e44322b5d547b72bd79fd5f7fd1e",
+        "model_id": "google/siglip2-base-patch16-224",
+        "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2"
+      }
+    },
+    "payload_and_configuration_hashes": {
+      "config_sha256": "sha256:1654ae730fd15ef28751c55e79ce4ffc4713da574b01b9086bd0f2377adb18e5",
+      "public_summary_payload_sha256": "sha256:06eba9f25c097c7f6c8e14f7bb76ced2a62aaad54a4482fa3befe6bd800542ac",
+      "restricted_audit_payload_sha256": "sha256:6af551d3789d9d61bccad5912bf95bd1d74a1e25dd0f763eea0596679d7155a4"
+    },
+    "upstream_canonical_hashes": {
+      "bundle_content_hash": "sha256:c197b3ab4f71cfb761cac1df9f1203241a756963b820ef2d61f5f989acc84caf",
+      "evidence_registry_hash": "sha256:568e0eaf60d64929a88bc45bb2271674279464adfa2bdb16b1b4f585dfd9008c",
+      "family_registry_hash": "sha256:b0fa6136438999f350ae992f053e4fda31b00cdd8730a118a3c5a6cb2e75c443",
+      "index_build_hash": "sha256:8e2508e7aad4ace7688e590c63650157f36610f144649ecfced78df6b59204f3",
+      "index_hash": "sha256:09548628170442b01460eb2c22bc4e6db0e2113f230d183ff96ed9dd7ade0699",
+      "index_resource_hash": "sha256:e8e75f189b2a5113f73ff4ada07aadbf1f5ef866b124439176bf3f21186b8a98",
+      "source_split_hash": "sha256:9a22096d721ec19fb463e6dfe81a7bf1de5100c6561cfd8c0856ea783b12e241"
+    }
+  },
+  "v2_budget_changes": {
+    "Acquire_agent_budget_disposition": {
+      "cost_limit": 12.0,
+      "max_actions": 10,
+      "status": "UNCHANGED_AND_NOT_VALIDATED_BY_THIS_DISPOSITION",
+      "tuning_from_v1_outcomes_allowed": false
+    },
+    "authoring_and_review": {
+      "completed_family_semantic_units_minimum": 20,
+      "completed_handle_semantic_units_minimum": 56,
+      "independently_reviewed_query_bindings_minimum": 76
+    },
+    "embedding": {
+      "encoders": 2,
+      "total_query_text_embeddings_v1": 14,
+      "total_query_text_embeddings_v2_minimum": 152,
+      "total_query_text_embeddings_absolute_increase": 138,
+      "unique_query_texts_per_encoder_v1": 7,
+      "unique_query_texts_per_encoder_v2_minimum": 76,
+      "unique_query_texts_per_encoder_absolute_increase": 69,
+      "workload_multiplier_minimum": 10.857142857
+    },
+    "reporting_cutoffs": {
+      "additional_cutoffs_status": "SECONDARY_ONLY_IF_PRECOMMITTED",
+      "maximum_preregistered_k": 20,
+      "primary_k": 5,
+      "reason": "Align retrieval reporting to frozen Acquire search_top_k=5 and maximum_search_top_k=20."
+    },
+    "same_shape_persistence_if_five_methods_retained": {
+      "candidate_items_per_ranking": 1115,
+      "ranking_item_count": 423700,
+      "ranking_record_count": 380
+    }
+  },
+  "v2_requirements": [
+    {
+      "id": "V2-REQ-01",
+      "requirement": "Complete target-specific natural-language question, answer, and atomic-claim semantics for every family and handle; no unfilled placeholders."
+    },
+    {
+      "id": "V2-REQ-02",
+      "requirement": "Preserve 20 family queries and 56 handle queries while requiring 76 unique normalized target-identifying query texts."
+    },
+    {
+      "id": "V2-REQ-03",
+      "requirement": "Preserve exact accounting for 20 families, 56 handles, 12 near/local families and 24 handles, eight far/separated families and 32 handles, 28 vision handles, and 28 ambient-audio handles."
+    },
+    {
+      "id": "V2-REQ-04",
+      "requirement": "Freeze and hash query text, query scope, target bindings, modality, temporal stratum, and source boundary before embedding or ranking."
+    },
+    {
+      "id": "V2-REQ-05",
+      "requirement": "Obtain independent pre-retrieval identifiability review without record IDs, timestamps, rank outcomes, or evaluator-private shortcuts."
+    },
+    {
+      "id": "V2-REQ-06",
+      "requirement": "Retain literal ID, source ID, timestamp, and exact-ASR checks and add normalized near-literal ID/timestamp, annotation-label, answer, and target-only metadata leakage checks."
+    },
+    {
+      "id": "V2-REQ-07",
+      "requirement": "Fail closed on duplicate normalized texts across different targets or on unexplained identical embeddings, score vectors, or complete learned rankings."
+    },
+    {
+      "id": "V2-REQ-08",
+      "requirement": "Precommit encoders, index, candidate universes, normalization, tie-breaking, RRF k, modality weights, and cutoffs; keep oracle routing separate and non-deployable."
+    },
+    {
+      "id": "V2-REQ-09",
+      "requirement": "Report primary top_k=5 and preregistered maximum top_k=20 without outcome-aware cutoff, modality, stratum, or fusion selection."
+    },
+    {
+      "id": "V2-REQ-10",
+      "requirement": "Require separate passes for artifact integrity, query identifiability, target validity, execution validity, and independent paper-facing scientific authorization."
+    }
+  ]
+}

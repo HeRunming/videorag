@@ -1,0 +1,1370 @@
+[
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5528c5d78272ff1e43bf487073efdedf58f3b02855ebe8b121808c29e54a4d98",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.1",
+    "remaining_cost": 11.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5528c5d78272ff1e43bf487073efdedf58f3b02855ebe8b121808c29e54a4d98",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 2,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [
+      "s3_motor"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.2",
+    "remaining_cost": 9.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5528c5d78272ff1e43bf487073efdedf58f3b02855ebe8b121808c29e54a4d98",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 3,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [
+      "s3_motor"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.3",
+    "remaining_cost": 8.0,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5528c5d78272ff1e43bf487073efdedf58f3b02855ebe8b121808c29e54a4d98",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 4,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s3_motor",
+      "s3_two_clicks"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.4",
+    "remaining_cost": 6.0,
+    "remaining_steps": 6,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5528c5d78272ff1e43bf487073efdedf58f3b02855ebe8b121808c29e54a4d98",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 0,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:1d6631b22821a80d19532d5ae6cfb0fd95840617d104dcb32f38302545171a27",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 1,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.1",
+    "remaining_cost": 11.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:1d6631b22821a80d19532d5ae6cfb0fd95840617d104dcb32f38302545171a27",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 2,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.2",
+    "remaining_cost": 9.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:1d6631b22821a80d19532d5ae6cfb0fd95840617d104dcb32f38302545171a27",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 3,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.3",
+    "remaining_cost": 8.0,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:1d6631b22821a80d19532d5ae6cfb0fd95840617d104dcb32f38302545171a27",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 4,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.4",
+    "remaining_cost": 6.0,
+    "remaining_steps": 6,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:1d6631b22821a80d19532d5ae6cfb0fd95840617d104dcb32f38302545171a27",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": true,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "status_trigger_then_direct_route",
+        "required_cost": 4.25,
+        "required_steps": 4,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "channels": [
+                "ambient"
+              ]
+            },
+            "cost": 0.25,
+            "expected_evidence_ids": [],
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.1",
+    "remaining_cost": 11.75,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 2,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.2",
+    "remaining_cost": 10.75,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 3,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [
+      "s3_motor"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.3",
+    "remaining_cost": 8.75,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 4,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [
+      "s3_motor"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.4",
+    "remaining_cost": 7.75,
+    "remaining_steps": 6,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 5,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s3_motor",
+      "s3_two_clicks"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.5",
+    "remaining_cost": 5.75,
+    "remaining_steps": 5,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.clean.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5d1314df0633e7e998aff01cc2f48b705322d544b4586d5053cdd7fabaea41fe",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [
+      "s3_two_clicks"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.clean.1",
+    "remaining_cost": 10.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5d1314df0633e7e998aff01cc2f48b705322d544b4586d5053cdd7fabaea41fe",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 2,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s3_motor",
+      "s3_two_clicks"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.clean.2",
+    "remaining_cost": 8.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:5d1314df0633e7e998aff01cc2f48b705322d544b4586d5053cdd7fabaea41fe",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 0,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.blocked.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6985a6fb2f7062d1a0c9d231dabce635c9323f178484d3d20a6866e96b25b703",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 1,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.blocked.1",
+    "remaining_cost": 10.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6985a6fb2f7062d1a0c9d231dabce635c9323f178484d3d20a6866e96b25b703",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 2,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.blocked.2",
+    "remaining_cost": 8.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6985a6fb2f7062d1a0c9d231dabce635c9323f178484d3d20a6866e96b25b703",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": true,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "status_trigger_then_direct_route",
+        "required_cost": 4.25,
+        "required_steps": 4,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "channels": [
+                "ambient"
+              ]
+            },
+            "cost": 0.25,
+            "expected_evidence_ids": [],
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:faf0343c86da196e8702040147a7d900d5fc3fbda505aad393737fcb11a634ba",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.1",
+    "remaining_cost": 11.75,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor",
+          "s3_two_clicks"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 282.0,
+                "start_s": 276.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_two_clicks"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:faf0343c86da196e8702040147a7d900d5fc3fbda505aad393737fcb11a634ba",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 2,
+    "eligible": true,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [
+      "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+    ],
+    "observed_evidence_ids": [
+      "s3_two_clicks"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.2",
+    "remaining_cost": 9.75,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s3_motor"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 118.0,
+                "start_s": 110.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s3_motor"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:faf0343c86da196e8702040147a7d900d5fc3fbda505aad393737fcb11a634ba",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 3,
+    "eligible": false,
+    "episode_id": "syn_f06_motor_identity.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f06_motor_identity",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s3_motor",
+      "s3_two_clicks"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.3",
+    "remaining_cost": 7.75,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+        "set_id": "ses_syn_f06_motor_identity_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:faf0343c86da196e8702040147a7d900d5fc3fbda505aad393737fcb11a634ba",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  }
+]

@@ -1,0 +1,2473 @@
+{
+  "execution_authorized": false,
+  "freeze_manifest": {
+    "packet_hashes": {
+      "c_093bf34f2b98b9": "sha256:a58aac81785b061e1b1111eecb83d67a49e8b48265f421d3df68c4f455c7367f",
+      "c_13e5f69b25eb89": "sha256:e6db49c00a8926bc3d5bd69812f9359075aa92e0b7201ca9dd97965d3155b21f",
+      "c_157e6f5dd493bd": "sha256:41a6a2e3504956ba34ab3bcd168089e9c7381872d1ca98cfa17d22199b6b21b3",
+      "c_1a5968fcee6794": "sha256:0de18c1449fe27e1b7cb28254b629d13fa3a04db091d16d015952de3e28b057f",
+      "c_2243bf40ae7236": "sha256:571f68b76571a730add63ad4011d922edadc163f5f3070cfd76c99fb4163f00f",
+      "c_236b727b6063e9": "sha256:736bcf28135de0d7ad524813b39a0982d3c6d82bb257a5df9fcafee7ea29aa49",
+      "c_374334d592f350": "sha256:3d47e6478e950cc82c41a8c78ed7ea2b54478b30b84963fd9d0882791151ebf4",
+      "c_43d90a89a8495b": "sha256:2498f3ad87b610075b47f9fe60b16a8629066a39648b18d87125f440f90653c0",
+      "c_4f8154438a174f": "sha256:81e6e8c79199386f630475dbd3cb738975f4aeb14abe9383a45266c372a6ef7e",
+      "c_518bab7b0495ee": "sha256:1c4b9ba427047812c8891f2d19286ce4ec9283da9dc5dc628a59b9d29b9ec461",
+      "c_53447d39f01df3": "sha256:1b0dbf0039bf5e7f712ad1ee1a89bc32f5c0a709abae9656ec64f929ce5eabc4",
+      "c_64aa0d641d30f4": "sha256:ce99a1c3271733e4e75b1de55247d53e869a697c0c9893c2f5c6ba5a3355c407",
+      "c_662fc22f037b1d": "sha256:85164613acf97c1345051ece807863a5531a7ea9f87ff3dd49e77c0c08a54f60",
+      "c_74c2b596d1e777": "sha256:4e60637bce64a8303f5b37b5423bdae019e638ebc88ff9cc28ca4f7dea0b6b81",
+      "c_77031401331b4e": "sha256:d094ac5913772b465916d2fa4c84e3e50b4f219497dcb026cf586e98214bb62b",
+      "c_81ae45bd43c706": "sha256:e28f55e4b69d5977ecdbf7d60690d3bd4d99452d1f580e1330cbdb6335e11b69",
+      "c_93c31ecf008f87": "sha256:98eaa41945eeeb4bffd2bf5170369b19c6b55fff7e184e557dd454882de48418",
+      "c_965eda1fe42a64": "sha256:234d23f23b50cb5161674a08b645ffe6005298f369deac0b746bd3df1e3c4da3",
+      "c_b3cbd23d72a1b2": "sha256:ee710b03b6b9b82c79850166ca41c358421d020acf6519a91677c6e6451c3d5f",
+      "c_c4e53e650a8395": "sha256:efae47e82bca13fd8bd257aa934202764fa1fc070fd238561bbb6df9dad0f952",
+      "c_d81a0c2a31e736": "sha256:a5fe6b29b39a873fe96008aa7d0f404a9d672aafc8e28d60a1ce5beb470971ee",
+      "c_e1f657fe7912e2": "sha256:0e7e0b3fb54b391903946484e588a35636c856d5c62510aed658f633b6e8d3ec",
+      "c_f2ac442f5abfc5": "sha256:78ece995f22eaf286b37f2481ec681e3a9845b63937255dac92204ddd691931d",
+      "c_f8b68c92a5fd17": "sha256:ebf6b3da7e539f637c6ad37155ac06dd81ddb821bb4588293f1aef6810cf477a",
+      "f_11f7e451420590": "sha256:13a0ecde2bc263a2a12956759e996bab9e89d3265dd5c751eda986bd44ead90c",
+      "f_140a060e156a63": "sha256:effb3ab3aa6889b7e7add5d72d87a702e7516955a6f0ad955bed8beb0e4427b6",
+      "f_2e57760943665e": "sha256:23df8799a852fc2942cf14e2d758d4a9d93ec80bdafddf6cc37b7ac06f926f26",
+      "f_4326d92de243e2": "sha256:2b9e0cfd3cb708278404ddece6b2dfd991a279f50cd464c44a554b1b89ef2b5e",
+      "f_4657ad711ee782": "sha256:420197f999e013dcb382cc2a867dcc281a276d2c998501ab79955fc04c9c79fd",
+      "f_4e837d2bd48b38": "sha256:62f242af930e0421adbe076b27560b22afe80615e425b90bbe5edc2f33c309fd",
+      "f_6e25ecaacac3d3": "sha256:951a35cad5a228081d8722eafd060f0141209792b39111ce0c5da6a53bd35eb1",
+      "f_77d3697c9cc5ac": "sha256:9ac60521373d5e1ac942386e81b628e59704c121eedd317e3c1351e0871debee",
+      "f_7b5c70a7aeb8a0": "sha256:7518fe48df044789bc4792ceb7c685f0cd3857f88157695c5244cb67cca7452a",
+      "f_969e5aea80029f": "sha256:25b7467dd586e232a1663209fcd93c6832501518aa7aac4cc4d7ff930f959a3b",
+      "f_97f6b5c4a9db30": "sha256:5a30bb937b709b305f772a7c209601f38109d7cb640b4da85f36a65b8ca23bc8",
+      "f_992a0506f30cfc": "sha256:755f33b6a75a6668ce9f6efdea30d129c55890e63c1badf2f5f7a080a9b90ffd",
+      "f_a9d323eb045563": "sha256:aac71e3b91647d27060b7c2aa997ceefc5adb69c97104b2845a101f635131936",
+      "f_c26f443d4f6800": "sha256:778ddbee1671a87a4960615c6578d95224016129c9dc321699d6b8f2b9d4ec50",
+      "f_c4bfe9f56ba211": "sha256:5bf195784cbdae4442c4366958982ff92756ee8aaef7d15d9e7f0737eecdb04d",
+      "f_c5a7a21ca706bd": "sha256:5ff87eabbcbf23ec09485ec3e52ff48a774dc6968a4fd07ce425aa6014ec7485",
+      "f_cc4283dc990883": "sha256:b56c16225c26da7fbba2e8fe918be6e4159661d69069d3653d6ca7108dbf5346",
+      "f_ce497fa4bb9474": "sha256:ebdaf14865ab919d67b49eaae99c5f5f7f56643ed1505406ca069d63316ae8c2",
+      "f_ddd33aed1226bc": "sha256:ff425bcc150642888499f487ffe91327cb57fa582b196c22702645697e49d905",
+      "f_e34912d1dcb44f": "sha256:1a489a977f557f1e41ab9b5823a3296e03fed545356952252b1e44e8627fe8cd",
+      "f_e5af13b7e6fb89": "sha256:10624861c7f64cb35a5dcf97ad3b8139f09ece650565cb9a1103a2102bea9c1d",
+      "f_f5acf62fc54a70": "sha256:5ad258dd476c8e5935d5bb5fd680e8161fd4857a586c096dca8c349cc3db8bdb",
+      "f_f93d043ffe44d7": "sha256:a9c4e252e0508558370a9bd69f958b6d18b6b97e93d164deae71babc69036fba",
+      "f_fe6d665219d377": "sha256:504bd312ef160481f779b3e3beb66035fbb81d83195bb7025cde4d9b0c70f33d"
+    },
+    "public_payload_sha256": "sha256:39713df5372497c69e9993ca2979e4e3fff6c48b3421aa699d97ca1c98a67453",
+    "reference_file_hashes": {
+      "data/rehearsal_plan/external_gateway_public_competence_suite_v1.json": "sha256:faf663f18a1a3c91c26468ad5fe9c16f25e9b69059d0acb3a1c09cc6c5cf93f7",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__citation_selections__1.txt": "sha256:07a5d057590e3b21534c4f143719b462b740d60d5d726b692631d0fa601c24be",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__claim_drafts__1.txt": "sha256:e5ecac820bb7909e3cbe309141dac9c61b800673ddfe28a5a1e7d6e995e4969b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__diagnosis__1.txt": "sha256:f91047183cdee37756b233787d1a16ed3711ff86a1c0e2e39dc9477ad6b38f0b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__citation_selections__1.txt": "sha256:07a5d057590e3b21534c4f143719b462b740d60d5d726b692631d0fa601c24be",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__claim_drafts__1.txt": "sha256:e5ecac820bb7909e3cbe309141dac9c61b800673ddfe28a5a1e7d6e995e4969b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__diagnosis__1.txt": "sha256:f91047183cdee37756b233787d1a16ed3711ff86a1c0e2e39dc9477ad6b38f0b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__citation_selections__1.txt": "sha256:07a5d057590e3b21534c4f143719b462b740d60d5d726b692631d0fa601c24be",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__claim_drafts__1.txt": "sha256:e5ecac820bb7909e3cbe309141dac9c61b800673ddfe28a5a1e7d6e995e4969b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__diagnosis__1.txt": "sha256:f91047183cdee37756b233787d1a16ed3711ff86a1c0e2e39dc9477ad6b38f0b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task203-gpt6-astra-clean/task201-20261012T025948Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task204-gpt6-astra-host/task201-20261012T034430Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/granite_adapter_v2_dev_registry.json": "sha256:c2e6f9af6451ed7b3fd2548194b22429fde371bda6ab1659dacc20e5c2bd02a2",
+      "data/rehearsal_plan/granite_adapter_v2_holdout_public.json": "sha256:2d2bec156d238032dd75a54a40d91f4e31bea352d25f51fe1f75307a0b12837b",
+      "data/rehearsal_plan/qwen3_adapter_v2_holdout_public.json": "sha256:b8e7529ff620522c0de45d22988cf0d5c706cfc70123332943d3090e0bf66696",
+      "data/rehearsal_plan/strong_baseline_competence_suite_v1.json": "sha256:1e3bec6e30e63f705cc2d49b010fdf6479b61f9b66aa7a1ca17f90a3b453afb4",
+      "docs/design/external_gateway_public_competence_suite_v1.md": "sha256:fd81ac9f6724f5bbd8c56e3d4edf1afe9577dc05d3d44cb7b4ca643a47e3dab9",
+      "docs/design/external_gateway_strong_agent_v1.md": "sha256:d7b6b7df0d091316f53de24e7fef4a7a4a3be15b9e36aa95a310e4a1606b5fc9",
+      "docs/design/granite_native_adapter_v2.md": "sha256:6bd93e1dc7fdd2e7f030af5062b4e464dffd8a37b7eb225051c8715cdf5b7f4d",
+      "docs/design/strong_baseline_adapter_v1.md": "sha256:3b18e3520bc9a2d5d5afe3f68906b19a3f5bb0aa66b9b2f3db16ef8336f13d07",
+      "docs/review/external_gateway_runtime_binding_repair.md": "sha256:0fc3554f36a91388d84f819affda1b231f8f959460e05e30861c5568113f31df",
+      "docs/review/external_gateway_strong_agent_smoke_audit.md": "sha256:0ab21bde022d2b85267ef571d94146165514201ffd249985edf0687900934733",
+      "docs/review/granite33_competence_v1_audit.md": "sha256:8c3bb719065227babb452452dd704ed3e890a713c94f871c86f09807af08d141",
+      "docs/review/granite_adapter_v2_development_audit.md": "sha256:5d3cd0b92090867d879d03eafb1311e3745f513f9664ec59bbadd81145d8f7ca",
+      "docs/review/granite_adapter_v2_holdout_evaluation.md": "sha256:6fa8030233bcf74f0699d3d47dc663254ebcb1028044c5bec7528b52931d5712",
+      "docs/review/granite_adapter_v2_holdout_freeze.md": "sha256:e0b0bd6fc8140a8a76fbef89e9e087aa321b1983008264d4d811d8c8095c67fd",
+      "docs/review/qwen25_omni_direct_competence_v1.md": "sha256:73b5401f3e5a3d48095d6449e945f1a9c1fd1790b76e059031f94c34060ac8c3",
+      "docs/review/qwen3_adapter_v2_holdout_evaluation.md": "sha256:eb837a96035e456ad458374534229556a72078fd9ecf42e0b992574849976397",
+      "docs/review/qwen3_adapter_v2_holdout_freeze.md": "sha256:c0a9aa21b47bcfe7b9e7a5c971284243418d62ad59d5904acdfd13412d0f5ab9",
+      "orchestration/results/158_strong_baseline_adapter_implementation.txt": "sha256:ca4a69245c52620baa9cc1b453a3e2b1afed53330111169261e1bb1041fe2084",
+      "orchestration/results/172_granite33_competence_v1.txt": "sha256:936f81a6624dbdca58ed1cd4fd9d37321494eda2ef2ab8634f5fddf6084a4226",
+      "orchestration/results/175_granite_adapter_v2_development.txt": "sha256:8cce77d54124a67d106fa38f38a030ad06a258851f681ef0a4af8e2a8d9b5a7c",
+      "orchestration/results/176_granite_adapter_v2_holdout_freeze.txt": "sha256:fb24931d0b7f87def436c6468782d3f9d67ccb5e75112d66e1b529e5ac1cf9df",
+      "orchestration/results/177_granite_adapter_v2_holdout_evaluation.txt": "sha256:29d891014c774462ec5fb70c7dbecd91d99cce4688d9fa20c078d90157dc671a",
+      "orchestration/results/182_qwen3_adapter_v2_holdout_freeze.txt": "sha256:f4e34ad60a23ffb4ee88ffe44f46c82ca9fb885260e30a16d7f4c2d3f559cf76",
+      "orchestration/results/184_qwen3_adapter_v2_holdout_evaluation.txt": "sha256:8866d54ac17e039804cf0470b468ae5ae9074fc3978e2db22a669f1abef2d81e",
+      "orchestration/results/198_qwen25_omni_direct_competence_v1.txt": "sha256:506f3f3522c4bfb049d0419cc336be9e6a1cdbdf19bc52f41f9f5f2c744cc627",
+      "orchestration/results/201_external_gateway_strong_agent_smoke.txt": "sha256:15fb5553e5db34ece3b68f40e5f9c9eb889c194b38e0c529f5969e69c64fb02f",
+      "orchestration/results/202_external_gateway_strong_agent_smoke_repair.txt": "sha256:cd8b9f5f25c0347dac29b5ed1f4954582aa9ee33ba41f17ce3179ba780c51294"
+    }
+  },
+  "frozen_date": "2026-10-12",
+  "frozen_seed": 202610120207,
+  "gateway_or_model_calls": 0,
+  "h2_supported": false,
+  "one_shot_ledger_template": {
+    "atomic_transition_required": true,
+    "evaluation_receipt_must_be_created_exclusively": true,
+    "full_suite_runs": 0,
+    "maximum_full_suite_runs": 1,
+    "partial_runs": 0,
+    "schema_version": "av-trace.external-gateway-public-competence-v2-ledger/2.0",
+    "state": "NOT_RUN"
+  },
+  "overlap_audit": {
+    "candidate_rendered_prompt_count": 168,
+    "checks": {
+      "exact_normalized_text": true,
+      "exact_object_hash": true,
+      "near_question": true,
+      "near_rendered_prompt": true,
+      "rendered_prompt_hash": true
+    },
+    "exact_normalized_text_matches": [],
+    "exact_object_hash_matches": [],
+    "max_question_token_jaccard": 0.307692,
+    "max_rendered_prompt_token_jaccard": 0.875676,
+    "prospective_thresholds": {
+      "exact_normalized_text_matches_max": 0,
+      "exact_object_hash_matches_max": 0,
+      "near_question_token_jaccard_max": 0.72,
+      "near_rendered_prompt_token_jaccard_max": 0.92,
+      "rendered_prompt_hash_matches_max": 0
+    },
+    "reference_file_count": 55,
+    "reference_file_hashes": {
+      "data/rehearsal_plan/external_gateway_public_competence_suite_v1.json": "sha256:faf663f18a1a3c91c26468ad5fe9c16f25e9b69059d0acb3a1c09cc6c5cf93f7",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-current-final/task201-20261012T055152Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__citation_selections__1.txt": "sha256:07a5d057590e3b21534c4f143719b462b740d60d5d726b692631d0fa601c24be",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__claim_drafts__1.txt": "sha256:e5ecac820bb7909e3cbe309141dac9c61b800673ddfe28a5a1e7d6e995e4969b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__diagnosis__1.txt": "sha256:f91047183cdee37756b233787d1a16ed3711ff86a1c0e2e39dc9477ad6b38f0b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__citation_selections__1.txt": "sha256:07a5d057590e3b21534c4f143719b462b740d60d5d726b692631d0fa601c24be",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__claim_drafts__1.txt": "sha256:e5ecac820bb7909e3cbe309141dac9c61b800673ddfe28a5a1e7d6e995e4969b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__diagnosis__1.txt": "sha256:f91047183cdee37756b233787d1a16ed3711ff86a1c0e2e39dc9477ad6b38f0b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-repaired/task201-20261012T023738Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-controller-001__evidence_state__1.txt": "sha256:dd5e07ab2f8c8b065a981f86aa3b0465fa42c8051180f0ae6bd1631ea7bc4eaf",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__answer_text__1.txt": "sha256:4bb7cc35f0cd570889cf39b2dfe2b00b6b3019b0cdc7471914bb3595c0fb2087",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__citation_selections__1.txt": "sha256:07a5d057590e3b21534c4f143719b462b740d60d5d726b692631d0fa601c24be",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__claim_drafts__1.txt": "sha256:e5ecac820bb7909e3cbe309141dac9c61b800673ddfe28a5a1e7d6e995e4969b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__diagnosis__1.txt": "sha256:f91047183cdee37756b233787d1a16ed3711ff86a1c0e2e39dc9477ad6b38f0b",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra/task201-20261010T110946Z/prompts/external-gateway-dev-finalizer-001__disposition__1.txt": "sha256:ec8a1d67cde60af7ddf1b3b460d07716ca927a0dca3ae5f779ec3ab628460e20",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task203-gpt6-astra-clean/task201-20261012T025948Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task204-gpt6-astra-host/task201-20261012T034430Z/prompts/external-gateway-dev-controller-001__action_choice__1.txt": "sha256:1de3f997440073ed3521743aecf934f9a9664bf5600c97dda76e5cb1406b7680",
+      "data/rehearsal_plan/granite_adapter_v2_dev_registry.json": "sha256:c2e6f9af6451ed7b3fd2548194b22429fde371bda6ab1659dacc20e5c2bd02a2",
+      "data/rehearsal_plan/granite_adapter_v2_holdout_public.json": "sha256:2d2bec156d238032dd75a54a40d91f4e31bea352d25f51fe1f75307a0b12837b",
+      "data/rehearsal_plan/qwen3_adapter_v2_holdout_public.json": "sha256:b8e7529ff620522c0de45d22988cf0d5c706cfc70123332943d3090e0bf66696",
+      "data/rehearsal_plan/strong_baseline_competence_suite_v1.json": "sha256:1e3bec6e30e63f705cc2d49b010fdf6479b61f9b66aa7a1ca17f90a3b453afb4",
+      "docs/design/external_gateway_public_competence_suite_v1.md": "sha256:fd81ac9f6724f5bbd8c56e3d4edf1afe9577dc05d3d44cb7b4ca643a47e3dab9",
+      "docs/design/external_gateway_strong_agent_v1.md": "sha256:d7b6b7df0d091316f53de24e7fef4a7a4a3be15b9e36aa95a310e4a1606b5fc9",
+      "docs/design/granite_native_adapter_v2.md": "sha256:6bd93e1dc7fdd2e7f030af5062b4e464dffd8a37b7eb225051c8715cdf5b7f4d",
+      "docs/design/strong_baseline_adapter_v1.md": "sha256:3b18e3520bc9a2d5d5afe3f68906b19a3f5bb0aa66b9b2f3db16ef8336f13d07",
+      "docs/review/external_gateway_runtime_binding_repair.md": "sha256:0fc3554f36a91388d84f819affda1b231f8f959460e05e30861c5568113f31df",
+      "docs/review/external_gateway_strong_agent_smoke_audit.md": "sha256:0ab21bde022d2b85267ef571d94146165514201ffd249985edf0687900934733",
+      "docs/review/granite33_competence_v1_audit.md": "sha256:8c3bb719065227babb452452dd704ed3e890a713c94f871c86f09807af08d141",
+      "docs/review/granite_adapter_v2_development_audit.md": "sha256:5d3cd0b92090867d879d03eafb1311e3745f513f9664ec59bbadd81145d8f7ca",
+      "docs/review/granite_adapter_v2_holdout_evaluation.md": "sha256:6fa8030233bcf74f0699d3d47dc663254ebcb1028044c5bec7528b52931d5712",
+      "docs/review/granite_adapter_v2_holdout_freeze.md": "sha256:e0b0bd6fc8140a8a76fbef89e9e087aa321b1983008264d4d811d8c8095c67fd",
+      "docs/review/qwen25_omni_direct_competence_v1.md": "sha256:73b5401f3e5a3d48095d6449e945f1a9c1fd1790b76e059031f94c34060ac8c3",
+      "docs/review/qwen3_adapter_v2_holdout_evaluation.md": "sha256:eb837a96035e456ad458374534229556a72078fd9ecf42e0b992574849976397",
+      "docs/review/qwen3_adapter_v2_holdout_freeze.md": "sha256:c0a9aa21b47bcfe7b9e7a5c971284243418d62ad59d5904acdfd13412d0f5ab9",
+      "orchestration/results/158_strong_baseline_adapter_implementation.txt": "sha256:ca4a69245c52620baa9cc1b453a3e2b1afed53330111169261e1bb1041fe2084",
+      "orchestration/results/172_granite33_competence_v1.txt": "sha256:936f81a6624dbdca58ed1cd4fd9d37321494eda2ef2ab8634f5fddf6084a4226",
+      "orchestration/results/175_granite_adapter_v2_development.txt": "sha256:8cce77d54124a67d106fa38f38a030ad06a258851f681ef0a4af8e2a8d9b5a7c",
+      "orchestration/results/176_granite_adapter_v2_holdout_freeze.txt": "sha256:fb24931d0b7f87def436c6468782d3f9d67ccb5e75112d66e1b529e5ac1cf9df",
+      "orchestration/results/177_granite_adapter_v2_holdout_evaluation.txt": "sha256:29d891014c774462ec5fb70c7dbecd91d99cce4688d9fa20c078d90157dc671a",
+      "orchestration/results/182_qwen3_adapter_v2_holdout_freeze.txt": "sha256:f4e34ad60a23ffb4ee88ffe44f46c82ca9fb885260e30a16d7f4c2d3f559cf76",
+      "orchestration/results/184_qwen3_adapter_v2_holdout_evaluation.txt": "sha256:8866d54ac17e039804cf0470b468ae5ae9074fc3978e2db22a669f1abef2d81e",
+      "orchestration/results/198_qwen25_omni_direct_competence_v1.txt": "sha256:506f3f3522c4bfb049d0419cc336be9e6a1cdbdf19bc52f41f9f5f2c744cc627",
+      "orchestration/results/201_external_gateway_strong_agent_smoke.txt": "sha256:15fb5553e5db34ece3b68f40e5f9c9eb889c194b38e0c529f5969e69c64fb02f",
+      "orchestration/results/202_external_gateway_strong_agent_smoke_repair.txt": "sha256:cd8b9f5f25c0347dac29b5ed1f4954582aa9ee33ba41f17ce3179ba780c51294"
+    },
+    "rendered_prompt_hash_matches": [],
+    "schema_version": "av-trace.external-gateway-public-competence-v2-overlap/2.0",
+    "status": "PASS"
+  },
+  "packets": [
+    {
+      "case_id": "f_cc4283dc990883",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 28.0,
+              "start_s": 27.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_b71f3d90298239",
+            "payload": {
+              "text": "The fictional archive records heather signal."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 49.0,
+              "start_s": 48.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_6039f659596b02",
+            "payload": {
+              "text": "A separate fictional register records heather signal beside copper fern."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_1d93ff6750240a",
+            "description": "Registered fictional attribute."
+          },
+          {
+            "claim_handle": "h_1b02b1e568e033",
+            "description": "Second registered attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_92c2a83341436b?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_969e5aea80029f",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_70c23bd0e6bc84",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_27de19abe56ea3?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_c4bfe9f56ba211",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_6227970ba8c945",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_820f72e92cd670?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_81ae45bd43c706",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "cobalt reliquary registered record 12",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "adjacent ledger 32",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_988a1e0ce96e9f",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional cobalt reliquary, determine the registered utterance.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 3,
+          "cost_remaining": 4.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_f5acf62fc54a70",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_ff11b143fda2da",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_d172ba8f796c35?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_74c2b596d1e777",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_48796fc8ca7491",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional zinnia latch, determine the registered sound.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "ambient",
+            "status": "not_provided"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 5,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_13e5f69b25eb89",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "fallow armature retry record",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_282da410865422",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional fallow armature, determine the registered utterance.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_result",
+            "route": "speech",
+            "status": "channel_unavailable"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 7.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_b3cbd23d72a1b2",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "channels": [
+                "visual"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "hushed tessera retry record",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_ca74fc286f0c27",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional hushed tessera, determine the registered mark.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_result",
+            "route": "vision",
+            "status": "channel_unavailable"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 3,
+          "cost_remaining": 3.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_e34912d1dcb44f",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 26.0,
+              "start_s": 25.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_9ec743b06df487",
+            "payload": {
+              "text": "The fictional archive records frosted cadence."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 47.0,
+              "start_s": 46.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_d19ddefbb63be7",
+            "payload": {
+              "text": "A separate fictional register records frosted cadence beside copper fern."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_446df531496836",
+            "description": "Registered fictional attribute."
+          },
+          {
+            "claim_handle": "h_11d01f052545aa",
+            "description": "Second registered attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_a35cc10f9b1fd3?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_97f6b5c4a9db30",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 32.0,
+              "start_s": 31.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_38d9759ff38472",
+            "payload": {
+              "text": "The fictional archive records lilac refrain."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 66.0,
+              "start_s": 65.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_fca3f0fdccd553",
+            "payload": {
+              "text": "An unrelated fictional drawer records decoy 81."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_cde064183396e9",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_2876a7b89264c2?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_11f7e451420590",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_1f5ee7989f0619",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_c9692014c944a3?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_4326d92de243e2",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 21.0,
+              "start_s": 20.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_17b5c79662e964",
+            "payload": {
+              "text": "The fictional archive records amber pennant."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_117c06a9bee8c2",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_350843fec41ba0?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_e1f657fe7912e2",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "visual"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "kelpwood transit restored record 28",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_8dfad2371112fb",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional kelpwood transit, determine the registered mark.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "vision",
+            "status": "restored"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 6.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_53447d39f01df3",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "pewter arcade duplicate record",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 23.0,
+              "start_s": 22.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_48342c2a22b7a4",
+            "payload": {
+              "text": "The registered record for the fictional pewter arcade is four reed taps."
+            }
+          }
+        ],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_cd4ac285a12da5",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional pewter arcade, determine the registered sound.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 5.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_093bf34f2b98b9",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_462aeae054238a",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional verdant dial, determine the registered sound.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "ambient",
+            "status": "not_provided"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 2,
+          "cost_remaining": 5.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_1a5968fcee6794",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "mauve turnstile restored record 30",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "ambient"
+              ]
+            },
+            "tool": "get_channel_status"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_46c9a40bad6ca0",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional mauve turnstile, determine the registered sound.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "ambient",
+            "status": "restored"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 3,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_374334d592f350",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "sable cabinet remaining record 60",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_49b3c7f7f278aa",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional sable cabinet, determine the registered sound.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 4,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_ddd33aed1226bc",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 29.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_1c6687cc1231e3",
+            "payload": {
+              "text": "The fictional archive records juniper token."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 64.0,
+              "start_s": 63.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_902f3b8c9032a9",
+            "payload": {
+              "text": "An unrelated fictional drawer records decoy 79."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_71b5a3d0b36d94",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_dc64e9ffc53a99?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_7b5c70a7aeb8a0",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_94c44cfa369833",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_c3b52ec44f8817?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_f93d043ffe44d7",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 24.0,
+              "start_s": 23.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_1d44d9479cab96",
+            "payload": {
+              "text": "The fictional archive records dusk orchard."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_b1e0a1fbd8431c",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_63d9895ed3dbbb?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_992a0506f30cfc",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 82.0,
+              "start_s": 81.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_7cd2065975a9a5",
+            "payload": {
+              "text": "The fictional route status contains no requested value."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_e8df1dc4d79fd6",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_5821b71aa83606?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_e5af13b7e6fb89",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 31.0,
+              "start_s": 30.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_08a20b7435a24e",
+            "payload": {
+              "text": "The fictional archive records khaki spiral."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 65.0,
+              "start_s": 64.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_f7842d880316b3",
+            "payload": {
+              "text": "An unrelated fictional drawer records decoy 80."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_100a34b6e84012",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_74b159ce479ffd?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_64aa0d641d30f4",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_bd29290d334eec",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional yellowglass seal, determine the registered utterance.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "speech",
+            "status": "not_provided"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 4,
+          "cost_remaining": 7.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_c4e53e650a8395",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "nacre compass duplicate record",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 21.0,
+              "start_s": 20.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_7c9258a8e8582c",
+            "payload": {
+              "text": "The registered record for the fictional nacre compass is silver lozenge."
+            }
+          }
+        ],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_8b53318257983d",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional nacre compass, determine the registered mark.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 4,
+          "cost_remaining": 3.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_518bab7b0495ee",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "indigo capstan retry record",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_c3a2bd1576f6a8",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional indigo capstan, determine the registered utterance.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_result",
+            "route": "speech",
+            "status": "channel_unavailable"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 4,
+          "cost_remaining": 4.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_f2ac442f5abfc5",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "lunar spindle restored record 29",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_85033377f62d7e",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional lunar spindle, determine the registered utterance.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "speech",
+            "status": "restored"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 2,
+          "cost_remaining": 7.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_4e837d2bd48b38",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_735628c73d3e09",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_697f201dcd4f61?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_4657ad711ee782",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 80.0,
+              "start_s": 79.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_8a71298ab05947",
+            "payload": {
+              "text": "The fictional route status contains no requested value."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_6bda22ebb6aec4",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_eee1052176dcff?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_43d90a89a8495b",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "opal ratchet duplicate record",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 22.0,
+              "start_s": 21.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_611a8f57d0d8ba",
+            "payload": {
+              "text": "The registered record for the fictional opal ratchet is quiet marigold."
+            }
+          }
+        ],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_4a79286a2062e5",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional opal ratchet, determine the registered utterance.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 5,
+          "cost_remaining": 4.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_157e6f5dd493bd",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "adjacent ledger 31",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "brindle astrolabe registered record 11",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_bd2fc844cff1f9",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional brindle astrolabe, determine the registered mark.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 2,
+          "cost_remaining": 3.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_fe6d665219d377",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_cab43c8ece8b34",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_357e5904035a1f?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_77031401331b4e",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "tawny prism remaining record 61",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_ff3fb3aed013ee",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional tawny prism, determine the registered mark.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 5,
+          "cost_remaining": 3.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_965eda1fe42a64",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "channels": [
+                "ambient"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "gilded waybox retry record",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_c15eeae2ba1ec1",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional gilded waybox, determine the registered sound.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_result",
+            "route": "ambient",
+            "status": "channel_unavailable"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 2,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_4f8154438a174f",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_a0dbbe9770256f",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional waxen lantern, determine the registered mark.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "vision",
+            "status": "not_provided"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 3,
+          "cost_remaining": 6.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_236b727b6063e9",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "jasper thimble restored record 27",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "ambient"
+              ]
+            },
+            "tool": "get_channel_status"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_0127e7419c93d4",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional jasper thimble, determine the registered sound.",
+        "recent_public_history": [
+          {
+            "content_observed": false,
+            "event_type": "route_status",
+            "route": "ambient",
+            "status": "restored"
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 5,
+          "cost_remaining": 5.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_77d3697c9cc5ac",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_7d7d7da45e9d23",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_28e8a6b65b339e?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_a9d323eb045563",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 23.0,
+              "start_s": 22.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_e32fdba5415f28",
+            "payload": {
+              "text": "The fictional archive records cerulean knot."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_c866bd1ad214d9",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_73a22014965b49?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_d81a0c2a31e736",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "adjacent ledger 34",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "ember folio registered record 14",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_1d3e4d05bc57bd",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional ember folio, determine the registered mark.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 5,
+          "cost_remaining": 6.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_6e25ecaacac3d3",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 29.0,
+              "start_s": 28.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_edafb8ce524c0d",
+            "payload": {
+              "text": "The fictional archive records ivory ripple."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 63.0,
+              "start_s": 62.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_645c2286bdb11b",
+            "payload": {
+              "text": "An unrelated fictional drawer records decoy 78."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_a2d5ffa374729c",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_9573b28dcff1b8?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_f8b68c92a5fd17",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "russet beacon remaining record 59",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_10f5c520d82545",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional russet beacon, determine the registered utterance.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 3,
+          "cost_remaining": 7.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_140a060e156a63",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 25.0,
+              "start_s": 24.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_7bdb7d0e4f18f8",
+            "payload": {
+              "text": "The fictional archive records elmward phrase."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 46.0,
+              "start_s": 45.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_b929b2ad3f0469",
+            "payload": {
+              "text": "A separate fictional register records elmward phrase beside copper fern."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_ead86c370f721c",
+            "description": "Registered fictional attribute."
+          },
+          {
+            "claim_handle": "h_adc85511527ec3",
+            "description": "Second registered attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_4f27fd590e16c1?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_c5a7a21ca706bd",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 27.0,
+              "start_s": 26.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_e5b71f522175c4",
+            "payload": {
+              "text": "The fictional archive records garnet arch."
+            }
+          },
+          {
+            "interval": {
+              "end_s": 48.0,
+              "start_s": 47.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_e4175f55773c58",
+            "payload": {
+              "text": "A separate fictional register records garnet arch beside copper fern."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_d9cbb9a6366a56",
+            "description": "Registered fictional attribute."
+          },
+          {
+            "claim_handle": "h_3a061b0446a520",
+            "description": "Second registered attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_7cd7d516ca2e60?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_93c31ecf008f87",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "dappled orrery registered record 13",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "adjacent ledger 33",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_136c3dfc45ba82",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional dappled orrery, determine the registered sound.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 4,
+          "cost_remaining": 5.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_662fc22f037b1d",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "umber cradle remaining record 62",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_6606abfa14568c",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional umber cradle, determine the registered utterance.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 4.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_2e57760943665e",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 79.0,
+              "start_s": 78.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "o_91023568460e1a",
+            "payload": {
+              "text": "The fictional route status contains no requested value."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_bbd550cb04bf2a",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_d4d43c38007a1d?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_ce497fa4bb9474",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 81.0,
+              "start_s": 80.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_ad21b2977c586a",
+            "payload": {
+              "text": "The fictional route status contains no requested value."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_d6832344d6a287",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_88bdfb320da05d?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "f_c26f443d4f6800",
+      "case_type": "finalizer",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "condition": "closed_world_record",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 22.0,
+              "start_s": 21.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "o_2b5b1aab84d42a",
+            "payload": {
+              "text": "The fictional archive records birch comet."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_a0ce1a9caa5fea",
+            "description": "Registered fictional attribute."
+          }
+        ],
+        "question": "What registered attribute belongs to fictional entry entry_9b73d3ea6c55f9?",
+        "task": "grounded_finalization"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    },
+    {
+      "case_id": "c_2243bf40ae7236",
+      "case_type": "controller",
+      "development_only": true,
+      "packet_notice": "Wholly fictional closed-world text only. No external source, media, scientific record, hidden label, or real-world fact is part of this packet.",
+      "prospective_unseen_at_freeze": true,
+      "public_fictional": true,
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "quartz wicket duplicate record",
+              "time_range": {
+                "end_s": 72.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 24.0,
+              "start_s": 23.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "o_131a9f722ca909",
+            "payload": {
+              "text": "The registered record for the fictional quartz wicket is silver lozenge."
+            }
+          }
+        ],
+        "policy": "evidence_sufficiency",
+        "public_claim_slots": [
+          {
+            "claim_handle": "h_ad7c96fb54a61b",
+            "description": "Registered fictional record."
+          }
+        ],
+        "question": "For the fictional quartz wicket, determine the registered mark.",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 2,
+          "cost_remaining": 6.0
+        },
+        "task": "choose_next_action"
+      },
+      "schema_version": "av-trace.external-gateway-public-packet/1.0",
+      "source_free": true
+    }
+  ],
+  "parser_failure_fixtures": [
+    {
+      "expected": "INVALID_OUTPUT",
+      "factor": "action_choice",
+      "fixture_id": "fx_7ddd9dfc218783",
+      "raw_output": "{\"function_name\":\"select_action_00\",\"arguments\":[]}"
+    },
+    {
+      "expected": "INVALID_OUTPUT",
+      "factor": "diagnosis",
+      "fixture_id": "fx_b4e2f6e0b39d8c",
+      "raw_output": "{\"modality_probabilities\":{\"vision\":1}}"
+    },
+    {
+      "expected": "INVALID_OUTPUT",
+      "factor": "claim_drafts",
+      "fixture_id": "fx_63cb200f52d313",
+      "raw_output": "{\"claims\":\"forged\"}"
+    },
+    {
+      "expected": "INVALID_OUTPUT",
+      "factor": "citation_selections",
+      "fixture_id": "fx_b66e13122f9489",
+      "raw_output": "not-json"
+    }
+  ],
+  "private_boundary": {
+    "authorization_state": "REPAIR_NOT_AUTHORIZED",
+    "cryptographic_sealing_available": false,
+    "private_artifact_path": "data/restricted/external_gateway_public_competence_suite_v2_private.json",
+    "required_mode": "0600"
+  },
+  "runner_contract": {
+    "attempt_schema_version": "av-trace.external-gateway-factor-attempt/1.0",
+    "factor_order": {
+      "controller": [
+        "action_choice",
+        "evidence_state"
+      ],
+      "finalizer": [
+        "disposition",
+        "answer_text",
+        "claim_drafts",
+        "citation_selections",
+        "diagnosis"
+      ]
+    },
+    "model_substitution_forbidden": true,
+    "packet_schema_version": "av-trace.external-gateway-public-packet/1.0",
+    "provider_model_runtime_identity_required": true,
+    "raw_output_hash_required": true,
+    "raw_prompt_hash_required": true,
+    "runner_schema_version": "av-trace.external-gateway-strong-agent-run/1.0",
+    "schema_only_retry_maximum_per_factor": 1,
+    "semantic_substitution_forbidden": true
+  },
+  "schema_version": "av-trace.external-gateway-public-competence-v2-public/2.0",
+  "scientific_competence_supported": false,
+  "scope": "Public-fictional technical controller/finalizer sensitivity only.",
+  "status": "REPAIR_NOT_AUTHORIZED",
+  "suite_id": "external-gateway-public-fictional-technical-v2-20261012",
+  "thresholds": {
+    "case_count": 48,
+    "contradictory_claims_max": 0,
+    "controller_action_accuracy_min": 0.86,
+    "controller_exact_state_min": 0.8,
+    "cross_state_isolation_required": true,
+    "diagnosis_exact_min": 0.84,
+    "finalizer_exact_outcome_min": 0.8,
+    "integrity_failures_max": 0,
+    "unobserved_citations_max": 0,
+    "unsupported_or_missing_claims_max": 0,
+    "valid_case_projection_min": 0.94
+  }
+}

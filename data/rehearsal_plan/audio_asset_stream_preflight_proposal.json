@@ -1,0 +1,266 @@
+{
+  "schema_version": "1.1.0",
+  "prepared_as_of": "2026-09-09",
+  "live_evidence_status": "EXECUTED_2026-09-09_AUDITED",
+  "decision": "NO_GO_FULL_ACQUISITION_OR_LONG_VIDEO_PILOT_CORE",
+  "decision_reason": "The bounded live preflight inspected five exact planned objects without downloading a complete object. The two FLARE demo objects matched identity and declare one video and one audio track with plausible timelines, but their 745.96421875-second and 766.862-second durations fail the inclusive 1,200–5,400-second gate. All three Omni requests ended in HTTP 403 before identity or stream inspection, so they remain access-blocked/unverified rather than audio-negative. Rights and acquisition gates remain closed for all five.",
+  "authorized_for_stream_header_preflight": [],
+  "authorized_for_full_acquisition": [],
+  "authorized_for_transfer": [],
+  "next_authorized_action": "Do not acquire any of the five. Preserve ccp-005 and ccp-006 only as exact engineering/container compatibility fixtures. Expand the search for immutable candidates that already satisfy the 1,200–5,400-second long-video gate; do not relax the 20-minute lower bound. Resolve Omni gate/access only if its expected scientific value justifies a new item-scoped authorization request, then rerun bounded inspection rather than full acquisition.",
+  "item_scoped_identity_and_authority_requests": [
+    {
+      "candidate_id": "cand-061",
+      "canonical_item_id": "CommonsFile:Grace Hopper - Future Possibilities - Data, Hardware, Software, and People.webm",
+      "official_item_url": "https://commons.wikimedia.org/wiki/File:Grace_Hopper_-_Future_Possibilities_-_Data,_Hardware,_Software,_and_People.webm",
+      "current_object_path": "Grace Hopper - Future Possibilities - Data, Hardware, Software, and People.webm",
+      "current_release_revision": "",
+      "current_object_size_bytes": null,
+      "current_object_hash_algorithm": "",
+      "current_object_hash": "",
+      "request": "freeze Commons page/revision/original/hash/size and rights",
+      "required_before_stream_preflight": [
+        "immutable exact object identity and official delivery route",
+        "provider byte size and hash",
+        "item-level authorization for the bounded header request"
+      ],
+      "required_before_full_acquisition": [
+        "item-level acquisition and processing approval",
+        "component-rights and privacy review",
+        "retention, deletion, attribution, and takedown terms"
+      ]
+    },
+    {
+      "candidate_id": "cand-056",
+      "canonical_item_id": "CommonsFile:Blockchain solutionism – Guest lecture at the University of Texas at Austin by Molly White (2022).webm",
+      "official_item_url": "https://commons.wikimedia.org/wiki/File:Blockchain_solutionism_%E2%80%93_Guest_lecture_at_the_University_of_Texas_at_Austin_by_Molly_White_(2022).webm",
+      "current_object_path": "Blockchain solutionism – Guest lecture at the University of Texas at Austin by Molly White (2022).webm",
+      "current_release_revision": "",
+      "current_object_size_bytes": null,
+      "current_object_hash_algorithm": "",
+      "current_object_hash": "",
+      "request": "freeze Commons page/revision/original/hash/size and license",
+      "required_before_stream_preflight": [
+        "immutable exact object identity and official delivery route",
+        "provider byte size and hash",
+        "item-level authorization for the bounded header request"
+      ],
+      "required_before_full_acquisition": [
+        "item-level acquisition and processing approval",
+        "component-rights and privacy review",
+        "retention, deletion, attribution, and takedown terms"
+      ]
+    },
+    {
+      "candidate_id": "cand-048",
+      "canonical_item_id": "NOAA-OceanToday-webinar4",
+      "official_item_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar4-060520.html",
+      "current_object_path": "",
+      "current_release_revision": "",
+      "current_object_size_bytes": null,
+      "current_object_hash_algorithm": "",
+      "current_object_hash": "",
+      "request": "obtain an official NOAA/rightsholder delivery object",
+      "required_before_stream_preflight": [
+        "immutable exact object identity and official delivery route",
+        "provider byte size and hash",
+        "item-level authorization for the bounded header request"
+      ],
+      "required_before_full_acquisition": [
+        "item-level acquisition and processing approval",
+        "component-rights and privacy review",
+        "retention, deletion, attribution, and takedown terms"
+      ]
+    },
+    {
+      "candidate_id": "cand-051",
+      "canonical_item_id": "NOAA-OceanToday-webinar7",
+      "official_item_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar7-trashtalk-1.html",
+      "current_object_path": "",
+      "current_release_revision": "",
+      "current_object_size_bytes": null,
+      "current_object_hash_algorithm": "",
+      "current_object_hash": "",
+      "request": "obtain an official NOAA/rightsholder delivery object",
+      "required_before_stream_preflight": [
+        "immutable exact object identity and official delivery route",
+        "provider byte size and hash",
+        "item-level authorization for the bounded header request"
+      ],
+      "required_before_full_acquisition": [
+        "item-level acquisition and processing approval",
+        "component-rights and privacy review",
+        "retention, deletion, attribution, and takedown terms"
+      ]
+    }
+  ],
+  "conditional_preflight_priority_after_all_required_fields_are_met": [
+    "cand-061",
+    "cand-056",
+    "cand-048",
+    "cand-051"
+  ],
+  "conditional_preflight_limit": "Choose 3–5 from the ordered list only after each chosen object has a frozen identity and explicit bounded-preflight authority.",
+  "identity_mapping_holds": [
+    {
+      "candidate_id": "cand-023",
+      "title": "The World Avoided: Successful Stratospheric Ozone Protection",
+      "pinned_canonical_item_id": "NASA-SVS-11205",
+      "pinned_official_item_url": "https://svs.gsfc.nasa.gov/11205/",
+      "disposition": "STALE_OR_MISMATCHED_ID_HOLD",
+      "reason": "The parent live HTTP 200 response for NASA SVS 11205 did not contain the expected title. The retained evidence is insufficient to determine whether the ID is stale, repurposed, or was incorrectly mapped.",
+      "required_resolution": "Direct first-party evidence binding this exact title and duration to a valid official ID/page; do not infer or invent a replacement URL."
+    }
+  ],
+  "exact_compatibility_objects_deferred": [
+    {
+      "candidate_id": "ccp-005",
+      "release_id": "AnonymousFLARE/FLARE_demo",
+      "release_revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "object_path": "sample_0/K759eXmaMTY.mp4",
+      "object_size_bytes": 59708138,
+      "object_hash_algorithm": "sha256",
+      "object_hash": "40737590a6b572791746bea7a87ac80c270cdd0750e9aae65b1eeed08232c7c1",
+      "duration_gate": "FAIL",
+      "audio_verified": false,
+      "processing_rights_status": "NOT_APPROVED_FLARE_01_CLARIFICATION_ONLY",
+      "disposition": "KEEP_AS_ENGINEERING_COMPATIBILITY_FIXTURE_ONLY",
+      "reason": "Exact identity and declared A/V tracks passed bounded inspection, but duration is below 1,200 seconds; no samples were decoded and processing/acquisition authority remains absent.",
+      "duration_seconds": 745.96421875,
+      "audio_track_declared": true,
+      "audio_track_count": 1,
+      "video_track_count": 1,
+      "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+      "content_audio_semantics_verified": false,
+      "identity_verified": true,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false
+    },
+    {
+      "candidate_id": "ccp-006",
+      "release_id": "AnonymousFLARE/FLARE_demo",
+      "release_revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "object_path": "sample_1/3uV8XZcIBbk.mp4",
+      "object_size_bytes": 138115547,
+      "object_hash_algorithm": "sha256",
+      "object_hash": "84c273cb485ac870515ad3d67e9734677e2ef912124a65fb54e8c641239293ae",
+      "duration_gate": "FAIL",
+      "audio_verified": false,
+      "processing_rights_status": "NOT_APPROVED_FLARE_01_CLARIFICATION_ONLY",
+      "disposition": "KEEP_AS_ENGINEERING_COMPATIBILITY_FIXTURE_ONLY",
+      "reason": "Exact identity and declared A/V tracks passed bounded inspection, but duration is below 1,200 seconds; no samples were decoded and processing/acquisition authority remains absent.",
+      "duration_seconds": 766.862,
+      "audio_track_declared": true,
+      "audio_track_count": 1,
+      "video_track_count": 1,
+      "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+      "content_audio_semantics_verified": false,
+      "identity_verified": true,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false
+    },
+    {
+      "candidate_id": "ccp-004",
+      "release_id": "AnonymousFLARE/FLARE",
+      "release_revision": "ed89d868647a3658fe6989ba06b7a7117c2624d9",
+      "object_path": "",
+      "object_size_bytes": null,
+      "object_hash_algorithm": "",
+      "object_hash": "",
+      "duration_gate": "UNRESOLVED",
+      "audio_verified": false,
+      "processing_rights_status": "NOT_APPROVED_FLARE_01_CLARIFICATION_ONLY",
+      "disposition": "DEFER_NO_PREFLIGHT_AUTHORITY",
+      "reason": "No complete exact source object is identified."
+    },
+    {
+      "candidate_id": "omni-video_284",
+      "release_id": "NJU-LINK/OmniVideoBench",
+      "release_revision": "1b1aa0899fca5aa92e4fe5dcd3b60be58efff6ca",
+      "object_path": "videos/video_284.mp4",
+      "object_size_bytes": 190135475,
+      "object_hash_algorithm": "sha256",
+      "object_hash": "3dc86a78b36ed6bd920b6e31fe4da1e094522fe3345b6580a1e88fd758461614",
+      "duration_gate": "UNRESOLVED",
+      "audio_verified": false,
+      "processing_rights_status": "NOT_APPROVED_SCOPE_NOT_IN_OMNI_01",
+      "disposition": "DEFER_HTTP_403_ACCESS_BLOCKED_UNVERIFIED",
+      "reason": "HTTP 403 occurred before identity and stream inspection. The object is unverified, not audio-negative; gate/access and processing authority remain unresolved.",
+      "duration_seconds": null,
+      "audio_track_declared": null,
+      "audio_track_count": null,
+      "video_track_count": null,
+      "av_timeline_relation": "UNRESOLVED",
+      "content_audio_semantics_verified": false,
+      "identity_verified": false,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false
+    },
+    {
+      "candidate_id": "omni-video_617",
+      "release_id": "NJU-LINK/OmniVideoBench",
+      "release_revision": "1b1aa0899fca5aa92e4fe5dcd3b60be58efff6ca",
+      "object_path": "videos/video_617.mp4",
+      "object_size_bytes": 61884190,
+      "object_hash_algorithm": "sha256",
+      "object_hash": "772b34bd3d3ae5d6fb9b16fbab4d1daf938d78b507caf2656d4fccb68f06541e",
+      "duration_gate": "UNRESOLVED",
+      "audio_verified": false,
+      "processing_rights_status": "NOT_APPROVED_SCOPE_NOT_IN_OMNI_01",
+      "disposition": "DEFER_HTTP_403_ACCESS_BLOCKED_UNVERIFIED",
+      "reason": "HTTP 403 occurred before identity and stream inspection. The object is unverified, not audio-negative; gate/access and processing authority remain unresolved.",
+      "duration_seconds": null,
+      "audio_track_declared": null,
+      "audio_track_count": null,
+      "video_track_count": null,
+      "av_timeline_relation": "UNRESOLVED",
+      "content_audio_semantics_verified": false,
+      "identity_verified": false,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false
+    },
+    {
+      "candidate_id": "omni-video_611",
+      "release_id": "NJU-LINK/OmniVideoBench",
+      "release_revision": "1b1aa0899fca5aa92e4fe5dcd3b60be58efff6ca",
+      "object_path": "videos/video_611.mp4",
+      "object_size_bytes": 95163435,
+      "object_hash_algorithm": "sha256",
+      "object_hash": "8a95a8873fbef1989ac972cb22ff2db7967f533260b430dda86ea9b7c5b11e04",
+      "duration_gate": "UNRESOLVED",
+      "audio_verified": false,
+      "processing_rights_status": "NOT_APPROVED_SCOPE_NOT_IN_OMNI_01",
+      "disposition": "DEFER_HTTP_403_ACCESS_BLOCKED_UNVERIFIED",
+      "reason": "HTTP 403 occurred before identity and stream inspection. The object is unverified, not audio-negative; gate/access and processing authority remain unresolved.",
+      "duration_seconds": null,
+      "audio_track_declared": null,
+      "audio_track_count": null,
+      "video_track_count": null,
+      "av_timeline_relation": "UNRESOLVED",
+      "content_audio_semantics_verified": false,
+      "identity_verified": false,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false
+    }
+  ],
+  "safety_boundary": [
+    "No additional media payload, retry, or full-object transfer is authorized by this file.",
+    "A declared ISO-BMFF audio track is not verification of audible content, speech, ambient sound, semantic usefulness, or decode quality.",
+    "HTTP 403 before inspection is an unresolved access result, not evidence that an object lacks audio.",
+    "Duration eligibility, access authorization, processing authorization, acquisition authorization, annotation approval, and publication approval are separate gates."
+  ],
+  "executed_preflight_evidence": {
+    "result_path": "data/acquisition_preflight/hf_audio_stream_preflight_result.json",
+    "audit_path": "docs/review/hf_audio_stream_preflight_audit.md",
+    "generated_at": "2026-09-09T06:18:13Z",
+    "response_body_bytes": 4194304,
+    "request_count": 9,
+    "range_request_count": 4,
+    "complete_media_downloaded": false
+  }
+}

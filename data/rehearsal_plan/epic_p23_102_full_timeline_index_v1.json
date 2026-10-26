@@ -1,0 +1,274 @@
+{
+  "schema_version": "av-trace.epic-p23-102-full-timeline-index-plan/1.0",
+  "plan_id": "AV-TRACE-EPIC-P23-102-FULL-TIMELINE-INDEX-V1",
+  "created_date": "2026-10-13",
+  "implementation_decision": "EPIC_P23_102_FULL_TIMELINE_PIPELINE_READY",
+  "current_execution_status": "ACQUISITION_PENDING_DO_NOT_RUN_FULL_MEDIA",
+  "scope": {
+    "source_count": 1,
+    "source_root": "data/restricted/epic_p23_102_source_v1",
+    "output_root": "data/restricted/epic_p23_102_full_timeline_index_v1",
+    "smoke_output_root": "data/restricted/epic_p23_102_full_timeline_index_v1_smoke",
+    "allowed_stages": [
+      "exact acquisition-manifest validation",
+      "exact source identity and native A/V validation",
+      "full-timeline segmentation",
+      "speech ASR observation and BM25 indexing",
+      "SigLIP2 visual embedding and cosine-retrieval indexing",
+      "CLAP audio embedding and cosine-retrieval indexing",
+      "checkpointing",
+      "deterministic resume",
+      "independent verification"
+    ],
+    "forbidden_stages": [
+      "semantic source selection",
+      "semantic annotation",
+      "human review",
+      "SES assignment",
+      "H-tier assignment",
+      "Gate-A decision",
+      "candidate family construction",
+      "hard-negative construction",
+      "intervention construction",
+      "trajectory generation",
+      "agent or controller execution",
+      "evaluation",
+      "metric reporting",
+      "public release",
+      "redistribution"
+    ]
+  },
+  "source": {
+    "source_id": "P23_102",
+    "source_group_id": "P23",
+    "dataset": "EPIC-KITCHENS-100",
+    "official_media_version": "100",
+    "official_object_path": "P23/videos/P23_102.MP4",
+    "official_duration_seconds": 3569.52,
+    "duration_tolerance_seconds": 0.25,
+    "official_fps": 50.0,
+    "official_resolution": "1920x1080",
+    "official_content_length_bytes": 10814161307,
+    "official_md5": "4698fcbf13782f6396029761eb3bd5f2",
+    "expected_final_media_path": "data/restricted/epic_p23_102_source_v1/media/P23/P23_102.MP4",
+    "acquisition_manifest_path": "data/restricted/epic_p23_102_source_v1/manifests/epic_p23_102_exact_manifest.json",
+    "acquisition_status_required": "COMPLETE_VERIFIED_READY",
+    "native_stream_requirements": {
+      "video_codec_name": "hevc",
+      "video_codec_tag": "hvc1",
+      "video_width": 1920,
+      "video_height": 1080,
+      "audio_codec_name": "aac",
+      "audio_codec_tag": "mp4a",
+      "audio_sample_rate_hz": 48000,
+      "audio_channels": 2,
+      "audio_layout": "stereo",
+      "maximum_av_duration_delta_seconds": 0.25
+    },
+    "exact_sha256_binding": "loaded only from the completed exact acquisition manifest and rehashed before execution"
+  },
+  "totals": {
+    "base_cells": 893,
+    "fine_windows": 892,
+    "context_windows": 223,
+    "temporal_segments": 1115,
+    "speech_chunks": 119,
+    "checkpoints": 4
+  },
+  "segmentation": {
+    "storage_time_unit": "integer_microseconds",
+    "base_cells": {
+      "length_seconds": 4,
+      "stride_seconds": 4,
+      "terminal_rule": "retain final positive partial cell",
+      "visual_sample_rule": "min(cell_start+2_seconds,duration-1_microsecond)"
+    },
+    "fine_windows": {
+      "length_seconds": 8,
+      "stride_seconds": 4,
+      "admission_rule": "duration-start >= 4_seconds",
+      "terminal_rule": "clip end to duration"
+    },
+    "context_windows": {
+      "length_seconds": 32,
+      "stride_seconds": 16,
+      "admission_rule": "duration-start >= 16_seconds",
+      "terminal_rule": "clip end to duration"
+    },
+    "speech_chunks": {
+      "length_seconds": 30,
+      "stride_seconds": 30,
+      "terminal_rule": "retain final positive partial chunk"
+    }
+  },
+  "model_snapshots": {
+    "speech": {
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "snapshot_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102",
+      "layer_version": "whisper-tiny-en-frozen/1.0",
+      "sample_rate_hz": 16000,
+      "files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 151060136,
+          "sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad"
+        }
+      ]
+    },
+    "vision": {
+      "model_id": "google/siglip2-base-patch16-224",
+      "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+      "snapshot_path": "data/restricted/scale1b/models/google--siglip2-base-patch16-224--75de2d55ec2d",
+      "layer_version": "siglip2-base-patch16-224/1.0",
+      "dimension": 768,
+      "processor_use_fast": false,
+      "files": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1500800904,
+          "sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b"
+        }
+      ]
+    },
+    "audio": {
+      "model_id": "laion/clap-htsat-unfused",
+      "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+      "snapshot_path": "data/restricted/scale1b/models/laion--clap-htsat-unfused--8fa0f1c6d043",
+      "layer_version": "clap-htsat-unfused/1.0",
+      "dimension": 512,
+      "sample_rate_hz": 48000,
+      "files": [
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 614525833,
+          "sha256": "1cd3c601bc4afe0fa87be3de4c13dd2cfadd249fac1e29acf74a9b296c3219bb"
+        }
+      ]
+    }
+  },
+  "model_acquisition_binding": {
+    "path": "data/restricted/scale1b/manifests/wave_r_model_acquisition.json",
+    "sha256": "0d22c8f2499e563911aa75a5ccb85f9f29009305f8117f38579f07efe45d05de",
+    "required_decisions": [
+      "SIGLIP2_SNAPSHOT_READY",
+      "CLAP_SNAPSHOT_READY",
+      "WAVE_R_MODELS_READY"
+    ],
+    "redistribution_authorized": false
+  },
+  "index_policy": {
+    "speech": {
+      "observation": "Whisper tiny.en 30-second chunks",
+      "routing": "quality-passing nonempty chunks are BM25-searchable; failed chunks remain inventory-only",
+      "ranker": "bm25-okapi/1.0"
+    },
+    "vision": {
+      "observation": "one SigLIP2 image embedding per base cell",
+      "temporal_binding": "normalized mean of overlapping base-cell vectors for fine and context windows",
+      "ranker": "siglip2-text-image-cosine/1.0",
+      "text_query_hook": "use the exact pinned SigLIP2 text tower"
+    },
+    "audio": {
+      "observation": "one CLAP embedding per exact fine audio window",
+      "context_binding": "normalized mean of overlapping fine-window vectors",
+      "ranker": "clap-text-audio-cosine/1.0",
+      "text_query_hook": "use the exact pinned CLAP text tower"
+    },
+    "sealed_inputs": [
+      "EPIC action labels",
+      "EPIC narration labels and timestamps",
+      "EPIC-SOUNDS labels and timestamps",
+      "benchmark splits",
+      "benchmark outcomes",
+      "human semantic annotations",
+      "label-derived source-selection features"
+    ]
+  },
+  "checkpointing": {
+    "layers": [
+      "source_probe",
+      "speech_asr",
+      "siglip2_visual",
+      "clap_audio"
+    ],
+    "expected_checkpoint_count": 4,
+    "key_fields": [
+      "exact source SHA-256",
+      "layer name and frozen layer version",
+      "configuration hash",
+      "shard index 0"
+    ],
+    "commit": "restricted temporary file, fsync, atomic rename",
+    "resume": "reuse only exact checkpoint key, record count, payload hash, file hash, size, path and 0600 mode",
+    "invalid_checkpoint_policy": "delete and rebuild only the invalid layer"
+  },
+  "execution": {
+    "device": "cpu",
+    "network_access": "disabled",
+    "threads_default": 8,
+    "speech_batch_size": 4,
+    "vision_batch_size": 8,
+    "audio_batch_size": 4,
+    "default_mode": "plan",
+    "full_execution_before_acquisition_ready": false,
+    "decoded_media_persistence": false
+  },
+  "storage": {
+    "output_directory_mode": "0700",
+    "output_file_mode": "0600",
+    "source_media_mode": "0600",
+    "soft_cap_mib": 64,
+    "hard_cap_mib": 128,
+    "media_derivatives_allowed": false
+  },
+  "resource_estimate": {
+    "source_media_bytes": 10814161307,
+    "source_duration_hours": 0.9915333333333333,
+    "model_payload_bytes_already_local": 2266386873,
+    "estimated_peak_cpu_ram_gib": {
+      "speech_stage": "2-4",
+      "siglip2_stage": "4-8",
+      "clap_stage": "5-10"
+    },
+    "estimated_derived_index_mib": "15-35",
+    "estimated_cpu_wall_clock": "3-10 hours depending host load and decoder throughput",
+    "estimated_gpu_wall_clock_if_later_authorized": "20-90 minutes; this v1 CLI remains CPU-frozen",
+    "decode_passes": {
+      "video": 1,
+      "audio": 2,
+      "note": "speech and CLAP are separate resumable layers, so a resumed completed layer avoids its decode pass"
+    }
+  },
+  "governance": {
+    "license_spdx": "CC-BY-NC-4.0",
+    "attribution_required": true,
+    "noncommercial_only": true,
+    "redistribution_authorized": false,
+    "development_only": true,
+    "future_test_eligible": false,
+    "fresh_normal_mode_regeneration_required_for_any_future_test": true,
+    "semantic_annotations_used_during_source_selection": false,
+    "semantic_annotations_opened_by_this_pipeline": false,
+    "human_review_performed": false,
+    "ses_assigned": false,
+    "h_tier_assigned": false,
+    "gate_a_claimed": false,
+    "privacy_or_release_clearance_implied": false
+  },
+  "verification": {
+    "script": "scripts/verify_epic_p23_102_full_timeline.py",
+    "requirements": [
+      "independent hash and lattice replay",
+      "exact acquisition and source SHA-256 binding",
+      "checkpoint key, payload hash, file hash, size and mode checks",
+      "embedding dimension, finiteness and normalization checks",
+      "BM25 payload replay",
+      "no absolute or staging paths",
+      "no persisted media derivative",
+      "CC BY-NC and development-only boundary",
+      "no semantic annotation, human, SES, H-tier or Gate-A claim",
+      "derived-artifact hard cap"
+    ]
+  }
+}

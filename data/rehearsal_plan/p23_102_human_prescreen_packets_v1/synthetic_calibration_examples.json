@@ -1,0 +1,47 @@
+{
+  "calibration_sha256": "sha256:ed74a7e0ad8ad63d473151d170b14d05ff276a388f58f780eb1aeba15378a1af",
+  "distribution_authorized": false,
+  "examples": [
+    {
+      "discussion_focus": [
+        "Distinguish a source-world sound from incidental handling.",
+        "Look for visible text that could replace the audio route.",
+        "Leave the prescreen choice open during calibration."
+      ],
+      "example_id": "SYN-CAL-01",
+      "fictional_source": "SYNTHETIC-KITCHEN-A",
+      "fictional_timestamps": [
+        "00:00:12.000000-00:00:20.000000"
+      ]
+    },
+    {
+      "discussion_focus": [
+        "Ask whether separated intervals form one coherent route.",
+        "Search for recurrence and a shorter alternative route.",
+        "Leave the prescreen choice open during calibration."
+      ],
+      "example_id": "SYN-CAL-02",
+      "fictional_source": "SYNTHETIC-WORKBENCH-B",
+      "fictional_timestamps": [
+        "00:00:40.000000-00:00:48.000000",
+        "00:03:20.000000-00:03:28.000000"
+      ]
+    },
+    {
+      "discussion_focus": [
+        "Check whether camera movement mimics a source-world change.",
+        "Check duplication against other fictional leads.",
+        "Leave the prescreen choice open during calibration."
+      ],
+      "example_id": "SYN-CAL-03",
+      "fictional_source": "SYNTHETIC-STUDIO-C",
+      "fictional_timestamps": [
+        "00:01:04.000000-00:01:12.000000"
+      ]
+    }
+  ],
+  "format_version": "1.0.0",
+  "instruction": "Use these fictional scenarios only to discuss how the checks are applied. They contain no packet observations or completed choices.",
+  "record_type": "synthetic_prescreen_calibration",
+  "synthetic_only": true
+}

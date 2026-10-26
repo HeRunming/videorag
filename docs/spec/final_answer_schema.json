@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:final-answer:0.2.0",
+  "title": "AV-TRACE final answer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "p_sufficient",
+    "verdict",
+    "answer_mode",
+    "claims",
+    "diagnosis",
+    "natural_language_answer",
+    "termination_reason"
+  ],
+  "properties": {
+    "p_sufficient": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "verdict": {
+      "enum": ["sufficient", "insufficient", "uncertain"]
+    },
+    "answer_mode": {
+      "enum": ["answer", "partial_answer", "abstain"]
+    },
+    "claims": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/claim"},
+      "maxItems": 32
+    },
+    "diagnosis": {"$ref": "#/$defs/diagnosis"},
+    "natural_language_answer": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "termination_reason": {
+      "enum": [
+        "sufficient_evidence",
+        "no_recovery_route",
+        "budget_guard",
+        "uncertain_best_effort",
+        "forced_finalization"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"answer_mode": {"const": "abstain"}},
+        "required": ["answer_mode"]
+      },
+      "then": {
+        "properties": {"claims": {"maxItems": 0}}
+      }
+    },
+    {
+      "if": {
+        "properties": {"answer_mode": {"const": "answer"}},
+        "required": ["answer_mode"]
+      },
+      "then": {
+        "properties": {"claims": {"minItems": 1}}
+      }
+    }
+  ],
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observation_id", "interval", "modalities"],
+      "properties": {
+        "observation_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "interval": {"$ref": "#/$defs/interval"},
+        "modalities": {
+          "type": "array",
+          "items": {"enum": ["vision", "speech", "ambient"]},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "registered_claim_id",
+        "text",
+        "confidence",
+        "citations"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "registered_claim_id": {
+          "type": ["string", "null"],
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "text": {"type": "string", "minLength": 1, "maxLength": 500},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "citations": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/citation"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "modality_probabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vision", "speech", "ambient"],
+      "properties": {
+        "vision": {"type": "number", "minimum": 0, "maximum": 1},
+        "speech": {"type": "number", "minimum": 0, "maximum": 1},
+        "ambient": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "cause_probabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_evidence_absent",
+        "evidence_in_source_but_inaccessible",
+        "evidence_accessible_but_not_found",
+        "not_missing",
+        "uncertain"
+      ],
+      "properties": {
+        "source_evidence_absent": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence_in_source_but_inaccessible": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence_accessible_but_not_found": {"type": "number", "minimum": 0, "maximum": 1},
+        "not_missing": {"type": "number", "minimum": 0, "maximum": 1},
+        "uncertain": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "diagnosis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "modality_probabilities",
+        "hop_types",
+        "cause_probabilities",
+        "recovery_route_declared",
+        "description"
+      ],
+      "properties": {
+        "modality_probabilities": {"$ref": "#/$defs/modality_probabilities"},
+        "hop_types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "entity_identity",
+              "event_detection",
+              "speech_content",
+              "ambient_event",
+              "temporal_order",
+              "cross_modal_binding",
+              "causal_link",
+              "state_change",
+              "comparison",
+              "counting",
+              "other_registered"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "cause_probabilities": {"$ref": "#/$defs/cause_probabilities"},
+        "recovery_route_declared": {"type": "boolean"},
+        "description": {"type": "string", "maxLength": 500}
+      }
+    }
+  }
+}
+

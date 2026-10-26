@@ -1,0 +1,123 @@
+{
+  "artifact_index_hash": "sha256:1f3cb00a1669a8bbcf1710e89d34564c92210f10990387450e8ec8e3a112029d",
+  "backend_manifest_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+  "certificate_hash": "sha256:48a91b1e459b22048badf72d6142779f11045c1203213041a4867be60f030f24",
+  "certificate_id": "certificate.synthetic-full.validator-v1",
+  "counts": {
+    "families": 8,
+    "families_passed": 8,
+    "issues": 0
+  },
+  "created_at": "2026-09-06T00:00:00Z",
+  "families": [
+    {
+      "family_id": "syn_f01_visual_order",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f02_speech_sequence",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f03_bell_then_square",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f04_star_bin",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f05_alternative_route",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f06_motor_identity",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f07_hexagon_chime",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    },
+    {
+      "family_id": "syn_f08_count_status",
+      "rule_results": {
+        "blocked_insufficiency": true,
+        "feasible_routes": true,
+        "restoration_exactness": true,
+        "role_independence": true,
+        "ses_minimality": true,
+        "ses_satisfiability": true,
+        "trajectory_linkage": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "issues": [],
+  "schema_version": "1.0.0",
+  "status": "PASS",
+  "validator_version": "av-trace-validator-certifier-1.0.0"
+}

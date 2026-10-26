@@ -1,0 +1,269 @@
+{
+  "schema_version": "av-trace.assembly101-access-registry/1.0",
+  "task_id": 156,
+  "registry_id": "av-trace-assembly101-access-preflight-v1-20260923",
+  "created_at": "2026-09-23",
+  "decision_token": "ASSEMBLY101_ACCESS_REPAIR",
+  "decision_scope": "ASSEMBLY101_METADATA_ACCESS_AND_SOURCE_GROUP_PREFLIGHT_ONLY",
+  "governing_inputs": [
+    "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+    "orchestration/results/152_licensed_dataset_source_pivot.txt",
+    "orchestration/results/155_licensed_dataset_hf_access_audit.txt",
+    "docs/review/licensed_dataset_source_pivot_v1.md",
+    "docs/review/licensed_dataset_hf_access_audit_v1.md",
+    "data/rehearsal_plan/licensed_dataset_source_registry_v1.json",
+    "docs/review/mini_pilot_source_dossier_preflight.md",
+    "docs/review/mini_pilot_replacement_dossier_preflight.md",
+    "docs/review/mini_pilot_replacement_dossier_final_audit.md"
+  ],
+  "scope_and_stop_boundary": {
+    "allowed_source_classes": [
+      "official_assembly101_project",
+      "official_assembly101_github",
+      "official_assembly101_download_or_storage",
+      "primary_assembly101_paper"
+    ],
+    "third_party_sources_used": false,
+    "user_stop_instruction_received": true,
+    "network_activity_after_stop": 0,
+    "active_task_156_network_client_processes_after_stop": 0,
+    "full_media_downloads": 0,
+    "media_range_requests": 0,
+    "media_bytes_downloaded_or_retained": 0,
+    "tool_installations": 0,
+    "metadata_archives_downloaded": 0,
+    "human_annotation_performed": false,
+    "restricted_annotation_labels_opened": false
+  },
+  "request_accounting": {
+    "completed_request_attempts": 2,
+    "successful_http_responses": 1,
+    "successful_head_responses": 1,
+    "successful_get_responses": 0,
+    "successful_api_or_tree_listings": 0,
+    "successful_download_or_storage_listings": 0,
+    "interrupted_commands_without_saved_response": 1,
+    "details_path": "data/source_recon/assembly101_access_v1/derived/request_accounting.json"
+  },
+  "official_identity": {
+    "dataset_name": "Assembly101",
+    "canonical_project_url": "https://assembly-101.github.io/",
+    "project_page_head_result": {
+      "status": 200,
+      "server": "GitHub.com",
+      "content_type": "text/html; charset=utf-8",
+      "reported_content_length": 15546,
+      "last_modified": "Sat, 16 May 2026 05:47:22 GMT",
+      "etag": "\"6a0804ea-3cba\"",
+      "evidence_path": "data/source_recon/assembly101_access_v1/raw/project_home_head.headers.txt"
+    },
+    "exact_dataset_release_or_version": "UNRESOLVED",
+    "immutable_release_identifier": null,
+    "exact_primary_paper_version": "UNRESOLVED_NOT_FETCHED",
+    "official_github_repository": "UNRESOLVED_NOT_FETCHED",
+    "official_download_package": "UNRESOLVED_NOT_LISTED",
+    "official_storage_prefix_or_repository": "UNRESOLVED_NOT_LISTED",
+    "caution": "A landing-page HEAD response and its Last-Modified or ETag values are page identity only; they are not a dataset release, package version, repository commit, or data-object identity."
+  },
+  "license_and_terms": {
+    "operative_data_license_or_agreement": "UNRESOLVED",
+    "exact_text_archived": false,
+    "artifact_scope_mapped": false,
+    "acceptance_or_approval_evidence_present": false,
+    "research_use": "UNKNOWN_HOLD",
+    "internal_processing": "UNKNOWN_HOLD",
+    "new_restricted_annotation": "UNKNOWN_HOLD",
+    "derived_output_publication": "UNKNOWN_HOLD_BY_ARTIFACT_CLASS",
+    "annotation_release": "UNKNOWN_HOLD",
+    "identifier_or_metadata_release": "UNKNOWN_HOLD",
+    "raw_media_release": "NOT_AUTHORIZED",
+    "code_license_not_propagated_to_data": true
+  },
+  "official_acquisition_route": {
+    "status": "UNRESOLVED",
+    "confirmed_entry_point": "https://assembly-101.github.io/",
+    "exact_maintained_download_script": null,
+    "exact_script_commit_or_release": null,
+    "exact_host_or_repository_id": null,
+    "exact_package_names": [],
+    "exact_asset_prefixes": [],
+    "route_gate_or_acceptance": "UNRESOLVED",
+    "media_acquisition_ready": false
+  },
+  "current_host_access": {
+    "generic_hugging_face_login_inherited_from_task_155": true,
+    "exact_official_assembly101_hugging_face_repo_ids_proven": 0,
+    "current_token_tree_listing_proven": false,
+    "current_token_file_listing_proven": false,
+    "official_project_storage_listing_proven": false,
+    "target_specific_credentials_or_acceptance_record_proven": false,
+    "can_list_assets_now": "NOT_PROVEN",
+    "interpretation": "No provider denial is claimed. The exact official provider target and package route were not established before the stop, so the existing generic platform login cannot be treated as Assembly101 asset authority."
+  },
+  "source_group_selection_readiness": {
+    "official_item_id_schema": "UNRESOLVED",
+    "official_session_id_schema": "UNRESOLVED",
+    "exact_item_ids_collected": [],
+    "exact_session_ids_collected": [],
+    "candidate_source_group_ids": [],
+    "candidate_source_group_count": 0,
+    "required_candidate_source_group_target": {
+      "minimum": 8,
+      "maximum": 12
+    },
+    "duration_distribution": {
+      "status": "NOT_COLLECTED",
+      "unit": "wall_clock_seconds_per_coherent_session_or_source_group",
+      "minimum": null,
+      "maximum": null,
+      "median": null,
+      "quantiles": null,
+      "count": 0,
+      "selection_sufficiency": false,
+      "withdrawn_planning_values": "Do not use the earlier combined 4321-video, 513-hour, 15-view quantities as a duration or storage distribution."
+    },
+    "selection_possible_now": false,
+    "reason": "No exact release, metadata tree, item/session schema, identifiers, or wall-clock durations were listed."
+  },
+  "native_audio": {
+    "retained_dataset_level_description": "Prior local project records describe source videos as audio-bearing.",
+    "fresh_official_package_metadata_collected": false,
+    "per_asset_audio_field_collected": false,
+    "selected_assets_with_audio_verified": 0,
+    "selected_assets_with_synchronized_native_audio_verified": 0,
+    "container_or_stream_probe_performed": false,
+    "status": "UNKNOWN_HOLD",
+    "required_later_evidence": [
+      "package_manifest_or_provider_metadata_for_each_selected_native_video",
+      "audio_stream_presence_codec_channels_sample_rate_and_duration",
+      "video_stream_duration_and_time_base",
+      "cross_view_and_audio_timeline_alignment",
+      "confirmation_that_audio_is_native_not_post_hoc_or_annotation_only"
+    ]
+  },
+  "multi_view_and_source_group_lineage": {
+    "official_schema_verified": false,
+    "status": "PROVISIONAL_FAIL_CLOSED_GROUPING_RULE",
+    "source_group_definition": "One participant by one coherent assembly-session lineage, including every synchronized ego and static view, native audio, clips, encodes, poses or calibration artifacts, action and mistake annotations, and all project derivatives.",
+    "repeat_participant_rule": "If one participant appears in multiple sessions, that participant is the split-level leakage block until official participant/session relationships prove a stricter safe grouping.",
+    "duration_counting_rule": "Count wall-clock session duration once. Do not sum synchronized camera durations and do not concatenate unrelated takes to enter the target duration window.",
+    "view_selection_rule": "Keep all views in the lineage ledger even if later acquisition is limited to the minimum approved view set.",
+    "candidate_ids_may_be_frozen_before_official_schema": false
+  },
+  "privacy_and_security": {
+    "exact_official_privacy_consent_or_retention_terms_archived": false,
+    "official_restrictions_status": "UNRESOLVED",
+    "conservative_risk_classes": [
+      "faces",
+      "voices",
+      "participant_identity",
+      "multi_view_reidentification",
+      "background_or_badge_identity_cues",
+      "participant_linkage_across_sessions"
+    ],
+    "controls_required_before_acquisition": [
+      "restricted_storage",
+      "least_privilege_access",
+      "minimum_view_and_file_allowlist",
+      "source_and_participant_lineage_ledger",
+      "retention_and_deletion_plan",
+      "no_public_raw_or_reconstructive_output",
+      "component_and_personality_rights_review"
+    ],
+    "controlled_capture_is_not_release_authority": true
+  },
+  "restricted_annotation_seal": {
+    "status": "MANDATORY",
+    "selection_phase_visible_fields": [
+      "release_and_package_identity",
+      "nonsemantic_item_session_participant_and_view_identifiers",
+      "file_names_sizes_hashes_and_provider_revisions",
+      "wall_clock_duration",
+      "stream_presence_and_technical_audio_video_metadata",
+      "nonsemantic lineage_and_privacy_flags"
+    ],
+    "labels_and_artifacts_that_must_remain_sealed": [
+      "fine_grained_action_label_ids_and_names",
+      "coarse_action_label_ids_and_names",
+      "action_segment_start_and_end_times",
+      "mistake_error_or_correction_labels",
+      "procedure_step_order_and_task_labels",
+      "verb_noun_object_or_state_labels_if_present",
+      "benchmark_split_labels_scores_and_outcomes",
+      "label_derived_clips_or_preselected_windows",
+      "captions_narrations_transcripts_or_asr_if_present",
+      "question_answer_or_evidence_timestamp artifacts_if_present"
+    ],
+    "seal_duration": "Keep sealed during source selection, candidate authoring, assignment, and model-facing execution. Open only in a logged post-authoring audit under separate approval.",
+    "existing_annotations_do_not_create_project_labels": true
+  },
+  "separate_decisions": {
+    "acquisition": {
+      "decision": "NOT_AUTHORIZED",
+      "reason": "Exact release, package, route, terms, acceptance, asset IDs, and target-specific access are unresolved."
+    },
+    "processing": {
+      "decision": "NOT_AUTHORIZED",
+      "reason": "The operative data terms and selected-file custody boundary are not archived."
+    },
+    "restricted_annotation": {
+      "decision": "NOT_AUTHORIZED",
+      "reason": "No processing or annotation clause has been established and no eligible source groups are frozen."
+    },
+    "release": {
+      "decision": "NOT_AUTHORIZED",
+      "reason": "No artifact-specific redistribution permission or privacy review exists for raw media, clips, audio, frames, metadata, annotations, or derived outputs."
+    },
+    "future_metadata_only_repair": {
+      "decision": "SEPARATE_TASK_REQUIRED",
+      "reason": "The current task was stopped. A later task may resume only official metadata, listing, terms, HEAD, and tiny bounded range probes without media acquisition."
+    }
+  },
+  "repair_requirements": [
+    "Archive the official project page body and follow only project-linked paper, GitHub, and download or storage routes.",
+    "Pin the exact dataset release or package version and immutable official code or manifest revision.",
+    "Archive the operative data license or agreement and map acquisition, processing, restricted annotation, retention, derivative publication, and redistribution separately.",
+    "Record any required acceptance or approval without storing credentials in the repository.",
+    "Prove that current target-specific credentials can list the exact official asset tree without transferring media.",
+    "List the official item, session, participant, view, and file relationship fields.",
+    "Compute wall-clock session durations from official metadata and freeze 8 to 12 real candidate source-group IDs plus replacements.",
+    "Verify native synchronized audio for each selected view through provider metadata and, only if separately approved, tiny technical probes.",
+    "Freeze the participant and session lineage ledger before any acquisition.",
+    "Keep all listed restricted annotations sealed until the approved post-authoring audit.",
+    "Obtain a separate written decision for each of acquisition, processing, restricted annotation, and release."
+  ],
+  "decision_rationale": {
+    "why_not_ready": [
+      "Exact release or version is unresolved.",
+      "Operative terms are not archived.",
+      "The official acquisition route and provider target are not pinned.",
+      "Current credentials have not listed any Assembly101 asset.",
+      "Zero exact item or session IDs and zero candidate source groups were collected.",
+      "No duration distribution is available.",
+      "No selected native synchronized audio stream is verified.",
+      "Official privacy restrictions and artifact release rights are unresolved."
+    ],
+    "why_not_no_go": "The official project landing page remains reachable and prior local records describe project-maintained access paths, so a bounded official-source repair path remains plausible. This does not confer access or use authority.",
+    "status": "REPAIR"
+  },
+  "evidence": {
+    "directory": "data/source_recon/assembly101_access_v1/",
+    "manifest_path": "data/source_recon/assembly101_access_v1/evidence_manifest.json",
+    "manifest_sha256": "05161bc9bbd5723a504b6674c3ad489b4c354a0ef77cbc79d6fef78cc354718c",
+    "pre_manifest_file_count": 5,
+    "fresh_official_response_bodies_saved": 0,
+    "fresh_official_headers_saved": 1
+  },
+  "authorizations_created": {
+    "further_network_activity_in_task_156": false,
+    "media_acquisition": false,
+    "media_processing": false,
+    "restricted_annotation": false,
+    "packet_distribution": false,
+    "scientific_execution": false,
+    "raw_media_release": false,
+    "clip_frame_audio_release": false,
+    "annotation_release": false,
+    "derived_output_release": false
+  }
+}

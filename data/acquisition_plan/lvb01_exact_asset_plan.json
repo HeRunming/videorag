@@ -1,0 +1,288 @@
+{
+  "allowlist": [
+    "-PgbM2MhcYQ.mp4",
+    "-eRimFrm6kQ.mp4",
+    "-7wwfGJXEZg.mp4",
+    "H5vpBCLo74U.mp4",
+    "TMe7oXMJoSM.mp4",
+    "-PgbM2MhcYQ_en.json",
+    "-eRimFrm6kQ_en.json",
+    "-7wwfGJXEZg_en.json",
+    "H5vpBCLo74U_en.json",
+    "TMe7oXMJoSM_en.json"
+  ],
+  "audit": {
+    "decision": "PASS_INDEPENDENT_AUDIT",
+    "live_audit_bytes": 6400,
+    "live_status": "PASS",
+    "offline_status": "PASS",
+    "path": "data/acquisition_preflight/lvb_live_index_audit.json",
+    "sha256": "8a8f64ca78dc37a220fdb765e25f1ef85cbe3e07be6f95efae76e03607f5d8ff"
+  },
+  "audited_range_inputs": {
+    "data/acquisition_preflight/lvb_five_member_ranges.csv": {
+      "bytes": 2280,
+      "sha256": "3909b163fe4db1c0786d02e737257182782e138ee924992c8d46a4797ee04526"
+    },
+    "data/acquisition_preflight/lvb_subtitle_ranges.csv": {
+      "bytes": 1708,
+      "sha256": "46a603b67206bf80ccbd1f77ceea17effade2419054f72fb9893e1d5f286bc8c"
+    }
+  },
+  "limits": {
+    "chunk_bytes": 8388608,
+    "complete_archive_or_part_requests_prohibited": true,
+    "expected_header_validation_bytes": 5120,
+    "expected_subtitle_payload_bytes": 409387,
+    "expected_total_payload_bytes": 581129056,
+    "expected_video_payload_bytes": 580719669,
+    "maximum_response_body_bytes": 8388608
+  },
+  "pinned_revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+  "plan_id": "LVB-01-EXACT-FIVE-ASSET-ACQUISITION",
+  "repository": "longvideobench/LongVideoBench",
+  "schema_version": "1.0",
+  "staging_root": "data/restricted/lvb01",
+  "targets": [
+    {
+      "basename": "-PgbM2MhcYQ.mp4",
+      "candidate_id": "ccp-008",
+      "destination": "raw/videos/-PgbM2MhcYQ.mp4",
+      "header_range": {
+        "end_inclusive": 210034175,
+        "length": 512,
+        "start": 210033664
+      },
+      "kind": "video",
+      "member_path": "videos/-PgbM2MhcYQ.mp4",
+      "payload_intervals": [
+        {
+          "end_inclusive": 272864615,
+          "length": 62830440,
+          "start": 210034176
+        }
+      ],
+      "size": 62830440,
+      "source_object": "videos.tar.part.ae",
+      "source_object_lfs_sha256": "7d581d4df74e307162c824e0c8c72a2bac1c049637fc6d9db72c7ea080ccc3da",
+      "source_object_size": 5242880000,
+      "video_id": "-PgbM2MhcYQ"
+    },
+    {
+      "basename": "-eRimFrm6kQ.mp4",
+      "candidate_id": "ccp-009",
+      "destination": "raw/videos/-eRimFrm6kQ.mp4",
+      "header_range": {
+        "end_inclusive": 242835967,
+        "length": 512,
+        "start": 242835456
+      },
+      "kind": "video",
+      "member_path": "videos/-eRimFrm6kQ.mp4",
+      "payload_intervals": [
+        {
+          "end_inclusive": 333056357,
+          "length": 90220390,
+          "start": 242835968
+        }
+      ],
+      "size": 90220390,
+      "source_object": "videos.tar.part.az",
+      "source_object_lfs_sha256": "64a7eadddedc3759d277c178424b18d8e1097ae5569e18790e15d0a464c0576d",
+      "source_object_size": 5242880000,
+      "video_id": "-eRimFrm6kQ"
+    },
+    {
+      "basename": "-7wwfGJXEZg.mp4",
+      "candidate_id": "ccp-003",
+      "destination": "raw/videos/-7wwfGJXEZg.mp4",
+      "header_range": {
+        "end_inclusive": 955507711,
+        "length": 512,
+        "start": 955507200
+      },
+      "kind": "video",
+      "member_path": "videos/-7wwfGJXEZg.mp4",
+      "payload_intervals": [
+        {
+          "end_inclusive": 1108516116,
+          "length": 153008405,
+          "start": 955507712
+        }
+      ],
+      "size": 153008405,
+      "source_object": "videos.tar.part.ac",
+      "source_object_lfs_sha256": "466f8e9713b080c78407e1c4616a43ff7922c512371ccc4af659181e5625c893",
+      "source_object_size": 5242880000,
+      "video_id": "-7wwfGJXEZg"
+    },
+    {
+      "basename": "H5vpBCLo74U.mp4",
+      "candidate_id": "ccp-011",
+      "destination": "raw/videos/H5vpBCLo74U.mp4",
+      "header_range": {
+        "end_inclusive": 1929107455,
+        "length": 512,
+        "start": 1929106944
+      },
+      "kind": "video",
+      "member_path": "videos/H5vpBCLo74U.mp4",
+      "payload_intervals": [
+        {
+          "end_inclusive": 1965465233,
+          "length": 36357778,
+          "start": 1929107456
+        }
+      ],
+      "size": 36357778,
+      "source_object": "videos.tar.part.bc",
+      "source_object_lfs_sha256": "d87a42102df78d4e42bcd7872365758281953027b8f8860fcc5f73bc49f74fc1",
+      "source_object_size": 5242880000,
+      "video_id": "H5vpBCLo74U"
+    },
+    {
+      "basename": "TMe7oXMJoSM.mp4",
+      "candidate_id": "ccp-012",
+      "destination": "raw/videos/TMe7oXMJoSM.mp4",
+      "header_range": {
+        "end_inclusive": 4779897855,
+        "length": 512,
+        "start": 4779897344
+      },
+      "kind": "video",
+      "member_path": "videos/TMe7oXMJoSM.mp4",
+      "payload_intervals": [
+        {
+          "end_inclusive": 5018200511,
+          "length": 238302656,
+          "start": 4779897856
+        }
+      ],
+      "size": 238302656,
+      "source_object": "videos.tar.part.ak",
+      "source_object_lfs_sha256": "3a1744b04dedeb74a15dc6e9fc165a57d8bae63e737d0d7a9defe962da525867",
+      "source_object_size": 5242880000,
+      "video_id": "TMe7oXMJoSM"
+    },
+    {
+      "basename": "-PgbM2MhcYQ_en.json",
+      "candidate_id": "ccp-008",
+      "destination": "raw/subtitles/-PgbM2MhcYQ_en.json",
+      "header_range": {
+        "end_inclusive": 115429887,
+        "length": 512,
+        "start": 115429376
+      },
+      "kind": "subtitle",
+      "member_path": "subtitles/-PgbM2MhcYQ_en.json",
+      "payload_intervals": [
+        {
+          "end_inclusive": 115572324,
+          "length": 142437,
+          "start": 115429888
+        }
+      ],
+      "size": 142437,
+      "source_object": "subtitles.tar",
+      "source_object_lfs_sha256": "165dc82c8902459247245cf693237ad9fb2ff1b4e0df89ccce975fa67af04149",
+      "source_object_size": 117381120,
+      "video_id": "-PgbM2MhcYQ"
+    },
+    {
+      "basename": "-eRimFrm6kQ_en.json",
+      "candidate_id": "ccp-009",
+      "destination": "raw/subtitles/-eRimFrm6kQ_en.json",
+      "header_range": {
+        "end_inclusive": 78964223,
+        "length": 512,
+        "start": 78963712
+      },
+      "kind": "subtitle",
+      "member_path": "subtitles/-eRimFrm6kQ_en.json",
+      "payload_intervals": [
+        {
+          "end_inclusive": 79060309,
+          "length": 96086,
+          "start": 78964224
+        }
+      ],
+      "size": 96086,
+      "source_object": "subtitles.tar",
+      "source_object_lfs_sha256": "165dc82c8902459247245cf693237ad9fb2ff1b4e0df89ccce975fa67af04149",
+      "source_object_size": 117381120,
+      "video_id": "-eRimFrm6kQ"
+    },
+    {
+      "basename": "-7wwfGJXEZg_en.json",
+      "candidate_id": "ccp-003",
+      "destination": "raw/subtitles/-7wwfGJXEZg_en.json",
+      "header_range": {
+        "end_inclusive": 61218815,
+        "length": 512,
+        "start": 61218304
+      },
+      "kind": "subtitle",
+      "member_path": "subtitles/-7wwfGJXEZg_en.json",
+      "payload_intervals": [
+        {
+          "end_inclusive": 61276166,
+          "length": 57351,
+          "start": 61218816
+        }
+      ],
+      "size": 57351,
+      "source_object": "subtitles.tar",
+      "source_object_lfs_sha256": "165dc82c8902459247245cf693237ad9fb2ff1b4e0df89ccce975fa67af04149",
+      "source_object_size": 117381120,
+      "video_id": "-7wwfGJXEZg"
+    },
+    {
+      "basename": "H5vpBCLo74U_en.json",
+      "candidate_id": "ccp-011",
+      "destination": "raw/subtitles/H5vpBCLo74U_en.json",
+      "header_range": {
+        "end_inclusive": 50751487,
+        "length": 512,
+        "start": 50750976
+      },
+      "kind": "subtitle",
+      "member_path": "subtitles/H5vpBCLo74U_en.json",
+      "payload_intervals": [
+        {
+          "end_inclusive": 50821027,
+          "length": 69540,
+          "start": 50751488
+        }
+      ],
+      "size": 69540,
+      "source_object": "subtitles.tar",
+      "source_object_lfs_sha256": "165dc82c8902459247245cf693237ad9fb2ff1b4e0df89ccce975fa67af04149",
+      "source_object_size": 117381120,
+      "video_id": "H5vpBCLo74U"
+    },
+    {
+      "basename": "TMe7oXMJoSM_en.json",
+      "candidate_id": "ccp-012",
+      "destination": "raw/subtitles/TMe7oXMJoSM_en.json",
+      "header_range": {
+        "end_inclusive": 110001151,
+        "length": 512,
+        "start": 110000640
+      },
+      "kind": "subtitle",
+      "member_path": "subtitles/TMe7oXMJoSM_en.json",
+      "payload_intervals": [
+        {
+          "end_inclusive": 110045124,
+          "length": 43973,
+          "start": 110001152
+        }
+      ],
+      "size": 43973,
+      "source_object": "subtitles.tar",
+      "source_object_lfs_sha256": "165dc82c8902459247245cf693237ad9fb2ff1b4e0df89ccce975fa67af04149",
+      "source_object_size": 117381120,
+      "video_id": "TMe7oXMJoSM"
+    }
+  ]
+}

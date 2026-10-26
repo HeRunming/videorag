@@ -1,0 +1,502 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 6.0,
+    "total_steps": 5
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f01_visual_order.clean",
+    "family_id": "syn_f01_visual_order",
+    "protocol_version": "0.2.0",
+    "question": "Which shape appeared first, and which shape appeared later?",
+    "state_role": "CLEAN",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 240.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "BLUE TRIANGLE",
+            "time_range": {
+              "end_s": 240.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_visual"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "event_detection",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_blue_triangle.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 11.0,
+        "cost_used_total": 1.0,
+        "episode_id": "syn_f01_visual_order.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0000",
+        "response_hash": "sha256:03d34fb3def87c6564ea84887f5fd50115eb11bf0898153eab6a22c09f066ae7",
+        "results": [
+          {
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            },
+            "preview": "vision candidate at 24.0-30.0s",
+            "result_id": "ptr.1c2a9c54e5dfbfcb4e512f3aa69ad3ee48e278c538f94f7d10504284088ac86a",
+            "result_type": "search_pointer",
+            "score": 1.25
+          }
+        ],
+        "status": "ok",
+        "step_index": 0,
+        "tool": "search_visual"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "event_detection",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_blue_triangle.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 9.0,
+        "cost_used_total": 3.0,
+        "episode_id": "syn_f01_visual_order.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0001",
+        "response_hash": "sha256:fe2e60e31bae1dc8cc935cc4dae25d40a855a068e3ad93bf81523a9f32be41d2",
+        "results": [
+          {
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7",
+            "payload": {
+              "_route_refs": [
+                "sha256:109e1653caa9e06948d638588e66c1bc72888b5db4fffa64b598515766dd4c7e"
+              ],
+              "description": "BLUE TRIANGLE",
+              "inspection": {
+                "include_audio": false,
+                "include_video": true,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 30.0,
+                  "start_s": 24.0
+                }
+              }
+            },
+            "payload_hash": "sha256:3e9db15fddaa21979e6eff180233acfd3d5c1aa40a992ec2d42531346a60176d",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 1,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "GREEN CIRCLE",
+            "time_range": {
+              "end_s": 240.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_visual"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "event_detection",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_green_circle.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:47Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 8.0,
+        "cost_used_total": 4.0,
+        "episode_id": "syn_f01_visual_order.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0002",
+        "response_hash": "sha256:267089746bbaa249efa4cefd555c983e7e7a1ef55de702cf7e291d3cb6b85fc5",
+        "results": [
+          {
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            },
+            "preview": "vision candidate at 176.0-182.0s",
+            "result_id": "ptr.06a89e6e021a8d5a75e955603266463d4bddef5f4fc39d425157d9751dac87c5",
+            "result_type": "search_pointer",
+            "score": 1.25
+          }
+        ],
+        "status": "ok",
+        "step_index": 2,
+        "tool": "search_visual"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "event_detection",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_green_circle.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0003",
+        "step_index": 3
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:48Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 6.0,
+        "cost_used_total": 6.0,
+        "episode_id": "syn_f01_visual_order.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0003",
+        "response_hash": "sha256:7152306c994792d9ab122d18f52ae58dabcd388267f2e0dffbf2e817574f8a68",
+        "results": [
+          {
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28",
+            "payload": {
+              "_route_refs": [
+                "sha256:bce6cd915dda17a06f1bc59e17bda959b9f983b4bd7c6f9946ddde668ed0df67"
+              ],
+              "description": "GREEN CIRCLE",
+              "inspection": {
+                "include_audio": false,
+                "include_video": true,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 182.0,
+                  "start_s": 176.0
+                }
+              }
+            },
+            "payload_hash": "sha256:077c1801f0a9fe9a830c762c0da91b1a07eebb59b85c4791100700361147df32",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 3,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "answer",
+            "claims": [
+              {
+                "citations": [
+                  {
+                    "interval": {
+                      "end_s": 30.0,
+                      "start_s": 24.0
+                    },
+                    "modalities": [
+                      "vision"
+                    ],
+                    "observation_id": "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+                  },
+                  {
+                    "interval": {
+                      "end_s": 182.0,
+                      "start_s": 176.0
+                    },
+                    "modalities": [
+                      "vision"
+                    ],
+                    "observation_id": "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+                  }
+                ],
+                "claim_id": "validator.claim.0",
+                "confidence": 0.99,
+                "registered_claim_id": "claim_syn_f01_visual_order",
+                "text": "The blue triangle appeared first; the green circle appeared later."
+              }
+            ],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.01,
+                "evidence_in_source_but_inaccessible": 0.01,
+                "not_missing": 0.96,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.01
+              },
+              "description": "An accepted minimal sufficient evidence set was acquired.",
+              "hop_types": [],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.02,
+                "vision": 0.02
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "The blue triangle appeared first; the green circle appeared later.",
+            "p_sufficient": 0.98,
+            "termination_reason": "sufficient_evidence",
+            "verdict": "sufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.01,
+            "evidence_in_source_but_inaccessible": 0.01,
+            "not_missing": 0.96,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.01
+          },
+          "next_action_rationale": "All required claims have an accepted citable SES.",
+          "p_sufficient": 0.98,
+          "verdict": "sufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0004",
+        "step_index": 4
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:49Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "answer",
+    "claims": [
+      {
+        "citations": [
+          {
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+          },
+          {
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+          }
+        ],
+        "claim_id": "validator.claim.0",
+        "confidence": 0.99,
+        "registered_claim_id": "claim_syn_f01_visual_order",
+        "text": "The blue triangle appeared first; the green circle appeared later."
+      }
+    ],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.01,
+        "evidence_in_source_but_inaccessible": 0.01,
+        "not_missing": 0.96,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.01
+      },
+      "description": "An accepted minimal sufficient evidence set was acquired.",
+      "hop_types": [],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.02,
+        "vision": 0.02
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "The blue triangle appeared first; the green circle appeared later.",
+    "p_sufficient": 0.98,
+    "termination_reason": "sufficient_evidence",
+    "verdict": "sufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:55539774ce4b86d48cfc8572fc4abed062df32663bb9c7ff75a19f65e404dcc4",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:8be304a952da85aea79c0d9f10e1ca1afef4d2ac9c4ba670385aaef46dc477dc"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_a.syn_f01_visual_order.clean"
+}

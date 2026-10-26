@@ -1,0 +1,57 @@
+{
+  "canary_id": "AV-TRACE-P23-102-QUERY-AUTHORING-V2-CANARY2",
+  "counts": {
+    "anchor_families": 1,
+    "families": 3,
+    "maximum_replacements": 2,
+    "opaque_committed_roles": 2,
+    "queries": 13,
+    "replacement_generation": 1,
+    "run_attempt_limit": 1,
+    "target_clips": 5
+  },
+  "created_date": "2026-10-22",
+  "input_hashes": {
+    "bundle_file_hashes": {
+      "evidence_registry.json": "sha256:70a5ccf4e1d44cb7967bfc51cf1aa40473cabd091b0797f3af2fc61e2f39cdf4",
+      "family_registry.json": "sha256:ff7c6b08f63d68738c222d5c916843ec0164add9a9f09a0893eba35530008c57",
+      "leakage_gate.json": "sha256:fe2353bd073a5b8d6998c7c9be2a5d08b1141c9a2eae5c5fa4e4bd90908f134f",
+      "source_split_manifest.json": "sha256:24a8de73e6c5e4cfe2bf8ab9435660cd88ad6f40930499c1310d2ab79a7f0da9"
+    },
+    "machine_index_hash": "sha256:09548628170442b01460eb2c22bc4e6db0e2113f230d183ff96ed9dd7ade0699",
+    "machine_speech_index_file_sha256": "sha256:061781dc7f32381990529d9fc9832f32c83d0be8c13f38dece1198fff8c7160a",
+    "r21_failure_evidence_hashes": {
+      "accepted_factor_manifest.json": "sha256:2023f8e97abf3524113b240b9c85cfc37f09cca03c32a8d164472518e081cd24",
+      "asr_audit_inventory.json": "sha256:4b35ec50754e2d61831a4f4fc7d3aed44a2605e1d26081848f7f73dc95a3baa6",
+      "audits.failed.json": "sha256:f42d88aac03abafe88274ec9be5589006013c6c6db916889b6a86124313f1b0d",
+      "canary2_contract.json": "sha256:d98826a5d6fadef8c400b3dbe2c7b1a3b5151635a33216619653f43847843d29",
+      "canary2_subset_bundle.json": "sha256:f57560a1ac05bd4ca5256224654738984a51a0b8f52eabed1df9856308b3a809",
+      "failure_accounting.json": "sha256:8681007087602daf2a3271c6aa6372376155ee543352d27c9cf27d49eacfd7e4",
+      "failure_capsule.json": "sha256:a591f1a9937dfc3fa0a58a10b091069a12fd07dc494c70a5687ead916ec04ffc",
+      "gate_findings.json": "sha256:d0cb429a9982766a28ad2d4b75e08d67601ad755e8a91f5f85dd467355696852",
+      "prompt_manifest.json": "sha256:c6a240e7603434537c46004f46240154f96b63d45f198d2ae10d64dfc1b050c9",
+      "raw_attempts.jsonl": "sha256:f3d6d710dd27afcd412d465ad4993994736b71cf8f33b031031e434039c7f229",
+      "resource_runtime.failed.json": "sha256:41506aa12a6df553a9cbe9db6c259123a752ed5acc0e865902e742133eff0aa5",
+      "target_manifest.json": "sha256:8e4434b23d4894b348e7936c6d3bca9d670a5106fec8a88d25cf38c7ef6890a7"
+    },
+    "v15_audits_file_sha256": "sha256:0dbad8b1ebeff719312effa0d36e398930f016e58579c406f574446c81e11b8a",
+    "v15_seal_file_sha256": "sha256:c42efe6cc65799ac1d0044a052463adc4998a8b31afb5eec85daad93a44a2467",
+    "v15_subset_file_sha256": "sha256:2cf4b1548b7f86bb47eb4542ae56e954348920f97d2dd6ec5e7d70f9090f389e"
+  },
+  "marker_fail_stop_persistence": true,
+  "no_redraw": true,
+  "no_runtime_fallback": true,
+  "one_run": true,
+  "one_shot_attempt_marker": true,
+  "private_canonical_commitment_sha256": "sha256:5269b80e36d480831192b9eadd283783b06df45e61303168e6cce773d734b736",
+  "public_payload_sha256": "sha256:43270cd8edc7032c0cf9640a625aa3ef2f6068895fb13299db803dcf811a13b6",
+  "public_surface_private_leakage_scan": true,
+  "public_surface_raw_bytes_private_token_scan": true,
+  "public_surface_scan_scope": "repo_root_recursive_public_text",
+  "public_surface_strict_utf8": true,
+  "public_surface_undecodable_failure_code": "PUBLIC_SURFACE_UNDECODABLE_TEXT",
+  "schema_version": "av-trace.p23-102-query-authoring-v2-canary2-public-commitment/4.0",
+  "selection_algorithm": "r22b_one_shot_reserve_selection",
+  "selection_version": "2.0",
+  "status": "PUBLIC_COMMITMENT_ONLY"
+}

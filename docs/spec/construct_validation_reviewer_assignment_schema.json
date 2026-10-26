@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:construct-validation-reviewer-assignment:1.0.0",
+  "title": "AV-TRACE source-group reviewer assignment ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "generated_at",
+    "assignment_status",
+    "frozen_at",
+    "distribution_authorized",
+    "pre_distribution_exposure_snapshot_sha256",
+    "assignment_freeze_sha256",
+    "source_groups",
+    "assignments",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "construct_validation_reviewer_assignment_ledger"
+    },
+    "packet_id": {
+      "$ref": "#/$defs/id"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assignment_status": {
+      "enum": [
+        "DRAFT_NOT_DISTRIBUTABLE",
+        "FROZEN_BEFORE_DISTRIBUTION"
+      ]
+    },
+    "frozen_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "distribution_authorized": {
+      "type": "boolean"
+    },
+    "pre_distribution_exposure_snapshot_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "assignment_freeze_sha256": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source_group"
+      }
+    },
+    "assignments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/assignment"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "assignment_status": {
+            "const": "DRAFT_NOT_DISTRIBUTABLE"
+          }
+        },
+        "required": [
+          "assignment_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "frozen_at": {
+            "type": "null"
+          },
+          "distribution_authorized": {
+            "const": false
+          },
+          "assignment_freeze_sha256": {
+            "type": "null"
+          },
+          "assignments": {
+            "items": {
+              "properties": {
+                "reviewer_id": {
+                  "type": "null"
+                },
+                "assigned_at": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assignment_status": {
+            "const": "FROZEN_BEFORE_DISTRIBUTION"
+          }
+        },
+        "required": [
+          "assignment_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "frozen_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "distribution_authorized": {
+            "const": true
+          },
+          "assignment_freeze_sha256": {
+            "$ref": "#/$defs/sha256"
+          },
+          "assignments": {
+            "items": {
+              "properties": {
+                "reviewer_id": {
+                  "$ref": "#/$defs/id"
+                },
+                "assigned_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "role": {
+      "enum": [
+        "question_claim_author_or_verifier",
+        "blind_alternative_evidence_finder",
+        "validator_a",
+        "validator_b",
+        "adjudicator",
+        "blind_post_adjudication_saturation_auditor"
+      ]
+    },
+    "source_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_group_id",
+        "source_ids",
+        "family_ids"
+      ],
+      "properties": {
+        "source_group_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "family_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assignment_id",
+        "source_group_id",
+        "family_id",
+        "role",
+        "reviewer_id",
+        "assigned_at"
+      ],
+      "properties": {
+        "assignment_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_group_id": {
+          "$ref": "#/$defs/id"
+        },
+        "family_id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "$ref": "#/$defs/role"
+        },
+        "reviewer_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assigned_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

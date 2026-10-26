@@ -1,0 +1,60 @@
+{
+  "blocking_intervention_id": "block_syn_f04_star_bin",
+  "exact_inverse": true,
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f04_star_bin",
+  "pretrigger_state_equal": true,
+  "restoration_intervention_id": "restore_syn_f04_star_bin",
+  "restoration_successful": true,
+  "restored_proof_id": "restored-proof.syn_f04_star_bin",
+  "schema_version": "1.0.0",
+  "terminal_accessible_evidence_ids": [
+    "s2_speech_bin",
+    "s2_yellow_star"
+  ],
+  "terminal_reachable_ses_ids": [
+    "ses_syn_f04_star_bin_1"
+  ],
+  "trigger_type": "get_channel_status",
+  "trigger_value": null,
+  "validator_results": [
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f04_star_bin_1"
+      ],
+      "observed_evidence_ids": [
+        "s2_speech_bin",
+        "s2_yellow_star"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 5.25,
+      "total_steps": 6,
+      "trajectory_hash": "sha256:8371d8f51212bd76c6a4df49c4947cb11b164ce0550bac87d36c68ab6e2422c7",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f04_star_bin.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f04_star_bin"
+      ],
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f04_star_bin_1"
+      ],
+      "observed_evidence_ids": [
+        "s2_speech_bin",
+        "s2_yellow_star"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 3.25,
+      "total_steps": 4,
+      "trajectory_hash": "sha256:84af8194c32103582d4f35a427f60e281ba4dc7842f2006531012acd52722428",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f04_star_bin.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f04_star_bin"
+      ],
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

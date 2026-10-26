@@ -1,0 +1,2181 @@
+{
+  "accepted_input_gate": {
+    "allowed_task85_decisions": [
+      "GO_PROVISIONAL_EPISODE_CONSTRUCTION",
+      "CONDITIONAL_GO"
+    ],
+    "effective_candidate_rule": "intersection(Task84 current retained set, Task85 retained after explicit downgrades/removals); original handoff-only mappings remain non-buildable provenance",
+    "fail_closed_conditions": [
+      "Task 85 absent",
+      "Task 85 returns NO_GO",
+      "fewer than five candidates remain",
+      "any pilot asset has no retained family",
+      "ambient candidate review-004 removed without replacement",
+      "speech candidate review-017 removed without replacement",
+      "Task 85 reports an unrepaired provenance, leakage, or model-execution defect"
+    ],
+    "minimum_effective_candidate_count": 5,
+    "required_anchor_review_ids": [
+      "noaa01-review-004",
+      "noaa01-review-017"
+    ],
+    "required_asset_ids": [
+      "cand-049",
+      "cand-051",
+      "cand-052"
+    ],
+    "required_role_coverage": [
+      "vision",
+      "speech",
+      "ambient_candidate",
+      "cross_modal_candidate"
+    ],
+    "status": "pending_task85",
+    "task84_candidate_review_ids": [
+      "noaa01-review-003",
+      "noaa01-review-004",
+      "noaa01-review-007",
+      "noaa01-review-011",
+      "noaa01-review-014",
+      "noaa01-review-016",
+      "noaa01-review-017"
+    ],
+    "task84_concurrent_repair_note": "During Task 86, Task 84 authoritative artifacts were repaired: review-003 was downgraded to defer and all likely-necessary counts were reset because no modality-drop intervention had run.",
+    "task84_current_retained_count": 6,
+    "task84_current_retained_review_ids": [
+      "noaa01-review-004",
+      "noaa01-review-007",
+      "noaa01-review-011",
+      "noaa01-review-014",
+      "noaa01-review-016",
+      "noaa01-review-017"
+    ],
+    "task84_decision_required": "GO_PROVISIONAL_EPISODE_CONSTRUCTION",
+    "task84_observed_decision": "GO_PROVISIONAL_EPISODE_CONSTRUCTION",
+    "task84_original_handoff_candidate_review_ids": [
+      "noaa01-review-003",
+      "noaa01-review-004",
+      "noaa01-review-007",
+      "noaa01-review-011",
+      "noaa01-review-014",
+      "noaa01-review-016",
+      "noaa01-review-017"
+    ],
+    "task85_json_path": "data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+    "task85_result_path": "orchestration/results/85_noaa_real_model_redteam.txt"
+  },
+  "backend_agent_compatibility_matrix": [
+    {
+      "component": "exact_interval_decoder",
+      "existing_modules": [
+        "src/av_trace_media/reader.py:PyAVMediaReader"
+      ],
+      "gap": "register verified stream hashes and expose bounded natural-media decode errors",
+      "reuse": "direct"
+    },
+    {
+      "component": "fixed_index_and_manifest",
+      "existing_modules": [
+        "src/av_trace_mvp/index.py:FixedIndex",
+        "src/av_trace_mvp/index.py:BackendManifest"
+      ],
+      "gap": "build from all 18 NOAA windows using model-derived content, generic previews, and transitive route references",
+      "reuse": "direct_with_new_builder"
+    },
+    {
+      "component": "tool_and_intervention_runtime",
+      "existing_modules": [
+        "src/av_trace_mvp/backend.py:FixedBackend",
+        "src/av_trace_mvp/interventions.py:InterventionRuntime"
+      ],
+      "gap": "natural-media observation serving and promotion-time families",
+      "reuse": "direct_after_valid_family"
+    },
+    {
+      "component": "synthetic_media_pipeline",
+      "existing_modules": [
+        "src/av_trace_media_pipeline/indexing.py",
+        "src/av_trace_media_pipeline/backend.py"
+      ],
+      "gap": "MediaPerception.synthetic and its closed vocabularies must not process NOAA as scientific evidence",
+      "reuse": "control_flow_only"
+    },
+    {
+      "component": "agent_process_boundary",
+      "existing_modules": [
+        "src/av_trace_agent_runtime/runtime.py:SubprocessEpisodeRuntime",
+        "src/av_trace_agent_runtime/protocol.py:PolicyView"
+      ],
+      "gap": "new real-A/V baseline entrypoints and model-resource policy",
+      "reuse": "direct"
+    },
+    {
+      "component": "direct_long_context",
+      "existing_modules": [],
+      "gap": "implement a true one-pass all-accessible-observations baseline; AlwaysAnswer is retrieval-based",
+      "milestone_fallback": "deterministic protocol oracle; Acquire and Recovery undefined",
+      "reuse": "none"
+    },
+    {
+      "component": "single_shot_rag",
+      "existing_modules": [
+        "src/av_trace_mvp/agents.py:SingleShotRAGAgent"
+      ],
+      "gap": "replace synthetic query vocabulary, sufficiency heuristics, and answer templates",
+      "reuse": "control_pattern_only"
+    },
+    {
+      "component": "react_recovery",
+      "existing_modules": [
+        "src/av_trace_mvp/agents.py:ReActHeuristicAgent"
+      ],
+      "gap": "add natural queries, reformulation, modality switching, and honest answer generation",
+      "reuse": "control_pattern_only"
+    },
+    {
+      "component": "evidence_sufficiency",
+      "existing_modules": [
+        "src/av_trace_mvp/agents.py:EvidenceBeliefStateAgent"
+      ],
+      "gap": "replace question-keyword modality oracle and observation-count sufficiency with claim/evidence coverage over policy-visible outputs",
+      "reuse": "belief_contract_only"
+    },
+    {
+      "component": "metrics",
+      "existing_modules": [
+        "src/av_trace_mvp/metrics.py",
+        "src/av_trace_validation/metrics_adapter.py"
+      ],
+      "gap": "add alternative-set Evidence Recall, All-Evidence Success, Citation F1, eligibility/null fields, direct/single recovery exclusion, and low-N warnings",
+      "reuse": "partial"
+    },
+    {
+      "component": "validator",
+      "existing_modules": [
+        "src/av_trace_validation/generator.py",
+        "src/av_trace_validation/certifier.py",
+        "src/av_trace/semantic.py:validate_family"
+      ],
+      "gap": "create real acquisition manifest records, verified-asset bridges, independent counterfactual proofs, and real denominator artifacts",
+      "reuse": "after promotion"
+    }
+  ],
+  "baseline_families": [
+    {
+      "can_support": [
+        "scoring plumbing",
+        "abstention",
+        "claim/citation evaluation"
+      ],
+      "cannot_support": [
+        "learned video understanding",
+        "retrieval ability",
+        "agent recovery",
+        "SOTA comparison"
+      ],
+      "existing_status": "missing",
+      "fallback": "deterministic protocol oracle if no VLM is local",
+      "id": "direct_long_context",
+      "protocol": "one pass over all accessible frozen observations; no search tools",
+      "recovery_eligible": false
+    },
+    {
+      "cannot_support": [
+        "agent recovery"
+      ],
+      "existing_status": "control pattern reusable",
+      "id": "single_shot_rag",
+      "protocol": "one frozen query plan, one top-k retrieval and inspection/read round, then answer or abstain",
+      "recovery_eligible": false
+    },
+    {
+      "existing_status": "control pattern reusable",
+      "id": "react_recovery",
+      "protocol": "iterative query reformulation, modality switching, typed outage/status handling, reacquisition, finalize",
+      "recovery_eligible": true
+    },
+    {
+      "existing_status": "belief contract reusable",
+      "id": "evidence_sufficiency",
+      "protocol": "track provisional claim/evidence coverage, missing modality/hop/cause, and stop only after supported sufficiency or justified abstention",
+      "recovery_eligible": true
+    }
+  ],
+  "created_date": "2026-09-10",
+  "decision": "READY_AFTER_TASK85",
+  "fixed_backend": {
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10,
+      "tool_costs": {
+        "finalize": 0.0,
+        "get_channel_status": 0.25,
+        "inspect_clip": 2.0,
+        "read_transcript": 1.0,
+        "search_ambient_audio": 1.0,
+        "search_speech": 1.0,
+        "search_visual": 1.0
+      }
+    },
+    "candidate_universe": "all 18 reviewed windows grouped by original asset",
+    "forbidden_searchable_sources": [
+      "question text",
+      "answer hypothesis",
+      "claim graph",
+      "reviewer rationale",
+      "state role",
+      "intervention ID"
+    ],
+    "freeze_fields": [
+      "model IDs and revisions",
+      "preprocessing",
+      "index records",
+      "tokenizer/ranker",
+      "tie breaker",
+      "top_k",
+      "costs",
+      "hashes"
+    ],
+    "observation_policy": "citable only after exact source hash and interval decode check",
+    "pointer_policy": "opaque IDs, generic modality and time preview, non-citable",
+    "real_av_requirement": "At tool time inspect_clip/read_transcript must hash-check and decode the original registered MP4. A JSON-only replay is metadata-backed and cannot support a real-A/V evaluation claim.",
+    "searchable_content_sources": [
+      "pinned Whisper output for speech",
+      "pinned AST output for ambient events",
+      "versioned visual observation output"
+    ],
+    "state_endpoint_for_non_agentic_direct_baseline": "CLEAN receives all clean accessible observations, BLOCKED receives the blocked accessible set, and RESTORED receives the terminal post-restoration accessible set in one pass. This is a protocol oracle comparison, not recovery; no trigger behavior or Act metric is credited.",
+    "tool_api_version": "0.2.0",
+    "tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ]
+  },
+  "go_no_go_criteria": {
+    "ENGINEERING_GO": {
+      "all_required": true,
+      "criteria": [
+        "Task 85 gate applied",
+        "at least five promoted families across all three pilot assets",
+        "review-004 ambient and review-017 speech anchors retained or replaced under an explicit re-sampling gate",
+        "exact hash and interval A/V decode pass",
+        "all retrieval-eligible families have at least two admissible same-source distractors",
+        "all promoted families and trajectories pass schema, semantic, provenance, intervention, route-feasibility, certification, and replay checks",
+        "all four harnesses complete; all applicable trajectories valid",
+        "no answer/state leakage and no persistent derivative violation"
+      ]
+    },
+    "FINAL_BENCHMARK_NOT_YET_VALIDATED": {
+      "must_be_true": true,
+      "release_conditions_not_met": [
+        "human question/answer/evidence and counterfactual adjudication",
+        "complete alternative-evidence search",
+        "release and privacy review",
+        "public-core provenance",
+        "broader sources/domains",
+        "genuine learned A/V and agent baselines",
+        "preregistered confirmatory evaluation and sufficiently large independent test set"
+      ]
+    },
+    "PROVISIONAL_SCIENTIFIC_GO": {
+      "all_required": true,
+      "criteria": [
+        "visual, speech, cross-modal, and ambient-candidate coverage",
+        "at least one recovery-eligible family achieves supported recovery after a real trigger",
+        "Acquire separation: among applicable systems, at least one pair differs on at least one eligible family in Evidence Recall or All-Evidence Success.",
+        "Ground separation: at least one family/system has Answer Score different from Citation F1 or Supported-Claim Rate, or two systems have different grounded failure vectors.",
+        "Act separation: ReAct/recovery and evidence-sufficiency differ on at least one eligible family in Recovery or Premature Stop.",
+        "Cross-axis condition: at least one system ordering or failure type changes between Acquire, Ground, and Act; identical all-axis vectors are NO_GO for provisional science.",
+        "separation appears across Acquire, Ground, and Act rather than only runtime/cost",
+        "all conclusions labeled descriptive, provisional, machine-adjudicated, and low-N"
+      ],
+      "requires": "ENGINEERING_GO"
+    }
+  },
+  "gold_annotation": false,
+  "human_reviewed": false,
+  "implementation_gaps": [
+    {
+      "id": "G01",
+      "priority": "blocker",
+      "task": "Parse and enforce Task 85 decision and per-item verdicts."
+    },
+    {
+      "id": "G02",
+      "priority": "blocker",
+      "task": "Create acquisition-manifest-compatible annotation authorization and one verified-asset bridge per NOAA source."
+    },
+    {
+      "id": "G03",
+      "priority": "blocker",
+      "task": "Implement provisional blueprint validation separately from normative schema 0.2.0."
+    },
+    {
+      "id": "G04",
+      "priority": "blocker",
+      "task": "Implement a natural-media observation adapter using exact PyAV intervals, pinned Whisper/AST, and a versioned visual observation source."
+    },
+    {
+      "id": "G05",
+      "priority": "blocker",
+      "task": "Build and freeze the bounded 18-window NOAA index with distractor admission and leakage scans."
+    },
+    {
+      "id": "G06",
+      "priority": "blocker",
+      "task": "Run answer verification, alternative-evidence search, leave-one-evidence/modality counterfactuals, and two-validator agreement."
+    },
+    {
+      "id": "G07",
+      "priority": "blocker",
+      "task": "Promote passing blueprints into schema 0.2.0 families and generate intervention/feasible-route/certificate artifacts."
+    },
+    {
+      "id": "G08",
+      "priority": "required",
+      "task": "Implement four real-data baseline harnesses without synthetic answer templates; preserve subprocess blindness."
+    },
+    {
+      "id": "G09",
+      "priority": "required",
+      "task": "Extend metrics with eligibility-aware Acquire/Ground/Act outputs and low-N warnings."
+    },
+    {
+      "id": "G10",
+      "priority": "required",
+      "task": "Add restricted/public report separation, deterministic replay, mutation/leakage tests, and exact artifact inventories."
+    }
+  ],
+  "intervention_blueprints": [
+    {
+      "blocked": {
+        "affected_channel": null,
+        "affected_evidence_ids": [
+          "e.r003.vision"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "hide all direct and derived records touching affected route"
+      },
+      "blueprint_id": "noaa01-r003-waterfront-demonstration",
+      "build_eligible_before_task85": false,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r003.vision"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_audio": false,
+              "include_video": true,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r003.vision",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "waterfront platform two presenters standing",
+            "search_tool": "search_visual",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "design_only_reason": "Current authoritative Task 84 disposition is defer; do not instantiate unless a later gate explicitly re-admits this candidate.",
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "necessity_group_withholding",
+      "restored": {
+        "action_sequence": [
+          {
+            "call_index": 2,
+            "effect": "restoration fires before search dispatch",
+            "query": "waterfront platform two presenters standing",
+            "tool": "search_visual",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_audio": false,
+              "include_video": true
+            },
+            "call_index": 3,
+            "effect": "return citable answer-bearing observation",
+            "tool": "inspect_clip"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "At call index 2, issue a reformulated search_visual query; restoration fires before dispatch, then inspect the returned pointer.",
+        "trigger_type": "fixed_call_index",
+        "trigger_value": 2
+      },
+      "seed": 86003,
+      "source_review_id": "noaa01-review-003",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    },
+    {
+      "blocked": {
+        "affected_channel": "ambient",
+        "affected_evidence_ids": [
+          "e.r004.ambient"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "disable ambient channel and hide every affected route record"
+      },
+      "blueprint_id": "noaa01-r004-surf-av",
+      "build_eligible_before_task85": true,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r004.vision",
+          "e.r004.ambient"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_audio": false,
+              "include_video": true,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r004.vision",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "person breaking surf rough water",
+            "search_tool": "search_visual",
+            "time_range": "full source duration",
+            "top_k": 5
+          },
+          {
+            "citable_tool": {
+              "include_audio": true,
+              "include_video": false,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r004.ambient",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "ocean waves surf wind",
+            "search_tool": "search_ambient_audio",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "modality_channel_outage",
+      "restored": {
+        "action_sequence": [
+          {
+            "arguments": {
+              "channels": [
+                "ambient"
+              ]
+            },
+            "effect": "restoration fires before status dispatch",
+            "tool": "get_channel_status"
+          },
+          {
+            "query": "ocean waves surf wind",
+            "time_range": "full source duration",
+            "tool": "search_ambient_audio",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_audio": true,
+              "include_video": false
+            },
+            "tool": "inspect_clip"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "Call get_channel_status for ambient, then search_ambient_audio and inspect the returned interval with audio enabled.",
+        "trigger_type": "get_channel_status",
+        "trigger_value": null
+      },
+      "seed": 86004,
+      "source_review_id": "noaa01-review-004",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    },
+    {
+      "blocked": {
+        "affected_channel": null,
+        "affected_evidence_ids": [
+          "e.r007.vision"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "hide all direct and derived records touching affected route"
+      },
+      "blueprint_id": "noaa01-r007-opening-plastic-waste",
+      "build_eligible_before_task85": true,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r007.vision"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_audio": false,
+              "include_video": true,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r007.vision",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "opening montage discarded plastic waste",
+            "search_tool": "search_visual",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "necessity_group_withholding",
+      "restored": {
+        "action_sequence": [
+          {
+            "call_index": 2,
+            "effect": "restoration fires before search dispatch",
+            "query": "opening montage discarded plastic waste",
+            "tool": "search_visual",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_audio": false,
+              "include_video": true
+            },
+            "call_index": 3,
+            "effect": "return citable answer-bearing observation",
+            "tool": "inspect_clip"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "At call index 2, issue a reformulated search_visual query; restoration fires before dispatch, then inspect the returned pointer.",
+        "trigger_type": "fixed_call_index",
+        "trigger_value": 2
+      },
+      "seed": 86007,
+      "source_review_id": "noaa01-review-007",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    },
+    {
+      "blocked": {
+        "affected_channel": null,
+        "affected_evidence_ids": [
+          "e.r011.vision"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "hide all direct and derived records touching affected route"
+      },
+      "blueprint_id": "noaa01-r011-litter-cleanup",
+      "build_eligible_before_task85": true,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r011.vision"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_audio": false,
+              "include_video": true,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r011.vision",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "person bag collecting litter fence",
+            "search_tool": "search_visual",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "necessity_group_withholding",
+      "restored": {
+        "action_sequence": [
+          {
+            "call_index": 2,
+            "effect": "restoration fires before search dispatch",
+            "query": "person bag collecting litter fence",
+            "tool": "search_visual",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_audio": false,
+              "include_video": true
+            },
+            "call_index": 3,
+            "effect": "return citable answer-bearing observation",
+            "tool": "inspect_clip"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "At call index 2, issue a reformulated search_visual query; restoration fires before dispatch, then inspect the returned pointer.",
+        "trigger_type": "fixed_call_index",
+        "trigger_value": 2
+      },
+      "seed": 86011,
+      "source_review_id": "noaa01-review-011",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    },
+    {
+      "blocked": {
+        "affected_channel": null,
+        "affected_evidence_ids": [
+          "e.r014.vision"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "hide all direct and derived records touching affected route"
+      },
+      "blueprint_id": "noaa01-r014-storm-formation",
+      "build_eligible_before_task85": true,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r014.vision"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_audio": false,
+              "include_video": true,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r014.vision",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "dark rotating storm clouds explanatory captions",
+            "search_tool": "search_visual",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "necessity_group_withholding",
+      "restored": {
+        "action_sequence": [
+          {
+            "call_index": 2,
+            "effect": "restoration fires before search dispatch",
+            "query": "dark rotating storm clouds explanatory captions",
+            "tool": "search_visual",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_audio": false,
+              "include_video": true
+            },
+            "call_index": 3,
+            "effect": "return citable answer-bearing observation",
+            "tool": "inspect_clip"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "At call index 2, issue a reformulated search_visual query; restoration fires before dispatch, then inspect the returned pointer.",
+        "trigger_type": "fixed_call_index",
+        "trigger_value": 2
+      },
+      "seed": 86014,
+      "source_review_id": "noaa01-review-014",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    },
+    {
+      "blocked": {
+        "affected_channel": "speech",
+        "affected_evidence_ids": [
+          "e.r016.speech"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "disable speech channel and hide every affected route record"
+      },
+      "blueprint_id": "noaa01-r016-three-factors-vs",
+      "build_eligible_before_task85": true,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r016.speech",
+          "e.r016.vision"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_word_timestamps": false,
+              "source": "asr",
+              "tool": "read_transcript"
+            },
+            "evidence_id": "e.r016.speech",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "narration hurricane formation three factors",
+            "search_tool": "search_speech",
+            "time_range": "full source duration",
+            "top_k": 5
+          },
+          {
+            "citable_tool": {
+              "include_audio": false,
+              "include_video": true,
+              "tool": "inspect_clip"
+            },
+            "evidence_id": "e.r016.vision",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "hurricane formation three factors graphic",
+            "search_tool": "search_visual",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "modality_channel_outage",
+      "restored": {
+        "action_sequence": [
+          {
+            "arguments": {
+              "channels": [
+                "speech",
+                "transcript"
+              ]
+            },
+            "effect": "restoration fires before status dispatch",
+            "tool": "get_channel_status"
+          },
+          {
+            "query": "narration hurricane formation three factors",
+            "time_range": "full source duration",
+            "tool": "search_speech",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_word_timestamps": false,
+              "source": "asr"
+            },
+            "tool": "read_transcript"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "Call get_channel_status for speech and transcript, then search_speech and read_transcript for the returned interval.",
+        "trigger_type": "get_channel_status",
+        "trigger_value": null
+      },
+      "seed": 86016,
+      "source_review_id": "noaa01-review-016",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    },
+    {
+      "blocked": {
+        "affected_channel": "speech",
+        "affected_evidence_ids": [
+          "e.r017.speech"
+        ],
+        "must_remain_recoverable": true,
+        "operation": "disable speech channel and hide every affected route record"
+      },
+      "blueprint_id": "noaa01-r017-north-atlantic-basin",
+      "build_eligible_before_task85": true,
+      "clean": {
+        "answer_bearing_evidence_ids": [
+          "e.r017.speech"
+        ],
+        "returns": "same frozen source-level candidate universe with answer-bearing route accessible",
+        "tool_returns": [
+          {
+            "citable_tool": {
+              "include_word_timestamps": false,
+              "source": "asr",
+              "tool": "read_transcript"
+            },
+            "evidence_id": "e.r017.speech",
+            "pointer_interval": "exact registered evidence interval",
+            "query": "main area hurricane activity basin",
+            "search_tool": "search_speech",
+            "time_range": "full source duration",
+            "top_k": 5
+          }
+        ]
+      },
+      "leakage_checks": [
+        "opaque IDs and generic previews",
+        "no state-bearing filename or metadata",
+        "no answer aliases in pointers or distractors",
+        "no transcript leakage into visual or ambient payloads",
+        "no visual-answer leakage through transcript, title, captions, or metadata",
+        "all derived answer records carry route references",
+        "response shape and error vocabulary are condition-balanced"
+      ],
+      "mechanism": "modality_channel_outage",
+      "restored": {
+        "action_sequence": [
+          {
+            "arguments": {
+              "channels": [
+                "speech",
+                "transcript"
+              ]
+            },
+            "effect": "restoration fires before status dispatch",
+            "tool": "get_channel_status"
+          },
+          {
+            "query": "main area hurricane activity basin",
+            "time_range": "full source duration",
+            "tool": "search_speech",
+            "top_k": 5
+          },
+          {
+            "arguments_from_pointer": {
+              "include_word_timestamps": false,
+              "source": "asr"
+            },
+            "tool": "read_transcript"
+          }
+        ],
+        "evidence_must_be_reacquired_after_trigger": true,
+        "exact_inverse_required": true,
+        "required_action": "Call get_channel_status for speech and transcript, then search_speech and read_transcript for the returned interval.",
+        "trigger_type": "get_channel_status",
+        "trigger_value": null
+      },
+      "seed": 86017,
+      "source_review_id": "noaa01-review-017",
+      "validity_checks": [
+        "CLEAN has a reachable accepted support set",
+        "BLOCKED has no reachable accepted support set",
+        "BLOCKED retains admissible distractors",
+        "RESTORED pre-trigger state and responses equal BLOCKED",
+        "trigger is deterministic and independent of model identity or answer",
+        "post-trigger route equals CLEAN in payload, ID, ordering, interval, and cost",
+        "two validator trajectories recover within unchanged remaining budget",
+        "no-trigger negative control cannot acquire blocked evidence"
+      ]
+    }
+  ],
+  "metrics": {
+    "acquire": [
+      {
+        "definition": "max over accepted support sets E of |observed_evidence intersect E| / |E|",
+        "direct_long_context": null,
+        "eligible": "at least one independently accepted support set exists; provisional pre-promotion output must be labeled hypothesis_conditioned",
+        "name": "Evidence Recall"
+      },
+      {
+        "definition": "1 iff at least one accepted support set is a subset of acquired citable evidence",
+        "direct_long_context": null,
+        "eligible": "same as Evidence Recall",
+        "name": "All-Evidence Success"
+      },
+      {
+        "definition": "best-match recall against modality sets induced by counterfactually validated acceptable support sets",
+        "eligible": "only modalities with validated necessity; machine routing hypotheses are excluded",
+        "fallback_metric": "candidate_modality_routing_coverage",
+        "name": "Modality Recall"
+      }
+    ],
+    "act": [
+      {
+        "definition": "supported final success with valid trajectory and unchanged family budget",
+        "eligible": "all systems with a budgeted run",
+        "name": "Success@Budget"
+      },
+      {
+        "definition": "stop with insufficient observed evidence while a certified route remains feasible under remaining cost/steps and no valid budget guard/recovery declaration applies",
+        "eligible": "certified final-decision feasible-route record exists",
+        "name": "Premature Stop"
+      },
+      {
+        "definition": "after a valid exact RESTORED trigger, acquire an acceptable support set and supportedly finalize within the unchanged remaining budget",
+        "eligible": "recoverable BLOCKED-to-RESTORED family, trigger fires, feasible post-trigger route exists",
+        "excluded_systems": [
+          "direct_long_context",
+          "single_shot_rag"
+        ],
+        "name": "Recovery"
+      }
+    ],
+    "alternative_support_rule": "Score against any independently accepted support set or registered claim-evidence entailment plus temporal overlap; never require only one preferred clip.",
+    "common_output_fields": [
+      "value",
+      "numerator",
+      "denominator",
+      "eligible_family_count",
+      "eligible_source_count",
+      "eligibility_status",
+      "low_n_warning"
+    ],
+    "ground": [
+      {
+        "definition": "all required structured claims correct, no forbidden/contradictory claims",
+        "eligible": "answer hypothesis independently verified",
+        "name": "Answer Score"
+      },
+      {
+        "definition": "harmonic mean of claim-level citation precision and required-claim citation recall across alternative acceptable derivations",
+        "eligible": "registered claim-evidence support and citable observations exist",
+        "name": "Citation F1",
+        "zero_rule": "eligible answer with no required citation scores zero; structurally ineligible is null"
+      },
+      {
+        "definition": "supported asserted claims / asserted claims",
+        "eligible": "at least one claim asserted",
+        "empty_abstention": null,
+        "name": "Supported-Claim Rate"
+      }
+    ],
+    "low_n_rule": "LOW_N_NO_INFERENCE when eligible_family_count < 5 or eligible_source_count < 3; descriptive bootstrap intervals may be shown but no significance/ranking claim.",
+    "necessity_boundary": "No necessity or minimality metric may consume Task 84 machine hypotheses as validated gold.",
+    "undefined_encoding": null
+  },
+  "plan_id": "NOAA01-REAL-AV-PROVISIONAL-MVP-TASK86",
+  "proposed_episode_blueprints": [
+    {
+      "abstention_behavior": "Omit under the current defer disposition; if explicitly re-admitted, abstain unless the location is independently verified.",
+      "answer_hypothesis": "They are standing on a waterfront platform.",
+      "blueprint_id": "noaa01-r003-waterfront-demonstration",
+      "build_eligible_before_task85": false,
+      "candidate_modality_roles": [
+        "vision"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r003.location",
+          "proposition_hypothesis": "Two presenters stand on a waterfront platform.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-001",
+          "noaa01-review-002",
+          "noaa01-review-005",
+          "noaa01-review-006"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r003.vision",
+          "interval": {
+            "end_s": 586.195,
+            "start_s": 578.195
+          },
+          "modality": "vision",
+          "observation_hypothesis": "Task 84 visual observations 0..6 and machine semantic synthesis describe two presenters standing and speaking on a waterfront platform.",
+          "source_output_refs": [
+            "visual_observation:0",
+            "visual_observation:1",
+            "visual_observation:2",
+            "visual_observation:3",
+            "visual_observation:4",
+            "visual_observation:5",
+            "visual_observation:6"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.23437115,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [],
+        "asr_token_count": 26,
+        "ast_qualifying_specific_event_predictions": [],
+        "audio_event_labels": [],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "V",
+        "task84_rationale": "The setting is visible, but the exact interval does not show the previously claimed demonstration action and is too shallow for the first episode set.",
+        "vision_meaningful_information_proxy": 0.2902987,
+        "vision_top_class": "field-footage",
+        "visual_description": "Two presenters stand and speak on a waterfront platform.",
+        "visual_observation_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "priority": "conditional",
+      "promotion_requirements": [
+        "Task 85 explicitly re-admits candidate after the Task 84 defer repair",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-003",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "Where are the two presenters standing?",
+      "required_counterfactual": "Only if later re-admitted: independently verify the location label; silent-video must support it, while transcript-only, audio-only, metadata-only, and neighboring snippets must not state the same answer.",
+      "routing_hypotheses": [
+        "Vision is a candidate location route; the item is currently deferred and unique sufficiency is not validated."
+      ],
+      "source": {
+        "basename": "05_archive_070620_sm.mp4",
+        "candidate_id": "cand-049",
+        "interval": {
+          "end_s": 586.195,
+          "start_s": 578.195
+        },
+        "media_sha256": "sha256:1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+        "source_measurement_id": "cand-049-coarse-005",
+        "source_task80_candidate_window_id": null
+      },
+      "source_review_id": "noaa01-review-003",
+      "task84_disposition": "defer",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    },
+    {
+      "abstention_behavior": "If either channel is absent or unverified, emit only supported partial claims and mark the joint answer insufficient.",
+      "answer_hypothesis": "Breaking surf and rough water are visible; ocean/waves/surf and wind are detected in the audio.",
+      "blueprint_id": "noaa01-r004-surf-av",
+      "build_eligible_before_task85": true,
+      "candidate_modality_roles": [
+        "vision",
+        "ambient"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r004.visual",
+          "proposition_hypothesis": "A person is shown in breaking surf and rough water.",
+          "status": "machine_hypothesis_pending_validation"
+        },
+        {
+          "claim_id": "claim.r004.ambient",
+          "proposition_hypothesis": "The audio event model detects ocean, waves or surf, and wind in the same interval.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-001",
+          "noaa01-review-002",
+          "noaa01-review-005",
+          "noaa01-review-006"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r004.vision",
+          "interval": {
+            "end_s": 1019.842,
+            "start_s": 1011.842
+          },
+          "modality": "vision",
+          "observation_hypothesis": "Task 84 visual observations 0..6 and machine semantic synthesis describe a person in breaking surf and rough water.",
+          "source_output_refs": [
+            "visual_observation:0",
+            "visual_observation:1",
+            "visual_observation:2",
+            "visual_observation:3",
+            "visual_observation:4",
+            "visual_observation:5",
+            "visual_observation:6"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        },
+        {
+          "evidence_id": "e.r004.ambient",
+          "interval": {
+            "end_s": 1019.842,
+            "start_s": 1011.842
+          },
+          "modality": "ambient",
+          "observation_hypothesis": "AST qualifying predictions: Ocean 0.57266438; Waves, surf 0.51786554; Wind 0.26152700.",
+          "source_output_refs": [
+            "Ocean",
+            "Waves, surf",
+            "Wind"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.11927733,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [],
+        "asr_token_count": 28,
+        "ast_qualifying_specific_event_predictions": [
+          {
+            "label": "Ocean",
+            "probability": 0.57266438
+          },
+          {
+            "label": "Waves, surf",
+            "probability": 0.51786554
+          },
+          {
+            "label": "Wind",
+            "probability": 0.261527
+          }
+        ],
+        "audio_event_labels": [
+          "Ocean",
+          "Waves, surf",
+          "Wind"
+        ],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "V+A",
+        "task84_rationale": "Decoded footage shows rough surf around a person, while AST independently identifies ocean, waves/surf, and wind.",
+        "vision_meaningful_information_proxy": 0.48759431,
+        "vision_top_class": "slide",
+        "visual_description": "A person is shown in breaking surf and rough water.",
+        "visual_observation_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "priority": "required_ambient_anchor",
+      "promotion_requirements": [
+        "Task 85 retains candidate",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-004",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "What water conditions are depicted around the person, and which environmental sounds are detected in the same interval?",
+      "required_counterfactual": "Vision-only must fail the audible-event claim; ambient-only must fail the depicted-person claim; joint evidence must support both; speech must not duplicate the ambient claim; independent review must confirm the sounds.",
+      "routing_hypotheses": [
+        "V+A is a candidate joint role; AST is clip-level and modality necessity is not validated."
+      ],
+      "source": {
+        "basename": "05_archive_070620_sm.mp4",
+        "candidate_id": "cand-049",
+        "interval": {
+          "end_s": 1019.842,
+          "start_s": 1011.842
+        },
+        "media_sha256": "sha256:1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+        "source_measurement_id": "cand-049-coarse-008",
+        "source_task80_candidate_window_id": null
+      },
+      "source_review_id": "noaa01-review-004",
+      "task84_disposition": "accept",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    },
+    {
+      "abstention_behavior": "Do not name a more specific discarded object unless separately verified.",
+      "answer_hypothesis": "Plastic waste is shown.",
+      "blueprint_id": "noaa01-r007-opening-plastic-waste",
+      "build_eligible_before_task85": true,
+      "candidate_modality_roles": [
+        "vision"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r007.material",
+          "proposition_hypothesis": "The opening montage contains close views of plastic waste.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-008",
+          "noaa01-review-009",
+          "noaa01-review-010",
+          "noaa01-review-012"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r007.vision",
+          "interval": {
+            "end_s": 8.0,
+            "start_s": 0.0
+          },
+          "modality": "vision",
+          "observation_hypothesis": "Task 84 visual observations 0..6 and machine semantic synthesis describe close views of plastic waste.",
+          "source_output_refs": [
+            "visual_observation:0",
+            "visual_observation:1",
+            "visual_observation:2",
+            "visual_observation:3",
+            "visual_observation:4",
+            "visual_observation:5",
+            "visual_observation:6"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.35944592,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [],
+        "asr_token_count": 7,
+        "ast_qualifying_specific_event_predictions": [],
+        "audio_event_labels": [],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "V",
+        "task84_rationale": "A clearly visible object grounds a concise visual question.",
+        "vision_meaningful_information_proxy": 0.6537284,
+        "vision_top_class": "slide",
+        "visual_description": "Trash Talk opening montage includes close views of plastic waste.",
+        "visual_observation_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "priority": "conditional",
+      "promotion_requirements": [
+        "Task 85 retains candidate",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-007",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "What kind of discarded material is shown in the opening montage?",
+      "required_counterfactual": "Silent-video must support plastic waste, while transcript/audio, title-only regions, metadata, and question-only probes must not determine the answer.",
+      "routing_hypotheses": [
+        "Vision is the candidate answer route; title-card leakage remains to be tested."
+      ],
+      "source": {
+        "basename": "07_trashtalk_archive_0902_smc.mp4",
+        "candidate_id": "cand-051",
+        "interval": {
+          "end_s": 8.0,
+          "start_s": 0.0
+        },
+        "media_sha256": "sha256:279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+        "source_measurement_id": "cand-051-coarse-001",
+        "source_task80_candidate_window_id": "noaa01-window-019"
+      },
+      "source_review_id": "noaa01-review-007",
+      "task84_disposition": "accept",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    },
+    {
+      "abstention_behavior": "If collecting litter cannot be distinguished visually from merely carrying a bag, abstain.",
+      "answer_hypothesis": "The person is collecting litter beside a fence.",
+      "blueprint_id": "noaa01-r011-litter-cleanup",
+      "build_eligible_before_task85": true,
+      "candidate_modality_roles": [
+        "vision"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r011.action",
+          "proposition_hypothesis": "A person carrying a bag collects litter beside a fence.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-008",
+          "noaa01-review-009",
+          "noaa01-review-010",
+          "noaa01-review-012"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r011.vision",
+          "interval": {
+            "end_s": 3063.773,
+            "start_s": 3055.773
+          },
+          "modality": "vision",
+          "observation_hypothesis": "Task 84 visual observations 0..6 and machine semantic synthesis describe a person collecting litter beside a fence.",
+          "source_output_refs": [
+            "visual_observation:0",
+            "visual_observation:1",
+            "visual_observation:2",
+            "visual_observation:3",
+            "visual_observation:4",
+            "visual_observation:5",
+            "visual_observation:6"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.18309301,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [],
+        "asr_token_count": 22,
+        "ast_qualifying_specific_event_predictions": [],
+        "audio_event_labels": [],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "V",
+        "task84_rationale": "The visible cleanup action is concrete and stable.",
+        "vision_meaningful_information_proxy": 0.85240162,
+        "vision_top_class": "text",
+        "visual_description": "A person carrying a bag collects litter beside a fence.",
+        "visual_observation_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "priority": "conditional",
+      "promotion_requirements": [
+        "Task 85 retains candidate",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-011",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "What cleanup action is the person carrying a bag performing?",
+      "required_counterfactual": "Silent-video must support litter collection; transcript-only and audio-only must not fully support the action; neighboring snippets and metadata must not leak it.",
+      "routing_hypotheses": [
+        "Vision is the candidate route, but intelligible co-occurring speech may duplicate part of the answer."
+      ],
+      "source": {
+        "basename": "07_trashtalk_archive_0902_smc.mp4",
+        "candidate_id": "cand-051",
+        "interval": {
+          "end_s": 3063.773,
+          "start_s": 3055.773
+        },
+        "media_sha256": "sha256:279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+        "source_measurement_id": "cand-051-coarse-015",
+        "source_task80_candidate_window_id": null
+      },
+      "source_review_id": "noaa01-review-011",
+      "task84_disposition": "accept",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    },
+    {
+      "abstention_behavior": "If rotation cannot be independently established, use only the frozen weaker answer storm clouds or remove the family.",
+      "answer_hypothesis": "Dark rotating storm clouds are shown.",
+      "blueprint_id": "noaa01-r014-storm-formation",
+      "build_eligible_before_task85": true,
+      "candidate_modality_roles": [
+        "vision"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r014.formation",
+          "proposition_hypothesis": "Dark rotating storm clouds appear with explanatory captions.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-013",
+          "noaa01-review-015",
+          "noaa01-review-018"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r014.vision",
+          "interval": {
+            "end_s": 451.899,
+            "start_s": 443.899
+          },
+          "modality": "vision",
+          "observation_hypothesis": "Task 84 visual observations 0..6 and machine semantic synthesis describe dark rotating storm clouds with captions.",
+          "source_output_refs": [
+            "visual_observation:0",
+            "visual_observation:1",
+            "visual_observation:2",
+            "visual_observation:3",
+            "visual_observation:4",
+            "visual_observation:5",
+            "visual_observation:6"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.28467811,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [],
+        "asr_token_count": 40,
+        "ast_qualifying_specific_event_predictions": [],
+        "audio_event_labels": [],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "V",
+        "task84_rationale": "The weather footage supplies distinct visual evidence.",
+        "vision_meaningful_information_proxy": 0.36566727,
+        "vision_top_class": "slide",
+        "visual_description": "Dark rotating storm clouds appear with explanatory captions.",
+        "visual_observation_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "priority": "conditional",
+      "promotion_requirements": [
+        "Task 85 retains candidate",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-014",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "What weather formation is shown while explanatory captions appear?",
+      "required_counterfactual": "Independently verify the visual label and compare silent-video, transcript-only, caption-masked, metadata-only, neighboring snippets, and temporal shuffle.",
+      "routing_hypotheses": [
+        "Vision is the candidate route; captions and speech may duplicate the answer."
+      ],
+      "source": {
+        "basename": "08_climatealive_archive_1001_smc.mp4",
+        "candidate_id": "cand-052",
+        "interval": {
+          "end_s": 451.899,
+          "start_s": 443.899
+        },
+        "media_sha256": "sha256:c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+        "source_measurement_id": "cand-052-coarse-003",
+        "source_task80_candidate_window_id": null
+      },
+      "source_review_id": "noaa01-review-014",
+      "task84_disposition": "accept",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    },
+    {
+      "abstention_behavior": "A single channel may support its own partial count claim but not the cross-modal agreement claim.",
+      "answer_hypothesis": "Three factors are stated and introduced.",
+      "blueprint_id": "noaa01-r016-three-factors-vs",
+      "build_eligible_before_task85": true,
+      "candidate_modality_roles": [
+        "vision",
+        "speech"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r016.speech",
+          "proposition_hypothesis": "The narration states that hurricane formation depends on three factors.",
+          "status": "machine_hypothesis_pending_validation"
+        },
+        {
+          "claim_id": "claim.r016.visual",
+          "proposition_hypothesis": "The educational graphic introduces three hurricane-formation factors.",
+          "status": "machine_hypothesis_pending_validation"
+        },
+        {
+          "claim_id": "claim.r016.agreement",
+          "proposition_hypothesis": "The narration and graphic agree on the count of three.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-013",
+          "noaa01-review-015",
+          "noaa01-review-018"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r016.speech",
+          "interval": {
+            "end_s": 1339.698,
+            "start_s": 1331.698
+          },
+          "modality": "speech",
+          "observation_hypothesis": "Whisper segment noaa01-review-016-asr-1 contains the count of three and begins listing factors.",
+          "source_output_refs": [
+            "noaa01-review-016-asr-1"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        },
+        {
+          "evidence_id": "e.r016.vision",
+          "interval": {
+            "end_s": 1339.698,
+            "start_s": 1331.698
+          },
+          "modality": "vision",
+          "observation_hypothesis": "Task 84 visual observations 0..6 and machine semantic synthesis identify a graphic introducing three hurricane-formation factors.",
+          "source_output_refs": [
+            "visual_observation:0",
+            "visual_observation:1",
+            "visual_observation:2",
+            "visual_observation:3",
+            "visual_observation:4",
+            "visual_observation:5",
+            "visual_observation:6"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.25738059,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [
+          "noaa01-review-016-asr-1"
+        ],
+        "asr_token_count": 23,
+        "ast_qualifying_specific_event_predictions": [],
+        "audio_event_labels": [],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "V+S",
+        "task84_rationale": "Whisper and the decoded educational graphic both support the count of three, providing useful cross-modal corroboration.",
+        "vision_meaningful_information_proxy": 0.37060306,
+        "vision_top_class": "field-footage",
+        "visual_description": "An educational hurricane graphic introduces three formation factors.",
+        "visual_observation_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "priority": "required_cross_modal_anchor",
+      "promotion_requirements": [
+        "Task 85 retains candidate",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-016",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "How many hurricane-formation factors are stated in the narration and introduced by the graphic?",
+      "required_counterfactual": "V-only must fail the narration-attribution claim and S-only must fail the graphic-attribution claim. Test the unqualified count separately; if either channel suffices, do not report V+S answer minimality.",
+      "routing_hypotheses": [
+        "V+S is corroboration. Either modality may independently expose the count; joint answer minimality is not claimed."
+      ],
+      "source": {
+        "basename": "08_climatealive_archive_1001_smc.mp4",
+        "candidate_id": "cand-052",
+        "interval": {
+          "end_s": 1339.698,
+          "start_s": 1331.698
+        },
+        "media_sha256": "sha256:c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+        "source_measurement_id": "cand-052-coarse-007",
+        "source_task80_candidate_window_id": "noaa01-window-029"
+      },
+      "source_review_id": "noaa01-review-016",
+      "task84_disposition": "accept",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    },
+    {
+      "abstention_behavior": "If the basin name is not recovered from a citable speech observation, do not complete it from topic priors.",
+      "answer_hypothesis": "The North Atlantic Basin.",
+      "blueprint_id": "noaa01-r017-north-atlantic-basin",
+      "build_eligible_before_task85": true,
+      "candidate_modality_roles": [
+        "speech"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim.r017.basin",
+          "proposition_hypothesis": "The speaker identifies the North Atlantic Basin as a main area of hurricane activity.",
+          "status": "machine_hypothesis_pending_validation"
+        }
+      ],
+      "distractor_strategy": {
+        "admission_checks": [
+          "not answer-bearing under claim-evidence entailment",
+          "no answer alias leakage",
+          "same index/ranking construction as evidence records"
+        ],
+        "minimum_admissible_distractors": 2,
+        "pool_scope": "same long video; reviewed non-answer windows only for first bounded MVP",
+        "review_ids": [
+          "noaa01-review-013",
+          "noaa01-review-015",
+          "noaa01-review-018"
+        ]
+      },
+      "evidence_units": [
+        {
+          "evidence_id": "e.r017.speech",
+          "interval": {
+            "end_s": 2671.396,
+            "start_s": 2663.396
+          },
+          "modality": "speech",
+          "observation_hypothesis": "Whisper segment noaa01-review-017-asr-1 identifies the North Atlantic Basin as a main area of hurricane activity.",
+          "source_output_refs": [
+            "noaa01-review-017-asr-1"
+          ],
+          "validation_status": "pending_counterfactual_and_independent_validation"
+        }
+      ],
+      "field_policy": {
+        "potential_public_after_release_gate": [
+          "opaque asset ID",
+          "source-time interval",
+          "approved question and answer",
+          "approved evidence labels",
+          "aggregate metrics"
+        ],
+        "public_now": [
+          "methodological aggregate counts only"
+        ],
+        "restricted": [
+          "raw media path",
+          "verbatim transcript text",
+          "raw model prediction arrays",
+          "unapproved reviewer synthesis details"
+        ]
+      },
+      "necessity_status": "not_validated",
+      "observed_support": {
+        "asr_mean_generated_token_log_probability": -0.16288089,
+        "asr_quality_proxy": "usable_intelligible_proxy",
+        "asr_segment_ids": [
+          "noaa01-review-017-asr-1"
+        ],
+        "asr_token_count": 29,
+        "ast_qualifying_specific_event_predictions": [],
+        "audio_event_labels": [],
+        "observation_text_policy": "No verbatim restricted transcript is copied into this plan; claim-level paraphrases and restricted source IDs are used.",
+        "task84_candidate_modality_role": "S",
+        "task84_rationale": "High-confidence local ASR provides a complete, concise answer-bearing statement about the North Atlantic Basin.",
+        "vision_meaningful_information_proxy": 0.41383402,
+        "vision_top_class": "slide",
+        "visual_description": "Several remote speakers appear in a webinar interface.",
+        "visual_observation_indices": []
+      },
+      "priority": "required_speech_anchor",
+      "promotion_requirements": [
+        "Task 85 retains candidate",
+        "answer hypothesis independently verified",
+        "alternative evidence search completed",
+        "shortcut and leakage audits pass",
+        "leave-one-evidence counterfactual passes where minimality is claimed",
+        "leave-one-modality counterfactual passes where modality necessity is claimed",
+        "two independent validator trajectories agree",
+        "verified-asset provenance bridge passes"
+      ],
+      "provenance": {
+        "adjudication_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+        "gold_annotation": false,
+        "human_reviewed": false,
+        "media_source": "exact original local MP4",
+        "model_outputs_restricted": true,
+        "restricted_record_id": "noaa01-review-017",
+        "restricted_record_path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      },
+      "question_hypothesis": "Which basin does the speaker identify as a main area of hurricane activity?",
+      "required_counterfactual": "Independently verify the transcript; transcript/audio must succeed while silent-video, on-screen text, metadata, and neighboring snippets do not supply the basin name.",
+      "routing_hypotheses": [
+        "Speech is the candidate answer route; on-screen or neighboring textual duplication remains to be excluded."
+      ],
+      "source": {
+        "basename": "08_climatealive_archive_1001_smc.mp4",
+        "candidate_id": "cand-052",
+        "interval": {
+          "end_s": 2671.396,
+          "start_s": 2663.396
+        },
+        "media_sha256": "sha256:c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+        "source_measurement_id": "cand-052-coarse-013",
+        "source_task80_candidate_window_id": null
+      },
+      "source_review_id": "noaa01-review-017",
+      "task84_disposition": "accept",
+      "task85_required_action": "retain_or_apply_explicit_downgrade_or_drop"
+    }
+  ],
+  "representation_policy": {
+    "all_modality_roles_are_routing_hypotheses": true,
+    "blueprint_schema": "task86-plan-local provisional blueprint",
+    "current_authoritative_task84_necessity_counts": {
+      "ambient": 0,
+      "speech": 0,
+      "vision": 0
+    },
+    "normative_family_generation_allowed_now": false,
+    "normative_target_schema": "docs/spec/episode_schema.json version 0.2.0",
+    "promotion_rule": "Generate normative families only after every blueprint promotion requirement passes; never write required true fields as placeholders.",
+    "reason": "The normative schema requires validated satisfiability, minimality, removal, two validators, and real-media provenance; Task 84 supplies hypotheses rather than those proofs."
+  },
+  "risks": [
+    {
+      "mitigation": "intersection gate; no family creation from removed candidates; enforce minimum composition.",
+      "risk": "Task 85 may remove or downgrade accepted candidates."
+    },
+    {
+      "mitigation": "create an explicit provisional internal annotation authorization and verified-asset bridge; remain external compatibility and restricted.",
+      "risk": "Current authorization artifacts conflict with normative annotation/release gate expectations."
+    },
+    {
+      "mitigation": "keep blueprints non-normative until proofs pass; never forge booleans.",
+      "risk": "Normative schema forces validated minimality booleans."
+    },
+    {
+      "mitigation": "independent answer verification or a versioned genuine visual model before promotion.",
+      "risk": "Task 84 visual semantics come from a weak proxy plus machine synthesis."
+    },
+    {
+      "mitigation": "make review-004 a gate anchor, report low-N, and resample before scientific claims if it fails.",
+      "risk": "Only one credible ambient candidate and only three source videos."
+    },
+    {
+      "mitigation": "label candidate-pool pilot; no full-video retrieval claim; expand indexing after feasibility.",
+      "risk": "Bounded 18-window index understates full-video retrieval difficulty."
+    },
+    {
+      "mitigation": "require post-trigger reacquisition and report trigger-aware outcomes; reserve status-trigger families for diagnosis claims.",
+      "risk": "Fixed-call restoration can occur accidentally and may not demonstrate diagnosis."
+    },
+    {
+      "mitigation": "score channel-attributed claims separately and require content counterfactuals; do not equate wording with natural task necessity.",
+      "risk": "Question wording can manufacture modality necessity."
+    },
+    {
+      "mitigation": "interpret only as protocol construct validation and later run genuine learned baselines.",
+      "risk": "Deterministic baselines create designed separation."
+    }
+  ],
+  "schema_version": "1.0.0",
+  "scientific_boundaries": [
+    "Machine-adjudicated provisional evidence is not human-validated gold.",
+    "Candidate modality role is not validated necessity.",
+    "Candidate support set is not a minimal sufficient evidence set until counterfactual and independent-validator gates pass.",
+    "A bounded reviewed-window pool is not full long-video retrieval.",
+    "Metadata-only replay is not real-A/V evaluation.",
+    "Deterministic protocol probes cannot support model-quality or SOTA claims.",
+    "External compatibility results cannot be pooled with public-core results.",
+    "No raw media, transcript text, restricted prediction, or derivative may be publicly released under the current gate."
+  ],
+  "scope": {
+    "candidate_pool_scope": "18 reviewed eight-second windows across three full 20-90 minute source videos",
+    "deliverable_access_class": "internal_design_non_release",
+    "full_video_retrieval_claim_allowed": false,
+    "objective": "Construct and test the smallest scientifically meaningful real-A/V CLEAN/BLOCKED/RESTORED pilot from the current NOAA artifacts.",
+    "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+  },
+  "source_assets": [
+    {
+      "actual_decode_pass": true,
+      "audio_stream_count": 1,
+      "basename": "05_archive_070620_sm.mp4",
+      "candidate_id": "cand-049",
+      "content_sha256": "sha256:1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+      "duration_s": 2465.329542,
+      "restricted_path": "data/restricted/noaa01/raw/05_archive_070620_sm.mp4",
+      "size_bytes": 491943858,
+      "timeline_plausibility_pass": true,
+      "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+      "video_stream_count": 1
+    },
+    {
+      "actual_decode_pass": true,
+      "audio_stream_count": 1,
+      "basename": "07_trashtalk_archive_0902_smc.mp4",
+      "candidate_id": "cand-051",
+      "content_sha256": "sha256:279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+      "duration_s": 3718.581542,
+      "restricted_path": "data/restricted/noaa01/raw/07_trashtalk_archive_0902_smc.mp4",
+      "size_bytes": 558522234,
+      "timeline_plausibility_pass": true,
+      "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+      "video_stream_count": 1
+    },
+    {
+      "actual_decode_pass": true,
+      "audio_stream_count": 1,
+      "basename": "08_climatealive_archive_1001_smc.mp4",
+      "candidate_id": "cand-052",
+      "content_sha256": "sha256:c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+      "duration_s": 3781.144042,
+      "restricted_path": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4",
+      "size_bytes": 561739683,
+      "timeline_plausibility_pass": true,
+      "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+      "video_stream_count": 1
+    }
+  ],
+  "stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+  "validation_commands": [
+    {
+      "availability": "current",
+      "command": "test -s orchestration/results/85_noaa_real_model_redteam.txt && test -s data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+      "stage": "task85_gate"
+    },
+    {
+      "availability": "current",
+      "command": "python tools/noaa_machine_adjudication.py --validate-existing",
+      "stage": "input_integrity"
+    },
+    {
+      "availability": "current",
+      "command": "PYTHONPATH=src pytest -q tests/test_noaa_machine_adjudication.py",
+      "stage": "focused_existing_tests"
+    },
+    {
+      "availability": "current",
+      "command": "PYTHONPATH=src pytest -q tests",
+      "stage": "default_existing_tests"
+    },
+    {
+      "availability": "next_implementation_task",
+      "command": "PYTHONPATH=src python scripts/build_noaa_real_av_mvp.py validate-blueprints --plan data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+      "stage": "future_blueprint_validation"
+    },
+    {
+      "availability": "next_implementation_task",
+      "command": "PYTHONPATH=src python scripts/build_noaa_real_av_mvp.py build --plan data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+      "stage": "future_build"
+    },
+    {
+      "availability": "next_implementation_task",
+      "command": "PYTHONPATH=src python scripts/certify_noaa_real_av_mvp.py --strict",
+      "stage": "future_certification"
+    },
+    {
+      "availability": "next_implementation_task",
+      "command": "PYTHONPATH=src python scripts/run_noaa_real_av_mvp.py --agents direct-long-context,single-shot-rag,react-recovery,evidence-sufficiency",
+      "stage": "future_experiment"
+    },
+    {
+      "availability": "next_implementation_task",
+      "command": "PYTHONPATH=src pytest -q tests tests_mvp tests_media tests_agent_runtime tests_validation tests_media_pipeline tests_real_av",
+      "stage": "future_tests"
+    }
+  ]
+}

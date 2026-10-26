@@ -1,0 +1,198 @@
+{
+  "as_of_date": "2026-10-26",
+  "description": "Explicit public snapshot strategies for paths blocked by audit_public_release. First matching rule wins.",
+  "required_copy_paths": [
+    "data/migration/hf_asset_manifest.json",
+    "data/migration/path_rebinding_manifest.json",
+    "data/migration/publish_targets.json",
+    "data/migration/public_repo_manifest.json"
+  ],
+  "required_snapshot_paths": [
+    "data/migration/hf_asset_manifest.json",
+    "data/migration/path_rebinding_manifest.json",
+    "data/migration/publish_targets.json",
+    "data/rehearsal_plan/post_migration_cvpr_work_queue.json",
+    "docs/overview/authoritative_cvpr_state_2026-10-23.md",
+    "scripts/bootstrap_new_machine.py",
+    "scripts/prepare_hf_upload.py",
+    "scripts/verify_hf_mirror.py",
+    "scripts/verify_migration_readiness.py"
+  ],
+  "focused_snapshot_tests": [
+    "tests/test_audit_public_release.py",
+    "tests/test_build_hf_public_metadata_snapshot.py",
+    "tests/test_build_public_repo_snapshot.py",
+    "tests/test_hf_migration_tools.py",
+    "tests/test_migration_bootstrap.py",
+    "tests/test_build_migration_bundle.py"
+  ],
+  "schema_version": 1,
+  "strategy_rules": [
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "data/migration/*.json",
+      "reason": "Migration manifests are required public metadata; sanitize string values with JSON parse-transform-dump while preserving their structure.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "license_boundary"
+      ],
+      "path": ".",
+      "reason": "Only authorized owners may select the repository code license. The default snapshot carries a blocking notice instead of invented license terms.",
+      "strategy": "require-owner"
+    },
+    {
+      "checks": [
+        "large_file",
+        "content_scan_limit"
+      ],
+      "path": "data/rehearsal_plan/source_exposure_alias_manifest_v2.json",
+      "reason": "Do not redistribute the approximately 19 MB detailed exposure artifact; emit only a hash commitment and public disposition summary.",
+      "replacement_path": "data/rehearsal_plan/source_exposure_alias_manifest_v2_PUBLIC_SUMMARY.json",
+      "strategy": "redact-generated"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "data/acquisition_plan/*",
+      "reason": "Retain reviewed acquisition plans while replacing machine-local transport defaults in the export copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "*"
+      ],
+      "path": "data/rehearsal_plan/*",
+      "reason": "Blocked rehearsal records are live access, route, run, or governance evidence and are excluded; release-ready public plans remain included through the audit manifest.",
+      "strategy": "exclude"
+    },
+    {
+      "checks": [
+        "*"
+      ],
+      "path": "docs/review/*",
+      "reason": "Blocked historical review and execution material is internal and is not needed for the public engineering surface.",
+      "strategy": "exclude"
+    },
+    {
+      "checks": [
+        "*"
+      ],
+      "path": "docs/data/gated_access_dossier.md",
+      "reason": "The blocked access dossier contains internal route evidence and is excluded pending a separate public rewrite.",
+      "strategy": "exclude"
+    },
+    {
+      "checks": [
+        "*"
+      ],
+      "path": "docs/design/external_gateway_strong_agent_v1.md",
+      "reason": "Internal gateway/run governance design is excluded from the public snapshot.",
+      "strategy": "exclude"
+    },
+    {
+      "checks": [
+        "*"
+      ],
+      "path": "docs/design/p23_102_query_authoring_v2_canary2_r22c.md",
+      "reason": "Canary authority identifiers are internal governance material; public commitments are released separately.",
+      "strategy": "exclude"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "docs/design/*",
+      "reason": "Keep core design documentation, sanitizing only detected machine-local infrastructure or private run identifiers in the export copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "docs/engineering/*",
+      "reason": "Keep current engineering documentation with machine-local route examples sanitized in the export copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "docs/migration/*",
+      "reason": "Migration documentation is public-core material; replace workstation-specific examples only in the staged copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "src/*",
+      "reason": "Preserve research implementation while sanitizing only detected infrastructure literals in the export copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "scripts/*",
+      "reason": "Preserve public automation while sanitizing only detected infrastructure literals in the export copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "tools/*",
+      "reason": "Preserve engineering tools while sanitizing only detected infrastructure literals and private run IDs in the export copy.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "tests/*",
+      "reason": "Preserve model-free and unit test coverage, applying the same export-only literal sanitization as production helpers.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "internal_domain",
+        "absolute_machine_path",
+        "private_governance_id"
+      ],
+      "path": "tooling/tests/*",
+      "reason": "Preserve tooling tests, applying the same export-only literal sanitization as the tools under test.",
+      "strategy": "rewrite-copy"
+    },
+    {
+      "checks": [
+        "*"
+      ],
+      "path": "*",
+      "reason": "Fail closed: any future or unmatched blocker requires an explicit owner-reviewed strategy before publication.",
+      "strategy": "require-owner"
+    }
+  ]
+}

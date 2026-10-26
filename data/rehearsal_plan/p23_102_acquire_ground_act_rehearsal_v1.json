@@ -1,0 +1,787 @@
+{
+  "schema_version": "av-trace.p23-102-acquire-ground-act-rehearsal/1.0",
+  "rehearsal_id": "P23_102_ACQUIRE_GROUND_ACT_REHEARSAL_V1",
+  "frozen_date": "2026-10-13",
+  "status": "PROSPECTIVE_DEVELOPMENT_ONLY_CONFIGURATION",
+  "decision_token": "P23_102_ACQUIRE_GROUND_ACT_REHEARSAL_READY",
+  "scope": {
+    "source_id": "P23_102",
+    "source_group_id": "P23",
+    "dataset": "EPIC-KITCHENS-100",
+    "candidate_stage": "FUTURE_MACHINE_PROVISIONAL_ONLY",
+    "development_only": true,
+    "future_test_eligible": false,
+    "scientific_execution_authorized": false,
+    "human_review_performed": false,
+    "human_labels_created": false,
+    "model_or_media_execution_performed_by_this_artifact": false,
+    "h2_claimed": false,
+    "h2_required_for_development_rehearsal": false,
+    "h2_required_before_scientific_interpretation": true,
+    "source_disjoint_rule": {
+      "unit": "participant_and_all_source_derivatives",
+      "development_group": "P23",
+      "all_p23_media_annotations_indexes_clips_encodes_and_derivatives_share_one_group": true,
+      "training_or_prompt_tuning_sources_must_exclude_p23": true,
+      "future_evaluation_sources_must_exclude_p23": true,
+      "p23_families_may_not_be_counted_as_source_disjoint_from_each_other": true,
+      "violation_status": "SOURCE_DISJOINTNESS_VIOLATION"
+    },
+    "claim_boundary": "This artifact freezes a prospective machine-provisional development rehearsal. It reports no H2 determination, human-valid family, scientific episode, model outcome, or causal result."
+  },
+  "current_readiness": {
+    "exact_media": "MISSING_COMPLETE_VERIFIED_READY_MANIFEST_AT_FREEZE",
+    "full_timeline_index": "NOT_BUILT_AT_FREEZE",
+    "candidate_family_registry": "NOT_CREATED_AT_FREEZE",
+    "mechanism_manifests": "NOT_CREATED_AT_FREEZE",
+    "restoration_v2_leakage_gate": "NOT_RUN",
+    "learned_agent_status": "EXISTING_QWEN15_AGENT_STACK_REQUIRES_NEW_P23_ADAPTER_AND_COMPETENCE_RECHECK",
+    "execution": "NOT_RUN"
+  },
+  "frozen_components": {
+    "fixed_backend": {
+      "implementation_path": "src/av_trace_scale1b_agent/backend.py",
+      "implementation_sha256": "620ae6003f7a3cdc0124bfc19d4a7639e3f2a0e61f1d2a53a0edc73149ad3718",
+      "class": "FullTimelineBackend",
+      "required_adapter_mode": "P23_102_EXOGENOUS_RESTORATION_V2",
+      "legacy_action_contingent_trigger_disabled": true,
+      "backend_and_index_identical_across_systems": true
+    },
+    "learned_retrieval": {
+      "implementation_path": "src/av_trace_scale1b_retrieval/core.py",
+      "implementation_sha256": "1d8b23d3c914dab2afd290a9bb283948787cffba9525598cebf93d3b63fef9b8",
+      "visual": {
+        "model_id": "google/siglip2-base-patch16-224",
+        "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+        "ranker": "siglip2-text-image-cosine/1.0"
+      },
+      "ambient": {
+        "model_id": "laion/clap-htsat-unfused",
+        "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+        "ranker": "clap-text-audio-cosine/1.0"
+      },
+      "speech_control": "whisper-tiny-en-30s-plus-bm25-okapi/1.0",
+      "fusion": "fixed_equal_weight_reciprocal_rank_fusion_not_learned_on_p23"
+    },
+    "grounded_generator": {
+      "implementation_path": "src/av_trace_scale1b_agent/controller.py",
+      "implementation_sha256": "18b5a4e78e3a88253ff8f8f6568418bccbabb1e22a99f2ee95727a9a044f1b6f",
+      "schema_path": "src/av_trace_scale1b_agent/schema.py",
+      "schema_sha256": "74dbe26165fb48197542622fa4cb6ce985adee818bf49ad03c86aa64ed603b19",
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "do_sample": false,
+      "max_new_tokens": 512,
+      "repair_attempts": 1,
+      "repair_max_new_tokens": 512,
+      "max_public_history": 12
+    },
+    "controllers": {
+      "react": {
+        "policy": "react",
+        "prompt_path": "src/av_trace_scale1b_agent/prompts/react_v1.txt",
+        "prompt_sha256": "d3f22925ac34fe6186b416ed393daac31b2766af09b5842f9e31da02cf03fc35"
+      },
+      "evidence_sufficiency": {
+        "policy": "evidence_sufficiency",
+        "prompt_path": "src/av_trace_scale1b_agent/prompts/sufficiency_v1.txt",
+        "prompt_sha256": "02d786f5b6bc75b0ce50abe93a4c3004801da363a7b0fb4bbe6b247b9618ab1a"
+      },
+      "generator_prompt": {
+        "path": "src/av_trace_scale1b_agent/prompts/generator_v1.txt",
+        "sha256": "a9c8448cfbcda218f8904debb5d0e651af5a84ad5fd4fc64734a44ab2dc34fc4"
+      },
+      "repair_prompt": {
+        "path": "src/av_trace_scale1b_agent/prompts/repair_v1.txt",
+        "sha256": "e6cb1fa4c6e4ffd44eda3155414ac4ce6c1c956eb25c5a75e318cda84e51ce26"
+      }
+    },
+    "evaluation": {
+      "implementation_path": "src/av_trace_scale1b_agent/evaluation.py",
+      "implementation_sha256": "2932e8fb9e8781aebdd36a979bb92f898df6572969d3350a8dac6fba5e51db12",
+      "metrics_protocol_path": "docs/spec/metrics_protocol_v2.md",
+      "metrics_protocol_sha256": "b162182b129d1b392200c565e81591dde826ebc14331aedd416f53b63da40314"
+    }
+  },
+  "frozen_input_hashes": {
+    "data/rehearsal_plan/epic_p23_102_full_timeline_index_v1.json": "ff2a1b94802a45e81256c8e47b5a0bb56ba5313328f5143c7e1c8d0df0a8ec05",
+    "data/rehearsal_plan/epic_p23_102_bounded_av_probe_v1.json": "d67f6ec9f6e334aec54d53331f6d145a3acbad22a5bbdd978a9ab5ed56dfefc7",
+    "data/rehearsal_plan/epic_p23_102_vsa_preflight_v1.json": "11f757f251e385461b15dbcc7fa9dde601f4ffdd2d60799594e9306cec85ef0b",
+    "data/rehearsal_plan/exogenous_restoration_protocol_v2.json": "aede6e80596feaa3a483d63b9941dcd854df5a511c193cec14295b5e1a8ac654",
+    "data/restricted/scale1b/manifests/wave_r_model_acquisition.json": "0d22c8f2499e563911aa75a5ccb85f9f29009305f8117f38579f07efe45d05de",
+    "data/restricted/scale1b/manifests/ga_model_acquisition.json": "f39ee3bbb957672b2708866f1de649b453408b4c4f309b110b66f009140c888a",
+    "data/restricted/scale1b/wave_r/final_post_repair_audit.json": "fc8d6e31a097819b871c4f386d698c06a24312633d2bc9b99996b7540f969236",
+    "data/restricted/scale1b/ga_pilot/task110_final_status.json": "4bb872b440aef43612843d3d042efdc8322634ab15547d793b3ec21b334c342f"
+  },
+  "prerequisites": {
+    "existing_required": [
+      {
+        "path": "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+        "required_token": "CAUSAL_INTERVENTION_V2_READY"
+      },
+      {
+        "path": "data/restricted/scale1b/manifests/wave_r_model_acquisition.json",
+        "required_tokens": [
+          "SIGLIP2_SNAPSHOT_READY",
+          "CLAP_SNAPSHOT_READY",
+          "WAVE_R_MODELS_READY"
+        ]
+      },
+      {
+        "path": "data/restricted/scale1b/manifests/ga_model_acquisition.json",
+        "required_token": "QWEN_GROUNDED_GENERATOR_SNAPSHOT_READY"
+      }
+    ],
+    "future_required_for_development_rehearsal": [
+      {
+        "path": "data/restricted/epic_p23_102_source_v1/manifests/epic_p23_102_exact_manifest.json",
+        "required_status": "COMPLETE_VERIFIED_READY"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_source_v1/media/P23/P23_102.MP4",
+        "required_binding": "sha256_and_size_from_exact_manifest"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/build_manifest.json",
+        "required_status": "COMPLETE_VERIFIED_READY"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/full_timeline_index.json",
+        "required_binding": "source_sha256_and_frozen_model_revisions"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/observation_manifest.json",
+        "required_status": "COMPLETE"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/family_registry.json",
+        "required_status": "MACHINE_PROVISIONAL_FROZEN"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/evidence_registry.json",
+        "required_phrase": "all accepted SESs discovered under the frozen saturation protocol",
+        "machine_provisional_labels_only": true
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/intervention_manifest.json",
+        "required_status": "MECHANISM_SPECIFIC_FROZEN"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/state_surface_manifest.json",
+        "required_status": "FROZEN"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/source_split_manifest.json",
+        "required_status": "P23_DEVELOPMENT_ONLY_SOURCE_DISJOINT_FROM_EVALUATION"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/leakage_gate.json",
+        "required_status": "PASS"
+      },
+      {
+        "path": "data/restricted/p23_102_acquire_ground_act_rehearsal_v1/adapter_attestation.json",
+        "required_status": "EXOGENOUS_RESTORATION_V2_ADAPTER_READY"
+      },
+      {
+        "path": "scripts/run_p23_102_acquire_ground_act_rehearsal.py",
+        "required_status": "IMPLEMENTED_AND_HASH_FROZEN"
+      }
+    ],
+    "scientific_interpretation_additional_requirements": [
+      "H2_construct_eligibility",
+      "human_valid_family_and_evidence_review",
+      "fresh_source_disjoint_evaluation_split",
+      "powered_preregistered_analysis",
+      "independent_metric_and_leakage_replay"
+    ],
+    "fail_closed_if_missing": true
+  },
+  "restoration_v2": {
+    "protocol_path": "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+    "index_base": "zero",
+    "fixed_action_index": 4,
+    "delivery_boundary": "after_four_completed_action_response_cycles_before_fifth_model_decision",
+    "depends_on_action_identity": false,
+    "depends_on_system_identity": false,
+    "depends_on_output_or_correctness": false,
+    "depends_on_get_channel_status": false,
+    "checkpoint_event": {
+      "event_type": "protocol_checkpoint",
+      "event_version": "2.0.0",
+      "message": "Scheduled protocol checkpoint completed.",
+      "cost": 0.0
+    },
+    "checkpoint_event_canonical_sha256": "c580c16af6401b4d12df1d39085bbddee6f63e6d81772f6b3186a0fcc84c996c",
+    "paired_prefix": {
+      "construction": "single_blocked_prefix_then_fresh_replayed_fork",
+      "r_n_public_transcript_identical_through_event": true,
+      "fresh_continuation_session_per_arm": true,
+      "early_terminal_policy": "copy_terminal_prefix_to_both_assignments_and_keep_both_in_itt"
+    },
+    "legacy_get_channel_status_restoration": {
+      "enabled_in_primary_matrix": false,
+      "allowed_only_as": "SECONDARY_PER_PROTOCOL_ACTION_CONTINGENT",
+      "separate_assignment_and_output_namespace_required": true
+    }
+  },
+  "arms": [
+    {
+      "arm": "C",
+      "state": "CLEAN",
+      "initial_access": "at_least_one_machine_provisional_accepted_ses_reachable",
+      "scheduled_event": "none",
+      "endpoint_target": "supported_answer"
+    },
+    {
+      "arm": "B",
+      "state": "BLOCKED",
+      "initial_access": "registered_route_inaccessible",
+      "scheduled_event": "none",
+      "endpoint_target": "calibrated_insufficiency_or_access_failure"
+    },
+    {
+      "arm": "R",
+      "state": "RESTORED",
+      "initial_access": "identical_to_blocked_prefix",
+      "scheduled_event": "byte_identical_checkpoint_plus_hidden_restoration",
+      "endpoint_target": "supported_answer"
+    },
+    {
+      "arm": "N",
+      "state": "NO_TRIGGER",
+      "initial_access": "identical_to_restored_prefix",
+      "scheduled_event": "byte_identical_checkpoint_without_restoration",
+      "endpoint_target": "blocked_continuation"
+    }
+  ],
+  "mechanisms": [
+    {
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "visibility": "no_explicit_outage_marker",
+      "primary_estimand_id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+      "primary_pooling_with_other_mechanism": false,
+      "required_intervention_fields": [
+        "necessity_group_id",
+        "suppressed_segment_ids",
+        "derived_leak_closure",
+        "unaffected_result_order_attestation"
+      ]
+    },
+    {
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "visibility": "standardized_typed_unavailable_response",
+      "primary_estimand_id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+      "primary_pooling_with_other_mechanism": false,
+      "required_intervention_fields": [
+        "channel",
+        "typed_error_code",
+        "typed_error_message",
+        "response_shape_hash"
+      ]
+    }
+  ],
+  "budgets": {
+    "agentic_and_rag": {
+      "max_steps": 10,
+      "cost_limit": 12.0,
+      "tool_costs": {
+        "search_visual": 1.0,
+        "search_speech": 1.0,
+        "search_ambient_audio": 1.0,
+        "inspect_clip": 2.0,
+        "read_transcript": 1.0,
+        "get_channel_status": 0.25,
+        "finalize": 0.0
+      },
+      "search_top_k": 5,
+      "maximum_search_top_k": 20
+    },
+    "generation": {
+      "input_context_token_cap": 24576,
+      "max_new_tokens": 512,
+      "repair_attempts": 1,
+      "repair_max_new_tokens": 512,
+      "do_sample": false
+    },
+    "direct_long_context": {
+      "input_context_token_cap": 24576,
+      "chronological_pack_order": true,
+      "deterministic_truncation": "retain_question_claim_slots_then_round_robin_modalities_by_source_time",
+      "retrieval_actions": 0,
+      "act_metrics_eligible": false
+    },
+    "budget_pairing": "identical_within_family_mechanism_system_across_C_B_R_N"
+  },
+  "tool_contract": {
+    "protocol_version": "0.2.0",
+    "action_schema": {
+      "path": "docs/spec/agent_action_schema.json",
+      "sha256": "a1adb2c69705bf032fb4f344add9211dfa213928241d05abe1448da77ffbc5f3"
+    },
+    "response_schema": {
+      "path": "docs/spec/tool_response_schema.json",
+      "sha256": "6c217e3a2e21507739859476a6e67cdfb9776d620de237eb1f27ff5f95dff9a5"
+    },
+    "final_answer_schema": {
+      "path": "docs/spec/final_answer_schema.json",
+      "sha256": "54b99097a2030f68c0660ea2405500636cf26e1381f40afdaf23679b1f9abf83"
+    },
+    "trajectory_schema": {
+      "path": "docs/spec/trajectory_schema.json",
+      "sha256": "dcf6a5c979500e50c6b7035215c2772791cd23b14a2c4c177334588cd25a3243"
+    },
+    "tools": [
+      {
+        "tool": "search_visual",
+        "arguments": [
+          "query",
+          "top_k",
+          "time_range",
+          "exclude_result_ids"
+        ],
+        "retriever": "SigLIP2",
+        "citable": false
+      },
+      {
+        "tool": "search_speech",
+        "arguments": [
+          "query",
+          "top_k",
+          "time_range",
+          "exclude_result_ids",
+          "speaker_hint"
+        ],
+        "retriever": "Whisper_BM25",
+        "citable": false
+      },
+      {
+        "tool": "search_ambient_audio",
+        "arguments": [
+          "query",
+          "top_k",
+          "time_range",
+          "exclude_result_ids"
+        ],
+        "retriever": "CLAP",
+        "citable": false
+      },
+      {
+        "tool": "inspect_clip",
+        "arguments": [
+          "interval",
+          "include_video",
+          "include_audio"
+        ],
+        "citable": true
+      },
+      {
+        "tool": "read_transcript",
+        "arguments": [
+          "interval",
+          "source",
+          "include_word_timestamps"
+        ],
+        "citable": true
+      },
+      {
+        "tool": "get_channel_status",
+        "arguments": [
+          "channels"
+        ],
+        "citable": false,
+        "cannot_trigger_primary_restoration": true
+      },
+      {
+        "tool": "finalize",
+        "arguments": [
+          "final_answer_schema"
+        ],
+        "citable": false
+      }
+    ],
+    "search_results_are_non_citable_pointers": true,
+    "citations_must_reference_acquired_observation_ids": true,
+    "protocol_checkpoint_is_runner_event_not_model_action": true
+  },
+  "matrix": {
+    "expansion_axes": [
+      "candidate_family",
+      "mechanism",
+      "system",
+      "arm"
+    ],
+    "systems_per_family_mechanism": 4,
+    "arms_per_system": 4,
+    "mechanisms": 2,
+    "planned_row_slots_per_family_if_both_mechanisms_are_eligible": 32,
+    "inapplicable_mechanism_policy": "freeze_STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT_without_synthetic_outcome",
+    "system_rows": [
+      {
+        "system_id": "direct_long_context",
+        "label": "Direct long-context",
+        "system_class": "non_agentic_endpoint_baseline",
+        "state_arms": [
+          "C",
+          "B",
+          "R",
+          "N"
+        ],
+        "mechanism_arms": [
+          "SILENT_ROUTE_WITHHOLDING",
+          "EXPLICIT_CHANNEL_OUTAGE"
+        ],
+        "acquire_policy": "No search. Deterministically pack all state-accessible citable observations in chronological modality-round-robin order up to the frozen context cap.",
+        "ground_policy": "One grounded-generator call over the packed context.",
+        "act_policy": "None.",
+        "staged_event_capable": false,
+        "r_n_primary_status": "STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT",
+        "state_endpoint_reporting": true,
+        "acquire_metrics_eligible": false,
+        "ground_metrics_eligible": true,
+        "act_metrics_eligible": false
+      },
+      {
+        "system_id": "single_shot_rag",
+        "label": "Single-shot learned RAG",
+        "system_class": "nonadaptive_learned_retrieval_baseline",
+        "state_arms": [
+          "C",
+          "B",
+          "R",
+          "N"
+        ],
+        "mechanism_arms": [
+          "SILENT_ROUTE_WITHHOLDING",
+          "EXPLICIT_CHANNEL_OUTAGE"
+        ],
+        "acquire_policy": "Issue exactly one frozen question query to visual, speech, and ambient search, then inspect the first frozen fused pointer as action 4 and inspect remaining selected pointers without query reformulation.",
+        "ground_policy": "One grounded-generator call over acquired observations.",
+        "act_policy": "No post-checkpoint search or query reformulation; restoration can help only if an already-returned pointer becomes inspectable.",
+        "staged_event_capable": true,
+        "r_n_primary_status": "ELIGIBLE",
+        "state_endpoint_reporting": true,
+        "acquire_metrics_eligible": true,
+        "ground_metrics_eligible": true,
+        "act_metrics_eligible": true
+      },
+      {
+        "system_id": "learned_react",
+        "label": "Learned ReAct",
+        "system_class": "adaptive_learned_controller",
+        "state_arms": [
+          "C",
+          "B",
+          "R",
+          "N"
+        ],
+        "mechanism_arms": [
+          "SILENT_ROUTE_WITHHOLDING",
+          "EXPLICIT_CHANNEL_OUTAGE"
+        ],
+        "acquire_policy": "Model-authored bounded search, observation, status, and query-reformulation decisions using the frozen ReAct prompt.",
+        "ground_policy": "Shared grounded generator and citation validator.",
+        "act_policy": "May adapt after the neutral checkpoint using ordinary allowed actions; no restoration disclosure.",
+        "staged_event_capable": true,
+        "r_n_primary_status": "ELIGIBLE",
+        "state_endpoint_reporting": true,
+        "acquire_metrics_eligible": true,
+        "ground_metrics_eligible": true,
+        "act_metrics_eligible": true
+      },
+      {
+        "system_id": "learned_evidence_sufficiency",
+        "label": "Learned evidence-sufficiency agent",
+        "system_class": "adaptive_learned_sufficiency_controller",
+        "state_arms": [
+          "C",
+          "B",
+          "R",
+          "N"
+        ],
+        "mechanism_arms": [
+          "SILENT_ROUTE_WITHHOLDING",
+          "EXPLICIT_CHANNEL_OUTAGE"
+        ],
+        "acquire_policy": "Model-authored bounded actions conditioned on public claim coverage, missing modalities, missing hops, missingness cause, and recovery intent.",
+        "ground_policy": "Shared grounded generator and citation validator.",
+        "act_policy": "Continue, recover, answer, or abstain from explicit public sufficiency state; no evaluator-private support labels.",
+        "staged_event_capable": true,
+        "r_n_primary_status": "ELIGIBLE",
+        "state_endpoint_reporting": true,
+        "acquire_metrics_eligible": true,
+        "ground_metrics_eligible": true,
+        "act_metrics_eligible": true
+      }
+    ],
+    "counterbalanced_order_sequences": [
+      "C-B-N-R",
+      "B-R-C-N",
+      "R-N-B-C",
+      "N-C-R-B"
+    ],
+    "assignment_seed": 2310220261013,
+    "assignment_key": [
+      "source_group_id",
+      "family_id",
+      "mechanism",
+      "system_id"
+    ]
+  },
+  "raw_output_contract": {
+    "root_template": "data/restricted/p23_102_acquire_ground_act_rehearsal_v1/runs/{run_id}",
+    "required_files": [
+      {
+        "path": "run_manifest.json",
+        "content": "config hashes, prerequisite hashes, model/index/backend identities, seed, command, environment, and completion status"
+      },
+      {
+        "path": "assignments.jsonl",
+        "content": "every preregistered family-mechanism-system-arm assignment including structural ineligibility"
+      },
+      {
+        "path": "raw_trajectories.jsonl",
+        "content": "unredacted evaluator-side action/response envelopes, checkpoint records, public belief states, costs, and replay hashes"
+      },
+      {
+        "path": "raw_model_calls.jsonl",
+        "content": "request hashes, prompt hashes, raw text, parse status, token counts, latency, repair attempts, and typed failures"
+      },
+      {
+        "path": "citation_outputs.jsonl",
+        "content": "final assertions, public claim handles, acquired observation IDs, intervals, modalities, payload hashes, and evaluator-private post-mapping"
+      },
+      {
+        "path": "r_n_prefix_pairs.jsonl",
+        "content": "paired prefix hashes, checkpoint bytes hash, event opportunity, restoration applied, route inspected, and complete SES reacquired"
+      },
+      {
+        "path": "episode_metrics.jsonl",
+        "content": "eligibility-aware Acquire Ground Act metrics and fail-closed endpoint assignments"
+      },
+      {
+        "path": "failure_ledger.jsonl",
+        "content": "one typed terminal or exclusion status per assignment"
+      },
+      {
+        "path": "aggregate_metrics.json",
+        "content": "mechanism-specific ITT tables, state endpoint tables, no-trigger diagnostics, denominators, and sensitivity analyses"
+      },
+      {
+        "path": "replay_manifest.json",
+        "content": "canonical hashes and independent replay results"
+      },
+      {
+        "path": "file_inventory.json",
+        "content": "relative path, bytes, mode, and sha256 for every run artifact"
+      }
+    ],
+    "raw_trajectory_required_fields": [
+      "assignment_id",
+      "family_id",
+      "mechanism",
+      "system_id",
+      "arm",
+      "episode_start",
+      "events",
+      "checkpoint",
+      "final_output",
+      "completion",
+      "replay"
+    ],
+    "citation_output_required_fields": [
+      "assignment_id",
+      "verdict",
+      "answer_text",
+      "asserted_claims",
+      "claim_to_citations",
+      "observation_catalog",
+      "citation_validation",
+      "output_schema_valid"
+    ],
+    "write_policy": "restricted_temp_fsync_atomic_rename",
+    "directory_mode": "0700",
+    "file_mode": "0600",
+    "no_overwrite_completed_run": true
+  },
+  "metrics": {
+    "Acquire": {
+      "primary": [
+        "evidence_recall",
+        "all_evidence_success"
+      ],
+      "secondary": [
+        "candidate_modality_routing_coverage",
+        "retrieval_recall_at_5",
+        "complete_ses_reacquired"
+      ],
+      "direct_long_context_values": null,
+      "eligibility_rule": "requires_policy_selected_acquisition_actions"
+    },
+    "Ground": {
+      "primary": [
+        "answer_score",
+        "citation_f1",
+        "supported_claim_rate"
+      ],
+      "secondary": [
+        "supported_answer_endpoint",
+        "unsupported_claim_rate",
+        "correct_answer_wrong_citation",
+        "partial_evidence_hallucination",
+        "sufficiency_brier"
+      ],
+      "citation_rule": "only acquired citable observation IDs count"
+    },
+    "Act": {
+      "primary": [
+        "success_at_budget",
+        "premature_stop",
+        "recovery"
+      ],
+      "secondary": [
+        "false_sufficient",
+        "calibrated_refusal",
+        "access_failure_diagnosis_accuracy",
+        "post_event_cost",
+        "restored_route_inspected"
+      ],
+      "eligibility_rule": "requires_staged_event_capable_policy_and_actual_action_trajectory"
+    },
+    "null_policy": "structurally_ineligible_metrics_are_null_not_zero",
+    "low_n_warning": "LOW_N_MACHINE_PROVISIONAL_P23_102_DEVELOPMENT_REHEARSAL"
+  },
+  "analysis": {
+    "population": "all_preregistered_assignments_intention_to_treat",
+    "primary_endpoint": "supported_answer_endpoint",
+    "primary_estimands": [
+      {
+        "estimand_id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "contrast": "RESTORED_minus_NO_TRIGGER",
+        "population": "all_preregistered_R_N_assignments_for_predeclared_staged_systems",
+        "aggregation": "family_within_source_then_equal_source",
+        "interpretation": "development_rehearsal_only"
+      },
+      {
+        "estimand_id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "contrast": "RESTORED_minus_NO_TRIGGER",
+        "population": "all_preregistered_R_N_assignments_for_predeclared_staged_systems",
+        "aggregation": "family_within_source_then_equal_source",
+        "interpretation": "development_rehearsal_only"
+      }
+    ],
+    "mechanisms_pooled_for_primary": false,
+    "trigger_conditioning_primary_allowed": false,
+    "early_terminators_included": true,
+    "invalid_runs_included_fail_closed": true,
+    "missing_pairs_dropped": false,
+    "positive_endpoint_for_invalid_run": 0.0,
+    "r_n_early_terminal_pair_difference": 0.0,
+    "secondary_estimands": [
+      "restored_minus_blocked_state_contrast_by_mechanism",
+      "clean_minus_blocked_state_contrast_by_mechanism",
+      "valid_complete_pair_sensitivity",
+      "event_opportunity_reached_sensitivity",
+      "order_sequence_sensitivity"
+    ],
+    "no_trigger_estimands": [
+      {
+        "estimand_id": "N_FALSE_RECOVERY_RATE",
+        "population": "all_assigned_NO_TRIGGER_rows",
+        "endpoint": "supported_answer_endpoint_despite_registered_route_remaining_blocked"
+      },
+      {
+        "estimand_id": "RN_PREFIX_INTEGRITY_RATE",
+        "population": "all_assigned_R_N_pairs",
+        "endpoint": "byte_identical_public_prefix_and_checkpoint"
+      },
+      {
+        "estimand_id": "RN_REACQUISITION_DIFFERENCE",
+        "population": "all_assigned_R_N_pairs_for_staged_systems",
+        "endpoint": "complete_ses_reacquired_R_minus_N"
+      }
+    ],
+    "required_denominators": [
+      "assigned",
+      "structurally_ineligible",
+      "early_terminal",
+      "event_opportunity_reached",
+      "hidden_restoration_applied",
+      "restored_route_inspected",
+      "complete_ses_reacquired",
+      "valid",
+      "invalid",
+      "supported_answer"
+    ],
+    "single_source_limit": "P23_102 cannot produce source-cluster generalization or source-disjoint scientific evidence; all aggregate numbers remain descriptive development diagnostics."
+  },
+  "failure_statuses": {
+    "completed": [
+      "COMPLETED_VALID"
+    ],
+    "preassignment_exclusions": [
+      "STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT",
+      "INAPPLICABLE_MECHANISM_BEFORE_ASSIGNMENT"
+    ],
+    "prerequisite_failures": [
+      "PREREQUISITE_MISSING",
+      "SOURCE_NOT_READY",
+      "INDEX_NOT_READY",
+      "FAMILY_REGISTRY_NOT_READY",
+      "INTERVENTION_NOT_READY",
+      "LEAKAGE_GATE_NOT_RUN",
+      "SOURCE_DISJOINTNESS_VIOLATION",
+      "BACKEND_HASH_MISMATCH",
+      "MODEL_SNAPSHOT_MISMATCH"
+    ],
+    "protocol_invalid": [
+      "INVALID_SCHEMA",
+      "INVALID_BUDGET",
+      "INVALID_CROSS_STATE_CONTAMINATION",
+      "INVALID_RN_PREFIX_MISMATCH",
+      "INVALID_CHECKPOINT_EVENT_MISMATCH",
+      "INVALID_RESTORATION_SCHEDULE",
+      "PRIVATE_FIELD_EXPOSURE",
+      "NONDETERMINISTIC_REPLAY",
+      "MISSING_CITATION_OUTPUT"
+    ],
+    "typed_runtime_failures": [
+      "MALFORMED_AFTER_REPAIR",
+      "MODEL_TIMEOUT",
+      "MODEL_OOM",
+      "MODEL_PROCESS_CRASH",
+      "TOOL_TIMEOUT",
+      "TOOL_RATE_LIMITED",
+      "TOOL_ACCESS_FAILURE",
+      "OVER_BUDGET_STEPS",
+      "OVER_BUDGET_COST",
+      "NO_FINALIZATION_WITHIN_STEP_LIMIT"
+    ],
+    "itt_rule": "All assigned R/N runtime and protocol failures remain in the primary denominator with positive success endpoints scored zero; structural ineligibility is frozen before assignment, receives no synthetic outcome, and is not missing data."
+  },
+  "execution": {
+    "validation_command": "python -m pytest -q tooling/tests/test_p23_102_acquire_ground_act_rehearsal.py",
+    "future_development_rehearsal_command": "PYTHONPATH=src python scripts/run_p23_102_acquire_ground_act_rehearsal.py --config data/rehearsal_plan/p23_102_acquire_ground_act_rehearsal_v1.json --mode development-rehearsal",
+    "runner_exists_at_freeze": false,
+    "models_or_media_may_run_during_schema_validation": false,
+    "network_allowed": false,
+    "preflight_only_until_all_future_prerequisites_pass": true
+  },
+  "deterministic_hashes": {
+    "canonicalization": "UTF-8 JSON with sort_keys=true,separators=(',',':'),ensure_ascii=false,allow_nan=false",
+    "checkpoint_event_sha256": "c580c16af6401b4d12df1d39085bbddee6f63e6d81772f6b3186a0fcc84c996c",
+    "frozen_input_bundle_sha256": "fc1da0676289b972181c5b2f984e0073fa1d33e84fea3c5842509c4753bb189a",
+    "tool_schema_bundle_sha256": "701a6b70ae2eb040db89d6d0f5520a2fd9f0d9c3f565576ff7fdb27cb1019cee",
+    "matrix_sha256": "ba38ab6d34d1f4be67cc43147bbdd91da1d7be375940905b7028fa5ae25efe08",
+    "config_sha256_excluding_this_field": "eff04b260b48be39ce214e751d4cce372fc38c2c550b483c127074725f6d39d0"
+  },
+  "results_boundary": {
+    "configuration_only": true,
+    "scientific_episodes_executed": false,
+    "model_results_claimed": false,
+    "causal_effect_claimed": false,
+    "h2_claimed": false,
+    "statement": "Ready means the prospective configuration and invariant checks are specified; it does not mean P23_102 media, indexes, candidate families, H2, adapters, or model trajectories are ready or executed."
+  }
+}

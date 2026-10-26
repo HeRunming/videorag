@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:trajectory:0.2.0",
+  "title": "AV-TRACE trajectory log",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trajectory_id",
+    "track",
+    "episode_start",
+    "events",
+    "final_output",
+    "completion",
+    "replay"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.2.0"},
+    "trajectory_id": {"$ref": "#/$defs/id"},
+    "track": {
+      "enum": [
+        "PUBLIC_CORE_FIXED_BACKEND_TRIPLETS",
+        "EXTERNAL_COMPATIBILITY_UNPOOLED",
+        "ORACLE_EVIDENCE_DIAGNOSTIC"
+      ]
+    },
+    "episode_start": {"$ref": "#/$defs/episode_start"},
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {"$ref": "#/$defs/tool_exchange"},
+          {"$ref": "#/$defs/finalize_event"}
+        ]
+      }
+    },
+    "final_output": {"$ref": "urn:av-trace:schema:final-answer:0.2.0"},
+    "completion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "total_steps", "total_cost", "protocol_valid"],
+      "properties": {
+        "status": {"enum": ["completed", "forced_finalization", "invalid", "backend_fault"]},
+        "total_steps": {"type": "integer", "minimum": 0},
+        "total_cost": {"type": "number", "minimum": 0},
+        "protocol_valid": {"type": "boolean"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backend_version",
+        "backend_hash",
+        "intervention_manifest_hash",
+        "trajectory_hash",
+        "replay_seed"
+      ],
+      "properties": {
+        "backend_version": {"type": "string", "minLength": 1},
+        "backend_hash": {"$ref": "#/$defs/sha256"},
+        "intervention_manifest_hash": {"$ref": "#/$defs/sha256"},
+        "trajectory_hash": {"$ref": "#/$defs/sha256"},
+        "replay_seed": {"type": "integer", "minimum": 0}
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "episode_start": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol_version",
+        "episode_id",
+        "family_id",
+        "state_role",
+        "question",
+        "available_tools",
+        "video_duration_s",
+        "budget",
+        "tool_costs"
+      ],
+      "properties": {
+        "protocol_version": {"const": "0.2.0"},
+        "episode_id": {"$ref": "#/$defs/id"},
+        "family_id": {"$ref": "#/$defs/id"},
+        "state_role": {"enum": ["CLEAN", "BLOCKED", "RESTORED"]},
+        "question": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "available_tools": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "search_visual",
+              "search_speech",
+              "search_ambient_audio",
+              "inspect_clip",
+              "read_transcript",
+              "get_channel_status",
+              "finalize"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "video_duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["cost_limit", "max_steps"],
+          "properties": {
+            "cost_limit": {"type": "number", "exclusiveMinimum": 0},
+            "max_steps": {"type": "integer", "minimum": 1}
+          }
+        },
+        "tool_costs": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "tool_exchange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_type", "action", "response", "active_hook_ids", "recorded_at"],
+      "properties": {
+        "event_type": {"const": "tool_exchange"},
+        "action": {"$ref": "urn:av-trace:schema:agent-action:0.2.0"},
+        "response": {"$ref": "urn:av-trace:schema:tool-response:0.2.0"},
+        "active_hook_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "recorded_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "finalize_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_type", "action", "active_hook_ids", "recorded_at"],
+      "properties": {
+        "event_type": {"const": "finalize"},
+        "action": {"$ref": "urn:av-trace:schema:agent-action:0.2.0"},
+        "active_hook_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "recorded_at": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}

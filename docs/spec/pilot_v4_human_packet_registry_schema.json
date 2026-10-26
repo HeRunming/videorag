@@ -1,0 +1,380 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:pilot-v4-human-packet-registry:1.0.0",
+  "title": "AV-TRACE pilot-v4 pre-distribution human packet registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "registry_id",
+    "created_date",
+    "artifact_classification",
+    "packet_status",
+    "distribution_authorized",
+    "authoritative_inputs",
+    "matrix_binding",
+    "scope",
+    "blindness_contract",
+    "source_prescreen_packets",
+    "slot_packets",
+    "excluded_calibration_packets",
+    "rights_release_boundaries",
+    "source_split_boundary",
+    "construct_boundary",
+    "registry_payload_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "pilot_v4_human_packet_registry"},
+    "registry_id": {"$ref": "#/$defs/id"},
+    "created_date": {"const": "2026-10-10"},
+    "artifact_classification": {
+      "const": "PRE_DISTRIBUTION_HUMAN_PACKET_PREPARATION_ONLY"
+    },
+    "packet_status": {"const": "DRAFT_NOT_DISTRIBUTABLE"},
+    "distribution_authorized": {"const": false},
+    "authoritative_inputs": {
+      "type": "array",
+      "minItems": 10,
+      "items": {"$ref": "#/$defs/file_binding"}
+    },
+    "matrix_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "file_sha256",
+        "matrix_id",
+        "matrix_decision_token"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "file_sha256": {"$ref": "#/$defs/sha256"},
+        "matrix_id": {"$ref": "#/$defs/id"},
+        "matrix_decision_token": {"const": "PILOT_V4_CANDIDATE_MATRIX_REPAIR"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_count",
+        "slot_count",
+        "slots_per_source",
+        "task153_source_packet_count",
+        "author_verifier_form_count",
+        "task194_audio_slot_count",
+        "excluded_calibration_count",
+        "null_role_assignment_count",
+        "human_identity_count",
+        "human_review_count",
+        "human_decision_count",
+        "accepted_ses_count",
+        "h1_count",
+        "h2_count",
+        "gate_a_go_asserted"
+      ],
+      "properties": {
+        "source_count": {"const": 6},
+        "slot_count": {"const": 12},
+        "slots_per_source": {"const": 2},
+        "task153_source_packet_count": {"const": 6},
+        "author_verifier_form_count": {"const": 12},
+        "task194_audio_slot_count": {"const": 4},
+        "excluded_calibration_count": {"const": 2},
+        "null_role_assignment_count": {"const": 72},
+        "human_identity_count": {"const": 0},
+        "human_review_count": {"const": 0},
+        "human_decision_count": {"const": 0},
+        "accepted_ses_count": {"const": 0},
+        "h1_count": {"const": 0},
+        "h2_count": {"const": 0},
+        "gate_a_go_asserted": {"const": false}
+      }
+    },
+    "blindness_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prescreener_candidate_hypotheses_visible",
+        "prescreener_sibling_slot_hypotheses_visible",
+        "author_only_assigned_slot_hypotheses_visible",
+        "author_sibling_slot_hypotheses_visible",
+        "source_level_exposure_required",
+        "source_level_blind_role_exclusions",
+        "audio_prescreen_hypotheses_visible",
+        "audio_inspection_order"
+      ],
+      "properties": {
+        "prescreener_candidate_hypotheses_visible": {"const": false},
+        "prescreener_sibling_slot_hypotheses_visible": {"const": false},
+        "author_only_assigned_slot_hypotheses_visible": {"const": true},
+        "author_sibling_slot_hypotheses_visible": {"const": false},
+        "source_level_exposure_required": {"const": true},
+        "source_level_blind_role_exclusions": {"$ref": "#/$defs/blind_roles"},
+        "audio_prescreen_hypotheses_visible": {"const": false},
+        "audio_inspection_order": {"$ref": "#/$defs/audio_order"}
+      }
+    },
+    "source_prescreen_packets": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/source_prescreen"}
+    },
+    "slot_packets": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/slot_packet"}
+    },
+    "excluded_calibration_packets": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/calibration_binding"}
+    },
+    "rights_release_boundaries": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "source_group_id",
+          "boundary",
+          "human_annotation_authority_complete",
+          "public_release_authorized",
+          "distribution_authorized"
+        ],
+        "properties": {
+          "source_id": {"$ref": "#/$defs/id"},
+          "source_group_id": {"$ref": "#/$defs/id"},
+          "boundary": {},
+          "human_annotation_authority_complete": {"const": false},
+          "public_release_authorized": {"const": false},
+          "distribution_authorized": {"const": false}
+        }
+      }
+    },
+    "source_split_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_slots_development_only",
+        "future_test_eligible_count",
+        "source_groups_may_not_be_split_across_roles_or_splits",
+        "parent_development_artifacts_promoted",
+        "fresh_normal_mode_regeneration_still_required"
+      ],
+      "properties": {
+        "all_slots_development_only": {"const": true},
+        "future_test_eligible_count": {"const": 0},
+        "source_groups_may_not_be_split_across_roles_or_splits": {"const": true},
+        "parent_development_artifacts_promoted": {"const": false},
+        "fresh_normal_mode_regeneration_still_required": {"const": true}
+      }
+    },
+    "construct_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "necessity_assigned",
+        "minimality_assigned",
+        "accepted_ses_count",
+        "h1_assigned",
+        "h2_assigned",
+        "human_gold",
+        "gate_a_go",
+        "scientific_execution_authorized",
+        "public_release_authorized"
+      ],
+      "properties": {
+        "necessity_assigned": {"const": false},
+        "minimality_assigned": {"const": false},
+        "accepted_ses_count": {"const": 0},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "human_gold": {"const": false},
+        "gate_a_go": {"const": false},
+        "scientific_execution_authorized": {"const": false},
+        "public_release_authorized": {"const": false}
+      }
+    },
+    "registry_payload_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,199}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "file_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "blind_roles": {
+      "const": [
+        "blind_alternative_evidence_finder",
+        "blind_post_adjudication_saturation_auditor"
+      ]
+    },
+    "audio_order": {
+      "const": [
+        "audio_only_focal",
+        "synchronized_av_focal",
+        "audio_only_recurrence_probes"
+      ]
+    },
+    "source_prescreen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_group_id",
+        "inventory_path",
+        "inventory_sha256",
+        "plan_path",
+        "plan_id",
+        "plan_sha256",
+        "form_path",
+        "blank_import_path",
+        "blank_import_token",
+        "blank_exposure_path",
+        "sample_count",
+        "candidate_hypotheses_visible",
+        "sibling_slot_hypotheses_visible",
+        "source_level_exposure_required",
+        "excluded_future_roles"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "inventory_path": {"type": "string", "minLength": 1},
+        "inventory_sha256": {"$ref": "#/$defs/sha256"},
+        "plan_path": {"type": "string", "minLength": 1},
+        "plan_id": {"$ref": "#/$defs/id"},
+        "plan_sha256": {"$ref": "#/$defs/sha256"},
+        "form_path": {"type": "string", "minLength": 1},
+        "blank_import_path": {"type": "string", "minLength": 1},
+        "blank_import_token": {"const": "SEMANTIC_AV_SOURCE_PRESCREEN_REPAIR"},
+        "blank_exposure_path": {"type": "string", "minLength": 1},
+        "sample_count": {"const": 6},
+        "candidate_hypotheses_visible": {"const": false},
+        "sibling_slot_hypotheses_visible": {"const": false},
+        "source_level_exposure_required": {"const": true},
+        "excluded_future_roles": {"$ref": "#/$defs/blind_roles"}
+      }
+    },
+    "audio_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_code",
+        "packet_path",
+        "form_path",
+        "blank_import_path",
+        "inspection_order",
+        "candidate_hypotheses_visible",
+        "human_review_occurred",
+        "human_decision_count",
+        "blank_import_token"
+      ],
+      "properties": {
+        "candidate_code": {"enum": ["C01", "C02", "C03", "C04"]},
+        "packet_path": {"type": "string", "minLength": 1},
+        "form_path": {"type": "string", "minLength": 1},
+        "blank_import_path": {"type": "string", "minLength": 1},
+        "inspection_order": {"$ref": "#/$defs/audio_order"},
+        "candidate_hypotheses_visible": {"const": false},
+        "human_review_occurred": {"const": false},
+        "human_decision_count": {"const": 0},
+        "blank_import_token": {
+          "const": "AUDIO_CANDIDATE_PRESCREEN_PACKETS_REPAIR"
+        }
+      }
+    },
+    "slot_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slot_id",
+        "source_id",
+        "source_group_id",
+        "candidate_slot_payload_sha256",
+        "author_verifier_form_path",
+        "author_verifier_form_sha256",
+        "blank_import_path",
+        "blank_import_token",
+        "task153_plan_id",
+        "task153_plan_sha256",
+        "audio_prescreen",
+        "source_split",
+        "future_test_eligible",
+        "distribution_authorized",
+        "human_review_performed",
+        "human_decision_recorded",
+        "accepted_ses_count",
+        "h1_assigned",
+        "h2_assigned",
+        "gate_a_go"
+      ],
+      "properties": {
+        "slot_id": {"$ref": "#/$defs/id"},
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "candidate_slot_payload_sha256": {"$ref": "#/$defs/sha256"},
+        "author_verifier_form_path": {"type": "string", "minLength": 1},
+        "author_verifier_form_sha256": {"$ref": "#/$defs/sha256"},
+        "blank_import_path": {"type": "string", "minLength": 1},
+        "blank_import_token": {"const": "PILOT_V4_HUMAN_PACKETS_REPAIR"},
+        "task153_plan_id": {"$ref": "#/$defs/id"},
+        "task153_plan_sha256": {"$ref": "#/$defs/sha256"},
+        "audio_prescreen": {
+          "oneOf": [
+            {"$ref": "#/$defs/audio_binding"},
+            {"type": "null"}
+          ]
+        },
+        "source_split": {"const": "DEVELOPMENT_ONLY"},
+        "future_test_eligible": {"const": false},
+        "distribution_authorized": {"const": false},
+        "human_review_performed": {"const": false},
+        "human_decision_recorded": {"const": false},
+        "accepted_ses_count": {"const": 0},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "gate_a_go": {"const": false}
+      }
+    },
+    "calibration_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calibration_id",
+        "path",
+        "sha256",
+        "excluded_from_pilot_denominator",
+        "human_decision_recorded"
+      ],
+      "properties": {
+        "calibration_id": {"$ref": "#/$defs/id"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "excluded_from_pilot_denominator": {"const": true},
+        "human_decision_recorded": {"const": false}
+      }
+    }
+  }
+}

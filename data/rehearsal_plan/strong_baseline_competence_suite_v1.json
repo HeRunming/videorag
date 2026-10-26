@@ -1,0 +1,4009 @@
+{
+  "bindings": {
+    "fallback_controller": {
+      "processor_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "repo_id": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "role": "TOOL_CONTROLLER_BACKBONE",
+      "tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    },
+    "fallback_direct": {
+      "processor_revision": "93f923e1a7727d1c4f446756212d9d3e8fcc5d81",
+      "repo_id": "microsoft/Phi-4-multimodal-instruct",
+      "revision": "93f923e1a7727d1c4f446756212d9d3e8fcc5d81",
+      "role": "DIRECT_PACKED_AV_MODEL",
+      "tokenizer_revision": "93f923e1a7727d1c4f446756212d9d3e8fcc5d81"
+    },
+    "fallback_finalizer": {
+      "processor_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "repo_id": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "role": "GROUNDED_FINALIZER",
+      "tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    },
+    "primary_controller": {
+      "processor_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+      "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "role": "TOOL_CONTROLLER_BACKBONE",
+      "tokenizer_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+    },
+    "primary_direct": {
+      "processor_revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00",
+      "repo_id": "Qwen/Qwen2.5-Omni-7B",
+      "revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00",
+      "role": "DIRECT_AV_MODEL",
+      "tokenizer_revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00"
+    },
+    "primary_finalizer": {
+      "processor_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+      "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "role": "GROUNDED_FINALIZER",
+      "tokenizer_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+    }
+  },
+  "cases": {
+    "controller_finalizer": [
+      {
+        "case_id": "sbc-controller-001",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional prism visible color",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "spoken prism color",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "prism sound",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.vision_0",
+              "description": "Visible prism color."
+            }
+          ],
+          "question": "What color is the fictional prism marked P1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "entity_identity"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_vision"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_vision"
+      },
+      {
+        "case_id": "sbc-controller-002",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional navigator code word",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "navigation chime",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "navigator mouth movement",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.speech_0",
+              "description": "Spoken navigation code."
+            }
+          ],
+          "question": "What code word does the fictional navigator say in trial 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_speech"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_speech"
+      },
+      {
+        "case_id": "sbc-controller-003",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "hatch closure",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "description of hatch sound",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "non-speech sound after fictional hatch closes",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.ambient_0",
+              "description": "Ambient post-closure sound."
+            }
+          ],
+          "question": "Which non-speech sound follows the fictional hatch closure in trial 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "ambient_event"
+            ],
+            "missing_modalities": [
+              "ambient"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_ambient"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_ambient"
+      },
+      {
+        "case_id": "sbc-controller-004",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "panel symbol",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "include_audio": false,
+                "include_video": true,
+                "interval": {
+                  "end_s": 11.0,
+                  "start_s": 10.0
+                }
+              },
+              "tool": "inspect_clip"
+            }
+          ],
+          "known_pointers": [
+            {
+              "citable": false,
+              "interval": {
+                "end_s": 11.0,
+                "start_s": 10.0
+              },
+              "modality": "vision",
+              "pointer_id": "ptr.public.panel.0"
+            }
+          ],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.pointer_0",
+              "description": "Visible panel symbol."
+            }
+          ],
+          "question": "What symbol appears on fictional panel Q1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "event_detection"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "observe_pointer"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "observe_pointer"
+      },
+      {
+        "case_id": "sbc-controller-005",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "archivist phrase alternate",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.blocked_0",
+              "description": "Spoken archivist phrase."
+            }
+          ],
+          "question": "What phrase is spoken by the fictional archivist in trial 1?",
+          "recent_public_history": [
+            {
+              "action": {
+                "arguments": {
+                  "exclude_result_ids": [],
+                  "query": "fictional archivist phrase",
+                  "speaker_hint": null,
+                  "time_range": {
+                    "end_s": 120.0,
+                    "start_s": 0.0
+                  },
+                  "top_k": 5
+                },
+                "tool": "search_speech"
+              },
+              "response": {
+                "error": {
+                  "code": "CHANNEL_UNAVAILABLE",
+                  "retryable": true
+                },
+                "status": "channel_unavailable"
+              }
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_in_source_but_inaccessible",
+            "p_sufficient": 0.0,
+            "recovery_intent": "check_channel_status"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_status"
+      },
+      {
+        "case_id": "sbc-controller-006",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "retry fictional navigator code route",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.restored_0",
+              "description": "Restored spoken code."
+            }
+          ],
+          "question": "What code word does the fictional navigator say in restored trial 1?",
+          "recent_public_history": [
+            {
+              "cost": 0.0,
+              "event_type": "protocol_checkpoint",
+              "event_version": "2.0.0",
+              "message": "Scheduled protocol checkpoint completed."
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_in_source_but_inaccessible",
+            "p_sufficient": 0.0,
+            "recovery_intent": "retry_restored_route"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_reacquire"
+      },
+      {
+        "case_id": "sbc-controller-007",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.order_0",
+              "description": "Temporal event order."
+            }
+          ],
+          "question": "Which event occurs first in fictional sequence 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "temporal_order"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "finalize_abstain"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "no_progress_guard"
+      },
+      {
+        "case_id": "sbc-controller-008",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "more token views",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.ready.0",
+              "payload": {
+                "text": "The token label is ultraviolet."
+              }
+            }
+          ],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.ready_0",
+              "description": "Observed token label."
+            }
+          ],
+          "question": "What is the fictional token label in completed trial 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [
+              "v1slot.ready_0"
+            ],
+            "missing_hops": [],
+            "missing_modalities": [],
+            "missingness_cause": "not_missing",
+            "p_sufficient": 1.0,
+            "recovery_intent": "finalize_answer"
+          },
+          "fictional_answer_tokens": [
+            "ultraviolet",
+            "kepler",
+            "glass ping"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "finalize_ready"
+      },
+      {
+        "case_id": "sbc-controller-009",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional prism visible color",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "prism sound",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "spoken prism color",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.vision_1",
+              "description": "Visible prism color."
+            }
+          ],
+          "question": "What color is the fictional prism marked P2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "entity_identity"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_vision"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_vision"
+      },
+      {
+        "case_id": "sbc-controller-010",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "navigation chime",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "navigator mouth movement",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional navigator code word",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.speech_1",
+              "description": "Spoken navigation code."
+            }
+          ],
+          "question": "What code word does the fictional navigator say in trial 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_speech"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_speech"
+      },
+      {
+        "case_id": "sbc-controller-011",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "non-speech sound after fictional hatch closes",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "description of hatch sound",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "hatch closure",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.ambient_1",
+              "description": "Ambient post-closure sound."
+            }
+          ],
+          "question": "Which non-speech sound follows the fictional hatch closure in trial 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "ambient_event"
+            ],
+            "missing_modalities": [
+              "ambient"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_ambient"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_ambient"
+      },
+      {
+        "case_id": "sbc-controller-012",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "include_audio": false,
+                "include_video": true,
+                "interval": {
+                  "end_s": 12.0,
+                  "start_s": 11.0
+                }
+              },
+              "tool": "inspect_clip"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "panel symbol",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [
+            {
+              "citable": false,
+              "interval": {
+                "end_s": 12.0,
+                "start_s": 11.0
+              },
+              "modality": "vision",
+              "pointer_id": "ptr.public.panel.1"
+            }
+          ],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.pointer_1",
+              "description": "Visible panel symbol."
+            }
+          ],
+          "question": "What symbol appears on fictional panel Q2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "event_detection"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "observe_pointer"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "observe_pointer"
+      },
+      {
+        "case_id": "sbc-controller-013",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "archivist phrase alternate",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.blocked_1",
+              "description": "Spoken archivist phrase."
+            }
+          ],
+          "question": "What phrase is spoken by the fictional archivist in trial 2?",
+          "recent_public_history": [
+            {
+              "action": {
+                "arguments": {
+                  "exclude_result_ids": [],
+                  "query": "fictional archivist phrase",
+                  "speaker_hint": null,
+                  "time_range": {
+                    "end_s": 120.0,
+                    "start_s": 0.0
+                  },
+                  "top_k": 5
+                },
+                "tool": "search_speech"
+              },
+              "response": {
+                "error": {
+                  "code": "CHANNEL_UNAVAILABLE",
+                  "retryable": true
+                },
+                "status": "channel_unavailable"
+              }
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 1,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_in_source_but_inaccessible",
+            "p_sufficient": 0.0,
+            "recovery_intent": "check_channel_status"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_status"
+      },
+      {
+        "case_id": "sbc-controller-014",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "retry fictional navigator code route",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.restored_1",
+              "description": "Restored spoken code."
+            }
+          ],
+          "question": "What code word does the fictional navigator say in restored trial 2?",
+          "recent_public_history": [
+            {
+              "cost": 0.0,
+              "event_type": "protocol_checkpoint",
+              "event_version": "2.0.0",
+              "message": "Scheduled protocol checkpoint completed."
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_in_source_but_inaccessible",
+            "p_sufficient": 0.0,
+            "recovery_intent": "retry_restored_route"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_reacquire"
+      },
+      {
+        "case_id": "sbc-controller-015",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.order_1",
+              "description": "Temporal event order."
+            }
+          ],
+          "question": "Which event occurs first in fictional sequence 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "temporal_order"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "finalize_abstain"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "no_progress_guard"
+      },
+      {
+        "case_id": "sbc-controller-016",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "more token views",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.ready.1",
+              "payload": {
+                "text": "The token label is copper."
+              }
+            }
+          ],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.ready_1",
+              "description": "Observed token label."
+            }
+          ],
+          "question": "What is the fictional token label in completed trial 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [
+              "v1slot.ready_1"
+            ],
+            "missing_hops": [],
+            "missing_modalities": [],
+            "missingness_cause": "not_missing",
+            "p_sufficient": 1.0,
+            "recovery_intent": "finalize_answer"
+          },
+          "fictional_answer_tokens": [
+            "copper",
+            "mistral",
+            "two drum taps"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "finalize_ready"
+      },
+      {
+        "case_id": "sbc-controller-017",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "spoken prism color",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "prism sound",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional prism visible color",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.vision_2",
+              "description": "Visible prism color."
+            }
+          ],
+          "question": "What color is the fictional prism marked P3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "entity_identity"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_vision"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_vision"
+      },
+      {
+        "case_id": "sbc-controller-018",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "navigator mouth movement",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "navigation chime",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional navigator code word",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.speech_2",
+              "description": "Spoken navigation code."
+            }
+          ],
+          "question": "What code word does the fictional navigator say in trial 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_speech"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_speech"
+      },
+      {
+        "case_id": "sbc-controller-019",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "description of hatch sound",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "hatch closure",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "non-speech sound after fictional hatch closes",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.ambient_2",
+              "description": "Ambient post-closure sound."
+            }
+          ],
+          "question": "Which non-speech sound follows the fictional hatch closure in trial 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "ambient_event"
+            ],
+            "missing_modalities": [
+              "ambient"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "search_ambient"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "route_ambient"
+      },
+      {
+        "case_id": "sbc-controller-020",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "include_audio": false,
+                "include_video": true,
+                "interval": {
+                  "end_s": 13.0,
+                  "start_s": 12.0
+                }
+              },
+              "tool": "inspect_clip"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "panel symbol",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [
+            {
+              "citable": false,
+              "interval": {
+                "end_s": 13.0,
+                "start_s": 12.0
+              },
+              "modality": "vision",
+              "pointer_id": "ptr.public.panel.2"
+            }
+          ],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.pointer_2",
+              "description": "Visible panel symbol."
+            }
+          ],
+          "question": "What symbol appears on fictional panel Q3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 1,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "event_detection"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "observe_pointer"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "observe_pointer"
+      },
+      {
+        "case_id": "sbc-controller-021",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "archivist phrase alternate",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.blocked_2",
+              "description": "Spoken archivist phrase."
+            }
+          ],
+          "question": "What phrase is spoken by the fictional archivist in trial 3?",
+          "recent_public_history": [
+            {
+              "action": {
+                "arguments": {
+                  "exclude_result_ids": [],
+                  "query": "fictional archivist phrase",
+                  "speaker_hint": null,
+                  "time_range": {
+                    "end_s": 120.0,
+                    "start_s": 0.0
+                  },
+                  "top_k": 5
+                },
+                "tool": "search_speech"
+              },
+              "response": {
+                "error": {
+                  "code": "CHANNEL_UNAVAILABLE",
+                  "retryable": true
+                },
+                "status": "channel_unavailable"
+              }
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 1,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_in_source_but_inaccessible",
+            "p_sufficient": 0.0,
+            "recovery_intent": "check_channel_status"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_status"
+      },
+      {
+        "case_id": "sbc-controller-022",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "retry fictional navigator code route",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.restored_2",
+              "description": "Restored spoken code."
+            }
+          ],
+          "question": "What code word does the fictional navigator say in restored trial 3?",
+          "recent_public_history": [
+            {
+              "cost": 0.0,
+              "event_type": "protocol_checkpoint",
+              "event_version": "2.0.0",
+              "message": "Scheduled protocol checkpoint completed."
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 2,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "speech_content"
+            ],
+            "missing_modalities": [
+              "speech"
+            ],
+            "missingness_cause": "evidence_in_source_but_inaccessible",
+            "p_sufficient": 0.0,
+            "recovery_intent": "retry_restored_route"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_reacquire"
+      },
+      {
+        "case_id": "sbc-controller-023",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "react",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.order_2",
+              "description": "Temporal event order."
+            }
+          ],
+          "question": "Which event occurs first in fictional sequence 3?",
+          "recent_public_history": [
+            {
+              "cost": 0.0,
+              "event_type": "protocol_checkpoint",
+              "event_version": "2.0.0",
+              "message": "Scheduled protocol checkpoint completed."
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [],
+            "missing_hops": [
+              "temporal_order"
+            ],
+            "missing_modalities": [
+              "vision"
+            ],
+            "missingness_cause": "evidence_accessible_but_not_found",
+            "p_sufficient": 0.0,
+            "recovery_intent": "finalize_abstain"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "no_trigger"
+      },
+      {
+        "case_id": "sbc-controller-024",
+        "case_type": "controller",
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "more token views",
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.ready.2",
+              "payload": {
+                "text": "The token label is teal."
+              }
+            }
+          ],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.ready_2",
+              "description": "Observed token label."
+            }
+          ],
+          "question": "What is the fictional token label in completed trial 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 6,
+            "cost_remaining": 8.0
+          },
+          "task": "choose_next_action"
+        },
+        "scoring_target": {
+          "expected_action_index": 0,
+          "expected_evidence_state": {
+            "covered_claim_handles": [
+              "v1slot.ready_2"
+            ],
+            "missing_hops": [],
+            "missing_modalities": [],
+            "missingness_cause": "not_missing",
+            "p_sufficient": 1.0,
+            "recovery_intent": "finalize_answer"
+          },
+          "fictional_answer_tokens": [
+            "teal",
+            "saffron",
+            "paper flutter"
+          ],
+          "restoration_reacquisition": false
+        },
+        "stratum": "finalize_ready"
+      },
+      {
+        "case_id": "sbc-finalizer-001",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.final.0",
+              "payload": {
+                "text": "The fictional badge shape is octagonal."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.0",
+              "description": "The badge shape."
+            }
+          ],
+          "question": "What is the fictional badge shape?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.0": [
+              "obs.public.final.0"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.0": [
+              "octagonal"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-002",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "obs.public.final.1",
+              "payload": {
+                "text": "The fictional spoken code is northstar."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.1",
+              "description": "The spoken code."
+            }
+          ],
+          "question": "What is the fictional spoken code?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.1": [
+              "obs.public.final.1"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.1": [
+              "northstar"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-003",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "obs.public.final.2",
+              "payload": {
+                "text": "The fictional ambient sound is copper chime."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.2",
+              "description": "The ambient sound."
+            }
+          ],
+          "question": "What is the fictional ambient sound?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.2": [
+              "obs.public.final.2"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.2": [
+              "copper",
+              "chime"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-004",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.final.3",
+              "payload": {
+                "text": "The fictional lamp color is magenta."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.3",
+              "description": "The lamp color."
+            }
+          ],
+          "question": "What is the fictional lamp color?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.3": [
+              "obs.public.final.3"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.3": [
+              "magenta"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-005",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "obs.public.final.4",
+              "payload": {
+                "text": "The fictional spoken passphrase is riverglass."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.4",
+              "description": "The spoken passphrase."
+            }
+          ],
+          "question": "What is the fictional spoken passphrase?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.4": [
+              "obs.public.final.4"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.4": [
+              "riverglass"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-006",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "obs.public.final.5",
+              "payload": {
+                "text": "The fictional ambient sequence is three clicks."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.5",
+              "description": "The ambient sequence."
+            }
+          ],
+          "question": "What is the fictional ambient sequence?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.5": [
+              "obs.public.final.5"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.5": [
+              "three",
+              "clicks"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-007",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.final.6",
+              "payload": {
+                "text": "The fictional panel mark is crescent."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.6",
+              "description": "The panel mark."
+            }
+          ],
+          "question": "What is the fictional panel mark?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.6": [
+              "obs.public.final.6"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.6": [
+              "crescent"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-008",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "oracle_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "obs.public.final.7",
+              "payload": {
+                "text": "The fictional spoken designation is orbit seven."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.7",
+              "description": "The spoken designation."
+            }
+          ],
+          "question": "What is the fictional spoken designation?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.7": [
+              "obs.public.final.7"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": true,
+          "required_terms_by_claim": {
+            "v1slot.final.7": [
+              "orbit",
+              "seven"
+            ]
+          },
+          "restoration_reacquisition": false
+        },
+        "stratum": "oracle_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-009",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "restoration_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.final.8",
+              "payload": {
+                "text": "The fictional restored object color is silver."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.8",
+              "description": "The restored object color."
+            }
+          ],
+          "question": "What is the fictional restored object color?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.8": [
+              "obs.public.final.8"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": false,
+          "required_terms_by_claim": {
+            "v1slot.final.8": [
+              "silver"
+            ]
+          },
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-010",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "restoration_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "obs.public.final.9",
+              "payload": {
+                "text": "The fictional restored spoken word is lantern."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.9",
+              "description": "The restored spoken word."
+            }
+          ],
+          "question": "What is the fictional restored spoken word?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.9": [
+              "obs.public.final.9"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": false,
+          "required_terms_by_claim": {
+            "v1slot.final.9": [
+              "lantern"
+            ]
+          },
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-011",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "restoration_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "obs.public.final.10",
+              "payload": {
+                "text": "The fictional restored sound is soft whistle."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.10",
+              "description": "The restored sound."
+            }
+          ],
+          "question": "What is the fictional restored sound?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.10": [
+              "obs.public.final.10"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": false,
+          "required_terms_by_claim": {
+            "v1slot.final.10": [
+              "soft",
+              "whistle"
+            ]
+          },
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-012",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "restoration_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "obs.public.final.11",
+              "payload": {
+                "text": "The fictional restored panel shape is hexagon."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.final.11",
+              "description": "The restored panel shape."
+            }
+          ],
+          "question": "What is the fictional restored panel shape?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.final.11": [
+              "obs.public.final.11"
+            ]
+          },
+          "answer_mode": "answer",
+          "oracle_complete": false,
+          "required_terms_by_claim": {
+            "v1slot.final.11": [
+              "hexagon"
+            ]
+          },
+          "restoration_reacquisition": true
+        },
+        "stratum": "restoration_complete"
+      },
+      {
+        "case_id": "sbc-finalizer-013",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "partial_evidence",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.partial.0",
+              "description": "Missing fact."
+            }
+          ],
+          "question": "What missing fictional speech fact completes item 1?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "oracle_complete": false,
+          "required_missing_hop": "speech_content",
+          "required_missing_modality": "speech",
+          "required_terms_by_claim": {},
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_partial"
+      },
+      {
+        "case_id": "sbc-finalizer-014",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "partial_evidence",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.partial.1",
+              "description": "Missing fact."
+            }
+          ],
+          "question": "What missing fictional vision fact completes item 2?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "oracle_complete": false,
+          "required_missing_hop": "event_detection",
+          "required_missing_modality": "vision",
+          "required_terms_by_claim": {},
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_partial"
+      },
+      {
+        "case_id": "sbc-finalizer-015",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "partial_evidence",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.partial.2",
+              "description": "Missing fact."
+            }
+          ],
+          "question": "What missing fictional ambient fact completes item 3?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "oracle_complete": false,
+          "required_missing_hop": "ambient_event",
+          "required_missing_modality": "ambient",
+          "required_terms_by_claim": {},
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_partial"
+      },
+      {
+        "case_id": "sbc-finalizer-016",
+        "case_type": "finalizer",
+        "public_input": {
+          "condition": "partial_evidence",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.partial.3",
+              "description": "Missing fact."
+            }
+          ],
+          "question": "What missing fictional vision fact completes item 4?",
+          "task": "grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "oracle_complete": false,
+          "required_missing_hop": "temporal_order",
+          "required_missing_modality": "vision",
+          "required_terms_by_claim": {},
+          "restoration_reacquisition": false
+        },
+        "stratum": "blocked_partial"
+      },
+      {
+        "case_id": "sbc-runtime-001",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "malformed_output",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.1",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 1?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "INVALID_OUTPUT",
+          "expected_model_called": true
+        },
+        "stratum": "malformed_output"
+      },
+      {
+        "case_id": "sbc-runtime-002",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "malformed_output",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.2",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 2?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "INVALID_OUTPUT",
+          "expected_model_called": true
+        },
+        "stratum": "malformed_output"
+      },
+      {
+        "case_id": "sbc-runtime-003",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "wrong_snapshot",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.3",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 3?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "SNAPSHOT_MISMATCH",
+          "expected_model_called": false
+        },
+        "stratum": "wrong_snapshot"
+      },
+      {
+        "case_id": "sbc-runtime-004",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "wrong_snapshot",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.4",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 4?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "SNAPSHOT_MISMATCH",
+          "expected_model_called": false
+        },
+        "stratum": "wrong_snapshot"
+      },
+      {
+        "case_id": "sbc-runtime-005",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "provider_failure",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.5",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 5?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "PROVIDER_FAILURE",
+          "expected_model_called": true
+        },
+        "stratum": "provider_failure"
+      },
+      {
+        "case_id": "sbc-runtime-006",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "provider_failure",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.6",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 6?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "PROVIDER_FAILURE",
+          "expected_model_called": true
+        },
+        "stratum": "provider_failure"
+      },
+      {
+        "case_id": "sbc-runtime-007",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "timeout",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.7",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 7?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "TIMEOUT",
+          "expected_model_called": true
+        },
+        "stratum": "timeout"
+      },
+      {
+        "case_id": "sbc-runtime-008",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "timeout",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.8",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 8?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "TIMEOUT",
+          "expected_model_called": true
+        },
+        "stratum": "timeout"
+      },
+      {
+        "case_id": "sbc-runtime-009",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "process_failure",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.9",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 9?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "PROCESS_FAILURE",
+          "expected_model_called": true
+        },
+        "stratum": "process_failure"
+      },
+      {
+        "case_id": "sbc-runtime-010",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "oom",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.10",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 10?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "OOM",
+          "expected_model_called": true
+        },
+        "stratum": "oom"
+      },
+      {
+        "case_id": "sbc-runtime-011",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "budget_exhausted",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.11",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 11?",
+          "task": "failure_injection"
+        },
+        "scoring_target": {
+          "expected_inference_status": "BUDGET_EXHAUSTED",
+          "expected_model_called": false
+        },
+        "stratum": "budget_exhausted"
+      }
+    ],
+    "direct_av": [
+      {
+        "case_id": "sbc-direct-001",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "silence",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/0",
+              "exposure_id": "exposure.public.direct.0",
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.0",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 1?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.0": [
+              "exposure.public.direct.0"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-0",
+          "required_modality_stratum": "vision",
+          "required_terms_by_claim": {
+            "v1slot.direct.0": [
+              "emerald"
+            ]
+          }
+        },
+        "stratum": "vision"
+      },
+      {
+        "case_id": "sbc-direct-002",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "silence",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/0",
+              "exposure_id": "exposure.public.direct.0",
+              "interval": {
+                "end_s": 1.0,
+                "start_s": 0.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.0",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 1?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.0": [
+              "exposure.public.direct.0"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-0",
+          "required_modality_stratum": "vision",
+          "required_terms_by_claim": {
+            "v1slot.direct.0": [
+              "emerald"
+            ]
+          }
+        },
+        "stratum": "vision"
+      },
+      {
+        "case_id": "sbc-direct-003",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/1",
+              "exposure_id": "exposure.public.direct.1",
+              "interval": {
+                "end_s": 2.0,
+                "start_s": 1.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.1",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 2?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.1": [
+              "exposure.public.direct.1"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-1",
+          "required_modality_stratum": "speech",
+          "required_terms_by_claim": {
+            "v1slot.direct.1": [
+              "solstice"
+            ]
+          }
+        },
+        "stratum": "speech"
+      },
+      {
+        "case_id": "sbc-direct-004",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/1",
+              "exposure_id": "exposure.public.direct.1",
+              "interval": {
+                "end_s": 2.0,
+                "start_s": 1.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.1",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 2?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.1": [
+              "exposure.public.direct.1"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-1",
+          "required_modality_stratum": "speech",
+          "required_terms_by_claim": {
+            "v1slot.direct.1": [
+              "solstice"
+            ]
+          }
+        },
+        "stratum": "speech"
+      },
+      {
+        "case_id": "sbc-direct-005",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/2",
+              "exposure_id": "exposure.public.direct.2",
+              "interval": {
+                "end_s": 3.0,
+                "start_s": 2.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.2",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 3?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.2": [
+              "exposure.public.direct.2"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-2",
+          "required_modality_stratum": "ambient",
+          "required_terms_by_claim": {
+            "v1slot.direct.2": [
+              "wooden",
+              "knock"
+            ]
+          }
+        },
+        "stratum": "ambient"
+      },
+      {
+        "case_id": "sbc-direct-006",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/2",
+              "exposure_id": "exposure.public.direct.2",
+              "interval": {
+                "end_s": 3.0,
+                "start_s": 2.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.2",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 3?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.2": [
+              "exposure.public.direct.2"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-2",
+          "required_modality_stratum": "ambient",
+          "required_terms_by_claim": {
+            "v1slot.direct.2": [
+              "wooden",
+              "knock"
+            ]
+          }
+        },
+        "stratum": "ambient"
+      },
+      {
+        "case_id": "sbc-direct-007",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/3",
+              "exposure_id": "exposure.public.direct.3",
+              "interval": {
+                "end_s": 4.0,
+                "start_s": 3.0
+              },
+              "modalities": [
+                "vision",
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.3",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 4?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.3": [
+              "exposure.public.direct.3"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-3",
+          "required_modality_stratum": "joint_av",
+          "required_terms_by_claim": {
+            "v1slot.direct.3": [
+              "blue",
+              "flare"
+            ]
+          }
+        },
+        "stratum": "joint_av"
+      },
+      {
+        "case_id": "sbc-direct-008",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/3",
+              "exposure_id": "exposure.public.direct.3",
+              "interval": {
+                "end_s": 4.0,
+                "start_s": 3.0
+              },
+              "modalities": [
+                "vision",
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.3",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 4?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.3": [
+              "exposure.public.direct.3"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-3",
+          "required_modality_stratum": "joint_av",
+          "required_terms_by_claim": {
+            "v1slot.direct.3": [
+              "blue",
+              "flare"
+            ]
+          }
+        },
+        "stratum": "joint_av"
+      },
+      {
+        "case_id": "sbc-direct-009",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "silence",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/4",
+              "exposure_id": "exposure.public.direct.4",
+              "interval": {
+                "end_s": 5.0,
+                "start_s": 4.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.4",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 5?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.4": [
+              "exposure.public.direct.4"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-4",
+          "required_modality_stratum": "vision",
+          "required_terms_by_claim": {
+            "v1slot.direct.4": [
+              "emerald"
+            ]
+          }
+        },
+        "stratum": "vision"
+      },
+      {
+        "case_id": "sbc-direct-010",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "silence",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/4",
+              "exposure_id": "exposure.public.direct.4",
+              "interval": {
+                "end_s": 5.0,
+                "start_s": 4.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.4",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 5?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.4": [
+              "exposure.public.direct.4"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-4",
+          "required_modality_stratum": "vision",
+          "required_terms_by_claim": {
+            "v1slot.direct.4": [
+              "emerald"
+            ]
+          }
+        },
+        "stratum": "vision"
+      },
+      {
+        "case_id": "sbc-direct-011",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/5",
+              "exposure_id": "exposure.public.direct.5",
+              "interval": {
+                "end_s": 6.0,
+                "start_s": 5.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.5",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 6?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.5": [
+              "exposure.public.direct.5"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-5",
+          "required_modality_stratum": "speech",
+          "required_terms_by_claim": {
+            "v1slot.direct.5": [
+              "solstice"
+            ]
+          }
+        },
+        "stratum": "speech"
+      },
+      {
+        "case_id": "sbc-direct-012",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/5",
+              "exposure_id": "exposure.public.direct.5",
+              "interval": {
+                "end_s": 6.0,
+                "start_s": 5.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.5",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 6?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.5": [
+              "exposure.public.direct.5"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-5",
+          "required_modality_stratum": "speech",
+          "required_terms_by_claim": {
+            "v1slot.direct.5": [
+              "solstice"
+            ]
+          }
+        },
+        "stratum": "speech"
+      },
+      {
+        "case_id": "sbc-direct-013",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/6",
+              "exposure_id": "exposure.public.direct.6",
+              "interval": {
+                "end_s": 7.0,
+                "start_s": 6.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.6",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 7?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.6": [
+              "exposure.public.direct.6"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-6",
+          "required_modality_stratum": "ambient",
+          "required_terms_by_claim": {
+            "v1slot.direct.6": [
+              "wooden",
+              "knock"
+            ]
+          }
+        },
+        "stratum": "ambient"
+      },
+      {
+        "case_id": "sbc-direct-014",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "blank frame"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/6",
+              "exposure_id": "exposure.public.direct.6",
+              "interval": {
+                "end_s": 7.0,
+                "start_s": 6.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.6",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 7?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.6": [
+              "exposure.public.direct.6"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-6",
+          "required_modality_stratum": "ambient",
+          "required_terms_by_claim": {
+            "v1slot.direct.6": [
+              "wooden",
+              "knock"
+            ]
+          }
+        },
+        "stratum": "ambient"
+      },
+      {
+        "case_id": "sbc-direct-015",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/7",
+              "exposure_id": "exposure.public.direct.7",
+              "interval": {
+                "end_s": 8.0,
+                "start_s": 7.0
+              },
+              "modalities": [
+                "vision",
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.7",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 8?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.7": [
+              "exposure.public.direct.7"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-7",
+          "required_modality_stratum": "joint_av",
+          "required_terms_by_claim": {
+            "v1slot.direct.7": [
+              "blue",
+              "flare"
+            ]
+          }
+        },
+        "stratum": "joint_av"
+      },
+      {
+        "case_id": "sbc-direct-016",
+        "case_type": "direct_av",
+        "public_input": {
+          "fictional_media_recipe": {
+            "audio": "synthetic speech or tones",
+            "visual": "solid geometric cards and lights"
+          },
+          "media_exposure_manifest": [
+            {
+              "asset_locator": "generated://strong-baseline-v1/7",
+              "exposure_id": "exposure.public.direct.7",
+              "interval": {
+                "end_s": 8.0,
+                "start_s": 7.0
+              },
+              "modalities": [
+                "vision",
+                "ambient"
+              ],
+              "source_ordinal": 0
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.7",
+              "description": "Observed fictional signal."
+            }
+          ],
+          "question": "What fictional signal appears in replay group 8?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {
+            "v1slot.direct.7": [
+              "exposure.public.direct.7"
+            ]
+          },
+          "answer_mode": "answer",
+          "counterfactual_drop": null,
+          "replay_group": "direct-replay-7",
+          "required_modality_stratum": "joint_av",
+          "required_terms_by_claim": {
+            "v1slot.direct.7": [
+              "blue",
+              "flare"
+            ]
+          }
+        },
+        "stratum": "joint_av"
+      },
+      {
+        "case_id": "sbc-direct-017",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "audio_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.17",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by audio_drop fixture 17?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "audio_drop",
+          "replay_group": null,
+          "required_missing_hop": "speech_content",
+          "required_missing_modality": "speech",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-018",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "audio_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.18",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by audio_drop fixture 18?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "audio_drop",
+          "replay_group": null,
+          "required_missing_hop": "ambient_event",
+          "required_missing_modality": "ambient",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-019",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "audio_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.19",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by audio_drop fixture 19?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "audio_drop",
+          "replay_group": null,
+          "required_missing_hop": "speech_content",
+          "required_missing_modality": "speech",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-020",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "audio_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.20",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by audio_drop fixture 20?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "audio_drop",
+          "replay_group": null,
+          "required_missing_hop": "ambient_event",
+          "required_missing_modality": "ambient",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-021",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "visual_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.21",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by visual_drop fixture 21?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "visual_drop",
+          "replay_group": null,
+          "required_missing_hop": "event_detection",
+          "required_missing_modality": "vision",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-022",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "visual_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.22",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by visual_drop fixture 22?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "visual_drop",
+          "replay_group": null,
+          "required_missing_hop": "entity_identity",
+          "required_missing_modality": "vision",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-023",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "visual_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.23",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by visual_drop fixture 23?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "visual_drop",
+          "replay_group": null,
+          "required_missing_hop": "state_change",
+          "required_missing_modality": "vision",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-024",
+        "case_type": "direct_av",
+        "public_input": {
+          "counterfactual_drop": "visual_drop",
+          "media_exposure_manifest": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.direct.partial.24",
+              "description": "Masked fact."
+            }
+          ],
+          "question": "What fictional fact is hidden by visual_drop fixture 24?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "accepted_support": {},
+          "answer_mode": "abstain",
+          "counterfactual_drop": "visual_drop",
+          "replay_group": null,
+          "required_missing_hop": "temporal_order",
+          "required_missing_modality": "vision",
+          "required_modality_stratum": "partial_masked",
+          "required_terms_by_claim": {}
+        },
+        "stratum": "partial_masked"
+      },
+      {
+        "case_id": "sbc-direct-failure-001",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "malformed_manifest",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.1",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 1?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "expected_inference_status": "INVALID_OUTPUT",
+          "expected_model_called": false
+        },
+        "stratum": "malformed_manifest"
+      },
+      {
+        "case_id": "sbc-direct-failure-002",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "malformed_manifest",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.2",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 2?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "expected_inference_status": "INVALID_OUTPUT",
+          "expected_model_called": false
+        },
+        "stratum": "malformed_manifest"
+      },
+      {
+        "case_id": "sbc-direct-failure-003",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "wrong_snapshot",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.3",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 3?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "expected_inference_status": "SNAPSHOT_MISMATCH",
+          "expected_model_called": false
+        },
+        "stratum": "wrong_snapshot"
+      },
+      {
+        "case_id": "sbc-direct-failure-004",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "wrong_snapshot",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.4",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 4?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "expected_inference_status": "SNAPSHOT_MISMATCH",
+          "expected_model_called": false
+        },
+        "stratum": "wrong_snapshot"
+      },
+      {
+        "case_id": "sbc-direct-failure-005",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "provider_failure",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.5",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 5?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "expected_inference_status": "PROVIDER_FAILURE",
+          "expected_model_called": true
+        },
+        "stratum": "provider_failure"
+      },
+      {
+        "case_id": "sbc-direct-failure-006",
+        "case_type": "runtime_failure",
+        "public_input": {
+          "injected_public_fixture": "provider_failure",
+          "public_claim_slots": [
+            {
+              "claim_handle": "v1slot.failure.6",
+              "description": "Fixture token."
+            }
+          ],
+          "question": "What is the fictional failure-fixture token 6?",
+          "task": "direct_av_grounded_finalization"
+        },
+        "scoring_target": {
+          "expected_inference_status": "PROVIDER_FAILURE",
+          "expected_model_called": true
+        },
+        "stratum": "provider_failure"
+      }
+    ]
+  },
+  "content_boundary": {
+    "contains_evaluator_private_benchmark_fields": false,
+    "contains_real_benchmark_ground_truth": false,
+    "contains_scientific_family_content": false,
+    "fictional_generated_primitives_only": true,
+    "model_inputs_are_allowlisted_from_public_input_only": true,
+    "public_cases_only": true
+  },
+  "execution_status": "NOT_RUN",
+  "generated_date": "2026-09-24",
+  "generator": {
+    "algorithm": "stdlib-random-v1-fixed-order",
+    "evaluator_private_key_used": false,
+    "frozen_before_model_execution": true,
+    "model_used": false,
+    "new_unseen_fixture_family": true,
+    "scientific_source_used": false,
+    "seed": 15820260924
+  },
+  "model_results_present": false,
+  "schema_version": "av-trace.strong-baseline-competence-suite/1.0",
+  "suite_hash": "sha256:7b8f8d021b24cb244f0df0f6b02b3da91120df3817a5366350895eb24f4646dc",
+  "suite_id": "strong-baseline-fictional-public-v1",
+  "thresholds": {
+    "controller_finalizer": {
+      "blocked_partial_correct_abstention_min": 0.8,
+      "correct_first_actions_each_stratum_min": 0.75,
+      "correct_first_actions_overall_min": 0.85,
+      "deterministic_answer_substitutions_max": 0,
+      "deterministic_parser_schema_failure_fixtures": 1.0,
+      "each_state_component_min": 0.8,
+      "exact_six_field_state_min": 0.75,
+      "identity_and_injected_failure_fail_closed": 1.0,
+      "minimum_cases": 48,
+      "oracle_supported_answer_min": 0.8,
+      "private_field_exposures_max": 0,
+      "restoration_reacquisition_min": 0.8,
+      "unsupported_required_claims_max": 0,
+      "valid_structured_model_calls_min": 0.9
+    },
+    "direct_av": {
+      "complete_evidence_supported_answer_min": 0.8,
+      "deterministic_local_replay_parsed_output": 1.0,
+      "each_modality_stratum_supported_answer_min": 0.75,
+      "minimum_cases": 24,
+      "observed_evidence_lock": 1.0,
+      "out_of_exposure_citations_max": 0,
+      "partial_masked_correct_abstention_min": 0.8,
+      "processor_manifest_failure_fixtures": 1.0,
+      "required_modality_drop_counterfactuals": 1.0,
+      "unsupported_required_claims_max": 0,
+      "valid_final_outputs_min": 0.9
+    }
+  }
+}

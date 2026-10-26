@@ -1,0 +1,49 @@
+{
+  "artifact_classification": "DESCRIPTIVE_MACHINE_PROVISIONAL_DEVELOPMENT_ONLY",
+  "bm25_baseline": {
+    "applicable": false,
+    "reason": "All 56 provisional targets are vision or ambient_audio; speech/ASR is excluded from the V+A route hypotheses.",
+    "status": "NOT_APPLICABLE_NO_SPEECH_EVIDENCE_HANDLE"
+  },
+  "claim_boundary": "Results are descriptive and machine-provisional only. They must not be interpreted as human-validated semantic support, modality necessity, accepted evidence, or generalization.",
+  "config_sha256": "sha256:1654ae730fd15ef28751c55e79ce4ffc4713da574b01b9086bd0f2377adb18e5",
+  "counts": {
+    "audio_index_records": 1115,
+    "evidence_handles": 56,
+    "families": 20,
+    "queries": 76,
+    "unique_query_texts": 7,
+    "visual_index_records": 1115
+  },
+  "created_date": "2026-10-15",
+  "decision": "P23_102_REAL_RETRIEVAL_DIAGNOSTIC_READY",
+  "deterministic_rerun_sha256": "sha256:1e2cffceb6a4670cc5bcea53699b8405c75c8e9b1b30f23cee1a07a7b1f6c595",
+  "leakage_summary": {
+    "direct_query_to_index_text_leakage_detected": false,
+    "identical_text_shortcut_risk": "HIGH_NON_IDENTIFIABILITY",
+    "unique_query_text_count": 7
+  },
+  "output_hashes": {
+    "audit.json": "sha256:51c8eecb2656968f8df473af02d624af2341f797ffffeabfd3cb63bffc39a050",
+    "config.json": "sha256:3beedad2a147fe38475d0cc445493d5aa4173b208b3019fb80e911bc9a98f0c9",
+    "deterministic_payload.json": "sha256:3de4f248eb15b574fe77e6afa9686596a81b6093782ec8615ba261b1bbb65777",
+    "leakage_audit.json": "sha256:838b157317d9294199455353a312fce0563393593d559462864445c796fcd9d7",
+    "metric_tables.json": "sha256:c71d228ccb0b0a2f6aba6e02f7bac3ce23a4e9bf42ab2f3b85cc99d5ad4e8d94",
+    "per_query_metrics.json": "sha256:62e82461e441f8c487cdadc512524cf5621cf64ebf8cb82a2f0c7b806c81b914",
+    "queries.json": "sha256:c57318513bc727ef25723f5f1b2f99fd7d800c0cc080c16656c9888203b32a8f",
+    "rankings.jsonl.gz": "sha256:f835f7fe9c86b02d2072f0a5df11be88bbab108e389b20e89d6ac5fa1dcc0ce2",
+    "resource_runtime.json": "sha256:ec87847d8eed301d1e42bb3c23c1013270b0f54a2f776e36e7eb476892ddc758"
+  },
+  "output_root": "data/restricted/p23_102_real_retrieval_diagnostic_v1",
+  "payload_sha256": "sha256:06eba9f25c097c7f6c8e14f7bb76ced2a62aaad54a4482fa3befe6bd800542ac",
+  "schema_version": "av-trace.p23-102-real-retrieval-diagnostic/1.0",
+  "source_disjoint_development_boundary": {
+    "development_only": true,
+    "evaluation_eligible": false,
+    "future_test_eligible": false,
+    "source_disjoint_from_evaluation": true
+  },
+  "source_group_id": "P23",
+  "source_id": "P23_102",
+  "status": "P23_102_REAL_RETRIEVAL_DIAGNOSTIC_READY"
+}

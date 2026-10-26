@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-denominator:1.0.0",
+  "title": "AV-TRACE system-independent premature-stop denominator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "dataset_id",
+    "generated_at",
+    "generator_version",
+    "system_independent",
+    "provenance",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "artifact_id": {"$ref": "#/$defs/id"},
+    "dataset_id": {"$ref": "#/$defs/id"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "generator_version": {"type": "string", "minLength": 1},
+    "system_independent": {"const": true},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["backend_manifest_hash", "index_hash", "family_hashes", "validator_ids"],
+      "properties": {
+        "backend_manifest_hash": {"$ref": "#/$defs/hash"},
+        "index_hash": {"$ref": "#/$defs/hash"},
+        "family_hashes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        },
+        "validator_ids": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "object"}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

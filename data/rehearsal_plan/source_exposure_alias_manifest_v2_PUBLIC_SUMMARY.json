@@ -1,0 +1,11 @@
+{
+  "artifact": "source exposure alias manifest v2 public commitment",
+  "as_of_date": "2026-10-26",
+  "commitment": "The hash commits to the reviewed local source artifact without redistributing its records. Publication requires a separate owner and governance decision.",
+  "reason": "The full source artifact is intentionally omitted from the public repository snapshot because it exceeds the default review threshold and contains detailed source-exposure governance records.",
+  "release_disposition": "SOURCE_FILE_EXCLUDED",
+  "schema_version": 1,
+  "source_path": "data/rehearsal_plan/source_exposure_alias_manifest_v2.json",
+  "source_sha256": "2c631f070505f60a49862a05d879c83e856d7dd60bca99fb34bfa16e8c064618",
+  "source_size_bytes": 19978574
+}

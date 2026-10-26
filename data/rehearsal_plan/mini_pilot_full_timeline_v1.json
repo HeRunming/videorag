@@ -1,0 +1,493 @@
+{
+  "schema_version": "av-trace.mini-pilot-full-timeline-plan/1.0",
+  "plan_id": "AV-TRACE-MINI-PILOT-FULL-TIMELINE-V1",
+  "created_date": "2026-09-23",
+  "decision": "READY_FOR_INDEX_IMPLEMENTATION",
+  "scope": {
+    "source_count": 4,
+    "stage": "RESTRICTED_INDEX_CONSTRUCTION_ONLY",
+    "output_root": "data/restricted/mini_pilot_index_v1",
+    "allowed_restricted_source_root": "data/restricted/mini_pilot_sources_v1",
+    "acquisition_manifest_path": "data/restricted/mini_pilot_sources_v1/acquisition_manifest.json",
+    "acquisition_manifest_sha256": "36bdc5efd973189f14f1876d4bb753617c254f1f12267cbc83934be96d680e90",
+    "acquisition_decision_required": "MINI_PILOT_FOUR_SOURCE_ACQUISITION_READY",
+    "allowed_stages": [
+      "source verification",
+      "full-timeline segmentation",
+      "speech observation and indexing",
+      "ambient observation and indexing",
+      "vision observation and indexing",
+      "checkpointing",
+      "index freeze and deterministic replay"
+    ],
+    "forbidden_downstream_stages": [
+      "candidate-family generation",
+      "family migration",
+      "hard-negative labeling",
+      "CLEAN/BLOCKED/RESTORED intervention construction",
+      "agent or controller execution",
+      "evaluation",
+      "metric reporting",
+      "human annotation",
+      "public release or redistribution"
+    ]
+  },
+  "authoritative_inputs": [
+    "data/restricted/mini_pilot_sources_v1/acquisition_manifest.json",
+    "data/restricted/mini_pilot_sources_v1/SG-OXFORD-QM-001/source_manifest.json",
+    "data/restricted/mini_pilot_sources_v1/SG-OXFORD-DHL-CONSCIOUSNESS/source_manifest.json",
+    "data/restricted/mini_pilot_sources_v1/SG-MIT-RES12-003-L01/source_manifest.json",
+    "data/restricted/mini_pilot_sources_v1/SG-YALE-PHYS200-L01/source_manifest.json",
+    "data/rehearsal_plan/scale1a_full_timeline_plan.json",
+    "data/restricted/noaa01/machine_review/noaa01_model_manifest.json",
+    "data/restricted/noaa01/models/scale1a_clip_acquisition_manifest.json",
+    "data/restricted/noaa01/scale1a/build_manifest.json",
+    "data/restricted/noaa01/scale1a/observation_manifest.json",
+    "docs/design/scale1a_full_timeline_design.md",
+    "docs/review/scale1a_final_audit.md"
+  ],
+  "sources": [
+    {
+      "source_id": "SG-OXFORD-QM-001",
+      "source_manifest_path": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-QM-001/source_manifest.json",
+      "source_manifest_sha256": "58b6c2a0009eac7ce478ede7debd7236c55f61fa0d3ac6125d3cc332bfdaec56",
+      "source_directory": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-QM-001",
+      "media": {
+        "role": "primary_video",
+        "path": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-QM-001/binney01.mp4",
+        "bytes": 302443579,
+        "sha256": "c83b4e0ed82e20bfed1cab701057ac16c6c13872f1fae9f7e56b65ae17dd0bcc",
+        "duration_seconds": 2645.28,
+        "duration_tolerance_seconds": 0.001,
+        "stream_expectations": {
+          "audio": [
+            {
+              "index": 0,
+              "codec": "aac",
+              "sample_rate_hz": 48000,
+              "channels": 2
+            }
+          ],
+          "video": [
+            {
+              "index": 1,
+              "codec": "h264",
+              "width": 640,
+              "height": 360,
+              "average_rate": "25"
+            }
+          ]
+        }
+      },
+      "official_transcript_sidecars": [
+        {
+          "role": "transcript",
+          "format": "srt",
+          "path": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-QM-001/binney01.srt",
+          "bytes": 48568,
+          "sha256": "cfd9fb3f2a32bd1e128e9fea0ec36e7b2cb716932d22d4644a355366e747dcd3",
+          "timing": "timed",
+          "index_use": "verification_only"
+        }
+      ],
+      "expected_counts": {
+        "base_cells": 662,
+        "fine_windows": 661,
+        "context_windows": 165,
+        "temporal_segments": 826,
+        "whisper_chunks": 89,
+        "checkpoints": 4
+      }
+    },
+    {
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "source_manifest_path": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-DHL-CONSCIOUSNESS/source_manifest.json",
+      "source_manifest_sha256": "a890221a47a5301fb60e165c0f54e137480b2ce749a318ca3015ca93b9054545",
+      "source_directory": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-DHL-CONSCIOUSNESS",
+      "media": {
+        "role": "primary_video",
+        "path": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-DHL-CONSCIOUSNESS/2012-01-18-01-great-writers-brown-lawrence.mp4",
+        "bytes": 369848995,
+        "sha256": "6748569f9e9ac6a49985fa5410461f60fadba4054a28a4cd8ede9785c217f33a",
+        "duration_seconds": 2918.76,
+        "duration_tolerance_seconds": 0.001,
+        "stream_expectations": {
+          "audio": [
+            {
+              "index": 0,
+              "codec": "aac",
+              "sample_rate_hz": 44100,
+              "channels": 2
+            }
+          ],
+          "video": [
+            {
+              "index": 1,
+              "codec": "h264",
+              "width": 640,
+              "height": 360,
+              "average_rate": "25"
+            }
+          ]
+        }
+      },
+      "official_transcript_sidecars": [
+        {
+          "role": "transcript",
+          "format": "srt",
+          "path": "data/restricted/mini_pilot_sources_v1/SG-OXFORD-DHL-CONSCIOUSNESS/2012-01-18-01-great-writers-brown-lawrence.srt",
+          "bytes": 53415,
+          "sha256": "e59234aa60c911d457ddfe851c64c4ce93ed3befa4c8ad5cb59335424fa8b1a5",
+          "timing": "timed",
+          "index_use": "verification_only"
+        }
+      ],
+      "expected_counts": {
+        "base_cells": 730,
+        "fine_windows": 729,
+        "context_windows": 182,
+        "temporal_segments": 911,
+        "whisper_chunks": 98,
+        "checkpoints": 4
+      }
+    },
+    {
+      "source_id": "SG-MIT-RES12-003-L01",
+      "source_manifest_path": "data/restricted/mini_pilot_sources_v1/SG-MIT-RES12-003-L01/source_manifest.json",
+      "source_manifest_sha256": "82c4a07f8255b413df78e7944e3db1d2dcd6a37b75309f9cace4c0a5394b26e8",
+      "source_directory": "data/restricted/mini_pilot_sources_v1/SG-MIT-RES12-003-L01",
+      "media": {
+        "role": "primary_video",
+        "path": "data/restricted/mini_pilot_sources_v1/SG-MIT-RES12-003-L01/mitres_12-003f25_lec1_1080p_360p_16_9.mp4",
+        "bytes": 84051067,
+        "sha256": "8fe1fd3c25cae687735aaecbcc5a6aa7bd9a668c310bd579622372ed05449889",
+        "duration_seconds": 2859.933333,
+        "duration_tolerance_seconds": 0.001,
+        "stream_expectations": {
+          "audio": [
+            {
+              "index": 1,
+              "codec": "aac",
+              "sample_rate_hz": 48000,
+              "channels": 2
+            }
+          ],
+          "video": [
+            {
+              "index": 0,
+              "codec": "h264",
+              "width": 640,
+              "height": 360,
+              "average_rate": "30"
+            }
+          ]
+        }
+      },
+      "official_transcript_sidecars": [
+        {
+          "role": "captions",
+          "format": "webvtt",
+          "path": "data/restricted/mini_pilot_sources_v1/SG-MIT-RES12-003-L01/14w0y41NeKFpv_q20E1TSY2qdoWakbmzL_transcript.webvtt",
+          "bytes": 97032,
+          "sha256": "f2a664bfa20696bb45115bbcffc4f60bbef0cbaa6e93db072b052afa45d7a742",
+          "timing": "timed",
+          "index_use": "verification_only"
+        },
+        {
+          "role": "transcript",
+          "format": "pdf",
+          "path": "data/restricted/mini_pilot_sources_v1/SG-MIT-RES12-003-L01/14w0y41NeKFpv_q20E1TSY2qdoWakbmzL_transcript.pdf",
+          "bytes": 77130,
+          "sha256": "7d3c5c6f75dfdc5e8c0c069969a12d761c9433fc6738a936aeebc5fa6e217311",
+          "timing": "untimed",
+          "index_use": "verification_only"
+        }
+      ],
+      "expected_counts": {
+        "base_cells": 715,
+        "fine_windows": 714,
+        "context_windows": 178,
+        "temporal_segments": 892,
+        "whisper_chunks": 96,
+        "checkpoints": 4
+      }
+    },
+    {
+      "source_id": "SG-YALE-PHYS200-L01",
+      "source_manifest_path": "data/restricted/mini_pilot_sources_v1/SG-YALE-PHYS200-L01/source_manifest.json",
+      "source_manifest_sha256": "9b46b1ff7c97a6d487241ee6ada49714447b12b4f81244d5fe84834834e9dc44",
+      "source_directory": "data/restricted/mini_pilot_sources_v1/SG-YALE-PHYS200-L01",
+      "media": {
+        "role": "primary_video",
+        "path": "data/restricted/mini_pilot_sources_v1/SG-YALE-PHYS200-L01/phys200_01_090606.m4v",
+        "bytes": 377169329,
+        "sha256": "fff84141b2791164b52847c35f988456699dd0f350b8853c8b1cb451f4430016",
+        "duration_seconds": 4400.900907,
+        "duration_tolerance_seconds": 0.001,
+        "stream_expectations": {
+          "audio": [
+            {
+              "index": 1,
+              "codec": "aac",
+              "sample_rate_hz": 44100,
+              "channels": 2
+            }
+          ],
+          "video": [
+            {
+              "index": 0,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "average_rate": "2997/100"
+            }
+          ]
+        }
+      },
+      "official_transcript_sidecars": [
+        {
+          "role": "transcript",
+          "format": "html",
+          "path": "data/restricted/mini_pilot_sources_v1/SG-YALE-PHYS200-L01/transcript01.html",
+          "bytes": 67399,
+          "sha256": "102351dfd4fc464242a1e2b330ccd7933c370b841f0d10378a0649d1114a02f0",
+          "timing": "untimed",
+          "index_use": "verification_only"
+        }
+      ],
+      "expected_counts": {
+        "base_cells": 1101,
+        "fine_windows": 1100,
+        "context_windows": 275,
+        "temporal_segments": 1375,
+        "whisper_chunks": 147,
+        "checkpoints": 4
+      }
+    }
+  ],
+  "totals": {
+    "duration_seconds": 12824.87424,
+    "duration_hours": 3.562465,
+    "primary_media_bytes": 1133512970,
+    "official_transcript_sidecar_bytes": 343544,
+    "base_cells": 3208,
+    "fine_windows": 3204,
+    "context_windows": 800,
+    "temporal_segments": 4004,
+    "whisper_chunks": 430,
+    "ast_fine_calls": 3204,
+    "clip_frame_forwards": 3208,
+    "checkpoint_count": 16,
+    "maximum_modality_segment_records": 12012
+  },
+  "segmentation": {
+    "time_unit": "integer_microseconds_in_storage",
+    "base_lattice": {
+      "cell_length_seconds": 4,
+      "stride_seconds": 4,
+      "start_rule": "4*i",
+      "end_rule": "min(4*(i+1), duration)",
+      "terminal_rule": "retain final positive sub-four-second cell for coverage and frame sampling"
+    },
+    "fine": {
+      "nominal_length_seconds": 8,
+      "stride_seconds": 4,
+      "start_rule": "4*i",
+      "admission_rule": "duration-start >= 4",
+      "end_rule": "min(start+8, duration)"
+    },
+    "context": {
+      "nominal_length_seconds": 32,
+      "stride_seconds": 16,
+      "start_rule": "16*i",
+      "admission_rule": "duration-start >= 16",
+      "end_rule": "min(start+32, duration)"
+    },
+    "vision_frame_rule": "one frame per base cell at min(cell_start+2 seconds, duration-one-video-timebase-tick)",
+    "segment_id_rule": "source media sha256 prefix plus scale plus zero-padded lattice index",
+    "segment_id_forbidden_inputs": [
+      "question",
+      "answer",
+      "family_id",
+      "review_id",
+      "evidence_id",
+      "claim_id",
+      "state_role",
+      "intervention_id",
+      "evaluation_label"
+    ]
+  },
+  "model_snapshots": {
+    "speech": {
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "snapshot_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102",
+      "snapshot_hash": "sha256:1e098354f3cbd9f339ef8fbdcc0e82ff238786bffa25794493ebe32830f4518a",
+      "weights_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/model.safetensors",
+      "weights_sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad",
+      "chunk_length_seconds": 30,
+      "stride_seconds": 30,
+      "sampling_rate_hz": 16000,
+      "local_files_only": true
+    },
+    "ambient": {
+      "model_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "snapshot_path": "data/restricted/noaa01/models/ast-audioset-f826b80",
+      "snapshot_hash": "sha256:acb9247d5f2548c121e7fd213347586e1b781fd8dc329e27505dd269a69cccbc",
+      "weights_path": "data/restricted/noaa01/models/ast-audioset-f826b80/model.safetensors",
+      "weights_sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+      "inference_unit": "fine_window",
+      "sampling_rate_hz": 16000,
+      "top_k_labels": 15,
+      "local_files_only": true
+    },
+    "vision_semantic": {
+      "model_id": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "snapshot_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf",
+      "snapshot_hash": "sha256:2c29598276753a41d293ca65ef8fe60287ed62d8cd94b0ee77ec38ecb41a20f5",
+      "weights_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf/pytorch_model.bin",
+      "weights_sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+      "dimension": 512,
+      "local_files_only": true,
+      "redistribution_authorized": false
+    },
+    "vision_routing": {
+      "model_id": "opencv-routing/1.0",
+      "revision": "2.0",
+      "haar_snapshot_path": "data/restricted/noaa01/models/opencv-haarcascade-frontalface-default.xml",
+      "haar_sha256": "0f7d4527844eb514d4a4948e822da90fbb16a34a0bbbbc6adc6498747a5aafb0"
+    }
+  },
+  "index_policy": {
+    "inventory_rule": "inventory every modality/segment and retain explicit non-searchable reasons; omit empty or low-information records from postings",
+    "speech": {
+      "source": "Whisper only",
+      "ranker": "bm25-okapi/1.0",
+      "tokenizer": "unicode-nfkc-casefold-ascii-alnum/1.0",
+      "searchable": "quality-gated timestamped Whisper chunk text localized to truthful 30-second chunk intervals",
+      "official_sidecars_searchable": false,
+      "official_sidecars_citable": false
+    },
+    "ambient": {
+      "source": "AST fine-window observations",
+      "ranker": "weighted-sparse-cosine/1.0",
+      "fine_records": "top-15 canonical AudioSet labels and scores with frozen generic-label discount",
+      "context_records": "deterministic max and mean aggregation over child fine records",
+      "claim_boundary": "provisional model observation, not human audible-event gold"
+    },
+    "vision": {
+      "source": "one CLIP embedding and routing observation per four-second cell",
+      "ranker": "clip-text-image-cosine/1.0",
+      "fine_pooling": "L2-normalized mean of overlapping cell vectors",
+      "context_pooling": "L2-normalized mean of child cell vectors",
+      "embedding_dtype": "float16",
+      "similarity_dtype": "float32",
+      "generated_captions_searchable": false
+    },
+    "search_record_allowlist": [
+      "record_id",
+      "source_ref",
+      "source_sha256",
+      "segment_id",
+      "modality",
+      "scale",
+      "start_us",
+      "end_us",
+      "binding_cell_ids",
+      "search_payload",
+      "searchable",
+      "exclusion_reason"
+    ],
+    "search_record_forbidden_fields": [
+      "title",
+      "filename",
+      "path",
+      "url",
+      "source_url",
+      "license",
+      "rights",
+      "rights_flags",
+      "attribution",
+      "commercial_use",
+      "privacy",
+      "question",
+      "answer",
+      "family",
+      "family_id",
+      "review_id",
+      "evidence_id",
+      "claim_id",
+      "state",
+      "state_role",
+      "intervention",
+      "intervention_id",
+      "evaluation",
+      "label",
+      "gold"
+    ],
+    "rights_metadata_policy": "source rights, attribution, privacy, and release flags remain in source/acquisition manifests and are never copied into searchable records"
+  },
+  "official_transcript_sidecar_policy": {
+    "required": true,
+    "verify_path_bytes_hash_role_and_source_manifest_binding": true,
+    "searchable": false,
+    "citable": false,
+    "training_label": false,
+    "family_or_evaluation_input": false,
+    "allowed_uses": [
+      "source identity validation",
+      "caption or transcript syntax validation",
+      "post-freeze ASR coverage and error audit outside search records"
+    ],
+    "prohibited_uses": [
+      "seeding Whisper search text",
+      "replacing Whisper output",
+      "ranking",
+      "query expansion",
+      "answer generation",
+      "candidate-family generation",
+      "evaluation or gold labeling"
+    ]
+  },
+  "checkpointing": {
+    "layers_per_source": [
+      "speech",
+      "ambient",
+      "vision_routing",
+      "vision_clip"
+    ],
+    "expected_checkpoint_count": 16,
+    "key": "source_sha256/layer_version/scale/shard_index/config_hash",
+    "commit": "temporary file then fsync hash verification and atomic rename",
+    "reuse": "only exact key record-count byte-count hash source and model binding match",
+    "partial_policy": "delete partial shard",
+    "decoded_media_allowed": false
+  },
+  "storage_caps": {
+    "derived_artifacts_soft_cap_mib": 256,
+    "derived_artifacts_hard_fail_cap_mib": 512,
+    "model_snapshot_cap_bytes": 1073741824,
+    "source_media_cap_bytes": 1133512970,
+    "official_sidecar_cap_bytes": 343544,
+    "decoded_media_persistence_allowed": false,
+    "source_media_and_model_snapshots_excluded_from_derived_cap": true
+  },
+  "source_loader_contract": {
+    "exact_source_count": 4,
+    "verify_acquisition_manifest_hash": true,
+    "verify_acquisition_decision_and_zero_failures": true,
+    "verify_source_manifest_hashes": true,
+    "verify_repo_relative_paths": true,
+    "verify_allowed_restricted_root": true,
+    "verify_no_symlinks": true,
+    "verify_directory_mode": "0700",
+    "verify_file_mode": "0600",
+    "verify_file_bytes_and_sha256": true,
+    "verify_one_primary_video_role_per_source": true,
+    "verify_duration_and_stream_expectations_against_acquisition_manifest": true,
+    "verify_exact_per_source_and_total_counts": true,
+    "reject_evaluator_or_private_fields": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-minimality-result:1.0.0",
+  "title": "AV-TRACE leave-one-out minimality result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "minimality_result_id",
+    "family_id",
+    "family_annotation_version",
+    "set_id",
+    "full_set_satisfiable",
+    "leave_one_out_cases",
+    "minimal",
+    "strict_superset_of_accepted_set_ids"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "minimality_result_id": {"$ref": "#/$defs/id"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "family_annotation_version": {"type": "string", "minLength": 1},
+    "set_id": {"$ref": "#/$defs/id"},
+    "full_set_satisfiable": {"const": true},
+    "leave_one_out_cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "removed_evidence_id",
+          "retained_evidence_ids",
+          "unsupported_claim_ids",
+          "still_sufficient"
+        ],
+        "properties": {
+          "removed_evidence_id": {"$ref": "#/$defs/id"},
+          "retained_evidence_ids": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/id"},
+            "uniqueItems": true
+          },
+          "unsupported_claim_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "#/$defs/id"},
+            "uniqueItems": true
+          },
+          "still_sufficient": {"const": false}
+        }
+      }
+    },
+    "minimal": {"const": true},
+    "strict_superset_of_accepted_set_ids": {
+      "type": "array",
+      "maxItems": 0,
+      "items": {"$ref": "#/$defs/id"}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"}
+  }
+}

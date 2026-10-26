@@ -1,0 +1,89 @@
+{
+  "fixture_kind": "schema_faithful_reconnaissance",
+  "synthetic_values": true,
+  "provider": "huggingface",
+  "repository": {
+    "id": "debugger123/LoVR-benchmark",
+    "url": "https://huggingface.co/datasets/debugger123/LoVR-benchmark",
+    "revision": "5a46a68000000000000000000000000000000000",
+    "publisher": "debugger123",
+    "technical_access_status": "public_ungated",
+    "media_rights_status": "unknown_hold",
+    "license_resolution_status": "conflicting",
+    "license_evidence": [
+      {
+        "source": "hf_current_header",
+        "artifact_class": "dataset_release",
+        "name": "CC-BY-NC-SA-4.0",
+        "version": "4.0",
+        "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "scope": "Displayed dataset header; source-media scope unresolved",
+        "observed_revision": "5a46a68000000000000000000000000000000000"
+      },
+      {
+        "source": "indexed_readme",
+        "artifact_class": "dataset_release",
+        "name": "CC-BY-4.0",
+        "version": "4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "Indexed README label; conflicts with current header",
+        "observed_revision": "907eb9100000000000000000000000000000000"
+      }
+    ]
+  },
+  "card": {
+    "title": "Schema-faithful synthetic LoVR reconnaissance fixture",
+    "gated": false,
+    "fixture_notice": "IDs, durations, and hashes are synthetic. Unknown audio, no direct media URL, no transcript claim, and conflicting release-license evidence reflect the audited release semantics."
+  },
+  "configs": [
+    {
+      "name": "caption_data",
+      "splits": [
+        "train",
+        "test"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "caption_data/video_test.parquet",
+      "size": 4096,
+      "oid": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "path": "video_data/part_aa",
+      "size": 1024,
+      "oid": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "rows": [
+    {
+      "id": "synthetic-lovr-001",
+      "split": "test",
+      "config": "caption_data",
+      "title": "Synthetic reconstructed long-video row",
+      "duration_s": 2400,
+      "canonical_url": "https://huggingface.co/datasets/debugger123/LoVR-benchmark",
+      "has_video": "unknown",
+      "has_audio": "unverified",
+      "has_speech": null,
+      "has_ambient_audio": null,
+      "transcript_available": false,
+      "evidence_available": false,
+      "identity_resolution_status": "unresolved",
+      "source_metadata": {
+        "fixture_is_synthetic": true,
+        "observed_fields": [
+          "path",
+          "vid",
+          "slice_num",
+          "cap",
+          "theme_info"
+        ],
+        "upstream_family_claim": "LongVideoBench",
+        "direct_media_url_verified": false
+      }
+    }
+  ]
+}

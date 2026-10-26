@@ -1,0 +1,187 @@
+{
+  "authoritative_inputs": [
+    "orchestration/results/144_mini_pilot_candidate_scientific_audit.txt",
+    "orchestration/results/145_exogenous_restoration_protocol.txt",
+    "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+    "orchestration/results/153_semantic_av_source_prescreen_tooling.txt",
+    "orchestration/results/165_epic_family_mining_implementation.txt",
+    "orchestration/results/166_epic_family_candidates_dev_execution.txt",
+    "orchestration/results/167_epic_substantive_authoring_dev.txt",
+    "orchestration/results/188_captaincook4d_wave0_acquisition_v3.txt",
+    "Task189 canonical CaptainCook4D Wave-0 full-timeline result and index"
+  ],
+  "bounded_direct_inspection": {
+    "artifact_classification": "MACHINE_EXPERT_PROVISIONAL",
+    "audio_window_max_seconds": 32,
+    "frame_window_max_seconds": 32,
+    "human_listening_claimed": false,
+    "maximum_frame_samples": 12,
+    "outputs": [
+      "source-world question hypothesis",
+      "source-world answer hypothesis",
+      "atomic claim hypotheses",
+      "evidence interval hypotheses"
+    ],
+    "repository_media_derivatives_persisted": false
+  },
+  "canonical_input": {
+    "complete_before_mining": true,
+    "index_plan": "data/rehearsal_plan/captaincook4d_wave0_full_timeline_index_v1.json",
+    "index_root": "data/restricted/captaincook4d_wave0_index_v1",
+    "required_checkpoint_count": 12,
+    "required_mode": "full",
+    "required_source_ids": [
+      "15_29",
+      "16_20",
+      "26_22"
+    ],
+    "smoke_forbidden": true,
+    "task189_ready_token_required": "CAPTAINCOOK4D_WAVE0_FULL_TIMELINE_READY",
+    "task189_result_path": "orchestration/results/189_captaincook4d_wave0_full_timeline.txt"
+  },
+  "created_date": "2026-10-10",
+  "execution_status": {
+    "active_index_output_or_checkpoints_touched": false,
+    "candidate_artifact_written_by_task190": false,
+    "mining_executed_by_task190": false,
+    "raw_media_inspection_run_by_task190": false,
+    "task189_ready_at_task190_implementation_time": false
+  },
+  "human_prescreen_gate": {
+    "development_only_mode_available": true,
+    "development_output_future_test_eligible": false,
+    "development_output_gate_a_eligible": false,
+    "gate_a_mode_fails_closed_without_task153_complete_pass": true,
+    "prescreen_assigns_necessity_or_h_tier": false
+  },
+  "initial_mining": {
+    "allowed_direct_authoring_inputs_after_lead_selection": [
+      "bounded frames decoded directly from exact local source media",
+      "bounded audio decoded directly from exact local source media",
+      "nonsemantic waveform and frame-change metrics"
+    ],
+    "allowed_observations": [
+      "canonical OpenCV visual routing/change observations",
+      "canonical frozen CLIP embeddings with generic procedure prompts",
+      "canonical frozen Whisper ASR observations",
+      "canonical frozen AST AudioSet observations"
+    ],
+    "dynamic_nontext_visual_is_primary_emphasis": true,
+    "forbidden_inputs": [
+      "CaptainCook4D semantic action annotations",
+      "step annotations",
+      "task or procedure graphs",
+      "error or mistake labels",
+      "recipe labels",
+      "benchmark splits outcomes prior QA or label-derived features",
+      "Task153 human forms during initial machine mining"
+    ],
+    "machine_scores_are_semantic_evidence": false,
+    "meaningful_non_speech_audio_is_primary_emphasis": true
+  },
+  "lead_structure": {
+    "candidate_leads_per_source": 2,
+    "exactly_two_per_source": true,
+    "far_requires_multi_hop": true,
+    "multi_hop_requires_coherent_compositional_claim": true,
+    "one_hop_implies_near_local": true,
+    "quota_forcing_forbidden": true,
+    "slots": [
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 1,
+        "selection_role": "strongest_dynamic_procedure_event",
+        "source_group_id": "cc4d_p02_e02",
+        "source_id": "15_29"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 2,
+        "selection_role": "coherent_compositional_multihop_or_distinct_local_fallback",
+        "source_group_id": "cc4d_p02_e02",
+        "source_id": "15_29"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 1,
+        "selection_role": "strongest_dynamic_procedure_event",
+        "source_group_id": "cc4d_p01_e08",
+        "source_id": "16_20"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 2,
+        "selection_role": "coherent_compositional_multihop_or_distinct_local_fallback",
+        "source_group_id": "cc4d_p01_e08",
+        "source_id": "16_20"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 1,
+        "selection_role": "strongest_dynamic_procedure_event",
+        "source_group_id": "cc4d_p03_e03",
+        "source_id": "26_22"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 2,
+        "selection_role": "coherent_compositional_multihop_or_distinct_local_fallback",
+        "source_group_id": "cc4d_p03_e03",
+        "source_id": "26_22"
+      }
+    ],
+    "source_count": 3,
+    "total_candidate_leads": 6
+  },
+  "output_boundary": {
+    "H_tiers": false,
+    "accepted_families": false,
+    "artifact_classification": "MACHINE_EXPERT_PROVISIONAL",
+    "default_development_root": "data/restricted/captaincook4d_family_candidates_v1_dev",
+    "default_gate_a_root": "data/restricted/captaincook4d_family_candidates_v1",
+    "necessity_or_minimality_claims": false,
+    "scientific_execution_authorized": false,
+    "tiers": [
+      "P0_MACHINE_CANDIDATE",
+      "P1_MACHINE_CROSS_VALIDATED",
+      "P2_MACHINE_COUNTERFACTUAL_VALIDATED"
+    ]
+  },
+  "plan_hash": "sha256:59f09a0d6c01c73439e4e42c2f452e6325d8ad952867da7df243bc99b7003bac",
+  "plan_id": "AV-TRACE-CAPTAINCOOK4D-FAMILY-MINING-V1",
+  "plan_kind": "IMPLEMENTATION_REHEARSAL_NOT_EXECUTED",
+  "risk_flags_required": [
+    "recurrence and near duplicates",
+    "person identity leakage",
+    "environment or kitchen identity leakage",
+    "speech or ASR substitute",
+    "caption OCR package label or text substitute"
+  ],
+  "schema_version": "av-trace.captaincook4d-family-mining-plan/1.0",
+  "task145_template": {
+    "active_interventions": false,
+    "fixed_zero_based_action_index": 4,
+    "primary_contrast": "RESTORED_minus_NO_TRIGGER",
+    "r_n_public_checkpoint_bytes_identical": true,
+    "states": [
+      "CLEAN",
+      "BLOCKED",
+      "RESTORED",
+      "NO_TRIGGER"
+    ],
+    "template_only_not_executed": true
+  },
+  "task_id": 190
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-identity:1.0.0",
+  "title": "AV-TRACE validator identity and role",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "validator_id",
+    "display_name",
+    "role",
+    "organization",
+    "independence_group",
+    "permitted_private_oracle_access",
+    "conflict_attestation",
+    "identity_version"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "validator_id": {"$ref": "#/$defs/id"},
+    "display_name": {"type": "string", "minLength": 1},
+    "role": {"enum": ["validator", "adjudicator", "alternative_evidence_finder"]},
+    "organization": {"type": "string", "minLength": 1},
+    "independence_group": {"$ref": "#/$defs/id"},
+    "permitted_private_oracle_access": {"type": "boolean"},
+    "identity_version": {"type": "string", "minLength": 1},
+    "conflict_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "not_family_author",
+        "not_adjudicator",
+        "not_alternative_evidence_finder",
+        "independent_of_validator_ids"
+      ],
+      "properties": {
+        "not_family_author": {"const": true},
+        "not_adjudicator": {"const": true},
+        "not_alternative_evidence_finder": {"const": true},
+        "independent_of_validator_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    }
+  }
+}

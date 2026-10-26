@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-feasible-route:1.0.0",
+  "title": "AV-TRACE final-decision feasible-route record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "family_id",
+    "family_annotation_version",
+    "episode_id",
+    "state_role",
+    "validator_id",
+    "source_trajectory_id",
+    "source_trajectory_hash",
+    "decision_index",
+    "observed_evidence_ids",
+    "remaining_steps",
+    "remaining_cost",
+    "restoration_available",
+    "route_alternatives",
+    "feasible_route_ids",
+    "eligible"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"$ref": "#/$defs/id"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "family_annotation_version": {"type": "string", "minLength": 1},
+    "episode_id": {"$ref": "#/$defs/id"},
+    "state_role": {"enum": ["CLEAN", "BLOCKED", "RESTORED"]},
+    "validator_id": {"$ref": "#/$defs/id"},
+    "source_trajectory_id": {"$ref": "#/$defs/id"},
+    "source_trajectory_hash": {"$ref": "#/$defs/hash"},
+    "decision_index": {"type": "integer", "minimum": 0},
+    "observed_evidence_ids": {"$ref": "#/$defs/ids"},
+    "remaining_steps": {"type": "integer", "minimum": 1},
+    "remaining_cost": {"type": "number", "minimum": 0},
+    "restoration_available": {"type": "boolean"},
+    "route_alternatives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/route"}
+    },
+    "feasible_route_ids": {"$ref": "#/$defs/ids"},
+    "eligible": {"type": "boolean"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "ids": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true},
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments", "cost", "expected_evidence_ids"],
+      "properties": {
+        "tool": {
+          "enum": [
+            "search_visual",
+            "search_speech",
+            "search_ambient_audio",
+            "inspect_clip",
+            "read_transcript",
+            "get_channel_status",
+            "finalize"
+          ]
+        },
+        "arguments": {"type": "object"},
+        "cost": {"type": "number", "minimum": 0},
+        "expected_evidence_ids": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_id",
+        "set_id",
+        "missing_evidence_ids",
+        "steps",
+        "required_steps",
+        "required_cost",
+        "feasible",
+        "reason"
+      ],
+      "properties": {
+        "route_id": {"$ref": "#/$defs/id"},
+        "set_id": {"$ref": "#/$defs/id"},
+        "missing_evidence_ids": {"$ref": "#/$defs/ids"},
+        "steps": {"type": "array", "items": {"$ref": "#/$defs/step"}},
+        "required_steps": {"type": "integer", "minimum": 0},
+        "required_cost": {"type": "number", "minimum": 0},
+        "feasible": {"type": "boolean"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

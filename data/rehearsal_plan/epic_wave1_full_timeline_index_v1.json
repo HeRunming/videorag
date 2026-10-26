@@ -1,0 +1,294 @@
+{
+  "schema_version": "av-trace.epic-wave1-full-timeline-index-plan/1.0",
+  "plan_id": "AV-TRACE-EPIC-WAVE1-FULL-TIMELINE-INDEX-V1",
+  "created_date": "2026-09-28",
+  "implementation_decision": "READY_FOR_GATED_EXECUTION",
+  "current_execution_decision": "EPIC_WAVE1_INDEX_IMPLEMENTATION_REPAIR",
+  "current_execution_blocker": "Task162 has not yet published the required EPIC_WAVE1_ACQUISITION_READY manifest with exact final-media SHA-256 values.",
+  "scope": {
+    "source_count": 2,
+    "stage": "RESTRICTED_EPIC_WAVE1_INDEX_CONSTRUCTION_ONLY",
+    "output_root": "data/restricted/epic_wave1_index_v1",
+    "allowed_restricted_source_root": "data/restricted/epic_wave1_sources_v1",
+    "acquisition_manifest_path": "data/restricted/epic_wave1_sources_v1/manifests/epic_wave1_acquisition_manifest.json",
+    "acquisition_decision_required": "EPIC_WAVE1_ACQUISITION_READY",
+    "exact_sha256_required_for_every_source": true,
+    "active_staging_tree_allowed": false,
+    "allowed_stages": [
+      "final acquisition-manifest verification",
+      "exact final-media identity verification",
+      "full-timeline segmentation",
+      "speech observation and indexing",
+      "ambient observation and indexing",
+      "vision routing observation and indexing",
+      "vision semantic observation and indexing",
+      "checkpointing",
+      "index freeze and deterministic replay"
+    ],
+    "forbidden_downstream_stages": [
+      "semantic source prescreen completion",
+      "candidate-family generation",
+      "family migration",
+      "hard-negative labeling",
+      "intervention construction",
+      "trajectory generation",
+      "agent or controller execution",
+      "evaluation",
+      "metric reporting",
+      "human annotation",
+      "public release or redistribution"
+    ]
+  },
+  "authoritative_inputs": [
+    "orchestration/results/136_mini_pilot_full_timeline_build.txt",
+    "orchestration/results/153_semantic_av_source_prescreen_tooling.txt",
+    "orchestration/results/161_assembly_epic_access_preflight_v2.txt",
+    "data/rehearsal_plan/assembly_epic_access_registry_v2.json",
+    "docs/review/assembly_epic_access_preflight_v2.md",
+    "data/restricted/epic_wave1_sources_v1/logs/task161_video_info.csv",
+    "data/restricted/epic_wave1_sources_v1/logs/task161_md5.csv",
+    "data/restricted/epic_wave1_sources_v1/manifests/epic_wave1_acquisition_manifest.json",
+    "src/av_trace_mini_pilot_index"
+  ],
+  "official_metadata_bindings": {
+    "video_info_csv": {
+      "path": "data/restricted/epic_wave1_sources_v1/logs/task161_video_info.csv",
+      "sha256": "75fd040f6662cb407b4ca2eed4811ca94df280a1aba00b6bf8a5cd286deff382"
+    },
+    "md5_csv": {
+      "path": "data/restricted/epic_wave1_sources_v1/logs/task161_md5.csv",
+      "sha256": "3f9c31899ff5807c8f0fed5d26a8fe62300f3f4c40dc3eea767345212c2e83c7"
+    },
+    "assembly_epic_registry_v2": {
+      "path": "data/rehearsal_plan/assembly_epic_access_registry_v2.json",
+      "sha256": "22f1c3a5a59f60e94e5b8d61b3ded4f71558805502f25ac9295e8007204ef9b1"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "P28_103",
+      "source_group_id": "P28",
+      "dataset": "EPIC-KITCHENS-100",
+      "official_media_version": "100",
+      "official_remote_path": "P28/videos/P28_103.MP4",
+      "official_duration_seconds": 1825.16,
+      "duration_tolerance_seconds": 0.001,
+      "official_fps": "50.0",
+      "official_resolution": "1920x1080",
+      "official_md5": "30258174e4ae5cee495170d2748efc4e",
+      "official_content_length_bytes": 5529540372,
+      "expected_final_media_path": "data/restricted/epic_wave1_sources_v1/media/P28/P28_103.MP4",
+      "exact_sha256_binding": {
+        "source": "Task162 acquisition manifest media.sha256",
+        "required": true,
+        "value_frozen_in_plan": false
+      },
+      "expected_counts": {
+        "base_cells": 457,
+        "fine_windows": 456,
+        "context_windows": 114,
+        "temporal_segments": 570,
+        "whisper_chunks": 61,
+        "checkpoints": 4
+      }
+    },
+    {
+      "source_id": "P27_101",
+      "source_group_id": "P27",
+      "dataset": "EPIC-KITCHENS-100",
+      "official_media_version": "100",
+      "official_remote_path": "P27/videos/P27_101.MP4",
+      "official_duration_seconds": 1360.2,
+      "duration_tolerance_seconds": 0.001,
+      "official_fps": "50.0",
+      "official_resolution": "1920x1080",
+      "official_md5": "f3e40c9216ab5f05cddb762bd70278d5",
+      "official_content_length_bytes": 4120358548,
+      "expected_final_media_path": "data/restricted/epic_wave1_sources_v1/media/P27/P27_101.MP4",
+      "exact_sha256_binding": {
+        "source": "Task162 acquisition manifest media.sha256",
+        "required": true,
+        "value_frozen_in_plan": false
+      },
+      "expected_counts": {
+        "base_cells": 341,
+        "fine_windows": 340,
+        "context_windows": 85,
+        "temporal_segments": 425,
+        "whisper_chunks": 46,
+        "checkpoints": 4
+      }
+    }
+  ],
+  "totals": {
+    "duration_seconds": 3185.36,
+    "duration_hours": 0.8848222222222222,
+    "primary_media_bytes": 9649898920,
+    "base_cells": 798,
+    "fine_windows": 796,
+    "context_windows": 199,
+    "temporal_segments": 995,
+    "whisper_chunks": 107,
+    "ast_fine_calls": 796,
+    "clip_frame_forwards": 798,
+    "checkpoint_count": 8,
+    "maximum_modality_segment_records": 2985
+  },
+  "segmentation": {
+    "time_unit": "integer_microseconds_in_storage",
+    "base_lattice": {
+      "cell_length_seconds": 4,
+      "stride_seconds": 4,
+      "terminal_rule": "retain the final positive sub-four-second cell"
+    },
+    "fine": {
+      "nominal_length_seconds": 8,
+      "stride_seconds": 4,
+      "admission_rule": "duration-start >= 4",
+      "end_rule": "min(start+8, duration)"
+    },
+    "context": {
+      "nominal_length_seconds": 32,
+      "stride_seconds": 16,
+      "admission_rule": "duration-start >= 16",
+      "end_rule": "min(start+32, duration)"
+    },
+    "speech": {
+      "chunk_length_seconds": 30,
+      "stride_seconds": 30,
+      "terminal_rule": "retain the final positive partial chunk"
+    },
+    "vision_frame_rule": "one frame per base cell at min(cell_start+2 seconds, duration-one-microsecond)"
+  },
+  "model_snapshots": {
+    "speech": {
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "snapshot_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102",
+      "snapshot_hash": "sha256:1e098354f3cbd9f339ef8fbdcc0e82ff238786bffa25794493ebe32830f4518a",
+      "weights_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/model.safetensors",
+      "weights_sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad",
+      "chunk_length_seconds": 30,
+      "sampling_rate_hz": 16000,
+      "local_files_only": true
+    },
+    "ambient": {
+      "model_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "snapshot_path": "data/restricted/noaa01/models/ast-audioset-f826b80",
+      "snapshot_hash": "sha256:acb9247d5f2548c121e7fd213347586e1b781fd8dc329e27505dd269a69cccbc",
+      "weights_path": "data/restricted/noaa01/models/ast-audioset-f826b80/model.safetensors",
+      "weights_sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+      "inference_unit": "fine_window",
+      "sampling_rate_hz": 16000,
+      "top_k_labels": 15,
+      "local_files_only": true
+    },
+    "vision_semantic": {
+      "model_id": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "snapshot_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf",
+      "snapshot_hash": "sha256:2c29598276753a41d293ca65ef8fe60287ed62d8cd94b0ee77ec38ecb41a20f5",
+      "weights_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf/pytorch_model.bin",
+      "weights_sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+      "dimension": 512,
+      "local_files_only": true,
+      "redistribution_authorized": false
+    },
+    "vision_routing": {
+      "model_id": "opencv-routing/1.0",
+      "revision": "2.0",
+      "haar_snapshot_path": "data/restricted/noaa01/models/opencv-haarcascade-frontalface-default.xml",
+      "haar_sha256": "0f7d4527844eb514d4a4948e822da90fbb16a34a0bbbbc6adc6498747a5aafb0"
+    }
+  },
+  "index_policy": {
+    "inventory_rule": "inventory every modality/segment and retain explicit non-searchable reasons",
+    "speech": {
+      "source": "Whisper tiny.en only",
+      "ranker": "bm25-okapi/1.0",
+      "official_annotations_searchable": false
+    },
+    "ambient": {
+      "source": "AST fine-window observations",
+      "ranker": "weighted-sparse-cosine/1.0",
+      "claim_boundary": "provisional model observation, not human event gold"
+    },
+    "vision": {
+      "source": "one CLIP embedding and OpenCV routing observation per four-second cell",
+      "ranker": "clip-text-image-cosine/1.0",
+      "generated_captions_searchable": false
+    },
+    "sealed_inputs": [
+      "EPIC action labels",
+      "EPIC narration labels and timestamps",
+      "EPIC-SOUNDS labels and timestamps",
+      "benchmark splits and outcomes",
+      "label-derived features"
+    ],
+    "rights_metadata_searchable": false,
+    "evaluator_annotations_searchable": false
+  },
+  "checkpointing": {
+    "layers_per_source": [
+      "speech",
+      "ambient",
+      "vision_routing",
+      "vision_clip"
+    ],
+    "expected_checkpoint_count": 8,
+    "key": "source_sha256/layer_version/scale/shard_index/config_hash",
+    "commit": "temporary file then fsync hash verification and atomic rename",
+    "reuse": "only exact key, record count, byte count, payload hash, source hash, and model binding match",
+    "partial_policy": "delete invalid partial checkpoint",
+    "decoded_media_allowed": false
+  },
+  "execution_modes": {
+    "dry_preflight": {
+      "default": true,
+      "media_decode": false,
+      "artifact_write": false,
+      "allowed_before_acquisition_ready": true
+    },
+    "smoke": {
+      "default_seconds": 32,
+      "output_root_default": "data/restricted/epic_wave1_index_v1_smoke",
+      "requires_acquisition_ready": true,
+      "requires_exact_sha256": true
+    },
+    "full": {
+      "output_root": "data/restricted/epic_wave1_index_v1",
+      "requires_acquisition_ready": true,
+      "requires_exact_sha256": true,
+      "authorized_by_this_plan": false
+    }
+  },
+  "permissions": {
+    "output_directories": "0700",
+    "output_files": "0600",
+    "source_directories": "0700",
+    "source_media": "0600",
+    "symlinks_allowed": false
+  },
+  "storage_caps": {
+    "derived_artifacts_soft_cap_mib": 256,
+    "derived_artifacts_hard_fail_cap_mib": 512,
+    "decoded_media_persistence_allowed": false,
+    "source_media_and_model_snapshots_excluded_from_derived_cap": true
+  },
+  "verification": {
+    "script": "scripts/verify_epic_wave1_full_timeline.py",
+    "checks": [
+      "Task162 decision and manifest hash binding",
+      "exact source SHA-256 and official MD5 binding",
+      "source byte count, duration, streams, A/V sync, and permissions",
+      "lattice and observation counts",
+      "checkpoint keys, payload hashes, file hashes, sizes, and permissions",
+      "top-level artifact self-hashes and build artifact hashes",
+      "no absolute or staging paths",
+      "no media derivatives",
+      "no families, interventions, trajectories, evaluation, or metrics",
+      "derived artifact hard cap"
+    ]
+  }
+}

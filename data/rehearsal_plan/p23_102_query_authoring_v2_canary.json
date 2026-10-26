@@ -1,0 +1,113 @@
+{
+  "artifacts_for_one_future_authorized_run": [
+    "canary_contract.json",
+    "canary_subset_bundle.json",
+    "target_manifest.json",
+    "prompt_manifest.json",
+    "raw_attempts.jsonl",
+    "asr_audit_inventory.json",
+    "authored_queries.json",
+    "audits.json",
+    "resource_runtime.json",
+    "seal.json"
+  ],
+  "authorization": {
+    "created_by_this_task": false,
+    "required_bindings": [
+      "canary_config_sha256",
+      "selected_family_hashes",
+      "main_pipeline_sha256",
+      "bundle_file_hashes",
+      "model_hashes",
+      "media_sha256",
+      "output_path",
+      "single_local_run=true"
+    ],
+    "schema_version": "av-trace.p23-102-query-authoring-v2-canary-authorization/1.0",
+    "separate_receipt_required": true
+  },
+  "canary_id": "AV-TRACE-P23-102-QUERY-AUTHORING-V2-CANARY",
+  "commands": {
+    "execute_only_after_external_authorization": "python tools/p23_102_query_authoring_v2_canary.py --execute --authorization <approved-canary-receipt.json>",
+    "plan": "python tools/p23_102_query_authoring_v2_canary.py --plan",
+    "preflight": "python tools/p23_102_query_authoring_v2_canary.py --preflight",
+    "targeted_tests": "pytest -q tooling/tests/test_p23_102_query_authoring_v2_canary.py",
+    "validate_output": "python tools/p23_102_query_authoring_v2_canary.py --validate-output"
+  },
+  "created_date": "2026-10-15",
+  "decision": "P23_102_QUERY_AUTHORING_V2_CANARY_READY",
+  "execution_contract": {
+    "atomic_install_after_all_audits": true,
+    "exact_parent_stages_reused": [
+      "PyAV exact clip extraction",
+      "Qwen2.5-Omni direct A/V authoring",
+      "Whisper literal leakage audit",
+      "lexical and query-only embedding collision audits"
+    ],
+    "network_denied": true,
+    "output_path": "data/restricted/p23_102_query_authoring_v2_canary_run_v1",
+    "partial_output_install_forbidden": true,
+    "raw_authoring_and_asr_outputs_retained": true,
+    "temporary_exact_clip_arrays_removed_before_seal": true
+  },
+  "implementation_files": [
+    "tools/p23_102_query_authoring_v2_canary.py",
+    "tooling/tests/test_p23_102_query_authoring_v2_canary.py",
+    "data/rehearsal_plan/p23_102_query_authoring_v2_canary.json",
+    "docs/design/p23_102_query_authoring_v2_canary.md"
+  ],
+  "main_pipeline_id": "AV-TRACE-P23-102-QUERY-AUTHORING-V2",
+  "main_pipeline_sha256": "sha256:112ae1ffc3adec11ffa522ca945bc77b09d22f135ab24bfad19de200ef9f6cfc",
+  "measurement": {
+    "capture_peak_rss_bytes": true,
+    "capture_stage_wall_seconds": true,
+    "capture_total_wall_seconds": true,
+    "record_asr_model_calls": true,
+    "record_authoring_model_calls": true,
+    "record_exact_target_decodes": true
+  },
+  "no_claim_boundary": {
+    "human_semantic_validation_performed": false,
+    "retrieval_rankings_read": false,
+    "retrieval_scoring_performed": false,
+    "scientific_claims_permitted": false,
+    "target_or_non_target_retrieval_vectors_read": false
+  },
+  "plan_payload_sha256": "sha256:2fbe9a41eda4d7e312930c48b8d5380ef110cffb6fabebbdaf9406c8a6566841",
+  "schema_version": "av-trace.p23-102-query-authoring-v2-canary-plan/1.0",
+  "scope": {
+    "authorization_receipt_created": false,
+    "main_authoring_pipeline_or_plan_modified": false,
+    "model_loaded_by_this_task": false,
+    "real_canary_run_performed": false,
+    "retrieval_scoring_performed": false,
+    "target_media_decoded_by_this_task": false
+  },
+  "selected_family_hashes": {
+    "far": "sha256:d474a0ddaaa53b45d64b1e61895b65f466295a343e6b752161bdb9d075424796",
+    "local": "sha256:e53b1fd19b6011baf0f84c5333faeff52a141b7c34ffaf1a3f06a41c9341a787"
+  },
+  "selected_family_keys": {
+    "far": "family-005",
+    "local": "family-009"
+  },
+  "selection": {
+    "algorithm": "minimum_sha256_per_structural_family_class",
+    "classes": [
+      "one local one-component family",
+      "one far ordered two-component family"
+    ],
+    "domain": "AV-TRACE-P23-102-QUERY-AUTHORING-V2-CANARY-SELECTION-V1",
+    "exact_family_count": 2,
+    "maximum_unique_clip_count": 4,
+    "semantic_ranking_used": false,
+    "structural_bundle_hashes_bound": true,
+    "structural_family_hashes_bound": true
+  },
+  "unique_clip_count": 3,
+  "unique_clip_keys": [
+    "clip-003",
+    "clip-011",
+    "clip-019"
+  ]
+}

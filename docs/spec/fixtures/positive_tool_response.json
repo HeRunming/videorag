@@ -1,0 +1,24 @@
+{
+  "protocol_version": "0.2.0",
+  "episode_id": "syn_family.restored",
+  "request_id": "r1",
+  "step_index": 0,
+  "tool": "get_channel_status",
+  "status": "ok",
+  "cost_charged": 0.25,
+  "cost_used_total": 0.25,
+  "cost_remaining": 11.75,
+  "backend_version": "fixed-v0.2",
+  "results": [
+    {
+      "result_type": "channel_status",
+      "channels": {
+        "speech": {"status": "available", "retryable": false},
+        "transcript": {"status": "available", "retryable": false}
+      }
+    }
+  ],
+  "error": null,
+  "response_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+}
+

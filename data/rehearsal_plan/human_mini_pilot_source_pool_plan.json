@@ -1,0 +1,926 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "av-trace-human-mini-pilot-source-pool-v1",
+  "created_at": "2026-09-22",
+  "decision": "SOURCE_POOL_PLAN_READY",
+  "execution_state": "PLAN_ONLY_NO_MEDIA_DOWNLOADED_NO_HUMAN_REVIEW",
+  "scope": {
+    "owned_files": [
+      "data/rehearsal_plan/human_mini_pilot_source_pool_plan.json",
+      "docs/review/human_mini_pilot_source_pool_plan.md",
+      "orchestration/results/123_human_mini_pilot_source_pool_plan.txt"
+    ],
+    "media_downloaded": false,
+    "media_bytes_persisted": false,
+    "restricted_controller_evaluator_labels_inspected": false,
+    "human_review_completed": false,
+    "human_gold_records": 0
+  },
+  "basis": {
+    "task108": [
+      "orchestration/prompts/108_construct_validity_mini_pilot.md",
+      "orchestration/results/108_construct_validity_mini_pilot.txt",
+      "docs/annotation/construct_validity_protocol.md",
+      "data/rehearsal_plan/construct_validity_mini_pilot_plan.json"
+    ],
+    "registers": [
+      "docs/data/dataset_inventory.csv",
+      "docs/data/data_source_audit.md",
+      "docs/data/license_risk_register.md",
+      "data/candidates/source_candidates.csv",
+      "data/candidates/top30_review_queue.csv",
+      "data/candidates/source_family_notes.md",
+      "data/rehearsal_plan/candidate_funnel.csv",
+      "data/rehearsal_plan/concrete_candidate_pool.csv",
+      "data/rehearsal_plan/family_slot_matrix.csv",
+      "data/rehearsal_plan/construct_validity_example_registry.json"
+    ],
+    "discovery_tools_reports": [
+      "tools/noaa_webinar_route_recon.py",
+      "tools/noaa_webinar_stream_preflight.py",
+      "tools/hf_audio_stream_preflight.py",
+      "tools/audio_asset_recon.py",
+      "tools/ves_long_candidate_recon.py",
+      "tools/ves_discovery_preflight_plan.py",
+      "tools/ves_discovery_stream_preflight.py",
+      "docs/review/candidate_pool_review.md",
+      "docs/review/noaa_final_selection.md",
+      "docs/review/audio_asset_recon.md",
+      "docs/review/human_boundary_status.md",
+      "docs/review/ves_discovery_preflight_plan.md",
+      "docs/review/ves_discovery_stream_preflight.md"
+    ],
+    "pivot_review": "docs/review/cvpr_pivot_review_data_construct.md"
+  },
+  "frozen_design": {
+    "families": 12,
+    "source_groups": 6,
+    "families_per_source": 2,
+    "new_source_groups": 4,
+    "new_non_noaa_domains": [
+      "instructional_procedural_field_demonstration",
+      "expert_public_information_volcanology",
+      "observational_engineering_mission_history",
+      "expert_public_lecture_technology_policy"
+    ],
+    "new_non_noaa_producers_or_collections": [
+      "USGS GRSAT training",
+      "USGS Public Lecture Series",
+      "NASA/JPL documentary series",
+      "Wikimedia Commons owner/uploader chain"
+    ],
+    "existing_noaa_source_groups": 2,
+    "existing_noaa_family_cap": 4,
+    "primary_test_exclusion": [
+      "SG-NOAA-049",
+      "SG-NOAA-052",
+      "all current NOAA source groups",
+      "all sources used in retrieval/controller/metric/prompt development"
+    ],
+    "future_primary_test_rule": "Whole source groups only; exclude current NOAA and every source or derivative seen during development. All clips, transcripts, embeddings, queries, alternative SESs and derivatives inherit source split.",
+    "content_exclusions": [
+      "minors",
+      "home/egocentric private spaces",
+      "sensitive personal data",
+      "copyrighted music as evidence",
+      "music-dominant recordings",
+      "unresolved license-laundering risk",
+      "third-party news/film inserts without scope",
+      "sources whose exact owner-controlled or institutional route cannot be frozen"
+    ]
+  },
+  "target_strata": {
+    "primary_modality_counts": {
+      "vision": 3,
+      "speech": 3,
+      "ambient": 2,
+      "cross_modal": 4
+    },
+    "route_counts": {
+      "V": 3,
+      "S": 3,
+      "V+A": 2,
+      "V+S": 2,
+      "V+S+A": 2
+    },
+    "intervention_counts": {
+      "necessity_group_withholding": 6,
+      "modality_channel_outage": 6
+    },
+    "hop_counts": {
+      "one_hop": 6,
+      "multi_hop": 6
+    },
+    "temporal_counts": {
+      "near_local": 6,
+      "far_separated": 6
+    },
+    "risk_controls": {
+      "low_risk_controls": 3,
+      "high_risk_or_failure_enriched": 9,
+      "ambient_candidates": 2,
+      "triple_modal_candidates": 2
+    }
+  },
+  "source_groups": [
+    {
+      "source_group_id": "SG-NOAA-049",
+      "role": "development_only_existing_noaa",
+      "domain": "instructional_field_safety",
+      "producer": "NOAA Ocean Today",
+      "candidate_id": "cand-049",
+      "title": "Beach and Bay Safe",
+      "stable_source_id": "NOAA-OceanToday-webinar5",
+      "canonical_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar5-070220.html",
+      "access_method": {
+        "status": "already_restricted_local_for_development",
+        "route": "Existing restricted exact NOAA acquisition; do not redownload for this plan.",
+        "media_reference": "data/restricted/noaa01/raw/05_archive_070620_sm.mp4"
+      },
+      "duration": {
+        "seconds": 2465.329542,
+        "display": "41:05.33",
+        "evidence": "local restricted decoded/audited source"
+      },
+      "modality_suitability": {
+        "candidate": "V+A with speech available in source",
+        "strength": "high for visual field conditions and surf/environment sound; speech may create substitute routes",
+        "limitations": "ambient necessity must survive speech/caption and derived-route closure"
+      },
+      "likely_family_strata": [
+        "vision-dominant",
+        "ambient-dominant",
+        "V+A",
+        "one-hop",
+        "multi-hop",
+        "near/local",
+        "far/separated"
+      ],
+      "license_redistribution_boundary": {
+        "status": "unknown_hold",
+        "internal_use": "existing restricted development use only under prior controls",
+        "release": "no raw media, clips, frames, audio, transcript, or derived-media release",
+        "notes": "Official hosting is not item/component clearance; guests, footage, music, marks, likenesses, and possible minors remain review items."
+      },
+      "privacy_content_boundary": [
+        "reject any family containing minors or sensitive identifiable bystanders",
+        "avoid music-bearing intervals",
+        "prefer adult presenter and wide public-beach footage"
+      ],
+      "exact_preflight": [
+        "reuse exact local SHA-256 and source-duration binding",
+        "full-source visual/audio chronology pass",
+        "human speech-versus-ambient segmentation",
+        "minor/bystander/music/component scan",
+        "caption/ASR/OCR/metadata substitute-route scan",
+        "source-group fingerprint check"
+      ],
+      "fallback": "SG-NOAA-052 or cand-047 as development-only NOAA replacement; no NOAA fallback may enter future primary test.",
+      "planned_slots": [
+        "F01",
+        "F02"
+      ],
+      "dated_evidence": [
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar5-070220.html",
+          "title": "NOAA Ocean Today: Beach and Bay Safe",
+          "accessed_at": "2026-09-22",
+          "supports": "official landing page and title/duration lineage"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.noaa.gov/disclaimer",
+          "title": "NOAA disclaimer",
+          "accessed_at": "2026-09-22",
+          "supports": "government-hosting and third-party component caveat"
+        }
+      ]
+    },
+    {
+      "source_group_id": "SG-NOAA-052",
+      "role": "development_only_existing_noaa",
+      "domain": "expert_public_information_weather",
+      "producer": "NOAA Ocean Today",
+      "candidate_id": "cand-052",
+      "title": "Climate Alive! Wild Weather",
+      "stable_source_id": "NOAA-OceanToday-webinar8",
+      "canonical_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar8-climatealive.html",
+      "access_method": {
+        "status": "already_restricted_local_for_development",
+        "route": "Existing restricted exact NOAA acquisition; do not redownload for this plan.",
+        "media_reference": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4"
+      },
+      "duration": {
+        "seconds": 2693.503,
+        "display": "44:53.50 decoded local rendition",
+        "evidence": "local restricted decoded/audited source; differs from page program length because exact rendition/source history must remain bound"
+      },
+      "modality_suitability": {
+        "candidate": "S, V+S, possibly V+S+A",
+        "strength": "high for narration, graphics, and separated explanatory sections",
+        "limitations": "ambient route is weak unless a genuine non-speech event survives; slide text may duplicate speech"
+      },
+      "likely_family_strata": [
+        "speech-dominant",
+        "V+S",
+        "V+S+A stress candidate",
+        "one-hop",
+        "multi-hop",
+        "near/local",
+        "far/separated",
+        "correct-answer/wrong-citation risk"
+      ],
+      "license_redistribution_boundary": {
+        "status": "unknown_hold",
+        "internal_use": "existing restricted development use only under prior controls",
+        "release": "no raw media, clips, frames, audio, transcript, or derived-media release",
+        "notes": "Partner visualizations, guest slides, possible broadcaster clips, music, and likenesses remain item/component holds."
+      },
+      "privacy_content_boundary": [
+        "avoid participant Q&A with personal details",
+        "avoid music/third-party broadcaster inserts",
+        "prefer presenter/graphic intervals"
+      ],
+      "exact_preflight": [
+        "reuse exact local SHA-256 and source-duration binding",
+        "reconcile local duration with canonical page/program metadata",
+        "full-source speech/graphic chronology pass",
+        "OCR/caption/ASR duplicate-route inventory",
+        "music/third-party clip/component scan",
+        "source-group fingerprint check"
+      ],
+      "fallback": "cand-045 as development-only speech/visual control; no NOAA asset may enter future primary test.",
+      "planned_slots": [
+        "F03",
+        "F04"
+      ],
+      "dated_evidence": [
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar8-climatealive.html",
+          "title": "NOAA Ocean Today: Climate Alive! Wild Weather",
+          "accessed_at": "2026-09-22",
+          "supports": "official landing page and title/program lineage"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.noaa.gov/disclaimer",
+          "title": "NOAA disclaimer",
+          "accessed_at": "2026-09-22",
+          "supports": "government-hosting and third-party component caveat"
+        }
+      ]
+    },
+    {
+      "source_group_id": "SG-USGS-SHIFT-CURVES",
+      "role": "new_primary_candidate",
+      "domain": "instructional_procedural_field_demonstration",
+      "producer": "U.S. Geological Survey",
+      "candidate_id": "new-usgs-shift-curves",
+      "title": "Developing and Applying Shift Curves using GRSAT",
+      "stable_source_id": "USGS-media-video-developing-and-applying-shift-curves-using-grsat",
+      "canonical_landing_url": "https://www.usgs.gov/media/videos/developing-and-applying-shift-curves-using-grsat",
+      "access_method": {
+        "status": "official_download_route_advertised_not_used",
+        "route": "Official USGS landing page exposes Download Video and Download Transcript; exact media URL and object identity must be frozen by metadata-only route reconciliation before any later bounded range preflight.",
+        "media_reference": null
+      },
+      "duration": {
+        "seconds": 4651,
+        "display": "01:17:31",
+        "evidence": "official USGS page"
+      },
+      "modality_suitability": {
+        "candidate": "V+S and possible V+S+A procedural demonstration",
+        "strength": "screen/field workflow, narration, step sequence, repeated visual state changes, long separated stages",
+        "limitations": "ambient may be mostly UI/room noise; transcript/OCR may duplicate speech"
+      },
+      "likely_family_strata": [
+        "vision-dominant",
+        "speech-dominant",
+        "V+S",
+        "V+S+A stress candidate",
+        "one-hop",
+        "multi-hop",
+        "near/local",
+        "far/separated"
+      ],
+      "license_redistribution_boundary": {
+        "status": "promising_public_domain_item_but_component_review_required",
+        "internal_use": "candidate for restricted acquisition and annotation after exact-object approval",
+        "release": "USGS page marks item Public Domain, but release remains artifact-specific and must exclude third-party software marks/content, personal data, and any non-USGS insert not covered",
+        "notes": "Public-domain marking is stronger than generic availability; preserve attribution and item-page snapshot."
+      },
+      "privacy_content_boundary": [
+        "adult technical training only expected",
+        "exclude any personal account data shown on screen",
+        "avoid music and external embedded media",
+        "screen-recording credentials or personal identifiers are automatic reject"
+      ],
+      "exact_preflight": [
+        "archive official page HTML/PDF view and page-level Public Domain statement with SHA-256",
+        "extract only official Download Video and transcript links; reject external player extraction",
+        "HEAD exact object: HTTPS host allowlist, no query token persistence, size, ETag, Last-Modified, MIME, ranges",
+        "bounded ISO-BMFF/WebM range parse only: exact duration, audio/video tracks, A/V timeline; persist no media",
+        "compare transcript identity and timing without treating transcript as audio proof",
+        "later, only after approval, decode brief bounded samples for intelligible speech and non-speech classification",
+        "full-source screen/privacy/music/component audit before family authoring",
+        "fingerprint against all source groups and mirrors"
+      ],
+      "fallback": "USGS Public Lecture Series item with official Public Domain and Download Video/Transcript, preferably 'Six Eruptions at Two Volcanoes Over the Past Three Years'; if procedural visual coverage is not equivalent, replace from NASA/NPS institutional reserves rather than weaken the stratum.",
+      "planned_slots": [
+        "F05",
+        "F06"
+      ],
+      "dated_evidence": [
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.usgs.gov/media/videos/developing-and-applying-shift-curves-using-grsat",
+          "title": "USGS: Developing and Applying Shift Curves using GRSAT",
+          "accessed_at": "2026-09-22",
+          "supports": "title, 01:17:31 length, Download Video, Download Transcript, and Public Domain marking"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "title": "USGS copyrights and credits",
+          "accessed_at": "2026-09-22",
+          "supports": "USGS-authored information is generally public domain while non-USGS material can remain protected"
+        }
+      ]
+    },
+    {
+      "source_group_id": "SG-USGS-SIX-ERUPTIONS",
+      "role": "new_primary_candidate",
+      "domain": "expert_public_information_volcanology",
+      "producer": "U.S. Geological Survey",
+      "candidate_id": "new-usgs-six-eruptions",
+      "title": "Six Eruptions at Two Volcanoes Over the Past Three Years",
+      "stable_source_id": "USGS-media-video-pubtalk-112023-six-eruptions-two-volcanoes-over-past-three-years",
+      "canonical_landing_url": "https://www.usgs.gov/media/videos/pubtalk-112023-six-eruptions-two-volcanoes-over-past-three-years",
+      "access_method": {
+        "status": "official_download_route_advertised_not_used",
+        "route": "Official USGS landing page exposes Download Video and Download Transcript; freeze the exact official object before bounded range preflight.",
+        "media_reference": null
+      },
+      "duration": {
+        "seconds": 3355,
+        "display": "00:55:55",
+        "evidence": "official USGS page"
+      },
+      "modality_suitability": {
+        "candidate": "S, V+S, possible V+S+A",
+        "strength": "expert narration plus maps, eruption images/video and temporally separated episodes; good far/multi-hop potential",
+        "limitations": "ambient eruption sound may be absent, dubbed, or covered by narration; slide text may duplicate claims"
+      },
+      "likely_family_strata": [
+        "speech-dominant",
+        "vision-dominant",
+        "V+S",
+        "V+S+A stress candidate",
+        "one-hop",
+        "multi-hop",
+        "far/separated"
+      ],
+      "license_redistribution_boundary": {
+        "status": "promising_public_domain_item_but_component_review_required",
+        "internal_use": "candidate for restricted acquisition and annotation after exact-object approval",
+        "release": "USGS page marks item Public Domain; separately audit photographs, observatory/partner footage, maps, music, and speaker likeness/credits",
+        "notes": "Do not infer that every embedded component is public domain merely from the page-level item statement."
+      },
+      "privacy_content_boundary": [
+        "adult public lecture expected",
+        "avoid audience questions containing personal information",
+        "avoid third-party news footage or music if present"
+      ],
+      "exact_preflight": [
+        "archive official page and Public Domain statement with SHA-256",
+        "freeze exact Download Video URL/object identity from official route only",
+        "HEAD and bounded container preflight under closed byte budgets",
+        "verify exact duration, audio/video tracks, synchronization, transcript route",
+        "later bounded decode/listen after approval for speech and genuine ambient-event availability",
+        "full-source third-party image/footage/music and audience privacy audit",
+        "OCR/ASR/transcript duplicate-route and alternative-SES scan",
+        "fingerprint against all source groups and mirrors"
+      ],
+      "fallback": "Another USGS Public Lecture Series full recording carrying an item-level Public Domain statement, such as 'Volcano Watchers' or 'Unrest at Long Valley Caldera'; exact duration and download route must pass first.",
+      "planned_slots": [
+        "F07",
+        "F08"
+      ],
+      "dated_evidence": [
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.usgs.gov/media/videos/pubtalk-112023-six-eruptions-two-volcanoes-over-past-three-years",
+          "title": "USGS public lecture: Six Eruptions at Two Volcanoes Over the Past Three Years",
+          "accessed_at": "2026-09-22",
+          "supports": "title, 00:55:55 length, Download Video, Download Transcript, and Public Domain marking"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "title": "USGS copyrights and credits",
+          "accessed_at": "2026-09-22",
+          "supports": "USGS-authored information is generally public domain while non-USGS material can remain protected"
+        }
+      ]
+    },
+    {
+      "source_group_id": "SG-NASA-PATHFINDERS",
+      "role": "new_primary_candidate_rights_hold",
+      "domain": "observational_engineering_mission_history",
+      "producer": "NASA / Jet Propulsion Laboratory",
+      "candidate_id": "cand-013",
+      "title": "JPL and the Space Age: The Pathfinders",
+      "stable_source_id": "NASA+-jpl-pathfinders",
+      "canonical_landing_url": "https://plus.nasa.gov/video/jpl-and-the-space-age-the-pathfinders/",
+      "access_method": {
+        "status": "official_landing_only_no_exact_download_frozen",
+        "route": "Use NASA+ or an official NASA/JPL downloadable asset only. Do not extract from YouTube, Vimeo, or another embedded platform. Freeze exact rendition identity before any bounded preflight.",
+        "media_reference": null
+      },
+      "duration": {
+        "seconds": 3600,
+        "display": "01:00:00",
+        "evidence": "official NASA+ series metadata retained in local source register"
+      },
+      "modality_suitability": {
+        "candidate": "V+S and possible V+S+A",
+        "strength": "design-test-landing-operations arc, archival mission footage, narration and visual state transitions",
+        "limitations": "documentary score can invalidate ambient candidates; Caltech/JPL and archival components require separate scope review"
+      },
+      "likely_family_strata": [
+        "vision-dominant",
+        "speech-dominant",
+        "V+S",
+        "V+S+A stress candidate",
+        "multi-hop",
+        "far/separated"
+      ],
+      "license_redistribution_boundary": {
+        "status": "unknown_hold",
+        "internal_use": "no acquisition or processing until exact route and item/component rights review",
+        "release": "NASA media guidance permits many informational uses but does not clear logos, identifiable persons, music, third-party/partner material, or all JPL/Caltech content; raw redistribution is not approved",
+        "notes": "Treat NASA's general media guidance as a review framework, not an item license."
+      },
+      "privacy_content_boundary": [
+        "adult public officials/engineers expected",
+        "avoid music-bearing scenes for audio strata",
+        "audit archival identifiable persons and partner/contractor footage",
+        "exclude any child/minor footage"
+      ],
+      "exact_preflight": [
+        "capture NASA+ page and NASA/JPL media-use policies with SHA-256",
+        "locate an official first-party downloadable rendition and reject embedded-platform extraction",
+        "freeze exact URL, host, size, ETag/Last-Modified, MIME and range support",
+        "bounded container preflight only; no media persistence",
+        "later bounded decode/listen after processing approval",
+        "shot/component ledger: NASA, JPL/Caltech, contractor, archival, music, marks and likenesses",
+        "full-source OCR/ASR/closed-caption alternative-route scan",
+        "fingerprint against NARA/NASA mirrors and all pool sources"
+      ],
+      "fallback": "cand-005 Planetary Defenders if its exact official route and component rights are cleaner; secondary fallback cand-008 The Changing Face of Mars. Neither fallback is selected without the same preflight.",
+      "planned_slots": [
+        "F09",
+        "F10"
+      ],
+      "dated_evidence": [
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://plus.nasa.gov/video/jpl-and-the-space-age-the-pathfinders/",
+          "title": "NASA+: JPL and the Space Age — The Pathfinders",
+          "accessed_at": "2026-09-22",
+          "supports": "official first-party program page and runtime lineage"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "title": "NASA media usage guidelines",
+          "accessed_at": "2026-09-22",
+          "supports": "NASA media use conditions and third-party/identity/logo caveats"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+          "title": "JPL image use policy",
+          "accessed_at": "2026-09-22",
+          "supports": "JPL/Caltech-specific use and credit boundary"
+        }
+      ]
+    },
+    {
+      "source_group_id": "SG-COMMONS-BLOCKCHAIN",
+      "role": "new_primary_candidate_rights_hold",
+      "domain": "expert_public_lecture_technology_policy",
+      "producer": "Wikimedia Commons / credited recording owner",
+      "candidate_id": "cand-055",
+      "title": "Abuse on the blockchain – Guest lecture at Stanford University by Molly White (2022).webm",
+      "stable_source_id": "CommonsFile:Abuse on the blockchain – Guest lecture at Stanford University by Molly White (2022).webm",
+      "canonical_landing_url": "https://commons.wikimedia.org/wiki/File:Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_(2022).webm",
+      "access_method": {
+        "status": "official_commons_file_page_only_no_download",
+        "route": "Pin MediaWiki pageid, oldid, original upload source, author/uploader, license/version, attribution, and exact original file identity. Only later use the official Commons original-file route.",
+        "media_reference": null
+      },
+      "duration": {
+        "seconds": 3656,
+        "display": "01:00:56",
+        "evidence": "official Commons file page retained in local source register"
+      },
+      "modality_suitability": {
+        "candidate": "S and V+S",
+        "strength": "long lecture with slides, demonstrations/examples, and likely question/answer structure",
+        "limitations": "room ambience is unlikely to be semantically necessary; slide screenshots, websites, logos, and audience speech may be separately protected or sensitive"
+      },
+      "likely_family_strata": [
+        "speech-dominant",
+        "V+S",
+        "one-hop",
+        "multi-hop",
+        "near/local",
+        "far/separated",
+        "low-risk control candidate if component audit passes"
+      ],
+      "license_redistribution_boundary": {
+        "status": "unknown_hold_pending_revision_and_scope",
+        "internal_use": "no acquisition until exact revision/license/source-chain review",
+        "release": "follow exact Commons license/attribution/share-alike requirements; raw media release only if recording authority and embedded component scope are credible",
+        "notes": "A Commons license field does not by itself cure license laundering or third-party slide/media rights."
+      },
+      "privacy_content_boundary": [
+        "adult lecture expected",
+        "exclude audience faces/voices or personal anecdotes if not covered",
+        "avoid any music",
+        "audit website screenshots, handles, harassment examples, and sensitive personal information"
+      ],
+      "exact_preflight": [
+        "MediaWiki API capture of pageid, current oldid, timestamp, user, source, author, license templates and file SHA1; archive JSON",
+        "verify source chain and uploader/recording-owner authority; reject unexplained reupload",
+        "obtain exact original-file URL from official API and freeze size/hash/MIME",
+        "bounded WebM/Matroska range preflight: duration, audio/video streams and timeline; persist no media",
+        "check TimedText identity and provenance without treating it as audio proof",
+        "later bounded decode/listen only after approval",
+        "full-source third-party slides/screenshots/privacy/music audit",
+        "fingerprint against other lecture uploads/mirrors"
+      ],
+      "fallback": "cand-059 Before Vermont if its oldid, owner authority, license scope, and duration become stronger; avoid Wikimania ceremony fallbacks because music and attendee/privacy burden are higher.",
+      "planned_slots": [
+        "F11",
+        "F12"
+      ],
+      "dated_evidence": [
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://commons.wikimedia.org/wiki/File:Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_(2022).webm",
+          "title": "Wikimedia Commons file page: Abuse on the blockchain",
+          "accessed_at": "2026-09-22",
+          "supports": "official file identity and 01:00:56 duration; revision/license chain still requires pinning"
+        },
+        {
+          "evidence_type": "official_primary_web",
+          "url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+          "title": "Commons reuse guidance",
+          "accessed_at": "2026-09-22",
+          "supports": "license, attribution, and third-party-content obligations"
+        }
+      ]
+    }
+  ],
+  "family_slots": [
+    {
+      "slot_id": "F01",
+      "source_group_id": "SG-NOAA-049",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "vision",
+      "route_candidate": "V",
+      "hop_count_candidate": 1,
+      "temporal_structure": "near/local",
+      "intervention_mechanism": "necessity_group_withholding",
+      "risk_enrichment": "low_risk_control",
+      "question_pattern": "Visually identify a local safety condition; speech/captions must not answer.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F02",
+      "source_group_id": "SG-NOAA-049",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "ambient",
+      "route_candidate": "V+A",
+      "hop_count_candidate": 2,
+      "temporal_structure": "far/separated",
+      "intervention_mechanism": "modality_channel_outage",
+      "risk_enrichment": "high_alternative_support_risk",
+      "question_pattern": "Connect a visible water condition to a genuine environmental sound event; audio must not be narration/music.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F03",
+      "source_group_id": "SG-NOAA-052",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "speech",
+      "route_candidate": "S",
+      "hop_count_candidate": 1,
+      "temporal_structure": "near/local",
+      "intervention_mechanism": "modality_channel_outage",
+      "risk_enrichment": "low_risk_control",
+      "question_pattern": "Recover one locally spoken weather proposition that is not independently printed.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F04",
+      "source_group_id": "SG-NOAA-052",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "cross_modal",
+      "route_candidate": "V+S",
+      "hop_count_candidate": 2,
+      "temporal_structure": "far/separated",
+      "intervention_mechanism": "necessity_group_withholding",
+      "risk_enrichment": "correct_answer_wrong_citation_and_minimality_risk",
+      "question_pattern": "Bind an earlier graphic/visual state to a later spoken explanation.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F05",
+      "source_group_id": "SG-USGS-SHIFT-CURVES",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "vision",
+      "route_candidate": "V",
+      "hop_count_candidate": 2,
+      "temporal_structure": "far/separated",
+      "intervention_mechanism": "necessity_group_withholding",
+      "risk_enrichment": "high_alternative_support_risk",
+      "question_pattern": "Relate an early interface/field setup to a later visible result; transcript-only must fail.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F06",
+      "source_group_id": "SG-USGS-SHIFT-CURVES",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "cross_modal",
+      "route_candidate": "V+S+A",
+      "hop_count_candidate": 1,
+      "temporal_structure": "near/local",
+      "intervention_mechanism": "modality_channel_outage",
+      "risk_enrichment": "triple_modal_stress",
+      "question_pattern": "Bind one spoken instruction, one visual action/state, and one genuine non-speech cue; if no semantic ambient cue exists, reject/replace rather than relabel.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F07",
+      "source_group_id": "SG-USGS-SIX-ERUPTIONS",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "speech",
+      "route_candidate": "S",
+      "hop_count_candidate": 2,
+      "temporal_structure": "far/separated",
+      "intervention_mechanism": "necessity_group_withholding",
+      "risk_enrichment": "multiple_statement_routes",
+      "question_pattern": "Combine separated spoken claims about two eruption episodes; enumerate repeated statements.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F08",
+      "source_group_id": "SG-USGS-SIX-ERUPTIONS",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "cross_modal",
+      "route_candidate": "V+S+A",
+      "hop_count_candidate": 1,
+      "temporal_structure": "near/local",
+      "intervention_mechanism": "modality_channel_outage",
+      "risk_enrichment": "triple_modal_stress",
+      "question_pattern": "Bind a narrated interpretation, eruption/map visual, and genuine non-speech event; reject if audio is only narration/score.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F09",
+      "source_group_id": "SG-NASA-PATHFINDERS",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "vision",
+      "route_candidate": "V",
+      "hop_count_candidate": 1,
+      "temporal_structure": "near/local",
+      "intervention_mechanism": "necessity_group_withholding",
+      "risk_enrichment": "archive_duplicate_risk",
+      "question_pattern": "Identify a local engineering state/change from footage without relying on narration or title cards.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F10",
+      "source_group_id": "SG-NASA-PATHFINDERS",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "ambient",
+      "route_candidate": "V+A",
+      "hop_count_candidate": 2,
+      "temporal_structure": "far/separated",
+      "intervention_mechanism": "modality_channel_outage",
+      "risk_enrichment": "music_and_archive_risk",
+      "question_pattern": "Connect an early engineering/test setup with a later operation using genuine mission/mechanical sound; score is forbidden evidence.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F11",
+      "source_group_id": "SG-COMMONS-BLOCKCHAIN",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "speech",
+      "route_candidate": "S",
+      "hop_count_candidate": 1,
+      "temporal_structure": "near/local",
+      "intervention_mechanism": "modality_channel_outage",
+      "risk_enrichment": "low_risk_control",
+      "question_pattern": "Recover a locally stated claim not independently available in slide text or metadata.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    },
+    {
+      "slot_id": "F12",
+      "source_group_id": "SG-COMMONS-BLOCKCHAIN",
+      "family_status": "HYPOTHESIS_NOT_AUTHORED_NOT_VALIDATED",
+      "primary_modality_stratum": "cross_modal",
+      "route_candidate": "V+S",
+      "hop_count_candidate": 2,
+      "temporal_structure": "far/separated",
+      "intervention_mechanism": "necessity_group_withholding",
+      "risk_enrichment": "slide_and_repetition_risk",
+      "question_pattern": "Bind a visual example on slides/screen to a separated spoken interpretation; audit repeated and text-only routes.",
+      "acceptance_conditions": [
+        "independent full-source alternative-SES search",
+        "exact source-time evidence intervals",
+        "leave-one-evidence-out minimality",
+        "necessity hitting-set recomputation",
+        "question-only and metadata-only shortcut failure",
+        "derived-route closure over transcript/captions/OCR/metadata",
+        "CLEAN/BLOCKED/RESTORED pair isolation",
+        "rights/privacy/safety pass",
+        "Task108 H1/H2 review gates"
+      ],
+      "fallback_rule": "If intended modality/route is not genuinely necessary, reject or replace this slot; never force the target label."
+    }
+  ],
+  "source_disjointness": {
+    "group_definition": "Earliest verified underlying media asset; mirrors, excerpts, alternate encodings, subtitle variants, transcript variants, and near-duplicate edits collapse into one group.",
+    "pre_assignment_checks": [
+      "canonical ID/URL/title/duration comparison",
+      "exact cryptographic hash when authorized",
+      "perceptual video fingerprint and audio fingerprint when authorized",
+      "transcript n-gram overlap",
+      "opening/closing slate and edit-history comparison",
+      "cross-collection mirror search",
+      "producer/series grouping review"
+    ],
+    "collision_policy": "Any plausible duplicate or shared parent collapses groups before sampling; replace the lower-rights or lower-modality candidate."
+  },
+  "preflight_order": [
+    "P0 metadata and rights evidence capture only",
+    "P1 exact official route reconciliation without media body download",
+    "P2 bounded in-memory container range preflight under a closed object allowlist",
+    "named human rights/privacy/custody approval for exact acquisition and processing",
+    "restricted exact media acquisition in a separate task",
+    "decoded A/V and semantic modality audit",
+    "family authoring and machine provisional validation",
+    "Task108 independent human review and saturation audit"
+  ],
+  "stop_conditions": [
+    "exact first-party or Commons-owner-controlled route cannot be established",
+    "duration outside 1200-5400 seconds",
+    "no synchronized video and audio tracks",
+    "no useful intelligible speech where required",
+    "no genuine non-speech event for ambient/V+S+A slots",
+    "minor/private/sensitive content cannot be excluded or minimized",
+    "music or third-party material is inseparable from required evidence",
+    "rights status remains unknown_hold at acquisition gate",
+    "source-group duplicate or prior development leakage is found",
+    "two defensible families cannot be authored without weakening necessity/minimality rules"
+  ],
+  "selection_logic": {
+    "why_ready": "The plan identifies exactly four new non-NOAA source groups across four declared domains, with two high-confidence institutional/public-domain USGS routes and two explicitly held NASA/Commons routes plus named fallbacks. It freezes 12 slots with balanced intervention/hop/temporal targets and fail-closed preflights. Ready means ready for metadata/rights and bounded stream preflight, not ready to download, annotate, or claim H1/H2.",
+    "go_to_acquisition_requirement": "At least four new source groups across at least two non-NOAA domains must separately pass exact route, duration, synchronized A/V, modality-semantic, source-disjointness, rights, privacy, and custody gates. Any held NASA/Commons group may be replaced by an approved institutional fallback while preserving the slot matrix."
+  },
+  "official_web_evidence_policy": {
+    "required": true,
+    "sources": "official primary sources only",
+    "access_date": "2026-09-22",
+    "raw_media_downloaded": false,
+    "notes": "Current pages were used only to refresh candidate facts and preflight requirements. Exact media objects were not fetched."
+  }
+}

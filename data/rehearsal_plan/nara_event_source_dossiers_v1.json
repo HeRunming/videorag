@@ -1,0 +1,589 @@
+{
+  "schema_version": "nara-event-source-dossiers-v1",
+  "task": 150,
+  "date": "2026-09-23",
+  "decision": "NARA_EVENT_SOURCE_PREFLIGHT_REPAIR",
+  "boundary": {
+    "mode": "FAIL_CLOSED_FINALIZATION_AFTER_USER_NETWORK_STOP",
+    "network_activity_after_stop": false,
+    "new_successful_network_requests": 0,
+    "new_successful_nara_item_pages": 0,
+    "new_successful_nara_policy_pages": 0,
+    "new_successful_nara_digital_object_routes": 0,
+    "new_head_probes_completed": 0,
+    "new_range_probes_completed": 0,
+    "new_manifest_probes_completed": 0,
+    "full_media_downloads": 0,
+    "media_payload_bytes_saved": 0,
+    "human_annotation_performed": false,
+    "scientific_evaluation_performed": false,
+    "h1_h2_claims_made": false,
+    "modality_necessity_claims_made": false,
+    "public_domain_inference_from_nara_host": false
+  },
+  "decision_rule": {
+    "exact_preflight_ready": "Requires a live-readable exact NARA item and ID, item-level restriction/use evidence, an exact NARA digital-object URL, a successful bounded technical probe supporting A/V stream plausibility, affirmative acquisition plus internal-processing and restricted-annotation decisions, and no unresolved critical component/privacy hold.",
+    "preflight_repair": "Candidate has a retained official catalog locator or prior metadata lead but one or more exact item, rights/use, digital-object, technical, semantic, or governance fields remain unresolved.",
+    "preflight_no_go": "Candidate is mismatched, below the duration floor, dominated by unacceptable safety/privacy/copyright risk, or otherwise unsuitable without a reasonable repair."
+  },
+  "counts": {
+    "distinct_candidate_records_in_dossier": 8,
+    "non_rejected_candidates": 6,
+    "exact_preflight_ready": 0,
+    "preflight_repair": 6,
+    "preflight_no_go": 2,
+    "exact_nara_catalog_ids_retained": 8,
+    "live_verified_exact_catalog_ids_task150": 0,
+    "item_level_restriction_use_records_live_verified_task150": 0,
+    "exact_nara_digital_object_urls": 0,
+    "av_stream_plausibility_live_verified_task150": 0,
+    "capture_format_categories_hypothesized": 3,
+    "capture_format_categories_live_validated": 0,
+    "sources_30_to_120_minutes_by_retained_or_approximate_metadata": 4,
+    "sources_30_to_120_minutes_live_verified_task150": 0,
+    "target_at_least_six_non_rejected_records_met": true,
+    "target_at_least_three_capture_formats_live_validated": false,
+    "target_at_least_two_exact_preflight_ready_met": false
+  },
+  "capture_format_summary": {
+    "hypothesized_categories": [
+      "mission_event",
+      "industrial_lab_process",
+      "field_operations_maintenance_assembly"
+    ],
+    "live_validated_categories": [],
+    "wildlife_environment": "NOT_ESTABLISHED_BEFORE_NETWORK_STOP",
+    "note": "Categories are title/description-level hypotheses from prior local records only. They are not media-derived or live-validated."
+  },
+  "global_rights_rule": "NARA custody, catalog availability, or a downloadable object never establishes that every component is public domain. Item-level restriction/use evidence and component review are mandatory.",
+  "global_decisions": {
+    "acquisition": "NOT_AUTHORIZED",
+    "internal_processing": "NOT_AUTHORIZED",
+    "restricted_human_annotation": "NOT_AUTHORIZED",
+    "raw_media_release": "NOT_AUTHORIZED",
+    "clip_frame_audio_release": "NOT_AUTHORIZED",
+    "transcript_release": "NOT_AUTHORIZED",
+    "annotation_evaluator_release": "NOT_AUTHORIZED",
+    "derived_features_embeddings_release": "NOT_AUTHORIZED"
+  },
+  "sources": [
+    {
+      "source_group_id": "NARA-APOLLO-11-FOR-ALL-MANKIND",
+      "candidate_id": "cand-026",
+      "title": "Apollo 11: For All Mankind",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/47292",
+      "catalog_id": "NAID:47292",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "mission_event",
+      "duration": {
+        "seconds": null,
+        "display": null,
+        "status": "UNRESOLVED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_REPAIR",
+      "decision_reason": "The prior local inventory retains an official catalog locator, but Task 150 obtained no live item, restriction/use, digital-object, duration, or stream evidence.",
+      "restriction_use_metadata": {
+        "status": "NOT_LIVE_VERIFIED_ITEM_LEVEL",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null,
+        "note": "No affirmative federal-work/public-domain basis or documented permission is present in Task 150 evidence."
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Apollo mission stages could provide sequential mission activity.",
+        "non_speech_audio_hypothesis": "Mission, launch, vehicle, or operations audio may exist.",
+        "semantic_status": "METADATA_HYPOTHESIS_ONLY",
+        "shortcut_risks": "Narration, captions, and mission transcripts may dominate or substitute for event evidence."
+      },
+      "component_risks": [
+        "contractor or television inserts",
+        "archive or foreign footage",
+        "music",
+        "NASA and contractor marks",
+        "astronaut and participant faces/voices",
+        "privacy/publicity and endorsement"
+      ],
+      "decisions": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "HOLD",
+        "derived_features_embeddings_release": "HOLD"
+      },
+      "blocking_items": [
+        "Live title/ID binding not captured in Task 150.",
+        "Duration is unresolved.",
+        "Item-level restrictions and use terms are absent.",
+        "No exact NARA digital-object URL.",
+        "No bounded A/V technical probe."
+      ]
+    },
+    {
+      "source_group_id": "NARA-BIG-PICTURE-ARMY-SATELLITES",
+      "candidate_id": "cand-041",
+      "title": "The Big Picture: Army Satellites",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/2569665",
+      "catalog_id": "NAID:2569665",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "industrial_lab_process",
+      "duration": {
+        "seconds": 1680,
+        "display": "~00:28:00",
+        "status": "PRIOR_APPROXIMATE_METADATA_NOT_TASK150_LIVE_VERIFIED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_REPAIR",
+      "decision_reason": "The retained title, NAID, local-ID lead, and approximate runtime make this a plausible engineering/process record, but no Task 150 live item, restrictions, object, or stream evidence was obtained.",
+      "restriction_use_metadata": {
+        "status": "NOT_LIVE_VERIFIED_ITEM_LEVEL",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null,
+        "note": "NARA custody is not an item-level rights determination."
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Satellite equipment, launch preparation, testing, and military-space operations may provide process sequences.",
+        "non_speech_audio_hypothesis": "Equipment or launch sounds may occur, but authenticity is unknown.",
+        "semantic_status": "METADATA_HYPOTHESIS_ONLY",
+        "shortcut_risks": "Historical narration, diagrams, titles, and score may dominate."
+      },
+      "component_risks": [
+        "military and contractor footage",
+        "archive inserts",
+        "music",
+        "military and contractor marks",
+        "identifiable service members",
+        "security-sensitive historical context"
+      ],
+      "decisions": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "HOLD",
+        "derived_features_embeddings_release": "HOLD"
+      },
+      "blocking_items": [
+        "Approximate runtime is below the preferred 30-minute floor and is not live verified.",
+        "Item-level restrictions and use terms are absent.",
+        "No exact NARA digital-object URL.",
+        "No bounded A/V technical probe.",
+        "Component and security review absent."
+      ]
+    },
+    {
+      "source_group_id": "NARA-BIG-PICTURE-CITY-UNDER-ICE",
+      "candidate_id": "cand-042",
+      "title": "The Big Picture: City Under the Ice",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/2569752",
+      "catalog_id": "NAID:2569752",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "field_operations_maintenance_assembly",
+      "duration": {
+        "seconds": null,
+        "display": null,
+        "status": "UNRESOLVED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_REPAIR",
+      "decision_reason": "This is the strongest retained non-combat NARA field/engineering lead, but Task 150 obtained no live-readable item, exact runtime, restriction/use metadata, digital object, or stream evidence.",
+      "restriction_use_metadata": {
+        "status": "NOT_LIVE_VERIFIED_ITEM_LEVEL",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null,
+        "note": "No item-specific authorization was captured."
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Construction, machinery, logistics, and operation of an under-ice facility.",
+        "non_speech_audio_hypothesis": "Machinery and environmental sound may carry process facts if authentic.",
+        "semantic_status": "METADATA_HYPOTHESIS_ONLY",
+        "shortcut_risks": "Narration and editorial music may fully describe or mask the process."
+      },
+      "component_risks": [
+        "military and contractor footage",
+        "stock or archive inserts",
+        "music",
+        "military marks",
+        "identifiable service members",
+        "historical security, environmental, and geopolitical sensitivity"
+      ],
+      "decisions": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "HOLD",
+        "derived_features_embeddings_release": "HOLD"
+      },
+      "blocking_items": [
+        "Exact duration unknown.",
+        "Live title/local-ID binding absent.",
+        "Item-level restrictions and use terms absent.",
+        "No exact NARA digital-object URL.",
+        "No bounded A/V technical probe."
+      ]
+    },
+    {
+      "source_group_id": "NARA-BIG-PICTURE-NURSES-IN-THE-ARMY",
+      "candidate_id": "cand-040",
+      "title": "The Big Picture: Nurses in the Army",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/2569560",
+      "catalog_id": "NAID:2569560",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "field_operations_maintenance_assembly",
+      "duration": {
+        "seconds": null,
+        "display": null,
+        "status": "UNRESOLVED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_REPAIR",
+      "decision_reason": "The record could contain medical training and field procedure, but exact duration, item restrictions, digital object, technical A/V evidence, and patient/privacy review are absent.",
+      "restriction_use_metadata": {
+        "status": "NOT_LIVE_VERIFIED_ITEM_LEVEL",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null,
+        "note": "No affirmative item-level use authority is retained."
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Medical training, equipment preparation, and nursing procedure may provide operational sequences.",
+        "non_speech_audio_hypothesis": "Hospital or training sounds may occur but are unverified.",
+        "semantic_status": "METADATA_HYPOTHESIS_ONLY",
+        "shortcut_risks": "Narration may dominate; visible patients and medical context create privacy and dignity concerns."
+      },
+      "component_risks": [
+        "patients or simulated patients",
+        "medical privacy and dignity",
+        "identifiable service members",
+        "music and stock footage",
+        "military marks",
+        "possible minors or bystanders"
+      ],
+      "decisions": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "HOLD",
+        "derived_features_embeddings_release": "HOLD"
+      },
+      "blocking_items": [
+        "Exact duration unknown.",
+        "Item-level restrictions and use terms absent.",
+        "No exact NARA digital-object URL.",
+        "No bounded A/V technical probe.",
+        "Medical privacy and dignity review absent."
+      ]
+    },
+    {
+      "source_group_id": "NARA-NEGRO-SOLDIER",
+      "candidate_id": "cand-030",
+      "title": "The Negro Soldier",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/35956",
+      "catalog_id": "NAID:35956",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "mission_event",
+      "duration": {
+        "seconds": 2422,
+        "display": "00:40:22",
+        "status": "PRIOR_OFFICIAL_NARA_PUBLICATION_METADATA_NOT_TASK150_LIVE_VERIFIED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_REPAIR",
+      "decision_reason": "Prior local audit corroborated the title, NAID, and runtime, but Task 150 has no live item-level restrictions, exact digital object, or technical stream evidence; historical racist imagery/language and propaganda require a high-burden sensitivity review.",
+      "restriction_use_metadata": {
+        "status": "NOT_LIVE_VERIFIED_ITEM_LEVEL",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null,
+        "note": "NARA custody does not clear embedded footage, music, publicity, or worldwide reuse."
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Military training and historical event sequences may be present.",
+        "non_speech_audio_hypothesis": "Archival event audio may be present but could be reconstructed or score-covered.",
+        "semantic_status": "METADATA_HYPOTHESIS_ONLY",
+        "shortcut_risks": "Narration, propaganda framing, music, and on-screen text may dominate."
+      },
+      "component_risks": [
+        "historic racist imagery and language",
+        "propaganda context",
+        "music",
+        "archive and third-party footage",
+        "identifiable people",
+        "community, dignity, and psychological-safety burden"
+      ],
+      "decisions": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "HOLD",
+        "derived_features_embeddings_release": "HOLD"
+      },
+      "blocking_items": [
+        "No Task 150 live catalog snapshot.",
+        "Item-level restrictions and use terms absent.",
+        "No exact NARA digital-object URL.",
+        "No bounded A/V technical probe.",
+        "Sensitivity and community review absent."
+      ]
+    },
+    {
+      "source_group_id": "NARA-THUNDERBOLT",
+      "candidate_id": "cand-032",
+      "title": "Thunderbolt",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/36060",
+      "catalog_id": "NAID:36060",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "mission_event",
+      "duration": {
+        "seconds": 2640,
+        "display": "00:44:00",
+        "status": "STALE_PRIOR_METADATA_NOT_INDEPENDENTLY_REVIEWED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_REPAIR",
+      "decision_reason": "A long mission/event candidate is retained only as a stale metadata lead. Exact title-ID binding, restrictions, object route, stream plausibility, combat-safety screening, and soundtrack provenance are unresolved.",
+      "restriction_use_metadata": {
+        "status": "NOT_LIVE_VERIFIED_ITEM_LEVEL",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null,
+        "note": "No item-level rights conclusion is supportable."
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Aircraft operations and mission progression.",
+        "non_speech_audio_hypothesis": "Aircraft or combat audio may be semantic, but authenticity and score dominance are unknown.",
+        "semantic_status": "METADATA_HYPOTHESIS_ONLY",
+        "shortcut_risks": "Editorial narration and music may dominate; combat material may be unsuitable."
+      },
+      "component_risks": [
+        "combat casualties or gore",
+        "foreign and military footage",
+        "music",
+        "military marks",
+        "identifiable people",
+        "propaganda and psychological-safety burden"
+      ],
+      "decisions": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "HOLD",
+        "derived_features_embeddings_release": "HOLD"
+      },
+      "blocking_items": [
+        "Stale title/ID/runtime metadata.",
+        "Item-level restrictions and use terms absent.",
+        "No exact NARA digital-object URL.",
+        "No bounded A/V technical probe.",
+        "High combat and soundtrack risk."
+      ]
+    },
+    {
+      "source_group_id": "NARA-PROJECT-GEMINI-BRIDGE-TO-MOON",
+      "candidate_id": "cand-027",
+      "title": "Project Gemini: A Bridge to the Moon",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/45017",
+      "catalog_id": "NAID:45017",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "mission_event",
+      "duration": {
+        "seconds": null,
+        "display": null,
+        "status": "UNRESOLVED"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_NO_GO",
+      "decision_reason": "Prior official NARA transcript metadata associates NAID 45017 with The Eagle Has Landed rather than the supplied Gemini title. The title-ID pair is mismatched and no replacement ID was guessed.",
+      "restriction_use_metadata": {
+        "status": "NOT_REACHED_DUE_IDENTITY_FAILURE",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Not evaluated because identity failed.",
+        "non_speech_audio_hypothesis": "Not evaluated because identity failed.",
+        "semantic_status": "NOT_APPLICABLE_IDENTITY_FAILURE",
+        "shortcut_risks": "Not assessed."
+      },
+      "component_risks": [
+        "unknown because the proposed item identity is invalid"
+      ],
+      "decisions": {
+        "acquisition": "NO_GO",
+        "internal_processing": "NO_GO",
+        "restricted_human_annotation": "NO_GO",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "NOT_AUTHORIZED",
+        "derived_features_embeddings_release": "NOT_AUTHORIZED"
+      },
+      "blocking_items": [
+        "Definite title/identifier mismatch."
+      ]
+    },
+    {
+      "source_group_id": "NARA-BATTLE-OF-MIDWAY",
+      "candidate_id": "cand-029",
+      "title": "The Battle of Midway",
+      "canonical_catalog_url": "https://catalog.archives.gov/id/12870",
+      "catalog_id": "NAID:12870",
+      "publisher_custodian": "National Archives and Records Administration",
+      "capture_format": "mission_event",
+      "duration": {
+        "seconds": 1080,
+        "display": "00:18:00",
+        "status": "PRIOR_OFFICIAL_RECORD_DURATION"
+      },
+      "task150_live_status": "NOT_PROBED_BEFORE_NETWORK_STOP",
+      "decision": "PREFLIGHT_NO_GO",
+      "decision_reason": "The retained official duration is below the 20-minute frozen minimum and far below the preferred 30-120-minute range; combat/death and soundtrack risks add burden without repairing the duration failure.",
+      "restriction_use_metadata": {
+        "status": "NOT_REACHED_FOR_READINESS",
+        "use_restriction": null,
+        "specific_use_restriction": null,
+        "copyright_status": null
+      },
+      "digital_object": {
+        "exact_url": null,
+        "status": "ABSENT",
+        "bounded_probe": "NOT_PERFORMED",
+        "av_stream_plausibility": "UNESTABLISHED"
+      },
+      "event_centricity": {
+        "dynamic_visual_hypothesis": "Naval combat event footage.",
+        "non_speech_audio_hypothesis": "Combat audio may be present but authenticity is unknown.",
+        "semantic_status": "NOT_ADVANCED_DURATION_FAILURE",
+        "shortcut_risks": "Narration, score, and combat editing."
+      },
+      "component_risks": [
+        "combat and death imagery",
+        "music",
+        "military marks",
+        "identifiable people"
+      ],
+      "decisions": {
+        "acquisition": "NO_GO",
+        "internal_processing": "NO_GO",
+        "restricted_human_annotation": "NO_GO",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "NOT_AUTHORIZED",
+        "derived_features_embeddings_release": "NOT_AUTHORIZED"
+      },
+      "blocking_items": [
+        "Duration is 18 minutes, below the frozen minimum.",
+        "Combat/privacy/soundtrack burden."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "data/source_recon/nara_event_sources_v1/network_stop_record.json",
+      "bytes": 2307,
+      "sha256": "a9772655e1f9ae8b9dd7f2058b0351f211757fabe26aa37ccbfcca7cd3ed6a34",
+      "role": "TASK150_NETWORK_FAILURE_AND_STOP_RECORD"
+    },
+    {
+      "path": "data/candidates/source_candidates.csv",
+      "bytes": 76677,
+      "sha256": "b00f3a2045aafea8517f232080c87433292fe9d84430739a4c7a89b7d833923b",
+      "role": "PRIOR_LOCAL_NARA_CANDIDATE_METADATA"
+    },
+    {
+      "path": "data/candidates/top30_review_queue.csv",
+      "bytes": 41135,
+      "sha256": "27f34bea47c228473a0fa214b16f7a4b4b0219c3b629644679e57e458a8bc376",
+      "role": "PRIOR_LOCAL_SHORTLIST_METADATA_AND_RIGHTS_QUESTIONS"
+    },
+    {
+      "path": "data/rehearsal_plan/event_centric_source_dossiers_v1.json",
+      "bytes": 59346,
+      "sha256": "59fb92f51a44fd8619e99e418b4ae28eaa3cfb98b23757d3e9be5d9eaf5da06a",
+      "role": "TASK143_PRIOR_EVENT_CENTRIC_NARA_RESERVE_RECORDS"
+    },
+    {
+      "path": "docs/review/candidate_pool_review.md",
+      "bytes": 13339,
+      "sha256": "f6f3ccef0c7dad21ce09d1f6e84955008103fc404142df20946c4c5b7b9115bc",
+      "role": "PRIOR_INDEPENDENT_IDENTITY_DURATION_AND_RIGHTS_AUDIT"
+    },
+    {
+      "path": "docs/data/license_risk_register.md",
+      "bytes": 15522,
+      "sha256": "2c3eae167cf653bb1ba0baa831c2e5d4ae5ca6998dd5927aa93391483ee6eecf",
+      "role": "PROJECT_NARA_RIGHTS_GOVERNANCE"
+    }
+  ],
+  "next_authorized_actions": [
+    "None while the user's network stop remains in force.",
+    "If live work is later reauthorized, begin with City Under the Ice, Army Satellites, Apollo 11: For All Mankind, Nurses in the Army, The Negro Soldier, and Thunderbolt.",
+    "For each candidate, capture a live exact item record, every restriction/use field, and the exact NARA-described digital object before any media transfer.",
+    "Use only HEAD, manifest, or very small bounded Range probes; abort if Range is ignored.",
+    "Do not authorize acquisition, processing, restricted annotation, or release until the corresponding item-level and component-level evidence passes."
+  ],
+  "final_token": "NARA_EVENT_SOURCE_PREFLIGHT_REPAIR"
+}

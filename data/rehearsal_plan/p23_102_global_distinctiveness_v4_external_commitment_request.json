@@ -1,0 +1,35 @@
+{
+  "bindings": {
+    "adjudication_schema_sha256": "sha256:4f0b6b782c0063c8141317d9a582134521806e9d1fd51f54df4115180aecb431",
+    "commitment_request_schema_sha256": "sha256:362fed60c97c6b4d72c97000319610906f91c610a9d4bc61879b41efdae65bfb",
+    "gate_manifest_sha256": "sha256:e9c0e69b619b6e47209b893ae3e4e35b9cf783f9aa3303f567fcfc347bf1ffe7",
+    "parent_ambient_tool_source_sha256": "sha256:6ae1c46007ca6ec93ac30b71ccf0db7e406cfa20215df0f5df1b0309f95aad5b",
+    "plan_file_expected_canonical_sha256": "sha256:388d3b1d2122c50501ca1919164ad7558eaa9ccac64d999e414e1c8bf1b251f2",
+    "plan_payload_sha256": "sha256:6dd46943fac0a494462d9975af798e478f0e63189ee30e1c0630d2190cff4528",
+    "raw_audit_encoding_schema_sha256": "sha256:f4e08d09bf4e343434927f9106df61b7fb0dde0849fd16021bb315dd6e262129",
+    "review_receipt_schema_sha256": "sha256:31007ed09774cb7542c36c797651d0befef2e75281f20f30b9223f3073078b2e",
+    "review_submission_schema_sha256": "sha256:d79131ae4af7d695779083c453959eba23cb3f852e790103895ab6ff1490b85d",
+    "runtime_constants": {
+      "human_review_rate": 0.2,
+      "jaccard_max_exclusive": 0.92,
+      "max_visual_objects": 2,
+      "minimum_bundle_component_count": 1,
+      "minimum_bundle_sample_count": 1,
+      "minimum_discriminative_dimensions": 2,
+      "minimum_expected_query_count": 1,
+      "raw_audit_encoding_version": 1,
+      "reviewer_count": 2
+    },
+    "runtime_constants_sha256": "sha256:54bb0615009efdf81e29ce1a791864dd63d9ef3796a407143fc478777bb2f4c4",
+    "schema_manifest_sha256": "sha256:187f1352e8b78a1325584a99288fb100c9f9a7bf582a2f0b10aa2eb75399edf0",
+    "tool_source_sha256": "sha256:c9a8df1100d03b3fa994cfcca201a921c461e898a9ca60a27d2fd9f833ab0aed"
+  },
+  "commitment_request_payload_sha256": "sha256:3c3d5a45402f48ccf769de01c790bf7ccfd17b082af353e4063c9a4c04e7b6c6",
+  "date": "2026-10-23",
+  "decision": "R23_B_V4_DESIGN_READY",
+  "execution": false,
+  "external_attested": false,
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "request_purpose": "REQUEST_FUTURE_INDEPENDENT_EXTERNAL_AUTHORIZATION_BINDING",
+  "schema_version": "av-trace.p23-102-r23b-external-commitment-request/2.0"
+}

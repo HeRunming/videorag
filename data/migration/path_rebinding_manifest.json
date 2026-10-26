@@ -1,0 +1,224 @@
+{
+  "acceptance": {
+    "key_model_free_tests": [
+      "tests/test_migration_bootstrap.py",
+      "tests/test_hf_migration_tools.py",
+      "tests/test_manifest.py",
+      "tests/test_cli.py"
+    ],
+    "new_machine_forbidden_authority_patterns": [
+      "data/access_review/**",
+      "data/restricted/**/*authorization*.json",
+      "data/restricted/**/*attempt*.json",
+      "data/restricted/**/.authorization_nonces/**"
+    ],
+    "r22_audit_archive": "data/migration/audit_archive/r22",
+    "required_repo_files": [
+      "pyproject.toml",
+      "data/migration/hf_asset_manifest.json",
+      "data/migration/path_rebinding_manifest.json",
+      "docs/migration/new_machine_bootstrap.md",
+      "docs/migration/migration_runbook.md",
+      "scripts/bootstrap_new_machine.py",
+      "scripts/verify_migration_readiness.py",
+      "scripts/prepare_hf_upload.py",
+      "scripts/verify_hf_mirror.py"
+    ],
+    "restricted_roots": [
+      "data/restricted",
+      "data/access_review",
+      "data/acquisition_preflight",
+      "data/hf_recon",
+      "data/source_recon"
+    ]
+  },
+  "classification_definitions": {
+    "historical_audit_immutable": "A historical review, receipt, attempt, capsule, log, status snapshot, or hash-bound artifact. It may be archived for audit but must retain original bytes and must never become executable authorization.",
+    "migration_metadata": "A migration document or manifest that names the old root only to describe the replacement boundary.",
+    "public_code_blocker": "An absolute source-machine path in executable public code, a current public config, or an operational command that must work after relocation. This blocks readiness until parameterized or regenerated.",
+    "restricted_runtime_config": "A machine-local restricted plan/config/result. Do not copy it as authority. Regenerate it on the new machine from public code and newly issued authorization; direct string replacement is unsafe unless an entry explicitly permits it."
+  },
+  "generated_date": "2026-10-23",
+  "observed_inventory": {
+    "historical_audit_immutable": {
+      "note": "Keep original bytes. If needed on the new machine, place reviewed copies below data/migration/audit_archive/r22 and make them read-only.",
+      "representative_paths": [
+        "docs/review/epic_p23_102_index_execution_status_addendum.md",
+        "data/rehearsal_plan/epic_p23_102_index_execution_status_v1.json",
+        "data/rehearsal_plan/source_exposure_alias_manifest_v2.json",
+        "data/restricted/p23_102_query_authoring_v2_canary2_r22f.stderr.log",
+        "data/restricted/p23_102_query_authoring_v2_canary2_run_v1.failure-P23QAV2-CANARY2-R22F-ONE-SHOT-20261022T143848Z/failure_capsule.json"
+      ]
+    },
+    "public_code_blocker": {
+      "note": "No source-root literal was found in executable src/, scripts/, tools/, tests/, or pyproject surfaces before adding this migration package.",
+      "paths": []
+    },
+    "restricted_runtime_config": {
+      "note": "Regenerate after new-machine path selection and renewed authorization. Do not in-place rewrite old receipts.",
+      "paths": [
+        "data/acquisition_preflight/ves_discovery_stream_preflight_plan.json",
+        "data/acquisition_preflight/ves_discovery_stream_preflight_result.json",
+        "data/acquisition_preflight/ves_long_stream_preflight_plan.json",
+        "data/acquisition_preflight/ves_wave2_stream_preflight_plan.json",
+        "data/acquisition_preflight/ves_wave2_stream_preflight_result.json",
+        "data/restricted/noaa01/scale1a/observation_manifest.json",
+        "data/restricted/scale1b/controller_v2_holdout_run/execution_manifest.json",
+        "data/restricted/scale1b/ga_pilot/experiment_manifest.json",
+        "data/restricted/strong_baselines/manifests/qwen25_omni7b_acquisition.json",
+        "data/restricted/strong_baselines/manifests/qwen3_8b_acquisition.json"
+      ]
+    }
+  },
+  "replacement_contract": {
+    "documentation": "Use $AV_TRACE_ROOT in operator commands, not a copied machine path.",
+    "historical_records": "Do not rewrite signed, hash-bound, receipt, attempt, failure, audit, or provenance records. Preserve their original path strings as historical evidence.",
+    "restricted_storage": "Keep restricted storage below $AV_TRACE_ROOT/data/restricted unless a separately reviewed runtime config points to a secure external volume.",
+    "runtime": "Resolve the repository from --repo-root, AV_TRACE_ROOT, or the script location; keep stored paths repository-relative."
+  },
+  "root_environment_variable": "AV_TRACE_ROOT",
+  "rules": [
+    {
+      "classification": "migration_metadata",
+      "id": "migration_metadata",
+      "patterns": [
+        "data/migration/path_rebinding_manifest.json",
+        "docs/migration/new_machine_bootstrap.md",
+        "docs/migration/migration_runbook.md",
+        "tests/test_migration_bootstrap.py"
+      ],
+      "reason": "These files describe the old-to-new path boundary.",
+      "rewrite_policy": "never"
+    },
+    {
+      "classification": "public_code_blocker",
+      "id": "public_executable_surface",
+      "patterns": [
+        "pyproject.toml",
+        "src/**",
+        "scripts/**",
+        "tools/**",
+        "tests/**",
+        "tests_*/**"
+      ],
+      "reason": "Executable code and current test/config surfaces must derive the root dynamically.",
+      "rewrite_policy": "code_change_required"
+    },
+    {
+      "classification": "restricted_runtime_config",
+      "id": "restricted_preflight_runtime",
+      "patterns": [
+        "data/acquisition_preflight/**",
+        "data/restricted/noaa01/scale1a/observation_manifest.json",
+        "data/restricted/scale1b/controller_v2_holdout_run/execution_manifest.json",
+        "data/restricted/scale1b/ga_pilot/experiment_manifest.json",
+        "data/restricted/strong_baselines/manifests/**"
+      ],
+      "reason": "These records can encode cwd, local model paths, route state, or authorization-dependent execution state.",
+      "rewrite_policy": "regenerate_only"
+    },
+    {
+      "classification": "historical_audit_immutable",
+      "id": "generated_runtime_outputs",
+      "patterns": [
+        "mvp/results/**",
+        "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/**",
+        "orchestration/prompts/**",
+        "orchestration/results/**"
+      ],
+      "reason": "Generated results, orchestration prompts/transcripts, raw attempts, and child argv provenance preserve the source execution environment and are excluded from restored runtime state.",
+      "rewrite_policy": "never"
+    },
+    {
+      "classification": "historical_audit_immutable",
+      "id": "historical_tooling_tests",
+      "patterns": [
+        "tooling/tests/test_epic_p23_102_index_execution_status.py"
+      ],
+      "reason": "This test validates a frozen historical status snapshot whose recorded source path must remain unchanged.",
+      "rewrite_policy": "never"
+    },
+    {
+      "classification": "historical_audit_immutable",
+      "id": "historical_public_reviews_and_status",
+      "patterns": [
+        "docs/design/scale1b_learned_baseline_inventory.md",
+        "docs/review/**",
+        "data/rehearsal_plan/epic_p23_102_index_execution_status_v1.json",
+        "data/rehearsal_plan/source_exposure_alias_manifest_v2.json"
+      ],
+      "reason": "The old path is part of the recorded environment or quoted evidence.",
+      "rewrite_policy": "never"
+    },
+    {
+      "classification": "historical_audit_immutable",
+      "id": "historical_restricted_receipts_logs_attempts",
+      "patterns": [
+        "data/restricted/**/receipts/**",
+        "data/restricted/**/.staging/**",
+        "data/restricted/**/logs/**",
+        "data/restricted/**/acquisition_records/**",
+        "data/restricted/**/*attempt*.json",
+        "data/restricted/**/*.stderr.log",
+        "data/restricted/**/*.stdout.log",
+        "data/restricted/**/runner_stderr.txt",
+        "data/restricted/**/failure_capsule.json",
+        "data/restricted/**/*governance_ledger.json",
+        "data/restricted/**/*authorization*.json",
+        "data/restricted/**/*.exit_code",
+        "data/restricted/**/validation/ffprobe_raw.json"
+      ],
+      "reason": "Receipts, logs, attempts, authorization records, and failure capsules are immutable audit material, not restart state.",
+      "rewrite_policy": "never"
+    },
+    {
+      "classification": "historical_audit_immutable",
+      "id": "r22_audit_material",
+      "patterns": [
+        "data/rehearsal_plan/**/*r22*.json",
+        "data/restricted/**/*r22*.json",
+        "data/restricted/**/*r22*.log",
+        "data/restricted/**/*r22*.exit_code"
+      ],
+      "reason": "R22 capsules and markers may be copied only into the read-only audit archive and may not authorize execution.",
+      "rewrite_policy": "never"
+    }
+  ],
+  "safe_rewrite_plan": {
+    "automatic_in_place_rewrites_currently_allowed": [],
+    "default_mode": "dry-run",
+    "steps": [
+      "Scan text files for the exact source_root literal.",
+      "Classify every match using the ordered rules above.",
+      "Block on public_code_blocker or unclassified matches.",
+      "For restricted_runtime_config, regenerate from public code with --repo-root/AV_TRACE_ROOT and fresh authorization; do not carry old authorization state.",
+      "For historical_audit_immutable, copy only when needed for audit, verify the source hash, retain original bytes, and remove owner write permission in the destination archive.",
+      "Re-run the scan and readiness verifier after regeneration."
+    ]
+  },
+  "scan": {
+    "max_text_file_bytes": 67108864,
+    "skip_directories": [
+      ".git",
+      ".pytest_cache",
+      ".ruff_cache",
+      "__pycache__",
+      "build",
+      "dist"
+    ],
+    "text_suffixes": [
+      ".json",
+      ".jsonl",
+      ".md",
+      ".py",
+      ".sh",
+      ".toml",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ],
+    "unclassified_occurrence_is_blocking": true
+  },
+  "schema_version": "av-trace.path-rebinding-manifest/1.0",
+  "source_root": "/path/to/av-trace"
+}

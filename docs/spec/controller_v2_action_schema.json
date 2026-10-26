@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+  "title": "AV-TRACE controller v2 grammar-constrained action selection",
+  "description": "The model emits only an index into the public action menu. Before generation, the grammar compiler MUST replace the action_index enum with the case's allowed_action_indices array.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "action_index"
+  ],
+  "properties": {
+    "action_index": {
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "x-av-trace-dynamic-enum-source": "allowed_action_indices"
+    }
+  },
+  "x-av-trace-parser": {
+    "encoding": "UTF-8",
+    "maximum_bytes": 64,
+    "surrounding_whitespace": "JSON whitespace only",
+    "duplicate_keys": "reject",
+    "non_finite_numbers": "reject",
+    "boolean_as_integer": "reject",
+    "trailing_content": "reject",
+    "normalization": "none"
+  }
+}

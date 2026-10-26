@@ -1,0 +1,23 @@
+{
+  "backend_manifest_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+  "backend_version": "synthetic-fixed-v1",
+  "episode_id": "syn_f04_star_bin.blocked",
+  "family_annotation_version": "synthetic-v1",
+  "family_hash": "sha256:87c012a07221e27933953a043db3d778683243ed8b1c91b65f88af4caf3a90af",
+  "family_id": "syn_f04_star_bin",
+  "family_path": "families/syn_f04_star_bin/family.snapshot.json",
+  "generated_at": "2026-09-06T00:00:00Z",
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "index_version": "synthetic-1.0.0",
+  "intervention_manifest_hash": "sha256:a9c5670968e00b52bf8e33f3407e7b2d02dd8e4a70a04646f4482c9d4e321aae",
+  "link_id": "link.synthetic_validator_b.syn_f04_star_bin.blocked",
+  "schema_version": "1.0.0",
+  "search_plan_id": "direct_observe_reverse_chronological",
+  "source_manifest_hash": "sha256:85798d100114fdbada09b8eee5b2425532b222db71b20324184de11cb3046bbc",
+  "state_role": "BLOCKED",
+  "trajectory_hash": "sha256:09237dd9722feee9c5c9bf333233d90e3cdba2c669640ec94f81a84c1ae2ac87",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f04_star_bin.blocked",
+  "trajectory_path": "families/syn_f04_star_bin/trajectories/synthetic_validator_b.blocked.json",
+  "trigger_type": "none",
+  "validator_id": "synthetic_validator_b"
+}

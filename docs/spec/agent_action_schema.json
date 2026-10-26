@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:agent-action:0.2.0",
+  "title": "AV-TRACE agent action envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "episode_id", "request_id", "step_index", "belief_state", "action"],
+  "properties": {
+    "protocol_version": {"const": "0.2.0"},
+    "episode_id": {"$ref": "#/$defs/id"},
+    "request_id": {"$ref": "#/$defs/id"},
+    "step_index": {"type": "integer", "minimum": 0},
+    "belief_state": {"$ref": "#/$defs/belief_state"},
+    "action": {
+      "oneOf": [
+        {"$ref": "#/$defs/search_visual"},
+        {"$ref": "#/$defs/search_speech"},
+        {"$ref": "#/$defs/search_ambient_audio"},
+        {"$ref": "#/$defs/inspect_clip"},
+        {"$ref": "#/$defs/read_transcript"},
+        {"$ref": "#/$defs/get_channel_status"},
+        {"$ref": "#/$defs/finalize"}
+      ]
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "belief_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "p_sufficient",
+        "verdict",
+        "missing_modality_probabilities",
+        "missing_hop_types",
+        "missingness_cause_probabilities",
+        "next_action_rationale"
+      ],
+      "properties": {
+        "p_sufficient": {"type": "number", "minimum": 0, "maximum": 1},
+        "verdict": {"enum": ["sufficient", "insufficient", "uncertain"]},
+        "missing_modality_probabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["vision", "speech", "ambient"],
+          "properties": {
+            "vision": {"type": "number", "minimum": 0, "maximum": 1},
+            "speech": {"type": "number", "minimum": 0, "maximum": 1},
+            "ambient": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "missing_hop_types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "entity_identity",
+              "event_detection",
+              "speech_content",
+              "ambient_event",
+              "temporal_order",
+              "cross_modal_binding",
+              "causal_link",
+              "state_change",
+              "comparison",
+              "counting",
+              "other_registered"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "missingness_cause_probabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_evidence_absent",
+            "evidence_in_source_but_inaccessible",
+            "evidence_accessible_but_not_found",
+            "not_missing",
+            "uncertain"
+          ],
+          "properties": {
+            "source_evidence_absent": {"type": "number", "minimum": 0, "maximum": 1},
+            "evidence_in_source_but_inaccessible": {"type": "number", "minimum": 0, "maximum": 1},
+            "evidence_accessible_but_not_found": {"type": "number", "minimum": 0, "maximum": 1},
+            "not_missing": {"type": "number", "minimum": 0, "maximum": 1},
+            "uncertain": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "next_action_rationale": {"type": "string", "maxLength": 240}
+      }
+    },
+    "query_args": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query", "top_k", "time_range", "exclude_result_ids"],
+      "properties": {
+        "query": {"type": "string", "minLength": 1, "maxLength": 500},
+        "top_k": {"type": "integer", "minimum": 1, "maximum": 20},
+        "time_range": {"$ref": "#/$defs/interval"},
+        "exclude_result_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "search_visual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "search_visual"},
+        "arguments": {"$ref": "#/$defs/query_args"}
+      }
+    },
+    "search_speech": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "search_speech"},
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["query", "top_k", "time_range", "exclude_result_ids", "speaker_hint"],
+          "properties": {
+            "query": {"type": "string", "minLength": 1, "maxLength": 500},
+            "top_k": {"type": "integer", "minimum": 1, "maximum": 20},
+            "time_range": {"$ref": "#/$defs/interval"},
+            "exclude_result_ids": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/id"},
+              "uniqueItems": true
+            },
+            "speaker_hint": {"type": ["string", "null"], "maxLength": 100}
+          }
+        }
+      }
+    },
+    "search_ambient_audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "search_ambient_audio"},
+        "arguments": {"$ref": "#/$defs/query_args"}
+      }
+    },
+    "inspect_clip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "inspect_clip"},
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["interval", "include_video", "include_audio"],
+          "properties": {
+            "interval": {"$ref": "#/$defs/interval"},
+            "include_video": {"type": "boolean"},
+            "include_audio": {"type": "boolean"}
+          },
+          "anyOf": [
+            {"properties": {"include_video": {"const": true}}},
+            {"properties": {"include_audio": {"const": true}}}
+          ]
+        }
+      }
+    },
+    "read_transcript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "read_transcript"},
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["interval", "source", "include_word_timestamps"],
+          "properties": {
+            "interval": {"$ref": "#/$defs/interval"},
+            "source": {"enum": ["asr", "subtitle"]},
+            "include_word_timestamps": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "get_channel_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "get_channel_status"},
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["channels"],
+          "properties": {
+            "channels": {
+              "type": "array",
+              "items": {"enum": ["visual", "speech", "ambient", "clip", "transcript"]},
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "finalize": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "arguments"],
+      "properties": {
+        "tool": {"const": "finalize"},
+        "arguments": {"$ref": "urn:av-trace:schema:final-answer:0.2.0"}
+      }
+    }
+  }
+}

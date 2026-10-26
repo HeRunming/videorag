@@ -1,0 +1,795 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "av-trace-federal-event-source-dossiers-v1",
+  "task_id": 151,
+  "created_at": "2026-09-23T22:00:00+08:00",
+  "decision_token": "PREFLIGHT_NO_GO",
+  "decision_scope": "STOPPED_FAIL_CLOSED_RECONNAISSANCE_ONLY",
+  "stop_condition": "The user ordered all network activity stopped and immediate finalization. No request was made after that instruction.",
+  "governing_inputs": [
+    "Task 141 red-team",
+    "Task 143 event-centric discovery",
+    "Task 147 live preflight",
+    "Task 149 pivot v2 amendment",
+    "prior source dossier conventions"
+  ],
+  "explicit_exclusions": [
+    "EC-USGS-SHIFT-CURVES",
+    "held NASA+ documentary candidates from Task 147",
+    "webinars",
+    "lecture decks",
+    "edited music-heavy documentaries",
+    "uncertain third-party components"
+  ],
+  "network_boundary": {
+    "full_media_downloads": 0,
+    "media_segments_downloaded": 0,
+    "media_payload_bytes_saved": 0,
+    "successful_http_responses": 0,
+    "successful_response_body_bytes": 0,
+    "completed_request_attempts": 13,
+    "request_result": "All completed attempts failed before HTTP because the configured proxy hostname could not be resolved.",
+    "network_stopped": true,
+    "no_requests_after_stop_instruction": true
+  },
+  "summary": {
+    "exact_candidate_items_count": 0,
+    "candidate_source_groups_count": 0,
+    "production_lineages_count": 0,
+    "exact_first_party_media_routes_count": 0,
+    "bounded_media_head_range_manifest_probes_count": 0,
+    "exact_preflight_ready_count": 0,
+    "preflight_repair_count": 0,
+    "preflight_no_go_count": 0,
+    "discovery_seed_attempt_count": 13,
+    "required_candidate_target": 8,
+    "required_lineage_target": 4,
+    "required_ready_target": 2,
+    "candidate_target_met": false,
+    "lineage_target_met": false,
+    "ready_target_met": false,
+    "honest_result": "NO_EXACT_CANDIDATE_ITEMS_ESTABLISHED_BEFORE_NETWORK_STOP",
+    "counting_note": "The 13 broad catalog/policy URLs are discovery seeds and are not counted as candidate source groups or production lineages. No invented titles or guessed media routes were promoted."
+  },
+  "candidates": [],
+  "discovery_seed_attempts": [
+    {
+      "seed_id": "NOAA-OCEAN-EXPLORATION-DISCOVERY-SEED",
+      "publisher_or_host": "NOAA Ocean Exploration",
+      "requested_url": "https://oceanexplorer.noaa.gov/",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.url.txt",
+          "bytes": 32,
+          "sha256": "ba697a55769545235a17050703c5e740757be2aaa7e1514f87486f47f1976d2b"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.meta.txt",
+          "bytes": 39,
+          "sha256": "f0225ad22d87d39bd47de4cb8a3809b40d1f93d6fe2233536d4df7511f56cb57"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NOAA-OCEAN-EXPLORATION-VIDEO-SEED",
+      "publisher_or_host": "NOAA Ocean Exploration",
+      "requested_url": "https://oceanexplorer.noaa.gov/video/",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.url.txt",
+          "bytes": 38,
+          "sha256": "238bc429c0366101988120580610ac28d2aa9e0bd36e3e835efeacf934084cc4"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.meta.txt",
+          "bytes": 45,
+          "sha256": "30ba669510ab4bb45f1a8b9247d40b405383c80b7b3f23c5f35cda3e15554571"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NOAA-OCEAN-EXPLORATION-MULTIMEDIA-SEED",
+      "publisher_or_host": "NOAA Ocean Exploration",
+      "requested_url": "https://oceanexplorer.noaa.gov/multimedia/",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.url.txt",
+          "bytes": 43,
+          "sha256": "f51a2799c27d786efcfe2504c2d68e7881caff0ec47daf356194c86617b7fddb"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.meta.txt",
+          "bytes": 50,
+          "sha256": "7d5aa0c7fb1c6fa31b1a7e6fb57540dc5074d635a244707309c0ab575db44cc8"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NOAA-OKEANOS-SEED",
+      "publisher_or_host": "NOAA Ocean Exploration / Okeanos Explorer",
+      "requested_url": "https://oceanexplorer.noaa.gov/okeanos/",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.url.txt",
+          "bytes": 40,
+          "sha256": "e7cf9688089c3095cdf204385c05ee655af97c5bae7f4490a0efc743d18d9613"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.meta.txt",
+          "bytes": 47,
+          "sha256": "c7fb1797d57dfc9c49e1b5a78507319aad05f9b254b5be5d2a0eaae613dbb19d"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NASA-IMAGES-API-TRAINING-SEED",
+      "publisher_or_host": "NASA Images API",
+      "requested_url": "https://images-api.nasa.gov/search?q=training&media_type=video&page_size=5",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.url.txt",
+          "bytes": 75,
+          "sha256": "e6fa0f30a0926cf0305a5f0c67cbb7c789c4ebb8d27619dbf002d5021f2926b3"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.meta.txt",
+          "bytes": 82,
+          "sha256": "2653cedbd95b947003b1dd300adf6826effc85fddce0095d4b88f54d0e7a276f"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NASA-IMAGES-MEDIA-POLICY-SEED",
+      "publisher_or_host": "NASA",
+      "requested_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.url.txt",
+          "bytes": 57,
+          "sha256": "6f045974680f4a98eeef4b0f4ffbe66af7b746fe09b3eb4146ccf574e2d1eae3"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.meta.txt",
+          "bytes": 64,
+          "sha256": "f35146eadaf6cf052cdd82dc390543438cc9c0477369f53a18223ac390be602f"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NPS-MULTIMEDIA-SEARCH-SEED",
+      "publisher_or_host": "National Park Service",
+      "requested_url": "https://www.nps.gov/media/multimedia-search.htm",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.url.txt",
+          "bytes": 48,
+          "sha256": "a95ea2adfae11389ef079168f7368b6cd4c0097b9358116faa541926a0c98ab6"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.meta.txt",
+          "bytes": 55,
+          "sha256": "255a72996c6eb492e70d3a5f41b009f1ee008343ce17192bd29c4fb64dfc8052"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "NPS-DISCLAIMER-SEED",
+      "publisher_or_host": "National Park Service",
+      "requested_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.url.txt",
+          "bytes": 43,
+          "sha256": "119a0fa752043f532013dceb11111a688c584b935bab37a8b810e356bff7a26c"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.meta.txt",
+          "bytes": 50,
+          "sha256": "92c628303a5bce29741c2d26b9f5501208d59173e4957275dee02861a9bfe8d4"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "USFS-HOME-SEED",
+      "publisher_or_host": "USDA Forest Service",
+      "requested_url": "https://www.fs.usda.gov/",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.url.txt",
+          "bytes": 25,
+          "sha256": "2f0360b427269d92cb9185e94afe2d413ed81b65768114959fd16a70e3eed8c4"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.meta.txt",
+          "bytes": 32,
+          "sha256": "6f9d79f56c63944fa492991015ba1c11ee9fa5f7cdc2d30f8cb0360e23d84b9e"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "USFS-FIRE-SEED",
+      "publisher_or_host": "USDA Forest Service",
+      "requested_url": "https://www.fs.usda.gov/managing-land/fire",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.url.txt",
+          "bytes": 43,
+          "sha256": "093120ebcce5ca4f214fd3fd10f0c5d0f0cafae248c019e8c310bbb25a2103ef"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.meta.txt",
+          "bytes": 50,
+          "sha256": "f64148adde153eb15d59b19749b06cc4bc1485b5e42ca82a971fba8af9d59143"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "USDA-POLICY-SEED",
+      "publisher_or_host": "U.S. Department of Agriculture",
+      "requested_url": "https://www.usda.gov/policies-and-links",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.url.txt",
+          "bytes": 40,
+          "sha256": "c7263d4ac1d8ad955e338b18b42cfafd31f69296effef1bdc4558007c0e6ac2e"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.meta.txt",
+          "bytes": 47,
+          "sha256": "2ba791a389806db7540a33ba2c14f8f74616517339c5af6a35301f800f1f2c49"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "USGS-VIDEO-CATALOG-SEED",
+      "publisher_or_host": "U.S. Geological Survey",
+      "requested_url": "https://www.usgs.gov/products/multimedia-gallery/videos",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.url.txt",
+          "bytes": 56,
+          "sha256": "684c92b41ad58722e817658dc8e2c031b25c1bb9060a0ccb68daa67c7e8dbad1"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.meta.txt",
+          "bytes": 63,
+          "sha256": "264c4539e37c6dcc2490fa98c45d161eed3f076f7e1525ccdf7d5d8842c3a04c"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    },
+    {
+      "seed_id": "USGS-COPYRIGHT-SEED",
+      "publisher_or_host": "U.S. Geological Survey",
+      "requested_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "request_result": "HTTP_000_PROXY_DNS_FAILURE_NO_RESPONSE",
+      "response_body_bytes": 0,
+      "response_header_bytes": 0,
+      "candidate_item_created": false,
+      "reason": "The proxy hostname could not be resolved in the completed sandbox attempt. No official response, item metadata, media route, or policy text was received.",
+      "evidence": [
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.url.txt",
+          "bytes": 82,
+          "sha256": "bddc54528977eb331dabd5c902b59342a29a564edf8a21816e54072e9450e22a"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.meta.txt",
+          "bytes": 89,
+          "sha256": "dfc96924b38ae0a44b4b2856300cc454c419b0487095d27007f5e598feb05137"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.headers.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.stderr.txt",
+          "bytes": 52,
+          "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+        }
+      ]
+    }
+  ],
+  "global_artifact_decisions": {
+    "acquisition": {
+      "status": "NO_GO",
+      "basis": "No exact candidate item and no successful official item/media response were established."
+    },
+    "internal_processing": {
+      "status": "NO_GO",
+      "basis": "No acquired item or affirmative item-level processing authority exists."
+    },
+    "restricted_human_annotation": {
+      "status": "NO_GO",
+      "basis": "No acquired item or affirmative item-level restricted-annotation authority exists."
+    },
+    "raw_media_release": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No item was cleared and no media was acquired."
+    },
+    "clip_frame_audio_release": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No item/component/interval clearance exists."
+    },
+    "transcript_release": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No item transcript or release authority was established."
+    },
+    "annotation_evaluator_release": {
+      "status": "HOLD",
+      "basis": "No annotations exist; any later release requires source-specific review."
+    },
+    "derived_features_embeddings_release": {
+      "status": "HOLD",
+      "basis": "No source exists for processing and no non-reconstructive release determination was made."
+    }
+  },
+  "semantic_assessment": {
+    "dynamic_non_text_visual_candidates_count": 0,
+    "concrete_non_speech_semantic_audio_candidates_count": 0,
+    "synchronized_av_verified_count": 0,
+    "note": "No item metadata or media bytes were received. Semantic suitability and synchronization cannot be inferred from agency catalog URLs."
+  },
+  "evidence_manifest": {
+    "root": "data/source_recon/federal_event_sources_v1",
+    "file_count_before_manifest": 52,
+    "byte_count_before_manifest": 2011,
+    "entries": [
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.meta.txt",
+        "bytes": 82,
+        "sha256": "2653cedbd95b947003b1dd300adf6826effc85fddce0095d4b88f54d0e7a276f"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_api.url.txt",
+        "bytes": 75,
+        "sha256": "e6fa0f30a0926cf0305a5f0c67cbb7c789c4ebb8d27619dbf002d5021f2926b3"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.meta.txt",
+        "bytes": 64,
+        "sha256": "f35146eadaf6cf052cdd82dc390543438cc9c0477369f53a18223ac390be602f"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nasa_policy.url.txt",
+        "bytes": 57,
+        "sha256": "6f045974680f4a98eeef4b0f4ffbe66af7b746fe09b3eb4146ccf574e2d1eae3"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.meta.txt",
+        "bytes": 39,
+        "sha256": "f0225ad22d87d39bd47de4cb8a3809b40d1f93d6fe2233536d4df7511f56cb57"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_home.url.txt",
+        "bytes": 32,
+        "sha256": "ba697a55769545235a17050703c5e740757be2aaa7e1514f87486f47f1976d2b"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.meta.txt",
+        "bytes": 50,
+        "sha256": "7d5aa0c7fb1c6fa31b1a7e6fb57540dc5074d635a244707309c0ab575db44cc8"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_multimedia.url.txt",
+        "bytes": 43,
+        "sha256": "f51a2799c27d786efcfe2504c2d68e7881caff0ec47daf356194c86617b7fddb"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.meta.txt",
+        "bytes": 47,
+        "sha256": "c7fb1797d57dfc9c49e1b5a78507319aad05f9b254b5be5d2a0eaae613dbb19d"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_okeanos.url.txt",
+        "bytes": 40,
+        "sha256": "e7cf9688089c3095cdf204385c05ee655af97c5bae7f4490a0efc743d18d9613"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.meta.txt",
+        "bytes": 45,
+        "sha256": "30ba669510ab4bb45f1a8b9247d40b405383c80b7b3f23c5f35cda3e15554571"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/noaa_video.url.txt",
+        "bytes": 38,
+        "sha256": "238bc429c0366101988120580610ac28d2aa9e0bd36e3e835efeacf934084cc4"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.meta.txt",
+        "bytes": 55,
+        "sha256": "255a72996c6eb492e70d3a5f41b009f1ee008343ce17192bd29c4fb64dfc8052"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_multimedia.url.txt",
+        "bytes": 48,
+        "sha256": "a95ea2adfae11389ef079168f7368b6cd4c0097b9358116faa541926a0c98ab6"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.meta.txt",
+        "bytes": 50,
+        "sha256": "92c628303a5bce29741c2d26b9f5501208d59173e4957275dee02861a9bfe8d4"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/nps_policy.url.txt",
+        "bytes": 43,
+        "sha256": "119a0fa752043f532013dceb11111a688c584b935bab37a8b810e356bff7a26c"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.meta.txt",
+        "bytes": 32,
+        "sha256": "6f9d79f56c63944fa492991015ba1c11ee9fa5f7cdc2d30f8cb0360e23d84b9e"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_home.url.txt",
+        "bytes": 25,
+        "sha256": "2f0360b427269d92cb9185e94afe2d413ed81b65768114959fd16a70e3eed8c4"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.meta.txt",
+        "bytes": 50,
+        "sha256": "f64148adde153eb15d59b19749b06cc4bc1485b5e42ca82a971fba8af9d59143"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_media.url.txt",
+        "bytes": 43,
+        "sha256": "093120ebcce5ca4f214fd3fd10f0c5d0f0cafae248c019e8c310bbb25a2103ef"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.meta.txt",
+        "bytes": 47,
+        "sha256": "2ba791a389806db7540a33ba2c14f8f74616517339c5af6a35301f800f1f2c49"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usda_policy.url.txt",
+        "bytes": 40,
+        "sha256": "c7263d4ac1d8ad955e338b18b42cfafd31f69296effef1bdc4558007c0e6ac2e"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.meta.txt",
+        "bytes": 89,
+        "sha256": "dfc96924b38ae0a44b4b2856300cc454c419b0487095d27007f5e598feb05137"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_policy.url.txt",
+        "bytes": 82,
+        "sha256": "bddc54528977eb331dabd5c902b59342a29a564edf8a21816e54072e9450e22a"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.headers.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.meta.txt",
+        "bytes": 63,
+        "sha256": "264c4539e37c6dcc2490fa98c45d161eed3f076f7e1525ccdf7d5d8842c3a04c"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.stderr.txt",
+        "bytes": 52,
+        "sha256": "baf2648fe00990a3e99b9ca4bfaa418ad33573209bfa2ebc161797b7c2fbb114"
+      },
+      {
+        "path": "data/source_recon/federal_event_sources_v1/seed/usgs_videos.url.txt",
+        "bytes": 56,
+        "sha256": "684c92b41ad58722e817658dc8e2c031b25c1bb9060a0ccb68daa67c7e8dbad1"
+      }
+    ]
+  },
+  "next_actions": [
+    "None authorized in this task because the user ordered all network activity stopped.",
+    "Do not acquire, process, annotate, or release any Task-151 source-derived artifact.",
+    "A future separately authorized task would need to restart rights-first discovery from official item records and re-run bounded exact-route probes."
+  ],
+  "prohibitions": [
+    "No full download",
+    "No guessed routes",
+    "No promotion of seed URLs to candidates",
+    "No H1/H2 or modality-necessity claim",
+    "No acquisition",
+    "No processing",
+    "No annotation",
+    "No public release"
+  ]
+}

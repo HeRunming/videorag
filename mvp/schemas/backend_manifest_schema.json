@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:mvp-schema:backend-manifest:1.0.0",
+  "title": "AV-TRACE MVP frozen backend and index manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "backend_version",
+    "tool_api_version",
+    "index_version",
+    "deterministic",
+    "hash_algorithm",
+    "ranking",
+    "tool_costs",
+    "artifacts",
+    "index_hash",
+    "record_count"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "backend_version": {"type": "string", "minLength": 1, "maxLength": 128},
+    "tool_api_version": {"const": "0.2.0"},
+    "index_version": {"type": "string", "minLength": 1, "maxLength": 128},
+    "deterministic": {"const": true},
+    "hash_algorithm": {"const": "sha256-canonical-json-v1"},
+    "ranking": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "tokenizer", "score_precision", "tie_breakers"],
+      "properties": {
+        "algorithm": {"const": "lexical-overlap-v1"},
+        "tokenizer": {"const": "unicode-alnum-v1"},
+        "score_precision": {"const": 6},
+        "tie_breakers": {
+          "const": ["score_desc", "start_s_asc", "end_s_asc", "result_id_asc"]
+        }
+      }
+    },
+    "tool_costs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search_visual",
+        "search_speech",
+        "search_ambient_audio",
+        "inspect_clip",
+        "read_transcript",
+        "get_channel_status",
+        "finalize"
+      ],
+      "properties": {
+        "search_visual": {"type": "number", "minimum": 0},
+        "search_speech": {"type": "number", "minimum": 0},
+        "search_ambient_audio": {"type": "number", "minimum": 0},
+        "inspect_clip": {"type": "number", "minimum": 0},
+        "read_transcript": {"type": "number", "minimum": 0},
+        "get_channel_status": {"type": "number", "minimum": 0},
+        "finalize": {"const": 0}
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "path", "sha256"],
+        "properties": {
+          "role": {
+            "enum": [
+              "index",
+              "family",
+              "event_timeline",
+              "transcript",
+              "audio_events",
+              "evidence_inventory",
+              "corpus_index",
+              "acquisition_manifest",
+              "source_media"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+          },
+          "sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "index_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "record_count": {"type": "integer", "minimum": 1}
+  }
+}

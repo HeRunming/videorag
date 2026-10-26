@@ -1,0 +1,1079 @@
+{
+  "schema_version": "av-trace.source-disjoint-scaleup-wave/1.0",
+  "plan_id": "SOURCE_DISJOINT_SCALEUP_WAVE_V1",
+  "created_date": "2026-10-14",
+  "decision_token": "SOURCE_DISJOINT_SCALEUP_WAVE_V1_READY",
+  "current_decision": "REPAIR",
+  "artifact_classification": "PROSPECTIVE_SCALEUP_GOVERNANCE_AND_EXECUTION_PLAN_ONLY",
+  "scope": {
+    "objective": "Reach the frozen preferred CVPR scale of at least 60 H2_HUMAN_ADJUDICATED_SATURATION_AUDITED families from at least 30 source groups with at least 12 prospectively untouched test groups.",
+    "human_semantic_review_performed_by_this_plan": false,
+    "model_candidate_mining_performed_by_this_plan": false,
+    "new_media_acquired_by_this_plan": false,
+    "rights_authority_created_by_this_plan": false,
+    "h2_families_created_by_this_plan": 0,
+    "scientific_execution_authorized": false,
+    "causal_or_model_claim_authorized": false,
+    "public_release_authorized": false
+  },
+  "authoritative_inputs": [
+    {
+      "path": "docs/paper/cvpr_pivot_v2_addendum.md",
+      "sha256": "60c7cfa3e1a87360b3cabdbe6acf0f6e5f9ce798684cdab53cce9eec0e22fe5a",
+      "role": "Frozen paper position, preferred and fallback scale, source policy, and claim firewall"
+    },
+    {
+      "path": "data/rehearsal_plan/cvpr_pivot_v2_gate_registry.json",
+      "sha256": "be2f8fd4e87040fa5c15f35a1f33d00030cc917f161570fec2883f6c5ecb277a",
+      "role": "Machine-readable frozen Pivot-v2 targets and six-role construct policy"
+    },
+    {
+      "path": "data/rehearsal_plan/pilot_v5_candidate_matrix.json",
+      "sha256": "26c8e01e06025ed5ac8850fd89932a6b2b688f0105f5f6353e1120230ca7999b",
+      "role": "Current development-only coverage, shortages, and non-forcing rules"
+    },
+    {
+      "path": "data/rehearsal_plan/pilot_v5_targeted_source_prospecting.json",
+      "sha256": "da102c5bc9833e0d3dd4213848997f7155d129cbfdd0c704702149443c893778",
+      "role": "Ranked source routes, grouping rules, duration/audio rules, and narrowing triggers"
+    },
+    {
+      "path": "data/rehearsal_plan/audio_rich_vsa_acquisition_routes_v1.json",
+      "sha256": "775af4ee30c607cb4059f5a5e35a78a327d9993c464c11c2315ea4b085246c55",
+      "role": "Audio-rich V+S+A route ranking and technical/governance preflights"
+    },
+    {
+      "path": "data/restricted/epic_wave1_sources_v1/manifests/epic_wave1_acquisition_manifest.json",
+      "sha256": "6658c99ccf807c83d9a0fce8509c2643ba13b1434a2309fcf13a4bd4c07b3aad",
+      "role": "Exact acquired P27_101 and P28_103 inventory"
+    },
+    {
+      "path": "data/restricted/captaincook4d_wave0_sources_v3/manifests/captaincook4d_wave0_acquisition_manifest.json",
+      "sha256": "ee50c9579b77f7ee4f45753adad1d5d1e09569c6b1be5308a82ccbcc9a05934a",
+      "role": "Exact acquired 16_20, 15_29, and 26_22 inventory"
+    },
+    {
+      "path": "data/restricted/epic_p23_102_source_v1/manifests/epic_p23_102_exact_manifest.json",
+      "sha256": "6b3d94d93abaf8dc427832c6a7ebb2bd8ec93ce044622a023f1109ea1f9a2dc9",
+      "role": "Exact acquired P23_102 inventory and use boundary"
+    },
+    {
+      "path": "data/rehearsal_plan/p23_102_diagnostic_finding_registry_v1.json",
+      "sha256": "6d3b4ac2f10cd09722c4f24c439c9086cb6af76bf0da220d315d5e452c7c3382",
+      "role": "P23_102 development-only classification and diagnostic execution boundary"
+    },
+    {
+      "path": "data/rehearsal_plan/assembly101_authenticated_registry_v1.json",
+      "sha256": "72d2a22ed041fe86da49a0b837c1056dd3a16ff94151de83c9ec6da8d003dc71",
+      "role": "Pinned Assembly101 participant-blocked metadata pool"
+    },
+    {
+      "path": "data/source_recon/captaincook4d_access_v1/derived/source_group_inventory_v1.json",
+      "sha256": "c8d9af1109ab0f05b95a5a951ce78aa0b61a3ffbe713afa64d8a71db1d36111f",
+      "role": "CaptainCook4D participant-environment and person-supergroup inventory"
+    },
+    {
+      "path": "data/rehearsal_plan/assembly_epic_access_registry_v2.json",
+      "sha256": "22f1c3a5a59f60e94e5b8d61b3ded4f71558805502f25ac9295e8007204ef9b1",
+      "role": "Exact EPIC reserve participant pool and Assembly101 participant inventory"
+    },
+    {
+      "path": "data/rehearsal_plan/third_lineage_access_registry_v1.json",
+      "sha256": "61167abeda7d40ffbeab136c521175052f81c130db6da3a36d782e1503dbd2b3",
+      "role": "Independent-lineage access status and fail-closed selection rule"
+    }
+  ],
+  "frozen_scale_contract": {
+    "paper_facing_h2_term": "H2_HUMAN_ADJUDICATED_SATURATION_AUDITED",
+    "preferred": {
+      "minimum_h2_families": 60,
+      "minimum_source_groups": 30,
+      "minimum_untouched_test_source_groups": 12,
+      "source_split": {
+        "train_development": 12,
+        "dev_calibration": 6,
+        "test_untouched": 12
+      },
+      "h2_target_split": {
+        "train_development": 24,
+        "dev_calibration": 12,
+        "test_untouched": 24
+      },
+      "maximum_h2_families_per_source": 3,
+      "minimum_capture_format_categories": 4,
+      "maximum_lecture_webinar_presentation_fraction": 0.25,
+      "minimum_untouched_test_sources_per_modality_mechanism_or_domain_claim": 5
+    },
+    "descriptive_fallback": {
+      "minimum_h2_families": 60,
+      "minimum_source_groups": 20,
+      "minimum_untouched_test_source_groups": 8,
+      "minimum_source_split": {
+        "train_development": 8,
+        "dev_calibration": 4,
+        "test_untouched": 8
+      },
+      "label": "60_H2_20_SOURCE_8_TEST_DESCRIPTIVE_FALLBACK",
+      "sufficient_for_causal_claims": false,
+      "sufficient_for_controller_superiority_claims": false,
+      "sufficient_for_population_ranking_claims": false,
+      "sufficient_for_broad_modality_mechanism_generalization": false,
+      "reporting_scope": "NARROW_SOURCE_BOUNDED_DIAGNOSTIC_DESCRIPTIVE_ONLY"
+    },
+    "below_fallback": {
+      "condition": "fewer_than_60_h2_or_fewer_than_20_source_groups_or_fewer_than_8_untouched_test_groups",
+      "decision": "REPAIR_OR_NO_GO"
+    }
+  },
+  "grouping_and_split_firewall": {
+    "atomic_source_group": "The complete continuous source or coherent session plus every clip, alternate encode, synchronized view, transcript, annotation, frame, audio stem, feature, benchmark derivative, and future derivative.",
+    "participant_block": "All repeated recordings for one participant, wearer, household, kitchen, team, or controlled-capture identity remain in one split. CaptainCook4D person-level supergroups and Assembly101 participant blocks are mandatory.",
+    "production_lineage_block": "Mirrors, excerpts, alternate edits, embedded clips, documentary episodes sharing archive components, and correlated production families remain together. NASA/JPL documentary alternatives cannot be counted as independent lineages; EPIC and HD-EPIC cannot receive independent-lineage credit; Ego4D and Ego-Exo4D cannot receive independent-lineage credit.",
+    "dataset_lineage_stratum": "Participant-disjoint groups from one dataset may occupy different splits only when participant, household, scene, kitchen, continuous-recording, and derivative overlap checks pass. They count as one dataset/production stratum for diversity reporting, never as independent publisher lineages.",
+    "split_assignment_precedes_semantic_review": true,
+    "split_assignment_fields": [
+      "source_group_id",
+      "participant_block_id",
+      "production_lineage_id",
+      "dataset_lineage_id",
+      "split",
+      "exact_object_or_session_id",
+      "rights_status",
+      "duration_status",
+      "audio_status",
+      "exposure_state"
+    ],
+    "forbidden_split_moves": [
+      "No source, participant block, or production-lineage block may move after any semantic exposure.",
+      "No source may move because candidate yield, profile, difficulty, model behavior, or H2 outcome is disappointing.",
+      "A failed group may be replaced only by the next predeclared same-split reserve before that reserve has semantic exposure.",
+      "Every replacement requires a dated addendum, old and new IDs, reason code, exposure ledger snapshot, and recomputed split hash."
+    ]
+  },
+  "untouched_test_policy": {
+    "reservation_time": "Before acquisition-driven semantic review, candidate mining, question authoring, or model inspection",
+    "allowed_before_test_unlock": [
+      "Identity, route, hash, duration, container, stream, synchronization, rights, privacy, lineage, and malware checks",
+      "Nonsemantic deterministic metadata selection",
+      "Deduplication and participant/production overlap checks that do not inspect semantic labels or content",
+      "Custody, retention, withdrawal, and deletion preparation"
+    ],
+    "forbidden_before_test_unlock": [
+      "Human semantic prescreen",
+      "Listening or viewing for candidate discovery",
+      "Opening transcripts, narrations, action labels, sound labels, mistake labels, QA, captions, or semantic timestamps",
+      "ASR, OCR, AST, CLAP, CLIP, embedding search, LLM summarization, VLM inspection, or any model-guided candidate mining",
+      "Question, answer, claim, evidence, shortcut, modality, hop, or near/far authoring",
+      "Using model outputs, retrieval scores, or pilot shortages to select among test groups"
+    ],
+    "unlock_requires": [
+      "Train-development and dev-calibration protocol is frozen.",
+      "Reviewer training and excluded calibration are complete.",
+      "All 12 test groups have passed acquisition, rights, lineage, duration, native-audio, privacy, and custody gates.",
+      "Test-only reviewer roster and six-role assignment graph are frozen.",
+      "Pre-unlock exposure ledger has no semantic or model exposure.",
+      "No test model runs occur until all test H2 records and intervention manifests are frozen."
+    ],
+    "test_authoring_mode": "Fresh human-only source-uniform authoring by a test-only team after unlock; no model-guided authoring or candidate mining at any time.",
+    "development_staff_may_review_test_sources": false,
+    "test_staff_may_have_prior_semantic_exposure_to_train_or_dev_sources": false
+  },
+  "preferred_authoring_design": {
+    "source_groups": 30,
+    "candidate_families_authored": 90,
+    "candidates_per_source": 3,
+    "h2_target": 60,
+    "h2_target_per_source": 2,
+    "maximum_h2_per_source": 3,
+    "split_counts": {
+      "train_development": {
+        "source_groups": 12,
+        "candidate_families": 36,
+        "h2_target": 24
+      },
+      "dev_calibration": {
+        "source_groups": 6,
+        "candidate_families": 18,
+        "h2_target": 12
+      },
+      "test_untouched": {
+        "source_groups": 12,
+        "candidate_families": 36,
+        "h2_target": 24
+      }
+    },
+    "candidate_profile_targets": {
+      "train_development": {
+        "V": 6,
+        "S": 6,
+        "A": 6,
+        "V+S": 6,
+        "V+A_or_S+A": 6,
+        "V+S+A": 6
+      },
+      "dev_calibration": {
+        "V": 3,
+        "S": 3,
+        "A": 3,
+        "V+S": 3,
+        "V+A_or_S+A": 3,
+        "V+S+A": 3
+      },
+      "test_untouched": {
+        "V": 6,
+        "S": 6,
+        "A": 6,
+        "V+S": 6,
+        "V+A_or_S+A": 6,
+        "V+S+A": 6
+      }
+    },
+    "h2_profile_targets": {
+      "train_development": {
+        "V": 4,
+        "S": 4,
+        "A": 4,
+        "V+S": 4,
+        "V+A_or_S+A": 4,
+        "V+S+A": 4
+      },
+      "dev_calibration": {
+        "V": 2,
+        "S": 2,
+        "A": 2,
+        "V+S": 2,
+        "V+A_or_S+A": 2,
+        "V+S+A": 2
+      },
+      "test_untouched": {
+        "V": 4,
+        "S": 4,
+        "A": 4,
+        "V+S": 4,
+        "V+A_or_S+A": 4,
+        "V+S+A": 4
+      }
+    },
+    "structural_targets": {
+      "candidate_multi_hop": 45,
+      "candidate_far_or_separated": 45,
+      "h2_multi_hop": 30,
+      "h2_far_or_separated": 30,
+      "h2_silent_route_withholding": 30,
+      "h2_explicit_channel_outage": 30
+    },
+    "targets_are_forced_labels": false,
+    "failed_target_policy": "Repair, replace, accept the actual supported profile under a prospectively narrowed claim, or reject. Never force V+S+A, A, far, or any other label to preserve a quota."
+  },
+  "split_pools": {
+    "train_development": [
+      {
+        "slot": "TR-01",
+        "source_group_id": "P27",
+        "exact_object_or_session_id": "P27_101",
+        "participant_block_id": "EPIC:P27",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P27:KITCHEN_AND_ALL_DERIVATIVES",
+        "local_media_state": "COMPLETE_VERIFIED_READY",
+        "test_eligible": false,
+        "reason": "Exact acquired pilot-v4 development source"
+      },
+      {
+        "slot": "TR-02",
+        "source_group_id": "P28",
+        "exact_object_or_session_id": "P28_103",
+        "participant_block_id": "EPIC:P28",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P28:KITCHEN_AND_ALL_DERIVATIVES",
+        "local_media_state": "COMPLETE_VERIFIED_READY",
+        "test_eligible": false,
+        "reason": "Exact acquired pilot-v4 development source"
+      },
+      {
+        "slot": "TR-03",
+        "source_group_id": "P23",
+        "exact_object_or_session_id": "P23_102",
+        "participant_block_id": "EPIC:P23",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P23:KITCHEN_AND_ALL_DERIVATIVES",
+        "local_media_state": "COMPLETE_VERIFIED_READY",
+        "test_eligible": false,
+        "reason": "P23_102 is frozen development-only by its diagnostic registry"
+      },
+      {
+        "slot": "TR-04",
+        "source_group_id": "cc4d_p01_e08",
+        "exact_object_or_session_id": "16_20",
+        "participant_block_id": "CC4D:P01",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P01:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VERIFIED_READY",
+        "test_eligible": false,
+        "reason": "Exact acquired pilot-v4 development source"
+      },
+      {
+        "slot": "TR-05",
+        "source_group_id": "cc4d_p02_e02",
+        "exact_object_or_session_id": "15_29",
+        "participant_block_id": "CC4D:P02",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P02:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VERIFIED_READY",
+        "test_eligible": false,
+        "reason": "Exact acquired pilot-v4 development source"
+      },
+      {
+        "slot": "TR-06",
+        "source_group_id": "cc4d_p03_e03",
+        "exact_object_or_session_id": "26_22",
+        "participant_block_id": "CC4D:P03",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P03:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VERIFIED_READY",
+        "test_eligible": false,
+        "reason": "Exact acquired pilot-v4 development source"
+      },
+      {
+        "slot": "TR-07",
+        "source_group_id": "cand-047",
+        "exact_object_or_session_id": "cand-047",
+        "participant_block_id": "NOAA:CAND047",
+        "dataset_lineage_id": "NOAA_OCEAN_TODAY",
+        "production_lineage_id": "NOAA:CAND047:COMPLETE_WEBINAR_AND_EMBEDDED_CLIPS",
+        "local_media_state": "EXACT_LOCAL_DEVELOPMENT_SOURCE",
+        "test_eligible": false,
+        "reason": "Pilot-v5 development-touched V+S/far lead"
+      },
+      {
+        "slot": "TR-08",
+        "source_group_id": "cand-049",
+        "exact_object_or_session_id": "cand-049",
+        "participant_block_id": "NOAA:CAND049",
+        "dataset_lineage_id": "NOAA_OCEAN_TODAY",
+        "production_lineage_id": "NOAA:CAND049:COMPLETE_WEBINAR_AND_EMBEDDED_CLIPS",
+        "local_media_state": "EXACT_LOCAL_DEVELOPMENT_SOURCE",
+        "test_eligible": false,
+        "reason": "Pilot-v5 development-touched V+S/far repair lead"
+      },
+      {
+        "slot": "TR-09",
+        "source_group_id": "cand-051",
+        "exact_object_or_session_id": "cand-051",
+        "participant_block_id": "NOAA:CAND051",
+        "dataset_lineage_id": "NOAA_OCEAN_TODAY",
+        "production_lineage_id": "NOAA:CAND051:COMPLETE_WEBINAR_AND_EMBEDDED_CLIPS",
+        "local_media_state": "EXACT_LOCAL_DEVELOPMENT_SOURCE",
+        "test_eligible": false,
+        "reason": "Pilot-v5 development-touched V+S/far lead"
+      },
+      {
+        "slot": "TR-10",
+        "source_group_id": "cand-052",
+        "exact_object_or_session_id": "cand-052",
+        "participant_block_id": "NOAA:CAND052",
+        "dataset_lineage_id": "NOAA_OCEAN_TODAY",
+        "production_lineage_id": "NOAA:CAND052:COMPLETE_WEBINAR_AND_EMBEDDED_CLIPS",
+        "local_media_state": "EXACT_LOCAL_DEVELOPMENT_SOURCE",
+        "test_eligible": false,
+        "reason": "Pilot-v4 development source"
+      },
+      {
+        "slot": "TR-11",
+        "source_group_id": "SG-OXFORD-QM-001",
+        "exact_object_or_session_id": "binney01.mp4",
+        "participant_block_id": "OXFORD_QM:LECTURE01",
+        "dataset_lineage_id": "CANONICAL_LECTURE_FOUR",
+        "production_lineage_id": "OXFORD_QM:LECTURE01_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VALIDATED_PROMOTED",
+        "test_eligible": false,
+        "reason": "Frozen development/calibration-only canonical lecture"
+      },
+      {
+        "slot": "TR-12",
+        "source_group_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+        "exact_object_or_session_id": "2012-01-18-01-great-writers-brown-lawrence.mp4",
+        "participant_block_id": "OXFORD_DHL:CONSCIOUSNESS",
+        "dataset_lineage_id": "CANONICAL_LECTURE_FOUR",
+        "production_lineage_id": "OXFORD_DHL:CONSCIOUSNESS_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VALIDATED_PROMOTED",
+        "test_eligible": false,
+        "reason": "Frozen development/calibration-only canonical lecture"
+      }
+    ],
+    "dev_calibration": [
+      {
+        "slot": "DV-01",
+        "source_group_id": "SG-MIT-RES12-003-L01",
+        "exact_object_or_session_id": "mitres_12-003f25_lec1_1080p_360p_16_9.mp4",
+        "participant_block_id": "MIT_RES12:LECTURE01",
+        "dataset_lineage_id": "CANONICAL_LECTURE_FOUR",
+        "production_lineage_id": "MIT_RES12:LECTURE01_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VALIDATED_PROMOTED",
+        "test_eligible": false
+      },
+      {
+        "slot": "DV-02",
+        "source_group_id": "SG-YALE-PHYS200-L01",
+        "exact_object_or_session_id": "phys200_01_090606.m4v",
+        "participant_block_id": "YALE_PHYS200:LECTURE01",
+        "dataset_lineage_id": "CANONICAL_LECTURE_FOUR",
+        "production_lineage_id": "YALE_PHYS200:LECTURE01_AND_DERIVATIVES",
+        "local_media_state": "COMPLETE_VALIDATED_PROMOTED",
+        "test_eligible": false
+      },
+      {
+        "slot": "DV-03",
+        "source_group_id": "cand-045",
+        "exact_object_or_session_id": "cand-045",
+        "participant_block_id": "NOAA:CAND045",
+        "dataset_lineage_id": "NOAA_OCEAN_TODAY",
+        "production_lineage_id": "NOAA:CAND045:COMPLETE_WEBINAR_AND_EMBEDDED_CLIPS",
+        "local_media_state": "EXACT_LOCAL_DEVELOPMENT_SOURCE",
+        "test_eligible": false
+      },
+      {
+        "slot": "DV-04",
+        "source_group_id": "P12",
+        "exact_object_or_session_id": "P12_101",
+        "participant_block_id": "EPIC:P12",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P12:KITCHEN_AND_ALL_DERIVATIVES",
+        "local_media_state": "METADATA_FROZEN_ACQUISITION_REQUIRED",
+        "test_eligible": false
+      },
+      {
+        "slot": "DV-05",
+        "source_group_id": "cc4d_p05_e07",
+        "exact_object_or_session_id": "25_109",
+        "participant_block_id": "CC4D:P05",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P05:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "local_media_state": "EXACT_ROUTE_TECHNICALLY_READY_GOVERNANCE_HOLD",
+        "test_eligible": false
+      },
+      {
+        "slot": "DV-06",
+        "source_group_id": "assembly101_p9051",
+        "exact_object_or_session_id": "nusar-2021_action_both_9051-c08a_9051_user_id_2021-02-22_115717",
+        "participant_block_id": "ASSEMBLY101:9051",
+        "dataset_lineage_id": "ASSEMBLY101",
+        "production_lineage_id": "ASSEMBLY101:9051:ALL_SESSIONS_VIEWS_AND_DERIVATIVES",
+        "local_media_state": "PINNED_METADATA_GATE_CLOSED",
+        "test_eligible": false
+      }
+    ],
+    "test_untouched": [
+      {
+        "slot": "TS-01",
+        "source_group_id": "P01",
+        "exact_object_or_session_id": "P01_101",
+        "participant_block_id": "EPIC:P01",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P01:KITCHEN_AND_ALL_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-02",
+        "source_group_id": "P02",
+        "exact_object_or_session_id": "P02_108",
+        "participant_block_id": "EPIC:P02",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P02:KITCHEN_AND_ALL_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-03",
+        "source_group_id": "P04",
+        "exact_object_or_session_id": "P04_123",
+        "participant_block_id": "EPIC:P04",
+        "dataset_lineage_id": "EPIC_KITCHENS_100",
+        "production_lineage_id": "EPIC:P04:KITCHEN_AND_ALL_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-04",
+        "source_group_id": "cc4d_p04_e05",
+        "exact_object_or_session_id": "25_22",
+        "participant_block_id": "CC4D:P04",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P04:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-05",
+        "source_group_id": "cc4d_p06_e02",
+        "exact_object_or_session_id": "16_18",
+        "participant_block_id": "CC4D:P06",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P06:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-06",
+        "source_group_id": "cc4d_p07_e02",
+        "exact_object_or_session_id": "16_23",
+        "participant_block_id": "CC4D:P07",
+        "dataset_lineage_id": "CAPTAINCOOK4D",
+        "production_lineage_id": "CC4D:P07:ALL_ENVIRONMENTS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-07",
+        "source_group_id": "assembly101_p9056",
+        "exact_object_or_session_id": "nusar-2021_action_both_9056-b08a_9056_user_id_2021-02-22_141934",
+        "participant_block_id": "ASSEMBLY101:9056",
+        "dataset_lineage_id": "ASSEMBLY101",
+        "production_lineage_id": "ASSEMBLY101:9056:ALL_SESSIONS_VIEWS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-08",
+        "source_group_id": "assembly101_p9083",
+        "exact_object_or_session_id": "nusar-2021_action_both_9083-c03a_9083_user_id_2021-02-16_114344",
+        "participant_block_id": "ASSEMBLY101:9083",
+        "dataset_lineage_id": "ASSEMBLY101",
+        "production_lineage_id": "ASSEMBLY101:9083:ALL_SESSIONS_VIEWS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-09",
+        "source_group_id": "assembly101_p9055",
+        "exact_object_or_session_id": "nusar-2021_action_both_9055-a07_9055_user_id_2021-02-09_092331",
+        "participant_block_id": "ASSEMBLY101:9055",
+        "dataset_lineage_id": "ASSEMBLY101",
+        "production_lineage_id": "ASSEMBLY101:9055:ALL_SESSIONS_VIEWS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_METADATA_ONLY",
+        "rights_state": "REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-10",
+        "source_group_id": "EC-USGS-SHIFT-CURVES",
+        "exact_object_or_session_id": "USGS-media-video-developing-and-applying-shift-curves-using-grsat",
+        "participant_block_id": "USGS:SHIFT_CURVES_COMPLETE_PRODUCTION",
+        "dataset_lineage_id": "USGS_PUBLIC_MEDIA",
+        "production_lineage_id": "USGS:SHIFT_CURVES:ALL_RENDITIONS_AND_DERIVATIVES",
+        "current_state": "RESERVED_UNTOUCHED_IDENTITY_ONLY",
+        "rights_state": "HOLD_PENDING_EXACT_ROUTE_AND_RIGHTS_REPAIR",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-11",
+        "source_group_id": "EC-NASA-TO-THE-RESCUE",
+        "exact_object_or_session_id": "NASA+-jpl-to-the-rescue",
+        "participant_block_id": "NASA_JPL:TO_THE_RESCUE_COMPLETE_PRODUCTION",
+        "dataset_lineage_id": "NASA_JPL_DOCUMENTARY",
+        "production_lineage_id": "NASA_JPL:TO_THE_RESCUE_AND_ALL_COMPONENTS",
+        "current_state": "RESERVED_UNTOUCHED_IDENTITY_ONLY",
+        "rights_state": "HOLD_PENDING_EXACT_ROUTE_AND_JPL_COMPONENT_AUTHORITY",
+        "semantic_exposure_allowed_now": false
+      },
+      {
+        "slot": "TS-12",
+        "source_group_id": "EC-NARA-CITY-UNDER-ICE",
+        "exact_object_or_session_id": "NAID:2569752",
+        "participant_block_id": "NARA:CITY_UNDER_ICE_COMPLETE_PRODUCTION",
+        "dataset_lineage_id": "NARA_ARCHIVAL_FILM",
+        "production_lineage_id": "NARA:CITY_UNDER_ICE_AND_ALL_RENDITIONS",
+        "current_state": "RESERVED_UNTOUCHED_IDENTITY_ONLY",
+        "rights_state": "HOLD_PENDING_IDENTITY_DURATION_RESTRICTION_AND_ROUTE",
+        "semantic_exposure_allowed_now": false
+      }
+    ]
+  },
+  "reserve_pools": {
+    "epic_participants": {
+      "rank": 1,
+      "available_pool_fact": "The frozen metadata pool contains 15 eligible extension participants and 12 named candidate/replacement rows; exact media is already present for P27, P28, and P23.",
+      "same_split_replacements": [
+        {
+          "source_group_id": "P35",
+          "exact_object_or_session_id": "P35_107",
+          "participant_block_id": "EPIC:P35"
+        },
+        {
+          "source_group_id": "P33",
+          "exact_object_or_session_id": "P33_109",
+          "participant_block_id": "EPIC:P33"
+        },
+        {
+          "source_group_id": "P22",
+          "exact_object_or_session_id": "P22_114",
+          "participant_block_id": "EPIC:P22"
+        },
+        {
+          "source_group_id": "P03",
+          "exact_object_or_session_id": "P03_103",
+          "participant_block_id": "EPIC:P03"
+        }
+      ],
+      "strengths": [
+        "Exact IDs and durations are frozen.",
+        "P23_102 exact acquisition proves the route and native synchronized AAC for one reserve participant.",
+        "Participant blocking is explicit."
+      ],
+      "blocking_gates": [
+        "Per-asset media terms and restricted annotation authority",
+        "Selected-file acquisition and technical validation",
+        "Semantic labels, narrations, and EPIC-SOUNDS timestamps remain sealed"
+      ]
+    },
+    "captaincook4d_participant_groups": {
+      "rank": 2,
+      "available_pool_fact": "The inventory has 34 eligible participant-environment groups across eight people; persons 1-3 are development, person 5 is calibration, persons 4, 6, and 7 are test, and person 8 is the untouched replacement block.",
+      "same_split_replacements": [
+        {
+          "source_group_id": "cc4d_p08_e06",
+          "exact_object_or_session_id": "23_26",
+          "participant_block_id": "CC4D:P08",
+          "eligible_recording_ids": [
+            "15_2",
+            "23_26",
+            "25_4"
+          ]
+        }
+      ],
+      "strengths": [
+        "Exact person-environment inventory and person-level supergroups exist.",
+        "Three exact wave-0 recordings prove route and native audio for the dataset.",
+        "25_109 has exact route and container evidence."
+      ],
+      "blocking_gates": [
+        "Governance authority for new exact acquisition",
+        "Per-selected-file synchronized native audio",
+        "Participant consent/retention and restricted annotation authority",
+        "No recipe, action, or error label may drive selection"
+      ]
+    },
+    "assembly101_participant_groups": {
+      "rank": 3,
+      "available_pool_fact": "Pinned authenticated metadata contains 48 participant lineages, 362 sessions, and 354 complete 12-view sessions; the first eight deterministic participants and next two replacements were frozen without semantic labels.",
+      "same_split_replacements": [
+        {
+          "source_group_id": "assembly101_p9044",
+          "exact_object_or_session_id": "nusar-2021_action_both_9044-a08_9044_user_id_2021-02-05_154403",
+          "participant_block_id": "ASSEMBLY101:9044"
+        },
+        {
+          "source_group_id": "assembly101_p9081",
+          "exact_object_or_session_id": "nusar-2021_action_both_9081-c13a_9081_user_id_2021-02-12_162453",
+          "participant_block_id": "ASSEMBLY101:9081"
+        },
+        {
+          "source_group_id": "assembly101_p9043",
+          "exact_object_or_session_id": "nusar-2021_action_both_9043-b03b_9043_user_id_2021-02-05_133926",
+          "participant_block_id": "ASSEMBLY101:9043"
+        },
+        {
+          "source_group_id": "assembly101_p9066",
+          "exact_object_or_session_id": "nusar-2021_action_both_9066-a09_9066_user_id_2021-02-17_152039",
+          "participant_block_id": "ASSEMBLY101:9066"
+        },
+        {
+          "source_group_id": "assembly101_p9024",
+          "exact_object_or_session_id": "nusar-2021_action_both_9024-c12c_9024_user_id_2021-02-23_153804",
+          "participant_block_id": "ASSEMBLY101:9024"
+        }
+      ],
+      "strengths": [
+        "Large participant-disjoint reserve.",
+        "Pinned revision, exact paths, sizes, and LFS hashes.",
+        "Deterministic nonsemantic selection."
+      ],
+      "blocking_gates": [
+        "Repository media gate currently returns 403.",
+        "Wall-clock duration and native synchronized audio are unresolved.",
+        "Processing, restricted annotation, privacy, and custody authority are absent.",
+        "Action, mistake, object, and alternate-view semantic labels remain sealed"
+      ]
+    },
+    "independent_public_or_rights_ready_lineages": {
+      "rank": 4,
+      "current_rights_ready_count": 0,
+      "status": "REPAIR_CRITICAL_DIVERSITY_GAP",
+      "same_split_replacements": [
+        {
+          "source_group_id": "EC-NASA-MOONBOUND",
+          "replacement_scope": "NASA/JPL test slot only because it is correlated with the NASA/JPL documentary lineage",
+          "current_disposition": "REPAIR"
+        },
+        {
+          "source_group_id": "EC-NASA-PLANETARY-DEFENDERS",
+          "replacement_scope": "NASA/JPL test slot only",
+          "current_disposition": "REPAIR"
+        },
+        {
+          "source_group_id": "EC-NARA-MEMPHIS-BELLE",
+          "replacement_scope": "NARA archival test slot only",
+          "current_disposition": "REPAIR"
+        },
+        {
+          "source_group_id": "EC-NARA-THUNDERBOLT",
+          "replacement_scope": "NARA archival test slot only",
+          "current_disposition": "REPAIR"
+        },
+        {
+          "source_group_id": "MECCANO",
+          "replacement_scope": "Independent lineage only after exact official release, IDs, duration, native audio, and rights are frozen",
+          "current_disposition": "REPAIR"
+        }
+      ],
+      "blocking_gates": [
+        "No candidate is currently rights-ready for acquisition, processing, and restricted annotation.",
+        "Exact first-party object and item/component rights are missing for the public-event routes.",
+        "At least three independent public or licensed production lineages must survive without counting correlated alternatives separately."
+      ]
+    }
+  },
+  "admission_gates": {
+    "acquisition_identity": {
+      "all_required": true,
+      "requirements": [
+        "Pinned release or dated first-party item identity",
+        "Exact object, HLS asset, or coherent session IDs",
+        "Expected bytes and provider hash or immutable revision-bound identity",
+        "Atomic restricted custody with source manifest and transfer log",
+        "No mirror, clip, alternate encode, or synchronized view counted as a new source group"
+      ]
+    },
+    "rights_privacy": {
+      "all_required": true,
+      "requirements": [
+        "Affirmative acquisition authority",
+        "Affirmative internal processing authority",
+        "Affirmative restricted human annotation authority",
+        "Artifact-specific release remains a separate decision",
+        "Participant consent, withdrawal, retention, deletion, takedown, attribution, and least-privilege controls",
+        "Component ledger for archive footage, music, marks, faces, voices, partner media, and embedded clips"
+      ]
+    },
+    "duration": {
+      "preferred_inclusive_seconds": [
+        1200,
+        5400
+      ],
+      "counting_rule": "Count coherent wall-clock duration once; never sum synchronized camera-view hours.",
+      "failure_policy": "Reject or prospectively replace before semantic review. No concatenation of unrelated takes to meet duration."
+    },
+    "audio_video": {
+      "all_required": true,
+      "requirements": [
+        "At least one decodable video stream",
+        "At least one native synchronized audio stream",
+        "Audio codec, channels, sample rate, and nonempty decoded samples recorded",
+        "Beginning, middle, and end A/V timestamp delta no greater than 0.25 seconds",
+        "Audio/video stream-duration delta no greater than 0.25 seconds",
+        "Stable source-time mapping and no truncation"
+      ],
+      "subtitles_or_transcripts_prove_audio": false
+    },
+    "human_semantic_eligibility": {
+      "timing": "Train/dev after split freeze; test only after test unlock",
+      "requirements": [
+        "Human source-uniform dynamic non-text visual prescreen where V is targeted",
+        "Human source-uniform non-speech audio prescreen where A is targeted",
+        "Substantive speech prescreen where S is targeted",
+        "Full-source recurrence and shortcut challenge",
+        "Far candidates are multi-hop coherent compositions, not distance-only pairs",
+        "A concrete localizable source-world non-speech event is necessary for A; music, score, applause, generic room noise, generic handling noise, classifier labels, and visible/spoken duplicates do not qualify"
+      ]
+    }
+  },
+  "human_review_contract": {
+    "candidate_families_receiving_six_role_review": 90,
+    "roles_per_family": 6,
+    "distinct_people_per_family": 6,
+    "total_role_assignments": 540,
+    "roles": [
+      "question_claim_author_or_independent_verifier",
+      "blind_full_source_alternative_evidence_finder",
+      "validator_a",
+      "validator_b",
+      "independent_adjudicator",
+      "blind_post_adjudication_saturation_auditor"
+    ],
+    "reviewer_roster": {
+      "train_and_dev_unique_reviewers": 18,
+      "test_only_unique_reviewers": 12,
+      "total_unique_reviewers": 30,
+      "test_roster_frozen_before_unlock": true
+    },
+    "source_level_blindness": [
+      "A prescreener may not later be blind finder or saturation auditor for the same source group.",
+      "A blind finder or saturation auditor may hold that blind role for at most one family from a source group.",
+      "An adjudicator may not have authored any family in the same source group.",
+      "Once a person has nonblind semantic exposure to a source, that person may not take a later blind role on that source.",
+      "Assignments and exposure snapshot are frozen before packet distribution; mutation invalidates affected packets."
+    ],
+    "h2_acceptance_requires": [
+      "Substantive question, atomic claims, answer, source-time evidence, and route inventory",
+      "Two independent validators pass answerability, sufficiency, minimality, necessity, and shortcut checks",
+      "Independent adjudication resolves disagreement",
+      "Blind full-source alternative search is complete under the frozen protocol",
+      "Blind post-adjudication saturation audit finds no unhandled answer-complete route",
+      "Intervention-v2 state surface, route closure, restoration feasibility, and metadata-leakage prerequisites pass",
+      "The record uses H2_HUMAN_ADJUDICATED_SATURATION_AUDITED and never claims gold or exhaustive evidence"
+    ]
+  },
+  "contamination_ledger": {
+    "required": true,
+    "one_row_per": "person_x_source_group_x_artifact_or_tool_exposure",
+    "required_fields": [
+      "timestamp_utc",
+      "person_or_system_id",
+      "source_group_id",
+      "participant_block_id",
+      "production_lineage_id",
+      "split",
+      "artifact_or_tool",
+      "exposure_class",
+      "semantic_fields_visible",
+      "purpose",
+      "authorized_by",
+      "packet_hash_before",
+      "packet_hash_after",
+      "disposition"
+    ],
+    "exposure_classes": [
+      "NONSEMANTIC_METADATA",
+      "TECHNICAL_MEDIA_PROBE",
+      "RIGHTS_PRIVACY_REVIEW",
+      "HUMAN_SEMANTIC_PRESCREEN",
+      "HUMAN_AUTHORING",
+      "HUMAN_BLIND_FINDING",
+      "HUMAN_VALIDATION",
+      "HUMAN_ADJUDICATION",
+      "HUMAN_SATURATION_AUDIT",
+      "MODEL_OR_EMBEDDING_EXPOSURE"
+    ],
+    "automatic_invalidation": [
+      "Any pre-unlock semantic or model exposure on a test source invalidates that source as untouched.",
+      "Any model-guided test authoring or candidate mining invalidates the affected test source and all derived families.",
+      "Any cross-split participant, continuous-recording, mirror, embedded-clip, or production-component overlap invalidates the affected split assignment.",
+      "Any hidden use of existing semantic labels during selection or initial authoring invalidates the source.",
+      "Any unlogged exposure fails closed."
+    ]
+  },
+  "prospective_narrowing_triggers": [
+    {
+      "trigger_id": "NARROW-01-VSA",
+      "observation_point": "After all train-development and dev-calibration source prescreens, before test authoring",
+      "trigger": "Fewer than four development/calibration source groups yield a defensible V+S+A candidate, or fewer than two production-lineage-disjoint test groups remain technically and legally eligible for V+S+A prospecting.",
+      "required_action": "Freeze an addendum reducing or removing V+S+A targets and naming replacement profiles before test packets are authored.",
+      "prohibited_action": "Do not force A from score, surf, applause, generic handling sound, classifier labels, or co-occurrence."
+    },
+    {
+      "trigger_id": "NARROW-02-FAR",
+      "observation_point": "After 54 train/dev candidate families are adjudicated",
+      "trigger": "Fewer than 18 coherent far/multi candidates or fewer than 12 far/multi H2 families survive in train plus dev.",
+      "required_action": "Prospectively narrow the far-stratum claim and revise test targets before test authoring.",
+      "prohibited_action": "Do not count one-hop distance-only or unrelated interval pairs as far."
+    },
+    {
+      "trigger_id": "NARROW-03-YIELD",
+      "observation_point": "After train-development and dev-calibration are complete",
+      "trigger": "Fewer than 36 H2 families survive from the planned 54 train/dev candidates, or fewer than 15 of 18 train/dev source groups contribute at least one H2.",
+      "required_action": "REPAIR authoring protocol, add predeclared development reserves, and rerun excluded calibration before unlocking test.",
+      "prohibited_action": "Do not mine the untouched test pool to compensate."
+    },
+    {
+      "trigger_id": "NARROW-04-TEST-POOL",
+      "observation_point": "Immediately before test unlock",
+      "trigger": "Fewer than 12 untouched groups pass all admission gates, fewer than four capture-format categories remain, or independent-lineage slots collapse into correlated alternatives.",
+      "required_action": "Keep test locked and substitute only the next predeclared untouched same-split reserve; otherwise choose REPAIR or the frozen descriptive fallback.",
+      "prohibited_action": "Do not move semantically reviewed train/dev groups into test."
+    },
+    {
+      "trigger_id": "NARROW-05-CLAIM-SUPPORT",
+      "observation_point": "After test H2 freeze and before model execution",
+      "trigger": "Any proposed modality, mechanism, domain, or capture-format claim has fewer than five untouched test source groups.",
+      "required_action": "Delete or narrow that claim prospectively; retain only source-bounded descriptive reporting.",
+      "prohibited_action": "Do not pool mechanisms or correlated production lineages to reach five."
+    }
+  ],
+  "wave_sequence": [
+    {
+      "wave": 0,
+      "name": "SPLIT_AND_LEDGER_FREEZE",
+      "entry": "This plan is accepted as prospective governance.",
+      "work": [
+        "Freeze all 30 primary groups, participant blocks, production-lineage IDs, split labels, and reserve order.",
+        "Create zero-semantic exposure snapshots for all test and test-reserve groups.",
+        "Assign restricted custody namespaces by split."
+      ],
+      "exit": "Split hash, reserve hash, and contamination ledger schema are signed; no semantic review has begun on test."
+    },
+    {
+      "wave": 1,
+      "name": "RIGHTS_AND_TECHNICAL_ADMISSION",
+      "entry": "Wave 0 complete.",
+      "work": [
+        "Close acquisition, processing, annotation, privacy, component, duration, stream, synchronization, and custody gates.",
+        "Reuse the 15 exact local development/calibration groups without redownload.",
+        "Acquire only exact allowlisted objects for unresolved train/dev/test slots.",
+        "Keep every test semantic surface sealed."
+      ],
+      "exit": "All 30 primary groups pass or are replaced by untouched predeclared reserves; otherwise REPAIR."
+    },
+    {
+      "wave": 2,
+      "name": "TRAIN_DEVELOPMENT_AUTHORING",
+      "entry": "All 12 train groups admitted.",
+      "work": [
+        "Human-prescreen and author exactly 36 candidate families, three per source.",
+        "Run six-role review and intervention feasibility.",
+        "Target 24 H2 without forcing profile or far labels."
+      ],
+      "exit": "Train H2 and labor/yield report frozen; protocol defects repaired."
+    },
+    {
+      "wave": 3,
+      "name": "DEV_CALIBRATION_AND_PROTOCOL_LOCK",
+      "entry": "Wave 2 protocol is stable.",
+      "work": [
+        "Author exactly 18 candidates, three per dev-calibration source.",
+        "Complete six-role review and target 12 H2.",
+        "Complete the frozen excluded calibration requirement and reviewer retraining.",
+        "Freeze authoring manual, decision rules, intervention-v2 contract, packet schema, and reviewer assignment solver."
+      ],
+      "exit": "At least 36 train/dev H2 from at least 15 source groups; narrowing triggers resolved; test remains untouched."
+    },
+    {
+      "wave": 4,
+      "name": "TEST_UNLOCK_AND_HUMAN_ONLY_AUTHORING",
+      "entry": "All untouched-test unlock requirements pass.",
+      "work": [
+        "Release raw A/V only to the 12-person test-only roster.",
+        "Author exactly 36 candidates, three per test source, without models or semantic labels.",
+        "Execute all six human roles and target 24 test H2.",
+        "Freeze source-time evidence, accepted SESs under the saturation protocol, state surfaces, and packet hashes."
+      ],
+      "exit": "At least 24 test H2 across all 12 untouched test groups, or invoke fallback/REPAIR."
+    },
+    {
+      "wave": 5,
+      "name": "PAPER_SCALE_GATE",
+      "entry": "All human records and contamination audits are frozen.",
+      "work": [
+        "Check preferred 60/30/12 scale, per-claim five-test-source rule, capture diversity, presentation cap, and maximum three H2 per source.",
+        "Classify preferred GO, descriptive fallback, REPAIR, or NO_GO.",
+        "No model execution occurs before this gate."
+      ],
+      "exit": "Preferred GO is required for causal/model claims; fallback permits descriptive diagnostics only."
+    },
+    {
+      "wave": 6,
+      "name": "MODEL_EXECUTION_AFTER_H2_FREEZE",
+      "entry": "Preferred GO plus all separate baseline, runtime, leakage, intervention, and ITT gates.",
+      "work": [
+        "Run frozen systems and arms with mechanism-specific R-N estimands.",
+        "Aggregate family within source then equal source.",
+        "Retain invalid and early-terminal assignments under the frozen ITT policy."
+      ],
+      "exit": "Audited result tables; no authority is created by this planning artifact."
+    }
+  ],
+  "budget_estimate": {
+    "currency": "USD",
+    "planning_basis": "Pre-commit cap estimate; actual active and elapsed minutes must be logged by role.",
+    "human_semantic_labor": {
+      "six_role_hours_per_candidate_family": 9.25,
+      "candidate_families": 90,
+      "six_role_hours": 832.5,
+      "source_prescreen_hours": 90,
+      "reviewer_training_hours": 240,
+      "total_hours": 1162.5,
+      "blended_hourly_rate": 45,
+      "cost": 52312.5
+    },
+    "rights_privacy_and_component_review": {
+      "hours": 96,
+      "hourly_rate": 175,
+      "cost": 16800
+    },
+    "engineering_acquisition_indexing_and_ledger": {
+      "hours": 360,
+      "hourly_rate": 70,
+      "cost": 25200
+    },
+    "program_management_and_qc": {
+      "hours": 160,
+      "hourly_rate": 60,
+      "cost": 9600
+    },
+    "storage_compute_and_secure_custody": {
+      "cost": 18000
+    },
+    "subtotal": 121912.5,
+    "contingency_fraction": 0.2,
+    "contingency": 24382.5,
+    "total_cap": 146295,
+    "fallback_budget_rule": "Do not buy claim language with reduced review. If the cap cannot fund preferred scale, use the descriptive fallback or stop."
+  },
+  "decision_rules": {
+    "GO_PREFERRED": {
+      "all_required": [
+        "At least 60 H2_HUMAN_ADJUDICATED_SATURATION_AUDITED families",
+        "At least 30 contributing source groups",
+        "At least 12 contributing untouched test source groups",
+        "At least 24 train H2, 12 dev H2, and 24 test H2",
+        "No source contributes more than three H2",
+        "At least four capture-format categories",
+        "Lecture/webinar/presentation-wrapped sources are no more than 25 percent",
+        "Every paper-facing modality, mechanism, domain, or capture-format claim has at least five untouched test source groups",
+        "All rights, privacy, lineage, six-role, contamination, intervention, leakage, runtime, competence, and ITT gates pass"
+      ],
+      "claim_scope": "Eligible for preregistered causal/model claims only subject to every other frozen gate."
+    },
+    "GO_DESCRIPTIVE_FALLBACK": {
+      "all_required": [
+        "At least 60 H2 families",
+        "At least 20 contributing source groups",
+        "At least eight untouched test source groups",
+        "All surviving records pass unchanged construct, rights, privacy, and contamination rules"
+      ],
+      "claim_scope": "Descriptive narrow source-bounded diagnostic reporting only; insufficient for causal/model-effect claims, controller superiority, population ranking, or broad model/generalization claims."
+    },
+    "REPAIR": [
+      "Preferred 30/12 composition is not yet legally and technically admitted but unchanged reserves remain.",
+      "Train/dev yield or profile targets miss and can be prospectively narrowed before test authoring.",
+      "A test slot fails before semantic exposure and an untouched predeclared same-split reserve exists.",
+      "Reviewer assignment, labor, or packet defects are correctable without exposing test or weakening the construct."
+    ],
+    "NO_GO": [
+      "Scale falls below the 60/20/8 floor: 60 H2, 20 source groups, or eight untouched test groups.",
+      "A test source or reserve is contaminated and no untouched predeclared replacement remains.",
+      "Source, participant, household, continuous-recording, mirror, or production-lineage leakage cannot be resolved.",
+      "Rights, privacy, restricted annotation, or deletion obligations cannot be satisfied.",
+      "Preferred claims require forced labels, pooled mechanisms, hidden semantic labels, model-guided test mining, or outcome-conditioned replacement.",
+      "The budget or schedule can close only by dropping one of the six roles or saturation audit."
+    ],
+    "current_classification": "REPAIR",
+    "current_basis": [
+      "Preferred counts and pools are now concrete, but no scale-up human work has occurred.",
+      "Only 15 nominated development/calibration groups have exact local media; unresolved train/dev/test acquisitions remain.",
+      "Assembly101 media access is gated and duration/audio are unresolved.",
+      "Independent public/rights-ready lineage count is zero.",
+      "No test group has passed the complete acquisition, rights, audio, duration, privacy, and custody gate.",
+      "No source in this plan has produced an H2 result."
+    ]
+  },
+  "final_boundary_statement": "This artifact freezes a prospective source-disjoint scale-up design. It does not create human review, accepted SESs, H2 families, acquisition or annotation authority, test eligibility by fiat, scientific execution, causal effects, model comparisons, or release authority.",
+  "final_token": "SOURCE_DISJOINT_SCALEUP_WAVE_V1_READY"
+}

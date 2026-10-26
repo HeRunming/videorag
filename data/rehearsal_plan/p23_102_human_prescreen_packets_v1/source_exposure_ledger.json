@@ -1,0 +1,13 @@
+{
+  "covered_source_ids": [
+    "P23_102"
+  ],
+  "derivative_group_rule": "All derivatives originating from a P23 source use source group P23.",
+  "distribution_authorized": false,
+  "events": [],
+  "format_version": "1.0.0",
+  "ledger_id": "p23-source-exposure-ledger-v1",
+  "ledger_sha256": "sha256:40de6f7b8353157110fc69f153ec474bc7f25c11771f9823640ac060deb741ac",
+  "record_type": "p23_source_exposure_ledger",
+  "source_group_id": "P23"
+}

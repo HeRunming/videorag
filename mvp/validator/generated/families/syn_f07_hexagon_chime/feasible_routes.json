@@ -1,0 +1,1373 @@
+[
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:cf38ec2859bfd9b37aab19a78f3cdc24c578a7f21401b272557270e9a5d52276",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.1",
+    "remaining_cost": 11.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:cf38ec2859bfd9b37aab19a78f3cdc24c578a7f21401b272557270e9a5d52276",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 2,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.2",
+    "remaining_cost": 9.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:cf38ec2859bfd9b37aab19a78f3cdc24c578a7f21401b272557270e9a5d52276",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 3,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.3",
+    "remaining_cost": 8.0,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:cf38ec2859bfd9b37aab19a78f3cdc24c578a7f21401b272557270e9a5d52276",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 4,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime",
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.4",
+    "remaining_cost": 6.0,
+    "remaining_steps": 6,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:cf38ec2859bfd9b37aab19a78f3cdc24c578a7f21401b272557270e9a5d52276",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 0,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 1,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.1",
+    "remaining_cost": 11.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 2,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.2",
+    "remaining_cost": 9.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 3,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.3",
+    "remaining_cost": 8.0,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 4,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.4",
+    "remaining_cost": 6.0,
+    "remaining_steps": 6,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": true,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "status_trigger_then_direct_route",
+        "required_cost": 4.25,
+        "required_steps": 4,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "channels": [
+                "clip"
+              ]
+            },
+            "cost": 0.25,
+            "expected_evidence_ids": [],
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.1",
+    "remaining_cost": 11.75,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 2,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.2",
+    "remaining_cost": 10.75,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 3,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.3",
+    "remaining_cost": 8.75,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 4,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.4",
+    "remaining_cost": 7.75,
+    "remaining_steps": 6,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 5,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime",
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.5",
+    "remaining_cost": 5.75,
+    "remaining_steps": 5,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f",
+    "source_trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_a"
+  },
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.clean.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:4738fc215685b94adf564e127506d885ac1178383db1a269b4220916ac22a367",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [
+      "s4_chime"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.clean.1",
+    "remaining_cost": 10.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:4738fc215685b94adf564e127506d885ac1178383db1a269b4220916ac22a367",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 2,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.clean",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime",
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.clean.2",
+    "remaining_cost": 8.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:4738fc215685b94adf564e127506d885ac1178383db1a269b4220916ac22a367",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.clean",
+    "state_role": "CLEAN",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 0,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.blocked.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:db4f71b53244257e3eea724f1af54c378e5a5840bd1e0a0c618e942dda34dced",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 1,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.blocked.1",
+    "remaining_cost": 10.0,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:db4f71b53244257e3eea724f1af54c378e5a5840bd1e0a0c618e942dda34dced",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 2,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.blocked.2",
+    "remaining_cost": 8.0,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [
+          "s4_orange_hexagon"
+        ],
+        "reason": "blocked_state_has_no_restoration_operation",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:db4f71b53244257e3eea724f1af54c378e5a5840bd1e0a0c618e942dda34dced",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.blocked",
+    "state_role": "BLOCKED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 0,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.0",
+    "remaining_cost": 12.0,
+    "remaining_steps": 10,
+    "restoration_available": true,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "status_trigger_then_direct_route",
+        "required_cost": 4.25,
+        "required_steps": 4,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "channels": [
+                "clip"
+              ]
+            },
+            "cost": 0.25,
+            "expected_evidence_ids": [],
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:ff8a83524775c57b64b6fad23f81a0968788cb4d69fb48b6c8f583b35ecc33d1",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 1,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.1",
+    "remaining_cost": 11.75,
+    "remaining_steps": 9,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_chime",
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 4.0,
+        "required_steps": 3,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": true,
+              "include_video": false,
+              "interval": {
+                "end_s": 404.0,
+                "start_s": 398.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_chime"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:ff8a83524775c57b64b6fad23f81a0968788cb4d69fb48b6c8f583b35ecc33d1",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 2,
+    "eligible": true,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [
+      "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+    ],
+    "observed_evidence_ids": [
+      "s4_chime"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.2",
+    "remaining_cost": 9.75,
+    "remaining_steps": 8,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": true,
+        "missing_evidence_ids": [
+          "s4_orange_hexagon"
+        ],
+        "reason": "direct_route",
+        "required_cost": 2.0,
+        "required_steps": 2,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": [
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 68.0,
+                "start_s": 62.0
+              }
+            },
+            "cost": 2.0,
+            "expected_evidence_ids": [
+              "s4_orange_hexagon"
+            ],
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "target": "supported_answer"
+            },
+            "cost": 0.0,
+            "expected_evidence_ids": [],
+            "tool": "finalize"
+          }
+        ]
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:ff8a83524775c57b64b6fad23f81a0968788cb4d69fb48b6c8f583b35ecc33d1",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  },
+  {
+    "decision_index": 3,
+    "eligible": false,
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_annotation_version": "synthetic-v1",
+    "family_id": "syn_f07_hexagon_chime",
+    "feasible_route_ids": [],
+    "observed_evidence_ids": [
+      "s4_chime",
+      "s4_orange_hexagon"
+    ],
+    "record_id": "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.3",
+    "remaining_cost": 7.75,
+    "remaining_steps": 7,
+    "restoration_available": false,
+    "route_alternatives": [
+      {
+        "feasible": false,
+        "missing_evidence_ids": [],
+        "reason": "evidence_already_sufficient",
+        "required_cost": 0,
+        "required_steps": 0,
+        "route_id": "route.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+        "set_id": "ses_syn_f07_hexagon_chime_1",
+        "steps": []
+      }
+    ],
+    "schema_version": "1.0.0",
+    "source_trajectory_hash": "sha256:ff8a83524775c57b64b6fad23f81a0968788cb4d69fb48b6c8f583b35ecc33d1",
+    "source_trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.restored",
+    "state_role": "RESTORED",
+    "validator_id": "synthetic_validator_b"
+  }
+]

@@ -1,0 +1,555 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:exogenous-restoration-execution-plan:2.0.0",
+  "title": "AV-TRACE exogenous restoration execution plan v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "frozen_date",
+    "status",
+    "decision_token",
+    "scope",
+    "terminology",
+    "primary_schedule",
+    "paired_prefix",
+    "states",
+    "mechanisms",
+    "state_surface",
+    "isolation",
+    "order_plan",
+    "analysis",
+    "leakage_gate",
+    "execution_gate",
+    "results_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "protocol_id": {"const": "exogenous_restoration_protocol_v2"},
+    "frozen_date": {"const": "2026-09-23"},
+    "status": {"const": "FROZEN_PRE_ANNOTATION"},
+    "decision_token": {
+      "enum": ["CAUSAL_INTERVENTION_V2_READY", "REPAIR", "NO_GO"]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["included", "excluded"],
+      "properties": {
+        "included": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "excluded": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "terminology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_phrase", "forbidden_phrases"],
+      "properties": {
+        "required_phrase": {
+          "const": "all accepted SESs discovered under the frozen saturation protocol"
+        },
+        "forbidden_phrases": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"enum": ["all possible SESs", "exhaustive SESs"]},
+          "uniqueItems": true,
+          "allOf": [
+            {"contains": {"const": "all possible SESs"}},
+            {"contains": {"const": "exhaustive SESs"}}
+          ]
+        }
+      }
+    },
+    "primary_schedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger_class",
+        "index_base",
+        "action_index",
+        "delivery_boundary",
+        "shared_scope",
+        "freeze_timing",
+        "depends_on_action_identity",
+        "depends_on_system_identity",
+        "depends_on_output_or_correctness",
+        "depends_on_get_channel_status",
+        "event"
+      ],
+      "properties": {
+        "trigger_class": {"const": "fixed_action_index"},
+        "index_base": {"const": "zero"},
+        "action_index": {"const": 4},
+        "delivery_boundary": {
+          "const": "after_completed_action_response_cycles_before_next_model_decision"
+        },
+        "shared_scope": {"const": "same_family_across_all_systems"},
+        "freeze_timing": {"const": "before_model_execution"},
+        "depends_on_action_identity": {"const": false},
+        "depends_on_system_identity": {"const": false},
+        "depends_on_output_or_correctness": {"const": false},
+        "depends_on_get_channel_status": {"const": false},
+        "event": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "event_type",
+            "event_version",
+            "message",
+            "cost",
+            "public_bytes_identical_r_n",
+            "reveals_restoration"
+          ],
+          "properties": {
+            "event_type": {"const": "protocol_checkpoint"},
+            "event_version": {"const": "2.0.0"},
+            "message": {"const": "Scheduled protocol checkpoint completed."},
+            "cost": {"const": 0.0},
+            "public_bytes_identical_r_n": {"const": true},
+            "reveals_restoration": {"const": false}
+          }
+        }
+      }
+    },
+    "paired_prefix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construction",
+        "initial_state_identical",
+        "public_transcript_identical_through_event",
+        "fresh_continuation_sessions",
+        "early_terminal_policy"
+      ],
+      "properties": {
+        "construction": {"const": "single_blocked_prefix_then_fresh_replayed_fork"},
+        "initial_state_identical": {"const": true},
+        "public_transcript_identical_through_event": {"const": true},
+        "fresh_continuation_sessions": {"const": true},
+        "early_terminal_policy": {
+          "const": "retain_both_assignments_copy_terminal_prefix_no_post_terminal_event"
+        }
+      }
+    },
+    "states": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {"$ref": "#/$defs/clean_state"},
+        {"$ref": "#/$defs/blocked_state"},
+        {"$ref": "#/$defs/restored_state"},
+        {"$ref": "#/$defs/no_trigger_state"}
+      ],
+      "items": false
+    },
+    "mechanisms": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/silent_mechanism"},
+        {"$ref": "#/$defs/outage_mechanism"}
+      ],
+      "items": false
+    },
+    "state_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_required",
+        "classifications",
+        "private_fields_forbidden",
+        "r_n_prefix_hash_match_required",
+        "unaffected_result_order_invariant",
+        "latency_bucket_invariant",
+        "result_shape_invariant"
+      ],
+      "properties": {
+        "manifest_required": {"const": true},
+        "classifications": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "INVARIANT_ALL_STATES",
+              "INTENDED_MECHANISM_DIFFERENCE",
+              "POST_EVENT_TREATMENT_MEDIATOR",
+              "FORBIDDEN_PRIVATE_FIELD"
+            ]
+          }
+        },
+        "private_fields_forbidden": {
+          "type": "array",
+          "minItems": 6,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "r_n_prefix_hash_match_required": {"const": true},
+        "unaffected_result_order_invariant": {"const": true},
+        "latency_bucket_invariant": {"const": true},
+        "result_shape_invariant": {"const": true}
+      }
+    },
+    "isolation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fresh_provider_session_per_state",
+        "fresh_continuation_session_per_arm",
+        "model_kv_cache_shared",
+        "prompt_cache_shared",
+        "retrieval_cache_shared",
+        "tool_response_cache_shared",
+        "cross_state_memory_allowed",
+        "shared_read_only_artifacts",
+        "failure_code"
+      ],
+      "properties": {
+        "fresh_provider_session_per_state": {"const": true},
+        "fresh_continuation_session_per_arm": {"const": true},
+        "model_kv_cache_shared": {"const": false},
+        "prompt_cache_shared": {"const": false},
+        "retrieval_cache_shared": {"const": false},
+        "tool_response_cache_shared": {"const": false},
+        "cross_state_memory_allowed": {"const": false},
+        "shared_read_only_artifacts": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "enum": ["model_weights", "immutable_indexes", "read_only_media_bytes"]
+          },
+          "uniqueItems": true
+        },
+        "failure_code": {"const": "INVALID_CROSS_STATE_CONTAMINATION"}
+      }
+    },
+    "order_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design",
+        "sequences",
+        "assignment_seed",
+        "stratify_by",
+        "immutable_ids",
+        "freeze_timing",
+        "post_outcome_change_allowed"
+      ],
+      "properties": {
+        "design": {"const": "four_state_williams_counterbalance"},
+        "sequences": {
+          "const": ["C-B-N-R", "B-R-C-N", "R-N-B-C", "N-C-R-B"]
+        },
+        "assignment_seed": {"type": "integer", "minimum": 0},
+        "stratify_by": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["intervention_mechanism"]},
+          "uniqueItems": true
+        },
+        "immutable_ids": {
+          "const": ["source_group_id", "family_id", "system_config_id"]
+        },
+        "freeze_timing": {"const": "before_outcomes"},
+        "post_outcome_change_allowed": {"const": false}
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "population",
+        "early_terminators_included",
+        "invalid_runs_included_fail_closed",
+        "trigger_conditioning_primary_allowed",
+        "primary_estimands",
+        "pooled_primary_estimand_allowed",
+        "restored_minus_blocked_role",
+        "system_eligibility",
+        "action_contingent_condition"
+      ],
+      "properties": {
+        "population": {"const": "all_preregistered_assignments_intention_to_treat"},
+        "early_terminators_included": {"const": true},
+        "invalid_runs_included_fail_closed": {"const": true},
+        "trigger_conditioning_primary_allowed": {"const": false},
+        "primary_estimands": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {"$ref": "#/$defs/silent_estimand"},
+            {"$ref": "#/$defs/outage_estimand"}
+          ],
+          "items": false
+        },
+        "pooled_primary_estimand_allowed": {"const": false},
+        "restored_minus_blocked_role": {
+          "const": "secondary_mechanism_specific_state_contrast"
+        },
+        "system_eligibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary_matrix_requires_staged_adapter",
+            "ineligible_status",
+            "eligibility_frozen_before_assignment",
+            "synthetic_outcomes_allowed"
+          ],
+          "properties": {
+            "primary_matrix_requires_staged_adapter": {"const": true},
+            "ineligible_status": {
+              "const": "STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT"
+            },
+            "eligibility_frozen_before_assignment": {"const": true},
+            "synthetic_outcomes_allowed": {"const": false}
+          }
+        },
+        "action_contingent_condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "trigger",
+            "role",
+            "primary_causal_claim_allowed",
+            "pooled_with_exogenous_allowed",
+            "report_assigned_and_triggered_denominators"
+          ],
+          "properties": {
+            "trigger": {"const": "get_channel_status"},
+            "role": {"const": "SECONDARY_PER_PROTOCOL_ACTION_CONTINGENT"},
+            "primary_causal_claim_allowed": {"const": false},
+            "pooled_with_exogenous_allowed": {"const": false},
+            "report_assigned_and_triggered_denominators": {"const": true}
+          }
+        }
+      }
+    },
+    "leakage_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "uses_human_labels",
+        "feature_class",
+        "forbidden_features",
+        "classifier",
+        "cross_validation",
+        "primary_task",
+        "secondary_tasks",
+        "pass_criteria",
+        "repair_token",
+        "no_go_conditions"
+      ],
+      "properties": {
+        "status": {"const": "NOT_RUN_BLOCKS_SCIENTIFIC_EXECUTION"},
+        "uses_human_labels": {"const": false},
+        "feature_class": {"const": "non_semantic_public_surface_metadata_only"},
+        "forbidden_features": {
+          "type": "array",
+          "minItems": 8,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "classifier": {"const": "l2_logistic_regression_frozen_no_test_tuning"},
+        "cross_validation": {"const": "leave_one_source_group_out"},
+        "primary_task": {"const": "R_vs_N_through_checkpoint"},
+        "secondary_tasks": {
+          "const": [
+            "B_vs_R_pretrigger",
+            "B_vs_N_pretrigger",
+            "C_vs_B_silent_route_withholding_only"
+          ]
+        },
+        "pass_criteria": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "balanced_accuracy_not_above_majority_baseline",
+            "source_group_blocked_permutation_p_min",
+            "deterministic_single_feature_predictor_allowed",
+            "r_n_prefix_hashes_match"
+          ],
+          "properties": {
+            "balanced_accuracy_not_above_majority_baseline": {"const": true},
+            "source_group_blocked_permutation_p_min": {"const": 0.05},
+            "deterministic_single_feature_predictor_allowed": {"const": false},
+            "r_n_prefix_hashes_match": {"const": true}
+          }
+        },
+        "repair_token": {"const": "LEAKAGE_GATE_REPAIR"},
+        "no_go_conditions": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "execution_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scientific_execution_authorized", "required_before_execution"],
+      "properties": {
+        "scientific_execution_authorized": {"const": false},
+        "required_before_execution": {
+          "type": "array",
+          "minItems": 8,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "results_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scientific_episodes_executed",
+        "human_labels_created",
+        "model_results_claimed",
+        "statement"
+      ],
+      "properties": {
+        "scientific_episodes_executed": {"const": false},
+        "human_labels_created": {"const": false},
+        "model_results_claimed": {"const": false},
+        "statement": {
+          "const": "This artifact freezes a prospective protocol only; it contains no invented result or human label."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "base_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "initial_access", "scheduled_event", "terminal_target"],
+      "properties": {
+        "state": {"type": "string"},
+        "initial_access": {"type": "string"},
+        "scheduled_event": {"type": "string"},
+        "terminal_target": {"type": "string"}
+      }
+    },
+    "clean_state": {
+      "allOf": [
+        {"$ref": "#/$defs/base_state"},
+        {"properties": {"state": {"const": "CLEAN"}, "scheduled_event": {"const": "none"}}}
+      ]
+    },
+    "blocked_state": {
+      "allOf": [
+        {"$ref": "#/$defs/base_state"},
+        {"properties": {"state": {"const": "BLOCKED"}, "scheduled_event": {"const": "none"}}}
+      ]
+    },
+    "restored_state": {
+      "allOf": [
+        {"$ref": "#/$defs/base_state"},
+        {"properties": {"state": {"const": "RESTORED"}, "scheduled_event": {"const": "checkpoint_with_hidden_restoration"}}}
+      ]
+    },
+    "no_trigger_state": {
+      "allOf": [
+        {"$ref": "#/$defs/base_state"},
+        {"properties": {"state": {"const": "NO_TRIGGER"}, "scheduled_event": {"const": "byte_identical_checkpoint_without_restoration"}}}
+      ]
+    },
+    "base_mechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mechanism",
+        "visibility",
+        "primary_estimand_id",
+        "pooled_primary_allowed"
+      ],
+      "properties": {
+        "mechanism": {"type": "string"},
+        "visibility": {"type": "string"},
+        "primary_estimand_id": {"type": "string"},
+        "pooled_primary_allowed": {"const": false}
+      }
+    },
+    "silent_mechanism": {
+      "allOf": [
+        {"$ref": "#/$defs/base_mechanism"},
+        {
+          "properties": {
+            "mechanism": {"const": "SILENT_ROUTE_WITHHOLDING"},
+            "visibility": {"const": "no_explicit_outage_marker"},
+            "primary_estimand_id": {"const": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT"}
+          }
+        }
+      ]
+    },
+    "outage_mechanism": {
+      "allOf": [
+        {"$ref": "#/$defs/base_mechanism"},
+        {
+          "properties": {
+            "mechanism": {"const": "EXPLICIT_CHANNEL_OUTAGE"},
+            "visibility": {"const": "standardized_typed_unavailable_response"},
+            "primary_estimand_id": {"const": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT"}
+          }
+        }
+      ]
+    },
+    "base_estimand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "estimand_id",
+        "mechanism",
+        "contrast",
+        "endpoint",
+        "population",
+        "aggregation"
+      ],
+      "properties": {
+        "estimand_id": {"type": "string"},
+        "mechanism": {"type": "string"},
+        "contrast": {"const": "RESTORED_minus_NO_TRIGGER"},
+        "endpoint": {"const": "common_supported_answer"},
+        "population": {"const": "all_preregistered_assignments_intention_to_treat"},
+        "aggregation": {"const": "family_within_source_then_equal_source"}
+      }
+    },
+    "silent_estimand": {
+      "allOf": [
+        {"$ref": "#/$defs/base_estimand"},
+        {
+          "properties": {
+            "estimand_id": {"const": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT"},
+            "mechanism": {"const": "SILENT_ROUTE_WITHHOLDING"}
+          }
+        }
+      ]
+    },
+    "outage_estimand": {
+      "allOf": [
+        {"$ref": "#/$defs/base_estimand"},
+        {
+          "properties": {
+            "estimand_id": {"const": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT"},
+            "mechanism": {"const": "EXPLICIT_CHANNEL_OUTAGE"}
+          }
+        }
+      ]
+    }
+  }
+}

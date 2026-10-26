@@ -1,0 +1,167 @@
+{
+  "artifacts": [
+    {
+      "path": "backend_index.json",
+      "role": "index",
+      "sha256": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9"
+    },
+    {
+      "path": "backend_families.json",
+      "role": "family",
+      "sha256": "sha256:782ddc7636f67c463ae203c647151dd31851cd6b179265db3f00e8cbd416f597"
+    },
+    {
+      "path": "corpus_index.json",
+      "role": "corpus_index",
+      "sha256": "sha256:e350de61c5e6bf01044d08f22809bd491975f6e59b12c6a970897e2289e52d5c"
+    },
+    {
+      "path": "timelines/syn_source_01.json",
+      "role": "event_timeline",
+      "sha256": "sha256:5325a0e6278a12e50bd7c16b3fe82b8e9cc44ffc55e53e69e20841e2faefc557"
+    },
+    {
+      "path": "evidence/syn_source_01.json",
+      "role": "evidence_inventory",
+      "sha256": "sha256:f5a13b28fa7478cfdc0ca8e54ca891a5727f17e3d4f25f9e4f9ad61ae7426d31"
+    },
+    {
+      "path": "transcripts/syn_source_01.json",
+      "role": "transcript",
+      "sha256": "sha256:660ef016f9e8e77edc56d1d0ee2a86034c014cff27d18e1aa3269cca4a996d90"
+    },
+    {
+      "path": "audio_events/syn_source_01.json",
+      "role": "audio_events",
+      "sha256": "sha256:c390543eed04569d7aedb9845e8c84e3f807dec8016824ed43a99c7d74c08cf6"
+    },
+    {
+      "path": "manifests/syn_source_01.json",
+      "role": "acquisition_manifest",
+      "sha256": "sha256:a89408a822de37b2b766ac64200bed34d0b63b5cff548a22db97487539605a88"
+    },
+    {
+      "path": "media/syn_source_01.mp4",
+      "role": "source_media",
+      "sha256": "sha256:b270a8deb3fda7cee58afd9ab38148c9d521803aadc0b00435a03ae77100df3b"
+    },
+    {
+      "path": "timelines/syn_source_02.json",
+      "role": "event_timeline",
+      "sha256": "sha256:4716e5e78478fe290b0569488c99997c4aae0d9aab7e27fb49515ae6a5dfe0ba"
+    },
+    {
+      "path": "evidence/syn_source_02.json",
+      "role": "evidence_inventory",
+      "sha256": "sha256:7fec13713051bd1de74dadd31c6b9361cfe27f9b4ecc9971d4d6491cb48f88a9"
+    },
+    {
+      "path": "transcripts/syn_source_02.json",
+      "role": "transcript",
+      "sha256": "sha256:50dc1e83abac5519411c8b56e84871933aee371e689200aeeabf9c58e3777b4a"
+    },
+    {
+      "path": "audio_events/syn_source_02.json",
+      "role": "audio_events",
+      "sha256": "sha256:f02ef7b50fc7228969a348d5acdaad1d90ebc015aaae9fd56edf5587861fc354"
+    },
+    {
+      "path": "manifests/syn_source_02.json",
+      "role": "acquisition_manifest",
+      "sha256": "sha256:85798d100114fdbada09b8eee5b2425532b222db71b20324184de11cb3046bbc"
+    },
+    {
+      "path": "media/syn_source_02.mp4",
+      "role": "source_media",
+      "sha256": "sha256:3a33b5ae5fbab9253e3e31f9bedbc0ae89112024bed94edeaf7422a6e9729795"
+    },
+    {
+      "path": "timelines/syn_source_03.json",
+      "role": "event_timeline",
+      "sha256": "sha256:fe9cce430e04bc7d8d15a135881eb5af5692a25807e3a0822f092d64b662904a"
+    },
+    {
+      "path": "evidence/syn_source_03.json",
+      "role": "evidence_inventory",
+      "sha256": "sha256:ff0f92ec259e0fb67988a9e51a6a5052129b75ad0f938879ba7eea0eea4437ac"
+    },
+    {
+      "path": "transcripts/syn_source_03.json",
+      "role": "transcript",
+      "sha256": "sha256:eecad73ad0601e7ea2587e20be2c71d318c2d3681008019dd4acddcddb62c7a7"
+    },
+    {
+      "path": "audio_events/syn_source_03.json",
+      "role": "audio_events",
+      "sha256": "sha256:c7a969f133cfc69d1e3b057b35fd4a126558a594093cf5af3064316db1078da6"
+    },
+    {
+      "path": "manifests/syn_source_03.json",
+      "role": "acquisition_manifest",
+      "sha256": "sha256:0efd86ef57515746fce164087684903539d535cc0b9f3508694c11fbcf5c3c93"
+    },
+    {
+      "path": "media/syn_source_03.mp4",
+      "role": "source_media",
+      "sha256": "sha256:36b74655786d7c6ffc22086d566d30dd7c2396bf1cd54228af240aa3d21b310f"
+    },
+    {
+      "path": "timelines/syn_source_04.json",
+      "role": "event_timeline",
+      "sha256": "sha256:b5a9066668a5790853242b46998219b9622433f3e6626c9584264ad4010748ca"
+    },
+    {
+      "path": "evidence/syn_source_04.json",
+      "role": "evidence_inventory",
+      "sha256": "sha256:95d0c2134bce0a73e92bea88ba1531e7367c4e87d7c151062f0435c804fcb524"
+    },
+    {
+      "path": "transcripts/syn_source_04.json",
+      "role": "transcript",
+      "sha256": "sha256:f304f7218276d1b437a7416d0949ba8d6f70f5afd3d702605b631f51bf03dd83"
+    },
+    {
+      "path": "audio_events/syn_source_04.json",
+      "role": "audio_events",
+      "sha256": "sha256:e57807b25c87996c6883357dd36a1753c92b85da1d7eabd3a3ac69905e2856c0"
+    },
+    {
+      "path": "manifests/syn_source_04.json",
+      "role": "acquisition_manifest",
+      "sha256": "sha256:f10e55759d33e65e670197d90689fd66b07c21f734dfd2b3f478bd88a5eeccbf"
+    },
+    {
+      "path": "media/syn_source_04.mp4",
+      "role": "source_media",
+      "sha256": "sha256:b3a5ecfeadad10aa3db58d77e4d2cea47c9a743d0e0957cbdcb2fc5d6c1ea0e1"
+    }
+  ],
+  "backend_version": "synthetic-fixed-v1",
+  "deterministic": true,
+  "hash_algorithm": "sha256-canonical-json-v1",
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "index_version": "synthetic-1.0.0",
+  "ranking": {
+    "algorithm": "lexical-overlap-v1",
+    "score_precision": 6,
+    "tie_breakers": [
+      "score_desc",
+      "start_s_asc",
+      "end_s_asc",
+      "result_id_asc"
+    ],
+    "tokenizer": "unicode-alnum-v1"
+  },
+  "record_count": 17,
+  "schema_version": "1.0.0",
+  "tool_api_version": "0.2.0",
+  "tool_costs": {
+    "finalize": 0.0,
+    "get_channel_status": 0.25,
+    "inspect_clip": 2.0,
+    "read_transcript": 1.0,
+    "search_ambient_audio": 1.0,
+    "search_speech": 1.0,
+    "search_visual": 1.0
+  }
+}

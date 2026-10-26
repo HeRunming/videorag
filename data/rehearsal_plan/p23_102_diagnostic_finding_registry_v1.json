@@ -1,0 +1,1075 @@
+{
+  "schema_version": "av-trace.p23-102-diagnostic-finding-registry/1.0",
+  "registry_id": "P23_102_DIAGNOSTIC_FINDING_REGISTRY_V1",
+  "frozen_date": "2026-10-14",
+  "status": "PREREGISTERED_DEVELOPMENT_ONLY_NOT_EXECUTED",
+  "decision_token": "P23_102_DIAGNOSTIC_FINDING_REGISTRY_READY",
+  "paper_alignment": {
+    "position": "benchmark_and_diagnostic_protocol_not_controller_method",
+    "frozen_pivot_tokens": [
+      "CVPR_PIVOT_FROZEN",
+      "CVPR_PIVOT_V2_FROZEN"
+    ],
+    "primary_development_warning": "LOW_N_MACHINE_PROVISIONAL_P23_102_DEVELOPMENT_REHEARSAL",
+    "source_id": "P23_102",
+    "source_group_id": "P23",
+    "development_only": true,
+    "future_primary_test_eligible": false,
+    "human_review_performed": false,
+    "h2_status": "NOT_H2",
+    "scientific_execution_authorized": false,
+    "model_execution_performed_by_this_registry": false,
+    "results_present": false,
+    "result_cells_must_be_blank_until_authorized_versioned_run": true,
+    "claim_boundary": "Any future P23_102 outputs are one-source machine-provisional development diagnostics. They cannot establish a human-valid benchmark result, source-disjoint generalization, controller superiority, modality generalization, population ranking, or a causal paper claim."
+  },
+  "terminology": {
+    "required_evidence_universe_phrase": "all accepted SESs discovered under the frozen saturation protocol",
+    "p23_complete_evidence_label": "COMPLETE_MACHINE_PROVISIONAL_SES",
+    "partial_evidence_label": "PROPER_PARTIAL_BREAKS_REQUIRED_CLAIM",
+    "paper_h2_term_if_later_applicable": "H2_HUMAN_ADJUDICATED_SATURATION_AUDITED",
+    "forbidden_for_p23_without_later_h2": [
+      "human gold",
+      "gold evidence",
+      "exhaustive SESs",
+      "all possible SESs"
+    ],
+    "user_facing_alias_only": {
+      "gold_vs_partial": "complete-machine-provisional-evidence versus proper-partial-evidence"
+    }
+  },
+  "exact_system_rows": [
+    {
+      "ordinal": 1,
+      "system_id": "direct_long_context",
+      "paper_label": "Direct LC",
+      "system_class": "non_agentic_endpoint_baseline",
+      "acquire_policy": "No search. Deterministically pack state-accessible citable observations in chronological modality-round-robin order up to the frozen context cap.",
+      "ground_policy": "One shared grounded-finalizer call over packed observations.",
+      "act_policy": "None.",
+      "acquire_metrics_eligible": false,
+      "ground_metrics_eligible": true,
+      "act_metrics_eligible": false,
+      "staged_event_capable": false,
+      "rn_primary_status": "STRUCTURALLY_INELIGIBLE_BEFORE_ASSIGNMENT"
+    },
+    {
+      "ordinal": 2,
+      "system_id": "single_shot_rag",
+      "paper_label": "Single-shot RAG",
+      "system_class": "nonadaptive_learned_retrieval_baseline",
+      "acquire_policy": "Issue one frozen question query to visual, speech, and ambient retrieval; fuse pointers with the frozen rule; acquire selected observations without query reformulation.",
+      "ground_policy": "One shared grounded-finalizer call over acquired observations.",
+      "act_policy": "No post-checkpoint search or reformulation; restoration can help only through an already returned pointer.",
+      "acquire_metrics_eligible": true,
+      "ground_metrics_eligible": true,
+      "act_metrics_eligible": true,
+      "staged_event_capable": true,
+      "rn_primary_status": "ELIGIBLE"
+    },
+    {
+      "ordinal": 3,
+      "system_id": "learned_react",
+      "paper_label": "Learned ReAct",
+      "system_class": "adaptive_learned_controller",
+      "acquire_policy": "Model-authored bounded search, observation, status, and query-reformulation actions using the frozen ReAct interface.",
+      "ground_policy": "Shared grounded finalizer and citation validator.",
+      "act_policy": "May adapt after the neutral checkpoint through ordinary allowed actions without restoration disclosure.",
+      "acquire_metrics_eligible": true,
+      "ground_metrics_eligible": true,
+      "act_metrics_eligible": true,
+      "staged_event_capable": true,
+      "rn_primary_status": "ELIGIBLE"
+    },
+    {
+      "ordinal": 4,
+      "system_id": "learned_evidence_sufficiency",
+      "paper_label": "Sufficiency agent",
+      "system_class": "adaptive_learned_sufficiency_controller",
+      "acquire_policy": "Model-authored bounded actions conditioned on public claim coverage, missing modalities, missing hops, missingness cause, p_sufficient, and recovery intent.",
+      "ground_policy": "The same grounded finalizer and citation validator as learned ReAct.",
+      "act_policy": "Continue, recover, answer, or abstain from explicit public sufficiency state without evaluator-private support labels.",
+      "acquire_metrics_eligible": true,
+      "ground_metrics_eligible": true,
+      "act_metrics_eligible": true,
+      "staged_event_capable": true,
+      "rn_primary_status": "ELIGIBLE"
+    }
+  ],
+  "arms": [
+    {
+      "ordinal": 1,
+      "arm": "C",
+      "state": "CLEAN",
+      "initial_access": "at_least_one_machine_provisional_accepted_ses_reachable",
+      "scheduled_event": "none",
+      "endpoint_target": "supported_answer"
+    },
+    {
+      "ordinal": 2,
+      "arm": "B",
+      "state": "BLOCKED",
+      "initial_access": "registered_route_inaccessible",
+      "scheduled_event": "none",
+      "endpoint_target": "calibrated_insufficiency_or_access_failure"
+    },
+    {
+      "ordinal": 3,
+      "arm": "R",
+      "state": "RESTORED",
+      "initial_access": "identical_to_no_trigger_blocked_prefix",
+      "scheduled_event": "byte_identical_checkpoint_plus_evaluator_private_restoration",
+      "endpoint_target": "supported_answer"
+    },
+    {
+      "ordinal": 4,
+      "arm": "N",
+      "state": "NO_TRIGGER",
+      "initial_access": "identical_to_restored_blocked_prefix",
+      "scheduled_event": "byte_identical_checkpoint_without_restoration",
+      "endpoint_target": "blocked_continuation"
+    }
+  ],
+  "mechanisms": [
+    {
+      "ordinal": 1,
+      "mechanism_id": "SILENT_ROUTE_WITHHOLDING",
+      "paper_label": "Silent route withholding",
+      "visibility": "no_explicit_outage_marker",
+      "intervention": "withhold_one_registered_necessity_group_and_close_deterministic_leaks",
+      "primary_estimand_id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+      "pool_with_other_mechanism_for_primary": false
+    },
+    {
+      "ordinal": 2,
+      "mechanism_id": "EXPLICIT_CHANNEL_OUTAGE",
+      "paper_label": "Explicit channel outage",
+      "visibility": "standardized_typed_unavailable_response",
+      "intervention": "make_exactly_one_registered_channel_unavailable",
+      "primary_estimand_id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+      "pool_with_other_mechanism_for_primary": false
+    }
+  ],
+  "restoration_schedule": {
+    "schedule_class": "exogenous_fixed_action_index",
+    "index_base": "zero",
+    "action_index": 4,
+    "delivery_boundary": "after_four_completed_action_response_cycles_before_fifth_model_decision",
+    "paired_prefix_construction": "single_blocked_prefix_then_fresh_replayed_fork",
+    "public_prefix_and_checkpoint_byte_identical_between_r_and_n": true,
+    "fresh_continuation_session_per_arm": true,
+    "restoration_is_evaluator_private": true,
+    "depends_on_action_identity": false,
+    "depends_on_system_identity": false,
+    "depends_on_output_or_correctness": false,
+    "depends_on_get_channel_status": false,
+    "early_terminal_policy": "retain_both_assignments_copy_terminal_prefix_and_set_paired_r_minus_n_difference_to_zero",
+    "trigger_conditioning_primary_allowed": false,
+    "pooled_mechanism_primary_allowed": false
+  },
+  "metric_catalog": {
+    "Acquire": {
+      "eligibility": "requires_policy_selected_acquisition_actions",
+      "direct_long_context_value": null,
+      "primary": [
+        {
+          "metric_id": "evidence_recall",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        },
+        {
+          "metric_id": "all_evidence_success",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        }
+      ],
+      "secondary": [
+        "retrieval_recall_at_5",
+        "retrieval_recall_at_20",
+        "all_ses_coverage",
+        "necessity_route_coverage",
+        "complete_ses_reacquired",
+        "candidate_modality_routing_coverage",
+        "first_accepted_evidence_rank",
+        "mrr",
+        "retrieval_burden"
+      ]
+    },
+    "Ground": {
+      "eligibility": "requires_a_valid_final_output_and_applicable_evaluator_fields",
+      "primary": [
+        {
+          "metric_id": "answer_score",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        },
+        {
+          "metric_id": "citation_f1",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        },
+        {
+          "metric_id": "supported_claim_rate",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        },
+        {
+          "metric_id": "supported_answer_endpoint",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        }
+      ],
+      "secondary": [
+        "answer_correct_but_unsupported",
+        "correct_answer_wrong_citation",
+        "unsupported_claim_rate",
+        "partial_evidence_unsupported_completion",
+        "calibrated_non_answer",
+        "complete_evidence_grounding_ceiling"
+      ],
+      "citation_rule": "Only acquired citable observation IDs count; search pointers are non-citable."
+    },
+    "Act": {
+      "eligibility": "requires_a_legal_staged_action_trajectory",
+      "direct_long_context_value": null,
+      "primary": [
+        {
+          "metric_id": "success_at_budget",
+          "direction": "higher_is_better",
+          "unit": "episode"
+        },
+        {
+          "metric_id": "premature_stop",
+          "direction": "lower_is_better",
+          "unit": "certificate_eligible_episode"
+        },
+        {
+          "metric_id": "recovery",
+          "direction": "higher_is_better",
+          "unit": "assigned_rn_pair"
+        }
+      ],
+      "secondary": [
+        "false_sufficient",
+        "calibrated_refusal",
+        "access_failure_diagnosis_accuracy",
+        "modality_switch_opportunity",
+        "modality_switch_completed",
+        "restored_route_inspected",
+        "complete_ses_reacquired",
+        "trigger_to_reacquisition_actions",
+        "trigger_to_reacquisition_cost",
+        "post_event_cost",
+        "no_trigger_false_recovery"
+      ]
+    },
+    "cost": {
+      "metrics": [
+        "model_calls",
+        "tool_calls",
+        "input_tokens",
+        "output_tokens",
+        "tool_cost",
+        "decoded_video_seconds",
+        "decoded_audio_seconds",
+        "wall_time_seconds",
+        "peak_memory_bytes",
+        "monetary_cost_if_applicable",
+        "cost_per_supported_answer"
+      ]
+    },
+    "structural_null_policy": "Structurally ineligible metrics are null with a reason code, never zero."
+  },
+  "endpoint_definitions": {
+    "supported_answer_endpoint": {
+      "type": "binary",
+      "equals_one_if_all": [
+        "assignment_is_valid",
+        "within_frozen_budget",
+        "terminal_verdict_is_sufficient",
+        "all_required_claims_are_correct",
+        "no_forbidden_contradictory_or_unknown_claim_is_asserted",
+        "every_required_claim_has_valid_supporting_citations_to_acquired_observations",
+        "citations_instantiate_a_registered_machine_provisional_support_derivation"
+      ],
+      "otherwise": 0
+    },
+    "evidence_completeness": {
+      "primary_metric": "all_evidence_success",
+      "secondary_metric": "all_ses_coverage",
+      "definition": "Whether acquired observations instantiate at least one complete accepted SES, with alternative-SES-aware coverage retained as a separate secondary measure."
+    },
+    "answer_accuracy": {
+      "metric": "answer_score",
+      "definition": "Frozen evaluator answer correctness without substituting support completeness for answer correctness."
+    },
+    "unsupported_completion": {
+      "type": "binary",
+      "definition": "The run asserts a substantive answer while at least one asserted required claim lacks valid acquired support."
+    },
+    "calibrated_abstention": {
+      "type": "binary",
+      "definition": "The run emits the frozen non-answer/insufficient verdict and does not assert unsupported required content when the supplied evidence cannot support all required claims."
+    }
+  },
+  "estimands": [
+    {
+      "estimand_id": "E_STATE_METRIC",
+      "scope": "each_system_mechanism_arm_metric",
+      "contrast": "none",
+      "aggregation": "episode_then_equal_family_within_P23",
+      "interpretation": "descriptive_development_only"
+    },
+    {
+      "estimand_id": "E_PAIRED_SYSTEM_DIFFERENCE",
+      "scope": "same_family_mechanism_arm",
+      "contrast": "system_A_minus_system_B",
+      "aggregation": "paired_family_difference_then_equal_family_within_P23",
+      "interpretation": "descriptive_development_only"
+    },
+    {
+      "estimand_id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+      "scope": "staged_systems_only",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "contrast": "RESTORED_minus_NO_TRIGGER",
+      "endpoint": "supported_answer_endpoint",
+      "population": "all_preregistered_assigned_R_N_pairs",
+      "aggregation": "paired_family_difference_then_equal_family_within_P23",
+      "interpretation": "descriptive_development_itt_only"
+    },
+    {
+      "estimand_id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+      "scope": "staged_systems_only",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "contrast": "RESTORED_minus_NO_TRIGGER",
+      "endpoint": "supported_answer_endpoint",
+      "population": "all_preregistered_assigned_R_N_pairs",
+      "aggregation": "paired_family_difference_then_equal_family_within_P23",
+      "interpretation": "descriptive_development_itt_only"
+    },
+    {
+      "estimand_id": "E_COMPLETE_PARTIAL_PAIRED",
+      "scope": "same_generator_same_family",
+      "contrast": "proper_partial_minus_complete_machine_provisional",
+      "endpoints": [
+        "unsupported_completion",
+        "calibrated_abstention",
+        "supported_answer_endpoint"
+      ],
+      "aggregation": "paired_family_difference_then_equal_family_within_P23",
+      "interpretation": "generator_diagnostic_only"
+    },
+    {
+      "estimand_id": "E_COST_BENEFIT_STRATIFIED",
+      "scope": "same_family_stratum_system_pair",
+      "contrast": "focal_system_minus_comparator",
+      "endpoints": [
+        "supported_answer_endpoint",
+        "tool_cost"
+      ],
+      "strata": [
+        "hop_count",
+        "required_modality_set"
+      ],
+      "aggregation": "paired_family_difference_within_stratum",
+      "interpretation": "descriptive_development_only"
+    }
+  ],
+  "statistical_contract": {
+    "causal_unit": "matched_family_assignment",
+    "episode_independence_assumed": false,
+    "action_independence_assumed": false,
+    "source_cluster_key": "source_group_id",
+    "family_cluster_key": "family_id",
+    "p23_source_group_count": 1,
+    "point_estimate_order": [
+      "episode_outcome",
+      "required_within_family_contrast",
+      "equal_weight_average_over_eligible_P23_families",
+      "display_single_source_group_summary"
+    ],
+    "development_interval": {
+      "method": "paired_family_cluster_percentile_bootstrap",
+      "resamples_minimum": 10000,
+      "seed": 2310220261014,
+      "confidence_level": 0.95,
+      "bootstrap_unit": "family_id",
+      "pairing_carried_together": [
+        "systems",
+        "arms",
+        "mechanisms",
+        "diagnostic_conditions"
+      ],
+      "individual_episode_or_action_bootstrap_prohibited": true,
+      "minimum_eligible_paired_families_for_interval": 5,
+      "below_minimum_interval_status": "CI_NOT_REPORTED__N_LT_5",
+      "interpretation": "descriptive_within_source_only"
+    },
+    "paper_source_cluster_interval": {
+      "method": "paired_source_cluster_bootstrap",
+      "resamples_minimum": 10000,
+      "available_for_P23_102": false,
+      "reason": "P23_102 contains exactly one development source group and has no between-source sampling support.",
+      "may_be_approximated_by_family_bootstrap": false
+    },
+    "source_family_clustering_rule": "A future multi-source analysis resamples source groups and carries all families, systems, arms, mechanisms, and diagnostic conditions together; a two-stage sensitivity may then resample families within selected sources.",
+    "minimum_sample_caveats": {
+      "minimum_paired_families_for_an_observed_finding_label": 5,
+      "minimum_paired_families_per_hop_or_modality_stratum": 5,
+      "sparse_stratum_label": "SPARSE_STRATUM_DESCRIPTIVE_ONLY",
+      "minimum_source_groups_for_any_source_generalization": 20,
+      "minimum_untouched_test_source_groups_for_constrained_paper_fallback": 8,
+      "p23_can_satisfy_source_minimum": false,
+      "rule": "Below the applicable minimum, retain counts and point estimates but use INSUFFICIENT_N or SPARSE_STRATUM_DESCRIPTIVE_ONLY; never promote a paper claim."
+    },
+    "multiplicity": {
+      "confirmatory_family_in_P23": "none",
+      "p_values_planned": false,
+      "all_finding_decisions": "objective_descriptive_classification_only"
+    }
+  },
+  "missing_invalid_itt_policy": {
+    "analysis_population": "all_preregistered_assignments_intention_to_evaluate_and_all_preregistered_R_N_assignments_intention_to_treat",
+    "assigned_invalid_positive_success_endpoint": 0,
+    "lower_is_better_adverse_reporting": [
+      "semantic_rate_with_invalid_count",
+      "event_or_invalid_conservative_rate",
+      "valid_run_only_sensitivity"
+    ],
+    "early_terminal_rn_pair": "retain_both_assignments_and_set_paired_difference_to_zero",
+    "event_opportunity_not_reached": "retain_in_R_N_ITT_denominator",
+    "route_not_inspected": "retain_in_R_N_ITT_denominator",
+    "complete_evidence_not_reacquired": "retain_in_R_N_ITT_denominator",
+    "missing_pair_drop_allowed": false,
+    "available_case_pair_drop_allowed": false,
+    "silent_retry_selection_allowed": false,
+    "outcome_based_replacement_allowed": false,
+    "structural_ineligibility": "freeze_before_assignment_report_null_with_reason_no_synthetic_outcome_not_missing",
+    "premature_stop_certificate_policy": "Missing or invalid feasible-route certification yields null. Confirmatory wording is prohibited unless certificate coverage is 100 percent for the preregistered eligible denominator.",
+    "evaluator_or_registry_defect": "Quarantine the affected family across all systems arms mechanisms and diagnostics; report original-assignment and corrected-denominator accounting.",
+    "one_schema_only_repair": "allowed_only_if_retained_in_trajectory_and_charged_to_resource_counts"
+  },
+  "finding_status_vocabulary": [
+    "NOT_EVALUATED",
+    "STRUCTURALLY_INELIGIBLE",
+    "UNAVAILABLE_DEPENDENCY",
+    "INSUFFICIENT_N",
+    "INCONCLUSIVE",
+    "NOT_OBSERVED",
+    "OBSERVED_DESCRIPTIVE",
+    "INTERVAL_STABLE_DESCRIPTIVE",
+    "ADVERSE_DESCRIPTIVE"
+  ],
+  "findings": [
+    {
+      "finding_id": "P23F-01-RANKING-INVERSION",
+      "title": "Ranking inversion between answer accuracy and evidence completeness",
+      "stage_links": [
+        "Acquire",
+        "Ground"
+      ],
+      "eligible_records": "Same family, mechanism, arm, and valid evaluator version for a preregistered ordered pair of eligible systems.",
+      "system_pair_rule": "Evaluate every lexicographically ordered pair among systems eligible for both answer_score and all_evidence_success; orient the contrast as first_system_minus_second_system and report both system names.",
+      "estimand": {
+        "answer_difference": "mean_paired(answer_score_A - answer_score_B)",
+        "evidence_completeness_difference": "mean_paired(all_evidence_success_A - all_evidence_success_B)"
+      },
+      "objective_decision_rule": {
+        "INSUFFICIENT_N": "eligible_paired_families < 5",
+        "OBSERVED_DESCRIPTIVE": "eligible_paired_families >= 5 and answer_difference * evidence_completeness_difference < 0",
+        "INTERVAL_STABLE_DESCRIPTIVE": "OBSERVED_DESCRIPTIVE and each 95 percent paired-family bootstrap interval excludes zero in its observed direction",
+        "NOT_OBSERVED": "eligible_paired_families >= 5 and answer_difference * evidence_completeness_difference >= 0",
+        "INCONCLUSIVE": "either metric is null, evaluator-defective, or lacks the frozen paired denominator"
+      },
+      "required_outputs": [
+        "answer_difference",
+        "answer_difference_ci95",
+        "evidence_completeness_difference",
+        "evidence_completeness_difference_ci95",
+        "eligible_paired_families",
+        "invalid_count_by_system"
+      ],
+      "permitted_wording": "On P23_102 machine-provisional development families, the two systems exhibited an observed descriptive ranking inversion between answer accuracy and evidence completeness.",
+      "prohibited_wording": "One system is generally better, more reliable, or superior."
+    },
+    {
+      "finding_id": "P23F-02-RK-GAIN-GROUND-LOSS",
+      "title": "Recall-at-K gain with grounded-generation loss",
+      "stage_links": [
+        "Acquire",
+        "Ground"
+      ],
+      "eligible_records": "Same family, arm, mechanism, generator/finalizer, context cap, budget, and retrieval candidate universe under a preregistered focal-versus-control retrieval configuration.",
+      "retrieval_depths": [
+        5,
+        20
+      ],
+      "estimand": {
+        "recall_gain_at_k": "mean_paired(retrieval_recall_at_k_focal - retrieval_recall_at_k_control)",
+        "grounded_generation_change": "mean_paired(supported_answer_endpoint_focal - supported_answer_endpoint_control)"
+      },
+      "objective_decision_rule": {
+        "INSUFFICIENT_N": "eligible_paired_families < 5",
+        "OBSERVED_DESCRIPTIVE": "eligible_paired_families >= 5 and recall_gain_at_k > 0 and grounded_generation_change < 0",
+        "INTERVAL_STABLE_DESCRIPTIVE": "OBSERVED_DESCRIPTIVE and recall_gain_at_k_ci95_low > 0 and grounded_generation_change_ci95_high < 0",
+        "NOT_OBSERVED": "eligible_paired_families >= 5 and not(recall_gain_at_k > 0 and grounded_generation_change < 0)",
+        "INCONCLUSIVE": "retrieval comparison was not frozen before outcomes or generator/finalizer parity failed"
+      },
+      "required_outputs": [
+        "retrieval_comparison_id",
+        "k",
+        "recall_gain_at_k",
+        "recall_gain_at_k_ci95",
+        "grounded_generation_change",
+        "grounded_generation_change_ci95",
+        "eligible_paired_families"
+      ],
+      "permitted_wording": "The focal retrieval configuration increased recall@K while the shared grounded endpoint decreased on the same P23_102 development families.",
+      "prohibited_wording": "Higher retrieval recall causes worse generation or learned retrieval is generally harmful."
+    },
+    {
+      "finding_id": "P23F-03-PREMATURE-STOP-PARTIAL",
+      "title": "Premature stopping after partial evidence",
+      "stage_links": [
+        "Acquire",
+        "Act"
+      ],
+      "eligible_records": "Valid staged trajectories with a frozen feasible-route certificate at the terminal decision point.",
+      "event_definition": {
+        "partial_evidence_acquired": "at_least_one_accepted_evidence_item_acquired_and_no_complete_accepted_SES_acquired",
+        "feasible_continuation": "certificate_records_at_least_one_legal_within_remaining_budget_action_sequence_to_a_complete_accepted_SES",
+        "terminal_behavior": "system_finalizes_sufficient_or_asserts_a_substantive_answer_before_complete_SES_acquisition",
+        "premature_stop": "partial_evidence_acquired and feasible_continuation and terminal_behavior"
+      },
+      "estimand": "premature_stop_events / certificate_eligible_partial_evidence_opportunities",
+      "objective_decision_rule": {
+        "UNAVAILABLE_DEPENDENCY": "feasible-route certificate coverage is not 100 percent for the preregistered eligible denominator",
+        "INSUFFICIENT_N": "certificate_eligible_partial_evidence_opportunities < 5",
+        "OBSERVED_DESCRIPTIVE": "eligible_opportunities >= 5 and premature_stop_events >= 1",
+        "NOT_OBSERVED": "eligible_opportunities >= 5 and premature_stop_events == 0",
+        "INCONCLUSIVE": "terminal semantics or complete-SES acquisition state cannot be deterministically replayed"
+      },
+      "required_outputs": [
+        "certificate_eligible_partial_evidence_opportunities",
+        "premature_stop_events",
+        "premature_stop_rate",
+        "premature_stop_rate_ci95",
+        "certificate_coverage"
+      ],
+      "permitted_wording": "The system prematurely stopped after partial evidence in at least one certified P23_102 development opportunity.",
+      "prohibited_wording": "The system generally stops too early."
+    },
+    {
+      "finding_id": "P23F-04-MODALITY-SWITCH-FAILURE",
+      "title": "Failure to switch modality when a certified route remains",
+      "stage_links": [
+        "Acquire",
+        "Act"
+      ],
+      "eligible_records": "Valid staged trajectories with a frozen modality-switch opportunity certificate.",
+      "opportunity_definition": {
+        "current_route_state": "current_modality_returned_typed_unavailable_or_acquired_only_partial_evidence",
+        "alternate_route_state": "a_different_registered_required_modality_has_a_reachable_evidence_action_sequence_within_remaining_budget",
+        "switch_window": "after_opportunity_onset_and_before_terminal_output",
+        "successful_switch": "at_least_one_valid_search_or_acquisition_action_targets_the_certified_alternate_modality_within_the_switch_window",
+        "switch_failure": "opportunity_exists_and_successful_switch_is_false"
+      },
+      "estimand": "switch_failures / certified_modality_switch_opportunities",
+      "required_strata": [
+        "initial_modality",
+        "target_modality",
+        "mechanism",
+        "system_id"
+      ],
+      "objective_decision_rule": {
+        "UNAVAILABLE_DEPENDENCY": "modality-switch opportunity certificate coverage is not 100 percent",
+        "INSUFFICIENT_N": "certified_modality_switch_opportunities < 5",
+        "OBSERVED_DESCRIPTIVE": "eligible_opportunities >= 5 and switch_failures >= 1",
+        "NOT_OBSERVED": "eligible_opportunities >= 5 and switch_failures == 0",
+        "INCONCLUSIVE": "action target modality or remaining-budget feasibility cannot be replayed"
+      },
+      "required_outputs": [
+        "certified_modality_switch_opportunities",
+        "switch_failures",
+        "switch_failure_rate",
+        "switch_failure_rate_ci95",
+        "counts_by_initial_target_modality"
+      ],
+      "permitted_wording": "The system failed to switch to a certified reachable alternate modality in at least one P23_102 development opportunity.",
+      "prohibited_wording": "The model cannot perform cross-modal reasoning."
+    },
+    {
+      "finding_id": "P23F-05-RN-RESTORATION-ITT",
+      "title": "Mechanism-specific exogenous RESTORED minus NO_TRIGGER ITT effect",
+      "stage_links": [
+        "Acquire",
+        "Ground",
+        "Act"
+      ],
+      "eligible_records": "All preregistered assigned R/N pairs for systems declared staged before assignment; early terminals and typed invalid runs remain included.",
+      "estimands": [
+        "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+        "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT"
+      ],
+      "estimand_formula": "mean_paired(supported_answer_endpoint_R - supported_answer_endpoint_N)",
+      "objective_decision_rule": {
+        "STRUCTURALLY_INELIGIBLE": "system was frozen as non-staged before assignment",
+        "INSUFFICIENT_N": "assigned_R_N_pairs < 5",
+        "INTERVAL_STABLE_DESCRIPTIVE": "assigned_R_N_pairs >= 5 and rn_itt_ci95_low > 0",
+        "OBSERVED_DESCRIPTIVE": "assigned_R_N_pairs >= 5 and rn_itt > 0 and rn_itt_ci95_low <= 0",
+        "NOT_OBSERVED": "assigned_R_N_pairs >= 5 and rn_itt == 0",
+        "ADVERSE_DESCRIPTIVE": "assigned_R_N_pairs >= 5 and rn_itt < 0",
+        "INCONCLUSIVE": "R/N prefix or checkpoint integrity fails; report invalidity and do not reinterpret a per-protocol subset as primary"
+      },
+      "required_outputs": [
+        "mechanism",
+        "system_id",
+        "assigned_R_N_pairs",
+        "early_terminal_pairs",
+        "invalid_pairs",
+        "event_opportunity_reached_pairs",
+        "restoration_applied_pairs",
+        "restored_route_inspected_pairs",
+        "complete_ses_reacquired_pairs",
+        "R_supported_answer_rate",
+        "N_supported_answer_rate",
+        "rn_itt",
+        "rn_itt_ci95"
+      ],
+      "permitted_wording": "For the named mechanism and staged system, the assigned P23_102 RESTORED minus NO_TRIGGER development contrast was X.",
+      "prohibited_wording": "Restoration causally improves learned agents in general, a pooled silent-plus-explicit effect, or a trigger-conditioned primary estimate."
+    },
+    {
+      "finding_id": "P23F-06-COMPLETE-VS-PARTIAL",
+      "title": "Complete-versus-partial evidence unsupported completion and abstention",
+      "stage_links": [
+        "Ground",
+        "Act"
+      ],
+      "eligible_records": "Same generator and family under deterministic COMPLETE_MACHINE_PROVISIONAL_SES and PROPER_PARTIAL_BREAKS_REQUIRED_CLAIM bundles selected before model execution.",
+      "condition_selection": {
+        "complete": "Choose the canonical complete machine-provisional SES by lexicographic immutable evidence-ID order.",
+        "partial": "Remove the lexicographically first member whose registered removal breaks support for at least one required claim; if inapplicable, use the next registered member.",
+        "model_visibility": "The generator receives observations but not evaluator labels or the reason for bundle selection."
+      },
+      "estimands": {
+        "unsupported_completion_change": "mean_paired(unsupported_completion_partial - unsupported_completion_complete)",
+        "abstention_change": "mean_paired(calibrated_abstention_partial - calibrated_abstention_complete)",
+        "supported_answer_change": "mean_paired(supported_answer_endpoint_partial - supported_answer_endpoint_complete)"
+      },
+      "objective_decision_rule": {
+        "INSUFFICIENT_N": "eligible_paired_families < 5",
+        "OBSERVED_DESCRIPTIVE": "eligible_paired_families >= 5 and (unsupported_completion_change > 0 or abstention_change != 0)",
+        "INTERVAL_STABLE_DESCRIPTIVE": "OBSERVED_DESCRIPTIVE and at least one reported paired interval excludes zero in its observed direction",
+        "NOT_OBSERVED": "eligible_paired_families >= 5 and unsupported_completion_change == 0 and abstention_change == 0",
+        "INCONCLUSIVE": "complete or partial bundle fails deterministic validation or is not paired for the same generator and family"
+      },
+      "required_outputs": [
+        "eligible_paired_families",
+        "unsupported_completion_rate_complete",
+        "unsupported_completion_rate_partial",
+        "unsupported_completion_change",
+        "abstention_rate_complete",
+        "abstention_rate_partial",
+        "abstention_change",
+        "supported_answer_rate_complete",
+        "supported_answer_rate_partial",
+        "invalid_count_by_condition"
+      ],
+      "permitted_wording": "Under machine-provisional complete versus claim-breaking partial evidence, the fixed generator changed its unsupported-completion and/or calibrated-abstention behavior on P23_102 development families.",
+      "prohibited_wording": "Gold-evidence behavior, human-valid hallucination rate, or general hallucination robustness."
+    },
+    {
+      "finding_id": "P23F-07-COST-BENEFIT-HOP-MODALITY",
+      "title": "Cost-benefit by hop count and required modality set",
+      "stage_links": [
+        "Acquire",
+        "Ground",
+        "Act"
+      ],
+      "eligible_records": "Same family, mechanism, and arm for a preregistered focal-versus-comparator system pair with valid cost and supported-answer fields.",
+      "system_pair_rule": "Report all preregistered system pairs; learned_evidence_sufficiency minus learned_react is mandatory when both are eligible.",
+      "required_strata": {
+        "hop_count": [
+          "ONE_HOP",
+          "MULTI_HOP"
+        ],
+        "required_modality_set": [
+          "V",
+          "S",
+          "A",
+          "V+S",
+          "V+A",
+          "S+A",
+          "V+S+A"
+        ]
+      },
+      "estimands": {
+        "delta_supported_answer": "mean_paired(supported_answer_endpoint_focal - supported_answer_endpoint_comparator)",
+        "delta_tool_cost": "mean_paired(tool_cost_focal - tool_cost_comparator)",
+        "incremental_cost_per_supported_answer": "delta_tool_cost / delta_supported_answer when delta_supported_answer > 0; otherwise explicit null_or_infinite classification"
+      },
+      "objective_classification": {
+        "STRICT_DOMINANCE": "delta_supported_answer > 0 and delta_tool_cost <= 0",
+        "BENEFICIAL_TRADEOFF": "delta_supported_answer > 0 and delta_tool_cost > 0",
+        "STRICTLY_DOMINATED": "delta_supported_answer < 0 and delta_tool_cost >= 0",
+        "COST_SAVING_WITH_SUCCESS_LOSS": "delta_supported_answer < 0 and delta_tool_cost < 0",
+        "COST_INCREASE_NO_SUCCESS_GAIN": "delta_supported_answer == 0 and delta_tool_cost > 0",
+        "COST_SAVING_NO_SUCCESS_CHANGE": "delta_supported_answer == 0 and delta_tool_cost < 0",
+        "NO_DIRECTIONAL_DIFFERENCE": "delta_supported_answer == 0 and delta_tool_cost == 0"
+      },
+      "objective_decision_rule": {
+        "INSUFFICIENT_N": "eligible_paired_families_in_stratum < 5",
+        "OBSERVED_DESCRIPTIVE": "eligible_paired_families_in_stratum >= 5 and an objective_classification is assigned",
+        "INTERVAL_STABLE_DESCRIPTIVE": "OBSERVED_DESCRIPTIVE and both paired intervals exclude zero or one difference is exactly zero by construction while the other interval excludes zero",
+        "INCONCLUSIVE": "cost accounting or stratum labels fail frozen validation"
+      },
+      "required_outputs": [
+        "stratum_axis",
+        "stratum_value",
+        "focal_system",
+        "comparator_system",
+        "eligible_paired_families",
+        "delta_supported_answer",
+        "delta_supported_answer_ci95",
+        "delta_tool_cost",
+        "delta_tool_cost_ci95",
+        "incremental_cost_per_supported_answer",
+        "objective_classification"
+      ],
+      "permitted_wording": "Within the named P23_102 development stratum, the focal system had the preregistered descriptive cost-benefit classification relative to the comparator.",
+      "prohibited_wording": "A globally cost-effective system or a modality/hop generalization."
+    }
+  ],
+  "table_schemas": [
+    {
+      "table_id": "P23-A",
+      "title": "Frozen matrix and validity accounting",
+      "row_grain": "system_id_x_mechanism_x_arm",
+      "columns": [
+        "system_id:string",
+        "mechanism:string",
+        "arm:string",
+        "assigned_n:integer",
+        "structurally_ineligible_n:integer",
+        "valid_n:integer",
+        "invalid_n:integer",
+        "early_terminal_n:integer",
+        "event_reached_n:integer_or_null",
+        "prefix_integrity_n:integer_or_null",
+        "status:string"
+      ]
+    },
+    {
+      "table_id": "P23-B",
+      "title": "Acquire Ground Act dashboard",
+      "row_grain": "stage_x_metric_id_x_system_id_x_mechanism_x_arm",
+      "columns": [
+        "stage:enum_Acquire_Ground_Act_cost",
+        "metric_id:string",
+        "system_id:string",
+        "mechanism:string",
+        "arm:string",
+        "eligible_n:integer",
+        "numerator_or_mean:number_or_null",
+        "estimate:number_or_null",
+        "ci95_low:number_or_null",
+        "ci95_high:number_or_null",
+        "invalid_n:integer",
+        "null_reason:string_or_null",
+        "warning:string"
+      ]
+    },
+    {
+      "table_id": "P23-C",
+      "title": "Mechanism-specific exogenous restoration ITT",
+      "row_grain": "estimand_id_x_system_id",
+      "columns": [
+        "estimand_id:string",
+        "mechanism:string",
+        "system_id:string",
+        "assigned_pairs_n:integer",
+        "early_terminal_pairs_n:integer",
+        "invalid_pairs_n:integer",
+        "R_supported_rate:number",
+        "N_supported_rate:number",
+        "R_minus_N_ITT:number",
+        "ci95_low:number_or_null",
+        "ci95_high:number_or_null",
+        "interpretation:string"
+      ]
+    },
+    {
+      "table_id": "P23-D",
+      "title": "Preregistered diagnostic findings",
+      "row_grain": "finding_id_x_declared_comparison_or_stratum",
+      "columns": [
+        "finding_id:string",
+        "criterion_status:string",
+        "effect_or_rate:number_or_string_or_null",
+        "ci95:string_or_null",
+        "eligible_families_n:integer",
+        "source_groups_n:integer",
+        "invalid_n:integer",
+        "objective_decision:string",
+        "permitted_wording:string"
+      ]
+    },
+    {
+      "table_id": "P23-E",
+      "title": "Complete-evidence versus partial-evidence generator diagnostic",
+      "row_grain": "generator_id_x_evidence_condition",
+      "columns": [
+        "generator_id:string",
+        "evidence_condition:string",
+        "eligible_n:integer",
+        "answer_accuracy:number",
+        "supported_answer_rate:number",
+        "unsupported_completion_rate:number",
+        "abstention_rate:number",
+        "invalid_n:integer",
+        "ci_status:string"
+      ]
+    },
+    {
+      "table_id": "P23-F",
+      "title": "Cost-benefit by hop count and required modality set",
+      "row_grain": "stratum_axis_x_stratum_value_x_system_pair",
+      "columns": [
+        "stratum_axis:string",
+        "stratum_value:string",
+        "system_id:string",
+        "comparator_id:string",
+        "eligible_pairs_n:integer",
+        "delta_supported_answer:number_or_null",
+        "delta_tool_cost:number_or_null",
+        "incremental_cost_per_supported_answer:number_string_or_null",
+        "dominance_class:string_or_null",
+        "ci_status:string"
+      ]
+    },
+    {
+      "table_id": "P23-G",
+      "title": "Failure and missingness ledger",
+      "row_grain": "failure_or_exclusion_code_x_system_id_x_mechanism_x_arm",
+      "columns": [
+        "failure_or_exclusion_code:string",
+        "system_id:string",
+        "mechanism:string",
+        "arm:string",
+        "count:integer",
+        "ITT_treatment:string",
+        "affected_metrics:array_string",
+        "notes:string"
+      ]
+    }
+  ],
+  "artifact_dependencies": {
+    "authoritative_existing": [
+      {
+        "path": "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+        "sha256": "dd8184bee70828113087f1d0312fd22abc9644c482d0d8b22bc3b43e25e9a47f",
+        "role": "frozen_paper_pivot"
+      },
+      {
+        "path": "docs/paper/cvpr_pivot_v2_addendum.md",
+        "sha256": "60c7cfa3e1a87360b3cabdbe6acf0f6e5f9ce798684cdab53cce9eec0e22fe5a",
+        "role": "controlling_pivot_amendment"
+      },
+      {
+        "path": "docs/paper/av_trace_cvpr_evaluation_preregistration.md",
+        "sha256": "ab7a086eb1b21d6ed8e04449ea03ce5b62c5b2bef90e6542f1f998c4e2a1d162",
+        "role": "paper_evaluation_and_inference_contract"
+      },
+      {
+        "path": "data/rehearsal_plan/cvpr_pivot_v2_gate_registry.json",
+        "sha256": "be2f8fd4e87040fa5c15f35a1f33d00030cc917f161570fec2883f6c5ecb277a",
+        "role": "gate_and_authorization_contract"
+      },
+      {
+        "path": "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+        "sha256": "aede6e80596feaa3a483d63b9941dcd854df5a511c193cec14295b5e1a8ac654",
+        "role": "R_N_exogenous_restoration_contract"
+      },
+      {
+        "path": "data/rehearsal_plan/p23_102_acquire_ground_act_rehearsal_v1.json",
+        "sha256": "197d22b4a2fc5441203cd292088eade29547252031d9046dc11e1906da36c12f",
+        "role": "P23_102_matrix_budget_output_and_failure_contract"
+      },
+      {
+        "path": "docs/design/p23_102_acquire_ground_act_rehearsal_v1.md",
+        "sha256": "586cbb558a2011d1f61392aec521a00e753dc8bc927137596110b2aeb8535a3d",
+        "role": "human_readable_P23_102_rehearsal_design"
+      },
+      {
+        "path": "docs/spec/metrics_protocol_v2.md",
+        "sha256": "b162182b129d1b392200c565e81591dde826ebc14331aedd416f53b63da40314",
+        "role": "metric_semantics"
+      },
+      {
+        "path": "docs/spec/agent_action_schema.json",
+        "sha256": "a1adb2c69705bf032fb4f344add9211dfa213928241d05abe1448da77ffbc5f3",
+        "role": "action_schema"
+      },
+      {
+        "path": "docs/spec/tool_response_schema.json",
+        "sha256": "6c217e3a2e21507739859476a6e67cdfb9776d620de237eb1f27ff5f95dff9a5",
+        "role": "tool_response_schema"
+      },
+      {
+        "path": "docs/spec/final_answer_schema.json",
+        "sha256": "54b99097a2030f68c0660ea2405500636cf26e1381f40afdaf23679b1f9abf83",
+        "role": "final_answer_schema"
+      },
+      {
+        "path": "docs/spec/trajectory_schema.json",
+        "sha256": "dcf6a5c979500e50c6b7035215c2772791cd23b14a2c4c177334588cd25a3243",
+        "role": "trajectory_schema"
+      }
+    ],
+    "future_required_before_any_result_table": [
+      {
+        "path": "data/restricted/epic_p23_102_source_v1/manifests/epic_p23_102_exact_manifest.json",
+        "required_status": "COMPLETE_VERIFIED_READY"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/build_manifest.json",
+        "required_status": "COMPLETE_VERIFIED_READY"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/full_timeline_index.json",
+        "required_binding": "source_sha256_and_frozen_model_revisions"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_full_timeline_index_v1/observation_manifest.json",
+        "required_status": "COMPLETE"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/family_registry.json",
+        "required_status": "MACHINE_PROVISIONAL_FROZEN"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/evidence_registry.json",
+        "required_phrase": "all accepted SESs discovered under the frozen saturation protocol"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/intervention_manifest.json",
+        "required_status": "MECHANISM_SPECIFIC_FROZEN"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/state_surface_manifest.json",
+        "required_status": "FROZEN"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/source_split_manifest.json",
+        "required_status": "P23_DEVELOPMENT_ONLY_SOURCE_DISJOINT_FROM_EVALUATION"
+      },
+      {
+        "path": "data/restricted/epic_p23_102_machine_provisional_families_v1/leakage_gate.json",
+        "required_status": "PASS"
+      },
+      {
+        "path": "data/restricted/p23_102_acquire_ground_act_rehearsal_v1/adapter_attestation.json",
+        "required_status": "EXOGENOUS_RESTORATION_V2_ADAPTER_READY"
+      },
+      {
+        "path": "data/restricted/p23_102_acquire_ground_act_rehearsal_v1/diagnostic_assignment_manifest.json",
+        "required_status": "FROZEN_BEFORE_MODEL_EXECUTION",
+        "required_contents": [
+          "retrieval_comparison_ids",
+          "system_pair_ids",
+          "complete_partial_bundle_assignments",
+          "hop_count_labels",
+          "required_modality_set_labels",
+          "feasible_route_certificates",
+          "modality_switch_opportunity_certificates"
+        ]
+      },
+      {
+        "path": "scripts/run_p23_102_acquire_ground_act_rehearsal.py",
+        "required_status": "IMPLEMENTED_AND_HASH_FROZEN"
+      }
+    ],
+    "future_run_root_template": "data/restricted/p23_102_acquire_ground_act_rehearsal_v1/runs/{run_id}",
+    "future_required_run_artifacts": [
+      "run_manifest.json",
+      "assignments.jsonl",
+      "raw_trajectories.jsonl",
+      "raw_model_calls.jsonl",
+      "citation_outputs.jsonl",
+      "r_n_prefix_pairs.jsonl",
+      "episode_metrics.jsonl",
+      "failure_ledger.jsonl",
+      "aggregate_metrics.json",
+      "replay_manifest.json",
+      "file_inventory.json",
+      "diagnostic_findings.json",
+      "paper_tables.json"
+    ],
+    "result_binding_rule": "Every populated paper cell must resolve to a field in paper_tables.json, its source records, and hashes in file_inventory.json. Hand-entered result numbers are prohibited.",
+    "fail_closed_if_missing_or_hash_mismatched": true
+  },
+  "reporting_contract": {
+    "required_table_ids": [
+      "P23-A",
+      "P23-B",
+      "P23-C",
+      "P23-D",
+      "P23-E",
+      "P23-F",
+      "P23-G"
+    ],
+    "required_denominators": [
+      "assigned",
+      "structurally_ineligible",
+      "valid",
+      "invalid",
+      "early_terminal",
+      "event_opportunity_reached",
+      "restoration_applied",
+      "restored_route_inspected",
+      "complete_ses_reacquired",
+      "certificate_eligible",
+      "supported_answer"
+    ],
+    "qualitative_example_selection": "first_lexicographic_family_id_within_each_preregistered_finding_category",
+    "all_null_adverse_invalid_unavailable_and_sparse_outcomes_retained": true,
+    "mechanisms_reported_separately": true,
+    "no_weighted_leaderboard_scalar": true,
+    "caption_warning_required": "P23_102 machine-provisional development diagnostic; one source group; descriptive only; family-cluster intervals do not estimate between-source uncertainty."
+  },
+  "prohibited_actions": [
+    "fabricate_or_placeholder_numeric_results",
+    "populate_result_cells_before_an_authorized_versioned_run",
+    "pool_silent_and_explicit_mechanisms_for_a_primary_effect",
+    "replace_R_minus_NO_TRIGGER_ITT_with_trigger_conditioned_analysis",
+    "drop_invalid_or_early_terminal_assignments_from_ITT",
+    "score_structurally_ineligible_cells_as_zero",
+    "call_machine_provisional_complete_evidence_human_gold",
+    "claim_controller_superiority_or_source_generalization_from_P23_102",
+    "treat_family_bootstrap_as_source_cluster_inference",
+    "select_favorable_K_budget_system_pair_or_stratum_after_outcomes"
+  ],
+  "deterministic_hashes": {
+    "canonicalization": "UTF-8 JSON with sort_keys=true,separators=(',',':'),ensure_ascii=false,allow_nan=false",
+    "paper_template_path": "docs/paper/p23_102_diagnostic_experiment_table_template.md",
+    "paper_template_sha256": "501e18cac00590b5f8aa27a1ab88b90cd7fccca2a8f44964ce4531cfbf688c41",
+    "exact_system_rows_sha256": "51914159bac4828ab1d29228a315e3a8a21b4a24c00802e3414f3882bcb6c9b1",
+    "arms_sha256": "3552cf3337506f85a677d4ed62fc3ea096336ffb68fba3f5d0e537cb8d4789e4",
+    "mechanisms_sha256": "d9040dfa1862e2ba26d5dcca8ae9c1a1fcbdb6ffc30de93061e5b2a6deda2668",
+    "metric_catalog_sha256": "88a29f7ab556bd15e6e5cd7953c8eb7588d0b696f0468a847fc23a7cee7cc866",
+    "findings_sha256": "5ecd47f803520e4e4eba235c8044791db042e592fbb1f4d8d5f7727254159acb",
+    "table_schemas_sha256": "4f9d0579ab525a0476cea204bdc847de29359ed64b66781de994c66060eb9e8f",
+    "artifact_dependencies_sha256": "96efb2a8aa049dbd5c8cb3f73f78667d0c7ecae5ee79a89d677784d4f2dc5727",
+    "registry_sha256_excluding_this_field": "c355d8b00d2297ecfb90684e5e206f94874c44bc0e89df135b4d281f3c3e7e71"
+  },
+  "results_boundary": {
+    "configuration_only": true,
+    "scientific_episodes_executed": false,
+    "model_results_claimed": false,
+    "causal_effect_claimed": false,
+    "human_valid_finding_claimed": false,
+    "fabricated_results_present": false,
+    "statement": "This registry freezes table schemas, estimands, objective finding criteria, uncertainty, missingness, and artifact dependencies. It contains no observed result."
+  }
+}

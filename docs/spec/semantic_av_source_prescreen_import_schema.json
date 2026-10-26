@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:semantic-av-source-prescreen-import:1.0.0",
+  "title": "AV-TRACE semantic A/V source-prescreen import report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "plan_id",
+    "form_id",
+    "completion_status",
+    "readiness_token",
+    "source_results",
+    "prescreener_exposure_required",
+    "blind_role_exclusion_required",
+    "necessity_assigned",
+    "h1_assigned",
+    "h2_assigned",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "semantic_av_source_prescreen_import"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "form_id": {"type": "string", "minLength": 1},
+    "completion_status": {"enum": ["incomplete", "valid"]},
+    "readiness_token": {
+      "enum": [
+        "SEMANTIC_AV_SOURCE_PRESCREEN_READY",
+        "SEMANTIC_AV_SOURCE_PRESCREEN_REPAIR",
+        "SEMANTIC_AV_SOURCE_PRESCREEN_NO_GO"
+      ]
+    },
+    "source_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "source_group_id",
+          "authoring_eligibility",
+          "readiness_token",
+          "sample_count",
+          "candidate_fact_count",
+          "dynamic_visual_event_count",
+          "concrete_non_speech_audio_event_count",
+          "speech_present_sample_count",
+          "exposure_recorded",
+          "blind_finder_eligible",
+          "saturation_auditor_eligible",
+          "errors"
+        ],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "source_group_id": {"type": "string", "minLength": 1},
+          "authoring_eligibility": {"enum": ["undecided", "pass", "repair", "no_go"]},
+          "readiness_token": {
+            "enum": [
+              "SEMANTIC_AV_SOURCE_PRESCREEN_READY",
+              "SEMANTIC_AV_SOURCE_PRESCREEN_REPAIR",
+              "SEMANTIC_AV_SOURCE_PRESCREEN_NO_GO"
+            ]
+          },
+          "sample_count": {"type": "integer", "minimum": 1},
+          "candidate_fact_count": {"type": "integer", "minimum": 0},
+          "dynamic_visual_event_count": {"type": "integer", "minimum": 0},
+          "concrete_non_speech_audio_event_count": {"type": "integer", "minimum": 0},
+          "speech_present_sample_count": {"type": "integer", "minimum": 0},
+          "exposure_recorded": {"type": "boolean"},
+          "blind_finder_eligible": {"const": false},
+          "saturation_auditor_eligible": {"const": false},
+          "errors": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "prescreener_exposure_required": {"const": true},
+    "blind_role_exclusion_required": {"const": true},
+    "necessity_assigned": {"const": false},
+    "h1_assigned": {"const": false},
+    "h2_assigned": {"const": false},
+    "errors": {"type": "array", "items": {"type": "string"}}
+  }
+}

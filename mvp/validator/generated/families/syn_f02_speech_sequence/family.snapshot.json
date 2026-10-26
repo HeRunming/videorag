@@ -1,0 +1,491 @@
+{
+  "annotation": {
+    "adjudicator": "synthetic_adjudicator",
+    "alternative_evidence_finder": "synthetic_alternative_finder",
+    "alternative_search_completed": true,
+    "authors": [
+      "synthetic_author"
+    ],
+    "shortcut_audits": [
+      {
+        "audit_type": "question_only",
+        "notes": "Answers are arbitrary registered tokens.",
+        "status": "pass"
+      },
+      {
+        "audit_type": "intervention_artifact",
+        "notes": "No condition marker is embedded in source media.",
+        "status": "pass"
+      }
+    ],
+    "status": "accepted",
+    "validators": [
+      "synthetic_validator_a",
+      "synthetic_validator_b"
+    ],
+    "version": "synthetic-v1"
+  },
+  "answer_spec": {
+    "display_answer": "The code was DELTA SEVEN, and the later instruction was OPEN GATE.",
+    "forbidden_claim_ids": [],
+    "optional_claim_ids": [],
+    "required_claim_ids": [
+      "claim_syn_f02_speech_sequence"
+    ]
+  },
+  "claim_evidence_graph": {
+    "accepted_sufficient_sets": [
+      {
+        "claim_ids": [
+          "claim_syn_f02_speech_sequence"
+        ],
+        "evidence_ids": [
+          "s1_speech_code",
+          "s1_speech_action"
+        ],
+        "hop_ids": [
+          "hop_extract_s1_speech_code",
+          "hop_extract_s1_speech_action",
+          "hop_syn_f02_speech_sequence_route_1"
+        ],
+        "minimality_validated": true,
+        "satisfiability_validated": true,
+        "set_id": "ses_syn_f02_speech_sequence_1",
+        "validator_ids": [
+          "synthetic_validator_a",
+          "synthetic_validator_b"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "accepted_aliases": [
+          "The code was DELTA SEVEN, and the later instruction was OPEN GATE."
+        ],
+        "answer_value": {
+          "code": "DELTA SEVEN",
+          "instruction": "OPEN GATE"
+        },
+        "claim_id": "claim_syn_f02_speech_sequence",
+        "contradiction_claim_ids": [],
+        "proposition": "The code was DELTA SEVEN, and the later instruction was OPEN GATE.",
+        "requirement": "required"
+      }
+    ],
+    "evidence_units": [
+      {
+        "evidence_id": "s1_speech_code",
+        "intervals": [
+          {
+            "end_s": 78.0,
+            "start_s": 72.0
+          }
+        ],
+        "modality": "speech",
+        "observation": "spoken code is DELTA SEVEN",
+        "provenance": {
+          "asset_id": "syn_source_01",
+          "stream_hash": "sha256:63808043c7c16bb51f4dc5220a6d814ecb1d7573b1afeecf34eec626fcc85173",
+          "transformation_ids": [
+            "exact_transcript_v1"
+          ]
+        },
+        "stream_id": "syn_source_01_audio"
+      },
+      {
+        "evidence_id": "s1_speech_action",
+        "intervals": [
+          {
+            "end_s": 204.0,
+            "start_s": 198.0
+          }
+        ],
+        "modality": "speech",
+        "observation": "operator says OPEN GATE",
+        "provenance": {
+          "asset_id": "syn_source_01",
+          "stream_hash": "sha256:63808043c7c16bb51f4dc5220a6d814ecb1d7573b1afeecf34eec626fcc85173",
+          "transformation_ids": [
+            "exact_transcript_v1"
+          ]
+        },
+        "stream_id": "syn_source_01_audio"
+      }
+    ],
+    "hops": [
+      {
+        "description": "Extract the registered speech observation: spoken code is DELTA SEVEN.",
+        "hop_id": "hop_extract_s1_speech_code",
+        "hop_type": "speech_content",
+        "input_evidence_ids": [
+          "s1_speech_code"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Extract the registered speech observation: operator says OPEN GATE.",
+        "hop_id": "hop_extract_s1_speech_action",
+        "hop_type": "speech_content",
+        "input_evidence_ids": [
+          "s1_speech_action"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Combine temporally registered evidence for accepted route 1.",
+        "hop_id": "hop_syn_f02_speech_sequence_route_1",
+        "hop_type": "temporal_order",
+        "input_evidence_ids": [],
+        "input_hop_ids": [
+          "hop_extract_s1_speech_code",
+          "hop_extract_s1_speech_action"
+        ]
+      }
+    ],
+    "necessity_groups": [
+      {
+        "claim_ids": [
+          "claim_syn_f02_speech_sequence"
+        ],
+        "group_id": "ng_syn_f02_speech_sequence",
+        "intersects_all_accepted_sets": true,
+        "member_evidence_ids": [
+          "s1_speech_code",
+          "s1_speech_action"
+        ],
+        "removal_validated": true,
+        "required_hop_ids": [
+          "hop_extract_s1_speech_action",
+          "hop_extract_s1_speech_code",
+          "hop_syn_f02_speech_sequence_route_1"
+        ],
+        "required_modalities": [
+          "speech"
+        ]
+      }
+    ],
+    "support_edges": [
+      {
+        "edge_id": "edge_s1_speech_code_extract",
+        "from_ids": [
+          "s1_speech_code"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s1_speech_code"
+      },
+      {
+        "edge_id": "edge_s1_speech_action_extract",
+        "from_ids": [
+          "s1_speech_action"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s1_speech_action"
+      },
+      {
+        "edge_id": "edge_syn_f02_speech_sequence_route_1",
+        "from_ids": [
+          "hop_extract_s1_speech_code",
+          "hop_extract_s1_speech_action"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_syn_f02_speech_sequence_route_1"
+      },
+      {
+        "edge_id": "edge_syn_f02_speech_sequence_claim_1",
+        "from_ids": [
+          "hop_syn_f02_speech_sequence_route_1"
+        ],
+        "relation": "hop_supports_claim",
+        "to_id": "claim_syn_f02_speech_sequence"
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "anchor_episode_id": null,
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f02_speech_sequence.clean",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s1_speech_code",
+          "s1_speech_action"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f02_speech_sequence",
+      "interventions": [],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f02_speech_sequence_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [],
+        "gold_missing_hop_types": [],
+        "gold_missing_modality_sets": [],
+        "gold_missing_necessity_group_ids": [],
+        "initial_accessible_sufficient": true,
+        "missingness_cause": "not_missing",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:08c502fac9d426cfef904844038277338b0254cee983305b4794f6cc43143e83",
+        "seed": 20260905
+      },
+      "state_role": "CLEAN"
+    },
+    {
+      "anchor_episode_id": "syn_f02_speech_sequence.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f02_speech_sequence.blocked",
+      "initial_state": {
+        "accessible_evidence_ids": [],
+        "enabled_channels": [
+          "visual",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f02_speech_sequence",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": "speech",
+          "affected_evidence_ids": [
+            "s1_speech_code",
+            "s1_speech_action"
+          ],
+          "affected_necessity_group_id": null,
+          "intervention_id": "block_syn_f02_speech_sequence",
+          "mechanism": "modality_channel_outage",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [],
+        "expected_final_sufficiency": "insufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s1_speech_action",
+          "hop_extract_s1_speech_code",
+          "hop_syn_f02_speech_sequence_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "speech_content",
+          "temporal_order"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "speech"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f02_speech_sequence"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:08c502fac9d426cfef904844038277338b0254cee983305b4794f6cc43143e83",
+        "seed": 20260905
+      },
+      "state_role": "BLOCKED"
+    },
+    {
+      "anchor_episode_id": "syn_f02_speech_sequence.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f02_speech_sequence.restored",
+      "initial_state": {
+        "accessible_evidence_ids": [],
+        "enabled_channels": [
+          "visual",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f02_speech_sequence",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": "speech",
+          "affected_evidence_ids": [
+            "s1_speech_code",
+            "s1_speech_action"
+          ],
+          "affected_necessity_group_id": null,
+          "intervention_id": "block_syn_f02_speech_sequence",
+          "mechanism": "modality_channel_outage",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        },
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "on_restore"
+          },
+          "affected_channel": "speech",
+          "affected_evidence_ids": [
+            "s1_speech_code",
+            "s1_speech_action"
+          ],
+          "affected_necessity_group_id": null,
+          "intervention_id": "restore_syn_f02_speech_sequence",
+          "mechanism": "modality_channel_outage",
+          "phase": "restoration",
+          "restoration": {
+            "enabled": true,
+            "restores_intervention_id": "block_syn_f02_speech_sequence",
+            "trigger_type": "get_channel_status",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f02_speech_sequence_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s1_speech_action",
+          "hop_extract_s1_speech_code",
+          "hop_syn_f02_speech_sequence_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "speech_content",
+          "temporal_order"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "speech"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f02_speech_sequence"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:08c502fac9d426cfef904844038277338b0254cee983305b4794f6cc43143e83",
+        "seed": 20260905
+      },
+      "state_role": "RESTORED"
+    }
+  ],
+  "family_id": "syn_f02_speech_sequence",
+  "intervention_family_id": "if_syn_f02_speech_sequence",
+  "intervention_mechanism": "modality_channel_outage",
+  "question": {
+    "answer_type": "structured_claims",
+    "question_only_risk": "low",
+    "requested_granularity": "Return the exact registered values for both linked observations.",
+    "text": "What code was spoken, and what instruction was spoken later?"
+  },
+  "schema_version": "0.2.0",
+  "source": {
+    "access_class": "restricted_compatibility",
+    "asset_id": "syn_source_01",
+    "content_hash": "sha256:b270a8deb3fda7cee58afd9ab38148c9d521803aadc0b00435a03ae77100df3b",
+    "duration_s": 240.0,
+    "manifest_asset_id": "syn_source_01",
+    "manifest_revision": "synthetic-v1",
+    "rights_decision_id": "rights_syn_source_01",
+    "streams": [
+      {
+        "hash": "sha256:c0f379b24ab3efbb0a0bfa40c044c47efd3be94aebbbc82cc5d9e568fd0b2536",
+        "kind": "video",
+        "language": null,
+        "stream_id": "syn_source_01_video"
+      },
+      {
+        "hash": "sha256:63808043c7c16bb51f4dc5220a6d814ecb1d7573b1afeecf34eec626fcc85173",
+        "kind": "audio",
+        "language": "en-x-synthetic",
+        "stream_id": "syn_source_01_audio"
+      }
+    ]
+  },
+  "split": "development"
+}

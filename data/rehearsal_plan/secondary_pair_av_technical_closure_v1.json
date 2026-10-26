@@ -1,0 +1,576 @@
+{
+  "assets": {
+    "captaincook4d_25_109": {
+      "asset_id": "CAPTAINCOOK4D_25_109_GOPRO_360P",
+      "container_validation": {
+        "all_tracks": [
+          {
+            "channels": null,
+            "codec": "avc1",
+            "duration_seconds": 2126.958166666667,
+            "duration_units": 63808745,
+            "handler": "vide",
+            "height": 360,
+            "sample_rate": null,
+            "timescale": 30000,
+            "width": 640
+          },
+          {
+            "channels": 2,
+            "codec": "mp4a",
+            "duration_seconds": 2126.9333333333334,
+            "duration_units": 102092800,
+            "handler": "soun",
+            "height": null,
+            "sample_rate": 48000,
+            "timescale": 48000,
+            "width": null
+          },
+          {
+            "channels": null,
+            "codec": "tmcd",
+            "duration_seconds": 2126.958166666667,
+            "duration_units": 63808745,
+            "handler": "tmcd",
+            "height": null,
+            "sample_rate": null,
+            "timescale": 30000,
+            "width": null
+          }
+        ],
+        "audio": {
+          "channels": 2,
+          "codec_fourcc": "mp4a",
+          "duration_seconds": 2126.933333,
+          "duration_units": 102092800,
+          "sample_rate_hz": 48000,
+          "timescale": 48000
+        },
+        "av_duration_delta_seconds": 0.024833,
+        "moov": {
+          "absolute_offset": 198755331,
+          "bytes": 2324425,
+          "end_exclusive": 201079756,
+          "ends_at_object_eof": true,
+          "fully_inside_tail_window": true
+        },
+        "native_av_tracks_in_same_moov": true,
+        "parsed_metadata_path": "/tmp/avtrace_cc25109_mp4meta_20261013/parsed.json",
+        "sample_level_sync_or_content_semantics_claimed": false,
+        "tail_window": {
+          "bytes": 8388608,
+          "end": 201079755,
+          "start": 192691148
+        },
+        "total_bytes": 201079756,
+        "video": {
+          "codec_fourcc": "avc1",
+          "duration_seconds": 2126.958167,
+          "duration_units": 63808745,
+          "height": 360,
+          "timescale": 30000,
+          "width": 640
+        }
+      },
+      "dataset": "CaptainCook4D",
+      "decision": {
+        "decision": "NOT_AUTHORIZED_GOVERNANCE_AUTHORITY_OPEN",
+        "exact_acquisition_technically_authorized_now": false,
+        "governance_authority_for_exact_acquisition_closed": false,
+        "open_authority_items": [
+          "Archive and review the operative linked IRB document.",
+          "Archive and review the operative linked participant-consent document.",
+          "Close identity-bearing media processing authority explicitly."
+        ],
+        "technical_readiness_for_exact_acquisition": true,
+        "technical_readiness_is_not_authority": true
+      },
+      "identity": {
+        "box_shared_static_id": "qiu0plhm3ixqcfgu02qy9kmlp5tre6p2",
+        "content_disposition_filename": "25_109_360p.mp4",
+        "full_object_checksum_available": false,
+        "identity_status": "EXACT_OFFICIAL_SHARED_TOKEN_FILENAME_AND_SIZE_BOUND",
+        "official_url": "https://utdallas.box.com/shared/static/qiu0plhm3ixqcfgu02qy9kmlp5tre6p2.mp4",
+        "total_bytes": 201079756
+      },
+      "official_metadata_and_rights": {
+        "evidence": [
+          {
+            "bytes": 700705,
+            "path": "data/source_recon/captaincook4d_access_v1/download_links.json",
+            "sha256": "81b1e1ef571621da182c5fc31ef97f177927a1a95b22aa545229794542e6f2b4"
+          },
+          {
+            "bytes": 8684,
+            "path": "data/source_recon/captaincook4d_access_v1/video_information.csv",
+            "sha256": "51febe466df9d336eaca8c5a467475bc3909b9d597208861316be78f4dd50138"
+          },
+          {
+            "bytes": 10276,
+            "path": "data/source_recon/captaincook4d_access_v1/main_README.md",
+            "sha256": "7a4e5566619bb4a85f83113a182e3b1731a65609acb4e46b4ddbfb3ed02c4a1c"
+          },
+          {
+            "bytes": 1203648,
+            "path": "data/source_recon/captaincook4d_access_v1/derived/recording_stream_inventory_v1.json",
+            "sha256": "aa9d50a00f2bfab522f42aedeb050dd4946dcffc3b98b0decb52f1f7bd5e8633"
+          },
+          {
+            "bytes": 6020,
+            "path": "data/rehearsal_plan/captaincook4d_25_109_vsa_preflight_v1.json",
+            "sha256": "0a82ba10ed7e6e905ca5e22552f0bc75ee8e33e7c614f6ad06298a92715334cf"
+          }
+        ],
+        "official_recording_metadata": {
+          "box_shared_static_id": "qiu0plhm3ixqcfgu02qy9kmlp5tre6p2",
+          "duration_seconds": 2126.96,
+          "environment_id": 7,
+          "official_url": "https://utdallas.box.com/shared/static/qiu0plhm3ixqcfgu02qy9kmlp5tre6p2.mp4",
+          "person_id": 5,
+          "recording_id": "25_109",
+          "source_group_id": "cc4d_p05_e07",
+          "stream": "gopro_360p"
+        },
+        "rights_and_governance": {
+          "dataset_license_statement": "Apache License 2.0",
+          "dataset_license_statement_verified": true,
+          "governance_authority_for_exact_acquisition_closed": false,
+          "operative_linked_consent_document_archived": false,
+          "operative_linked_irb_document_archived": false,
+          "processing_authority_closed": false,
+          "release_authority_closed": false,
+          "restricted_annotation_authority_closed": false,
+          "university_of_florida_irb_statement_verified": true,
+          "written_participant_consent_statement_verified": true
+        }
+      },
+      "range_validation": {
+        "all_content_range_totals_identical": true,
+        "completed_206_exchanges": 3,
+        "exchanges": [
+          {
+            "content_disposition_filename": "25_109_360p.mp4",
+            "content_length": 1024,
+            "content_range": {
+              "end": 1023,
+              "response_bytes": 1024,
+              "start": 0,
+              "total": 201079756
+            },
+            "content_type": "video/mp4",
+            "etag": null,
+            "evidence_path": "/tmp/avtrace_exact_range_diag_20261013/cc_star.headers",
+            "final_status": 206,
+            "last_modified": null,
+            "redirect_hosts": [
+              "utdallas.app.box.com",
+              "public.boxcloud.com"
+            ]
+          },
+          {
+            "content_disposition_filename": "25_109_360p.mp4",
+            "content_length": 4096,
+            "content_range": {
+              "end": 4095,
+              "response_bytes": 4096,
+              "start": 0,
+              "total": 201079756
+            },
+            "content_type": "video/mp4",
+            "etag": null,
+            "evidence_path": "/tmp/avtrace_cc25109_mp4meta_20261013/head.headers",
+            "final_status": 206,
+            "last_modified": null,
+            "redirect_hosts": [
+              "utdallas.app.box.com",
+              "public.boxcloud.com"
+            ]
+          },
+          {
+            "content_disposition_filename": "25_109_360p.mp4",
+            "content_length": 8388608,
+            "content_range": {
+              "end": 201079755,
+              "response_bytes": 8388608,
+              "start": 192691148,
+              "total": 201079756
+            },
+            "content_type": "video/mp4",
+            "etag": null,
+            "evidence_path": "/tmp/avtrace_cc25109_mp4meta_20261013/tail.headers",
+            "final_status": 206,
+            "last_modified": null,
+            "redirect_hosts": [
+              "utdallas.app.box.com",
+              "public.boxcloud.com"
+            ]
+          }
+        ],
+        "hy_route_completed": false,
+        "hy_route_outcome": "TIMEOUT_ZERO_BYTES",
+        "star_route_completed": true,
+        "status": "PASS_VIA_STAR_ROUTE"
+      }
+    },
+    "epic_p23_102": {
+      "asset_id": "EPIC_P23_102",
+      "container_validation": {
+        "all_tracks": [
+          {
+            "channels": null,
+            "codec": "hvc1",
+            "duration_seconds": 3569.52,
+            "duration_units": 321256800,
+            "handler": "vide",
+            "height": 1080,
+            "sample_rate": null,
+            "timescale": 90000,
+            "width": 1920
+          },
+          {
+            "channels": 2,
+            "codec": "mp4a",
+            "duration_seconds": 3569.536,
+            "duration_units": 171337728,
+            "handler": "soun",
+            "height": null,
+            "sample_rate": 48000,
+            "timescale": 48000,
+            "width": null
+          },
+          {
+            "channels": null,
+            "codec": "gpmd",
+            "duration_seconds": 3569.536,
+            "duration_units": 3569536,
+            "handler": "meta",
+            "height": null,
+            "sample_rate": null,
+            "timescale": 1000,
+            "width": null
+          },
+          {
+            "channels": null,
+            "codec": "tmcd",
+            "duration_seconds": 3569.52,
+            "duration_units": 321256800,
+            "handler": "tmcd",
+            "height": null,
+            "sample_rate": null,
+            "timescale": 90000,
+            "width": null
+          }
+        ],
+        "audio": {
+          "channels": 2,
+          "codec_fourcc": "mp4a",
+          "duration_seconds": 3569.536,
+          "duration_units": 171337728,
+          "sample_rate_hz": 48000,
+          "timescale": 48000
+        },
+        "av_duration_delta_seconds": 0.016,
+        "moov": {
+          "absolute_offset": 10809773840,
+          "bytes": 4387467,
+          "end_exclusive": 10814161307,
+          "ends_at_object_eof": true,
+          "fully_inside_tail_window": true
+        },
+        "native_av_tracks_in_same_moov": true,
+        "parsed_metadata_path": "/tmp/avtrace_p23_mp4meta_20261013/parsed.json",
+        "sample_level_sync_or_content_semantics_claimed": false,
+        "tail_window": {
+          "bytes": 8388608,
+          "end": 10814161306,
+          "start": 10805772699
+        },
+        "total_bytes": 10814161307,
+        "video": {
+          "codec_fourcc": "hvc1",
+          "duration_seconds": 3569.52,
+          "duration_units": 321256800,
+          "height": 1080,
+          "timescale": 90000,
+          "width": 1920
+        }
+      },
+      "dataset": "EPIC-KITCHENS-100",
+      "decision": {
+        "conditions": [
+          "Use the exact public official P23_102 route.",
+          "Limit use to noncommercial purposes.",
+          "Give appropriate attribution.",
+          "Provide the CC BY-NC 4.0 license reference.",
+          "Indicate modifications if any are made.",
+          "Do not treat this acquisition decision as release authority."
+        ],
+        "decision": "AUTHORIZED_NOW_CC_BY_NC_NONCOMMERCIAL_ONLY",
+        "exact_acquisition_technically_authorized_now": true,
+        "rights_authority_for_noncommercial_acquisition_closed": true,
+        "technical_readiness_for_exact_acquisition": true
+      },
+      "identity": {
+        "etag": "\"5ea771bb-28493019b\"",
+        "identity_status": "EXACT_OFFICIAL_PATH_ETAG_SIZE_AND_MANIFEST_MD5_BOUND",
+        "last_modified": "Mon, 27 Apr 2020 23:58:51 GMT",
+        "object_path": "P23/videos/P23_102.MP4",
+        "official_md5": "4698fcbf13782f6396029761eb3bd5f2",
+        "official_url": "https://data.bris.ac.uk/datasets/2g1n6qdydwa9u22shpxqzp0t8m/P23/videos/P23_102.MP4",
+        "total_bytes": 10814161307
+      },
+      "official_metadata_and_rights": {
+        "evidence": [
+          {
+            "bytes": 27721,
+            "path": "data/source_recon/assembly_epic_access_v2/metadata/epic/EPIC_100_video_info.csv",
+            "sha256": "75fd040f6662cb407b4ca2eed4811ca94df280a1aba00b6bf8a5cd286deff382"
+          },
+          {
+            "bytes": 236630,
+            "path": "data/source_recon/assembly_epic_access_v2/metadata/epic/md5.csv",
+            "sha256": "3f9c31899ff5807c8f0fed5d26a8fe62300f3f4c40dc3eea767345212c2e83c7"
+          },
+          {
+            "bytes": 6466,
+            "path": "data/source_recon/assembly_epic_access_v2/metadata/epic/data_bris_readme.txt",
+            "sha256": "4198f81adff3055373fbf635475992d5b2227df8f9796d670f3bcf08fa74e260"
+          },
+          {
+            "bytes": 8482,
+            "path": "data/rehearsal_plan/epic_p23_102_vsa_preflight_v1.json",
+            "sha256": "11f757f251e385461b15dbcc7fa9dde601f4ffdd2d60799594e9306cec85ef0b"
+          }
+        ],
+        "official_object_manifest": {
+          "full_object_md5_recomputed_by_closure": false,
+          "manifest_version": 100,
+          "object_path": "P23/videos/P23_102.MP4",
+          "official_md5": "4698fcbf13782f6396029761eb3bd5f2"
+        },
+        "official_video_metadata": {
+          "duration_seconds": 3569.52,
+          "fps": 50.0,
+          "resolution": "1920x1080",
+          "video_id": "P23_102"
+        },
+        "rights": {
+          "attribution_required": true,
+          "authentication_required": false,
+          "change_notice_required_if_modified": true,
+          "commercial_use_authorized": false,
+          "license_link_required": true,
+          "official_route_public": true,
+          "operative_dataset_license": "CC-BY-NC-4.0",
+          "raw_media_release_authorized_by_this_closure": false,
+          "registration_required": false
+        }
+      },
+      "range_validation": {
+        "all_content_range_totals_identical": true,
+        "completed_206_exchanges": 4,
+        "exchanges": [
+          {
+            "content_disposition_filename": null,
+            "content_length": 1024,
+            "content_range": {
+              "end": 1023,
+              "response_bytes": 1024,
+              "start": 0,
+              "total": 10814161307
+            },
+            "content_type": "video/mp4",
+            "etag": "\"5ea771bb-28493019b\"",
+            "evidence_path": "/tmp/avtrace_exact_range_diag_20261013/epic_hy.headers",
+            "final_status": 206,
+            "last_modified": "Mon, 27 Apr 2020 23:58:51 GMT",
+            "redirect_hosts": []
+          },
+          {
+            "content_disposition_filename": null,
+            "content_length": 1024,
+            "content_range": {
+              "end": 1023,
+              "response_bytes": 1024,
+              "start": 0,
+              "total": 10814161307
+            },
+            "content_type": "video/mp4",
+            "etag": "\"5ea771bb-28493019b\"",
+            "evidence_path": "/tmp/avtrace_exact_range_diag_20261013/epic_star.headers",
+            "final_status": 206,
+            "last_modified": "Mon, 27 Apr 2020 23:58:51 GMT",
+            "redirect_hosts": []
+          },
+          {
+            "content_disposition_filename": null,
+            "content_length": 4096,
+            "content_range": {
+              "end": 4095,
+              "response_bytes": 4096,
+              "start": 0,
+              "total": 10814161307
+            },
+            "content_type": "video/mp4",
+            "etag": "\"5ea771bb-28493019b\"",
+            "evidence_path": "/tmp/avtrace_p23_mp4meta_20261013/head.headers",
+            "final_status": 206,
+            "last_modified": "Mon, 27 Apr 2020 23:58:51 GMT",
+            "redirect_hosts": []
+          },
+          {
+            "content_disposition_filename": null,
+            "content_length": 8388608,
+            "content_range": {
+              "end": 10814161306,
+              "response_bytes": 8388608,
+              "start": 10805772699,
+              "total": 10814161307
+            },
+            "content_type": "video/mp4",
+            "etag": "\"5ea771bb-28493019b\"",
+            "evidence_path": "/tmp/avtrace_p23_mp4meta_20261013/tail.headers",
+            "final_status": 206,
+            "last_modified": "Mon, 27 Apr 2020 23:58:51 GMT",
+            "redirect_hosts": []
+          }
+        ],
+        "public_exact_route": true,
+        "status": "PASS"
+      }
+    }
+  },
+  "authoritative_evidence_manifest": [
+    {
+      "bytes": 4845,
+      "path": "/tmp/avtrace_exact_range_diag_20261013/summary.txt",
+      "sha256": "884193f59ecf575fce3d71c0977a440f5c9542ed2732a27a1940cc960414aec3"
+    },
+    {
+      "bytes": 439,
+      "path": "/tmp/avtrace_exact_range_diag_20261013/epic_hy.headers",
+      "sha256": "89c9e13b45ec6b4429336f9a02eea0562ac1de70c36d9116f100cb5e11710a2d"
+    },
+    {
+      "bytes": 439,
+      "path": "/tmp/avtrace_exact_range_diag_20261013/epic_star.headers",
+      "sha256": "b196c831fbe562a9cb078973127d04c1670b2ba1047a6fddc570ba850a9f832e"
+    },
+    {
+      "bytes": 4299,
+      "path": "/tmp/avtrace_exact_range_diag_20261013/cc_star.headers",
+      "sha256": "93312401fce3bde35c38bf9560875df3912cf3ef922db04391da2ae51a26fb94"
+    },
+    {
+      "bytes": 825,
+      "path": "/tmp/avtrace_exact_range_diag_20261013/cc_hy.headers",
+      "sha256": "1a7ed99a07775ca3af4f2a9a8469b51f55096b1120b0b44d616463ee6ea601e6"
+    },
+    {
+      "bytes": 439,
+      "path": "/tmp/avtrace_p23_mp4meta_20261013/head.headers",
+      "sha256": "083910864221d8457ebd3ab3383e96fe05de4b83210818d259aa3f17860c34c4"
+    },
+    {
+      "bytes": 459,
+      "path": "/tmp/avtrace_p23_mp4meta_20261013/tail.headers",
+      "sha256": "8330c5b910df91bc92a8f7d4fe55306b3dd28b879415ca9863838523e437d5a6"
+    },
+    {
+      "bytes": 1166,
+      "path": "/tmp/avtrace_p23_mp4meta_20261013/parsed.json",
+      "sha256": "3c248cf9693e3c42ada856b28f0647f2173f29e04e6b76b72698a6791a8a7773"
+    },
+    {
+      "bytes": 4271,
+      "path": "/tmp/avtrace_cc25109_mp4meta_20261013/head.headers",
+      "sha256": "671d3530fad492755f1a7268ca93fa720980c13b5d96441e2d7076ad7a23ab2c"
+    },
+    {
+      "bytes": 4301,
+      "path": "/tmp/avtrace_cc25109_mp4meta_20261013/tail.headers",
+      "sha256": "8a77104401696290e388d7c5e5e98f38378f3717eda30a376eb6acbe3eda916c"
+    },
+    {
+      "bytes": 938,
+      "path": "/tmp/avtrace_cc25109_mp4meta_20261013/parsed.json",
+      "sha256": "9fcda26ae67db08eab378cf15ce135e6f309df0c71fe3a30c71fd8da9e0ac270"
+    }
+  ],
+  "closure_logic": {
+    "captaincook4d_technical_readiness_separated_from_governance": true,
+    "per_asset_acquisition_authority_decided": true,
+    "technical_evidence_complete_for_both_assets": true,
+    "why_ready_despite_captaincook4d_hold": "The closure question is resolved rather than left ambiguous: the CaptainCook4D object is technically ready, while exact acquisition remains unauthorized until governance closes."
+  },
+  "deleted_media_payload_state": {
+    "authoritative_directories": [
+      {
+        "files": [
+          "cc_hy.headers",
+          "cc_star.headers",
+          "epic_hy.headers",
+          "epic_star.headers",
+          "summary.txt"
+        ],
+        "media_payload_bytes": 0,
+        "media_payload_files": [],
+        "path": "/tmp/avtrace_exact_range_diag_20261013"
+      },
+      {
+        "files": [
+          "head.headers",
+          "parsed.json",
+          "tail.headers"
+        ],
+        "media_payload_bytes": 0,
+        "media_payload_files": [],
+        "path": "/tmp/avtrace_p23_mp4meta_20261013"
+      },
+      {
+        "files": [
+          "head.headers",
+          "parsed.json",
+          "tail.headers"
+        ],
+        "media_payload_bytes": 0,
+        "media_payload_files": [],
+        "path": "/tmp/avtrace_cc25109_mp4meta_20261013"
+      }
+    ],
+    "conclusion": "The bounded response payload windows are deleted; only HTTP headers, the diagnostic summary, and derived parsed metadata remain in the authoritative evidence directories.",
+    "headers_and_derived_metadata_retained": true,
+    "retained_media_payload_bytes": 0,
+    "retained_media_payload_files": 0,
+    "validated": true
+  },
+  "diagnostic_summary": {
+    "captaincook4d_hy": "TIMEOUT_ZERO_BYTES",
+    "captaincook4d_star": "206_COMPLETE_1024_BYTES",
+    "completed_206_diagnostic_ranges": 3,
+    "epic_hy": "206_COMPLETE_1024_BYTES",
+    "epic_star": "206_COMPLETE_1024_BYTES",
+    "path": "/tmp/avtrace_exact_range_diag_20261013/summary.txt"
+  },
+  "evidence_date": "2026-10-13",
+  "final_marker": "SECONDARY_PAIR_AV_TECHNICAL_CLOSURE_READY",
+  "generated_deterministically": true,
+  "schema_version": "av-trace.secondary-pair-av-technical-closure/1.0",
+  "scope": {
+    "assets": [
+      "EPIC P23_102",
+      "CaptainCook4D 25_109 GoPro 360p"
+    ],
+    "gate_a_claimed": false,
+    "h_tier_claimed": false,
+    "human_review_claimed": false,
+    "media_content_decoded_or_reviewed": false,
+    "media_payload_bytes_read_by_closure_tool": 0,
+    "network_requests_by_closure_tool": 0,
+    "sample_level_av_sync_claimed": false,
+    "semantic_annotations_opened_or_used": false,
+    "semantic_claims_made": false,
+    "ses_claimed": false,
+    "v_plus_s_plus_a_claimed": false
+  }
+}

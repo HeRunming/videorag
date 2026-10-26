@@ -1,0 +1,30 @@
+{
+  "bindings": {
+    "commitment_request_schema_sha256": "sha256:0ad9c1991270c3c12c8ba1087b8af641723d9956b3ddb1799324ec99a16ca48c",
+    "gate_manifest_sha256": "sha256:7d1c244cdb05171821713f82c3e619a08b52c612229459ee0b92bcdd5dcf89a1",
+    "parent_ambient_tool_source_sha256": "sha256:6ae1c46007ca6ec93ac30b71ccf0db7e406cfa20215df0f5df1b0309f95aad5b",
+    "plan_file_expected_canonical_sha256": "sha256:fc54f7f345ad09b1fba84976c482301196e328138d55e6530f35a3918cbe7500",
+    "plan_payload_sha256": "sha256:aa77dd86bbc3b32df6872080646d10943447f7e1b322935c198dc6be3f5b4ab2",
+    "runtime_constants": {
+      "human_review_rate": 0.2,
+      "jaccard_max_exclusive": 0.92,
+      "max_visual_objects": 2,
+      "minimum_bundle_component_count": 1,
+      "minimum_bundle_sample_count": 1,
+      "minimum_discriminative_dimensions": 2,
+      "minimum_expected_query_count": 1,
+      "reviewer_count": 2
+    },
+    "runtime_constants_sha256": "sha256:195dab105dba5e71d89b063209e7de1dea041f53b6542a16ef3e7dbd01fdc6f0",
+    "schema_manifest_sha256": "sha256:dac03c6776d4b8916e573e9d21ee9430e1eab8fafc3a77b69552d6eb6c54b15e",
+    "tool_source_sha256": "sha256:879b6d06467e14e8fadc2163fa6977453933870588092261c5a43452bac6e45d"
+  },
+  "commitment_request_payload_sha256": "sha256:4de4837136eefe24e2c69ca37a1d3a4463bedf747f76ccf79c32b2706d56be59",
+  "date": "2026-10-23",
+  "decision": "R23_B_V3_DESIGN_READY",
+  "execution": false,
+  "external_attested": false,
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "request_purpose": "REQUEST_FUTURE_INDEPENDENT_EXTERNAL_AUTHORIZATION_BINDING",
+  "schema_version": "av-trace.p23-102-r23b-external-commitment-request/1.0"
+}

@@ -1,0 +1,60 @@
+{
+  "blocking_intervention_id": "block_syn_f06_motor_identity",
+  "exact_inverse": true,
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f06_motor_identity",
+  "pretrigger_state_equal": true,
+  "restoration_intervention_id": "restore_syn_f06_motor_identity",
+  "restoration_successful": true,
+  "restored_proof_id": "restored-proof.syn_f06_motor_identity",
+  "schema_version": "1.0.0",
+  "terminal_accessible_evidence_ids": [
+    "s3_motor",
+    "s3_two_clicks"
+  ],
+  "terminal_reachable_ses_ids": [
+    "ses_syn_f06_motor_identity_1"
+  ],
+  "trigger_type": "get_channel_status",
+  "trigger_value": null,
+  "validator_results": [
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f06_motor_identity_1"
+      ],
+      "observed_evidence_ids": [
+        "s3_motor",
+        "s3_two_clicks"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 6.25,
+      "total_steps": 6,
+      "trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f06_motor_identity"
+      ],
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f06_motor_identity_1"
+      ],
+      "observed_evidence_ids": [
+        "s3_motor",
+        "s3_two_clicks"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 4.25,
+      "total_steps": 4,
+      "trajectory_hash": "sha256:faf0343c86da196e8702040147a7d900d5fc3fbda505aad393737fcb11a634ba",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f06_motor_identity"
+      ],
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

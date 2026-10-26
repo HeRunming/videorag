@@ -1,0 +1,1017 @@
+{
+  "schema_version": "av-trace.cvpr-pivot-v2-gate-registry/1.0",
+  "registry_id": "av-trace-cvpr-pivot-v2-20260923",
+  "frozen_date": "2026-09-23",
+  "decision_token": "CVPR_PIVOT_V2_FROZEN",
+  "artifact_role": "PROSPECTIVE_SUPERSEDING_GOVERNANCE_ADDENDUM",
+  "results_created": false,
+  "human_results_created": false,
+  "model_results_created": false,
+  "source_acquisition_authorized_by_this_registry": false,
+  "supersession": {
+    "preserves_prior_evidence": true,
+    "does_not_mutate_prior_artifacts": true,
+    "controls_future_planning_where_conflicting": true,
+    "superseded_planning_artifacts": [
+      "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+      "data/rehearsal_plan/cvpr_pivot_gate_registry.json",
+      "docs/paper/av_trace_cvpr_evaluation_preregistration.md",
+      "data/rehearsal_plan/cvpr_evaluation_gate_registry.json",
+      "docs/paper/av_trace_cvpr_main_blueprint_v2.md",
+      "data/rehearsal_plan/cvpr_main_evidence_matrix_v2.json"
+    ],
+    "controlling_addendum": "docs/paper/cvpr_pivot_v2_addendum.md"
+  },
+  "paper_position": {
+    "type": "BENCHMARK_AND_DIAGNOSTIC_PROTOCOL",
+    "controller_is_proposed_method": false,
+    "current_scientific_claims_ready": false,
+    "current_h1_count": 0,
+    "current_h2_count": 0,
+    "broad_av_claim_ready": false,
+    "controller_superiority_ready": false,
+    "public_benchmark_ready": false
+  },
+  "source_policy": {
+    "canonical_four": {
+      "classification": "DEVELOPMENT_OR_CALIBRATION_ONLY",
+      "gate_a_denominator_eligible": false,
+      "primary_test_eligible": false,
+      "may_define_broad_av_pilot": false,
+      "source_group_ids": [
+        "SG-OXFORD-QM-001",
+        "SG-OXFORD-DHL-CONSCIOUSNESS",
+        "SG-MIT-RES12-003-L01",
+        "SG-YALE-PHYS200-L01"
+      ],
+      "allowed_uses": [
+        "author_training",
+        "route_closure_rehearsal",
+        "negative_examples",
+        "development",
+        "excluded_calibration_subject_to_source_specific_rights"
+      ],
+      "prohibited_uses": [
+        "gate_a_12_family_denominator",
+        "broad_av_pilot_evidence",
+        "ambient_or_dynamic_visual_validity_claim",
+        "primary_test"
+      ]
+    },
+    "preferred_gate_a_pool": {
+      "source_count": 6,
+      "families_per_source": 2,
+      "family_count": 12,
+      "conditional_existing_sources": [
+        {
+          "source_group_id": "cand-049",
+          "candidate_slots": [
+            "B01",
+            "B02"
+          ],
+          "development_touched": true,
+          "primary_test_eligible": false,
+          "conditions": [
+            "rights_privacy_clearance",
+            "semantic_non_speech_audio_prescreen_for_B01",
+            "dynamic_non_text_visual_and_shortcut_prescreen_for_B02",
+            "substantive_reauthoring",
+            "task145_intervention_v2_binding"
+          ]
+        },
+        {
+          "source_group_id": "cand-052",
+          "candidate_slots": [
+            "B03",
+            "B04"
+          ],
+          "development_touched": true,
+          "primary_test_eligible": false,
+          "conditions": [
+            "rights_privacy_clearance",
+            "visible_text_transcript_caption_shortcut_review",
+            "substantive_reauthoring_and_reanchoring",
+            "task145_intervention_v2_binding"
+          ]
+        }
+      ],
+      "required_new_event_sources": [
+        {
+          "role_id": "NEW-EVENT-01",
+          "non_noaa_required": true,
+          "required_capture_role": "field_procedure_or_maintenance",
+          "candidate_slots": [
+            "B05",
+            "B06"
+          ]
+        },
+        {
+          "role_id": "NEW-EVENT-02",
+          "non_noaa_required": true,
+          "required_capture_role": "observational_environment_or_wildlife",
+          "candidate_slots": [
+            "B07",
+            "B08"
+          ]
+        },
+        {
+          "role_id": "NEW-EVENT-03",
+          "non_noaa_required": true,
+          "required_capture_role": "industrial_or_laboratory_process",
+          "candidate_slots": [
+            "B09",
+            "B10"
+          ]
+        },
+        {
+          "role_id": "NEW-EVENT-04",
+          "non_noaa_required": true,
+          "required_capture_role": "assembly_repair_mission_operation_or_comparable_action_rich",
+          "candidate_slots": [
+            "B11",
+            "B12"
+          ]
+        }
+      ],
+      "selection_status": "NOT_SELECTED",
+      "task147_exact_preflight_ready_count": 0,
+      "task147_hold_count": 5,
+      "task147_no_go_count": 1
+    },
+    "capture_format_quotas": {
+      "exact_non_noaa_event_centric_source_groups": 4,
+      "max_lecture_webinar_presentation_wrapped_source_groups": 2,
+      "min_distinct_capture_format_categories": 4,
+      "min_independent_publisher_or_production_lineages_among_new_event_sources": 3,
+      "max_new_event_sources_from_one_correlated_production_lineage": 2,
+      "min_sources_passing_semantic_non_speech_audio_prescreen": 2,
+      "min_sources_passing_dynamic_non_text_visual_prescreen": 2,
+      "topic_diversity_alone_sufficient": false
+    },
+    "semantic_prescreens": {
+      "timing": "BEFORE_SUBSTANTIVE_FAMILY_AUTHORING",
+      "human_documented": true,
+      "prescreener_may_later_hold_blind_role_on_same_source": false,
+      "audio_required_profiles": [
+        "A",
+        "V+A",
+        "S+A",
+        "V+S+A"
+      ],
+      "audio_pass": [
+        "temporally_localizable_source_world_non_speech_event",
+        "plausibly_changes_answerability",
+        "not_speech",
+        "not_music_or_score",
+        "not_applause_or_generic_room_noise",
+        "not_coarse_ast_label",
+        "no_spoken_or_visible_substitute"
+      ],
+      "visual_required_profiles": [
+        "V",
+        "V+S",
+        "V+A",
+        "V+S+A"
+      ],
+      "visual_pass": [
+        "dynamic_non_text_evidence",
+        "plausibly_changes_answerability",
+        "not_recoverable_from_transcript_captions_or_ocr",
+        "not_slides_title_cards_talking_head_metadata_or_static_diagram_alone"
+      ],
+      "scientific_tier_conferred": false,
+      "necessity_established": false
+    }
+  },
+  "pilot_slot_matrix": [
+    {
+      "slot": "B01",
+      "source": "cand-049",
+      "profile": "A",
+      "hop": "one",
+      "temporal": "near",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "status": "CONDITIONAL_REPAIR"
+    },
+    {
+      "slot": "B02",
+      "source": "cand-049",
+      "profile": "V+S",
+      "hop": "multi",
+      "temporal": "far",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "status": "CONDITIONAL_REPAIR"
+    },
+    {
+      "slot": "B03",
+      "source": "cand-052",
+      "profile": "S",
+      "hop": "one",
+      "temporal": "near",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "status": "CONDITIONAL_REPAIR"
+    },
+    {
+      "slot": "B04",
+      "source": "cand-052",
+      "profile": "S",
+      "hop": "one",
+      "temporal": "near",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "status": "CONDITIONAL_REPAIR"
+    },
+    {
+      "slot": "B05",
+      "source": "NEW-EVENT-01",
+      "profile": "V",
+      "hop": "one",
+      "temporal": "near",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B06",
+      "source": "NEW-EVENT-01",
+      "profile": "V+A",
+      "hop": "multi",
+      "temporal": "far",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B07",
+      "source": "NEW-EVENT-02",
+      "profile": "V",
+      "hop": "one",
+      "temporal": "near",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B08",
+      "source": "NEW-EVENT-02",
+      "profile": "V+S+A",
+      "hop": "multi",
+      "temporal": "far",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B09",
+      "source": "NEW-EVENT-03",
+      "profile": "A",
+      "hop": "one",
+      "temporal": "near",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B10",
+      "source": "NEW-EVENT-03",
+      "profile": "S+A",
+      "hop": "multi",
+      "temporal": "far",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B11",
+      "source": "NEW-EVENT-04",
+      "profile": "V+S",
+      "hop": "multi",
+      "temporal": "far",
+      "mechanism": "SILENT_ROUTE_WITHHOLDING",
+      "status": "UNFILLED"
+    },
+    {
+      "slot": "B12",
+      "source": "NEW-EVENT-04",
+      "profile": "V+S+A",
+      "hop": "multi",
+      "temporal": "far",
+      "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+      "status": "UNFILLED"
+    }
+  ],
+  "pilot_target_totals": {
+    "profiles": {
+      "V": 2,
+      "S": 2,
+      "A": 2,
+      "V+S": 2,
+      "V+A_or_S+A": 2,
+      "V+S+A": 2
+    },
+    "hop": {
+      "one": 6,
+      "multi": 6
+    },
+    "temporal": {
+      "near_or_local": 6,
+      "far_or_separated": 6
+    },
+    "mechanism": {
+      "SILENT_ROUTE_WITHHOLDING": 6,
+      "EXPLICIT_CHANNEL_OUTAGE": 6
+    },
+    "targets_are_forced_labels": false
+  },
+  "construct_policy": {
+    "paper_facing_h2_term": "H2_HUMAN_ADJUDICATED_SATURATION_AUDITED",
+    "paper_facing_prohibited_terms": [
+      "H2_HUMAN_ADJUDICATED_GOLD",
+      "human_gold",
+      "exhaustive_SESs",
+      "all_possible_SESs"
+    ],
+    "permitted_ses_completeness_phrase": "all accepted SESs discovered under the frozen saturation protocol",
+    "roles_per_family": 6,
+    "distinct_people_per_family": 6,
+    "minimum_unique_trained_reviewers_for_12_family_pilot": 8,
+    "roles": [
+      "question_claim_author_or_independent_verifier",
+      "blind_full_source_alternative_evidence_finder",
+      "validator_a",
+      "validator_b",
+      "independent_adjudicator",
+      "blind_post_adjudication_saturation_auditor"
+    ],
+    "source_level_blindness": {
+      "assignment_freeze_before_distribution": true,
+      "source_exposure_ledger_required": true,
+      "pre_distribution_exposure_snapshot_required": true,
+      "blind_finder_cross_family_source_contamination_prohibited": true,
+      "saturation_auditor_cross_family_source_contamination_prohibited": true,
+      "adjudicator_authored_any_family_in_same_source_prohibited": true,
+      "post_freeze_assignment_or_exposure_mutation_invalidates_packet": true
+    },
+    "calibration": {
+      "excluded_family_count": 2,
+      "must_complete_before_gate_a_go": true,
+      "candidate_lineages": [
+        "repaired_CAL01_cand-051",
+        "repaired_CAL02_SG-OXFORD-DHL-CONSCIOUSNESS"
+      ],
+      "reported_denominator_eligible": false,
+      "labor_tracking_required": [
+        "active_minutes_by_role",
+        "elapsed_minutes_by_role",
+        "median_family_labor",
+        "p90_family_labor"
+      ]
+    },
+    "current_h1": 0,
+    "current_h2": 0
+  },
+  "causal_primary": {
+    "controlling_protocol": "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+    "status": "PROTOCOL_READY_EXECUTION_BLOCKED",
+    "trigger": {
+      "class": "fixed_action_index",
+      "zero_based_action_index": 4,
+      "delivery": "after_four_completed_action_response_cycles_before_next_model_decision",
+      "action_contingent": false,
+      "system_contingent": false,
+      "outcome_contingent": false
+    },
+    "paired_design": {
+      "contrast": "RESTORED_MINUS_NO_TRIGGER",
+      "population": "ALL_PREREGISTERED_ASSIGNMENTS_INTENTION_TO_TREAT",
+      "byte_identical_public_checkpoint": true,
+      "public_prefix_hash_match_required": true,
+      "fresh_isolated_continuations": true,
+      "early_terminators_included": true,
+      "typed_invalid_runs_fail_closed_included": true
+    },
+    "co_primary_estimands": [
+      {
+        "id": "P1_RN_SILENT_ROUTE_WITHHOLDING_ITT",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "contrast": "RESTORED_MINUS_NO_TRIGGER",
+        "endpoint": "COMMON_SUPPORTED_ANSWER"
+      },
+      {
+        "id": "P2_RN_EXPLICIT_CHANNEL_OUTAGE_ITT",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "contrast": "RESTORED_MINUS_NO_TRIGGER",
+        "endpoint": "COMMON_SUPPORTED_ANSWER"
+      }
+    ],
+    "aggregation": "FAMILY_WITHIN_SOURCE_THEN_EQUAL_SOURCE",
+    "pooled_primary_across_mechanisms_allowed": false,
+    "restored_minus_blocked_role": "SECONDARY_MECHANISM_SPECIFIC_STATE_CONTRAST",
+    "get_channel_status_restoration_role": "SECONDARY_PER_PROTOCOL_ACTION_CONTINGENT",
+    "execution_prerequisites": [
+      "H2_construct_eligibility",
+      "mechanism_specific_intervention_manifest",
+      "state_surface_manifest",
+      "route_closure_and_restoration_feasibility",
+      "r_n_prefix_fork_replay",
+      "fresh_session_and_no_cross_state_cache_attestations",
+      "williams_counterbalanced_order_assignment",
+      "metadata_only_leakage_gate_pass",
+      "complete_itt_assignment_manifest"
+    ],
+    "metadata_only_leakage_gate_current_status": "NOT_RUN_BLOCKS_SCIENTIFIC_EXECUTION"
+  },
+  "scale_policy": {
+    "preferred": {
+      "minimum_h2_families": 60,
+      "minimum_source_groups": 30,
+      "minimum_untouched_test_source_groups": 12,
+      "minimum_source_split": {
+        "development": 12,
+        "validation": 6,
+        "test": 12
+      },
+      "target_h2_family_split": {
+        "development": 24,
+        "validation": 12,
+        "test": 24
+      },
+      "maximum_h2_families_per_source": 3,
+      "minimum_capture_format_categories": 4,
+      "maximum_lecture_webinar_presentation_fraction": 0.25,
+      "minimum_untouched_test_sources_per_modality_mechanism_or_domain_claim": 5,
+      "development_touched_sources_in_primary_test_allowed": false,
+      "controller_superiority_claim_eligible_subject_to_all_other_gates": true
+    },
+    "constrained_fallback": {
+      "minimum_h2_families": 60,
+      "minimum_source_groups": 20,
+      "minimum_untouched_test_source_groups": 8,
+      "minimum_source_split": {
+        "development": 8,
+        "validation": 4,
+        "test": 8
+      },
+      "reporting_scope": "NARROW_SOURCE_BOUNDED_DIAGNOSTIC_DESCRIPTIVE_ONLY",
+      "model_comparisons": "DESCRIPTIVE_ONLY",
+      "confirmatory_controller_hypothesis_family_used_for_success_claim": false,
+      "controller_superiority_claim_allowed": false,
+      "population_ranking_claim_allowed": false,
+      "broad_modality_mechanism_generalization_claim_allowed": false
+    },
+    "below_fallback": {
+      "condition": "fewer_than_60_h2_or_fewer_than_20_sources_or_fewer_than_8_untouched_test_sources",
+      "paper_scale_status": "REPAIR_OR_NO_GO"
+    }
+  },
+  "baseline_matrix": {
+    "controlling_task": 148,
+    "current_decision": "STRONG_BASELINE_REFRESH_REPAIR",
+    "primary": {
+      "model_families": [
+        "Qwen Omni",
+        "IBM Granite"
+      ],
+      "direct_av": {
+        "system_id": "DLC-B-QWEN25OMNI7B",
+        "repo_id": "Qwen/Qwen2.5-Omni-7B",
+        "revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00",
+        "input_contract": "native_video_plus_in_video_audio_question_independent_chronological_packing"
+      },
+      "tool_controller": {
+        "system_ids": [
+          "RAG-A-GRANITE33-8B",
+          "REACT-A-GRANITE33-8B",
+          "SUFF-A-GRANITE33-8B"
+        ],
+        "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+        "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+      },
+      "grounded_finalizer": {
+        "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+        "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+        "same_snapshot_as_controller": true,
+        "used_for": [
+          "RAG-A",
+          "REACT-A",
+          "SUFF-A",
+          "ORACLE-A",
+          "PARTIAL-A"
+        ]
+      },
+      "published_style_comparator": {
+        "system_id": "TRACE-STYLE-A-GRANITE33-8B",
+        "official_reproduction_claim_allowed": false,
+        "eligible_subset": "VISUAL"
+      },
+      "controls": [
+        "DET-REACT",
+        "DET-SUFF",
+        "NO-TRIGGER"
+      ]
+    },
+    "fallback": {
+      "activation": "VERSIONED_PRE_SEALED_SUITE_AMENDMENT_ONLY",
+      "outcome_conditioned_mixing_allowed": false,
+      "direct_packed_av": {
+        "system_id": "DLC-B-PHI4MM",
+        "repo_id": "microsoft/Phi-4-multimodal-instruct",
+        "revision": "93f923e1a7727d1c4f446756212d9d3e8fcc5d81",
+        "strict_native_video_equivalence": false,
+        "remote_code_review_required": true
+      },
+      "tool_controller_and_finalizer": {
+        "repo_id": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+      },
+      "published_style_comparator": {
+        "system_id": "LONGVT-STYLE-A-QWEN3-8B",
+        "official_reproduction_claim_allowed": false,
+        "eligible_subset": "VISUAL"
+      }
+    },
+    "closed_api_required": false,
+    "gpt_oss_20b_required": false,
+    "current_status": {
+      "selected_snapshots_acquired": false,
+      "usable_dedicated_gpu": false,
+      "runtime_environment_frozen": false,
+      "exact_license_security_archive_complete": false,
+      "strict_native_av_fallback_cleared": false,
+      "competence_run": false,
+      "scientific_evaluation_authorized": false
+    },
+    "competence_gates": {
+      "controller_finalizer": {
+        "minimum_sealed_cases": 48,
+        "parser_schema_failure_fixtures": 1.0,
+        "valid_structured_model_calls_min": 0.9,
+        "correct_first_actions_overall_min": 0.85,
+        "correct_first_actions_each_stratum_min": 0.75,
+        "exact_six_field_state_min": 0.75,
+        "each_state_component_min": 0.8,
+        "oracle_supported_answer_min": 0.8,
+        "blocked_partial_correct_abstention_min": 0.8,
+        "restoration_reacquisition_min": 0.8,
+        "unsupported_required_claims_max": 0,
+        "private_field_exposures_max": 0,
+        "deterministic_answer_substitutions_max": 0,
+        "identity_and_injected_failure_fail_closed": 1.0
+      },
+      "direct_av": {
+        "minimum_sealed_cases": 24,
+        "processor_manifest_failure_fixtures": 1.0,
+        "valid_final_outputs_min": 0.9,
+        "complete_evidence_supported_answer_min": 0.8,
+        "each_modality_stratum_supported_answer_min": 0.75,
+        "partial_masked_correct_abstention_min": 0.8,
+        "unsupported_required_claims_max": 0,
+        "out_of_exposure_citations_max": 0,
+        "observed_evidence_lock": 1.0,
+        "required_modality_drop_counterfactuals": 1.0,
+        "deterministic_local_replay_parsed_output": 1.0
+      }
+    }
+  },
+  "gates": [
+    {
+      "gate_id": "A",
+      "name": "MINI_PILOT_INPUT_READY",
+      "current_decision": "REPAIR",
+      "go": [
+        "exact six-source preferred pool frozen with twelve substantive candidates and two excluded calibrations",
+        "canonical four lecture sources absent from the gate-defining denominator",
+        "four event-centric sources meet capture-format and lineage quotas",
+        "all six sources have complete technical_lineage_rights_privacy_processing_annotation_custody decisions",
+        "all required semantic visual and audio prescreens pass",
+        "cand-049 and cand-052 have no applicable unresolved hold",
+        "all twelve candidates use task145 intervention_v2 and pass route/restoration feasibility",
+        "state surface and R_N fork manifests frozen and metadata-only leakage preflight passed",
+        "two excluded calibration families completed and training defects repaired",
+        "at least eight unique trained reviewers available",
+        "six roles per family assignable under source-level blindness",
+        "assignments exposure snapshot forms protocol seed candidate registry and packet hashes frozen",
+        "no critical governance construct or technical hold"
+      ],
+      "repair": [
+        "the unchanged preferred design remains feasible but one or more source candidate semantic rights technical intervention calibration staffing or freeze records are incomplete"
+      ],
+      "no_go": [
+        "six eligible sources or required strata cannot be assembled without weakening source rights privacy semantic technical construct or blindness rules",
+        "four independent event-centric roles cannot be filled under the lineage and capture-format quotas",
+        "a critical source or intervention defect is irreparable without changing the construct"
+      ],
+      "current_blockers": [
+        "zero event sources exact-preflight-ready",
+        "zero event-source acquisition approvals",
+        "preferred four event sources not selected",
+        "all current candidate questions and answers are placeholders",
+        "cand-049 and cand-052 conditional repairs incomplete",
+        "semantic prescreens not completed",
+        "intervention-v2 manifests and leakage preflight incomplete",
+        "two calibration families not completed",
+        "eight-reviewer roster and frozen assignments absent"
+      ],
+      "authorizes_on_go": [
+        "distribution_of_12_family_pilot_packets"
+      ],
+      "does_not_authorize_on_go": [
+        "scientific_model_execution",
+        "scaled_production",
+        "public_release"
+      ]
+    },
+    {
+      "gate_id": "B",
+      "name": "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+      "current_decision": "NOT_RUN",
+      "go": [
+        "12_of_12_complete_across_6_frozen_sources",
+        "all_6_roles_complete_under_source_level_blindness",
+        "at_least_9_H1",
+        "at_least_8_H2_HUMAN_ADJUDICATED_SATURATION_AUDITED",
+        "pair_isolation_failures_at_most_1",
+        "systematic_minimality_or_modality_failures_at_most_3",
+        "no_unresolved_critical_governance_hold",
+        "at_least_2_accepted_non_NOAA_source_groups",
+        "at_least_3_accepted_event_centric_source_groups_or_prospective_removal_of_broad_av_event_centric_claims",
+        "ambient_and_V_plus_S_plus_A_H2_coverage_or_prospective_stratum_removal",
+        "saturation_discoveries_repaired_and_reaudited",
+        "measured_labor_and_yield_support_unchanged_criteria_scale_path"
+      ],
+      "repair": [
+        "at_least_5_H1_or_localized_versionable_failures_with_central_construct_still_reviewable"
+      ],
+      "no_go": [
+        "fewer_than_5_H1",
+        "at_least_6_rejected",
+        "systematic_alternative_support_minimality_necessity_isolation_rights_privacy_or_blindness_failure"
+      ],
+      "reporting_label": "LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY"
+    },
+    {
+      "gate_id": "C",
+      "name": "STRONG_BASELINE_TECHNICAL_READY",
+      "current_decision": "REPAIR",
+      "go": [
+        "task148_primary_or_prospectively_amended_fallback_matrix_exactly_frozen",
+        "required_snapshots_acquired_under_approval",
+        "isolated_runtime_and_compute_ready",
+        "license_privacy_security_and_processor_archives_complete",
+        "controller_finalizer_and_direct_av_competence_gates_all_pass",
+        "independent_replay_metric_and_data_boundary_audits_pass",
+        "zero_evaluator_private_exposure_or_deterministic_answer_substitution"
+      ],
+      "repair": [
+        "localized technical or competence repair using only synthetic or development data under a new version"
+      ],
+      "no_go": [
+        "a required learned class cannot pass without evaluator assistance silent fallback label changes or test access",
+        "required native_av coverage cannot be supplied and the paper scope is not prospectively narrowed"
+      ]
+    },
+    {
+      "gate_id": "X",
+      "name": "CAUSAL_EXECUTION_INTERLOCK",
+      "current_decision": "BLOCKED",
+      "go": [
+        "task145_protocol_bound_to_all_eligible_families_and_systems",
+        "mechanism_specific_manifests_complete",
+        "state_surface_and_forbidden_private_fields_audited",
+        "exact_R_N_prefix_and_checkpoint_hashes_match",
+        "fresh_session_no_cross_state_cache_attestations_pass",
+        "williams_counterbalance_assignment_frozen",
+        "metadata_only_leakage_gate_passes",
+        "complete_ITT_assignment_manifest"
+      ],
+      "repair": [
+        "non_outcome_intervention_or_leakage_defect_repaired_before_scientific_assignment"
+      ],
+      "no_go": [
+        "deterministic_state_feature_or_private_field_exposure",
+        "cache_namespace_collision",
+        "unresolved_R_N_prefix_or_event_mismatch",
+        "system_requires_action_contingent_trigger_for_primary_claim"
+      ]
+    },
+    {
+      "gate_id": "D",
+      "name": "H2_MINI_DIAGNOSTIC_GO",
+      "current_decision": "NOT_AUTHORIZED",
+      "prerequisites": [
+        "B_GO",
+        "C_GO",
+        "X_GO"
+      ],
+      "go": [
+        "frozen learned RAG_ReAct_sufficiency_and_required_controls_complete",
+        "mechanism_specific_R_minus_N_ITT_accounting_complete",
+        "one_intervention_aware_diagnostic_separation_across_at_least_3_sources_not_one_family_driven",
+        "one_answer_support_or_citation_divergence",
+        "two_nonretrieval_failure_categories_each_on_at_least_2_sources",
+        "complete_invalid_and_source_level_accounting"
+      ],
+      "repair": [
+        "construct_baseline_and_causal_gates_pass_but_descriptive_diagnostic_is_inconclusive_or_typed_execution_defect_is_prospectively_repairable"
+      ],
+      "no_go": [
+        "intervention_isolation_or_leakage_fails",
+        "all_differences_are_retrieval_only_or_metric_artifacts",
+        "no_answer_support_divergence",
+        "no_audited_nonretrieval_separation",
+        "strong_execution_requires_private_assistance"
+      ]
+    },
+    {
+      "gate_id": "E",
+      "name": "FIRST_40_SCALED_REVIEWS_AUTHORIZED",
+      "current_decision": "NOT_AUTHORIZED",
+      "go": [
+        "B_C_D_and_X_are_GO",
+        "120_to_160_P_tier_candidates_from_30_to_40_sources",
+        "rights_eligible_source_and_family_reserve_at_least_25_percent",
+        "source_disjoint_rules_frozen_for_preferred_30_source_target",
+        "calibration_and_pilot_labor_support_schedule_and_budget",
+        "staffing_compute_storage_and_rights_capacity_approved",
+        "no_construct_threshold_relaxed"
+      ],
+      "repair": [
+        "science_gates_pass_but_pool_reserve_staffing_or_governance_capacity_is_incomplete_without_weaker_rules"
+      ],
+      "no_go": [
+        "a_prerequisite_is_NO_GO",
+        "pool_requires_weaker_construct_rights_privacy_or_split_rules"
+      ]
+    },
+    {
+      "gate_id": "F",
+      "name": "CONTINUE_TO_FINAL_H2_SCALE",
+      "current_decision": "NOT_AUTHORIZED",
+      "go": [
+        "H2_yield_after_first_40_reviews_at_least_60_percent",
+        "at_least_5_completed_reviews_in_every_high_risk_stratum",
+        "no_construct_threshold_weakened",
+        "measured_labor_rights_compute_and_storage_feasible",
+        "rights_eligible_reserve_at_least_25_percent",
+        "unchanged_criteria_path_to_at_least_60_H2_and_preferred_30_sources_or_declared_20_source_fallback"
+      ],
+      "repair": [
+        "localized_versionable_throughput_or_yield_issue_repairable_without_test_outcomes"
+      ],
+      "no_go": [
+        "yield_below_60_percent_without_localized_repair",
+        "source_rights_reviewer_compute_or_storage_capacity_infeasible",
+        "required_stratum_infeasible_under_unchanged_rules",
+        "principal_diagnostic_premise_no_longer_survives"
+      ]
+    },
+    {
+      "gate_id": "G",
+      "name": "FINAL_H2_CORPUS_FREEZE",
+      "current_decision": "NOT_RUN",
+      "preferred_go": [
+        "at_least_60_H2",
+        "at_least_30_source_groups",
+        "at_least_12_untouched_test_source_groups",
+        "minimum_12_6_12_whole_source_split",
+        "target_24_12_24_H2_family_split",
+        "maximum_3_H2_per_source",
+        "at_least_4_capture_formats",
+        "lecture_webinar_presentation_fraction_at_most_25_percent",
+        "complete_rights_and_release_decisions",
+        "25_percent_reserve",
+        "no_test_source_tuning"
+      ],
+      "constrained_fallback_go": [
+        "at_least_60_H2",
+        "at_least_20_source_groups",
+        "minimum_8_4_8_whole_source_split",
+        "at_least_8_untouched_test_source_groups",
+        "descriptive_only_model_comparisons",
+        "controller_superiority_claims_dropped"
+      ],
+      "repair": [
+        "valid_production_has_a_fillable_count_stratum_source_or_governance_deficit_repairable_from_blind_reserve"
+      ],
+      "no_go": [
+        "fallback_minima_require_weaker_construct_or_governance_rules",
+        "source_disjointness_or_test_privacy_broken",
+        "irreparable_critical_rights_construct_pair_isolation_or_causal_defect"
+      ]
+    },
+    {
+      "gate_id": "H",
+      "name": "MAIN_EVALUATION_FREEZE",
+      "current_decision": "NOT_RUN",
+      "go": [
+        "corpus_scale_mode_preferred_or_descriptive_fallback_declared_before_test_unlock",
+        "source_system_prompt_adapter_processor_retrieval_budget_seed_metric_hypothesis_environment_and_release_hashes_frozen",
+        "competence_data_boundary_and_causal_audits_pass",
+        "no_test_outcome_viewed",
+        "complete_primary_no_trigger_diagnostic_deterministic_control_and_invalid_reserve_matrix"
+      ],
+      "repair": [
+        "missing_non_outcome_technical_artifact_can_be_frozen_before_test_unlock"
+      ],
+      "no_go": [
+        "test_leakage",
+        "exact_system_identity_cannot_be_frozen",
+        "unapproved_system_specific_matrix_or_budget_difference",
+        "fallback_scope_not_declared_before_test_unlock"
+      ]
+    },
+    {
+      "gate_id": "I",
+      "name": "PAPER_CLAIM_READY",
+      "current_decision": "NOT_RUN",
+      "go": [
+        "all_applicable_prior_gates_GO",
+        "required_learned_classes_and_two_materially_different_model_families_complete",
+        "source_level_uncertainty_invalids_ablations_sensitivity_and_costs_complete",
+        "principal_diagnostic_not_one_source_or_one_domain_driven",
+        "answer_support_or_citation_divergence_and_nonretrieval_separation_survive_audit",
+        "metric_replay_leakage_construct_rights_novelty_and_sentence_level_claim_audits_pass",
+        "claim_wording_matches_preferred_or_descriptive_fallback_scale"
+      ],
+      "repair": [
+        "valid_corpus_and_evaluation_have_a_noncritical_baseline_audit_uncertainty_or_wording_defect_repairable_without_outcome_selected_test_reruns"
+      ],
+      "no_go": [
+        "matched_construct_or_causal_isolation_fails",
+        "principal_result_explained_by_one_source_one_domain_retrieval_alone_leakage_or_invalid_scoring",
+        "strong_baselines_or_source_level_analysis_absent",
+        "rights_or_release_wording_exceeds_authority",
+        "controller_superiority_claim_retained_under_20_source_8_test_fallback"
+      ]
+    }
+  ],
+  "authorization_map": {
+    "authorized_now": [
+      "read_only_audit_and_planning",
+      "replacement_source_discovery",
+      "non_media_item_policy_rights_metadata_capture",
+      "source_specific_authority_requests",
+      "canonical_four_development_or_calibration_use_within_existing_rights",
+      "candidate_repair_planning_without_H_promotion",
+      "reviewer_recruitment_training_design_blank_roster_and_non_distributable_packet_preparation",
+      "baseline_metadata_license_security_archiving_runtime_design_and_source_free_fixture_work"
+    ],
+    "conditional_separate_authorization": [
+      "tiny_no_retention_decode_or_semantic_probe_after_governance_approval",
+      "exact_event_source_acquisition_after_all_source_specific_gates_pass",
+      "large_model_weight_acquisition_after_license_security_compute_runtime_and_storage_approval",
+      "calibration_packet_distribution_after_source_authority_training_assignment_and_exposure_freeze",
+      "pilot_packet_distribution_after_gate_A_GO",
+      "H2_mini_diagnostic_after_B_C_X_GO",
+      "scaled_reviews_after_D_and_E_GO"
+    ],
+    "prohibited_now": [
+      "exact_acquisition_of_any_task143_or_task147_event_source_candidate",
+      "full_media_download_indexing_mining_or_human_annotation_for_held_or_no_go_event_sources",
+      "counting_metadata_hypotheses_as_semantic_or_construct_evidence",
+      "canonical_four_in_gate_A_denominator_or_primary_test",
+      "distribution_of_placeholder_candidate_registry",
+      "H1_or_H2_assignment",
+      "human_gold_or_exhaustive_SES_wording",
+      "scientific_C_B_R_N_model_episodes",
+      "first_40_or_full_scale_production",
+      "test_unlock",
+      "outcome_conditioned_fallback_selection",
+      "deterministic_answer_substitution",
+      "evaluator_private_assistance",
+      "test_source_tuning",
+      "public_release_without_artifact_specific_affirmative_authority"
+    ]
+  },
+  "event_source_exact_acquisition": {
+    "current_decision": "NOT_AUTHORIZED",
+    "basis": [
+      "task147_exact_preflight_ready_count_is_zero",
+      "five_candidates_are_hold",
+      "one_candidate_is_no_go",
+      "affirmative_acquisition_processing_and_restricted_annotation_authority_absent",
+      "component_rights_privacy_and_semantic_suitability_unresolved"
+    ],
+    "per_source_go_requirements": [
+      "successful_dated_first_party_item_and_policy_evidence",
+      "exact_route_and_object_or_stream_identity",
+      "duration_stream_timestamp_and_decode_compatibility",
+      "lineage_and_correlated_production_classification",
+      "component_ledger_for_partner_archive_music_marks_faces_and_voices",
+      "affirmative_acquisition_authority",
+      "affirmative_internal_processing_authority",
+      "affirmative_restricted_human_annotation_authority",
+      "privacy_safety_retention_attribution_and_takedown_plan",
+      "restricted_custody_and_hash_plan"
+    ],
+    "metadata_or_exact_route_reachability_is_sufficient": false
+  },
+  "critical_path": [
+    {
+      "order": 1,
+      "step": "freeze_pivot_v2_amendment",
+      "exit": "CVPR_PIVOT_V2_FROZEN"
+    },
+    {
+      "order": 2,
+      "step": "repair_event_source_pool",
+      "exit": "four_event_roles_have_source_specific_preflight_candidates_without_weakened_rules"
+    },
+    {
+      "order": 3,
+      "step": "obtain_per_source_acquisition_decisions",
+      "exit": "each_selected_event_source_is_GO_or_replaced"
+    },
+    {
+      "order": 4,
+      "step": "acquire_and_technically_verify_only_cleared_sources",
+      "exit": "restricted_hash_bound_synchronized_assets_ready_without_release_implication"
+    },
+    {
+      "order": 5,
+      "step": "run_semantic_source_prescreens",
+      "exit": "audio_and_visual_authoring_eligibility_quotas_pass"
+    },
+    {
+      "order": 6,
+      "step": "freeze_six_source_twelve_family_input_and_two_calibrations",
+      "exit": "substantive_candidates_shortcut_closure_and_task145_bindings_complete"
+    },
+    {
+      "order": 7,
+      "step": "train_reviewers_complete_calibrations_and_freeze_source_blind_assignments",
+      "exit": "at_least_eight_reviewers_and_labor_observations_ready"
+    },
+    {
+      "order": 8,
+      "step": "reaudit_gate_A",
+      "exit": "GO_REPAIR_or_NO_GO"
+    },
+    {
+      "order": 9,
+      "step": "run_construct_pilot_only_after_A_GO",
+      "exit": "gate_B_decision"
+    },
+    {
+      "order": 10,
+      "step": "repair_and_qualify_task148_baseline_matrix_in_parallel",
+      "exit": "gate_C_decision"
+    },
+    {
+      "order": 11,
+      "step": "pass_task145_causal_execution_interlock",
+      "exit": "gate_X_decision"
+    },
+    {
+      "order": 12,
+      "step": "run_low_n_H2_diagnostic_only_after_B_C_X_GO",
+      "exit": "gate_D_decision"
+    },
+    {
+      "order": 13,
+      "step": "authorize_and_audit_scaled_reviews_in_tranches",
+      "exit": "gates_E_and_F_decisions"
+    },
+    {
+      "order": 14,
+      "step": "freeze_preferred_or_declared_fallback_corpus",
+      "exit": "gate_G_decision"
+    },
+    {
+      "order": 15,
+      "step": "freeze_and_execute_main_evaluation",
+      "exit": "gate_H_decision_then_locked_execution"
+    },
+    {
+      "order": 16,
+      "step": "complete_independent_claim_release_and_freshness_audits",
+      "exit": "gate_I_decision"
+    }
+  ],
+  "authoritative_inputs": [
+    "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+    "data/rehearsal_plan/cvpr_pivot_gate_registry.json",
+    "orchestration/results/122_cvpr_pivot_decision.txt",
+    "orchestration/results/138_cvpr_evaluation_preregistration.txt",
+    "orchestration/results/139_cvpr_main_blueprint_v2.txt",
+    "orchestration/results/140_construct_validity_saturation_auditor.txt",
+    "orchestration/results/141_cvpr_main_blueprint_redteam.txt",
+    "orchestration/results/142_mini_pilot_family_candidates_execution.txt",
+    "orchestration/results/143_event_centric_source_discovery.txt",
+    "orchestration/results/144_mini_pilot_candidate_scientific_audit.txt",
+    "orchestration/results/145_exogenous_restoration_protocol.txt",
+    "orchestration/results/146_construct_validity_source_blindness.txt",
+    "orchestration/results/147_event_centric_live_preflight.txt",
+    "orchestration/results/148_strong_baseline_refresh.txt",
+    "docs/review/cvpr_main_blueprint_v2_redteam.md",
+    "data/rehearsal_plan/mini_pilot_candidate_disposition_v1.json",
+    "data/rehearsal_plan/exogenous_restoration_protocol_v2.json",
+    "docs/review/construct_validity_source_blindness_audit.md",
+    "data/rehearsal_plan/event_centric_live_preflight_v1.json",
+    "data/rehearsal_plan/strong_baseline_registry_v2.json"
+  ],
+  "boundary": {
+    "prior_frozen_documents_modified": false,
+    "source_data_modified": false,
+    "code_modified": false,
+    "prior_results_modified": false,
+    "human_review_performed": false,
+    "human_labels_invented": false,
+    "scientific_model_runs_performed": false,
+    "rights_gates_weakened": false,
+    "construct_gates_weakened": false
+  }
+}

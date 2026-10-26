@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-dataset-certificate:1.0.0",
+  "title": "AV-TRACE validator dataset certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "certificate_id",
+    "created_at",
+    "status",
+    "validator_version",
+    "artifact_index_hash",
+    "backend_manifest_hash",
+    "index_hash",
+    "counts",
+    "families",
+    "issues",
+    "certificate_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "certificate_id": {"$ref": "#/$defs/id"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["PASS", "FAIL"]},
+    "validator_version": {"type": "string", "minLength": 1},
+    "artifact_index_hash": {"$ref": "#/$defs/hash"},
+    "backend_manifest_hash": {"$ref": "#/$defs/hash"},
+    "index_hash": {"$ref": "#/$defs/hash"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["family_id", "status", "rule_results"],
+        "properties": {
+          "family_id": {"$ref": "#/$defs/id"},
+          "status": {"enum": ["PASS", "FAIL"]},
+          "rule_results": {
+            "type": "object",
+            "additionalProperties": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "family_id", "path", "message"],
+        "properties": {
+          "code": {"$ref": "#/$defs/id"},
+          "family_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+          "path": {"type": "string"},
+          "message": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "certificate_hash": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

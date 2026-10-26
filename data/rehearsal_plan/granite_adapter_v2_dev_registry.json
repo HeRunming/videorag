@@ -1,0 +1,181 @@
+{
+  "schema_version": "av-trace.granite-adapter-v2-development-registry/1.0",
+  "task_id": 175,
+  "created_at": "2026-10-02",
+  "decision_token": "GRANITE_ADAPTER_V2_DEV_READY",
+  "scope": "PROSPECTIVE_ADAPTER_IMPLEMENTATION_AND_CONSUMED_DEVELOPMENT_REGRESSION_ONLY",
+  "adapter": {
+    "schema_version": "av-trace.granite-native-adapter/2.0",
+    "package": "src/av_trace_strong_baselines_v2",
+    "model_binding": {
+      "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+      "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "processor_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "tokenizer_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+    },
+    "controller_factors": [
+      {
+        "factor_id": "controller.action_choice",
+        "transport": "granite_native_function_call",
+        "menu_mapping": "one_no_argument_function_per_exact_frozen_action",
+        "strict_enum": true
+      },
+      {
+        "factor_id": "controller.evidence_state_heads",
+        "transport": "strict_constrained_json",
+        "fields": [
+          "p_sufficient",
+          "covered_claim_handles",
+          "missing_modalities",
+          "missing_hops",
+          "missingness_cause",
+          "recovery_intent"
+        ],
+        "strict_enum": true
+      }
+    ],
+    "finalizer_factors": [
+      "finalizer.disposition",
+      "finalizer.answer_text",
+      "finalizer.claim_drafts",
+      "finalizer.citation_selections",
+      "finalizer.diagnosis"
+    ],
+    "projection": {
+      "may_accept": true,
+      "may_reject": true,
+      "may_fill_missing_fields": false,
+      "may_rewrite_semantics": false,
+      "action_and_state_independent": true
+    },
+    "serialization": {
+      "canonical_final_schema": "docs/spec/final_answer_schema.json",
+      "claim_to_citations_mechanical": true,
+      "citation_interval_and_modality_copy_from_selected_observation": true,
+      "claim_text_from_answer_text": false,
+      "answer_text_from_claim_text": false,
+      "answer_substitution": false
+    },
+    "retry_policy": {
+      "raw_model_attempts_preserved": true,
+      "maximum_schema_only_retries_per_factor": 1,
+      "semantic_retries": 0,
+      "cross_factor_retries": 0,
+      "voting_or_best_of_n": false
+    }
+  },
+  "development_inputs": {
+    "restriction": "ONLY_ALREADY_CONSUMED_TASK172_PUBLIC_FICTIONAL_CASES_AND_OUTPUTS",
+    "suite": {
+      "path": "data/rehearsal_plan/strong_baseline_competence_suite_v1.json",
+      "suite_hash": "sha256:7b8f8d021b24cb244f0df0f6b02b3da91120df3817a5366350895eb24f4646dc",
+      "file_sha256": "sha256:1e3bec6e30e63f705cc2d49b010fdf6479b61f9b66aa7a1ca17f90a3b453afb4"
+    },
+    "submission": {
+      "path": "data/restricted/strong_baselines/granite33_competence_v1/submission.json",
+      "file_sha256": "sha256:81a19895775a9e3b8c5ea01a314a774cfaa91763f1aff9991fab0535cfe77cb5"
+    },
+    "raw_attempts": {
+      "path": "data/restricted/strong_baselines/granite33_competence_v1/raw_attempts.jsonl",
+      "file_sha256": "sha256:68345500adf1f5479915bc57f4dd031fbe2e603b05736306707a4d5a580eb7dc",
+      "attempt_count": 54
+    },
+    "component_audit": {
+      "path": "data/restricted/strong_baselines/granite33_competence_v1/component_audit.json",
+      "file_sha256": "sha256:a24cf793fda275e8753d695369d4811a93a19dbaf7571d6301355f0ada772e53"
+    },
+    "future_or_new_holdout_labels_read": false,
+    "scientific_families_read": false
+  },
+  "consumed_task172_observation": {
+    "raw_action_correct": {
+      "correct": 11,
+      "total": 24,
+      "rate": 0.4583333333333333
+    },
+    "raw_p_sufficient": {
+      "correct": 17,
+      "total": 24,
+      "rate": 0.7083333333333334
+    },
+    "raw_natural_language_answer_terms": {
+      "correct": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "frozen_valid_structured_substantive_calls": {
+      "correct": 3,
+      "total": 40,
+      "rate": 0.075
+    },
+    "task172_decision_unchanged": "GRANITE33_COMPETENCE_NO_GO"
+  },
+  "development_regression": {
+    "mode": "OFFLINE_STRUCTURAL_PARTITION_ONLY",
+    "model_inference_executed": false,
+    "task172_evaluator_rerun": false,
+    "competence_evaluation": false,
+    "controller": {
+      "cases": 24,
+      "legacy_action_index_in_range": 24,
+      "partitioned_action_factor_valid": 24,
+      "partitioned_state_factor_valid": 23,
+      "state_projection_accepted": 0,
+      "mechanical_controller_serialized": 0
+    },
+    "finalizer": {
+      "cases": 16,
+      "valid_factors": {
+        "disposition": 16,
+        "answer_text": 12,
+        "claim_drafts": 7,
+        "citation_selections": 15,
+        "diagnosis": 0
+      },
+      "mechanical_final_serialized": 0
+    },
+    "interpretation": "Compatibility diagnostics only; legacy monolithic JSON was mechanically partitioned and is not native-v2 model output."
+  },
+  "future_unseen_suite_generator": {
+    "module": "src/av_trace_strong_baselines_v2/suite_generator.py",
+    "cli": "scripts/generate_granite_adapter_v2_suite.py",
+    "requires_caller_supplied_new_seed": true,
+    "consumed_seed_reuse_forbidden": true,
+    "public_private_split": true,
+    "seal_before_model_execution": true,
+    "planned_counts": {
+      "controller": 24,
+      "finalizer": 16,
+      "runtime_failure": 11
+    },
+    "fixture_domain": "PUBLIC_FICTIONAL_ABSTRACT_SHAPES_COLORS_CODES_SOUNDS",
+    "instantiated_in_task175": false,
+    "evaluated_in_task175": false,
+    "future_seed_recorded_in_task175": false
+  },
+  "validation": {
+    "focused_ruff": "PASS",
+    "focused_pytest": {
+      "status": "PASS",
+      "passed": 8
+    },
+    "compatibility_pytest": {
+      "status": "PASS",
+      "passed": 62,
+      "files": [
+        "tests/test_granite_native_adapter_v2.py",
+        "tests/test_strong_baseline_adapters.py",
+        "tests/test_granite33_8b_acquisition.py",
+        "tests/test_granite33_competence.py",
+        "tests/test_granite33_competence_audit.py"
+      ]
+    }
+  },
+  "non_claims": {
+    "granite_competence": false,
+    "task172_rerun": false,
+    "future_unseen_suite_created": false,
+    "future_unseen_suite_evaluated": false,
+    "scientific_execution_authorized": false
+  }
+}

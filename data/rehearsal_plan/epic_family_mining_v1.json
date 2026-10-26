@@ -1,0 +1,185 @@
+{
+  "authoritative_inputs": [
+    "orchestration/results/144_mini_pilot_candidate_scientific_audit.txt",
+    "orchestration/results/145_exogenous_restoration_protocol.txt",
+    "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+    "orchestration/results/153_semantic_av_source_prescreen_tooling.txt",
+    "orchestration/results/159_development_family_authoring_rehearsal.txt",
+    "orchestration/results/161_assembly_epic_access_preflight_v2.txt",
+    "orchestration/results/162_epic_wave1_exact_acquisition.txt",
+    "orchestration/results/163_epic_wave1_index_implementation.txt",
+    "Task 164 active index execution; result not available during implementation",
+    "src/av_trace_mini_pilot_families/"
+  ],
+  "canonical_input": {
+    "complete_before_mining": true,
+    "index_root": "data/restricted/epic_wave1_index_v1",
+    "required_artifacts": [
+      "segment_manifest.json",
+      "observation_manifest.json",
+      "full_timeline_index.json",
+      "resource_manifest.json",
+      "build_manifest.json"
+    ],
+    "required_build_status": "COMPLETE",
+    "required_checkpoint_count": 8,
+    "required_mode": "full",
+    "required_source_ids": [
+      "P27_101",
+      "P28_103"
+    ],
+    "smoke_forbidden": true
+  },
+  "created_date": "2026-09-28",
+  "execution_status": {
+    "active_index_output_or_checkpoints_touched": false,
+    "candidate_artifact_written_by_task165": false,
+    "canonical_index_complete_at_implementation_time": false,
+    "mining_executed_by_task165": false
+  },
+  "human_prescreen_gate": {
+    "ambient_authoring_requires_positive_human_source_event": true,
+    "candidate_interval_overlap_strengthens_scaffolding_but_is_not_validation": true,
+    "dynamic_visual_authoring_requires_positive_human_source_event": true,
+    "normal_mode_requires": [
+      "Task-153 plan with semantic_labels_present=false",
+      "completed trained-human annotation form",
+      "valid READY import report",
+      "source-level pass and exposure_recorded=true"
+    ],
+    "prescreen_assigns_necessity_or_h_tier": false
+  },
+  "initial_mining": {
+    "allowed_observations": [
+      "OpenCV motion/change and nonsemantic routing features",
+      "frozen CLIP embeddings queried with generic event prompts",
+      "frozen Whisper ASR observations",
+      "frozen AST AudioSet observations"
+    ],
+    "forbidden_inputs": [
+      "EPIC action segments and verb/noun labels",
+      "EPIC narrations and narration timestamps",
+      "EPIC-SOUNDS classes descriptions and timestamps",
+      "benchmark splits prior questions features and outcomes",
+      "any existing-annotation vault"
+    ],
+    "machine_scores_are_semantic_evidence": false,
+    "visual_dynamic_prompts": [
+      "hands manipulating an object",
+      "an object visibly changing state",
+      "a tool contacting or operating on an object",
+      "a container being opened closed filled or emptied",
+      "a sequence of physical actions in a kitchen"
+    ],
+    "visual_static_text_prompts": [
+      "readable text or captions overlaid on video",
+      "a static sign label package or screen",
+      "a whiteboard diagram or printed instruction",
+      "a mostly static title card or graphic overlay"
+    ]
+  },
+  "lead_structure": {
+    "arbitrary_distinct_interval_counting_forbidden": true,
+    "candidate_leads_per_source": 2,
+    "multi_hop_requires_compositional_claim_placeholders": true,
+    "one_hop_implies_near_local": true,
+    "quota_forcing_forbidden": true,
+    "slots": [
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 1,
+        "selection_role": "highest_scoring_local_event",
+        "source_group_id": "P27",
+        "source_id": "P27_101"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 2,
+        "selection_role": "compositional_event_sequence_or_local_fallback",
+        "source_group_id": "P27",
+        "source_id": "P27_101"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 1,
+        "selection_role": "highest_scoring_local_event",
+        "source_group_id": "P28",
+        "source_id": "P28_103"
+      },
+      {
+        "active_intervention_allowed": false,
+        "candidate_generated": false,
+        "h_tier_allowed": false,
+        "lead_ordinal": 2,
+        "selection_role": "compositional_event_sequence_or_local_fallback",
+        "source_group_id": "P28",
+        "source_id": "P28_103"
+      }
+    ],
+    "source_count": 2,
+    "total_candidate_leads": 4
+  },
+  "modes": {
+    "development_only": {
+      "complete_index_required": true,
+      "eligible_to_enter_gate_a": false,
+      "future_test_eligible": false,
+      "human_complete_prescreen_required": false,
+      "proposals_may_be_emitted": true
+    },
+    "gate_a_candidate_input": {
+      "complete_index_required": true,
+      "gate_a_decision_conferred": false,
+      "human_complete_prescreen_required": true
+    }
+  },
+  "observation_classes": [
+    "dynamic_nontext_visual",
+    "board_ocr_static_overlay",
+    "speech",
+    "non_speech"
+  ],
+  "output_boundary": {
+    "H_tiers": false,
+    "accepted_families": false,
+    "default_output_root": "data/restricted/epic_family_candidates_v1",
+    "scientific_execution_authorized": false,
+    "tiers": [
+      "P0_MACHINE_CANDIDATE",
+      "P1_MACHINE_CROSS_VALIDATED",
+      "P2_MACHINE_COUNTERFACTUAL_VALIDATED"
+    ]
+  },
+  "plan_hash": "sha256:4e95900f1f8cb253db6811e06384724ddaf9952cbe7840832cfbd6bcc22c2a71",
+  "plan_id": "AV-TRACE-EPIC-FAMILY-MINING-V1",
+  "plan_kind": "IMPLEMENTATION_REHEARSAL_NOT_EXECUTED",
+  "risk_flags_required": [
+    "repeated events and near duplicates",
+    "participant lineage leakage",
+    "kitchen identity leakage",
+    "transcript substitute",
+    "OCR/static/overlay substitute",
+    "narration substitute",
+    "existing-annotation vault prohibition"
+  ],
+  "schema_version": "av-trace.epic-family-mining/1.0",
+  "task145_template": {
+    "active_interventions": false,
+    "fixed_zero_based_action_index": 4,
+    "primary_contrast": "RESTORED_minus_NO_TRIGGER",
+    "r_n_public_checkpoint_bytes_identical": true,
+    "states": [
+      "CLEAN",
+      "BLOCKED",
+      "RESTORED",
+      "NO_TRIGGER"
+    ],
+    "template_only_not_executed": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:pilot-v4-excluded-calibration:1.0.0",
+  "title": "AV-TRACE pilot-v4 excluded blank calibration packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "calibration_id",
+    "packet_status",
+    "excluded_from_pilot_denominator",
+    "excluded_from_source_and_slot_counts",
+    "synthetic_text_only",
+    "source_id",
+    "source_group_id",
+    "reviewer",
+    "scenario",
+    "review_prompts",
+    "response",
+    "expected_decision_visible",
+    "not_a_human_decision",
+    "distribution_authorized",
+    "accepted_ses_created",
+    "h1_assigned",
+    "h2_assigned",
+    "gate_a_go"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "pilot_v4_excluded_calibration_packet"},
+    "calibration_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,199}$"
+    },
+    "packet_status": {"const": "DRAFT_NOT_DISTRIBUTABLE"},
+    "excluded_from_pilot_denominator": {"const": true},
+    "excluded_from_source_and_slot_counts": {"const": true},
+    "synthetic_text_only": {"const": true},
+    "source_id": {"type": "null"},
+    "source_group_id": {"type": "null"},
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "training_attested",
+        "started_at",
+        "completed_at"
+      ],
+      "properties": {
+        "reviewer_id": {"type": "null"},
+        "training_attested": {"const": false},
+        "started_at": {"type": "null"},
+        "completed_at": {"type": "null"}
+      }
+    },
+    "scenario": {"type": "string", "minLength": 1},
+    "review_prompts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "completion_status",
+        "finding",
+        "rationale",
+        "repair_actions"
+      ],
+      "properties": {
+        "completion_status": {"const": "not_started"},
+        "finding": {"const": "not_recorded"},
+        "rationale": {"const": ""},
+        "repair_actions": {"const": []}
+      }
+    },
+    "expected_decision_visible": {"const": false},
+    "not_a_human_decision": {"const": true},
+    "distribution_authorized": {"const": false},
+    "accepted_ses_created": {"const": false},
+    "h1_assigned": {"const": false},
+    "h2_assigned": {"const": false},
+    "gate_a_go": {"const": false}
+  }
+}

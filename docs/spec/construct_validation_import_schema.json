@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:construct-validation-import:1.0.0",
+  "title": "AV-TRACE construct-validation import report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "generated_at",
+    "decision",
+    "human_review_occurred",
+    "families",
+    "statistics",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "construct_validation_import_report"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "decision": {
+      "enum": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+        "CONSTRUCT_VALIDITY_REPAIR",
+        "CONSTRUCT_VALIDITY_NO_GO",
+        "INCOMPLETE_NO_HUMAN_DECISION"
+      ]
+    },
+    "human_review_occurred": {"type": "boolean"},
+    "families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "family_id",
+          "source_id",
+          "starting_tier",
+          "computed_tier",
+          "roles_complete",
+          "pre_adjudication_roles_complete",
+          "independence_pass",
+          "validator_agreement",
+          "critical_pass",
+          "pair_isolation_pass",
+          "minimality_necessity_pass",
+          "rights_privacy_safety_pass",
+          "adjudication_complete",
+          "saturation_audit_complete",
+          "saturation_pass",
+          "assignment_freeze_pass",
+          "source_exposure_ledger_pass",
+          "source_group_blindness_pass",
+          "new_sufficient_routes",
+          "outcome",
+          "reason_codes"
+        ],
+        "properties": {
+          "family_id": {"type": "string"},
+          "source_id": {"type": "string"},
+          "starting_tier": {
+            "enum": [
+              "P0_MACHINE_CANDIDATE",
+              "P1_MACHINE_CROSS_VALIDATED",
+              "P2_MACHINE_COUNTERFACTUAL_VALIDATED"
+            ]
+          },
+          "computed_tier": {
+            "enum": [
+              "P0_MACHINE_CANDIDATE",
+              "P1_MACHINE_CROSS_VALIDATED",
+              "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+              "H1_HUMAN_VALIDATED",
+              "H2_HUMAN_ADJUDICATED_GOLD"
+            ]
+          },
+          "roles_complete": {"type": "boolean"},
+          "pre_adjudication_roles_complete": {"type": "boolean"},
+          "independence_pass": {"type": "boolean"},
+          "validator_agreement": {"type": ["boolean", "null"]},
+          "critical_pass": {"type": "boolean"},
+          "pair_isolation_pass": {"type": "boolean"},
+          "minimality_necessity_pass": {"type": "boolean"},
+          "rights_privacy_safety_pass": {"type": "boolean"},
+          "adjudication_complete": {"type": "boolean"},
+          "saturation_audit_complete": {"type": "boolean"},
+          "saturation_pass": {"type": "boolean"},
+          "assignment_freeze_pass": {"type": "boolean"},
+          "source_exposure_ledger_pass": {"type": "boolean"},
+          "source_group_blindness_pass": {"type": "boolean"},
+          "new_sufficient_routes": {"type": "integer", "minimum": 0},
+          "outcome": {"enum": ["accept", "repair", "reject", "incomplete"]},
+          "reason_codes": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "statistics": {"type": "object"},
+    "errors": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

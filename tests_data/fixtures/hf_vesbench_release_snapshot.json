@@ -1,0 +1,15 @@
+{
+  "fixture_kind": "schema_faithful_release_identity",
+  "synthetic_values": true,
+  "provider": "huggingface",
+  "repository": {
+    "id": "buaaplay/VES-Bench",
+    "url": "https://huggingface.co/datasets/buaaplay/VES-Bench",
+    "revision": "15e8c7e000000000000000000000000000000000",
+    "technical_access_status": "public_ungated",
+    "media_rights_status": "unknown_hold",
+    "license_resolution_status": "unresolved",
+    "license_evidence": []
+  },
+  "rows": []
+}

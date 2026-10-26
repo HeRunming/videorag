@@ -1,0 +1,489 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:acquisition-manifest:0.2.0",
+  "title": "AV-TRACE fail-closed asset acquisition manifest",
+  "description": "One record per original source asset. Schema validity is necessary but not sufficient for a gate pass.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "manifest_revision",
+    "asset_id",
+    "dataset_id",
+    "source",
+    "acquisition",
+    "integrity",
+    "media",
+    "rights",
+    "privacy_safety",
+    "derived_artifacts",
+    "audit"
+  ],
+  "properties": {
+    "manifest_version": {"const": "0.2.0"},
+    "manifest_revision": {"type": "string", "minLength": 1},
+    "asset_id": {"$ref": "#/$defs/id"},
+    "dataset_id": {"$ref": "#/$defs/id"},
+    "source": {"$ref": "#/$defs/source"},
+    "acquisition": {"$ref": "#/$defs/acquisition"},
+    "integrity": {"$ref": "#/$defs/integrity"},
+    "media": {"$ref": "#/$defs/media"},
+    "rights": {"$ref": "#/$defs/rights"},
+    "privacy_safety": {"$ref": "#/$defs/privacy_safety"},
+    "derived_artifacts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "audit": {"$ref": "#/$defs/audit"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "audit": {
+            "properties": {
+              "gate_status": {
+                "enum": ["acquisition_approved", "annotation_approved", "public_release_approved"]
+              }
+            },
+            "required": ["gate_status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "acquisition": {
+            "properties": {
+              "status": {"enum": ["planned", "completed"]}
+            }
+          },
+          "integrity": {
+            "properties": {
+              "content_sha256": {"$ref": "#/$defs/sha256"},
+              "byte_size": {"type": "integer", "minimum": 1}
+            }
+          },
+          "rights": {
+            "properties": {
+              "copyright_basis": {
+                "enum": [
+                  "us_federal_work",
+                  "public_domain_other",
+                  "cc0",
+                  "open_license",
+                  "direct_permission",
+                  "restricted_agreement"
+                ]
+              },
+              "acquisition_authority": {"const": "allowed"},
+              "local_processing_authority": {"const": "allowed"},
+              "review": {
+                "properties": {"outcome": {"const": "approved"}}
+              },
+              "decisions": {
+                "properties": {
+                  "acquisition": {"const": "allowed"},
+                  "processing": {"const": "allowed"},
+                  "derivative_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "annotation_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "transcript_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "raw_media_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "commercial_use": {"enum": ["allowed", "prohibited", "not_applicable"]}
+                }
+              },
+              "embedded_components": {
+                "properties": {
+                  "music": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "subtitles": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "third_party_inserts": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "logos_and_marks": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "identifiable_people": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "minors": {"enum": ["allowed", "prohibited", "not_applicable"]}
+                }
+              }
+            }
+          },
+          "privacy_safety": {
+            "properties": {"review_status": {"const": "approved"}}
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "audit": {
+            "properties": {"gate_status": {"const": "annotation_approved"}},
+            "required": ["gate_status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rights": {
+            "properties": {
+              "decisions": {
+                "properties": {
+                  "derivative_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "annotation_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "transcript_release": {"enum": ["allowed", "prohibited", "not_applicable"]},
+                  "raw_media_release": {"enum": ["allowed", "prohibited", "not_applicable"]}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "audit": {
+            "properties": {"gate_status": {"const": "public_release_approved"}},
+            "required": ["gate_status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rights": {
+            "properties": {
+              "decisions": {
+                "properties": {
+                  "derivative_release": {"const": "allowed"},
+                  "annotation_release": {"const": "allowed"},
+                  "transcript_release": {"const": "allowed"},
+                  "raw_media_release": {"const": "allowed"}
+                }
+              },
+              "embedded_components": {
+                "properties": {
+                  "music": {"enum": ["allowed", "not_applicable"]},
+                  "subtitles": {"enum": ["allowed", "not_applicable"]},
+                  "third_party_inserts": {"enum": ["allowed", "not_applicable"]},
+                  "logos_and_marks": {"enum": ["allowed", "not_applicable"]},
+                  "identifiable_people": {"enum": ["allowed", "not_applicable"]},
+                  "minors": {"enum": ["allowed", "not_applicable"]}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "decision": {
+      "enum": ["allowed", "prohibited", "unknown_hold", "not_applicable"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_url",
+        "source_identifier",
+        "source_revision",
+        "publisher",
+        "rightsholder_or_status",
+        "source_family"
+      ],
+      "properties": {
+        "canonical_url": {"type": "string", "format": "uri"},
+        "source_identifier": {"type": "string", "minLength": 1},
+        "source_revision": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "rightsholder_or_status": {"type": "string", "minLength": 1},
+        "source_family": {
+          "enum": ["NASA", "NARA", "NOAA", "WIKIMEDIA_COMMONS", "DIRECT_GRANT", "COMPATIBILITY_ONLY"]
+        }
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "method",
+        "authority_basis",
+        "authority_evidence_uri",
+        "authority_evidence_hash",
+        "planned_or_actual_at"
+      ],
+      "properties": {
+        "status": {"enum": ["planned", "completed", "prohibited", "unknown_hold"]},
+        "method": {
+          "enum": [
+            "official_direct_download",
+            "official_dataset_tooling",
+            "platform_authorized_api_or_export",
+            "rightsholder_delivery",
+            "none"
+          ]
+        },
+        "authority_basis": {"type": "string", "minLength": 1},
+        "authority_evidence_uri": {"type": "string", "format": "uri"},
+        "authority_evidence_hash": {"$ref": "#/$defs/sha256"},
+        "planned_or_actual_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_hash_plan", "content_sha256", "byte_size", "probe_version"],
+      "properties": {
+        "content_hash_plan": {"const": "sha256_of_exact_acquired_bytes"},
+        "content_sha256": {
+          "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+        },
+        "byte_size": {"type": ["integer", "null"], "minimum": 1},
+        "probe_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "duration_s",
+        "has_video",
+        "has_audio",
+        "has_speech",
+        "has_ambient_audio",
+        "embedded_content_reviewed"
+      ],
+      "properties": {
+        "duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "has_video": {"const": true},
+        "has_audio": {"const": true},
+        "has_speech": {"type": "boolean"},
+        "has_ambient_audio": {"type": "boolean"},
+        "embedded_content_reviewed": {"type": "boolean"}
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_decision_id",
+        "copyright_basis",
+        "acquisition_authority",
+        "local_processing_authority",
+        "license_or_grant",
+        "evidence_snapshot",
+        "decisions",
+        "embedded_components",
+        "review"
+      ],
+      "properties": {
+        "rights_decision_id": {"$ref": "#/$defs/id"},
+        "copyright_basis": {
+          "enum": [
+            "us_federal_work",
+            "public_domain_other",
+            "cc0",
+            "open_license",
+            "direct_permission",
+            "restricted_agreement",
+            "unknown_hold"
+          ]
+        },
+        "acquisition_authority": {"$ref": "#/$defs/decision"},
+        "local_processing_authority": {"$ref": "#/$defs/decision"},
+        "license_or_grant": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "version", "licensor_or_grantor", "uri", "agreement_id", "scope"],
+          "properties": {
+            "name": {"type": "string", "minLength": 1},
+            "version": {"type": "string", "minLength": 1},
+            "licensor_or_grantor": {"type": "string", "minLength": 1},
+            "uri": {"type": "string", "format": "uri"},
+            "agreement_id": {"type": ["string", "null"]},
+            "scope": {"type": "string", "minLength": 1}
+          }
+        },
+        "evidence_snapshot": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["captured_at", "uri", "sha256"],
+          "properties": {
+            "captured_at": {"type": "string", "format": "date-time"},
+            "uri": {"type": "string", "format": "uri"},
+            "sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "decisions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "acquisition",
+            "processing",
+            "derivative_release",
+            "annotation_release",
+            "transcript_release",
+            "raw_media_release",
+            "commercial_use"
+          ],
+          "properties": {
+            "acquisition": {"$ref": "#/$defs/decision"},
+            "processing": {"$ref": "#/$defs/decision"},
+            "derivative_release": {"$ref": "#/$defs/decision"},
+            "annotation_release": {"$ref": "#/$defs/decision"},
+            "transcript_release": {"$ref": "#/$defs/decision"},
+            "raw_media_release": {"$ref": "#/$defs/decision"},
+            "commercial_use": {"$ref": "#/$defs/decision"}
+          }
+        },
+        "embedded_components": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "music",
+            "subtitles",
+            "third_party_inserts",
+            "logos_and_marks",
+            "identifiable_people",
+            "minors"
+          ],
+          "properties": {
+            "music": {"$ref": "#/$defs/decision"},
+            "subtitles": {"$ref": "#/$defs/decision"},
+            "third_party_inserts": {"$ref": "#/$defs/decision"},
+            "logos_and_marks": {"$ref": "#/$defs/decision"},
+            "identifiable_people": {"$ref": "#/$defs/decision"},
+            "minors": {"$ref": "#/$defs/decision"}
+          }
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewer_id", "reviewed_at", "jurisdiction", "outcome", "notes"],
+          "properties": {
+            "reviewer_id": {"$ref": "#/$defs/id"},
+            "reviewed_at": {"type": "string", "format": "date-time"},
+            "jurisdiction": {"type": "string", "minLength": 1},
+            "outcome": {"enum": ["approved", "rejected", "unknown_hold"]},
+            "notes": {"type": "string"}
+          }
+        }
+      }
+    },
+    "privacy_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_status",
+        "reviewer_id",
+        "reviewed_at",
+        "contains_identifiable_people",
+        "contains_minors",
+        "contains_sensitive_content",
+        "mitigations"
+      ],
+      "properties": {
+        "review_status": {"enum": ["approved", "rejected", "unknown_hold"]},
+        "reviewer_id": {"$ref": "#/$defs/id"},
+        "reviewed_at": {"type": "string", "format": "date-time"},
+        "contains_identifiable_people": {"type": "boolean"},
+        "contains_minors": {"type": "boolean"},
+        "contains_sensitive_content": {"type": "boolean"},
+        "mitigations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_type",
+        "source_asset_id",
+        "uri",
+        "sha256",
+        "created_at",
+        "tool_or_protocol",
+        "rights_basis",
+        "release_decision",
+        "release_audience",
+        "evidence_snapshot_hash",
+        "contains_personal_data",
+        "substitution_risk_reviewed"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/id"},
+        "artifact_type": {
+          "enum": ["clip", "frame", "audio", "transcript", "subtitle", "caption", "annotation", "feature", "embedding", "index"]
+        },
+        "source_asset_id": {"$ref": "#/$defs/id"},
+        "uri": {"type": "string", "format": "uri"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "tool_or_protocol": {"type": "string", "minLength": 1},
+        "rights_basis": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["license_or_grant_name", "version", "licensor_or_grantor", "uri", "scope"],
+          "properties": {
+            "license_or_grant_name": {"type": "string", "minLength": 1},
+            "version": {"type": "string", "minLength": 1},
+            "licensor_or_grantor": {"type": "string", "minLength": 1},
+            "uri": {"type": "string", "format": "uri"},
+            "scope": {"type": "string", "minLength": 1}
+          }
+        },
+        "release_decision": {"$ref": "#/$defs/decision"},
+        "release_audience": {"enum": ["public", "registered_researchers", "internal_only", "none"]},
+        "evidence_snapshot_hash": {"$ref": "#/$defs/sha256"},
+        "contains_personal_data": {"type": "boolean"},
+        "substitution_risk_reviewed": {"type": "boolean"}
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_created_at",
+        "record_updated_at",
+        "created_by",
+        "updated_by",
+        "gate_status",
+        "change_log"
+      ],
+      "properties": {
+        "record_created_at": {"type": "string", "format": "date-time"},
+        "record_updated_at": {"type": "string", "format": "date-time"},
+        "created_by": {"$ref": "#/$defs/id"},
+        "updated_by": {"$ref": "#/$defs/id"},
+        "gate_status": {
+          "enum": [
+            "metadata_only",
+            "acquisition_approved",
+            "annotation_approved",
+            "public_release_approved",
+            "rejected",
+            "unknown_hold"
+          ]
+        },
+        "change_log": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["changed_at", "changed_by", "summary"],
+            "properties": {
+              "changed_at": {"type": "string", "format": "date-time"},
+              "changed_by": {"$ref": "#/$defs/id"},
+              "summary": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    }
+  }
+}

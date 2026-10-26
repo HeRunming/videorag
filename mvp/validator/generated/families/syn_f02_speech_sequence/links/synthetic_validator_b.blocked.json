@@ -1,0 +1,23 @@
+{
+  "backend_manifest_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+  "backend_version": "synthetic-fixed-v1",
+  "episode_id": "syn_f02_speech_sequence.blocked",
+  "family_annotation_version": "synthetic-v1",
+  "family_hash": "sha256:869c8e5b7a524c5e3ed99fa06f81ad8ed8916fe3d38a3fc6547fb17f2fe90ac8",
+  "family_id": "syn_f02_speech_sequence",
+  "family_path": "families/syn_f02_speech_sequence/family.snapshot.json",
+  "generated_at": "2026-09-06T00:00:00Z",
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "index_version": "synthetic-1.0.0",
+  "intervention_manifest_hash": "sha256:262d3d7f50bceefbc823acf7bacf23403ff7244f0351e84f2a5e74e0207b86db",
+  "link_id": "link.synthetic_validator_b.syn_f02_speech_sequence.blocked",
+  "schema_version": "1.0.0",
+  "search_plan_id": "direct_observe_reverse_chronological",
+  "source_manifest_hash": "sha256:a89408a822de37b2b766ac64200bed34d0b63b5cff548a22db97487539605a88",
+  "state_role": "BLOCKED",
+  "trajectory_hash": "sha256:2bbc233efa04fdd7e720409efb28d9d50388a86d30af16767430d1b05de69441",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f02_speech_sequence.blocked",
+  "trajectory_path": "families/syn_f02_speech_sequence/trajectories/synthetic_validator_b.blocked.json",
+  "trigger_type": "none",
+  "validator_id": "synthetic_validator_b"
+}

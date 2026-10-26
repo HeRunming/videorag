@@ -1,0 +1,2102 @@
+{
+  "adapter_schema_version": "av-trace.granite-native-adapter/2.0",
+  "binding": {
+    "controller": {
+      "processor_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+      "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "role": "TOOL_CONTROLLER_BACKBONE",
+      "tokenizer_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+    },
+    "finalizer": {
+      "processor_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "repo_id": "ibm-granite/granite-3.3-8b-instruct",
+      "revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b",
+      "role": "GROUNDED_FINALIZER",
+      "tokenizer_revision": "51dd4bc2ade4059a6bd87649d68aa11e4fb2529b"
+    },
+    "same_exact_snapshot_required": true
+  },
+  "budget": {
+    "best_of_n": 1,
+    "context_cap_processor_tokens": 32768,
+    "cost_limit": 12.0,
+    "max_canonical_actions_including_finalize": 10,
+    "max_model_invocations_including_repair": 12,
+    "max_new_tokens_per_call": 512,
+    "schema_only_repairs": 1,
+    "search_top_k": 5,
+    "semantic_repairs": 0,
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "g2-controller-001",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "spoken alias for invented tile lumen-01-58823844",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "non-speech cue near invented tile lumen-01-58823844",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible emblem on invented tile lumen-01-58823844",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.001",
+            "description": "Visible emblem on an invented tile."
+          }
+        ],
+        "question": "Which visible emblem belongs to invented tile lumen-01-58823844?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_vision"
+    },
+    {
+      "case_id": "g2-controller-002",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "background pulse by invented relay cipher-01-2001892b",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "voiced call-sign for invented relay cipher-01-2001892b",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible relay card cipher-01-2001892b",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.002",
+            "description": "Voiced call-sign for an invented relay."
+          }
+        ],
+        "question": "Which invented call-sign is voiced for relay cipher-01-2001892b?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_speech"
+    },
+    {
+      "case_id": "g2-controller-003",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "non-speech cue following marker echo-01-daa69200",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "spoken description of cue echo-01-daa69200",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible marker event echo-01-daa69200",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.003",
+            "description": "Non-speech cue after an invented marker."
+          }
+        ],
+        "question": "Which non-speech cue follows invented marker echo-01-daa69200?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_ambient"
+    },
+    {
+      "case_id": "g2-controller-004",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 34.0,
+                "start_s": 33.0
+              }
+            },
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "alternate distant view of frame glyph-01-f29ad722",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [
+          {
+            "citable": false,
+            "interval": {
+              "end_s": 34.0,
+              "start_s": 33.0
+            },
+            "modality": "vision",
+            "pointer_id": "public.pointer.g2.1"
+          }
+        ],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.004",
+            "description": "Shape inside an invented frame."
+          }
+        ],
+        "question": "Which shape is drawn inside invented frame glyph-01-f29ad722?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "observe_pointer"
+    },
+    {
+      "case_id": "g2-controller-005",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "alternate motto route murmur-01-7d43b330",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.005",
+            "description": "Voiced motto in an invented chamber."
+          }
+        ],
+        "question": "Which invented motto is voiced in chamber murmur-01-7d43b330?",
+        "recent_public_history": [
+          {
+            "action": {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "motto in invented chamber murmur-01-7d43b330",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            "response": {
+              "error": {
+                "code": "CHANNEL_UNAVAILABLE",
+                "retryable": true
+              },
+              "status": "channel_unavailable"
+            }
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "blocked_status"
+    },
+    {
+      "case_id": "g2-controller-006",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "reacquire restored passcode relay-01-cb4c7547",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.006",
+            "description": "Passcode on a restored invented route."
+          }
+        ],
+        "question": "Which invented passcode becomes reachable after checkpoint relay-01-cb4c7547?",
+        "recent_public_history": [
+          {
+            "cost": 0.0,
+            "event_type": "protocol_checkpoint",
+            "event_version": "2.0.0",
+            "message": "Scheduled protocol checkpoint completed."
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "restoration_reacquire"
+    },
+    {
+      "case_id": "g2-controller-007",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.007",
+            "description": "Temporal order in an invented cadence."
+          }
+        ],
+        "question": "Which invented cadence precedes marker cadence-01-cbc3ba37?",
+        "recent_public_history": [
+          {
+            "cost": 0.0,
+            "event_type": "protocol_checkpoint",
+            "event_version": "2.0.0",
+            "message": "Scheduled protocol checkpoint completed."
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "no_trigger"
+    },
+    {
+      "case_id": "g2-controller-008",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "additional view of completed card 1",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 1.0,
+              "start_s": 0.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.ready.1",
+            "payload": {
+              "text": "The completed invented card states the paired mark umber chevron."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.008",
+            "description": "Paired mark on a completed invented card."
+          }
+        ],
+        "question": "Which paired mark is stated for completed invented card 1?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "finalize_ready"
+    },
+    {
+      "case_id": "g2-controller-009",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible emblem on invented tile lumen-02-b72c0b32",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "spoken alias for invented tile lumen-02-b72c0b32",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "non-speech cue near invented tile lumen-02-b72c0b32",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.009",
+            "description": "Visible emblem on an invented tile."
+          }
+        ],
+        "question": "Which visible emblem belongs to invented tile lumen-02-b72c0b32?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_vision"
+    },
+    {
+      "case_id": "g2-controller-010",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible relay card cipher-02-32f7379f",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "background pulse by invented relay cipher-02-32f7379f",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "voiced call-sign for invented relay cipher-02-32f7379f",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.010",
+            "description": "Voiced call-sign for an invented relay."
+          }
+        ],
+        "question": "Which invented call-sign is voiced for relay cipher-02-32f7379f?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_speech"
+    },
+    {
+      "case_id": "g2-controller-011",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "non-speech cue following marker echo-02-5249c9a1",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "spoken description of cue echo-02-5249c9a1",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible marker event echo-02-5249c9a1",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.011",
+            "description": "Non-speech cue after an invented marker."
+          }
+        ],
+        "question": "Which non-speech cue follows invented marker echo-02-5249c9a1?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_ambient"
+    },
+    {
+      "case_id": "g2-controller-012",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "alternate distant view of frame glyph-02-6eb97968",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 37.0,
+                "start_s": 36.0
+              }
+            },
+            "tool": "inspect_clip"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [
+          {
+            "citable": false,
+            "interval": {
+              "end_s": 37.0,
+              "start_s": 36.0
+            },
+            "modality": "vision",
+            "pointer_id": "public.pointer.g2.2"
+          }
+        ],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.012",
+            "description": "Shape inside an invented frame."
+          }
+        ],
+        "question": "Which shape is drawn inside invented frame glyph-02-6eb97968?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "observe_pointer"
+    },
+    {
+      "case_id": "g2-controller-013",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "alternate motto route murmur-02-0e7c4bd2",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.013",
+            "description": "Voiced motto in an invented chamber."
+          }
+        ],
+        "question": "Which invented motto is voiced in chamber murmur-02-0e7c4bd2?",
+        "recent_public_history": [
+          {
+            "action": {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "motto in invented chamber murmur-02-0e7c4bd2",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            "response": {
+              "error": {
+                "code": "CHANNEL_UNAVAILABLE",
+                "retryable": true
+              },
+              "status": "channel_unavailable"
+            }
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "blocked_status"
+    },
+    {
+      "case_id": "g2-controller-014",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "reacquire restored passcode relay-02-4159661d",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.014",
+            "description": "Passcode on a restored invented route."
+          }
+        ],
+        "question": "Which invented passcode becomes reachable after checkpoint relay-02-4159661d?",
+        "recent_public_history": [
+          {
+            "cost": 0.0,
+            "event_type": "protocol_checkpoint",
+            "event_version": "2.0.0",
+            "message": "Scheduled protocol checkpoint completed."
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "restoration_reacquire"
+    },
+    {
+      "case_id": "g2-controller-015",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.015",
+            "description": "Temporal order in an invented cadence."
+          }
+        ],
+        "question": "Which invented cadence precedes marker cadence-02-359c20be?",
+        "recent_public_history": [
+          {
+            "cost": 0.0,
+            "event_type": "protocol_checkpoint",
+            "event_version": "2.0.0",
+            "message": "Scheduled protocol checkpoint completed."
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "no_trigger"
+    },
+    {
+      "case_id": "g2-controller-016",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "additional view of completed card 2",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 4.0,
+              "start_s": 3.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.ready.2",
+            "payload": {
+              "text": "The completed invented card states the paired mark violet heptagon."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.016",
+            "description": "Paired mark on a completed invented card."
+          }
+        ],
+        "question": "Which paired mark is stated for completed invented card 2?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "finalize_ready"
+    },
+    {
+      "case_id": "g2-controller-017",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "non-speech cue near invented tile lumen-03-fea463c1",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "spoken alias for invented tile lumen-03-fea463c1",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible emblem on invented tile lumen-03-fea463c1",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.017",
+            "description": "Visible emblem on an invented tile."
+          }
+        ],
+        "question": "Which visible emblem belongs to invented tile lumen-03-fea463c1?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_vision"
+    },
+    {
+      "case_id": "g2-controller-018",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "voiced call-sign for invented relay cipher-03-51c7136d",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "background pulse by invented relay cipher-03-51c7136d",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible relay card cipher-03-51c7136d",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.018",
+            "description": "Voiced call-sign for an invented relay."
+          }
+        ],
+        "question": "Which invented call-sign is voiced for relay cipher-03-51c7136d?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_speech"
+    },
+    {
+      "case_id": "g2-controller-019",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "visible marker event echo-03-d8263228",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "non-speech cue following marker echo-03-d8263228",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_ambient_audio"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "spoken description of cue echo-03-d8263228",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.019",
+            "description": "Non-speech cue after an invented marker."
+          }
+        ],
+        "question": "Which non-speech cue follows invented marker echo-03-d8263228?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "route_ambient"
+    },
+    {
+      "case_id": "g2-controller-020",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "include_audio": false,
+              "include_video": true,
+              "interval": {
+                "end_s": 40.0,
+                "start_s": 39.0
+              }
+            },
+            "tool": "inspect_clip"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "alternate distant view of frame glyph-03-3f79676c",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [
+          {
+            "citable": false,
+            "interval": {
+              "end_s": 40.0,
+              "start_s": 39.0
+            },
+            "modality": "vision",
+            "pointer_id": "public.pointer.g2.3"
+          }
+        ],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.020",
+            "description": "Shape inside an invented frame."
+          }
+        ],
+        "question": "Which shape is drawn inside invented frame glyph-03-3f79676c?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "observe_pointer"
+    },
+    {
+      "case_id": "g2-controller-021",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "alternate motto route murmur-03-0d5f1bff",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.021",
+            "description": "Voiced motto in an invented chamber."
+          }
+        ],
+        "question": "Which invented motto is voiced in chamber murmur-03-0d5f1bff?",
+        "recent_public_history": [
+          {
+            "action": {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "motto in invented chamber murmur-03-0d5f1bff",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 120.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            "response": {
+              "error": {
+                "code": "CHANNEL_UNAVAILABLE",
+                "retryable": true
+              },
+              "status": "channel_unavailable"
+            }
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "blocked_status"
+    },
+    {
+      "case_id": "g2-controller-022",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {
+              "channels": [
+                "speech"
+              ]
+            },
+            "tool": "get_channel_status"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "reacquire restored passcode relay-03-166ded90",
+              "speaker_hint": null,
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_speech"
+          },
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.022",
+            "description": "Passcode on a restored invented route."
+          }
+        ],
+        "question": "Which invented passcode becomes reachable after checkpoint relay-03-166ded90?",
+        "recent_public_history": [
+          {
+            "cost": 0.0,
+            "event_type": "protocol_checkpoint",
+            "event_version": "2.0.0",
+            "message": "Scheduled protocol checkpoint completed."
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "restoration_reacquire"
+    },
+    {
+      "case_id": "g2-controller-023",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          }
+        ],
+        "controller_policy": "react_v2",
+        "known_pointers": [],
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.023",
+            "description": "Temporal order in an invented cadence."
+          }
+        ],
+        "question": "Which invented cadence precedes marker cadence-03-5bba3bcb?",
+        "recent_public_history": [
+          {
+            "cost": 0.0,
+            "event_type": "protocol_checkpoint",
+            "event_version": "2.0.0",
+            "message": "Scheduled protocol checkpoint completed."
+          }
+        ],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "no_trigger"
+    },
+    {
+      "case_id": "g2-controller-024",
+      "case_type": "controller",
+      "public_input": {
+        "action_menu": [
+          {
+            "arguments": {},
+            "tool": "finalize"
+          },
+          {
+            "arguments": {
+              "exclude_result_ids": [],
+              "query": "additional view of completed card 3",
+              "time_range": {
+                "end_s": 120.0,
+                "start_s": 0.0
+              },
+              "top_k": 5
+            },
+            "tool": "search_visual"
+          }
+        ],
+        "controller_policy": "sufficiency_v2",
+        "known_pointers": [],
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 7.0,
+              "start_s": 6.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.ready.3",
+            "payload": {
+              "text": "The completed invented card states the paired mark indigo crescent."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.controller.024",
+            "description": "Paired mark on a completed invented card."
+          }
+        ],
+        "question": "Which paired mark is stated for completed invented card 3?",
+        "recent_public_history": [],
+        "remaining_budget": {
+          "actions_remaining": 6,
+          "cost_remaining": 8.0
+        },
+        "task": "choose_next_action_v2"
+      },
+      "stratum": "finalize_ready"
+    },
+    {
+      "case_id": "g2-finalizer-001",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 1.0,
+              "start_s": 0.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.final.001",
+            "payload": {
+              "text": "The recorded invented mosaic for sealed card 1 is amber crescent."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.001",
+            "description": "The recorded invented mosaic for this card."
+          }
+        ],
+        "question": "Which invented mosaic is recorded for sealed card 1?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-002",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 3.0,
+              "start_s": 2.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "public.obs.g2.final.002",
+            "payload": {
+              "text": "The recorded invented call-sign for sealed card 2 is cinder path."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.002",
+            "description": "The recorded invented call-sign for this card."
+          }
+        ],
+        "question": "Which invented call-sign is recorded for sealed card 2?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-003",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 5.0,
+              "start_s": 4.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "public.obs.g2.final.003",
+            "payload": {
+              "text": "The recorded invented tone-pattern for sealed card 3 is three wooden knocks."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.003",
+            "description": "The recorded invented tone-pattern for this card."
+          }
+        ],
+        "question": "Which invented tone-pattern is recorded for sealed card 3?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-004",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 7.0,
+              "start_s": 6.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.final.004",
+            "payload": {
+              "text": "The recorded invented mosaic for sealed card 4 is cerulean heptagon."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.004",
+            "description": "The recorded invented mosaic for this card."
+          }
+        ],
+        "question": "Which invented mosaic is recorded for sealed card 4?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-005",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 9.0,
+              "start_s": 8.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "public.obs.g2.final.005",
+            "payload": {
+              "text": "The recorded invented call-sign for sealed card 5 is frost key."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.005",
+            "description": "The recorded invented call-sign for this card."
+          }
+        ],
+        "question": "Which invented call-sign is recorded for sealed card 5?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-006",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 11.0,
+              "start_s": 10.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "public.obs.g2.final.006",
+            "payload": {
+              "text": "The recorded invented tone-pattern for sealed card 6 is one rising tone."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.006",
+            "description": "The recorded invented tone-pattern for this card."
+          }
+        ],
+        "question": "Which invented tone-pattern is recorded for sealed card 6?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-007",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 13.0,
+              "start_s": 12.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.final.007",
+            "payload": {
+              "text": "The recorded invented mosaic for sealed card 7 is violet trapezoid."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.007",
+            "description": "The recorded invented mosaic for this card."
+          }
+        ],
+        "question": "Which invented mosaic is recorded for sealed card 7?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-008",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "oracle_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 15.0,
+              "start_s": 14.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "public.obs.g2.final.008",
+            "payload": {
+              "text": "The recorded invented call-sign for sealed card 8 is harbor six."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.008",
+            "description": "The recorded invented call-sign for this card."
+          }
+        ],
+        "question": "Which invented call-sign is recorded for sealed card 8?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "oracle_complete"
+    },
+    {
+      "case_id": "g2-finalizer-009",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "restoration_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 17.0,
+              "start_s": 16.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "public.obs.g2.final.009",
+            "payload": {
+              "text": "The recorded invented tone-pattern for sealed card 9 is a paper rustle."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.009",
+            "description": "The recorded invented tone-pattern for this card."
+          }
+        ],
+        "question": "Which invented tone-pattern is recorded for sealed card 9?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "restoration_complete"
+    },
+    {
+      "case_id": "g2-finalizer-010",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "restoration_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 19.0,
+              "start_s": 18.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "public.obs.g2.final.010",
+            "payload": {
+              "text": "The recorded invented mosaic for sealed card 10 is umber spiral."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.010",
+            "description": "The recorded invented mosaic for this card."
+          }
+        ],
+        "question": "Which invented mosaic is recorded for sealed card 10?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "restoration_complete"
+    },
+    {
+      "case_id": "g2-finalizer-011",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "restoration_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 21.0,
+              "start_s": 20.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "public.obs.g2.final.011",
+            "payload": {
+              "text": "The recorded invented call-sign for sealed card 11 is glimmer arc."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.011",
+            "description": "The recorded invented call-sign for this card."
+          }
+        ],
+        "question": "Which invented call-sign is recorded for sealed card 11?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "restoration_complete"
+    },
+    {
+      "case_id": "g2-finalizer-012",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "restoration_complete",
+        "observed_evidence": [
+          {
+            "interval": {
+              "end_s": 23.0,
+              "start_s": 22.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "public.obs.g2.final.012",
+            "payload": {
+              "text": "The recorded invented tone-pattern for sealed card 12 is four soft taps."
+            }
+          }
+        ],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.012",
+            "description": "The recorded invented tone-pattern for this card."
+          }
+        ],
+        "question": "Which invented tone-pattern is recorded for sealed card 12?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "restoration_complete"
+    },
+    {
+      "case_id": "g2-finalizer-013",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "partial_evidence",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.013",
+            "description": "The missing invented voiced call-sign."
+          }
+        ],
+        "question": "Which missing invented voiced call-sign completes sealed card 13?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "blocked_partial"
+    },
+    {
+      "case_id": "g2-finalizer-014",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "partial_evidence",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.014",
+            "description": "The missing invented visible marker event."
+          }
+        ],
+        "question": "Which missing invented visible marker event completes sealed card 14?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "blocked_partial"
+    },
+    {
+      "case_id": "g2-finalizer-015",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "partial_evidence",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.015",
+            "description": "The missing invented non-speech tone-pattern."
+          }
+        ],
+        "question": "Which missing invented non-speech tone-pattern completes sealed card 15?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "blocked_partial"
+    },
+    {
+      "case_id": "g2-finalizer-016",
+      "case_type": "finalizer",
+      "public_input": {
+        "condition": "partial_evidence",
+        "observed_evidence": [],
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.final.016",
+            "description": "The missing invented visible marker order."
+          }
+        ],
+        "question": "Which missing invented visible marker order completes sealed card 16?",
+        "task": "grounded_finalization_v2"
+      },
+      "stratum": "blocked_partial"
+    },
+    {
+      "case_id": "g2-runtime-001",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "malformed_action_factor",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.1",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 1?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "malformed_action_factor"
+    },
+    {
+      "case_id": "g2-runtime-002",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "malformed_state_factor",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.2",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 2?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "malformed_state_factor"
+    },
+    {
+      "case_id": "g2-runtime-003",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "malformed_claim_factor",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.3",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 3?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "malformed_claim_factor"
+    },
+    {
+      "case_id": "g2-runtime-004",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "malformed_citation_factor",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.4",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 4?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "malformed_citation_factor"
+    },
+    {
+      "case_id": "g2-runtime-005",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "wrong_snapshot",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.5",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 5?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "wrong_snapshot"
+    },
+    {
+      "case_id": "g2-runtime-006",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "provider_failure",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.6",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 6?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "provider_failure"
+    },
+    {
+      "case_id": "g2-runtime-007",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "timeout",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.7",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 7?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "timeout"
+    },
+    {
+      "case_id": "g2-runtime-008",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "process_failure",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.8",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 8?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "process_failure"
+    },
+    {
+      "case_id": "g2-runtime-009",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "oom",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.9",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 9?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "oom"
+    },
+    {
+      "case_id": "g2-runtime-010",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "budget_exhausted",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.10",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 10?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "budget_exhausted"
+    },
+    {
+      "case_id": "g2-runtime-011",
+      "case_type": "runtime_failure",
+      "public_input": {
+        "injected_public_fixture": "cross_factor_semantic_retry",
+        "public_claim_slots": [
+          {
+            "claim_handle": "public.slot.failure.11",
+            "description": "An invented runtime sentinel."
+          }
+        ],
+        "question": "Which invented sentinel belongs to runtime fixture 11?",
+        "task": "granite_v2_failure_injection"
+      },
+      "stratum": "cross_factor_semantic_retry"
+    }
+  ],
+  "content_boundary": {
+    "fictional_generated_primitives_only": true,
+    "model_results_present": false,
+    "private_labels_present": false,
+    "real_source_content": false,
+    "scientific_family_content": false
+  },
+  "execution_status": "SEALED_NOT_RUN",
+  "freeze_label": "GRANITE_ADAPTER_V2_HOLDOUT_2026-10-02",
+  "generated_date": "2026-10-02",
+  "prompt_policy": {
+    "cross_factor_retries": 0,
+    "maximum_schema_only_retries_per_factor": 1,
+    "private_labels_exposed": false,
+    "public_projection_only": true,
+    "schema_version": "av-trace.granite-v2-prompt-policy/1.0",
+    "semantic_retries": 0,
+    "sha256": "sha256:7a0cac94f09e31952d1688e0a886e9405179f3b7a30a116ccb1c4cbebff72e18"
+  },
+  "schema_version": "av-trace.granite-v2-public-suite/2.0",
+  "suite_id": "granite-v2-fictional-holdout-20261002",
+  "thresholds": {
+    "blocked_partial_correct_abstention_min": 0.8,
+    "correct_first_actions_each_stratum_min": 0.75,
+    "correct_first_actions_overall_min": 0.85,
+    "deterministic_answer_substitutions_max": 0,
+    "deterministic_parser_schema_failure_fixtures": 1.0,
+    "each_state_component_min": 0.8,
+    "exact_six_field_state_min": 0.75,
+    "identity_and_injected_failure_fail_closed": 1.0,
+    "minimum_cases": 48,
+    "oracle_supported_answer_min": 0.8,
+    "private_field_exposures_max": 0,
+    "restoration_reacquisition_min": 0.8,
+    "unsupported_required_claims_max": 0,
+    "valid_structured_model_calls_min": 0.9
+  }
+}

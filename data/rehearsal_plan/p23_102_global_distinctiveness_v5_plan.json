@@ -1,0 +1,762 @@
+{
+  "ambient_uniqueness_policy": "global exact tuple uniqueness; fail closed",
+  "budget_policy": {
+    "additional_distinctiveness_model_calls": 0,
+    "ambient_structured_call_per_component": 1,
+    "composition_relation_call_per_sample": 1,
+    "visual_structured_call_per_component": 1
+  },
+  "cardinality_policy": {
+    "empty_input_behavior": "FAIL_CLOSED_AUDITED_ABSTAIN",
+    "minimum_bundle_component_count": 1,
+    "minimum_bundle_sample_count": 1,
+    "minimum_expected_query_count": 1,
+    "synthetic_fixture_counts": {
+      "component_count": 6,
+      "expected_query_count": 15,
+      "sample_count": 3
+    }
+  },
+  "complete_scientific_go": false,
+  "date": "2026-10-23",
+  "decision": "R23_B_V5_DESIGN_READY",
+  "design_doc": "docs/design/p23_102_global_distinctiveness_v5.md",
+  "execution": false,
+  "experiment": "R23-B-v5",
+  "external_attested": false,
+  "fixed_gates": {
+    "adaptive_rewrite_or_retry": false,
+    "ambient_tuple_global_uniqueness": true,
+    "atom_level_visual_specificity": {
+      "generic_actions_do_not_count": [
+        "holding",
+        "standing"
+      ],
+      "generic_objects_do_not_count": [
+        "container",
+        "item",
+        "object",
+        "person"
+      ],
+      "minimum_independent_dimensions": 2
+    },
+    "content_atom_signature_uniqueness": true,
+    "family_query_pair_near_collision": true,
+    "global_sample_component_query_key_identity_uniqueness": true,
+    "hard_global_identity_failure_precedence": "sample_key/component_key/query_key/sample_identity/component_identity duplicates unconditionally yield REJECT_SAMPLE_SET before ABSTAIN",
+    "nonempty_primary_query_set": true,
+    "normalized_exact_query_uniqueness": true,
+    "phrase_blacklist_defense_in_depth": true,
+    "row_integrity_and_regeneration": true,
+    "token_jaccard_max_exclusive": 0.92
+  },
+  "generators": {
+    "ambient": "inherited-parent-deterministic-renderer",
+    "family": "ordered-component-kind-visual-ambient-composition/5.0",
+    "query_key": "global-keys-plus-sealed-identities-plus-query-kind/5.0",
+    "visual": "strict-kind-atoms-to-description-query/5.0"
+  },
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "plan_payload_sha256": "sha256:127149d5b8d5a5c4ae697337012380c87ba7bbeb2a20089f14353487fc997a0c",
+  "provenance": {
+    "adjudication_schema_sha256": "sha256:921d7206cbb991a9eb16f03350860130c79340c5cc2f2fb35ebe3095b98d2917",
+    "ambient_generator_sha256": "sha256:fdaf3ced8892230dc57aa6634c875f441605125ffc1cd9fba01ed7163b3fe086",
+    "ambient_registry_sha256": "sha256:adcd8505fa038e2580fb0f104e95eb22ab78286ea4047c7257d0d8f8eb559749",
+    "ambient_template_sha256": "sha256:90588713a2401977a220d287344748fdb3e1aab04a7e72beed1d87da7c7aca1c",
+    "cardinality_policy_sha256": "sha256:1fd2364a0aafc091b39bff5a53c120e8b24e1c0e1d7a95170f2f2442d8fd6faa",
+    "commitment_request_schema_sha256": "sha256:0a9f627ac10ee2d2855f1f596adbb162d591075698a20b5f8ac285643dbe4f08",
+    "composition_schema_sha256": "sha256:d69e05ce47a48ce9773694292cc519f3f91281f827ad6c385cc979c826b2c398",
+    "family_generator_sha256": "sha256:7e3c8dbbe7b802b7619c22dd8a52f1881d5450c420b1ddb790def9e0e8c45edd",
+    "family_registry_sha256": "sha256:16711f1fb6b775bb07628bf4bfa8cc212140645666017f4c55601a7b38dc7ef7",
+    "gate_manifest_sha256": "sha256:80a4e67fe2f61c7a3bf3f24096cf57698160997ef4c74234f45b32df572834d1",
+    "generator_manifest_sha256": "sha256:1f150275dd853b9334d13ed01a1f6d1396adbef67a1fedd70bc2acd57da02573",
+    "media_binding_schema_sha256": "sha256:06413e1016b6928455766cf3c5b6d49b46836f9e3a8b92aa9df13bcd7e05a05c",
+    "parent_ambient_tool_source_sha256": "sha256:6ae1c46007ca6ec93ac30b71ccf0db7e406cfa20215df0f5df1b0309f95aad5b",
+    "query_key_generator_sha256": "sha256:c18199b72ebc3ef1eeeca592c13980421a4dc449984599b25da5ff1d0495a67f",
+    "raw_audit_encoding_schema_sha256": "sha256:d4f9b7f9ea7877e54253039cc84c8aa77cf08b98973d3266c1956efe020d76f7",
+    "replacement_policy_sha256": "sha256:f084919072fbd15a04148306e55ea02374eaa8bc23473c1cc7ae3cb63c817978",
+    "review_packet_schema_sha256": "sha256:ffe8826b85c10ac5a586a3a164296dc840dbeecdfa4180f4fd18455058dfdf33",
+    "review_policy_sha256": "sha256:446c1179da2b999aa308fe4af7ff84e5076bd6ea84001fe266fd6e459acd8e2d",
+    "review_receipt_schema_sha256": "sha256:e809ebcb90db35a373d0a4beb78e6eab6c150cb371aa83b8dd870419e87d1142",
+    "review_submission_schema_sha256": "sha256:fc0869f0944593f8bed2f1769c73d4d00dfef6d15526b281a1cb42da39cfd60c",
+    "runtime_constants_sha256": "sha256:067015ae865879d89aea35aaf5fa3e59b6b42e91a270cd12cc580aa0018dcbd5",
+    "sample_schema_sha256": "sha256:a9fba1c56c12203982fcc3b9caa0aa2a93096bf55655cda2d3be6808c340b44e",
+    "schema_manifest_sha256": "sha256:28a65eaa76f4762d2da42151b5c18ed59a9262bab9d5571e263c82c5f50deca2",
+    "tool_source_sha256": "sha256:46da4d0ba443d3ca66cacf8c671f8eb0b4791e647d42fabb7fbf9572406633d8",
+    "visual_generator_sha256": "sha256:c4b7e2b6f0458effc4cb1cbb6a075ab1185119fe7e4d063d19f41d277a8dd5ad",
+    "visual_registry_sha256": "sha256:6a6990de645a573349213c86420ea6ac2b55d772607ee05e4fe06582de27fd6c",
+    "visual_schema_sha256": "sha256:4a11bc667f57ba571c3db6659099e9b639d3bceb2c21c17587324742e9cdebe2"
+  },
+  "registries": {
+    "ambient_parent_schema": {
+      "acoustic_properties": {
+        "loudness": [
+          null,
+          "faint",
+          "soft",
+          "loud"
+        ],
+        "temporal_pattern": [
+          null,
+          "brief",
+          "repeated",
+          "rhythmic",
+          "steady"
+        ],
+        "timbre": [
+          null,
+          "metallic",
+          "muffled",
+          "crisp",
+          "hollow",
+          "sharp"
+        ]
+      },
+      "event_kind": [
+        "alarm",
+        "applause",
+        "bang",
+        "bark",
+        "beep",
+        "bell",
+        "bubble",
+        "buzz",
+        "chime",
+        "chirp",
+        "clang",
+        "clank",
+        "clatter",
+        "click",
+        "clink",
+        "continuous_liquid_flow",
+        "cough",
+        "crackle",
+        "creak",
+        "crinkle",
+        "crumple",
+        "crunch",
+        "ding",
+        "drip",
+        "echo",
+        "footstep",
+        "gasp",
+        "grind",
+        "gurgle",
+        "hiss",
+        "horn",
+        "hum",
+        "impact",
+        "jingle",
+        "knock",
+        "meow",
+        "ping",
+        "pop",
+        "rattle",
+        "ring",
+        "rumble",
+        "rustle",
+        "scrape",
+        "scratch",
+        "screech",
+        "sigh",
+        "siren",
+        "sizzle",
+        "slosh",
+        "snap",
+        "sneeze",
+        "splash",
+        "squeak",
+        "squeal",
+        "swish",
+        "tap",
+        "throat_clear",
+        "thud",
+        "tick",
+        "tone",
+        "trickle",
+        "whir",
+        "whistle",
+        "whoosh"
+      ]
+    },
+    "family": {
+      "far_roles": [
+        "far_continuity_anaphora",
+        "far_structural",
+        "far_vocalization_asr_ambiguity"
+      ],
+      "local_roles": [
+        "local_v15_structure"
+      ],
+      "ordered_relations": [
+        "after",
+        "before",
+        "then"
+      ],
+      "single_relation": "single"
+    },
+    "visual": {
+      "actions": [
+        "arranging",
+        "carrying",
+        "closing",
+        "cutting",
+        "holding",
+        "inspecting",
+        "kneading",
+        "lifting",
+        "mixing",
+        "opening",
+        "peeling",
+        "placing",
+        "pouring",
+        "scooping",
+        "slicing",
+        "standing",
+        "stirring",
+        "transferring",
+        "turning",
+        "washing",
+        "wiping"
+      ],
+      "attributes": [
+        "closed",
+        "empty",
+        "full",
+        "green",
+        "large",
+        "metal",
+        "open",
+        "red",
+        "small",
+        "wooden"
+      ],
+      "generic_actions": [
+        "holding",
+        "standing"
+      ],
+      "generic_objects": [
+        "container",
+        "item",
+        "object",
+        "person"
+      ],
+      "kinds": [
+        "event",
+        "state"
+      ],
+      "locations": [
+        "counter",
+        "cutting_board",
+        "drawer",
+        "sink",
+        "stove",
+        "table",
+        "tray"
+      ],
+      "objects": [
+        "apple",
+        "bottle",
+        "bowl",
+        "bread",
+        "carrot",
+        "cloth",
+        "container",
+        "cup",
+        "dough",
+        "drawer",
+        "item",
+        "jar",
+        "knife",
+        "lid",
+        "object",
+        "onion",
+        "pan",
+        "person",
+        "plate",
+        "pot",
+        "spoon",
+        "tap",
+        "tray"
+      ],
+      "states": [
+        "active",
+        "closed",
+        "held",
+        "open",
+        "resting",
+        "upright"
+      ]
+    }
+  },
+  "replacement_policy": {
+    "adaptive_retry_permitted": false,
+    "automatic_rewrite_permitted": false,
+    "policy_id": "r23b-v5-preregistered-replacement-only",
+    "replacement_exhaustion": "NOT_EVALUATED",
+    "replacement_pointer": null,
+    "replacement_requires_future_preregistration": true
+  },
+  "review_policy": {
+    "conflict_rule": "two reviewer disagreement requires independent adjudication",
+    "count_rule": "ceil(rate*candidate_count)",
+    "failed_review_rule": "REJECT_SAMPLE; no text rewrite",
+    "identity_rule": "two distinct reviewer IDs; conflict adjudicator ID distinct from both",
+    "missing_rule": "missing reviewer or required adjudication => FAIL_CLOSED",
+    "packet_binding_rule": "all reviewer/adjudicator records exactly match review_packet_key, packet_payload_sha256, content_sha256, media_binding_sha256, and evidence_binding_sha256",
+    "pool_deduplication": "deduplicate every pool and final selection by component_identity_sha256",
+    "receipt_rule": "recompute packet payload and key; seal exact packet, submissions, adjudication, decision, and hash",
+    "reviewer_count": 2,
+    "sampling_rate": 0.2,
+    "selection_basis": "globally unique component_identity_sha256",
+    "stratification": "remove selected candidates from every later pool; cover every available family-role stratum when count >= available role-stratum count"
+  },
+  "runtime_constants": {
+    "human_review_rate": 0.2,
+    "jaccard_max_exclusive": 0.92,
+    "max_visual_objects": 2,
+    "minimum_bundle_component_count": 1,
+    "minimum_bundle_sample_count": 1,
+    "minimum_discriminative_dimensions": 2,
+    "minimum_expected_query_count": 1,
+    "raw_audit_encoding_version": 2,
+    "reviewer_count": 2
+  },
+  "schema_version": "av-trace.p23-102-r23b-global-distinctiveness-plan/5.0",
+  "schemas": {
+    "adjudication": {
+      "$id": "av-trace.p23-102-r23b-human-review-adjudication/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "adjudicator_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "content_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "evidence_binding_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "media_binding_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "packet_payload_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "review_packet_key": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "review_packet_key",
+        "packet_payload_sha256",
+        "content_sha256",
+        "media_binding_sha256",
+        "evidence_binding_sha256",
+        "adjudicator_id",
+        "decision",
+        "reasons"
+      ],
+      "type": "object"
+    },
+    "commitment_request": {
+      "$id": "av-trace.p23-102-r23b-external-commitment-request/3.0",
+      "additionalProperties": false,
+      "properties": {
+        "execution": {
+          "const": false
+        },
+        "external_attested": {
+          "const": false
+        },
+        "schema_version": {
+          "const": "av-trace.p23-102-r23b-external-commitment-request/3.0"
+        }
+      },
+      "required": [
+        "schema_version",
+        "date",
+        "decision",
+        "request_purpose",
+        "integrity_claim",
+        "execution",
+        "external_attested",
+        "bindings",
+        "commitment_request_payload_sha256"
+      ],
+      "type": "object"
+    },
+    "composition_atoms": {
+      "$id": "av-trace.p23-102-r23b-composition-atoms/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "relation": {
+          "enum": [
+            "after",
+            "before",
+            "single",
+            "then"
+          ]
+        }
+      },
+      "required": [
+        "relation"
+      ],
+      "type": "object"
+    },
+    "media_binding": {
+      "$id": "av-trace.p23-102-r23b-media-binding/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "evidence_end_ms": {
+          "exclusiveMinimum": 0,
+          "type": "integer"
+        },
+        "evidence_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "evidence_start_ms": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "media_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "media_sha256",
+        "evidence_sha256",
+        "evidence_start_ms",
+        "evidence_end_ms"
+      ],
+      "type": "object"
+    },
+    "raw_audit_encoding": {
+      "$id": "av-trace.p23-102-r23b-canonical-typed-raw-audit/2.0",
+      "root": "typed recursive tag tree with sealed unsupported envelope",
+      "version": 2
+    },
+    "review_packet": {
+      "$id": "av-trace.p23-102-r23b-review-packet/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "packet_payload_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "review_packet_key": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "av-trace.p23-102-r23b-review-packet/5.0"
+        }
+      },
+      "required": [
+        "schema_version",
+        "packet_payload",
+        "packet_payload_sha256",
+        "review_packet_key",
+        "reviewer_1",
+        "reviewer_2",
+        "adjudication",
+        "decision"
+      ],
+      "type": "object"
+    },
+    "review_receipt": {
+      "$id": "av-trace.p23-102-r23b-review-receipt/2.0",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "review_packet",
+        "reviewer_1",
+        "reviewer_2",
+        "adjudication",
+        "decision",
+        "receipt_payload_sha256"
+      ],
+      "type": "object"
+    },
+    "review_submission": {
+      "$id": "av-trace.p23-102-r23b-human-review-submission/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "action_correct": {
+          "type": "boolean"
+        },
+        "content_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "evidence_binding_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "media_binding_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "object_tokens_correct": {
+          "type": "boolean"
+        },
+        "packet_payload_sha256": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "review_packet_key": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "reviewer_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "review_packet_key",
+        "packet_payload_sha256",
+        "content_sha256",
+        "media_binding_sha256",
+        "evidence_binding_sha256",
+        "reviewer_id",
+        "action_correct",
+        "object_tokens_correct",
+        "decision",
+        "reasons"
+      ],
+      "type": "object"
+    },
+    "sample": {
+      "$id": "av-trace.p23-102-r23b-sealed-input/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "components": {
+          "items": {
+            "additionalProperties": false,
+            "required": [
+              "component_key",
+              "visual_atoms",
+              "ambient_tuple",
+              "media_binding"
+            ],
+            "type": "object"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "type": "array"
+        },
+        "composition_atoms": {
+          "$id": "av-trace.p23-102-r23b-composition-atoms/5.0",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "enum": [
+                "after",
+                "before",
+                "single",
+                "then"
+              ]
+            }
+          },
+          "required": [
+            "relation"
+          ],
+          "type": "object"
+        },
+        "family_role": {
+          "enum": [
+            "far_continuity_anaphora",
+            "far_structural",
+            "far_vocalization_asr_ambiguity",
+            "local_v15_structure"
+          ]
+        },
+        "sample_key": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "sample_key",
+        "family_role",
+        "components",
+        "composition_atoms"
+      ],
+      "type": "object"
+    },
+    "visual_atoms": {
+      "$id": "av-trace.p23-102-r23b-visual-atoms/5.0",
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "arranging",
+            "carrying",
+            "closing",
+            "cutting",
+            "holding",
+            "inspecting",
+            "kneading",
+            "lifting",
+            "mixing",
+            "opening",
+            "peeling",
+            "placing",
+            "pouring",
+            "scooping",
+            "slicing",
+            "standing",
+            "stirring",
+            "transferring",
+            "turning",
+            "washing",
+            "wiping"
+          ]
+        },
+        "attributes": {
+          "items": {
+            "enum": [
+              "closed",
+              "empty",
+              "full",
+              "green",
+              "large",
+              "metal",
+              "open",
+              "red",
+              "small",
+              "wooden"
+            ]
+          },
+          "maxItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "kind": {
+          "enum": [
+            "event",
+            "state"
+          ]
+        },
+        "location": {
+          "enum": [
+            null,
+            "counter",
+            "cutting_board",
+            "drawer",
+            "sink",
+            "stove",
+            "table",
+            "tray"
+          ]
+        },
+        "objects": {
+          "items": {
+            "enum": [
+              "apple",
+              "bottle",
+              "bowl",
+              "bread",
+              "carrot",
+              "cloth",
+              "container",
+              "cup",
+              "dough",
+              "drawer",
+              "item",
+              "jar",
+              "knife",
+              "lid",
+              "object",
+              "onion",
+              "pan",
+              "person",
+              "plate",
+              "pot",
+              "spoon",
+              "tap",
+              "tray"
+            ]
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "state": {
+          "enum": [
+            null,
+            "active",
+            "closed",
+            "held",
+            "open",
+            "resting",
+            "upright"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "action",
+        "objects",
+        "attributes",
+        "location",
+        "state"
+      ],
+      "type": "object"
+    }
+  },
+  "scope": {
+    "asr_calls": 0,
+    "authorization_created_or_consumed": false,
+    "embedding_calls": 0,
+    "execution": false,
+    "existing_authoring_modified": false,
+    "existing_canary_selection_modified": false,
+    "existing_capsules_modified": false,
+    "existing_markers_modified": false,
+    "external_attested": false,
+    "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+    "media_decode": false,
+    "model_calls": 0,
+    "private_selection_integrated": false,
+    "real_family_selection_read": false,
+    "retrieval_calls": 0,
+    "synthetic_opaque_fixtures_only": true
+  },
+  "tests": "tooling/tests/test_p23_102_global_distinctiveness_v5.py",
+  "tool": "tools/p23_102_global_distinctiveness_v5.py"
+}

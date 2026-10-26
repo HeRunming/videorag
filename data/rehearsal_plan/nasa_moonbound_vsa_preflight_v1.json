@@ -1,0 +1,254 @@
+{
+  "audit_date": "2026-10-12",
+  "authoritative_identity": {
+    "api_modified_gmt": "2026-09-17T14:41:39",
+    "api_status": "publish",
+    "api_type": "video",
+    "api_url": "https://plus.nasa.gov/wp-json/wp/v2/video/6979",
+    "content_id": "15230",
+    "episode_number": "2",
+    "hls_asset_id": "17905",
+    "hls_master_url": "https://nasaplus.akamaized.net/output/17905.m3u8",
+    "identity_status": "ESTABLISHED_FIRST_PARTY",
+    "item_url": "https://plus.nasa.gov/video/moonbound-for-all-humanity/",
+    "language": "English",
+    "post_id": 6979,
+    "publisher": "NASA+ / National Aeronautics and Space Administration",
+    "title": "Moonbound | For All Humanity"
+  },
+  "blockers": [
+    "Exact item/component rights for score, archive/partner footage, marks, and identifiable people are not evidenced.",
+    "Native synchronized audio is advertised but not evidenced by a bounded media payload or decoded timestamps.",
+    "Duration is unresolved: API runtime and HLS media timeline do not agree."
+  ],
+  "captions_and_transcript": {
+    "availability_status": "IN_STREAM_SERVICES_ADVERTISED; PAYLOAD AND TRANSCRIPT NOT_VERIFIED",
+    "closed_caption_services": [
+      {
+        "instream_id": "CC1",
+        "language": "en",
+        "name": "English"
+      },
+      {
+        "instream_id": "CC3",
+        "language": "en",
+        "name": "English"
+      },
+      {
+        "instream_id": "SERVICE3",
+        "language": "en",
+        "name": "English"
+      },
+      {
+        "instream_id": "SERVICE4",
+        "language": "en",
+        "name": "English"
+      }
+    ],
+    "in_stream_closed_captions_advertised": true,
+    "standalone_caption_asset_url": null,
+    "transcript_url": null
+  },
+  "decision": "REPAIR",
+  "decision_rule": "READY requires exact component rights, exact asset identity, native synchronized audio evidence, and resolved duration. No semantic or modality-necessity gate is evaluated here.",
+  "duration_and_resolution": {
+    "advertised_resolutions": [
+      "1280x720",
+      "1920x1080",
+      "416x234",
+      "480x270",
+      "640x360",
+      "960x540"
+    ],
+    "api_runtime_seconds": 2202.0,
+    "difference_seconds": 556.0,
+    "maximum_advertised_resolution": "1920x1080",
+    "relation": "MISMATCH_REPAIR_REQUIRED",
+    "selected_playlist_duration_seconds": 1646.0
+  },
+  "exact_media": {
+    "head_and_range": {
+      "probes": [],
+      "status": "NOT_EVIDENCED_IN_SAVED_RUN"
+    },
+    "master": {
+      "asset_id": "17905",
+      "audio_only_variant_advertised": true,
+      "codecs": [
+        "avc1.42c00d,mp4a.40.5",
+        "avc1.4d401e,mp4a.40.2",
+        "avc1.4d401e,mp4a.40.5",
+        "avc1.64001e,mp4a.40.2",
+        "mp4a.40.2"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "416x234",
+        "480x270",
+        "640x360",
+        "960x540"
+      ],
+      "url": "https://nasaplus.akamaized.net/output/17905.m3u8",
+      "variant_count": 9
+    },
+    "selected_media_playlist": {
+      "candidate_segment_probes": [
+        {
+          "exact_url": "https://nasaplus.akamaized.net/output/17905-2_00000.ts",
+          "position": "opening",
+          "segment_index": 0,
+          "segment_uri": "17905-2_00000.ts"
+        },
+        {
+          "exact_url": "https://nasaplus.akamaized.net/output/17905-2_00091.ts",
+          "position": "middle",
+          "segment_index": 91,
+          "segment_uri": "17905-2_00091.ts"
+        },
+        {
+          "exact_url": "https://nasaplus.akamaized.net/output/17905-2_00182.ts",
+          "position": "ending",
+          "segment_index": 182,
+          "segment_uri": "17905-2_00182.ts"
+        }
+      ],
+      "endlist": true,
+      "segment_count": 183,
+      "uri": "17905-2.m3u8",
+      "url": "https://nasaplus.akamaized.net/output/17905-2.m3u8",
+      "vod": true
+    }
+  },
+  "final_marker": "NASA_MOONBOUND_VSA_PREFLIGHT_REPAIR",
+  "generated_at": "2026-10-12T08:13:14Z",
+  "live_run": {
+    "media_body_bytes_persisted": 0,
+    "network_requests": 0,
+    "reason": "PLAN_ONLY",
+    "response_body_bytes_read": 0,
+    "status": "NOT_RUN"
+  },
+  "mode": "plan-only",
+  "native_audio": {
+    "audio_only_variant_advertised": true,
+    "bounded_media_payload_evidence": false,
+    "decoded_timestamps_or_samples": false,
+    "master_muxed_audio_video_codecs_advertised": true,
+    "synchronization_status": "PLAUSIBLE_FROM_MASTER_ONLY_NOT_PROVEN"
+  },
+  "next_repairs": [
+    "Obtain an item/component ledger or rightsholder confirmation covering score, archive/partner footage, marks, and people.",
+    "Identify the rendition corresponding to the 2,202-second official runtime, or correct the authoritative runtime.",
+    "Run this tool in live mode to record HEAD and bounded Range behavior and MPEG-TS audio/video stream-type evidence.",
+    "Locate a first-party standalone caption/transcript asset if one exists; do not infer it from the master advertisement."
+  ],
+  "production_lineage": {
+    "credits_or_component_ledger_present": false,
+    "lineage_block": "The episode, all HLS renditions, captions, clips, archive or partner inserts, score, and derivatives remain one source group.",
+    "primary_lineage": "NASA+ Moonbound series, episode 2, published by NASA+ Streaming Service",
+    "unresolved_components": [
+      "music or score",
+      "archive footage",
+      "partner or contractor footage",
+      "NASA identifiers and other marks",
+      "identifiable people and voices"
+    ]
+  },
+  "rights_and_download_authority": {
+    "acquisition": "HOLD",
+    "ai_application_notice": "The saved policy addresses AI applications but expressly says source disclosure implies no NASA permission for a specific use.",
+    "component_level_download_authority": "UNRESOLVED",
+    "download_authority_interpretation": "The first-party item exposes the exact HLS master through a Download control. This establishes an official transfer route, not a component-level copyright or downstream-use clearance.",
+    "download_target": "https://nasaplus.akamaized.net/output/17905.m3u8",
+    "exact_item_component_ledger": "NOT_PRESENT",
+    "general_nasa_content_authority": "Educational or informational use is generally allowed, subject to the NASA media guidelines, attribution/source controls, no-endorsement restrictions, identifiers, and identifiable-person constraints.",
+    "internal_processing": "HOLD",
+    "official_download_control": true,
+    "operative_exact_item_license": "NOT_STATED",
+    "policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "raw_or_derived_media_release": "NOT_AUTHORIZED",
+    "reason": "The official download route and general NASA policy do not identify or clear every documentary component.",
+    "restricted_annotation": "HOLD",
+    "third_party_boundary": "NASA says that its use of third-party copyrighted material does not convey downstream rights; exact component ownership must be resolved separately."
+  },
+  "route_id": "ARVSA-R01-NASA-MOONBOUND",
+  "routing_only_plausibility": {
+    "candidate_event_rich_leads": [
+      {
+        "asset_id": "17905",
+        "basis": "The official item description names physical and mental challenges while preparing for crewed flight.",
+        "lead_id": "moonbound-training-challenges",
+        "status": "ROUTING_LEAD_ONLY",
+        "temporal_region": "UNLOCALIZED_NO_TIMESTAMP_METADATA"
+      },
+      {
+        "asset_id": "17905",
+        "basis": "The official item description names teamwork and testing new systems at the edge of exploration.",
+        "lead_id": "moonbound-system-tests-teamwork",
+        "status": "ROUTING_LEAD_ONLY",
+        "temporal_region": "UNLOCALIZED_NO_TIMESTAMP_METADATA"
+      }
+    ],
+    "related_asset_candidate": {
+      "content_id": "15169",
+      "hls_url": "https://nasaplus.akamaized.net/output/17540.m3u8",
+      "post_id": 6925,
+      "role": "SECOND_SAME_SERIES_ROUTING_ASSET; NOT A SUBSTITUTE FOR THE FROZEN ROUTE",
+      "runtime_seconds": 1335.0,
+      "title": "Moonbound | Charting the Course"
+    },
+    "semantic_credit": false,
+    "source_world_ambient": "MEDIUM_METADATA_PLAUSIBILITY: physical training and testing new systems may contain equipment, facility, or training sounds; not verified from media.",
+    "speech": "HIGH_METADATA_PLAUSIBILITY: a documentary following four astronauts and teamwork is likely to contain speech; not verified from media."
+  },
+  "saved_evidence": [
+    {
+      "bytes": 246350,
+      "content_type": "text/html; charset=UTF-8",
+      "name": "item",
+      "path": "data/source_recon/event_centric_live_preflight_v1/EC-NASA-MOONBOUND/item.body",
+      "sha256": "6d282a8ffc017ea923fe24fd8f1e8b9c6bd3aaee3f4534f9dbcdf11d65c33db9"
+    },
+    {
+      "bytes": 10826,
+      "content_type": "application/json; charset=UTF-8",
+      "name": "api",
+      "path": "data/source_recon/event_centric_live_preflight_v1/EC-NASA-MOONBOUND/api.body",
+      "sha256": "dc9014cbab05673494bc5e0995aa64fec245356fefa3a09cea27f7faf84579bc"
+    },
+    {
+      "bytes": 1959,
+      "content_type": "application/x-mpegURL",
+      "name": "master",
+      "path": "data/source_recon/event_centric_live_preflight_v1/EC-NASA-MOONBOUND/master.body",
+      "sha256": "ac994be4f45f7cf4aefb4f7edbea128f0d25a439d09e89b5a8b24bf4a743b8ed"
+    },
+    {
+      "bytes": 5237,
+      "content_type": "application/x-mpegURL",
+      "name": "variant",
+      "path": "data/source_recon/event_centric_live_preflight_v1/EC-NASA-MOONBOUND/variant_2.body",
+      "sha256": "3b09b2ac85c31ce6e9516b0dcfb6df4c3692d2e0b84dc70cf9ea1fd4a4964cb5"
+    },
+    {
+      "bytes": 317204,
+      "content_type": "text/html; charset=UTF-8",
+      "name": "rights_policy",
+      "path": "data/source_recon/event_centric_live_preflight_v1/policies/nasa_images_media.body",
+      "sha256": "f527359de361a1328a8edaa2608608fcfe930d950ed4cffeb7863b116e73e742"
+    }
+  ],
+  "schema_version": "av-trace.nasa-moonbound-vsa-preflight/1.0",
+  "scope": {
+    "full_media_downloads": 0,
+    "human_review_performed": false,
+    "maximum_media_probe_count": 3,
+    "maximum_media_range_bytes_per_request": 65536,
+    "media_bytes_persisted": 0,
+    "metadata_rights_exact_asset_preflight_only": true,
+    "semantic_claims_made": false,
+    "v_plus_s_plus_a_necessity_claimed": false
+  },
+  "source_group_id": "EC-NASA-MOONBOUND"
+}

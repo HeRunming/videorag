@@ -1,0 +1,486 @@
+{
+  "annotation": {
+    "adjudicator": "synthetic_adjudicator",
+    "alternative_evidence_finder": "synthetic_alternative_finder",
+    "alternative_search_completed": true,
+    "authors": [
+      "synthetic_author"
+    ],
+    "shortcut_audits": [
+      {
+        "audit_type": "question_only",
+        "notes": "Answers are arbitrary registered tokens.",
+        "status": "pass"
+      },
+      {
+        "audit_type": "intervention_artifact",
+        "notes": "No condition marker is embedded in source media.",
+        "status": "pass"
+      }
+    ],
+    "status": "accepted",
+    "validators": [
+      "synthetic_validator_a",
+      "synthetic_validator_b"
+    ],
+    "version": "synthetic-v1"
+  },
+  "answer_spec": {
+    "display_answer": "The blue triangle appeared first; the green circle appeared later.",
+    "forbidden_claim_ids": [],
+    "optional_claim_ids": [],
+    "required_claim_ids": [
+      "claim_syn_f01_visual_order"
+    ]
+  },
+  "claim_evidence_graph": {
+    "accepted_sufficient_sets": [
+      {
+        "claim_ids": [
+          "claim_syn_f01_visual_order"
+        ],
+        "evidence_ids": [
+          "s1_blue_triangle",
+          "s1_green_circle"
+        ],
+        "hop_ids": [
+          "hop_extract_s1_blue_triangle",
+          "hop_extract_s1_green_circle",
+          "hop_syn_f01_visual_order_route_1"
+        ],
+        "minimality_validated": true,
+        "satisfiability_validated": true,
+        "set_id": "ses_syn_f01_visual_order_1",
+        "validator_ids": [
+          "synthetic_validator_a",
+          "synthetic_validator_b"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "accepted_aliases": [
+          "The blue triangle appeared first; the green circle appeared later."
+        ],
+        "answer_value": {
+          "first": "blue_triangle",
+          "later": "green_circle"
+        },
+        "claim_id": "claim_syn_f01_visual_order",
+        "contradiction_claim_ids": [],
+        "proposition": "The blue triangle appeared first; the green circle appeared later.",
+        "requirement": "required"
+      }
+    ],
+    "evidence_units": [
+      {
+        "evidence_id": "s1_blue_triangle",
+        "intervals": [
+          {
+            "end_s": 30.0,
+            "start_s": 24.0
+          }
+        ],
+        "modality": "vision",
+        "observation": "BLUE TRIANGLE",
+        "provenance": {
+          "asset_id": "syn_source_01",
+          "stream_hash": "sha256:c0f379b24ab3efbb0a0bfa40c044c47efd3be94aebbbc82cc5d9e568fd0b2536",
+          "transformation_ids": []
+        },
+        "stream_id": "syn_source_01_video"
+      },
+      {
+        "evidence_id": "s1_green_circle",
+        "intervals": [
+          {
+            "end_s": 182.0,
+            "start_s": 176.0
+          }
+        ],
+        "modality": "vision",
+        "observation": "GREEN CIRCLE",
+        "provenance": {
+          "asset_id": "syn_source_01",
+          "stream_hash": "sha256:c0f379b24ab3efbb0a0bfa40c044c47efd3be94aebbbc82cc5d9e568fd0b2536",
+          "transformation_ids": []
+        },
+        "stream_id": "syn_source_01_video"
+      }
+    ],
+    "hops": [
+      {
+        "description": "Extract the registered vision observation: BLUE TRIANGLE.",
+        "hop_id": "hop_extract_s1_blue_triangle",
+        "hop_type": "event_detection",
+        "input_evidence_ids": [
+          "s1_blue_triangle"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Extract the registered vision observation: GREEN CIRCLE.",
+        "hop_id": "hop_extract_s1_green_circle",
+        "hop_type": "event_detection",
+        "input_evidence_ids": [
+          "s1_green_circle"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Combine temporally registered evidence for accepted route 1.",
+        "hop_id": "hop_syn_f01_visual_order_route_1",
+        "hop_type": "temporal_order",
+        "input_evidence_ids": [],
+        "input_hop_ids": [
+          "hop_extract_s1_blue_triangle",
+          "hop_extract_s1_green_circle"
+        ]
+      }
+    ],
+    "necessity_groups": [
+      {
+        "claim_ids": [
+          "claim_syn_f01_visual_order"
+        ],
+        "group_id": "ng_syn_f01_visual_order",
+        "intersects_all_accepted_sets": true,
+        "member_evidence_ids": [
+          "s1_green_circle"
+        ],
+        "removal_validated": true,
+        "required_hop_ids": [
+          "hop_extract_s1_green_circle",
+          "hop_syn_f01_visual_order_route_1"
+        ],
+        "required_modalities": [
+          "vision"
+        ]
+      }
+    ],
+    "support_edges": [
+      {
+        "edge_id": "edge_s1_blue_triangle_extract",
+        "from_ids": [
+          "s1_blue_triangle"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s1_blue_triangle"
+      },
+      {
+        "edge_id": "edge_s1_green_circle_extract",
+        "from_ids": [
+          "s1_green_circle"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s1_green_circle"
+      },
+      {
+        "edge_id": "edge_syn_f01_visual_order_route_1",
+        "from_ids": [
+          "hop_extract_s1_blue_triangle",
+          "hop_extract_s1_green_circle"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_syn_f01_visual_order_route_1"
+      },
+      {
+        "edge_id": "edge_syn_f01_visual_order_claim_1",
+        "from_ids": [
+          "hop_syn_f01_visual_order_route_1"
+        ],
+        "relation": "hop_supports_claim",
+        "to_id": "claim_syn_f01_visual_order"
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "anchor_episode_id": null,
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f01_visual_order.clean",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s1_blue_triangle",
+          "s1_green_circle"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f01_visual_order",
+      "interventions": [],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f01_visual_order_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [],
+        "gold_missing_hop_types": [],
+        "gold_missing_modality_sets": [],
+        "gold_missing_necessity_group_ids": [],
+        "initial_accessible_sufficient": true,
+        "missingness_cause": "not_missing",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:d18dfa57302b0214ab6869524080c246ad784cbf7767323964130090dcd63c15",
+        "seed": 20260905
+      },
+      "state_role": "CLEAN"
+    },
+    {
+      "anchor_episode_id": "syn_f01_visual_order.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f01_visual_order.blocked",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s1_blue_triangle"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f01_visual_order",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s1_green_circle"
+          ],
+          "affected_necessity_group_id": "ng_syn_f01_visual_order",
+          "intervention_id": "block_syn_f01_visual_order",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [],
+        "expected_final_sufficiency": "insufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s1_green_circle",
+          "hop_syn_f01_visual_order_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "event_detection",
+          "temporal_order"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "vision"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f01_visual_order"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:d18dfa57302b0214ab6869524080c246ad784cbf7767323964130090dcd63c15",
+        "seed": 20260905
+      },
+      "state_role": "BLOCKED"
+    },
+    {
+      "anchor_episode_id": "syn_f01_visual_order.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f01_visual_order.restored",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s1_blue_triangle"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f01_visual_order",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s1_green_circle"
+          ],
+          "affected_necessity_group_id": "ng_syn_f01_visual_order",
+          "intervention_id": "block_syn_f01_visual_order",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        },
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "on_restore"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s1_green_circle"
+          ],
+          "affected_necessity_group_id": "ng_syn_f01_visual_order",
+          "intervention_id": "restore_syn_f01_visual_order",
+          "mechanism": "necessity_group_withholding",
+          "phase": "restoration",
+          "restoration": {
+            "enabled": true,
+            "restores_intervention_id": "block_syn_f01_visual_order",
+            "trigger_type": "get_channel_status",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f01_visual_order_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s1_green_circle",
+          "hop_syn_f01_visual_order_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "event_detection",
+          "temporal_order"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "vision"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f01_visual_order"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:d18dfa57302b0214ab6869524080c246ad784cbf7767323964130090dcd63c15",
+        "seed": 20260905
+      },
+      "state_role": "RESTORED"
+    }
+  ],
+  "family_id": "syn_f01_visual_order",
+  "intervention_family_id": "if_syn_f01_visual_order",
+  "intervention_mechanism": "necessity_group_withholding",
+  "question": {
+    "answer_type": "structured_claims",
+    "question_only_risk": "low",
+    "requested_granularity": "Return the exact registered values for both linked observations.",
+    "text": "Which shape appeared first, and which shape appeared later?"
+  },
+  "schema_version": "0.2.0",
+  "source": {
+    "access_class": "restricted_compatibility",
+    "asset_id": "syn_source_01",
+    "content_hash": "sha256:b270a8deb3fda7cee58afd9ab38148c9d521803aadc0b00435a03ae77100df3b",
+    "duration_s": 240.0,
+    "manifest_asset_id": "syn_source_01",
+    "manifest_revision": "synthetic-v1",
+    "rights_decision_id": "rights_syn_source_01",
+    "streams": [
+      {
+        "hash": "sha256:c0f379b24ab3efbb0a0bfa40c044c47efd3be94aebbbc82cc5d9e568fd0b2536",
+        "kind": "video",
+        "language": null,
+        "stream_id": "syn_source_01_video"
+      },
+      {
+        "hash": "sha256:63808043c7c16bb51f4dc5220a6d814ecb1d7573b1afeecf34eec626fcc85173",
+        "kind": "audio",
+        "language": "en-x-synthetic",
+        "stream_id": "syn_source_01_audio"
+      }
+    ]
+  },
+  "split": "development"
+}

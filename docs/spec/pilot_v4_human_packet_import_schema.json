@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:pilot-v4-human-packet-import:1.0.0",
+  "title": "AV-TRACE pilot-v4 human packet fail-closed import report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "scope",
+    "scope_id",
+    "completion_status",
+    "readiness_token",
+    "schema_validation_pass",
+    "binding_validation_pass",
+    "identity_count",
+    "human_review_occurred",
+    "human_decision_count",
+    "distribution_authorized",
+    "accepted_ses_count",
+    "necessity_assigned",
+    "minimality_assigned",
+    "h1_assigned",
+    "h2_assigned",
+    "gate_a_go",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "pilot_v4_human_packet_import"},
+    "packet_id": {"const": "pilot-v4-human-packets-task199"},
+    "scope": {"enum": ["slot", "packet_set"]},
+    "scope_id": {"type": "string", "minLength": 1},
+    "completion_status": {"const": "incomplete"},
+    "readiness_token": {
+      "enum": [
+        "PILOT_V4_HUMAN_PACKETS_READY",
+        "PILOT_V4_HUMAN_PACKETS_REPAIR",
+        "PILOT_V4_HUMAN_PACKETS_NO_GO"
+      ]
+    },
+    "schema_validation_pass": {"type": "boolean"},
+    "binding_validation_pass": {"type": "boolean"},
+    "identity_count": {"const": 0},
+    "human_review_occurred": {"const": false},
+    "human_decision_count": {"const": 0},
+    "distribution_authorized": {"const": false},
+    "accepted_ses_count": {"const": 0},
+    "necessity_assigned": {"const": false},
+    "minimality_assigned": {"const": false},
+    "h1_assigned": {"const": false},
+    "h2_assigned": {"const": false},
+    "gate_a_go": {"const": false},
+    "errors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "incomplete"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "readiness_token": {"const": "PILOT_V4_HUMAN_PACKETS_REPAIR"}
+        }
+      }
+    }
+  ]
+}

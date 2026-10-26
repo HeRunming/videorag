@@ -1,0 +1,338 @@
+{
+  "schema_version": "0.2.0",
+  "family_id": "syn_family",
+  "intervention_family_id": "if_syn_family",
+  "intervention_mechanism": "necessity_group_withholding",
+  "split": "development",
+  "source": {
+    "asset_id": "asset_syn",
+    "manifest_asset_id": "asset_syn",
+    "manifest_revision": "rev1",
+    "rights_decision_id": "rights_syn",
+    "duration_s": 1200.0,
+    "content_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "streams": [
+      {
+        "stream_id": "video1",
+        "kind": "video",
+        "language": null,
+        "hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      {
+        "stream_id": "audio1",
+        "kind": "audio",
+        "language": "en",
+        "hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+      }
+    ],
+    "access_class": "public_core_redistributable"
+  },
+  "question": {
+    "text": "What caused the warning and what visible action followed?",
+    "answer_type": "structured_claims",
+    "requested_granularity": "Name the cause and confirming action.",
+    "question_only_risk": "low"
+  },
+  "answer_spec": {
+    "required_claim_ids": ["c1"],
+    "optional_claim_ids": [],
+    "forbidden_claim_ids": [],
+    "display_answer": "A pressure drop caused the warning, followed by closing the valve."
+  },
+  "claim_evidence_graph": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "proposition": "A pressure drop caused the warning and the valve was closed.",
+        "requirement": "required",
+        "answer_value": {
+          "cause": "pressure_drop",
+          "action": "close_valve"
+        },
+        "accepted_aliases": ["pressure drop; valve closed"],
+        "contradiction_claim_ids": []
+      }
+    ],
+    "evidence_units": [
+      {
+        "evidence_id": "e1",
+        "intervals": [{"start_s": 100.0, "end_s": 110.0}],
+        "modality": "speech",
+        "stream_id": "audio1",
+        "observation": "A speaker states that pressure dropped.",
+        "provenance": {
+          "asset_id": "asset_syn",
+          "stream_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+          "transformation_ids": ["asr1"]
+        }
+      },
+      {
+        "evidence_id": "e2",
+        "intervals": [{"start_s": 112.0, "end_s": 120.0}],
+        "modality": "vision",
+        "stream_id": "video1",
+        "observation": "The operator closes the valve.",
+        "provenance": {
+          "asset_id": "asset_syn",
+          "stream_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+          "transformation_ids": []
+        }
+      }
+    ],
+    "hops": [
+      {
+        "hop_id": "h1",
+        "hop_type": "speech_content",
+        "description": "Extract the stated cause.",
+        "input_evidence_ids": ["e1"],
+        "input_hop_ids": []
+      },
+      {
+        "hop_id": "h2",
+        "hop_type": "event_detection",
+        "description": "Identify the confirming action.",
+        "input_evidence_ids": ["e2"],
+        "input_hop_ids": []
+      }
+    ],
+    "support_edges": [
+      {
+        "edge_id": "edge1",
+        "relation": "supports_hop",
+        "from_ids": ["e1"],
+        "to_id": "h1"
+      },
+      {
+        "edge_id": "edge2",
+        "relation": "supports_hop",
+        "from_ids": ["e2"],
+        "to_id": "h2"
+      },
+      {
+        "edge_id": "edge3",
+        "relation": "hop_supports_claim",
+        "from_ids": ["h1", "h2"],
+        "to_id": "c1"
+      }
+    ],
+    "accepted_sufficient_sets": [
+      {
+        "set_id": "ses1",
+        "claim_ids": ["c1"],
+        "evidence_ids": ["e1", "e2"],
+        "hop_ids": ["h1", "h2"],
+        "satisfiability_validated": true,
+        "minimality_validated": true,
+        "validator_ids": ["validator_a", "validator_b"]
+      }
+    ],
+    "necessity_groups": [
+      {
+        "group_id": "ng1",
+        "claim_ids": ["c1"],
+        "member_evidence_ids": ["e1"],
+        "required_modalities": ["speech"],
+        "required_hop_ids": ["h1"],
+        "intersects_all_accepted_sets": true,
+        "removal_validated": true
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "episode_id": "syn_family.clean",
+      "state_role": "CLEAN",
+      "anchor_episode_id": null,
+      "intervention_family_id": "if_syn_family",
+      "backend": {
+        "track": "PUBLIC_CORE_FIXED_BACKEND_TRIPLETS",
+        "backend_version": "fixed-v0.2",
+        "tool_api_version": "0.2.0",
+        "index_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "search_visual": 1.0,
+          "search_speech": 1.0,
+          "search_ambient_audio": 1.0,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "get_channel_status": 0.25,
+          "finalize": 0.0
+        }
+      },
+      "initial_state": {
+        "enabled_channels": ["visual", "speech", "ambient", "clip", "transcript"],
+        "accessible_evidence_ids": ["e1", "e2"]
+      },
+      "interventions": [],
+      "oracle": {
+        "source_sufficient": true,
+        "initial_accessible_sufficient": true,
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_necessity_group_ids": [],
+        "gold_missing_modality_sets": [],
+        "gold_missing_hop_ids": [],
+        "gold_missing_hop_types": [],
+        "missingness_cause": "not_missing",
+        "accepted_final_set_ids": ["ses1"]
+      },
+      "replay": {
+        "seed": 0,
+        "manifest_hash": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+        "deterministic": true
+      }
+    },
+    {
+      "episode_id": "syn_family.blocked",
+      "state_role": "BLOCKED",
+      "anchor_episode_id": "syn_family.clean",
+      "intervention_family_id": "if_syn_family",
+      "backend": {
+        "track": "PUBLIC_CORE_FIXED_BACKEND_TRIPLETS",
+        "backend_version": "fixed-v0.2",
+        "tool_api_version": "0.2.0",
+        "index_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "search_visual": 1.0,
+          "search_speech": 1.0,
+          "search_ambient_audio": 1.0,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "get_channel_status": 0.25,
+          "finalize": 0.0
+        }
+      },
+      "initial_state": {
+        "enabled_channels": ["visual", "speech", "ambient", "clip", "transcript"],
+        "accessible_evidence_ids": ["e2"]
+      },
+      "interventions": [
+        {
+          "intervention_id": "block1",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "affected_necessity_group_id": "ng1",
+          "affected_evidence_ids": ["e1"],
+          "affected_channel": null,
+          "activation": {"hook": "episode_start", "call_index": null},
+          "restoration": {
+            "enabled": false,
+            "trigger_type": "none",
+            "trigger_value": null,
+            "restores_intervention_id": null
+          }
+        }
+      ],
+      "oracle": {
+        "source_sufficient": true,
+        "initial_accessible_sufficient": false,
+        "expected_final_sufficiency": "insufficient",
+        "gold_missing_necessity_group_ids": ["ng1"],
+        "gold_missing_modality_sets": [["speech"]],
+        "gold_missing_hop_ids": ["h1"],
+        "gold_missing_hop_types": ["speech_content"],
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "accepted_final_set_ids": []
+      },
+      "replay": {
+        "seed": 0,
+        "manifest_hash": "sha256:5555555555555555555555555555555555555555555555555555555555555555",
+        "deterministic": true
+      }
+    },
+    {
+      "episode_id": "syn_family.restored",
+      "state_role": "RESTORED",
+      "anchor_episode_id": "syn_family.clean",
+      "intervention_family_id": "if_syn_family",
+      "backend": {
+        "track": "PUBLIC_CORE_FIXED_BACKEND_TRIPLETS",
+        "backend_version": "fixed-v0.2",
+        "tool_api_version": "0.2.0",
+        "index_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "search_visual": 1.0,
+          "search_speech": 1.0,
+          "search_ambient_audio": 1.0,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "get_channel_status": 0.25,
+          "finalize": 0.0
+        }
+      },
+      "initial_state": {
+        "enabled_channels": ["visual", "speech", "ambient", "clip", "transcript"],
+        "accessible_evidence_ids": ["e2"]
+      },
+      "interventions": [
+        {
+          "intervention_id": "block1",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "affected_necessity_group_id": "ng1",
+          "affected_evidence_ids": ["e1"],
+          "affected_channel": null,
+          "activation": {"hook": "episode_start", "call_index": null},
+          "restoration": {
+            "enabled": false,
+            "trigger_type": "none",
+            "trigger_value": null,
+            "restores_intervention_id": null
+          }
+        },
+        {
+          "intervention_id": "restore1",
+          "mechanism": "necessity_group_withholding",
+          "phase": "restoration",
+          "affected_necessity_group_id": "ng1",
+          "affected_evidence_ids": ["e1"],
+          "affected_channel": null,
+          "activation": {"hook": "on_restore", "call_index": null},
+          "restoration": {
+            "enabled": true,
+            "trigger_type": "get_channel_status",
+            "trigger_value": null,
+            "restores_intervention_id": "block1"
+          }
+        }
+      ],
+      "oracle": {
+        "source_sufficient": true,
+        "initial_accessible_sufficient": false,
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_necessity_group_ids": ["ng1"],
+        "gold_missing_modality_sets": [["speech"]],
+        "gold_missing_hop_ids": ["h1"],
+        "gold_missing_hop_types": ["speech_content"],
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "accepted_final_set_ids": ["ses1"]
+      },
+      "replay": {
+        "seed": 0,
+        "manifest_hash": "sha256:6666666666666666666666666666666666666666666666666666666666666666",
+        "deterministic": true
+      }
+    }
+  ],
+  "annotation": {
+    "status": "accepted",
+    "version": "1",
+    "authors": ["author1"],
+    "alternative_evidence_finder": "finder1",
+    "validators": ["validator_a", "validator_b"],
+    "adjudicator": "adjudicator1",
+    "alternative_search_completed": true,
+    "shortcut_audits": []
+  }
+}

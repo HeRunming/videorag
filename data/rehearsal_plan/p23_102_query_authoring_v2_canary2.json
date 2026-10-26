@@ -1,0 +1,494 @@
+{
+  "artifacts_for_future_authorized_run": [
+    "attempt marker (external governance evidence)",
+    "canary2_contract.json",
+    "canary2_subset_bundle.json",
+    "target_manifest.json",
+    "prompt_manifest.json",
+    "raw_attempts.jsonl",
+    "accepted_factor_manifest.json",
+    "ambient_semantic_tuple_collisions.json",
+    "asr_audit_inventory.json",
+    "authored_queries.json",
+    "audits.json",
+    "gate_findings.json",
+    "failure_accounting.json",
+    "resource_runtime.json",
+    "seal.json"
+  ],
+  "authorization": {
+    "canary2_pipeline_sha256": "sha256:39d30102807feb9fe9c906df2c85a3e2a95277311089ce4149ed7be2428eefbe",
+    "created_by_this_task": false,
+    "main_pipeline_sha256": "sha256:ba84ba2a26810da99f4a8fb184bf740e675dcd9fe42b21dfa708e1e70de2df60",
+    "required_bindings": [
+      "canary_config_sha256",
+      "selected_family_hashes",
+      "selection_algorithm",
+      "selection_version",
+      "private_governance_ledger_sha256",
+      "private_governance_commitment_sha256",
+      "public_selection_commitment_sha256",
+      "main_pipeline_sha256",
+      "canary_pipeline_sha256",
+      "bundle_file_hashes",
+      "selection_input_hashes",
+      "model_hashes",
+      "media_sha256",
+      "subset_payload_sha256",
+      "prompt_manifest_expected_hashes",
+      "output_path"
+    ],
+    "schema_version": "av-trace.p23-102-query-authoring-v2-canary2-authorization/3.0",
+    "separate_receipt_required": true
+  },
+  "canary2_pipeline_sha256": "sha256:39d30102807feb9fe9c906df2c85a3e2a95277311089ce4149ed7be2428eefbe",
+  "canary_id": "AV-TRACE-P23-102-QUERY-AUTHORING-V2-CANARY2",
+  "commands": {
+    "execute_only_after_external_authorization": "python tools/p23_102_query_authoring_v2_canary2.py --execute --authorization <receipt-v3.json>",
+    "plan": "python tools/p23_102_query_authoring_v2_canary2.py --plan",
+    "preflight": "python tools/p23_102_query_authoring_v2_canary2.py --preflight [--authorization <receipt-v3.json>]",
+    "public_leakage_scan": "python tools/p23_102_query_authoring_v2_canary2.py --scan-public-surface",
+    "ruff": "ruff check tools/p23_102_query_authoring_v2_canary2.py tooling/tests/test_p23_102_query_authoring_v2_canary2.py",
+    "tests": "pytest -q tooling/tests/test_p23_102_query_authoring_v2_canary2.py",
+    "validate_output": "python tools/p23_102_query_authoring_v2_canary2.py --validate-output"
+  },
+  "created_date": "2026-10-22",
+  "decision": "P23_102_QUERY_AUTHORING_V2_CANARY2_R22_F_IMPLEMENTATION_READY",
+  "execution_contract": {
+    "accepted_r15_visual_query_forms": [
+      "active question",
+      "agent-free passive question",
+      "concrete object/action retrieval phrase"
+    ],
+    "acoustic_concept_registry_sha256": "sha256:1e3b097804f1bcd18baa43be4edb60450da82f4ad0ab2c84a09c9f925cd4dda7",
+    "acoustic_context_gate": {
+      "accepted_marker_token_not_recounted_as_independent_mention": true,
+      "all_ambiguous_mentions_must_bind_locally": true,
+      "ambient_minimum_normalized_words": 2,
+      "ambiguous_action_tokens_require_local_auditory_binding": true,
+      "clap_gate_retained_as_embedding_auxiliary": true,
+      "controlled_auditory_marker_role_is_exclusive": true,
+      "controlled_r11_positives": [
+        "a knock echoes",
+        "knock echoes",
+        "an echo is heard"
+      ],
+      "controlled_r13_positives": [
+        "a bell rings audibly",
+        "a bell is audibly ringing"
+      ],
+      "exact_rejected_r11_regressions": [
+        "the design echoes a theme",
+        "echo button",
+        "a beep sounds while the design echoes a theme"
+      ],
+      "exact_rejected_r13_regressions": [
+        "a bell rings near a label that is audibly scratched",
+        "a bell rings while a person audibly taps a button",
+        "a bell rings in a room with the sound of a button click"
+      ],
+      "generic_sound_or_quiet_insufficient": true,
+      "inherited_from_parent": true,
+      "lexical_speech_forbidden": true,
+      "mixed_valid_event_does_not_rescue_unbound_ambiguous_mention": true,
+      "postposed_auditory_marker_binding": "immediate_right_token_only",
+      "visual_minimum_normalized_words": 3,
+      "whole_sentence_sound_keyword_bypass_forbidden": true
+    },
+    "acoustic_normalization": {
+      "clear_possessive_or_determiner_throat": "throat-clearing",
+      "lexical_speech_remains_forbidden": true,
+      "nonlexical_vocalization_quarantine_unchanged": true
+    },
+    "ambient_semantic_tuple_duplicate_gate": {
+      "automatic_rewrite_or_retry": false,
+      "global_duplicate_findings_and_collision_ledger": true,
+      "replacement_governance": "outer_R22_selection_only",
+      "same_family_duplicate_tuple": "FAIL_CLOSED"
+    },
+    "ambient_token_constraint": {
+      "constraint_kind": "canonical_ambient_tuple_token_prefix_trie",
+      "constraint_leaf_count": 7680,
+      "constraint_manifest": {
+        "assistant_prefill": "{",
+        "canonical_json": {
+          "acoustic_property_key_order": [
+            "loudness",
+            "temporal_pattern",
+            "timbre"
+          ],
+          "allow_nan": false,
+          "ensure_ascii": false,
+          "separators": [
+            ",",
+            ":"
+          ],
+          "sort_keys": true,
+          "top_level_key_order": [
+            "acoustic_properties",
+            "event_kind"
+          ]
+        },
+        "canonical_strings_sha256": "sha256:cabae9e09515751677e247533c0bee30611c4f6a23220efadd4d5863b7be3631",
+        "constraint_kind": "canonical_ambient_tuple_token_prefix_trie",
+        "leaf_count": 7680,
+        "leaf_policy": "only_eos_or_model_stop_tokens_allowed",
+        "reachable_count": 7680,
+        "registry_sha256": "sha256:adcd8505fa038e2580fb0f104e95eb22ab78286ea4047c7257d0d8f8eb559749",
+        "schema_repair_permitted": false,
+        "schema_version": "av-trace.ambient-token-prefix-constraint/1.0",
+        "semantic_substitution_permitted": false
+      },
+      "constraint_manifest_sha256": "sha256:d3e6b3c4c0c2de8a3b252ea5a1a77094a944f52f7a7dbb678cf5a991e1302628",
+      "constraint_reachable_count": 7680
+    },
+    "atomic_install_after_all_gates": true,
+    "authoring_failure_stage_explicitly_tracked": true,
+    "component_local_composition_validation": {
+      "coverage_required": [
+        "visual",
+        "acoustic"
+      ],
+      "cross_component_bridge_gates_unchanged": true,
+      "explicit_continuity_causality_reference_patterns_forbidden": true,
+      "local_agent_and_entity_terms_permitted": true,
+      "local_possessive_coreference_exception": "possessive their/his/her only with an earlier explicit same-clause human-agent antecedent and no bridge marker"
+    },
+    "component_semantic_fail_closed": {
+      "cross_component_cardinality_reference_meta_language_forbidden": true,
+      "expanded_explicit_causality_phrases_forbidden": true,
+      "final_mechanical_causality_revalidated": true
+    },
+    "composition_model_authored_natural_language": false,
+    "composition_model_output_schema": [
+      "relation_kind"
+    ],
+    "composition_relation_kind_by_shape": {
+      "one_component": "local_cooccurrence",
+      "two_component_ordered": "ordered_1_then_2"
+    },
+    "constrained_json": true,
+    "controlled_passive_action_map_active": false,
+    "current_repaired_parent_reused": true,
+    "exact_rejected_r15_regressions": [
+      "hand lifts metal bowl -> metal bowl is lifted by hand",
+      "worker and sealed box stand nearby -> sealed by worker",
+      "covered bowl sits while hand rests nearby -> covered by hand",
+      "red bowl sits while hand rests nearby -> red by hand",
+      "new noun, material, or action in an agent-free query"
+    ],
+    "factor_identity_immediate_rejection": true,
+    "factor_identity_schema_repair_eligible": false,
+    "factorization": {
+      "ambient_factor_keys": ":component:N:ambient",
+      "ambient_media_contract": "audio_only_video_absent",
+      "ambient_prompt_count": 5,
+      "composition_factor_keys": ":family_composition",
+      "composition_media_contract": "text_only_no_media",
+      "composition_prompt_count": 3,
+      "initial_factor_calls": 13,
+      "maximum_authoring_model_calls": 21,
+      "maximum_schema_only_repair_calls": 8,
+      "missing_extra_cross_clip_cross_modality_rejected": true,
+      "same_clip_visual_ambient_pairing_required": true,
+      "visual_factor_keys": ":component:N:visual",
+      "visual_media_contract": "video_only_audio_absent",
+      "visual_prompt_count": 5
+    },
+    "failure_accounting_artifact": "failure_accounting.json",
+    "failure_capsule": true,
+    "family_text_generation": "mechanical_from_accepted_component_factors_and_frozen_shape",
+    "far_local_clause_binding": {
+      "normalized_exact_text_and_sha256_required": true,
+      "query_ordered_visual_and_ambient_coverage_independent": true,
+      "source": "accepted_description_projection_by_ordinal"
+    },
+    "gate_findings_artifact": "gate_findings.json",
+    "lexical_speech_gate": {
+      "ask_question_answer_inflections_forbidden": true,
+      "broad_prefix_matching": false,
+      "matching": "exact_normalized_inflection_lexicon",
+      "single_and_ready_prefix_false_positives_absent": true
+    },
+    "network_denied": true,
+    "one_content_preserving_schema_only_repair_maximum_per_factor": true,
+    "output_path": "data/restricted/p23_102_query_authoring_v2_canary2_run_v1",
+    "paired_factor_semantic_containment_required": true,
+    "parent_semantic_gate_names": [
+      "ambient_acoustic_grounding",
+      "asr_vocalization_quarantine",
+      "cross_kind_distinctness",
+      "far_composition",
+      "standalone_reference",
+      "query_description_identity"
+    ],
+    "pre_execution_one_shot": {
+      "attempt_marker_atomic_create": "O_CREAT|O_EXCL",
+      "attempt_marker_mode": "0600",
+      "attempt_marker_schema_version": "av-trace.p23-102-query-authoring-v2-canary2-attempt-marker/1.0",
+      "consumption_error": "CANARY_ONE_SHOT_AUTHORIZATION_ALREADY_CONSUMED",
+      "contract_binds_marker_path_and_hash": true,
+      "created_after_receipt_and_input_validation": true,
+      "created_before_media_decode_model_load_or_call": true,
+      "failure_retains_marker_and_capsule": true,
+      "file_fsync_required": true,
+      "output_failure_capsule_or_marker_blocks_execution": true,
+      "parent_directory_fsync_required": true,
+      "partial_or_invalid_marker_consumes_receipt": true,
+      "partial_or_invalid_marker_validates_as_success": false,
+      "paths_derived_from_authorization_id": true,
+      "post_create_chmod_required": true,
+      "post_exclusive_create_failure_retains_inode": true,
+      "preflight_reports_but_does_not_create_marker": true,
+      "success_retains_marker_and_output": true,
+      "validator_recomputes_marker_binding": true
+    },
+    "public_surface_confidentiality": {
+      "allowlisted_generated_private_output_prefixes": [
+        "orchestration/logs",
+        "orchestration/results",
+        "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1"
+      ],
+      "binary_control_failure_code": "PUBLIC_SURFACE_BINARY_CONTROL_BYTES",
+      "binary_directory_prefixes": [
+        "mvp/generated/full/media",
+        "mvp/generated/quick/media",
+        "mvp/media_backed/fixtures"
+      ],
+      "binary_filenames": [
+        ".coverage"
+      ],
+      "binary_files_raw_scanned": true,
+      "binary_suffixes": [
+        ".7z",
+        ".avi",
+        ".bin",
+        ".bmp",
+        ".bz2",
+        ".class",
+        ".coverage",
+        ".db",
+        ".dll",
+        ".dylib",
+        ".flac",
+        ".gif",
+        ".gz",
+        ".ico",
+        ".jar",
+        ".jpeg",
+        ".jpg",
+        ".m4a",
+        ".m4v",
+        ".mkv",
+        ".mov",
+        ".mp3",
+        ".mp4",
+        ".npy",
+        ".npz",
+        ".onnx",
+        ".otf",
+        ".parquet",
+        ".pdf",
+        ".png",
+        ".pt",
+        ".pth",
+        ".pyc",
+        ".safetensors",
+        ".so",
+        ".sqlite",
+        ".tar",
+        ".tflite",
+        ".tgz",
+        ".ttf",
+        ".wav",
+        ".webm",
+        ".webp",
+        ".whl",
+        ".xz",
+        ".zip"
+      ],
+      "chunk_bytes": 1048576,
+      "excluded_directory_names": [
+        ".agents",
+        ".codex",
+        ".git"
+      ],
+      "excluded_directory_prefixes": [
+        ".cache",
+        ".mypy_cache",
+        ".pytest_cache",
+        ".ruff_cache",
+        ".tox",
+        ".venv",
+        "build",
+        "node_modules",
+        "venv"
+      ],
+      "historical_public_identity_exemption_from_private_ledger": true,
+      "private_token_values_reported": false,
+      "r22_fresh_selected_private_tokens_permitted": false,
+      "raw_bytes_private_token_scan": true,
+      "restricted_prefixes": [
+        "data/restricted"
+      ],
+      "scan_policy_sha256": "sha256:df48ea5fd6010096a0d1ccad829af81742c34eb5f8e3e5fd1189e3320c238188",
+      "scan_policy_version": "av-trace.canary2-public-surface-scan/2.0",
+      "scan_scope": "repo_root_recursive_all_regular_files",
+      "size_based_skip_permitted": false,
+      "stat_open_read_fail_closed": true,
+      "strict_utf8_decoding": true,
+      "undecodable_text_failure_code": "PUBLIC_SURFACE_UNDECODABLE_TEXT",
+      "unknown_suffix_utf8_validated": true,
+      "unselected_reserve_private_tokens_permitted": false
+    },
+    "structured_ambient_semantics": {
+      "accepted_factor_validator": "parent.validate_accepted_ambient_factor",
+      "accepted_fields_preserved_through_assembly": true,
+      "ambient_lifecycle": "raw_tuple_to_accepted_factor_once",
+      "ambient_schema_repair_permitted": false,
+      "assembly_consumes": "validated_accepted_ambient_factor",
+      "combination_count": 7680,
+      "composition_consumes": "validated_accepted_visual_ambient_text_projection",
+      "constraint_leaf_count": 7680,
+      "constraint_manifest_sha256": "sha256:d3e6b3c4c0c2de8a3b252ea5a1a77094a944f52f7a7dbb678cf5a991e1302628",
+      "constraint_reachable_count": 7680,
+      "content_atom_dimensions": [
+        "event_kind",
+        "timbre",
+        "loudness",
+        "temporal_pattern"
+      ],
+      "continuous_liquid_flow_defined": true,
+      "description_query_generation": "deterministic_mechanical",
+      "event_kind_count": 64,
+      "exact_top_level_keys": [
+        "event_kind",
+        "acoustic_properties"
+      ],
+      "generator_sha256": "sha256:fdaf3ced8892230dc57aa6634c875f441605125ffc1cd9fba01ed7163b3fe086",
+      "independent_description_parse_back_required": true,
+      "independent_query_parse_back_required": true,
+      "legacy_free_text_model_output_rejected": true,
+      "mechanical_text_model_calls": 0,
+      "model_output": "closed_source_free_acoustic_tuple_only",
+      "pour_event_kind_forbidden": true,
+      "r17_raw_paper_regression_rejected": true,
+      "raw_accepted_swap_fails_closed": true,
+      "raw_attempt_parsed_hash_binds": "canonical_ambient_semantics",
+      "raw_attempt_replay_requires_accepted_binding_equality": true,
+      "raw_tuple_validator": "parent.validate_ambient_factor_output",
+      "registry_sha256": "sha256:adcd8505fa038e2580fb0f104e95eb22ab78286ea4047c7257d0d8f8eb559749",
+      "single_declarative_template_spec": "parent.AMBIENT_TEMPLATE_SPEC",
+      "source_free_crinkle_crisp_soft_repeated_passes": true,
+      "source_hint_field_forbidden_even_when_null": true,
+      "source_material_object_agent_location_direction_forbidden": true,
+      "strict_frozen_template_grammar_parser": true,
+      "template_sha256": "sha256:90588713a2401977a220d287344748fdb3e1aab04a7e72beed1d87da7c7aca1c",
+      "tuple_and_derived_hashes_bound": true,
+      "unique_pair_count": 7680
+    },
+    "visual_agentive_passive_supported": false,
+    "visual_query_locative_by_tradeoff": "conservatively_rejected_for_precision",
+    "visual_query_nearby_unaffected": true,
+    "visual_query_standalone_by_fail_closed": true
+  },
+  "implementation_files": [
+    "data/rehearsal_plan/p23_102_query_authoring_v2_canary2.json",
+    "data/rehearsal_plan/p23_102_query_authoring_v2_canary2_r22f_public_commitment.json",
+    "data/restricted/p23_102_query_authoring_v2_canary2_r22f_governance_ledger.json",
+    "docs/design/p23_102_query_authoring_v2_canary2.md",
+    "docs/design/p23_102_query_authoring_v2_canary2_r22d.md",
+    "docs/design/p23_102_query_authoring_v2_canary2_r22e.md",
+    "docs/design/p23_102_query_authoring_v2_canary2_r22f.md",
+    "docs/decisions.md",
+    "docs/overview/av_trace_project_status_for_owner.md",
+    "tooling/tests/test_p23_102_query_authoring_v2_canary2.py",
+    "tools/p23_102_query_authoring_v2_canary2.py"
+  ],
+  "main_pipeline_id": "AV-TRACE-P23-102-QUERY-AUTHORING-V2",
+  "main_pipeline_sha256": "sha256:ba84ba2a26810da99f4a8fb184bf740e675dcd9fe42b21dfa708e1e70de2df60",
+  "no_claim_boundary": {
+    "human_semantic_validation_performed": false,
+    "retrieval_claims_permitted": false,
+    "retrieval_scoring_performed": false,
+    "scientific_claims_permitted": false,
+    "set_status": "OPAQUE_COMMITTED_ROLES_PRIVATE_IDENTITIES_RESTRICTED"
+  },
+  "plan_payload_sha256": "sha256:6ef8481ba915b19ceae4481dff70c139dd2ba21e76fa04798aa21db51b267c9c",
+  "planned_subset_counts": {
+    "families": 3,
+    "far_families": 2,
+    "local_families": 1,
+    "queries": 13,
+    "target_clips": 5
+  },
+  "schema_version": "av-trace.p23-102-query-authoring-v2-canary2-plan/27.0",
+  "scope": {
+    "authorization_receipt_created": false,
+    "canary2_plan_modified": true,
+    "canary_v1_modified": false,
+    "main_pipeline_modified": false,
+    "main_plan_modified": false,
+    "media_decoded_by_this_task": false,
+    "old_authorization_receipts_valid": false,
+    "plan_status_current": true,
+    "r22b_selection_governance_active": true,
+    "r22d_marker_fail_stop_persistence_active": true,
+    "r22f_public_surface_complete_scan_active": true,
+    "real_model_run_performed": false,
+    "retrieval_scoring_performed": false
+  },
+  "selection": {
+    "actual_unique_clip_count": 5,
+    "algorithm": "r22b_one_shot_reserve_selection",
+    "domain": "AV-TRACE-P23-102-QUERY-AUTHORING-V2-CANARY2-SELECTION-R22B",
+    "exact_family_count": 3,
+    "expected_query_count": 13,
+    "exposure_filtering_active": true,
+    "machine_registry_and_index_diagnostics_only": true,
+    "manual_semantic_labels_read": false,
+    "maximum_unique_clip_count": 5,
+    "retrieval_scores_rankings_outcomes_or_vectors_read": false,
+    "role_priority": [
+      "far_vocalization_asr_ambiguity",
+      "far_continuity_anaphora"
+    ],
+    "status_wording": "one historical anchor role plus two opaque committed roles; private identities remain restricted",
+    "structural_hash_tie_breaks_only": true,
+    "version": "2.0"
+  },
+  "selection_governance": {
+    "marker_fail_stop_persistence": true,
+    "maximum_replacements": 2,
+    "no_future_output_selection": true,
+    "no_human_selection": true,
+    "no_retrieval_selection": true,
+    "one_shot_attempt_marker": true,
+    "private_governance_commitment_sha256": "sha256:254c7efba257855ef4015c9d603edb9778b9a5df9153043e3f5164c68ddac24b",
+    "private_governance_ledger_sha256": "sha256:d3973f94faf605bb0be664f7f0d7c2fd532405bc4b069ca59aeaa3b47ed0fc34",
+    "public_selection_commitment_sha256": "sha256:34ed41765b0d2a80a1ba65f7a2ddf8d4dfdcfe49c5db1628bc83ce119da68f85",
+    "public_surface_binary_control_failure_code": "PUBLIC_SURFACE_BINARY_CONTROL_BYTES",
+    "public_surface_binary_files_raw_scanned": true,
+    "public_surface_private_leakage_scan": true,
+    "public_surface_raw_bytes_private_token_scan": true,
+    "public_surface_scan_policy_sha256": "sha256:df48ea5fd6010096a0d1ccad829af81742c34eb5f8e3e5fd1189e3320c238188",
+    "public_surface_scan_policy_version": "av-trace.canary2-public-surface-scan/2.0",
+    "public_surface_scan_scope": "repo_root_recursive_all_regular_files",
+    "public_surface_size_based_skip_permitted": false,
+    "public_surface_strict_utf8": true,
+    "public_surface_undecodable_failure_code": "PUBLIC_SURFACE_UNDECODABLE_TEXT",
+    "public_surface_unknown_suffix_utf8_validated": true,
+    "redraw_after_output_permitted": false,
+    "replacement_generation": 1,
+    "run_attempt_limit": 1,
+    "runtime_fallback_permitted": false,
+    "selection_algorithm": "r22b_one_shot_reserve_selection",
+    "selection_version": "2.0"
+  },
+  "selection_input_hashes": {
+    "private_governance_commitment_sha256": "sha256:254c7efba257855ef4015c9d603edb9778b9a5df9153043e3f5164c68ddac24b",
+    "private_governance_ledger_sha256": "sha256:d3973f94faf605bb0be664f7f0d7c2fd532405bc4b069ca59aeaa3b47ed0fc34",
+    "public_selection_commitment_sha256": "sha256:34ed41765b0d2a80a1ba65f7a2ddf8d4dfdcfe49c5db1628bc83ce119da68f85"
+  },
+  "unique_clip_count": 5
+}

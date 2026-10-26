@@ -1,0 +1,32 @@
+{
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f07_hexagon_chime",
+  "full_set_satisfiable": true,
+  "leave_one_out_cases": [
+    {
+      "removed_evidence_id": "s4_orange_hexagon",
+      "retained_evidence_ids": [
+        "s4_chime"
+      ],
+      "still_sufficient": false,
+      "unsupported_claim_ids": [
+        "claim_syn_f07_hexagon_chime"
+      ]
+    },
+    {
+      "removed_evidence_id": "s4_chime",
+      "retained_evidence_ids": [
+        "s4_orange_hexagon"
+      ],
+      "still_sufficient": false,
+      "unsupported_claim_ids": [
+        "claim_syn_f07_hexagon_chime"
+      ]
+    }
+  ],
+  "minimal": true,
+  "minimality_result_id": "minimality.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1",
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f07_hexagon_chime_1",
+  "strict_superset_of_accepted_set_ids": []
+}

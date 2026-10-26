@@ -1,0 +1,486 @@
+{
+  "annotation": {
+    "adjudicator": "synthetic_adjudicator",
+    "alternative_evidence_finder": "synthetic_alternative_finder",
+    "alternative_search_completed": true,
+    "authors": [
+      "synthetic_author"
+    ],
+    "shortcut_audits": [
+      {
+        "audit_type": "question_only",
+        "notes": "Answers are arbitrary registered tokens.",
+        "status": "pass"
+      },
+      {
+        "audit_type": "intervention_artifact",
+        "notes": "No condition marker is embedded in source media.",
+        "status": "pass"
+      }
+    ],
+    "status": "accepted",
+    "validators": [
+      "synthetic_validator_a",
+      "synthetic_validator_b"
+    ],
+    "version": "synthetic-v1"
+  },
+  "answer_spec": {
+    "display_answer": "Three bell pulses sounded, and a red square appeared later.",
+    "forbidden_claim_ids": [],
+    "optional_claim_ids": [],
+    "required_claim_ids": [
+      "claim_syn_f03_bell_then_square"
+    ]
+  },
+  "claim_evidence_graph": {
+    "accepted_sufficient_sets": [
+      {
+        "claim_ids": [
+          "claim_syn_f03_bell_then_square"
+        ],
+        "evidence_ids": [
+          "s2_bell",
+          "s2_red_square"
+        ],
+        "hop_ids": [
+          "hop_extract_s2_bell",
+          "hop_extract_s2_red_square",
+          "hop_syn_f03_bell_then_square_route_1"
+        ],
+        "minimality_validated": true,
+        "satisfiability_validated": true,
+        "set_id": "ses_syn_f03_bell_then_square_1",
+        "validator_ids": [
+          "synthetic_validator_a",
+          "synthetic_validator_b"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "accepted_aliases": [
+          "Three bell pulses sounded, and a red square appeared later."
+        ],
+        "answer_value": {
+          "bell_pulses": 3,
+          "later_shape": "red_square"
+        },
+        "claim_id": "claim_syn_f03_bell_then_square",
+        "contradiction_claim_ids": [],
+        "proposition": "Three bell pulses sounded, and a red square appeared later.",
+        "requirement": "required"
+      }
+    ],
+    "evidence_units": [
+      {
+        "evidence_id": "s2_bell",
+        "intervals": [
+          {
+            "end_s": 44.0,
+            "start_s": 38.0
+          }
+        ],
+        "modality": "ambient",
+        "observation": "THREE BELL PULSES",
+        "provenance": {
+          "asset_id": "syn_source_02",
+          "stream_hash": "sha256:66838432c82f627cfb065658d0e146ab0945a98d354fc8ffee28f6c300ebc4c3",
+          "transformation_ids": []
+        },
+        "stream_id": "syn_source_02_audio"
+      },
+      {
+        "evidence_id": "s2_red_square",
+        "intervals": [
+          {
+            "end_s": 230.0,
+            "start_s": 224.0
+          }
+        ],
+        "modality": "vision",
+        "observation": "RED SQUARE",
+        "provenance": {
+          "asset_id": "syn_source_02",
+          "stream_hash": "sha256:c3a45fe6e1c54097ddc66f4898a7c6c12df2cb7ca7fb34e8d598803ff658dc36",
+          "transformation_ids": []
+        },
+        "stream_id": "syn_source_02_video"
+      }
+    ],
+    "hops": [
+      {
+        "description": "Extract the registered ambient observation: THREE BELL PULSES.",
+        "hop_id": "hop_extract_s2_bell",
+        "hop_type": "ambient_event",
+        "input_evidence_ids": [
+          "s2_bell"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Extract the registered vision observation: RED SQUARE.",
+        "hop_id": "hop_extract_s2_red_square",
+        "hop_type": "event_detection",
+        "input_evidence_ids": [
+          "s2_red_square"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Combine temporally registered evidence for accepted route 1.",
+        "hop_id": "hop_syn_f03_bell_then_square_route_1",
+        "hop_type": "cross_modal_binding",
+        "input_evidence_ids": [],
+        "input_hop_ids": [
+          "hop_extract_s2_bell",
+          "hop_extract_s2_red_square"
+        ]
+      }
+    ],
+    "necessity_groups": [
+      {
+        "claim_ids": [
+          "claim_syn_f03_bell_then_square"
+        ],
+        "group_id": "ng_syn_f03_bell_then_square",
+        "intersects_all_accepted_sets": true,
+        "member_evidence_ids": [
+          "s2_bell"
+        ],
+        "removal_validated": true,
+        "required_hop_ids": [
+          "hop_extract_s2_bell",
+          "hop_syn_f03_bell_then_square_route_1"
+        ],
+        "required_modalities": [
+          "ambient"
+        ]
+      }
+    ],
+    "support_edges": [
+      {
+        "edge_id": "edge_s2_bell_extract",
+        "from_ids": [
+          "s2_bell"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s2_bell"
+      },
+      {
+        "edge_id": "edge_s2_red_square_extract",
+        "from_ids": [
+          "s2_red_square"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s2_red_square"
+      },
+      {
+        "edge_id": "edge_syn_f03_bell_then_square_route_1",
+        "from_ids": [
+          "hop_extract_s2_bell",
+          "hop_extract_s2_red_square"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_syn_f03_bell_then_square_route_1"
+      },
+      {
+        "edge_id": "edge_syn_f03_bell_then_square_claim_1",
+        "from_ids": [
+          "hop_syn_f03_bell_then_square_route_1"
+        ],
+        "relation": "hop_supports_claim",
+        "to_id": "claim_syn_f03_bell_then_square"
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "anchor_episode_id": null,
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f03_bell_then_square.clean",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s2_bell",
+          "s2_red_square"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f03_bell_then_square",
+      "interventions": [],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f03_bell_then_square_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [],
+        "gold_missing_hop_types": [],
+        "gold_missing_modality_sets": [],
+        "gold_missing_necessity_group_ids": [],
+        "initial_accessible_sufficient": true,
+        "missingness_cause": "not_missing",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:08fb0b0754ee9adc63f32693d6da29a3ca06e6a7f2146eb689f9e676c265d3dc",
+        "seed": 20260905
+      },
+      "state_role": "CLEAN"
+    },
+    {
+      "anchor_episode_id": "syn_f03_bell_then_square.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f03_bell_then_square.blocked",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s2_red_square"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f03_bell_then_square",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s2_bell"
+          ],
+          "affected_necessity_group_id": "ng_syn_f03_bell_then_square",
+          "intervention_id": "block_syn_f03_bell_then_square",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [],
+        "expected_final_sufficiency": "insufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s2_bell",
+          "hop_syn_f03_bell_then_square_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "ambient_event",
+          "cross_modal_binding"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "ambient"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f03_bell_then_square"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:08fb0b0754ee9adc63f32693d6da29a3ca06e6a7f2146eb689f9e676c265d3dc",
+        "seed": 20260905
+      },
+      "state_role": "BLOCKED"
+    },
+    {
+      "anchor_episode_id": "syn_f03_bell_then_square.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f03_bell_then_square.restored",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s2_red_square"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f03_bell_then_square",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s2_bell"
+          ],
+          "affected_necessity_group_id": "ng_syn_f03_bell_then_square",
+          "intervention_id": "block_syn_f03_bell_then_square",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        },
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "on_restore"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s2_bell"
+          ],
+          "affected_necessity_group_id": "ng_syn_f03_bell_then_square",
+          "intervention_id": "restore_syn_f03_bell_then_square",
+          "mechanism": "necessity_group_withholding",
+          "phase": "restoration",
+          "restoration": {
+            "enabled": true,
+            "restores_intervention_id": "block_syn_f03_bell_then_square",
+            "trigger_type": "get_channel_status",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f03_bell_then_square_1"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s2_bell",
+          "hop_syn_f03_bell_then_square_route_1"
+        ],
+        "gold_missing_hop_types": [
+          "ambient_event",
+          "cross_modal_binding"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "ambient"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f03_bell_then_square"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:08fb0b0754ee9adc63f32693d6da29a3ca06e6a7f2146eb689f9e676c265d3dc",
+        "seed": 20260905
+      },
+      "state_role": "RESTORED"
+    }
+  ],
+  "family_id": "syn_f03_bell_then_square",
+  "intervention_family_id": "if_syn_f03_bell_then_square",
+  "intervention_mechanism": "necessity_group_withholding",
+  "question": {
+    "answer_type": "structured_claims",
+    "question_only_risk": "low",
+    "requested_granularity": "Return the exact registered values for both linked observations.",
+    "text": "How many bell pulses sounded, and which shape appeared much later?"
+  },
+  "schema_version": "0.2.0",
+  "source": {
+    "access_class": "restricted_compatibility",
+    "asset_id": "syn_source_02",
+    "content_hash": "sha256:3a33b5ae5fbab9253e3e31f9bedbc0ae89112024bed94edeaf7422a6e9729795",
+    "duration_s": 300.0,
+    "manifest_asset_id": "syn_source_02",
+    "manifest_revision": "synthetic-v1",
+    "rights_decision_id": "rights_syn_source_02",
+    "streams": [
+      {
+        "hash": "sha256:c3a45fe6e1c54097ddc66f4898a7c6c12df2cb7ca7fb34e8d598803ff658dc36",
+        "kind": "video",
+        "language": null,
+        "stream_id": "syn_source_02_video"
+      },
+      {
+        "hash": "sha256:66838432c82f627cfb065658d0e146ab0945a98d354fc8ffee28f6c300ebc4c3",
+        "kind": "audio",
+        "language": "en-x-synthetic",
+        "stream_id": "syn_source_02_audio"
+      }
+    ]
+  },
+  "split": "development"
+}

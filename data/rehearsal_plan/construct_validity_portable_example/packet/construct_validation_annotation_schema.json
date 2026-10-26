@@ -1,0 +1,655 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:construct-validation-annotation:1.0.0",
+  "title": "AV-TRACE deferred construct-validation annotation form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "form_id",
+    "packet_id",
+    "family_id",
+    "source_id",
+    "role",
+    "assignment_tier",
+    "assignment_hash",
+    "completion_status",
+    "reviewer",
+    "assignment",
+    "review"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "construct_validation_annotation"},
+    "form_id": {"$ref": "#/$defs/id"},
+    "packet_id": {"$ref": "#/$defs/id"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "source_id": {"$ref": "#/$defs/id"},
+    "role": {
+      "enum": [
+        "question_claim_author_or_verifier",
+        "blind_alternative_evidence_finder",
+        "validator_a",
+        "validator_b"
+      ]
+    },
+    "assignment_tier": {
+      "enum": [
+        "P0_MACHINE_CANDIDATE",
+        "P1_MACHINE_CROSS_VALIDATED",
+        "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+        "BLINDED_MACHINE_TIER"
+      ]
+    },
+    "assignment_hash": {"$ref": "#/$defs/sha256"},
+    "completion_status": {"enum": ["not_started", "completed"]},
+    "reviewer": {"$ref": "#/$defs/reviewer"},
+    "assignment": {"$ref": "#/$defs/assignment"},
+    "review": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "not_started"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "null"},
+              "started_at": {"type": "null"},
+              "completed_at": {"type": "null"},
+              "active_minutes": {"type": "null"}
+            }
+          },
+          "review": {"maxProperties": 0}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "completed"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {"$ref": "#/$defs/completed_reviewer"}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "completion_status": {"const": "completed"},
+          "role": {"const": "question_claim_author_or_verifier"}
+        },
+        "required": ["completion_status", "role"]
+      },
+      "then": {
+        "properties": {"review": {"$ref": "#/$defs/author_review"}}
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "completion_status": {"const": "completed"},
+          "role": {"const": "blind_alternative_evidence_finder"}
+        },
+        "required": ["completion_status", "role"]
+      },
+      "then": {
+        "properties": {"review": {"$ref": "#/$defs/alternative_review"}}
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "completion_status": {"const": "completed"},
+          "role": {"enum": ["validator_a", "validator_b"]}
+        },
+        "required": ["completion_status", "role"]
+      },
+      "then": {
+        "properties": {"review": {"$ref": "#/$defs/validator_review"}}
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "verdict": {
+      "enum": ["pass", "fail", "uncertain", "not_applicable"]
+    },
+    "yes_no_uncertain": {
+      "enum": ["yes", "no", "uncertain"]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "AMBIGUOUS_QUESTION",
+          "SOURCE_INSUFFICIENT",
+          "ANSWER_INCORRECT",
+          "CLAIM_UNSUPPORTED",
+          "INTERVAL_TOO_BROAD",
+          "INTERVAL_TOO_NARROW",
+          "WRONG_MODALITY",
+          "ALTERNATIVE_SUPPORT_FOUND",
+          "ALTERNATIVE_SEARCH_INCOMPLETE",
+          "SES_NOT_SUFFICIENT",
+          "SES_NOT_MINIMAL",
+          "NECESSITY_GROUP_INVALID",
+          "MODALITY_NOT_NECESSARY",
+          "QUESTION_ONLY_SHORTCUT",
+          "METADATA_SHORTCUT",
+          "PAIR_ISOLATION_FAILURE",
+          "DERIVED_EVIDENCE_LEAK",
+          "RECOVERY_NOT_FEASIBLE",
+          "RIGHTS_HOLD",
+          "PRIVACY_HOLD",
+          "SAFETY_HOLD",
+          "BLINDING_VIOLATION",
+          "OTHER"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "declared_role",
+        "independent_of_author",
+        "blinded_to",
+        "started_at",
+        "completed_at",
+        "active_minutes"
+      ],
+      "properties": {
+        "reviewer_id": {"type": ["string", "null"], "minLength": 1},
+        "declared_role": {
+          "enum": [
+            "question_claim_author_or_verifier",
+            "blind_alternative_evidence_finder",
+            "validator_a",
+            "validator_b"
+          ]
+        },
+        "independent_of_author": {"type": ["boolean", "null"]},
+        "blinded_to": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "preferred_ses",
+              "machine_confidence",
+              "machine_tier_evidence",
+              "machine_ranks",
+              "other_validator_decision",
+              "adjudicator_decision"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "started_at": {"type": ["string", "null"], "format": "date-time"},
+        "completed_at": {"type": ["string", "null"], "format": "date-time"},
+        "active_minutes": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1440
+        }
+      }
+    },
+    "completed_reviewer": {
+      "allOf": [
+        {"$ref": "#/$defs/reviewer"},
+        {
+          "properties": {
+            "reviewer_id": {"type": "string", "minLength": 1},
+            "independent_of_author": {"type": "boolean"},
+            "started_at": {"type": "string", "format": "date-time"},
+            "completed_at": {"type": "string", "format": "date-time"},
+            "active_minutes": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1440
+            }
+          }
+        }
+      ]
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_reference",
+        "source_duration_s",
+        "source_content_hashes",
+        "question_text",
+        "machine_claims",
+        "claim_ids",
+        "machine_candidate_evidence",
+        "candidate_evidence_ids",
+        "machine_preferred_ses",
+        "pair_blueprint_reference",
+        "machine_labels_are_provisional",
+        "human_gold_at_assignment"
+      ],
+      "properties": {
+        "source_reference": {"type": "string", "minLength": 1},
+        "source_duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "source_content_hashes": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/sha256"},
+          "uniqueItems": true
+        },
+        "question_text": {"type": "string", "minLength": 1},
+        "machine_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim_id", "text"],
+            "properties": {
+              "claim_id": {"$ref": "#/$defs/id"},
+              "text": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "candidate_evidence_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "machine_candidate_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["evidence_id", "intervals", "modalities", "claim_ids"],
+            "properties": {
+              "evidence_id": {"$ref": "#/$defs/id"},
+              "intervals": {
+                "type": "array",
+                "items": {"$ref": "#/$defs/interval"}
+              },
+              "modalities": {
+                "type": "array",
+                "items": {"enum": ["vision", "speech", "ambient"]},
+                "uniqueItems": true
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {"$ref": "#/$defs/id"},
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        "machine_preferred_ses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["ses_id", "evidence_ids", "claim_ids"],
+            "properties": {
+              "ses_id": {"$ref": "#/$defs/id"},
+              "evidence_ids": {
+                "type": "array",
+                "items": {"$ref": "#/$defs/id"},
+                "uniqueItems": true
+              },
+              "claim_ids": {
+                "type": "array",
+                "items": {"$ref": "#/$defs/id"},
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        "pair_blueprint_reference": {
+          "type": ["string", "null"],
+          "maxLength": 2000
+        },
+        "machine_labels_are_provisional": {"const": true},
+        "human_gold_at_assignment": {"const": false}
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "evidence_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "intervals",
+        "modalities",
+        "supports_claim_ids",
+        "support_verdict",
+        "notes"
+      ],
+      "properties": {
+        "evidence_id": {"$ref": "#/$defs/id"},
+        "intervals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/interval"}
+        },
+        "modalities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["vision", "speech", "ambient"]},
+          "uniqueItems": true
+        },
+        "supports_claim_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "support_verdict": {"$ref": "#/$defs/verdict"},
+        "notes": {"type": "string"}
+      }
+    },
+    "ses_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ses_id",
+        "evidence_ids",
+        "claim_ids",
+        "sufficient",
+        "leave_one_out",
+        "is_alternative_to_machine_preferred"
+      ],
+      "properties": {
+        "ses_id": {"$ref": "#/$defs/id"},
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "sufficient": {"$ref": "#/$defs/verdict"},
+        "leave_one_out": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "removed_evidence_id",
+              "target_claims_remain_supported",
+              "reason"
+            ],
+            "properties": {
+              "removed_evidence_id": {"$ref": "#/$defs/id"},
+              "target_claims_remain_supported": {
+                "$ref": "#/$defs/yes_no_uncertain"
+              },
+              "reason": {"type": "string"}
+            }
+          }
+        },
+        "is_alternative_to_machine_preferred": {"type": "boolean"}
+      }
+    },
+    "author_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_answerability",
+        "question_ambiguity",
+        "answer_claim_correctness",
+        "atomic_claims_complete",
+        "question_only_shortcut_absent",
+        "metadata_shortcut_absent",
+        "rights_release",
+        "privacy",
+        "safety",
+        "outcome",
+        "confidence",
+        "reason_codes",
+        "notes"
+      ],
+      "properties": {
+        "question_answerability": {"$ref": "#/$defs/verdict"},
+        "question_ambiguity": {"enum": ["none", "minor", "major", "uncertain"]},
+        "answer_claim_correctness": {"$ref": "#/$defs/verdict"},
+        "atomic_claims_complete": {"$ref": "#/$defs/verdict"},
+        "question_only_shortcut_absent": {"$ref": "#/$defs/verdict"},
+        "metadata_shortcut_absent": {"$ref": "#/$defs/verdict"},
+        "rights_release": {"$ref": "#/$defs/verdict"},
+        "privacy": {"$ref": "#/$defs/verdict"},
+        "safety": {"$ref": "#/$defs/verdict"},
+        "outcome": {"enum": ["accept_for_validation", "repair", "reject"]},
+        "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+        "reason_codes": {"$ref": "#/$defs/reason_codes"},
+        "notes": {"type": "string"}
+      }
+    },
+    "alternative_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blind_search_completed_before_unblinding",
+        "full_source_search_completed",
+        "coverage_log",
+        "candidate_evidence",
+        "candidate_ses",
+        "new_alternative_ses_count",
+        "exhaustive_enumeration_credible",
+        "unresolved_regions",
+        "outcome",
+        "confidence",
+        "reason_codes",
+        "notes"
+      ],
+      "properties": {
+        "blind_search_completed_before_unblinding": {"const": true},
+        "full_source_search_completed": {"const": true},
+        "coverage_log": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["start_s", "end_s", "reviewed", "notes"],
+            "properties": {
+              "start_s": {"type": "number", "minimum": 0},
+              "end_s": {"type": "number", "exclusiveMinimum": 0},
+              "reviewed": {"const": true},
+              "notes": {"type": "string"}
+            }
+          }
+        },
+        "candidate_evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidence_candidate"}
+        },
+        "candidate_ses": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ses_candidate"}
+        },
+        "new_alternative_ses_count": {"type": "integer", "minimum": 0},
+        "exhaustive_enumeration_credible": {"$ref": "#/$defs/verdict"},
+        "unresolved_regions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/interval"}
+        },
+        "outcome": {"enum": ["complete", "repair", "reject"]},
+        "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+        "reason_codes": {"$ref": "#/$defs/reason_codes"},
+        "notes": {"type": "string"}
+      }
+    },
+    "counterfactual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "answerability_without", "target_claim_ids", "notes"],
+      "properties": {
+        "condition": {
+          "enum": [
+            "drop_vision",
+            "drop_speech",
+            "drop_ambient",
+            "question_only",
+            "metadata_only"
+          ]
+        },
+        "answerability_without": {"$ref": "#/$defs/yes_no_uncertain"},
+        "target_claim_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "necessity_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "member_evidence_ids",
+        "intersects_every_accepted_ses",
+        "group_removal_breaks_target_support",
+        "verdict",
+        "notes"
+      ],
+      "properties": {
+        "group_id": {"$ref": "#/$defs/id"},
+        "member_evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "intersects_every_accepted_ses": {"$ref": "#/$defs/yes_no_uncertain"},
+        "group_removal_breaks_target_support": {
+          "$ref": "#/$defs/yes_no_uncertain"
+        },
+        "verdict": {"$ref": "#/$defs/verdict"},
+        "notes": {"type": "string"}
+      }
+    },
+    "pair_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clean_supported",
+        "blocked_target_inaccessible",
+        "blocked_source_remains_sufficient",
+        "all_direct_derived_alternative_routes_blocked",
+        "restored_matches_blocked_pretrigger",
+        "restoration_reverses_only_block",
+        "recovery_feasible_within_budget",
+        "pair_isolation",
+        "notes"
+      ],
+      "properties": {
+        "clean_supported": {"$ref": "#/$defs/verdict"},
+        "blocked_target_inaccessible": {"$ref": "#/$defs/verdict"},
+        "blocked_source_remains_sufficient": {"$ref": "#/$defs/verdict"},
+        "all_direct_derived_alternative_routes_blocked": {
+          "$ref": "#/$defs/verdict"
+        },
+        "restored_matches_blocked_pretrigger": {"$ref": "#/$defs/verdict"},
+        "restoration_reverses_only_block": {"$ref": "#/$defs/verdict"},
+        "recovery_feasible_within_budget": {"$ref": "#/$defs/verdict"},
+        "pair_isolation": {"$ref": "#/$defs/verdict"},
+        "notes": {"type": "string"}
+      }
+    },
+    "validator_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_answerability",
+        "question_ambiguity",
+        "answer_claim_correctness",
+        "claim_judgments",
+        "evidence_judgments",
+        "ses_results",
+        "necessity_group_results",
+        "counterfactuals",
+        "pair_review",
+        "rights_release",
+        "privacy",
+        "safety",
+        "family_outcome",
+        "confidence",
+        "reason_codes",
+        "notes"
+      ],
+      "properties": {
+        "question_answerability": {"$ref": "#/$defs/verdict"},
+        "question_ambiguity": {"enum": ["none", "minor", "major", "uncertain"]},
+        "answer_claim_correctness": {"$ref": "#/$defs/verdict"},
+        "claim_judgments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim_id", "correct", "supported", "notes"],
+            "properties": {
+              "claim_id": {"$ref": "#/$defs/id"},
+              "correct": {"$ref": "#/$defs/verdict"},
+              "supported": {"$ref": "#/$defs/verdict"},
+              "notes": {"type": "string"}
+            }
+          }
+        },
+        "evidence_judgments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidence_candidate"}
+        },
+        "ses_results": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ses_candidate"}
+        },
+        "necessity_group_results": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/necessity_result"}
+        },
+        "counterfactuals": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"$ref": "#/$defs/counterfactual"}
+        },
+        "pair_review": {"$ref": "#/$defs/pair_review"},
+        "rights_release": {"$ref": "#/$defs/verdict"},
+        "privacy": {"$ref": "#/$defs/verdict"},
+        "safety": {"$ref": "#/$defs/verdict"},
+        "family_outcome": {"enum": ["accept", "repair", "reject"]},
+        "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+        "reason_codes": {"$ref": "#/$defs/reason_codes"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

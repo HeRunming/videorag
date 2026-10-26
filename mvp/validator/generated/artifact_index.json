@@ -1,0 +1,476 @@
+{
+  "backend_manifest_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+  "counts": {
+    "blocked_proofs": 8,
+    "families": 8,
+    "feasible_route_records": 217,
+    "minimality_results": 9,
+    "restored_proofs": 8,
+    "ses_demonstrations": 9,
+    "trajectories": 48,
+    "validators": 2
+  },
+  "created_at": "2026-09-06T00:00:00Z",
+  "denominator_hash": "sha256:d6322db5b4b8a6853183224e09a19bfea4f31c575fe277d41e6d7284d83e84ca",
+  "denominator_path": "premature_stop_denominator.json",
+  "families": [
+    {
+      "blocked_proof_id": "blocked-proof.syn_f01_visual_order",
+      "family_hash": "sha256:0acf5736bc66071fbcbf33b2d28a25940d16437043886b656c2a4d6f804124cc",
+      "family_id": "syn_f01_visual_order",
+      "family_path": "families/syn_f01_visual_order/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f01_visual_order.blocked.0",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.blocked.1",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.blocked.2",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.blocked.3",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.blocked.4",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.clean.0",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.clean.1",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.clean.2",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.clean.3",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.clean.4",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.restored.0",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.restored.1",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.restored.2",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.restored.3",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.restored.4",
+        "feasible.synthetic_validator_a.syn_f01_visual_order.restored.5",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.blocked.0",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.blocked.1",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.blocked.2",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.clean.0",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.clean.1",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.clean.2",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.restored.0",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.restored.1",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.restored.2",
+        "feasible.synthetic_validator_b.syn_f01_visual_order.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f01_visual_order.blocked",
+        "link.synthetic_validator_a.syn_f01_visual_order.clean",
+        "link.synthetic_validator_a.syn_f01_visual_order.restored",
+        "link.synthetic_validator_b.syn_f01_visual_order.blocked",
+        "link.synthetic_validator_b.syn_f01_visual_order.clean",
+        "link.synthetic_validator_b.syn_f01_visual_order.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f01_visual_order.ses_syn_f01_visual_order_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f01_visual_order",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f01_visual_order.ses_syn_f01_visual_order_1"
+      ],
+      "source_manifest_hash": "sha256:a89408a822de37b2b766ac64200bed34d0b63b5cff548a22db97487539605a88",
+      "source_manifest_path": "families/syn_f01_visual_order/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f02_speech_sequence",
+      "family_hash": "sha256:869c8e5b7a524c5e3ed99fa06f81ad8ed8916fe3d38a3fc6547fb17f2fe90ac8",
+      "family_id": "syn_f02_speech_sequence",
+      "family_path": "families/syn_f02_speech_sequence/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.blocked.0",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.blocked.1",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.blocked.2",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.blocked.3",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.blocked.4",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.clean.0",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.clean.1",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.clean.2",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.clean.3",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.clean.4",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.restored.0",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.restored.1",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.restored.2",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.restored.3",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.restored.4",
+        "feasible.synthetic_validator_a.syn_f02_speech_sequence.restored.5",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.blocked.0",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.blocked.1",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.blocked.2",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.clean.0",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.clean.1",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.clean.2",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.restored.0",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.restored.1",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.restored.2",
+        "feasible.synthetic_validator_b.syn_f02_speech_sequence.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f02_speech_sequence.blocked",
+        "link.synthetic_validator_a.syn_f02_speech_sequence.clean",
+        "link.synthetic_validator_a.syn_f02_speech_sequence.restored",
+        "link.synthetic_validator_b.syn_f02_speech_sequence.blocked",
+        "link.synthetic_validator_b.syn_f02_speech_sequence.clean",
+        "link.synthetic_validator_b.syn_f02_speech_sequence.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f02_speech_sequence.ses_syn_f02_speech_sequence_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f02_speech_sequence",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f02_speech_sequence.ses_syn_f02_speech_sequence_1"
+      ],
+      "source_manifest_hash": "sha256:a89408a822de37b2b766ac64200bed34d0b63b5cff548a22db97487539605a88",
+      "source_manifest_path": "families/syn_f02_speech_sequence/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f03_bell_then_square",
+      "family_hash": "sha256:3d7a33bec505b853b04ecb6958153aee11f5be0727c33995c69d4f0dbefea19e",
+      "family_id": "syn_f03_bell_then_square",
+      "family_path": "families/syn_f03_bell_then_square/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.blocked.0",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.blocked.1",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.blocked.2",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.blocked.3",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.blocked.4",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.clean.0",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.clean.1",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.clean.2",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.clean.3",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.clean.4",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.restored.0",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.restored.1",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.restored.2",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.restored.3",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.restored.4",
+        "feasible.synthetic_validator_a.syn_f03_bell_then_square.restored.5",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.blocked.0",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.blocked.1",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.blocked.2",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.clean.0",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.clean.1",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.clean.2",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.restored.0",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.restored.1",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.restored.2",
+        "feasible.synthetic_validator_b.syn_f03_bell_then_square.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f03_bell_then_square.blocked",
+        "link.synthetic_validator_a.syn_f03_bell_then_square.clean",
+        "link.synthetic_validator_a.syn_f03_bell_then_square.restored",
+        "link.synthetic_validator_b.syn_f03_bell_then_square.blocked",
+        "link.synthetic_validator_b.syn_f03_bell_then_square.clean",
+        "link.synthetic_validator_b.syn_f03_bell_then_square.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f03_bell_then_square.ses_syn_f03_bell_then_square_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f03_bell_then_square",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f03_bell_then_square.ses_syn_f03_bell_then_square_1"
+      ],
+      "source_manifest_hash": "sha256:85798d100114fdbada09b8eee5b2425532b222db71b20324184de11cb3046bbc",
+      "source_manifest_path": "families/syn_f03_bell_then_square/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f04_star_bin",
+      "family_hash": "sha256:87c012a07221e27933953a043db3d778683243ed8b1c91b65f88af4caf3a90af",
+      "family_id": "syn_f04_star_bin",
+      "family_path": "families/syn_f04_star_bin/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f04_star_bin.blocked.0",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.blocked.1",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.blocked.2",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.blocked.3",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.blocked.4",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.clean.0",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.clean.1",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.clean.2",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.clean.3",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.clean.4",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.restored.0",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.restored.1",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.restored.2",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.restored.3",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.restored.4",
+        "feasible.synthetic_validator_a.syn_f04_star_bin.restored.5",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.blocked.0",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.blocked.1",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.blocked.2",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.clean.0",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.clean.1",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.clean.2",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.restored.0",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.restored.1",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.restored.2",
+        "feasible.synthetic_validator_b.syn_f04_star_bin.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f04_star_bin.blocked",
+        "link.synthetic_validator_a.syn_f04_star_bin.clean",
+        "link.synthetic_validator_a.syn_f04_star_bin.restored",
+        "link.synthetic_validator_b.syn_f04_star_bin.blocked",
+        "link.synthetic_validator_b.syn_f04_star_bin.clean",
+        "link.synthetic_validator_b.syn_f04_star_bin.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f04_star_bin.ses_syn_f04_star_bin_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f04_star_bin",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f04_star_bin.ses_syn_f04_star_bin_1"
+      ],
+      "source_manifest_hash": "sha256:85798d100114fdbada09b8eee5b2425532b222db71b20324184de11cb3046bbc",
+      "source_manifest_path": "families/syn_f04_star_bin/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f05_alternative_route",
+      "family_hash": "sha256:bda055b333d257016e5dfb5518de90790aa0c40c7ca378cbc6fec1487fd93375",
+      "family_id": "syn_f05_alternative_route",
+      "family_path": "families/syn_f05_alternative_route/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.0",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.1",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.2",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.3",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.4",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.5",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.blocked.6",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.0",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.1",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.2",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.3",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.4",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.5",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.clean.6",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.0",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.1",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.2",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.3",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.4",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.5",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.6",
+        "feasible.synthetic_validator_a.syn_f05_alternative_route.restored.7",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.blocked.0",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.blocked.1",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.blocked.2",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.blocked.3",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.clean.0",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.clean.1",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.clean.2",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.clean.3",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.restored.0",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.restored.1",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.restored.2",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.restored.3",
+        "feasible.synthetic_validator_b.syn_f05_alternative_route.restored.4"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f05_alternative_route.blocked",
+        "link.synthetic_validator_a.syn_f05_alternative_route.clean",
+        "link.synthetic_validator_a.syn_f05_alternative_route.restored",
+        "link.synthetic_validator_b.syn_f05_alternative_route.blocked",
+        "link.synthetic_validator_b.syn_f05_alternative_route.clean",
+        "link.synthetic_validator_b.syn_f05_alternative_route.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f05_alternative_route.ses_syn_f05_alternative_route_1",
+        "minimality.syn_f05_alternative_route.ses_syn_f05_alternative_route_2"
+      ],
+      "restored_proof_id": "restored-proof.syn_f05_alternative_route",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f05_alternative_route.ses_syn_f05_alternative_route_1",
+        "ses-demo.syn_f05_alternative_route.ses_syn_f05_alternative_route_2"
+      ],
+      "source_manifest_hash": "sha256:0efd86ef57515746fce164087684903539d535cc0b9f3508694c11fbcf5c3c93",
+      "source_manifest_path": "families/syn_f05_alternative_route/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f06_motor_identity",
+      "family_hash": "sha256:5b6a4aea25e046d1ebb2ca35eb8a141b0e770b270d26e733ef5c351d2a07c9e1",
+      "family_id": "syn_f06_motor_identity",
+      "family_path": "families/syn_f06_motor_identity/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.0",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.1",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.2",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.3",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.blocked.4",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.0",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.1",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.2",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.3",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.clean.4",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.0",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.1",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.2",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.3",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.4",
+        "feasible.synthetic_validator_a.syn_f06_motor_identity.restored.5",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.blocked.0",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.blocked.1",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.blocked.2",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.clean.0",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.clean.1",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.clean.2",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.0",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.1",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.2",
+        "feasible.synthetic_validator_b.syn_f06_motor_identity.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f06_motor_identity.blocked",
+        "link.synthetic_validator_a.syn_f06_motor_identity.clean",
+        "link.synthetic_validator_a.syn_f06_motor_identity.restored",
+        "link.synthetic_validator_b.syn_f06_motor_identity.blocked",
+        "link.synthetic_validator_b.syn_f06_motor_identity.clean",
+        "link.synthetic_validator_b.syn_f06_motor_identity.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f06_motor_identity",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f06_motor_identity.ses_syn_f06_motor_identity_1"
+      ],
+      "source_manifest_hash": "sha256:0efd86ef57515746fce164087684903539d535cc0b9f3508694c11fbcf5c3c93",
+      "source_manifest_path": "families/syn_f06_motor_identity/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f07_hexagon_chime",
+      "family_hash": "sha256:92c9ed680e9e462b72d734901fb2bd52a9d8fa9c1e87be5bd5e65653c10d74f8",
+      "family_id": "syn_f07_hexagon_chime",
+      "family_path": "families/syn_f07_hexagon_chime/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.0",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.1",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.2",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.3",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.blocked.4",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.0",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.1",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.2",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.3",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.clean.4",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.0",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.1",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.2",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.3",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.4",
+        "feasible.synthetic_validator_a.syn_f07_hexagon_chime.restored.5",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.blocked.0",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.blocked.1",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.blocked.2",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.clean.0",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.clean.1",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.clean.2",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.0",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.1",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.2",
+        "feasible.synthetic_validator_b.syn_f07_hexagon_chime.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+        "link.synthetic_validator_a.syn_f07_hexagon_chime.clean",
+        "link.synthetic_validator_a.syn_f07_hexagon_chime.restored",
+        "link.synthetic_validator_b.syn_f07_hexagon_chime.blocked",
+        "link.synthetic_validator_b.syn_f07_hexagon_chime.clean",
+        "link.synthetic_validator_b.syn_f07_hexagon_chime.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f07_hexagon_chime",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f07_hexagon_chime.ses_syn_f07_hexagon_chime_1"
+      ],
+      "source_manifest_hash": "sha256:f10e55759d33e65e670197d90689fd66b07c21f734dfd2b3f478bd88a5eeccbf",
+      "source_manifest_path": "families/syn_f07_hexagon_chime/source_manifest.snapshot.json"
+    },
+    {
+      "blocked_proof_id": "blocked-proof.syn_f08_count_status",
+      "family_hash": "sha256:db2fde2657037813d5f4fddf14183e5d0ad95989b598f07e0821bf5bd3d679ef",
+      "family_id": "syn_f08_count_status",
+      "family_path": "families/syn_f08_count_status/family.snapshot.json",
+      "feasible_route_record_ids": [
+        "feasible.synthetic_validator_a.syn_f08_count_status.blocked.0",
+        "feasible.synthetic_validator_a.syn_f08_count_status.blocked.1",
+        "feasible.synthetic_validator_a.syn_f08_count_status.blocked.2",
+        "feasible.synthetic_validator_a.syn_f08_count_status.blocked.3",
+        "feasible.synthetic_validator_a.syn_f08_count_status.blocked.4",
+        "feasible.synthetic_validator_a.syn_f08_count_status.clean.0",
+        "feasible.synthetic_validator_a.syn_f08_count_status.clean.1",
+        "feasible.synthetic_validator_a.syn_f08_count_status.clean.2",
+        "feasible.synthetic_validator_a.syn_f08_count_status.clean.3",
+        "feasible.synthetic_validator_a.syn_f08_count_status.clean.4",
+        "feasible.synthetic_validator_a.syn_f08_count_status.restored.0",
+        "feasible.synthetic_validator_a.syn_f08_count_status.restored.1",
+        "feasible.synthetic_validator_a.syn_f08_count_status.restored.2",
+        "feasible.synthetic_validator_a.syn_f08_count_status.restored.3",
+        "feasible.synthetic_validator_a.syn_f08_count_status.restored.4",
+        "feasible.synthetic_validator_a.syn_f08_count_status.restored.5",
+        "feasible.synthetic_validator_b.syn_f08_count_status.blocked.0",
+        "feasible.synthetic_validator_b.syn_f08_count_status.blocked.1",
+        "feasible.synthetic_validator_b.syn_f08_count_status.blocked.2",
+        "feasible.synthetic_validator_b.syn_f08_count_status.clean.0",
+        "feasible.synthetic_validator_b.syn_f08_count_status.clean.1",
+        "feasible.synthetic_validator_b.syn_f08_count_status.clean.2",
+        "feasible.synthetic_validator_b.syn_f08_count_status.restored.0",
+        "feasible.synthetic_validator_b.syn_f08_count_status.restored.1",
+        "feasible.synthetic_validator_b.syn_f08_count_status.restored.2",
+        "feasible.synthetic_validator_b.syn_f08_count_status.restored.3"
+      ],
+      "link_ids": [
+        "link.synthetic_validator_a.syn_f08_count_status.blocked",
+        "link.synthetic_validator_a.syn_f08_count_status.clean",
+        "link.synthetic_validator_a.syn_f08_count_status.restored",
+        "link.synthetic_validator_b.syn_f08_count_status.blocked",
+        "link.synthetic_validator_b.syn_f08_count_status.clean",
+        "link.synthetic_validator_b.syn_f08_count_status.restored"
+      ],
+      "minimality_result_ids": [
+        "minimality.syn_f08_count_status.ses_syn_f08_count_status_1"
+      ],
+      "restored_proof_id": "restored-proof.syn_f08_count_status",
+      "ses_demonstration_ids": [
+        "ses-demo.syn_f08_count_status.ses_syn_f08_count_status_1"
+      ],
+      "source_manifest_hash": "sha256:f10e55759d33e65e670197d90689fd66b07c21f734dfd2b3f478bd88a5eeccbf",
+      "source_manifest_path": "families/syn_f08_count_status/source_manifest.snapshot.json"
+    }
+  ],
+  "fixed_call_family_id": "syn_f08_count_status",
+  "generator_version": "av-trace-validator-generator-1.0.0",
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "schema_version": "1.0.0",
+  "source_generated_root": "mvp/generated/full",
+  "validator_cases": [
+    {
+      "case_id": "fixed-call-restoration",
+      "family_hash": "sha256:553aa83a5c4026f27e852e783819edef1445df624f8ebc90c241889ff11f9405",
+      "family_id": "syn_f08_count_status",
+      "family_path": "cases/fixed_call/family.snapshot.json",
+      "trajectories": [
+        {
+          "trajectory_hash": "sha256:1700d9e2bbce3d9243993265182c67f97179d397a5bfdc79493f99620218f28b",
+          "trajectory_path": "cases/fixed_call/synthetic_validator_a.restored.json",
+          "trigger_event_index": 0,
+          "validator_id": "synthetic_validator_a"
+        },
+        {
+          "trajectory_hash": "sha256:1bcc58cce5eed67926b00a0d9107e6a2862ae8dbd62cb0e4b68935c3697e77ba",
+          "trajectory_path": "cases/fixed_call/synthetic_validator_b.restored.json",
+          "trigger_event_index": 0,
+          "validator_id": "synthetic_validator_b"
+        }
+      ],
+      "trigger_type": "fixed_call_index",
+      "trigger_value": 0
+    },
+    {
+      "case_id": "status-trigger-restoration",
+      "family_id": "syn_f01_visual_order",
+      "trigger_type": "get_channel_status",
+      "trigger_value": null
+    }
+  ],
+  "validator_ids": [
+    "synthetic_validator_a",
+    "synthetic_validator_b"
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 4.0,
+    "total_steps": 3
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f07_hexagon_chime.blocked",
+    "family_id": "syn_f07_hexagon_chime",
+    "protocol_version": "0.2.0",
+    "question": "Which shape was shown early, and what ambient confirmation sounded later?",
+    "state_role": "BLOCKED",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 480.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": true,
+            "include_video": false,
+            "interval": {
+              "end_s": 404.0,
+              "start_s": 398.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "Acquire validator evidence route s4_chime.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.blocked",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 10.0,
+        "cost_used_total": 2.0,
+        "episode_id": "syn_f07_hexagon_chime.blocked",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "response_hash": "sha256:73e142917abaa10120c4d4782f5c3e84ad9945c44b2c6066789da23b8a5cc8e1",
+        "results": [
+          {
+            "interval": {
+              "end_s": 404.0,
+              "start_s": 398.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.4045fd9d63c31edf6cfff7e012f85e7d80bd37254ef7760ce0fea1b2879e9846",
+            "payload": {
+              "_route_refs": [
+                "sha256:5add11e0a1b1d936e8e87c178df4542dfb36714518acd3088b7beff770e20414"
+              ],
+              "audio_event": "HIGH CONFIRMATION CHIME",
+              "audio_parameters": {
+                "frequency_hz": 1047,
+                "kind": "confirmation_chime"
+              },
+              "description": "HIGH CONFIRMATION CHIME",
+              "inspection": {
+                "include_audio": true,
+                "include_video": false,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 404.0,
+                  "start_s": 398.0
+                }
+              }
+            },
+            "payload_hash": "sha256:c9da4696d668d251c0e96aac14784bed94c6b3cbafbed9000ae934e29fa40bd0",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 0,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 68.0,
+              "start_s": 62.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "Acquire validator evidence route s4_orange_hexagon.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.blocked",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 8.0,
+        "cost_used_total": 4.0,
+        "episode_id": "syn_f07_hexagon_chime.blocked",
+        "error": {
+          "code": "NO_RESULTS",
+          "message": "No accessible clip observation matched.",
+          "retry_after_step": null,
+          "retryable": false
+        },
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "response_hash": "sha256:00c8d7aee7773392cb5906f1277c4e0e3773f16f9e0e5fb5ce68f54fdc5cee96",
+        "results": [],
+        "status": "not_found",
+        "step_index": 1,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "abstain",
+            "claims": [],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.02,
+                "evidence_in_source_but_inaccessible": 0.94,
+                "not_missing": 0.01,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.02
+              },
+              "description": "Required source evidence exists but the registered route is inaccessible.",
+              "hop_types": [
+                "ambient_event",
+                "cross_modal_binding",
+                "event_detection"
+              ],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.02,
+                "vision": 0.97
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "",
+            "p_sufficient": 0.03,
+            "termination_reason": "no_recovery_route",
+            "verdict": "insufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "No accepted SES is reachable; record the blocked access diagnosis.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.blocked",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:47Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "abstain",
+    "claims": [],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.02,
+        "evidence_in_source_but_inaccessible": 0.94,
+        "not_missing": 0.01,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.02
+      },
+      "description": "Required source evidence exists but the registered route is inaccessible.",
+      "hop_types": [
+        "ambient_event",
+        "cross_modal_binding",
+        "event_detection"
+      ],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.02,
+        "vision": 0.97
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "",
+    "p_sufficient": 0.03,
+    "termination_reason": "no_recovery_route",
+    "verdict": "insufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:dfdd12e0fcb0a2e51fdedce6c02d9f630afea30e3ba643fc3052979985b24dd4",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:db4f71b53244257e3eea724f1af54c378e5a5840bd1e0a0c618e942dda34dced"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.blocked"
+}

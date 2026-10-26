@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "task_id": 94,
+  "repo_id": "openai/clip-vit-base-patch32",
+  "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "revision_short": "3d74acf",
+  "source_kind": "model",
+  "cap_bytes": 1073741824,
+  "expected_payload_bytes": 608871522,
+  "final_directory": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf",
+  "manifest_path": "data/restricted/noaa01/models/scale1a_clip_acquisition_manifest.json",
+  "metadata_urls": {
+    "model": "https://huggingface.co/api/models/openai/clip-vit-base-patch32/revision/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "tree": "https://huggingface.co/api/models/openai/clip-vit-base-patch32/tree/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268?recursive=true&expand=false"
+  },
+  "allowlist": [
+    {
+      "path": "README.md",
+      "expected_bytes": 7942,
+      "git_oid": "8522e1fe72cb2372ff825dad901ccd718ce45d6b",
+      "lfs_sha256": null
+    },
+    {
+      "path": "config.json",
+      "expected_bytes": 4186,
+      "git_oid": "a2a88b96561196777ca173b15309ea859f4d2ce0",
+      "lfs_sha256": null
+    },
+    {
+      "path": "merges.txt",
+      "expected_bytes": 524657,
+      "git_oid": "bbfec752c9a675946c6dce106def6f35c882dcc2",
+      "lfs_sha256": null
+    },
+    {
+      "path": "preprocessor_config.json",
+      "expected_bytes": 316,
+      "git_oid": "5a12a1eb250987a4eee0e3e7d7338c4b22724be1",
+      "lfs_sha256": null
+    },
+    {
+      "path": "pytorch_model.bin",
+      "expected_bytes": 605247071,
+      "git_oid": "c0c935a331cf52e21ce35cee6b9aaa411635bb7a",
+      "lfs_sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f"
+    },
+    {
+      "path": "special_tokens_map.json",
+      "expected_bytes": 389,
+      "git_oid": "9bfb42aa97dcd61e89f279ccaee988bccb4fabae",
+      "lfs_sha256": null
+    },
+    {
+      "path": "tokenizer.json",
+      "expected_bytes": 2224041,
+      "git_oid": "564c0ebd5ce29c4ee4864004aee693deadd3128c",
+      "lfs_sha256": null
+    },
+    {
+      "path": "tokenizer_config.json",
+      "expected_bytes": 592,
+      "git_oid": "4fdaf6842dd5a725b940c92b6b692490ce59d548",
+      "lfs_sha256": null
+    },
+    {
+      "path": "vocab.json",
+      "expected_bytes": 862328,
+      "git_oid": "182766ce89b439768edadda342519f33802f5364",
+      "lfs_sha256": null
+    }
+  ],
+  "excluded_duplicate_or_foreign_weights": [
+    "flax_model.msgpack",
+    "tf_model.h5"
+  ],
+  "required_runtime_checks": [
+    "local_files_only_load",
+    "synthetic_image_embedding",
+    "text_embedding",
+    "normalized_similarity",
+    "deterministic_replay"
+  ],
+  "license_gate": {
+    "required": true,
+    "accepted_evidence": [
+      "model API cardData.license",
+      "model API license tag",
+      "exact-revision README front matter license"
+    ],
+    "on_absent": "CONDITIONAL_GO",
+    "on_ambiguous": "NO_GO"
+  }
+}

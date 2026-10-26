@@ -1,0 +1,100 @@
+{
+  "schema_version": "av-trace.p23-102-canary2-r22-terminal-public/1.0",
+  "artifact_id": "P23_102_CANARY2_R22_TERMINAL_PUBLIC",
+  "date": "2026-10-23",
+  "visibility": "PUBLIC",
+  "decision_token": "R22_SCIENTIFIC_NO_GO_PERMANENT_R23_REQUIRED",
+  "status": "TERMINAL_SCIENTIFIC_NO_GO",
+  "governance": {
+    "one_shot_consumed": true,
+    "permanently_nonrerunnable": true,
+    "same_receipt_reuse_permitted": false,
+    "reserve_substitution_permitted": false,
+    "reserve_redraw_permitted": false,
+    "r22_retry_permitted": false,
+    "required_next_experiment": "R23",
+    "r23_is_new_experiment_not_r22_retry": true
+  },
+  "execution_accounting": {
+    "authoring_model_calls": 13,
+    "target_clip_decodes": 5,
+    "schema_only_repair_calls": 0,
+    "retrieval_scoring_executed": false,
+    "network_requests": 0
+  },
+  "top_level_exception": {
+    "recorded_error_code": "COMPOSITION_COMPONENT_LOCAL_BINDING_INVALID",
+    "classification": "COMPONENT_LOCAL_VALIDATOR_IMPLEMENTATION_DEFECT",
+    "summary": "The validator misclassified sentence-internal it as unresolved even though that sentence supplied an explicit antecedent.",
+    "exact_binding_and_provenance_status": "PASS",
+    "accepted_factor_count": 13,
+    "bound_final_row_count": 26,
+    "cross_factor_fill_or_substitution_detected": false
+  },
+  "independent_scientific_blockers": {
+    "scientific_no_go_independent_of_validator_bug": true,
+    "exact_duplicate_pair_count": 3,
+    "corresponding_exact_pair_near_collision_count": 3,
+    "family_compositional_jaccard_exceedance_count": 2,
+    "family_compositional_jaccard": 0.92592593,
+    "lexical_threshold": 0.92,
+    "cross_family_ambient_tuple_duplicate_count": 1
+  },
+  "selected_roles": [
+    "local_v15_structure",
+    "far_vocalization_asr_ambiguity",
+    "far_continuity_anaphora"
+  ],
+  "identity_disclosure": {
+    "selected_reserve_identities_public_after_terminal_disposition": true,
+    "selected_reserve_identities_included_here": false,
+    "unselected_reserve_identities_included": false
+  },
+  "historical_separation": {
+    "r21_reported_separately": true,
+    "r21_overwritten": false,
+    "r22_does_not_replace_r21_findings": true
+  },
+  "integrity": {
+    "attempt_marker_present": true,
+    "attempt_marker_mode": "0600",
+    "failure_capsule_status": "FAIL_CLOSED_EVIDENCE_PRESERVED",
+    "failure_capsule_manifest_verified": true,
+    "successful_output_installed": false,
+    "raw_model_evidence_retained": true
+  },
+  "public_source_seals": [
+    {
+      "role": "attempt_marker",
+      "sha256": "sha256:216a620f72b741b277c996f242f39f6fe2b6524f8e595f2e181a2f4643cfdf20"
+    },
+    {
+      "role": "authorization_receipt",
+      "sha256": "sha256:3b7e39ed594c18864de37469ebfebe6b97df4fd8268b44127aea3952cfb2b720"
+    },
+    {
+      "role": "failure_capsule",
+      "sha256": "sha256:6a14a169fd11c3dcb117b0a2237fd853963b12b116c21c50aaa6482ec3127a11"
+    },
+    {
+      "role": "retained_attempts",
+      "sha256": "sha256:d517a54125f85355d3eef8b77e710d80f2d3a361e2094dc86164238eb1d9b5ad"
+    },
+    {
+      "role": "failed_runtime",
+      "sha256": "sha256:0d2b1d66a90e119173c237548224522465195a5b870dfe381234bed67513cf47"
+    },
+    {
+      "role": "parent_authoring_source",
+      "sha256": "sha256:ba84ba2a26810da99f4a8fb184bf740e675dcd9fe42b21dfa708e1e70de2df60"
+    },
+    {
+      "role": "canary2_wrapper_source",
+      "sha256": "sha256:39d30102807feb9fe9c906df2c85a3e2a95277311089ce4149ed7be2428eefbe"
+    }
+  ],
+  "restricted_detail": {
+    "exists": true,
+    "public_path_or_private_identity_disclosure": false
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "canonicalization_contract": {
+    "exact_input_sha256_equals_raw_bytes_sha256": true,
+    "public_key_extraction": "safe typed mapping pair-list string key/value or unknown",
+    "same_content_different_slots": "different slot identity, recorded content duplicate, hard global gate",
+    "sealed_identity_self_reporting_permitted": false
+  },
+  "complete_scientific_go": false,
+  "date": "2026-10-23",
+  "decision": "R23_B_V6_DESIGN_READY",
+  "design_doc": "docs/design/p23_102_global_distinctiveness_v6.md",
+  "execution": false,
+  "experiment": "R23-B-v6",
+  "external_attested": false,
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "plan_payload_sha256": "sha256:26356f73707ae8767d2ea8afd7113ebf4335b13fc08fa0b3b76a721abd529273",
+  "principal_registry_contract": {
+    "$id": "av-trace.p23-102-r23b-principal-registry/1.0",
+    "identity_claim": "externally provisioned registry consistency only; no real-human proof",
+    "lookup": "submission must already equal normalized form; exact registry match",
+    "normalization": "strip + Unicode casefold + collapse whitespace",
+    "role_exclusivity": true,
+    "roles": [
+      "reviewer",
+      "adjudicator"
+    ],
+    "unique_subject_commitment": true
+  },
+  "review_contract": {
+    "coordinated_packet_receipt_reseal_without_record_change": "REJECT",
+    "external_signature_absent_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+    "packet_source": "sealed successful component/source record",
+    "packet_verifier_requires_trusted_component_record": true
+  },
+  "runtime_constants": {
+    "human_review_rate": 0.2,
+    "raw_audit_encoding_version": 3,
+    "review_packet_version": 6,
+    "unknown_public_key": "unknown"
+  },
+  "schema_version": "av-trace.p23-102-r23b-global-distinctiveness-plan/6.0",
+  "scope": {
+    "authorization_calls": 0,
+    "execution": false,
+    "existing_authoring_modified": false,
+    "existing_canary_selection_modified": false,
+    "existing_capsules_modified": false,
+    "existing_markers_modified": false,
+    "external_attested": false,
+    "external_signature_verified": false,
+    "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+    "media_decode": false,
+    "model_calls": 0,
+    "real_human_identity_proven": false
+  },
+  "slot_manifest_contract": {
+    "schema_version": "av-trace.p23-102-r23b-external-sealed-slot-manifest/1.0",
+    "trusted_external_argument_required_by_verify_bundle": true
+  },
+  "synthetic_principal_registry": {
+    "principals": [
+      {
+        "principal_id": "opaque-reviewer-a",
+        "role": "reviewer",
+        "subject_commitment": "sha256:ead6d7276c51e3419cda2e7fe73d182ae05e980cb1eb80b3d179187f568039dd"
+      },
+      {
+        "principal_id": "opaque-reviewer-b",
+        "role": "reviewer",
+        "subject_commitment": "sha256:0428aa1762b63f7db6cad021bda3cc9ccc30cfe4a772a3ce4b85dffd70f64d23"
+      },
+      {
+        "principal_id": "opaque-adjudicator-c",
+        "role": "adjudicator",
+        "subject_commitment": "sha256:e7c4f6eaa1e16bc4e8bd7a98ec8ac08c1d9ffdbcb287b2b36c8d47a24d6f113a"
+      }
+    ],
+    "provisioning_status": "SYNTHETIC_OPAQUE_CURRENT_INTEGRITY_ONLY",
+    "real_human_identity_proven": false,
+    "registry_id": "synthetic-opaque-r23b-v6-principals",
+    "registry_payload_sha256": "sha256:799a500f80d663322292592e57a8ba1c378ecbdd731d79faa29ff806111715fe",
+    "schema_version": "av-trace.p23-102-r23b-principal-registry/1.0"
+  },
+  "synthetic_principal_registry_payload_sha256": "sha256:799a500f80d663322292592e57a8ba1c378ecbdd731d79faa29ff806111715fe",
+  "tests": "tooling/tests/test_p23_102_global_distinctiveness_v6.py",
+  "tool": "tools/p23_102_global_distinctiveness_v6.py"
+}

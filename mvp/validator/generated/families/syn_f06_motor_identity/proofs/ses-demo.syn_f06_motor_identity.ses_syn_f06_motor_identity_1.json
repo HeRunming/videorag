@@ -1,0 +1,68 @@
+{
+  "claim_ids": [
+    "claim_syn_f06_motor_identity"
+  ],
+  "demonstration_id": "ses-demo.syn_f06_motor_identity.ses_syn_f06_motor_identity_1",
+  "evidence_ids": [
+    "s3_motor",
+    "s3_two_clicks"
+  ],
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f06_motor_identity",
+  "hop_ids": [
+    "hop_extract_s3_motor",
+    "hop_extract_s3_two_clicks",
+    "hop_syn_f06_motor_identity_route_1"
+  ],
+  "satisfiable": true,
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f06_motor_identity_1",
+  "validator_demonstrations": [
+    {
+      "clean_observation_ids_by_evidence": {
+        "s3_motor": [
+          "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d"
+        ],
+        "s3_two_clicks": [
+          "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:5528c5d78272ff1e43bf487073efdedf58f3b02855ebe8b121808c29e54a4d98",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.clean",
+      "restored_observation_ids_by_evidence": {
+        "s3_motor": [
+          "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d"
+        ],
+        "s3_two_clicks": [
+          "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:19d7d1b6f87d814d437a5a158a57f6a627acd0b8cba166b2427cba99809a8c87",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_a.syn_f06_motor_identity.restored",
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "clean_observation_ids_by_evidence": {
+        "s3_motor": [
+          "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d"
+        ],
+        "s3_two_clicks": [
+          "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:5d1314df0633e7e998aff01cc2f48b705322d544b4586d5053cdd7fabaea41fe",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.clean",
+      "restored_observation_ids_by_evidence": {
+        "s3_motor": [
+          "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d"
+        ],
+        "s3_two_clicks": [
+          "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:faf0343c86da196e8702040147a7d900d5fc3fbda505aad393737fcb11a634ba",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.restored",
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

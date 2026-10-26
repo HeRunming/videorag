@@ -1,0 +1,32 @@
+{
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f03_bell_then_square",
+  "full_set_satisfiable": true,
+  "leave_one_out_cases": [
+    {
+      "removed_evidence_id": "s2_bell",
+      "retained_evidence_ids": [
+        "s2_red_square"
+      ],
+      "still_sufficient": false,
+      "unsupported_claim_ids": [
+        "claim_syn_f03_bell_then_square"
+      ]
+    },
+    {
+      "removed_evidence_id": "s2_red_square",
+      "retained_evidence_ids": [
+        "s2_bell"
+      ],
+      "still_sufficient": false,
+      "unsupported_claim_ids": [
+        "claim_syn_f03_bell_then_square"
+      ]
+    }
+  ],
+  "minimal": true,
+  "minimality_result_id": "minimality.syn_f03_bell_then_square.ses_syn_f03_bell_then_square_1",
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f03_bell_then_square_1",
+  "strict_superset_of_accepted_set_ids": []
+}

@@ -1,0 +1,808 @@
+{
+  "schema_version": "av-trace.audio-rich-vsa-acquisition-routes/1.0",
+  "plan_id": "av-trace-audio-rich-vsa-acquisition-routes-v1-2026-10-12",
+  "created_date": "2026-10-12",
+  "decision_token": "AUDIO_RICH_VSA_ACQUISITION_ROUTES_V1_READY",
+  "artifact_classification": "LOCAL_EVIDENCE_ACQUISITION_ROUTING_ONLY",
+  "scope": {
+    "target_slots": [
+      {
+        "slot_id": "B08",
+        "source_role": "observation/environment/wildlife",
+        "profile": "V+S+A",
+        "hop": "multi",
+        "temporal": "far_separated"
+      },
+      {
+        "slot_id": "B12",
+        "source_role": "assembly/repair/mission operation",
+        "profile": "V+S+A",
+        "hop": "multi",
+        "temporal": "far_separated"
+      }
+    ],
+    "missing_source_groups": 2,
+    "second_defensible_candidate_required_per_group": true,
+    "network_used": false,
+    "media_downloaded": false,
+    "human_semantic_review_performed": false,
+    "accepted_ses_created": 0,
+    "gate_a_credit_created": 0,
+    "current_acquisition_ready_route_count": 0
+  },
+  "authoritative_local_inputs": [
+    "data/rehearsal_plan/pilot_v5_candidate_matrix.json",
+    "data/rehearsal_plan/pilot_v5_targeted_source_prospecting.json",
+    "docs/paper/cvpr_pivot_v2_addendum.md",
+    "data/rehearsal_plan/assembly101_authenticated_registry_v1.json",
+    "data/rehearsal_plan/assembly_epic_access_registry_v2.json",
+    "data/rehearsal_plan/epic_av_access_registry_v1.json",
+    "data/source_recon/assembly_epic_access_v2/derived/epic_provisional_candidates.json",
+    "data/rehearsal_plan/captaincook4d_access_registry_v3.json",
+    "data/source_recon/captaincook4d_access_v1/derived/selection_v1.json",
+    "data/rehearsal_plan/licensed_dataset_source_registry_v1.json",
+    "data/rehearsal_plan/licensed_dataset_hf_access_registry_v2.json",
+    "data/rehearsal_plan/third_lineage_access_registry_v1.json",
+    "data/rehearsal_plan/event_centric_source_dossiers_v1.json",
+    "data/rehearsal_plan/event_centric_live_preflight_v1.json",
+    "docs/review/semantic_audio_discovery_v1.md"
+  ],
+  "selection": {
+    "primary_pair": {
+      "B08": "ARVSA-R01-NASA-MOONBOUND",
+      "B12": "ARVSA-R02-ASSEMBLY101-9051",
+      "production_source_disjoint": true,
+      "rationale": "NASA+ documentary production and Assembly101 controlled multiview capture are publisher-, participant-, environment-, and continuous-recording-disjoint. Both remain REPAIR and neither is credited before all gates close."
+    },
+    "secondary_pair": {
+      "B08": "ARVSA-R03-EPIC-P23",
+      "B12": "ARVSA-R04-CC4D-P05-E07",
+      "production_source_disjoint": true,
+      "rationale": "EPIC participant P23 and CaptainCook4D participant/environment cc4d_p05_e07 are different dataset and capture lineages. This fallback is less diverse than the primary pair because both are egocentric procedure sources."
+    },
+    "correlation_prohibitions": [
+      "Do not count EPIC-KITCHENS and HD-EPIC as independent production lineages.",
+      "Do not count Ego4D and Ego-Exo4D as independent production lineages.",
+      "Do not use two NASA or JPL documentaries as the preferred two-group production-disjoint pair.",
+      "Mirrors, clips, alternate encodes, synchronized views, annotations, and derivatives inherit the source-group split."
+    ]
+  },
+  "routes": [
+    {
+      "rank": 1,
+      "route_id": "ARVSA-R01-NASA-MOONBOUND",
+      "route_name": "NASA+ Moonbound exact-HLS repair",
+      "best_target_slot": "B08",
+      "selection_role": "PRIMARY",
+      "exact_ids_or_pool": {
+        "source_group_id": "EC-NASA-MOONBOUND",
+        "stable_item_id": "NASA+ post 6979 / content-id 15230 / HLS asset 17905",
+        "exact_route_status": "ESTABLISHED_FIRST_PARTY_HLS_MASTER"
+      },
+      "rights_gate_state": {
+        "acquisition": "HOLD",
+        "internal_processing": "HOLD",
+        "restricted_human_annotation": "HOLD",
+        "component_rights": "UNRESOLVED",
+        "release": "NOT_AUTHORIZED"
+      },
+      "native_synchronized_audio": {
+        "status": "PLAUSIBLE_NOT_DECODED",
+        "evidence": "Muxed H.264/AAC and audio-only HLS variants advertised; no media segment decoded.",
+        "blocking_issue": "API runtime 2202 seconds versus selected playlist duration 1646 seconds."
+      },
+      "speech_likelihood": "HIGH_HYPOTHESIS",
+      "ambient_event_likelihood": "MEDIUM_UNVERIFIED_TRAINING_EQUIPMENT_WATER_OR_FACILITY_EVENT",
+      "duration_timestamps": {
+        "api_duration_seconds": 2202,
+        "playlist_duration_seconds": 1646,
+        "duration_relation": "MISMATCH_REPAIR_REQUIRED",
+        "timestamp_support": "HLS_EXTINF_ONLY"
+      },
+      "lineage_independence": {
+        "lineage_block": "NASA+ Moonbound production plus every archive, partner, caption, encode, and derivative component",
+        "independent_from_primary_B12": true,
+        "correlated_routes": [
+          "ARVSA-R05-NASA-TO-THE-RESCUE",
+          "ARVSA-R09-NASA-PATHFINDERS"
+        ]
+      },
+      "expected_download_index_cost": {
+        "band": "HIGH",
+        "drivers": [
+          "runtime mismatch repair",
+          "component rights ledger",
+          "bounded decode",
+          "manual shot and chronology indexing"
+        ]
+      },
+      "contamination_risk": {
+        "level": "HIGH",
+        "risks": [
+          "captions",
+          "narration",
+          "score",
+          "archive and partner footage",
+          "OCR and lower thirds"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "Stable first-party full-length rendition resolves the 556-second mismatch.",
+          "Component ledger permits internal processing and restricted annotation.",
+          "Bounded decode proves synchronized speech and source-world non-speech audio.",
+          "Audio-first review finds a localizable answer-bearing event.",
+          "Dynamic non-text vision, substantive speech, and non-speech audio have distinct necessary roles.",
+          "Separated intervals form one coherent chain and shortcut routes fail.",
+          "A second defensible candidate survives in the complete source group."
+        ],
+        "repair": [
+          "A unique full rendition is identifiable but mismatch or one rights class remains open.",
+          "V+S far/multi survives but A is incidental or reconstructed."
+        ],
+        "no_go": [
+          "No stable full-length object resolves the mismatch.",
+          "All A is score, Foley, reconstruction, or generic ambience.",
+          "Narration or captions fully substitute for V and A.",
+          "Restricted annotation authority cannot be obtained."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 2,
+      "route_id": "ARVSA-R02-ASSEMBLY101-9051",
+      "route_name": "Assembly101 frozen participant-9051 session",
+      "best_target_slot": "B12",
+      "selection_role": "PRIMARY",
+      "exact_ids_or_pool": {
+        "repo_id": "cvml-nus/assembly101",
+        "revision": "bfc15ea5e3f0bc8f8c232af6c1b45aa137a9d967",
+        "participant_block_id": "9051",
+        "session_id": "nusar-2021_action_both_9051-c08a_9051_user_id_2021-02-22_115717",
+        "representative_mp4_path": "recordings/nusar-2021_action_both_9051-c08a_9051_user_id_2021-02-22_115717/C10095_rgb.mp4",
+        "representative_mp4_size_bytes": 595283958,
+        "representative_mp4_lfs_sha256": "5d76b99652b8715d7cae59083d31720798a21817a91540c547663c6357887415",
+        "session_total_mp4_bytes": 5107229101,
+        "view_file_count": 12
+      },
+      "rights_gate_state": {
+        "metadata": "READY",
+        "media_access": "403_GATED_REPO",
+        "processing": "NOT_AUTHORIZED",
+        "restricted_human_annotation": "NOT_AUTHORIZED",
+        "privacy_custody": "UNRESOLVED",
+        "release": "NOT_AUTHORIZED"
+      },
+      "native_synchronized_audio": {
+        "status": "UNRESOLVED",
+        "evidence": "All ten representative HEAD and range probes returned 403 GatedRepo; zero media bytes read and no MP4 atoms parsed."
+      },
+      "speech_likelihood": "UNKNOWN_MEDIUM_LOW",
+      "ambient_event_likelihood": "MEDIUM_UNVERIFIED_ASSEMBLY_TOOL_IMPACT_OR_MECHANISM_EVENT",
+      "duration_timestamps": {
+        "wall_clock_duration": "UNRESOLVED",
+        "timestamp_support": "DENSE_ACTION_AND_MISTAKE_ANNOTATIONS_EXIST_BUT_SEALED",
+        "warning": "Aggregate synchronized-view bytes are not duration."
+      },
+      "lineage_independence": {
+        "lineage_block": "participant 9051 plus all sessions, synchronized views, annotations, clips, and derivatives",
+        "independent_from_primary_B08": true
+      },
+      "expected_download_index_cost": {
+        "band": "HIGH",
+        "drivers": [
+          "gate authorization",
+          "bounded atom probes",
+          "minimum-view selection",
+          "multiview indexing"
+        ]
+      },
+      "contamination_risk": {
+        "level": "HIGH",
+        "risks": [
+          "action labels",
+          "mistake labels",
+          "task and object labels",
+          "alternate synchronized views"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "Pinned repository gate opens without changing the frozen selection.",
+          "Bounded probes prove 1200-5400 second duration and synchronized native audio.",
+          "Processing, annotation, privacy, retention, and custody approvals close.",
+          "All semantic labels remain sealed.",
+          "Raw review finds substantive speech, dynamic assembly or recovery, and an answer-bearing non-speech event.",
+          "A coherent far setup/error/recovery/result chain survives.",
+          "A second defensible candidate survives in participant block 9051."
+        ],
+        "repair": [
+          "Gate opens but duration or audio is incomplete.",
+          "Far visual or V+A survives but substantive speech does not.",
+          "Privacy or minimum-view authority remains open."
+        ],
+        "no_go": [
+          "Gate remains closed.",
+          "Session is below 20 minutes or lacks synchronized native audio.",
+          "No substantive speech or only incidental/recurrent assembly sound exists.",
+          "Semantic labels are required to locate evidence."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 3,
+      "route_id": "ARVSA-R03-EPIC-P23",
+      "route_name": "EPIC reserve participant P23",
+      "best_target_slot": "B08",
+      "selection_role": "SECONDARY",
+      "exact_ids_or_pool": {
+        "preferred_source_group_id": "P23",
+        "preferred_video_id": "P23_102",
+        "preferred_duration_seconds": 3569.52,
+        "frozen_pool": [
+          "P23_102",
+          "P12_101",
+          "P06_101",
+          "P01_101",
+          "P22_114",
+          "P35_107",
+          "P03_103",
+          "P33_109",
+          "P04_123",
+          "P02_108"
+        ]
+      },
+      "rights_gate_state": {
+        "exact_ids_durations_routes_known": true,
+        "media_terms_acceptance": "REQUIRES_CLOSURE",
+        "processing": "REQUIRES_SEPARATE_APPROVAL",
+        "restricted_human_annotation": "REQUIRES_SEPARATE_APPROVAL",
+        "release": "NOT_AUTHORIZED"
+      },
+      "native_synchronized_audio": {
+        "status": "DATASET_LEVEL_YES_SELECTED_FILE_UNVERIFIED",
+        "evidence": "EPIC-SOUNDS establishes dataset-level audio; P23_102 requires selected-file stream verification."
+      },
+      "speech_likelihood": "MEDIUM_HIGH_NARRATION_HYPOTHESIS",
+      "ambient_event_likelihood": "HIGH_KITCHEN_EVENT_HYPOTHESIS_LABELS_SEALED",
+      "duration_timestamps": {
+        "duration_seconds": 3569.52,
+        "duration_minutes": 59.492,
+        "timestamp_support": "DENSE_ACTION_NARRATION_AND_SOUND_TIMESTAMPS_SEALED"
+      },
+      "lineage_independence": {
+        "lineage_block": "P23 participant and kitchen lineage plus EPIC-SOUNDS and every derivative",
+        "distinct_from_current_epic": [
+          "P27",
+          "P28"
+        ],
+        "correlated_with": [
+          "ARVSA-R08-HD-EPIC"
+        ]
+      },
+      "expected_download_index_cost": {
+        "band": "MEDIUM",
+        "drivers": [
+          "selected-file verification",
+          "selective acquisition",
+          "full timeline indexing",
+          "governance"
+        ]
+      },
+      "contamination_risk": {
+        "level": "CRITICAL",
+        "risks": [
+          "action labels",
+          "narrations",
+          "EPIC-SOUNDS labels and timestamps",
+          "participant/kitchen overlap"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "Freeze exact checksum, route, and stream facts before semantic inspection.",
+          "Prove selected-file native synchronized audio.",
+          "Close media terms, processing, annotation, privacy, and deletion controls.",
+          "Keep all semantic labels sealed.",
+          "Human review establishes necessary V, S, A and coherent far composition.",
+          "No overlap with current EPIC or admitted HD-EPIC blocks.",
+          "A second defensible candidate survives in P23."
+        ],
+        "repair": [
+          "Only V+A or far visual candidates survive.",
+          "Speech duplicates visible action."
+        ],
+        "no_go": [
+          "Selected audio is absent.",
+          "Labels are used for outcome selection.",
+          "Only correlated EPIC-family groups can fill both missing cells."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 4,
+      "route_id": "ARVSA-R04-CC4D-P05-E07",
+      "route_name": "CaptainCook4D reserve participant-environment group cc4d_p05_e07",
+      "best_target_slot": "B12",
+      "selection_role": "SECONDARY",
+      "exact_ids_or_pool": {
+        "preferred_source_group_id": "cc4d_p05_e07",
+        "preferred_recording_id": "25_109",
+        "preferred_duration_seconds": 2126.96,
+        "alternate_recordings": [
+          "25_1",
+          "2_13",
+          "16_23",
+          "23_19"
+        ],
+        "replacement_recordings": [
+          "23_24",
+          "16_17"
+        ]
+      },
+      "rights_gate_state": {
+        "exact_routes_durations_known": true,
+        "governance": "HOLD",
+        "processing": "NOT_AUTHORIZED",
+        "restricted_human_annotation": "NOT_AUTHORIZED",
+        "release": "NOT_AUTHORIZED"
+      },
+      "native_synchronized_audio": {
+        "status": "RESERVE_FILE_UNVERIFIED",
+        "evidence": "Native audio was proven for acquired wave-0 GoPro files, not recording 25_109."
+      },
+      "speech_likelihood": "LOW_UNKNOWN",
+      "ambient_event_likelihood": "HIGH_PROCEDURE_SOUND_HYPOTHESIS",
+      "duration_timestamps": {
+        "duration_seconds": 2126.96,
+        "duration_minutes": 35.4493,
+        "timestamp_support": "OFFICIAL_DURATION_AND_DENSE_ANNOTATIONS_SEMANTICS_SEALED"
+      },
+      "lineage_independence": {
+        "lineage_block": "participant 5 plus environment 7 and all official streams and derivatives",
+        "distinct_from_current_groups": [
+          "cc4d_p01_e08",
+          "cc4d_p02_e02",
+          "cc4d_p03_e03"
+        ]
+      },
+      "expected_download_index_cost": {
+        "band": "MEDIUM",
+        "drivers": [
+          "bounded route and audio probe",
+          "selective acquisition",
+          "full timeline index",
+          "governance"
+        ]
+      },
+      "contamination_risk": {
+        "level": "HIGH",
+        "risks": [
+          "recipe and task graphs",
+          "action/error labels",
+          "dense timestamps",
+          "generic recurrent procedure sound"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "Exact official route resolves and bounded probe proves synchronized native audio.",
+          "Governance permits processing and restricted annotation.",
+          "Complete group is disjoint from current and other selected CaptainCook groups.",
+          "Audio-first review finds concrete procedure sound and substantive speech.",
+          "Same-object or material far chain survives without labels.",
+          "A second defensible candidate survives in cc4d_p05_e07."
+        ],
+        "repair": [
+          "Strong far V or V+A survives but speech is absent.",
+          "Only recurrent kitchen noise survives.",
+          "Consent or annotation authority remains open."
+        ],
+        "no_go": [
+          "Reserve file lacks native audio or stable time base.",
+          "Far pairs are unrelated stages joined only by distance.",
+          "V+S+A requires presumed kitchen talk or generic handling noise."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 5,
+      "route_id": "ARVSA-R05-NASA-TO-THE-RESCUE",
+      "route_name": "NASA/JPL To the Rescue exact-HLS repair",
+      "best_target_slot": "B12",
+      "selection_role": "ALTERNATE",
+      "exact_ids_or_pool": {
+        "source_group_id": "EC-NASA-TO-THE-RESCUE",
+        "stable_item_id": "NASA+ post 4460 / content-id 13675 / HLS asset 15687"
+      },
+      "rights_gate_state": {
+        "acquisition": "HOLD",
+        "jpl_caltech_component_authority": "UNRESOLVED",
+        "processing": "HOLD",
+        "restricted_human_annotation": "HOLD"
+      },
+      "native_synchronized_audio": {
+        "status": "PLAUSIBLE_NOT_DECODED",
+        "evidence": "Muxed A/V and audio-only HLS variants advertised."
+      },
+      "speech_likelihood": "HIGH",
+      "ambient_event_likelihood": "MEDIUM_UNVERIFIED_MISSION_CONTROL_HARDWARE_OR_SIGNAL_EVENT",
+      "duration_timestamps": {
+        "api_duration_seconds": 3452,
+        "playlist_duration_seconds": 3449,
+        "timestamp_support": "HLS_EXTINF_ONLY"
+      },
+      "lineage_independence": {
+        "lineage_block": "NASA/JPL documentary production plus all components and derivatives",
+        "correlated_with": [
+          "ARVSA-R01-NASA-MOONBOUND",
+          "ARVSA-R09-NASA-PATHFINDERS"
+        ]
+      },
+      "expected_download_index_cost": {
+        "band": "HIGH"
+      },
+      "contamination_risk": {
+        "level": "HIGH",
+        "risks": [
+          "documentary narration",
+          "captions",
+          "diagrams",
+          "archive footage",
+          "music"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "JPL/Caltech and component rights close.",
+          "Bounded decode proves original synchronized answer-bearing event audio.",
+          "Failure/workaround/recovery chain requires V, S, and A.",
+          "A second defensible candidate survives."
+        ],
+        "repair": [
+          "V+S far/multi survives but original event audio is unresolved."
+        ],
+        "no_go": [
+          "Only narration, reconstructed sound, score, or diagrams carry the answer.",
+          "Used alongside another NASA/JPL route as purported independent production lineage."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 6,
+      "route_id": "ARVSA-R06-MECCANO",
+      "route_name": "MECCANO official-release repair",
+      "best_target_slot": "B12",
+      "selection_role": "INDEPENDENT_RESERVE",
+      "exact_ids_or_pool": {
+        "status": "NO_EXACT_IDS_LOCALLY_ESTABLISHED"
+      },
+      "rights_gate_state": {
+        "release": "UNRESOLVED",
+        "terms": "UNRESOLVED",
+        "official_route": "UNRESOLVED",
+        "processing_annotation": "NOT_AUTHORIZED"
+      },
+      "native_synchronized_audio": {
+        "status": "UNRESOLVED"
+      },
+      "speech_likelihood": "UNKNOWN",
+      "ambient_event_likelihood": "PLAUSIBLE_ONLY_NOT_VERIFIED",
+      "duration_timestamps": {
+        "duration": "UNRESOLVED",
+        "timestamp_support": "UNRESOLVED"
+      },
+      "lineage_independence": {
+        "status": "PLAUSIBLE_INDEPENDENT_NOT_PROVEN",
+        "third_party_mirrors_accepted": false
+      },
+      "expected_download_index_cost": {
+        "band": "HIGH_INITIAL"
+      },
+      "contamination_risk": {
+        "level": "HIGH_UNTIL_OFFICIAL_SCHEMA_AND_LABEL_SEAL_EXIST"
+      },
+      "preflight": {
+        "go": [
+          "Archive immutable official release and operative media terms.",
+          "Freeze at least six exact long source groups with hashes and synchronized audio.",
+          "Close processing and annotation authority.",
+          "Prove substantive speech in selected groups.",
+          "Independent label-blind authoring yields far V+S+A and a second candidate."
+        ],
+        "repair": [
+          "Official release is found but audio, duration, or rights remains incomplete.",
+          "Useful only for far/multi or V+A."
+        ],
+        "no_go": [
+          "No official immutable release or usable terms exist.",
+          "Only unverified mirrors exist.",
+          "Speech or audio is inferred from descriptions."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 7,
+      "route_id": "ARVSA-R07-EGOEXO4D-V2",
+      "route_name": "Ego-Exo4D V2 non-kitchen skilled-activity repair",
+      "best_target_slot": "B12",
+      "selection_role": "META_EGO_RESERVE",
+      "exact_ids_or_pool": {
+        "dataset_version": "V2",
+        "reported_take_count": 5035,
+        "exact_selected_take_ids": "NOT_ENUMERATED"
+      },
+      "rights_gate_state": {
+        "agreement_acceptance": "ABSENT",
+        "official_tooling": "NOT_INSTALLED_OR_VERIFIED",
+        "processing_annotation": "UNKNOWN_HOLD"
+      },
+      "native_synchronized_audio": {
+        "status": "DATASET_LEVEL_YES_SELECTED_ASSET_UNVERIFIED_MODALITY_VARIES"
+      },
+      "speech_likelihood": "MEDIUM_HYPOTHESIS",
+      "ambient_event_likelihood": "MEDIUM_HIGH_SKILLED_ACTIVITY_HYPOTHESIS",
+      "duration_timestamps": {
+        "reported_summed_video_hours": 1286.3,
+        "reported_ego_video_hours": 221.26,
+        "wall_clock_distribution": "UNRESOLVED",
+        "warning": "Summed camera-hours are not wall-clock duration."
+      },
+      "lineage_independence": {
+        "lineage_block": "Meta/Ego participant or team, session, task, scene, takes, views, poses, narrations, and derivatives",
+        "correlated_with_ego4d": true
+      },
+      "expected_download_index_cost": {
+        "band": "VERY_HIGH"
+      },
+      "contamination_risk": {
+        "level": "HIGH",
+        "risks": [
+          "task labels",
+          "narrations",
+          "poses",
+          "alternate views"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "Execute and archive agreement and intended-use approval.",
+          "Use official tooling to enumerate nonsemantic metadata only.",
+          "Freeze long non-kitchen participant/session groups.",
+          "Verify selected-file synchronized audio and substantive speech.",
+          "Author V+S+A far/multi and second candidate without labels."
+        ],
+        "repair": [
+          "Access closes but duration, audio, privacy, or speech remains incomplete."
+        ],
+        "no_go": [
+          "Agreement or official tooling remains unavailable.",
+          "Only camera-hour totals support duration.",
+          "Paired with Ego4D as an independent lineage."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 8,
+      "route_id": "ARVSA-R08-HD-EPIC",
+      "route_name": "HD-EPIC exact-release repair",
+      "best_target_slot": "EITHER",
+      "selection_role": "CORRELATED_EPIC_FALLBACK",
+      "exact_ids_or_pool": {
+        "reported_video_count": 156,
+        "reported_corpus_hours": 41.3,
+        "exact_source_ids": "NOT_PINNED"
+      },
+      "rights_gate_state": {
+        "release": "UNRESOLVED",
+        "terms": "UNRESOLVED",
+        "registration_acceptance": "ABSENT",
+        "processing_annotation": "UNKNOWN_HOLD"
+      },
+      "native_synchronized_audio": {
+        "status": "RICH_AUDIO_REPORTED_SELECTED_FILES_UNVERIFIED"
+      },
+      "speech_likelihood": "HIGH_CORRECTED_NARRATION_REPORTED",
+      "ambient_event_likelihood": "HIGH_REPORTED_51000_EVENTS_LABELS_SEALED",
+      "duration_timestamps": {
+        "arithmetic_mean_minutes": 15.88,
+        "item_distribution": "NOT_COLLECTED",
+        "timestamp_support": "DENSE_REPORTED_NOT_PINNED"
+      },
+      "lineage_independence": {
+        "correlated_with_epic": true,
+        "independent_lineage_credit": false
+      },
+      "expected_download_index_cost": {
+        "band": "HIGH"
+      },
+      "contamination_risk": {
+        "level": "CRITICAL"
+      },
+      "preflight": {
+        "go": [
+          "Pin exact release, terms, IDs, routes, checksums, duration, and audio.",
+          "Close EPIC/HD-EPIC participant and kitchen overlap.",
+          "Keep narration, action, and audio-event labels sealed.",
+          "At least one eligible group yields far V+S+A and a second candidate."
+        ],
+        "repair": [
+          "Only one triple-modal group survives or overlap remains open."
+        ],
+        "no_go": [
+          "No exact usable release or long eligible groups exist.",
+          "Paired with EPIC as an independent production lineage.",
+          "Labels are required to locate evidence."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    },
+    {
+      "rank": 9,
+      "route_id": "ARVSA-R09-NASA-PATHFINDERS",
+      "route_name": "NASA/JPL Pathfinders exact-HLS documentary reserve",
+      "best_target_slot": "B12",
+      "selection_role": "DOCUMENTARY_RESERVE",
+      "exact_ids_or_pool": {
+        "source_group_id": "EC-NASA-PATHFINDERS",
+        "stable_item_id": "NASA+ post 2391 / content-id 9199 / HLS asset 11211"
+      },
+      "rights_gate_state": {
+        "acquisition": "HOLD",
+        "jpl_caltech_component_authority": "UNRESOLVED",
+        "processing": "HOLD",
+        "restricted_human_annotation": "HOLD"
+      },
+      "native_synchronized_audio": {
+        "status": "PLAUSIBLE_NOT_DECODED",
+        "evidence": "Muxed A/V and audio-only variants advertised."
+      },
+      "speech_likelihood": "HIGH",
+      "ambient_event_likelihood": "MEDIUM_LOW_UNVERIFIED_ROVER_LANDING_MECHANICAL_OR_MISSION_CONTROL",
+      "duration_timestamps": {
+        "api_duration_seconds": 3600,
+        "playlist_duration_seconds": 3597,
+        "timestamp_support": "HLS_EXTINF_ONLY"
+      },
+      "lineage_independence": {
+        "lineage_block": "NASA/JPL Pathfinders production and all archive, caption, encode, and derivative components",
+        "correlated_with": [
+          "ARVSA-R01-NASA-MOONBOUND",
+          "ARVSA-R05-NASA-TO-THE-RESCUE"
+        ]
+      },
+      "expected_download_index_cost": {
+        "band": "VERY_HIGH"
+      },
+      "contamination_risk": {
+        "level": "HIGH",
+        "risks": [
+          "archive footage",
+          "narration",
+          "captions",
+          "maps and telemetry",
+          "score"
+        ]
+      },
+      "preflight": {
+        "go": [
+          "JPL/Caltech and component authority close.",
+          "Bounded decode proves original synchronized event audio.",
+          "Mission or hardware chain requires V, S, and A.",
+          "A second defensible candidate survives."
+        ],
+        "repair": [
+          "V+S far/multi survives but A is archival, score-covered, or incidental."
+        ],
+        "no_go": [
+          "Narration, captions, maps, or telemetry fully substitute.",
+          "Only reconstructed or editorial sound exists.",
+          "Used with another NASA/JPL route as independent production lineage."
+        ]
+      },
+      "current_disposition": "REPAIR"
+    }
+  ],
+  "not_promoted": [
+    {
+      "route": "Ego4D v2.1",
+      "reason": "Exact UIDs, accepted agreement, temporary AWS credentials, CLI, selected-file duration/audio, and annotation authority are absent; correlated with Ego-Exo4D."
+    },
+    {
+      "route": "EC-USGS-SHIFT-CURVES",
+      "reason": "Later live preflight is PREFLIGHT_NO_GO: exact object, successfully saved item-level rights evidence, and stream/audio proof are absent."
+    },
+    {
+      "route": "EC-NASA-PLANETARY-DEFENDERS",
+      "reason": "Exact long HLS route exists, but local evidence rates concrete non-speech sound weak and unverified."
+    },
+    {
+      "route": "NOAA cand-051",
+      "reason": "Possible V+S+A repair lead, but presentation-wrapped, development-touched, component-rights unresolved, and structurally awkward under presentation and two-candidates-per-group caps."
+    },
+    {
+      "route": "Current EPIC and CaptainCook4D exact files",
+      "reason": "Local audio discovery retained zero S+A, zero V+S, and zero V+S+A leads; use only as far-composition controls."
+    }
+  ],
+  "next_commands_and_implementation": {
+    "local_only_commands": [
+      "python -m json.tool data/rehearsal_plan/audio_rich_vsa_acquisition_routes_v1.json >/dev/null",
+      "python tools/hf_audio_stream_preflight.py --validate-plan-only"
+    ],
+    "missing_tool": {
+      "path": "tools/audio_rich_vsa_route_preflight.py",
+      "required_modes": [
+        "validate-local",
+        "bounded-http",
+        "emit-prescreen-inventory"
+      ],
+      "required_fields": [
+        "route_id",
+        "target_slot",
+        "exact_source_group_id",
+        "exact_asset_id",
+        "release_revision",
+        "expected_duration_s",
+        "object_hash_or_validator",
+        "rights_processing",
+        "rights_restricted_annotation",
+        "lineage_block",
+        "audio_codec",
+        "channels",
+        "sample_rate_hz",
+        "av_duration_delta_s",
+        "timestamp_time_base",
+        "bytes_requested",
+        "bytes_retained",
+        "semantic_labels_opened"
+      ],
+      "hard_constraints": [
+        "No full-object download mode.",
+        "Reject full HTTP 200 media responses.",
+        "Retain no HLS segment bytes.",
+        "Fail if semantic_labels_opened is not false.",
+        "Fail if rights_processing or rights_restricted_annotation is not affirmative before semantic sampling."
+      ]
+    },
+    "future_authorized_invocations": [
+      {
+        "route": "Assembly101",
+        "command": "python tools/hf_audio_stream_preflight.py --plan data/rehearsal_plan/assembly101_authenticated_registry_v1.json --validate-plan-only",
+        "note": "Existing tool must first be extended to consume the Assembly101 frozen registry."
+      },
+      {
+        "route": "CaptainCook4D reserve",
+        "command": "python tools/captaincook4d_route_probe_v3.py --inventory data/acquisition_preflight/captaincook4d_vsa_reserve_inventory_v1.json --output data/acquisition_preflight/captaincook4d_vsa_reserve_probe_v1.json",
+        "note": "Generate a reserve-only inventory containing 25_109 and one frozen replacement before execution."
+      },
+      {
+        "route": "Human prescreen planning",
+        "command": "python tools/semantic_av_source_prescreen_plan.py --inventory data/acquisition_preflight/audio_rich_vsa_exact_inventory_v1.json --plan-out data/rehearsal_plan/audio_rich_vsa_prescreen_plan_v1.json --form-out data/rehearsal_plan/audio_rich_vsa_prescreen_form_v1.json --plan-id audio-rich-vsa-prescreen-v1 --form-id audio-rich-vsa-prescreen-form-v1 --created-at 2026-10-12T00:00:00+08:00 --seed AVTRACE-AUDIO-RICH-VSA-V1 --sample-count 24 --interval-duration-s 12",
+        "note": "Run only after exact local inventories and annotation authority exist."
+      }
+    ]
+  },
+  "narrowing_fallback": {
+    "trigger": [
+      "Fewer than two production/source-disjoint groups survive unchanged rights, duration, synchronized-audio, speech, ambient-event, far-composition, and second-candidate gates.",
+      "The only surviving pair is correlated EPIC plus HD-EPIC, Ego4D plus Ego-Exo4D, or two NASA/JPL documentaries."
+    ],
+    "required_action": "Freeze a prospective addendum reducing or removing the two V+S+A targets before roster construction. Retain passing candidates under their actual profiles and report the empty stratum.",
+    "prohibited_actions": [
+      "Do not relabel surf, score, narration bed, generic handling noise, audio classifier labels, or simple co-occurrence as A.",
+      "Do not weaken source-group lineage rules.",
+      "Do not use existing labels to outcome-select evidence.",
+      "Do not claim that this route plan creates accepted candidates or Gate-A credit."
+    ]
+  },
+  "final_boundary_statement": "All nine routes are REPAIR under current local evidence. The preferred pair is NASA+ Moonbound and Assembly101 participant 9051; the fallback pair is EPIC P23_102 and CaptainCook4D 25_109. No media was downloaded and no access, rights, semantics, or modality necessity was assumed.",
+  "final_token": "AUDIO_RICH_VSA_ACQUISITION_ROUTES_V1_READY"
+}

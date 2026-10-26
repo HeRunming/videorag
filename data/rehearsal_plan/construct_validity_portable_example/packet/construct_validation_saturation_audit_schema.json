@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:construct-validation-saturation-audit:1.0.0",
+  "title": "AV-TRACE blind post-adjudication saturation audit form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "form_id",
+    "packet_id",
+    "family_id",
+    "source_id",
+    "role",
+    "assignment_tier",
+    "assignment_hash",
+    "completion_status",
+    "reviewer",
+    "assignment",
+    "post_adjudication",
+    "review"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "construct_validation_saturation_audit"},
+    "form_id": {"$ref": "#/$defs/id"},
+    "packet_id": {"$ref": "#/$defs/id"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "source_id": {"$ref": "#/$defs/id"},
+    "role": {"const": "blind_post_adjudication_saturation_auditor"},
+    "assignment_tier": {"const": "BLINDED_POST_ADJUDICATION"},
+    "assignment_hash": {"$ref": "#/$defs/sha256"},
+    "completion_status": {"enum": ["not_started", "completed"]},
+    "reviewer": {"$ref": "#/$defs/reviewer"},
+    "assignment": {"$ref": "#/$defs/assignment"},
+    "post_adjudication": {"$ref": "#/$defs/post_adjudication"},
+    "review": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "not_started"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "null"},
+              "independent_of_all_prior_reviewers": {"type": "null"},
+              "started_at": {"type": "null"},
+              "completed_at": {"type": "null"},
+              "active_minutes": {"type": "null"}
+            }
+          },
+          "post_adjudication": {
+            "properties": {
+              "adjudication_was_frozen_before_start": {"type": "null"},
+              "frozen_adjudication_sha256": {"type": "null"}
+            }
+          },
+          "review": {"maxProperties": 0}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "completed"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "string", "minLength": 1},
+              "independent_of_all_prior_reviewers": {"const": true},
+              "started_at": {"type": "string", "format": "date-time"},
+              "completed_at": {"type": "string", "format": "date-time"},
+              "active_minutes": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1440
+              }
+            }
+          },
+          "post_adjudication": {
+            "properties": {
+              "adjudication_was_frozen_before_start": {"const": true},
+              "frozen_adjudication_sha256": {"$ref": "#/$defs/sha256"}
+            }
+          },
+          "review": {"$ref": "#/$defs/completed_review"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "verdict": {
+      "enum": ["pass", "fail", "uncertain", "not_applicable"]
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "declared_role",
+        "independent_of_all_prior_reviewers",
+        "blinded_to",
+        "started_at",
+        "completed_at",
+        "active_minutes"
+      ],
+      "properties": {
+        "reviewer_id": {"type": ["string", "null"], "minLength": 1},
+        "declared_role": {
+          "const": "blind_post_adjudication_saturation_auditor"
+        },
+        "independent_of_all_prior_reviewers": {
+          "type": ["boolean", "null"]
+        },
+        "blinded_to": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "enum": [
+              "accepted_ses_ledger",
+              "preferred_ses",
+              "machine_ranks",
+              "machine_confidence",
+              "machine_tier_evidence",
+              "validator_decisions",
+              "adjudication_decisions"
+            ]
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {"contains": {"const": "accepted_ses_ledger"}},
+            {"contains": {"const": "preferred_ses"}},
+            {"contains": {"const": "machine_ranks"}},
+            {"contains": {"const": "validator_decisions"}},
+            {"contains": {"const": "adjudication_decisions"}}
+          ]
+        },
+        "started_at": {"type": ["string", "null"], "format": "date-time"},
+        "completed_at": {"type": ["string", "null"], "format": "date-time"},
+        "active_minutes": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1440
+        }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_reference",
+        "source_duration_s",
+        "source_content_hashes",
+        "frozen_question_text",
+        "machine_labels_are_provisional",
+        "human_gold_at_assignment"
+      ],
+      "properties": {
+        "source_reference": {"type": "string", "minLength": 1},
+        "source_duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "source_content_hashes": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/sha256"},
+          "uniqueItems": true
+        },
+        "frozen_question_text": {"type": "string", "minLength": 1},
+        "machine_labels_are_provisional": {"const": true},
+        "human_gold_at_assignment": {"const": false}
+      },
+      "not": {
+        "anyOf": [
+          {"required": ["machine_claims"]},
+          {"required": ["machine_candidate_evidence"]},
+          {"required": ["machine_preferred_ses"]},
+          {"required": ["pair_blueprint_reference"]},
+          {"required": ["accepted_ses_ledger"]},
+          {"required": ["machine_ranks"]},
+          {"required": ["validator_decisions"]},
+          {"required": ["adjudication_decisions"]}
+        ]
+      }
+    },
+    "post_adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adjudication_form_id",
+        "adjudication_was_frozen_before_start",
+        "frozen_adjudication_sha256"
+      ],
+      "properties": {
+        "adjudication_form_id": {"$ref": "#/$defs/id"},
+        "adjudication_was_frozen_before_start": {
+          "type": ["boolean", "null"]
+        },
+        "frozen_adjudication_sha256": {
+          "anyOf": [
+            {"$ref": "#/$defs/sha256"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "coverage_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "start_s",
+        "end_s",
+        "reviewed",
+        "search_methods",
+        "notes"
+      ],
+      "properties": {
+        "sequence": {"type": "integer", "minimum": 1},
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0},
+        "reviewed": {"const": true},
+        "search_methods": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "chronological_playback",
+              "frame_scan",
+              "speech_search",
+              "ambient_audio_search",
+              "ocr_search",
+              "metadata_search",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_id",
+        "claim_texts",
+        "evidence_intervals",
+        "modalities",
+        "derivation_lineage",
+        "sufficiency",
+        "new_relative_to_blinded_assignment",
+        "notes"
+      ],
+      "properties": {
+        "route_id": {"$ref": "#/$defs/id"},
+        "claim_texts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "evidence_intervals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/interval"}
+        },
+        "modalities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["vision", "speech", "ambient"]},
+          "uniqueItems": true
+        },
+        "derivation_lineage": {
+          "enum": [
+            "direct",
+            "duplicate",
+            "derived",
+            "cross_modal_substitute",
+            "metadata",
+            "unknown"
+          ]
+        },
+        "sufficiency": {"$ref": "#/$defs/verdict"},
+        "new_relative_to_blinded_assignment": {"const": true},
+        "notes": {"type": "string"}
+      }
+    },
+    "completed_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blind_search_completed_without_unblinding",
+        "full_source_search_completed",
+        "coverage_log",
+        "search_queries",
+        "new_routes",
+        "new_sufficient_route_count",
+        "unresolved_regions",
+        "saturation_outcome",
+        "reopen_required",
+        "confidence",
+        "reason_codes",
+        "notes"
+      ],
+      "properties": {
+        "blind_search_completed_without_unblinding": {"type": "boolean"},
+        "full_source_search_completed": {"type": "boolean"},
+        "coverage_log": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/coverage_entry"}
+        },
+        "search_queries": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "new_routes": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/route"}
+        },
+        "new_sufficient_route_count": {"type": "integer", "minimum": 0},
+        "unresolved_regions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/interval"}
+        },
+        "saturation_outcome": {
+          "enum": [
+            "saturated_no_new_sufficient_route",
+            "new_sufficient_route_found",
+            "incomplete"
+          ]
+        },
+        "reopen_required": {"type": "boolean"},
+        "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "NEW_SUFFICIENT_ROUTE",
+              "ALTERNATIVE_SEARCH_INCOMPLETE",
+              "UNRESOLVED_SOURCE_REGION",
+              "BLINDING_VIOLATION",
+              "ADJUDICATION_NOT_FROZEN",
+              "OTHER"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "notes": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "saturation_outcome": {
+                "const": "saturated_no_new_sufficient_route"
+              }
+            },
+            "required": ["saturation_outcome"]
+          },
+          "then": {
+            "properties": {
+              "new_sufficient_route_count": {"const": 0},
+              "unresolved_regions": {"maxItems": 0},
+              "reopen_required": {"const": false}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "saturation_outcome": {"const": "new_sufficient_route_found"}
+            },
+            "required": ["saturation_outcome"]
+          },
+          "then": {
+            "properties": {
+              "new_routes": {"minItems": 1},
+              "new_sufficient_route_count": {"minimum": 1},
+              "reopen_required": {"const": true}
+            },
+            "required": ["new_routes", "new_sufficient_route_count"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "saturation_outcome": {"const": "incomplete"}
+            },
+            "required": ["saturation_outcome"]
+          },
+          "then": {
+            "properties": {
+              "reopen_required": {"const": true}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

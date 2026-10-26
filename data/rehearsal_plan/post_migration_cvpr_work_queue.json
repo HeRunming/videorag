@@ -1,0 +1,382 @@
+{
+  "schema_version": "av-trace.post-migration-cvpr-work-queue/1.0",
+  "as_of_date": "2026-10-23",
+  "status": "READY_FOR_OWNER_CONTROLLED_MIGRATION__SCIENTIFIC_EXECUTION_BLOCKED",
+  "objective": "Advance AV-TRACE from audited real-A/V engineering and learned-retrieval diagnostics to a human-valid, source-disjoint Acquire/Ground/Act study with competent learned systems and paper-grade evidence.",
+  "current_state": {
+    "H1_families": 0,
+    "H2_families": 0,
+    "accepted_SES": 0,
+    "gate_A": "REPAIR",
+    "gate_B": "NOT_RUN",
+    "gate_C": "NOT_READY",
+    "scientific_episodes": 0,
+    "paper_claim_ready": false,
+    "final_benchmark_validated": false,
+    "exact_local_development_source_groups": 15,
+    "admitted_untouched_test_source_groups": 0
+  },
+  "canonical_terms": {
+    "H2": "H2_HUMAN_ADJUDICATED_SATURATION_AUDITED",
+    "mini_pilot_label": "LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY",
+    "diagnostic_stack": [
+      "Acquire",
+      "Ground",
+      "Act"
+    ],
+    "states": [
+      "CLEAN",
+      "BLOCKED",
+      "RESTORED",
+      "NO_TRIGGER"
+    ]
+  },
+  "global_prohibitions": [
+    "Do not reuse old authorization receipts, nonces, attempt markers, or plan hashes after migration.",
+    "Do not rerun or reinterpret R22; its permanent decision is R22_SCIENTIFIC_NO_GO_PERMANENT_R23_REQUIRED.",
+    "Do not distribute blank Pilot-v4 packets as real human-review packets.",
+    "Do not expose untouched test semantics during source recovery, model competence work, or prompt development.",
+    "Do not execute scientific H2 episodes before Gates B, C, and the causal interlock are GO.",
+    "Do not upload raw restricted media by default.",
+    "Do not weaken construct, rights, source-group, or competence thresholds to fill quotas."
+  ],
+  "work_packages": [
+    {
+      "id": "WP0",
+      "name": "Migration restore and integrity",
+      "depends_on": [],
+      "execution_status": "OWNER_AND_NEW_MACHINE_REQUIRED",
+      "parallel_group": "bootstrap",
+      "actions": [
+        "Select the code license and publish the audited public snapshot.",
+        "Restore the repository on the new machine and create protected restricted storage.",
+        "Restore or reacquire only owner-approved source assets and revision-pinned model assets.",
+        "Verify all available 15-source media/index bindings and source/participant/production-lineage grouping.",
+        "Archive old execution authority as immutable evidence; generate fresh runtime plans and hashes."
+      ],
+      "acceptance": [
+        "Public snapshot and migration-bundle checksums pass.",
+        "Restricted directories are 0700 and files are 0600 with no symlinks.",
+        "No old authorization state is executable.",
+        "Source and index identities match their manifests or are explicitly marked unavailable.",
+        "Untouched test roster has no semantic or model exposure."
+      ],
+      "authoritative_inputs": [
+        "MIGRATION_READY.md",
+        "docs/migration/migration_runbook.md",
+        "docs/migration/new_machine_bootstrap.md",
+        "data/migration/hf_asset_manifest.json",
+        "data/migration/path_rebinding_manifest.json"
+      ]
+    },
+    {
+      "id": "WP1",
+      "name": "Construct-contract alignment",
+      "depends_on": [
+        "WP0"
+      ],
+      "execution_status": "IMPLEMENTATION_REQUIRED",
+      "parallel_group": "contract",
+      "actions": [
+        "Add explicit source_group_id and participant/production-lineage bindings to construct registries, assignments, samplers, packets, exposure ledgers, and importers.",
+        "Replace or version-map historical H2_HUMAN_ADJUDICATED_GOLD to H2_HUMAN_ADJUDICATED_SATURATION_AUDITED.",
+        "Implement a latest Gate-A/Gate-B evaluator covering all post-pivot source, event, modality, saturation, governance, and labor conditions.",
+        "Implement a completed-authoring to real construct-registry bridge.",
+        "Implement a completed Task194 audio-prescreen import CLI or unified importer.",
+        "Freeze reviewer calibration and qualification thresholds before reviewer training."
+      ],
+      "acceptance": [
+        "All construct, prescreen, and packet focused tests pass.",
+        "Source-group alias, mirror, derivative, and participant-collision tamper tests fail closed.",
+        "Blank packets cannot be promoted.",
+        "The evaluator cannot return Gate-B GO if non-NOAA, event-centric, ambient/V+S+A, saturation-repair, governance, or labor conditions are missing.",
+        "Every Gate-A and Gate-B condition has a machine-verifiable field and evidence pointer."
+      ],
+      "authoritative_inputs": [
+        "docs/annotation/construct_validity_protocol.md",
+        "docs/paper/cvpr_pivot_v2_addendum.md",
+        "docs/design/exogenous_restoration_protocol_v2.md",
+        "tools/construct_validity_common.py",
+        "tools/construct_validity_sampler.py",
+        "tools/construct_validity_packet.py",
+        "tools/construct_validity_import.py",
+        "tools/audio_candidate_prescreen_packets.py"
+      ]
+    },
+    {
+      "id": "WP2",
+      "name": "Freeze result-production infrastructure",
+      "depends_on": [
+        "WP0"
+      ],
+      "execution_status": "IMPLEMENTATION_REQUIRED",
+      "parallel_group": "analysis",
+      "actions": [
+        "Create versioned schemas for Tables 1-7 and result figures.",
+        "Implement source-cluster bootstrap, source-level sign-flip tests, Holm correction, leave-one-source-out, invalid-run sensitivity, and all-SES/preferred-SES sensitivity.",
+        "Freeze denominator and missing-run audits.",
+        "Freeze qualitative-example selection before outcomes.",
+        "Create a claim-to-table-cell and table-cell-to-artifact ledger.",
+        "Run operating-characteristic simulations on development assumptions before test unlock."
+      ],
+      "acceptance": [
+        "Synthetic fixtures reproduce every planned table and figure-data schema.",
+        "Independent analysis implementation agrees row-by-row on fixtures.",
+        "No scientific outcome is required to select metrics, denominators, or example rules.",
+        "The 30-source/12-test preferred plan and 20-source/8-test descriptive fallback are represented without ambiguity."
+      ],
+      "authoritative_inputs": [
+        "docs/paper/av_trace_cvpr_evaluation_preregistration.md",
+        "docs/paper/av_trace_cvpr_main_blueprint_v2.md",
+        "docs/review/cvpr_pre_submission_risk_register.md"
+      ]
+    },
+    {
+      "id": "WP3",
+      "name": "Local-source human prescreen and selective source repair",
+      "depends_on": [
+        "WP0",
+        "WP1"
+      ],
+      "execution_status": "HUMAN_AND_RIGHTS_REVIEW_REQUIRED",
+      "parallel_group": "gate-a",
+      "actions": [
+        "Complete source-uniform semantic A/V prescreen on approved local development sources.",
+        "Complete the audio-only to A/V to recurrence review sequence for audio-rich candidates.",
+        "Run a dedicated far-composition pass.",
+        "Measure whether defensible V+S, V+S+A, ambient, and far/multi-hop prospects exist.",
+        "Use selective new acquisition only if local sources cannot close the frozen profile."
+      ],
+      "acceptance": [
+        "Every retained prospect has exact source identity, lineage, rights/annotation authority, privacy/component review, and source-time alignment.",
+        "At least two source-disjoint V+S prospects and two V+S+A prospects exist, or the corresponding paper strata are removed prospectively.",
+        "At least six coherent far/multi prospects exist for the Gate-A roster.",
+        "No candidate is accepted solely because of temporal distance or duplicated speech/visual routes."
+      ],
+      "stop_conditions": [
+        "Required cells can be filled only by weakening source grouping, rights, modality, temporal, or blindness rules.",
+        "After 12 long source groups and four lineages, fewer than two triple-modal prospects survive.",
+        "After at least 20 far-composition attempts across at least ten source groups, fewer than five coherent far prospects survive."
+      ],
+      "authoritative_inputs": [
+        "docs/review/pilot_v5_targeted_source_prospecting.md",
+        "docs/review/pilot_v5_candidate_integration_audit.md",
+        "data/rehearsal_plan/source_disjoint_scaleup_wave_v1.json"
+      ]
+    },
+    {
+      "id": "WP4",
+      "name": "Gate-A input freeze",
+      "depends_on": [
+        "WP1",
+        "WP3"
+      ],
+      "execution_status": "BLOCKED",
+      "parallel_group": "gate-a",
+      "actions": [
+        "Author substantive question, answer, atomic claims, exact evidence bounds, candidate SESs, shortcut ledger, alternative-route hypotheses, and intervention feasibility.",
+        "Freeze exactly six source groups, twelve candidate families, and two excluded calibrations.",
+        "Train and qualify at least eight unique reviewers.",
+        "Freeze 72 real role assignments, the source-exposure snapshot, packet hashes, and the independent Gate-A audit."
+      ],
+      "acceptance": [
+        "Exactly two gate-defining candidates per source group.",
+        "No unresolved critical rights, privacy, safety, lineage, construct, or technical hold.",
+        "Every required source-level and family-level semantic prescreen passes.",
+        "All intervention-v2 family manifests and route feasibility checks pass.",
+        "Gate A is independently adjudicated GO before packet distribution."
+      ],
+      "authoritative_inputs": [
+        "docs/paper/cvpr_pivot_v2_addendum.md",
+        "docs/review/human_mini_pilot_source_pool_plan.md",
+        "docs/annotation/construct_validity_protocol.md"
+      ]
+    },
+    {
+      "id": "WP5",
+      "name": "Gate-B twelve-family construct pilot",
+      "depends_on": [
+        "WP4"
+      ],
+      "execution_status": "BLOCKED",
+      "parallel_group": "construct",
+      "actions": [
+        "Run author/verifier, blind full-source alternative search, validators A/B, independent adjudication, and blind post-adjudication saturation in the frozen order.",
+        "Reopen every family with a newly discovered sufficient route.",
+        "Import all forms and run the independent latest Gate-B evaluator.",
+        "Report agreement, labor, route discovery, minimality, modality, pair isolation, governance, and rejection reasons."
+      ],
+      "acceptance": [
+        "12/12 families complete.",
+        "H1 >= 9/12.",
+        "H2 >= 8/12.",
+        "Pair-isolation failures <= 1/12.",
+        "Systematic minimality/modality failures <= 3/12.",
+        "At least two accepted non-NOAA source groups.",
+        "At least three accepted event-centric source groups or the broad claim is removed.",
+        "Ambient and V+S+A H2 coverage or those strata are removed before scientific execution.",
+        "All saturation discoveries are repaired and re-audited.",
+        "Measured yield and labor support unchanged-criteria scale-up."
+      ],
+      "output_label": "LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY"
+    },
+    {
+      "id": "WP6",
+      "name": "New Gate-C learned-system competence",
+      "depends_on": [
+        "WP0",
+        "WP1"
+      ],
+      "execution_status": "IMPLEMENTATION_AND_MODEL_EXECUTION_REQUIRED",
+      "parallel_group": "competence",
+      "actions": [
+        "Freeze a provider-neutral controller/state/finalizer runtime and exact model bindings.",
+        "Permit separately bound controller and finalizer backbones while retaining an integrated system verdict.",
+        "Author and seal a new source-free unseen fictional suite with at least 48 cases.",
+        "Evaluate direct A/V, single-shot RAG, learned ReAct, learned sufficiency, finalizer, and integrated behavior.",
+        "Seal raw outputs before evaluation and conduct independent replay and competence audit."
+      ],
+      "acceptance": [
+        "Parser and failure fixtures = 100%.",
+        "Valid structured calls >= 90%.",
+        "First-action accuracy >= 85%.",
+        "Every action stratum >= 75%.",
+        "Exact six-field state >= 75%.",
+        "Every state component >= 80%.",
+        "Complete-evidence supported answer >= 80%.",
+        "Blocked/partial correct non-answer >= 80%.",
+        "Restoration reacquisition >= 80%.",
+        "Unsupported required claims = 0.",
+        "Evaluator-private exposures = 0.",
+        "Deterministic answer/citation substitutions = 0.",
+        "Failure injection fail-closed = 100%."
+      ],
+      "non_reuse": [
+        "Do not reuse consumed Granite v2, Qwen3 v2, Qwen2.5-Omni v1, or external-gateway v1/v2 holdouts as unseen competence."
+      ],
+      "authoritative_inputs": [
+        "data/rehearsal_plan/strong_agent_baseline_registry.json",
+        "docs/review/strong_agent_baseline_plan.md",
+        "docs/review/granite33_competence_v1_audit.md",
+        "docs/review/qwen3_adapter_v2_holdout_evaluation.md",
+        "docs/review/qwen25_omni_direct_competence_v1.md"
+      ]
+    },
+    {
+      "id": "WP7",
+      "name": "Low-N H2 Acquire/Ground/Act diagnostic",
+      "depends_on": [
+        "WP2",
+        "WP5",
+        "WP6"
+      ],
+      "execution_status": "BLOCKED",
+      "parallel_group": "scientific",
+      "actions": [
+        "Freeze the accepted H2 mini-pilot, systems, retrieval, prompts, budgets, metrics, seeds, and assignments.",
+        "Run direct A/V, learned RAG, learned ReAct, and learned sufficiency over CLEAN/BLOCKED/RESTORED/NO_TRIGGER.",
+        "Run silent withholding and explicit outage separately.",
+        "Run oracle-H2, partial-evidence, deterministic controls, observed-evidence-lock, and F-CTRL/F-VA sensitivity.",
+        "Independently replay and recompute all gate-driving metrics."
+      ],
+      "acceptance": [
+        "At least one intervention-aware separation across at least three source groups.",
+        "At least one answer-versus-support or citation divergence.",
+        "At least two non-retrieval failure classes, each across at least two sources.",
+        "Complete invalid, missing, retry, cost, and source-denominator accounting.",
+        "No headline result is driven by one family or source.",
+        "Leakage, route-certificate, replay, and metric audits pass."
+      ],
+      "decision": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "END_TO_END_DIAGNOSTIC_REPAIR",
+        "END_TO_END_DIAGNOSTIC_NO_GO"
+      ]
+    },
+    {
+      "id": "WP8",
+      "name": "Source-disjoint scale-up and final corpus",
+      "depends_on": [
+        "WP7"
+      ],
+      "execution_status": "BLOCKED",
+      "parallel_group": "scale",
+      "actions": [
+        "Authorize the first forty scaled reviews only after a Gate-D GO and capacity review.",
+        "Continue only if H2 yield remains at least 60% without weakening criteria.",
+        "Freeze whole-source train/dev/test assignments and blind reserves before test construction.",
+        "Reach the preferred 60-H2/30-source/12-test corpus or invoke the restricted 60/20/8 descriptive fallback."
+      ],
+      "preferred_acceptance": [
+        "H2 families >= 60.",
+        "Contributing source groups >= 30.",
+        "Untouched test source groups >= 12.",
+        "Train/dev/test H2 approximately 24/12/24.",
+        "H2 per source <= 3.",
+        "Capture formats >= 4.",
+        "Presentation-wrapped families <= 25%.",
+        "Each paper-facing stratum has at least five untouched test sources."
+      ],
+      "fallback_acceptance": [
+        "H2 families >= 60.",
+        "Source groups >= 20.",
+        "Untouched test source groups >= 8.",
+        "All controller-superiority, population-ranking, and broad-generalization claims are removed."
+      ]
+    },
+    {
+      "id": "WP9",
+      "name": "Frozen main evaluation, independent audit, and paper package",
+      "depends_on": [
+        "WP8"
+      ],
+      "execution_status": "BLOCKED",
+      "parallel_group": "paper",
+      "actions": [
+        "Execute the preregistered main matrix once on the frozen split.",
+        "Generate corpus, construct, competence, primary dashboard, matched-effect, failure-stage, and ablation tables from frozen scripts.",
+        "Run independent raw-trajectory metric and statistical recomputation.",
+        "Map every table cell and abstract/conclusion sentence to an audited artifact.",
+        "Complete rights, release, novelty, null/adverse result, and reproducibility audits.",
+        "Produce the versioned evaluator, benchmark card, sanitized examples, aggregate results, table/figure commands, and artifact appendix."
+      ],
+      "acceptance": [
+        "All main claims have sentence-level evidence and gate mappings.",
+        "Every assigned run, failure, retry, exclusion, and denominator is reconciled.",
+        "Independent metric and statistical implementations agree within frozen tolerances.",
+        "Public release contents exactly match item-level rights decisions.",
+        "PAPER_CLAIM_READY is independently adjudicated GO."
+      ]
+    }
+  ],
+  "immediate_post_migration_parallelism": {
+    "critical_path": [
+      "WP0",
+      "WP1",
+      "WP3",
+      "WP4",
+      "WP5",
+      "WP7",
+      "WP8",
+      "WP9"
+    ],
+    "parallel_to_gate_a_b": [
+      "WP2",
+      "WP6"
+    ],
+    "lower_priority_until_h2_exists": [
+      "Further single-source P23 retrieval optimization",
+      "Bulk machine-provisional family generation",
+      "Full manuscript Results, Abstract, or Conclusion"
+    ]
+  },
+  "owner_inputs_required_before_resume": [
+    "Approved repository code license and exact text.",
+    "GitHub organization, repository name, visibility, default branch, and secure credential method.",
+    "Hugging Face organization and approved public/private repository IDs.",
+    "New-machine root, OS, GPU inventory, driver/CUDA constraints, and protected restricted-data volume.",
+    "Item-level decision on whether any private derived indexes may migrate.",
+    "Rights and annotation-authority decisions for candidate sources.",
+    "Reviewer recruitment and pseudonymous identity-management plan."
+  ]
+}

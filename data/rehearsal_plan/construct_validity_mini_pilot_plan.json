@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.1.0",
+  "plan_id": "av-trace-construct-validity-mini-pilot-v1.1",
+  "created_at": "2026-09-20",
+  "status": "DEFERRED_NOT_EXECUTED",
+  "human_review_completed": false,
+  "human_gold_records": 0,
+  "decision": "DEFERRED_HUMAN_PROTOCOL_READY",
+  "immediate_mini_pilot": {
+    "family_target": {
+      "minimum": 8,
+      "preferred": 10,
+      "maximum": 12
+    },
+    "source_disjoint_video_target": {
+      "minimum": 5,
+      "maximum": 6
+    },
+    "purpose": "debug construct definitions, reviewer independence, forms, labor and preliminary machine-label precision; not publication-level validation",
+    "current_families": {
+      "may_be_included": [
+        "noaa01-r004-surf-av",
+        "noaa01-r007-opening-plastic-waste",
+        "noaa01-r011-bag-by-fence",
+        "noaa01-r016-three-factors-vs",
+        "noaa01-r017-north-atlantic-basin"
+      ],
+      "assumed_valid": false,
+      "same_source_warning": "The five current retained families occupy only three videos and cannot alone meet source-disjointness."
+    }
+  },
+  "future_pool": {
+    "provisional_family_target": {
+      "minimum": 100,
+      "maximum": 200
+    },
+    "recommended_human_sample": {
+      "minimum": 30,
+      "preferred": 40,
+      "maximum": 50
+    },
+    "sampling_strata_priority": [
+      "ambient_candidate",
+      "triple_modal_candidate",
+      "machine_validator_disagreement",
+      "learned_control_ranking_disagreement",
+      "correct_answer_wrong_citation",
+      "uncertain_minimality",
+      "multiple_alternative_supports",
+      "pair_isolation_risk",
+      "each_source_and_domain",
+      "random_low_risk_control"
+    ],
+    "minimum_coverage_rules": [
+      "include every eligible ambient or V+S+A family when their total is at most 12; otherwise sample at least 12",
+      "include at least 8 machine/validator disagreement families if available",
+      "include at least 8 learned/control ranking disagreement families if available",
+      "include at least 6 correct-answer/wrong-citation families if available",
+      "include at least 8 uncertain-minimality or alternative-support families if available",
+      "include every source/domain when feasible, otherwise document uncovered strata",
+      "reserve at least 20 percent of the sample for deterministic random low-risk controls"
+    ]
+  },
+  "annotation_tiers": [
+    {
+      "tier": "P0_MACHINE_CANDIDATE",
+      "allowed_uses": [
+        "candidate mining",
+        "pipeline development",
+        "failure inspection"
+      ],
+      "promotion_evidence": [
+        "machine proposal with source/version provenance",
+        "successful media decode"
+      ],
+      "forbidden_claims": [
+        "validated question",
+        "validated support",
+        "minimal SES",
+        "necessary modality",
+        "human reviewed",
+        "gold"
+      ],
+      "required_provenance": [
+        "source identity and hash",
+        "model/prompt/version",
+        "machine record IDs",
+        "generation timestamp"
+      ]
+    },
+    {
+      "tier": "P1_MACHINE_CROSS_VALIDATED",
+      "allowed_uses": [
+        "provisional development experiments",
+        "risk-stratified sampling",
+        "internal descriptive analysis"
+      ],
+      "promotion_evidence": [
+        "at least two independent machine validators or methods",
+        "answer-evidence entailment check",
+        "question-only and metadata shortcut checks",
+        "alternative-support scan attempted"
+      ],
+      "forbidden_claims": [
+        "human validated",
+        "gold",
+        "proven minimality",
+        "proven modality necessity"
+      ],
+      "required_provenance": [
+        "all P0 provenance",
+        "validator identities and versions",
+        "disagreement log",
+        "check outcomes"
+      ]
+    },
+    {
+      "tier": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "allowed_uses": [
+        "machine-provisional leaderboard development",
+        "CLEAN/BLOCKED/RESTORED protocol experiments",
+        "candidate precision estimation"
+      ],
+      "promotion_evidence": [
+        "P1 requirements",
+        "machine leave-one-out",
+        "machine modality drops",
+        "BLOCKED route closure",
+        "RESTORED recovery check",
+        "independent counterfactual validator"
+      ],
+      "forbidden_claims": [
+        "human validated",
+        "human gold",
+        "definitive construct validity",
+        "publication-quality modality necessity"
+      ],
+      "required_provenance": [
+        "all P1 provenance",
+        "counterfactual inputs/outputs",
+        "route lineage",
+        "protocol/version hashes"
+      ]
+    },
+    {
+      "tier": "H1_HUMAN_VALIDATED",
+      "allowed_uses": [
+        "human-validated development/analysis",
+        "precision estimation for P tiers",
+        "candidate benchmark inclusion subject to adjudication policy"
+      ],
+      "promotion_evidence": [
+        "all four independent role forms complete",
+        "two validators agree on critical constructs",
+        "full-source alternative search complete",
+        "critical construct checks pass"
+      ],
+      "forbidden_claims": [
+        "adjudicated gold unless H2 gate passes",
+        "population validity from low-N pilot"
+      ],
+      "required_provenance": [
+        "reviewer pseudonymous IDs",
+        "blinding declarations",
+        "timestamps and labor",
+        "completed forms",
+        "source/version hashes"
+      ]
+    },
+    {
+      "tier": "H2_HUMAN_ADJUDICATED_GOLD",
+      "allowed_uses": [
+        "gold evaluation after split/release gates",
+        "final construct-validity reporting"
+      ],
+      "promotion_evidence": [
+        "H1 evidence or complete pre-adjudication role inputs",
+        "independent fifth-person adjudicator",
+        "zero unresolved critical disagreement",
+        "all critical adjudication fields pass",
+        "independent blind sixth-person post-adjudication saturation audit",
+        "complete chronological full-source saturation coverage",
+        "no newly discovered sufficient route",
+        "accept_h2 decision"
+      ],
+      "forbidden_claims": [
+        "publicly redistributable unless rights/release gate independently passes",
+        "representative of unseen domains without sampling evidence"
+      ],
+      "required_provenance": [
+        "all H1 provenance",
+        "adjudication form",
+        "conflict-resolution evidence",
+        "blind saturation audit form",
+        "six distinct pseudonymous reviewer identities",
+        "versioned immutable import report"
+      ]
+    }
+  ],
+  "roles": {
+    "question_claim_author_or_verifier": "May author or independently verify wording and claims; cannot serve in any other role for the same family.",
+    "blind_alternative_evidence_finder": "Searches the full source before seeing the preferred SES, machine tier, machine confidence, machine ranks, validator outcomes or adjudication.",
+    "validator_a": "Independently assesses all constructs and counterfactuals without validator B decisions.",
+    "validator_b": "Independently assesses all constructs and counterfactuals without validator A decisions.",
+    "adjudicator": "Reviews the four completed pre-adjudication role records after independent submission; must be a fifth identity.",
+    "blind_post_adjudication_saturation_auditor": "A sixth identity who starts only after adjudication is frozen; receives only the source, frozen question and source provenance/duration, never the accepted SES ledger, preferred SES, machine ranks, validator decisions or adjudication decisions; logs chronological full-source coverage and every new route."
+  },
+  "statistics": {
+    "acceptance_funnel": [
+      "sampled",
+      "pre_adjudication_roles_complete",
+      "H1",
+      "adjudicated",
+      "saturation_audited",
+      "H2",
+      "repair",
+      "reject"
+    ],
+    "agreement": {
+      "nominal": "Cohen's kappa for validator A/B categorical critical labels and family outcome; report raw agreement when kappa is unstable",
+      "ordinal": "quadratic-weighted kappa for confidence if analyzed",
+      "interval": "temporal IoU and boundary absolute error for evidence intervals",
+      "set_valued": "Jaccard/F1 plus adjudicated alternative-SES discovery"
+    },
+    "rates": [
+      "P1/P2 acceptance precision against H1/H2",
+      "alternative-SES discovery rate",
+      "post-adjudication saturation new-route discovery rate",
+      "leave-one-out minimality pass rate",
+      "necessity-group pass rate",
+      "pair-isolation failure rate",
+      "rights/privacy/safety hold rate"
+    ],
+    "confidence_intervals": "Wilson 95% intervals for binomial rates; bootstrap source-clustered intervals only after at least 20 sources; no normal approximation for low N",
+    "labor": [
+      "active minutes per role/family",
+      "adjudication minutes",
+      "saturation-audit minutes",
+      "repair rounds",
+      "full-source search hours"
+    ],
+    "low_n": "All 8-12 family results carry LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY; do not use hypothesis tests or generalize model/tier precision."
+  },
+  "decision_rules": {
+    "CONSTRUCT_VALIDITY_MINI_PILOT_GO": [
+      "8-12 families and at least 5 source-disjoint videos completed",
+      "all six distinct human roles complete, including adjudication and post-adjudication saturation audit",
+      "every saturation audit has complete chronological source coverage and finds no new sufficient route",
+      "at least 75% reach H1",
+      "at least 60% reach H2",
+      "pair-isolation failure at most 10%",
+      "no unresolved rights/privacy/safety critical hold",
+      "no systematic modality/minimality failure affecting more than 25% of completed families"
+    ],
+    "CONSTRUCT_VALIDITY_REPAIR": [
+      "at least 40% reach H1 or failures are localized and repairable",
+      "no evidence that the central construct is unreviewable",
+      "protocol, wording, route closure, or forms require revision before expansion"
+    ],
+    "CONSTRUCT_VALIDITY_NO_GO": [
+      "fewer than 40% reach H1 after complete review",
+      "at least 50% rejected",
+      "systematic alternative-support, minimality, necessity, or pair-isolation failures invalidate the construct",
+      "rights/privacy/safety constraints make the intended data unusable"
+    ],
+    "expand_after_mini_pilot": [
+      "repair all critical form/protocol defects",
+      "freeze a new version",
+      "then sample 30-50 from a 100-200 provisional-family pool",
+      "repeat sampling if a key high-risk stratum has fewer than five completed families"
+    ]
+  },
+  "commands": {
+    "sample": "python tools/construct_validity_sampler.py --registry REGISTRY.json --output SAMPLE.json --target-size 10 --source-target 5 --seed av-trace-construct-validity-v1",
+    "packet": "python tools/construct_validity_packet.py --registry REGISTRY.json --sample SAMPLE.json --output-dir PORTABLE_PACKET --media-mode none",
+    "import": "python tools/construct_validity_import.py --packet-dir COMPLETED_PACKET --output RESTRICTED_IMPORT_REPORT.json"
+  },
+  "updated_at": "2026-09-23"
+}

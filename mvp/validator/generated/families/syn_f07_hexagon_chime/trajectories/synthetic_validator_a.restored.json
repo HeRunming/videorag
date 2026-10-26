@@ -1,0 +1,579 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 6.25,
+    "total_steps": 6
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f07_hexagon_chime.restored",
+    "family_id": "syn_f07_hexagon_chime",
+    "protocol_version": "0.2.0",
+    "question": "Which shape was shown early, and what ambient confirmation sounded later?",
+    "state_role": "RESTORED",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 480.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "channels": [
+              "visual"
+            ]
+          },
+          "tool": "get_channel_status"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "Exercise the predeclared restoration trigger before evidence acquisition.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [
+        "restore_syn_f07_hexagon_chime"
+      ],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 0.25,
+        "cost_remaining": 11.75,
+        "cost_used_total": 0.25,
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0000",
+        "response_hash": "sha256:342ddccb581b28d95486d66aa4ac51a7f237223c2f66ced4a742ecbd9e757a32",
+        "results": [
+          {
+            "channels": {
+              "visual": {
+                "retryable": false,
+                "status": "available"
+              }
+            },
+            "result_type": "channel_status"
+          }
+        ],
+        "status": "ok",
+        "step_index": 0,
+        "tool": "get_channel_status"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "ORANGE HEXAGON",
+            "time_range": {
+              "end_s": 480.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_visual"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s4_orange_hexagon.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 10.75,
+        "cost_used_total": 1.25,
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0001",
+        "response_hash": "sha256:0c69a2ef60ea8ed10ed32b89c7c9f3368ea5297bac72996e664200c0da72f2e6",
+        "results": [
+          {
+            "interval": {
+              "end_s": 68.0,
+              "start_s": 62.0
+            },
+            "preview": "vision candidate at 62.0-68.0s",
+            "result_id": "ptr.acbc6ebfd4e03fee7f9520fc403821937e970c50a75b1ceb2623e9c272520376",
+            "result_type": "search_pointer",
+            "score": 1.25
+          }
+        ],
+        "status": "ok",
+        "step_index": 1,
+        "tool": "search_visual"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 68.0,
+              "start_s": 62.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s4_orange_hexagon.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:47Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 8.75,
+        "cost_used_total": 3.25,
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0002",
+        "response_hash": "sha256:933e2adb9f2ce43bce9ae9fee78068ed493175e2dea0c9e7035040be4c5b8a05",
+        "results": [
+          {
+            "interval": {
+              "end_s": 68.0,
+              "start_s": 62.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a0ffa89b01620d84331b70ace34051868827c4a5854fc44af008ce1639bca75f",
+            "payload": {
+              "_route_refs": [
+                "sha256:d6bfc0ff82985bdaa22019009e24408224fc8ae4c87232f15ba5119ee26789c2"
+              ],
+              "description": "ORANGE HEXAGON",
+              "inspection": {
+                "include_audio": false,
+                "include_video": true,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 68.0,
+                  "start_s": 62.0
+                }
+              }
+            },
+            "payload_hash": "sha256:3820580348a185ad12d1d171a1d4311b836bad843a184a2a54ae649872732656",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 2,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "HIGH CONFIRMATION CHIME",
+            "time_range": {
+              "end_s": 480.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_ambient_audio"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s4_chime.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0003",
+        "step_index": 3
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:48Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 7.75,
+        "cost_used_total": 4.25,
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0003",
+        "response_hash": "sha256:6d20965163d96ea47d28dc6475654bf13b2371653f24071ce1b41d37f5a82771",
+        "results": [
+          {
+            "interval": {
+              "end_s": 404.0,
+              "start_s": 398.0
+            },
+            "preview": "ambient candidate at 398.0-404.0s",
+            "result_id": "ptr.74c377129c43a14da78118b4ba1f43e0024b7ab8770c4a9786a5aee8599eab66",
+            "result_type": "search_pointer",
+            "score": 1.25
+          }
+        ],
+        "status": "ok",
+        "step_index": 3,
+        "tool": "search_ambient_audio"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": true,
+            "include_video": false,
+            "interval": {
+              "end_s": 404.0,
+              "start_s": 398.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "cross_modal_binding",
+            "event_detection"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s4_chime.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0004",
+        "step_index": 4
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:49Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 5.75,
+        "cost_used_total": 6.25,
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0004",
+        "response_hash": "sha256:fadb844339356f5e244587f7411a3af0a21fbc024a9466032cff4a1b7fbc9fc8",
+        "results": [
+          {
+            "interval": {
+              "end_s": 404.0,
+              "start_s": 398.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.4045fd9d63c31edf6cfff7e012f85e7d80bd37254ef7760ce0fea1b2879e9846",
+            "payload": {
+              "_route_refs": [
+                "sha256:5add11e0a1b1d936e8e87c178df4542dfb36714518acd3088b7beff770e20414"
+              ],
+              "audio_event": "HIGH CONFIRMATION CHIME",
+              "audio_parameters": {
+                "frequency_hz": 1047,
+                "kind": "confirmation_chime"
+              },
+              "description": "HIGH CONFIRMATION CHIME",
+              "inspection": {
+                "include_audio": true,
+                "include_video": false,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 404.0,
+                  "start_s": 398.0
+                }
+              }
+            },
+            "payload_hash": "sha256:c9da4696d668d251c0e96aac14784bed94c6b3cbafbed9000ae934e29fa40bd0",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 4,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "answer",
+            "claims": [
+              {
+                "citations": [
+                  {
+                    "interval": {
+                      "end_s": 68.0,
+                      "start_s": 62.0
+                    },
+                    "modalities": [
+                      "vision"
+                    ],
+                    "observation_id": "obs.clip.a0ffa89b01620d84331b70ace34051868827c4a5854fc44af008ce1639bca75f"
+                  },
+                  {
+                    "interval": {
+                      "end_s": 404.0,
+                      "start_s": 398.0
+                    },
+                    "modalities": [
+                      "ambient"
+                    ],
+                    "observation_id": "obs.clip.4045fd9d63c31edf6cfff7e012f85e7d80bd37254ef7760ce0fea1b2879e9846"
+                  }
+                ],
+                "claim_id": "validator.claim.0",
+                "confidence": 0.99,
+                "registered_claim_id": "claim_syn_f07_hexagon_chime",
+                "text": "An orange hexagon was shown early, and a high confirmation chime sounded later."
+              }
+            ],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.01,
+                "evidence_in_source_but_inaccessible": 0.01,
+                "not_missing": 0.96,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.01
+              },
+              "description": "An accepted minimal sufficient evidence set was acquired.",
+              "hop_types": [],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.02,
+                "vision": 0.02
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "An orange hexagon was shown early, and a high confirmation chime sounded later.",
+            "p_sufficient": 0.98,
+            "termination_reason": "sufficient_evidence",
+            "verdict": "sufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.01,
+            "evidence_in_source_but_inaccessible": 0.01,
+            "not_missing": 0.96,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.01
+          },
+          "next_action_rationale": "All required claims have an accepted citable SES.",
+          "p_sufficient": 0.98,
+          "verdict": "sufficient"
+        },
+        "episode_id": "syn_f07_hexagon_chime.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0005",
+        "step_index": 5
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:50Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "answer",
+    "claims": [
+      {
+        "citations": [
+          {
+            "interval": {
+              "end_s": 68.0,
+              "start_s": 62.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a0ffa89b01620d84331b70ace34051868827c4a5854fc44af008ce1639bca75f"
+          },
+          {
+            "interval": {
+              "end_s": 404.0,
+              "start_s": 398.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.4045fd9d63c31edf6cfff7e012f85e7d80bd37254ef7760ce0fea1b2879e9846"
+          }
+        ],
+        "claim_id": "validator.claim.0",
+        "confidence": 0.99,
+        "registered_claim_id": "claim_syn_f07_hexagon_chime",
+        "text": "An orange hexagon was shown early, and a high confirmation chime sounded later."
+      }
+    ],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.01,
+        "evidence_in_source_but_inaccessible": 0.01,
+        "not_missing": 0.96,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.01
+      },
+      "description": "An accepted minimal sufficient evidence set was acquired.",
+      "hop_types": [],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.02,
+        "vision": 0.02
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "An orange hexagon was shown early, and a high confirmation chime sounded later.",
+    "p_sufficient": 0.98,
+    "termination_reason": "sufficient_evidence",
+    "verdict": "sufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:ab475b9b3735f22f21a636dd54f626a31479c19555937f4013453361f088d4d7",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:6412493fae3d2f9a677e223c19a2c592599358c30dfdc55446fe468058e7ca9f"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.restored"
+}

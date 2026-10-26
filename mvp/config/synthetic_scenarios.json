@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "description": "Deterministic, project-owned synthetic AV-TRACE MVP corpus. Event labels and relationships are deliberately literal and human-inspectable.",
+  "media": {
+    "width": 320,
+    "height": 180,
+    "fps": 1,
+    "audio_rate": 8000,
+    "video_codec": "libx264",
+    "audio_codec": "aac"
+  },
+  "sources": [
+    {
+      "source_id": "syn_source_01",
+      "title": "Color station",
+      "duration_s": 240,
+      "base_color": "#18243a",
+      "events": [
+        {
+          "event_id": "s1_blue_triangle",
+          "start_s": 24,
+          "end_s": 30,
+          "modality": "vision",
+          "label": "BLUE TRIANGLE",
+          "visual": {"shape": "triangle", "color": "#2f7df6"}
+        },
+        {
+          "event_id": "s1_green_circle",
+          "start_s": 176,
+          "end_s": 182,
+          "modality": "vision",
+          "label": "GREEN CIRCLE",
+          "visual": {"shape": "circle", "color": "#42d66b"}
+        },
+        {
+          "event_id": "s1_speech_code",
+          "start_s": 72,
+          "end_s": 78,
+          "modality": "speech",
+          "label": "spoken code is DELTA SEVEN",
+          "transcript": "The spoken code is DELTA SEVEN.",
+          "audio": {"kind": "speech_token", "frequency_hz": 523}
+        },
+        {
+          "event_id": "s1_speech_action",
+          "start_s": 198,
+          "end_s": 204,
+          "modality": "speech",
+          "label": "operator says OPEN GATE",
+          "transcript": "The operator says OPEN GATE.",
+          "audio": {"kind": "speech_token", "frequency_hz": 659}
+        }
+      ],
+      "families": [
+        {
+          "family_id": "syn_f01_visual_order",
+          "question": "Which shape appeared first, and which shape appeared later?",
+          "answer": "The blue triangle appeared first; the green circle appeared later.",
+          "claim": {"first": "blue_triangle", "later": "green_circle"},
+          "mechanism": "necessity_group_withholding",
+          "evidence_event_ids": ["s1_blue_triangle", "s1_green_circle"],
+          "accepted_ses": [["s1_blue_triangle", "s1_green_circle"]],
+          "blocked_event_ids": ["s1_green_circle"]
+        },
+        {
+          "family_id": "syn_f02_speech_sequence",
+          "question": "What code was spoken, and what instruction was spoken later?",
+          "answer": "The code was DELTA SEVEN, and the later instruction was OPEN GATE.",
+          "claim": {"code": "DELTA SEVEN", "instruction": "OPEN GATE"},
+          "mechanism": "modality_channel_outage",
+          "blocked_channel": "speech",
+          "evidence_event_ids": ["s1_speech_code", "s1_speech_action"],
+          "accepted_ses": [["s1_speech_code", "s1_speech_action"]]
+        }
+      ]
+    },
+    {
+      "source_id": "syn_source_02",
+      "title": "Workshop signals",
+      "duration_s": 300,
+      "base_color": "#30231d",
+      "events": [
+        {
+          "event_id": "s2_bell",
+          "start_s": 38,
+          "end_s": 44,
+          "modality": "ambient",
+          "label": "THREE BELL PULSES",
+          "audio": {"kind": "bell_pulses", "frequency_hz": 880, "pulse_count": 3}
+        },
+        {
+          "event_id": "s2_red_square",
+          "start_s": 224,
+          "end_s": 230,
+          "modality": "vision",
+          "label": "RED SQUARE",
+          "visual": {"shape": "square", "color": "#ef4141"}
+        },
+        {
+          "event_id": "s2_yellow_star",
+          "start_s": 92,
+          "end_s": 98,
+          "modality": "vision",
+          "label": "YELLOW STAR",
+          "visual": {"shape": "star", "color": "#ffd43b"}
+        },
+        {
+          "event_id": "s2_speech_bin",
+          "start_s": 246,
+          "end_s": 252,
+          "modality": "speech",
+          "label": "operator says PLACE IN BIN FOUR",
+          "transcript": "The operator says PLACE IN BIN FOUR.",
+          "audio": {"kind": "speech_token", "frequency_hz": 587}
+        }
+      ],
+      "families": [
+        {
+          "family_id": "syn_f03_bell_then_square",
+          "question": "How many bell pulses sounded, and which shape appeared much later?",
+          "answer": "Three bell pulses sounded, and a red square appeared later.",
+          "claim": {"bell_pulses": 3, "later_shape": "red_square"},
+          "mechanism": "necessity_group_withholding",
+          "evidence_event_ids": ["s2_bell", "s2_red_square"],
+          "accepted_ses": [["s2_bell", "s2_red_square"]],
+          "blocked_event_ids": ["s2_bell"]
+        },
+        {
+          "family_id": "syn_f04_star_bin",
+          "question": "Which visible symbol was shown, and which bin did the later instruction name?",
+          "answer": "A yellow star was shown, and the later instruction named bin four.",
+          "claim": {"symbol": "yellow_star", "bin": 4},
+          "mechanism": "modality_channel_outage",
+          "blocked_channel": "visual",
+          "evidence_event_ids": ["s2_yellow_star", "s2_speech_bin"],
+          "accepted_ses": [["s2_yellow_star", "s2_speech_bin"]]
+        }
+      ]
+    },
+    {
+      "source_id": "syn_source_03",
+      "title": "Routing console",
+      "duration_s": 360,
+      "base_color": "#17342f",
+      "events": [
+        {
+          "event_id": "s3_speech_route_a",
+          "start_s": 48,
+          "end_s": 54,
+          "modality": "speech",
+          "label": "first announcement says ROUTE COBALT",
+          "transcript": "The first announcement says ROUTE COBALT.",
+          "audio": {"kind": "speech_token", "frequency_hz": 494}
+        },
+        {
+          "event_id": "s3_speech_route_b",
+          "start_s": 184,
+          "end_s": 190,
+          "modality": "speech",
+          "label": "repeat announcement says ROUTE COBALT",
+          "transcript": "The repeat announcement says ROUTE COBALT.",
+          "audio": {"kind": "speech_token", "frequency_hz": 494}
+        },
+        {
+          "event_id": "s3_cobalt_arrow",
+          "start_s": 310,
+          "end_s": 316,
+          "modality": "vision",
+          "label": "COBALT ARROW POINTS RIGHT",
+          "visual": {"shape": "arrow_right", "color": "#356bc4"}
+        },
+        {
+          "event_id": "s3_motor",
+          "start_s": 110,
+          "end_s": 118,
+          "modality": "ambient",
+          "label": "LOW MOTOR HUM",
+          "audio": {"kind": "motor_hum", "frequency_hz": 110}
+        },
+        {
+          "event_id": "s3_two_clicks",
+          "start_s": 276,
+          "end_s": 282,
+          "modality": "ambient",
+          "label": "TWO CLICK PULSES",
+          "audio": {"kind": "bell_pulses", "frequency_hz": 698, "pulse_count": 2}
+        }
+      ],
+      "families": [
+        {
+          "family_id": "syn_f05_alternative_route",
+          "question": "Which route was announced, and which direction did its matching arrow point?",
+          "answer": "Route COBALT was announced, and the matching arrow pointed right.",
+          "claim": {"route": "COBALT", "direction": "right"},
+          "mechanism": "necessity_group_withholding",
+          "evidence_event_ids": ["s3_speech_route_a", "s3_speech_route_b", "s3_cobalt_arrow"],
+          "accepted_ses": [
+            ["s3_speech_route_a", "s3_cobalt_arrow"],
+            ["s3_speech_route_b", "s3_cobalt_arrow"]
+          ],
+          "blocked_event_ids": ["s3_speech_route_a", "s3_speech_route_b"]
+        },
+        {
+          "family_id": "syn_f06_motor_identity",
+          "question": "What ambient machine sound occurred, and how many click pulses sounded later?",
+          "answer": "A low motor hum occurred, and two click pulses sounded later.",
+          "claim": {"sound": "low_motor_hum", "click_pulses": 2},
+          "mechanism": "modality_channel_outage",
+          "blocked_channel": "ambient",
+          "evidence_event_ids": ["s3_motor", "s3_two_clicks"],
+          "accepted_ses": [["s3_motor", "s3_two_clicks"]]
+        }
+      ]
+    },
+    {
+      "source_id": "syn_source_04",
+      "title": "Inspection line",
+      "duration_s": 480,
+      "base_color": "#2c1f3a",
+      "events": [
+        {
+          "event_id": "s4_orange_hexagon",
+          "start_s": 62,
+          "end_s": 68,
+          "modality": "vision",
+          "label": "ORANGE HEXAGON",
+          "visual": {"shape": "hexagon", "color": "#ff922b"}
+        },
+        {
+          "event_id": "s4_chime",
+          "start_s": 398,
+          "end_s": 404,
+          "modality": "ambient",
+          "label": "HIGH CONFIRMATION CHIME",
+          "audio": {"kind": "confirmation_chime", "frequency_hz": 1047}
+        },
+        {
+          "event_id": "s4_speech_count",
+          "start_s": 146,
+          "end_s": 152,
+          "modality": "speech",
+          "label": "inspector says FIVE UNITS",
+          "transcript": "The inspector says FIVE UNITS.",
+          "audio": {"kind": "speech_token", "frequency_hz": 784}
+        },
+        {
+          "event_id": "s4_speech_status",
+          "start_s": 432,
+          "end_s": 438,
+          "modality": "speech",
+          "label": "inspector says STATUS CLEAR",
+          "transcript": "The inspector says STATUS CLEAR.",
+          "audio": {"kind": "speech_token", "frequency_hz": 622}
+        }
+      ],
+      "families": [
+        {
+          "family_id": "syn_f07_hexagon_chime",
+          "question": "Which shape was shown early, and what ambient confirmation sounded later?",
+          "answer": "An orange hexagon was shown early, and a high confirmation chime sounded later.",
+          "claim": {"shape": "orange_hexagon", "confirmation": "high_chime"},
+          "mechanism": "necessity_group_withholding",
+          "evidence_event_ids": ["s4_orange_hexagon", "s4_chime"],
+          "accepted_ses": [["s4_orange_hexagon", "s4_chime"]],
+          "blocked_event_ids": ["s4_orange_hexagon"]
+        },
+        {
+          "family_id": "syn_f08_count_status",
+          "question": "How many units did the inspector report, and what status did the inspector report later?",
+          "answer": "The inspector reported five units and later reported status CLEAR.",
+          "claim": {"units": 5, "status": "CLEAR"},
+          "mechanism": "modality_channel_outage",
+          "blocked_channel": "speech",
+          "evidence_event_ids": ["s4_speech_count", "s4_speech_status"],
+          "accepted_ses": [["s4_speech_count", "s4_speech_status"]]
+        }
+      ]
+    }
+  ]
+}

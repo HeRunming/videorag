@@ -1,0 +1,68 @@
+{
+  "claim_ids": [
+    "claim_syn_f01_visual_order"
+  ],
+  "demonstration_id": "ses-demo.syn_f01_visual_order.ses_syn_f01_visual_order_1",
+  "evidence_ids": [
+    "s1_blue_triangle",
+    "s1_green_circle"
+  ],
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f01_visual_order",
+  "hop_ids": [
+    "hop_extract_s1_blue_triangle",
+    "hop_extract_s1_green_circle",
+    "hop_syn_f01_visual_order_route_1"
+  ],
+  "satisfiable": true,
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f01_visual_order_1",
+  "validator_demonstrations": [
+    {
+      "clean_observation_ids_by_evidence": {
+        "s1_blue_triangle": [
+          "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+        ],
+        "s1_green_circle": [
+          "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:8be304a952da85aea79c0d9f10e1ca1afef4d2ac9c4ba670385aaef46dc477dc",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_a.syn_f01_visual_order.clean",
+      "restored_observation_ids_by_evidence": {
+        "s1_blue_triangle": [
+          "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+        ],
+        "s1_green_circle": [
+          "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:7f5b354823da202abca28101cb6d4c457236c9642a6a1a8ea9f26cc195de00e1",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_a.syn_f01_visual_order.restored",
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "clean_observation_ids_by_evidence": {
+        "s1_blue_triangle": [
+          "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+        ],
+        "s1_green_circle": [
+          "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:3e31c1561a8e79808f7e9fc53532b91b24de056d21d80d3eeac0db7c0ff88adc",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_b.syn_f01_visual_order.clean",
+      "restored_observation_ids_by_evidence": {
+        "s1_blue_triangle": [
+          "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+        ],
+        "s1_green_circle": [
+          "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:a1e8b62015320f0999cfff49b0f3219c31ed733e6ef690c60c929a69999a3198",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_b.syn_f01_visual_order.restored",
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

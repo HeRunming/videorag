@@ -1,0 +1,189 @@
+{
+  "allowed_hosts": [
+    "cdn.oceanservice.noaa.gov",
+    "oceantoday.noaa.gov"
+  ],
+  "assets": [
+    {
+      "accept_ranges": "bytes",
+      "basename": "oceantodaywebinar_040720-lg.mp4",
+      "candidate_id": "cand-045",
+      "content_type": "video/mp4",
+      "destination": "raw/oceantodaywebinar_040720-lg.mp4",
+      "etag": "0x8DC750FFEBB6FC3",
+      "last_modified": "Wed, 15 May 2024 18:51:13 GMT",
+      "selection_role": "short_education_webinar",
+      "size_bytes": 58576631,
+      "stable_source_id": "NOAA-OceanToday-webinar1",
+      "technical_audit": {
+        "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+        "container_declared_audio_track_count": 1,
+        "container_parse_status": "PARSED_ISO_BMFF",
+        "decision": "GO_STREAM_DECLARED_AUDIO_AND_DURATION_PASS",
+        "duration_gate": "PASS",
+        "duration_seconds": 1772.44,
+        "local_audio_decode_checked": false,
+        "speech_or_ambient_semantics_checked": false,
+        "video_track_count": 1
+      },
+      "title": "Exploring Ocean Today Education Resources",
+      "url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/oceantodaywebinar_040720-lg.mp4"
+    },
+    {
+      "accept_ranges": "bytes",
+      "basename": "oceantoday-watchparty-050720b-sm.mp4",
+      "candidate_id": "cand-047",
+      "content_type": "video/mp4",
+      "destination": "raw/oceantoday-watchparty-050720b-sm.mp4",
+      "etag": "0x8DC7510025A05A8",
+      "last_modified": "Wed, 15 May 2024 18:51:19 GMT",
+      "selection_role": "ocean_exploration_watch_party",
+      "size_bytes": 284515787,
+      "stable_source_id": "NOAA-OceanToday-webinar3",
+      "technical_audit": {
+        "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+        "container_declared_audio_track_count": 1,
+        "container_parse_status": "PARSED_ISO_BMFF",
+        "decision": "GO_STREAM_DECLARED_AUDIO_AND_DURATION_PASS",
+        "duration_gate": "PASS",
+        "duration_seconds": 1983.8506666666667,
+        "local_audio_decode_checked": false,
+        "speech_or_ambient_semantics_checked": false,
+        "video_track_count": 1
+      },
+      "title": "Deep Ocean Full Moon Watch Party",
+      "url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/oceantoday-watchparty-050720b-sm.mp4"
+    },
+    {
+      "accept_ranges": "bytes",
+      "basename": "05_archive_070620_sm.mp4",
+      "candidate_id": "cand-049",
+      "content_type": "video/mp4",
+      "destination": "raw/05_archive_070620_sm.mp4",
+      "etag": "0x8DC751001B8FB3B",
+      "last_modified": "Wed, 15 May 2024 18:51:18 GMT",
+      "selection_role": "safety_field_oriented_program",
+      "size_bytes": 491943858,
+      "stable_source_id": "NOAA-OceanToday-webinar5",
+      "technical_audit": {
+        "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+        "container_declared_audio_track_count": 1,
+        "container_parse_status": "PARSED_ISO_BMFF",
+        "decision": "GO_STREAM_DECLARED_AUDIO_AND_DURATION_PASS",
+        "duration_gate": "PASS",
+        "duration_seconds": 2465.365333333333,
+        "local_audio_decode_checked": false,
+        "speech_or_ambient_semantics_checked": false,
+        "video_track_count": 1
+      },
+      "title": "Beach and Bay Safe",
+      "url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/05_archive_070620_sm.mp4"
+    },
+    {
+      "accept_ranges": "bytes",
+      "basename": "07_trashtalk_archive_0902_smc.mp4",
+      "candidate_id": "cand-051",
+      "content_type": "video/mp4",
+      "destination": "raw/07_trashtalk_archive_0902_smc.mp4",
+      "etag": "0x8DC7510021E50C0",
+      "last_modified": "Wed, 15 May 2024 18:51:19 GMT",
+      "selection_role": "marine_debris_conservation_program",
+      "size_bytes": 558522234,
+      "stable_source_id": "NOAA-OceanToday-webinar7",
+      "technical_audit": {
+        "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+        "container_declared_audio_track_count": 1,
+        "container_parse_status": "PARSED_ISO_BMFF",
+        "decision": "GO_STREAM_DECLARED_AUDIO_AND_DURATION_PASS",
+        "duration_gate": "PASS",
+        "duration_seconds": 3718.634666666667,
+        "local_audio_decode_checked": false,
+        "speech_or_ambient_semantics_checked": false,
+        "video_track_count": 1
+      },
+      "title": "Trash Talk",
+      "url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/07_trashtalk_archive_0902_smc.mp4"
+    },
+    {
+      "accept_ranges": "bytes",
+      "basename": "08_climatealive_archive_1001_smc.mp4",
+      "candidate_id": "cand-052",
+      "content_type": "video/mp4",
+      "destination": "raw/08_climatealive_archive_1001_smc.mp4",
+      "etag": "0x8DC750FF6150259",
+      "last_modified": "Wed, 15 May 2024 18:50:59 GMT",
+      "selection_role": "weather_climate_program",
+      "size_bytes": 561739683,
+      "stable_source_id": "NOAA-OceanToday-webinar8",
+      "technical_audit": {
+        "av_timeline_relation": "PLAUSIBLY_SYNCHRONIZED",
+        "container_declared_audio_track_count": 1,
+        "container_parse_status": "PARSED_ISO_BMFF",
+        "decision": "GO_STREAM_DECLARED_AUDIO_AND_DURATION_PASS",
+        "duration_gate": "PASS",
+        "duration_seconds": 3781.184,
+        "local_audio_decode_checked": false,
+        "speech_or_ambient_semantics_checked": false,
+        "video_track_count": 1
+      },
+      "title": "Climate Alive! Wild Weather",
+      "url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/08_climatealive_archive_1001_smc.mp4"
+    }
+  ],
+  "authorization_boundary": {
+    "annotation_authorized": false,
+    "derived_media_authorized": false,
+    "processing_authorized": false,
+    "public_release_authorized": false,
+    "restricted_internal_storage_only": true
+  },
+  "frozen_date": "2026-09-09",
+  "plan_id": "NOAA01-EXACT-FIVE-RESTRICTED-ACQUISITION",
+  "schema_version": "1.0",
+  "selection": {
+    "candidate_ids": [
+      "cand-045",
+      "cand-047",
+      "cand-049",
+      "cand-051",
+      "cand-052"
+    ],
+    "excluded_candidate_ids": [
+      "cand-046",
+      "cand-048",
+      "cand-054"
+    ],
+    "selected_count": 5,
+    "selection_basis": "Five nonredundant topic roles, using passed official renditions and preferring small/low-resolution objects."
+  },
+  "source_audit": {
+    "data/acquisition_preflight/noaa_webinar_stream_preflight_plan.json": {
+      "bytes": 32686,
+      "sha256": "9b38cbea1c294ca341806cbfef0f4ecdd3cc1120f9951f022274156a2cedc5a7"
+    },
+    "data/acquisition_preflight/noaa_webinar_stream_preflight_result.json": {
+      "bytes": 73757,
+      "sha256": "a519a20761e16aac9a1eaac600f6c612ec8ed9fd64589546655c710f6f525fbf"
+    },
+    "result_decision": "8/8 GO_STREAM_DECLARED_AUDIO_AND_DURATION_PASS",
+    "result_response_body_bytes": 25494606
+  },
+  "staging_root": "data/restricted/noaa01",
+  "status": "AUTHORIZED_FOR_EXACT_RESTRICTED_DOWNLOAD_ONLY",
+  "transfer_policy": {
+    "bearer_tokens_prohibited": true,
+    "chunk_bytes": 8388608,
+    "cookies_prohibited": true,
+    "etag_and_last_modified_required": true,
+    "exact_final_size_required": true,
+    "expected_total_payload_bytes": 1955298193,
+    "get_requires_exact_range": true,
+    "maximum_response_body_bytes": 8388608,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "redirects_allowed": 0,
+    "whole_file_sha256_after_download": "OPTIONAL_OPERATOR_FLAG"
+  }
+}

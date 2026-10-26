@@ -1,0 +1,3 @@
+# Pilot-v4 author/verifier packet
+
+This directory is a pre-distribution draft for one assigned slot. The author/verifier form exposes only this slot's machine-provisional candidate hypotheses. It does not expose the sibling slot from the same source, machine ranks/confidence, validator/adjudication decisions, or accepted SESs. Source-level exposure must be recorded and excludes the reviewer from both blind source-search roles for this source group. Task153 must be completed before authoring. If `audio_prescreen/` is present, its Task194 blind order must be completed before this form is opened. No distribution, human decision, H tier, or Gate A GO exists.

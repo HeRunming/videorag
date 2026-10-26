@@ -1,0 +1,236 @@
+{
+  "schema_version": "av-trace.controller-v2-holdout-contract/2.0.0",
+  "contract_id": "controller-v2-unseen-synthetic-holdout-20260921",
+  "frozen_at": "2026-09-21",
+  "contract_hash": "sha256:fa36bf635fdfea0393a626de1e9ad454fbd1817276a25ecdd9fa7649b36892bc",
+  "status": "FROZEN_BEFORE_ANY_V2_MODEL_RUN",
+  "decision_if_contract_valid": "CONTROLLER_V2_PROTOCOL_FROZEN",
+  "development_only": true,
+  "scientific_evaluation_eligible": false,
+  "no_model_run_performed_during_freeze": true,
+  "no_tuning_permitted": true,
+  "contains_no_evaluation_family_content": true,
+  "contains_no_source_media": true,
+  "actual_model_authorship_required": true,
+  "deterministic_answer_substitution": false,
+  "controller_state_must_not_be_mapped_to_answer": true,
+  "holdout": {
+    "case_count": 28,
+    "terminal_case_count": 8,
+    "answer_terminal_case_count": 4,
+    "abstain_terminal_case_count": 4,
+    "primary_strata": {
+      "routing": 4,
+      "pointer_read": 4,
+      "finalize": 4,
+      "abstain": 4,
+      "missingness": 4,
+      "recovery": 4,
+      "adversarial_menu_order": 4
+    },
+    "content_distinct_from_task111": true,
+    "unseen_definition": "No model call, prompt tuning, or implementation test may use these cases before the paired run. The implementation worker receives only the public packet."
+  },
+  "separation": {
+    "public_execution_packet": "data/rehearsal_plan/controller_v2_holdout/public_execution_packet.json",
+    "restricted_evaluator_key": "data/rehearsal_plan/controller_v2_holdout/restricted_evaluator_key.json",
+    "implementation_worker_allowlist": [
+      "docs/design/controller_interface_v2.md",
+      "docs/spec/controller_v2_action_schema.json",
+      "docs/spec/controller_v2_state_schema.json",
+      "data/rehearsal_plan/controller_v2_holdout_contract.json",
+      "data/rehearsal_plan/controller_v2_holdout/public_execution_packet.json"
+    ],
+    "implementation_worker_denylist": [
+      "data/rehearsal_plan/controller_v2_holdout/restricted_evaluator_key.json"
+    ],
+    "restricted_key_required_mode": "0600",
+    "evaluator_release_condition": "Both arms' raw outputs, request hashes, environment manifest, and output-file hashes are immutable and evaluator-confirmed.",
+    "limitation": "Filesystem path and mode separation are procedural controls, not cryptographic secrecy; task-scoped access control or a separate evaluator process is required."
+  },
+  "interface": {
+    "action_head": {
+      "schema": "docs/spec/controller_v2_action_schema.json",
+      "model_output_keys": [
+        "action_index"
+      ],
+      "grammar_dynamic_enum": "allowed_action_indices",
+      "calls_per_case": 1,
+      "repair_calls": 0
+    },
+    "state_head": {
+      "schema": "docs/spec/controller_v2_state_schema.json",
+      "model_output_keys": [
+        "p_sufficient",
+        "covered_claim_handles",
+        "missing_modalities",
+        "missing_hops",
+        "missingness_cause",
+        "recovery_intent"
+      ],
+      "grammar_dynamic_enum": "public_claim_slots[*].claim_handle",
+      "calls_per_case": 1,
+      "repair_calls": 0
+    },
+    "finalizer": {
+      "implementation": "unchanged_v1_grounded_finalizer",
+      "called_only_after_model_authored_finalize_action": true,
+      "deterministic_answer_fallback": false
+    }
+  },
+  "parser": {
+    "strict_single_json_value": true,
+    "duplicate_keys_rejected": true,
+    "non_finite_numbers_rejected": true,
+    "trailing_content_rejected": true,
+    "type_coercion": false,
+    "normalization": false,
+    "state_array_order_required": "canonical",
+    "grammar_runtime_failure_code": "CONSTRAINT_RUNTIME_FAILURE",
+    "fail_closed": true
+  },
+  "model_and_runtime": {
+    "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_dir": "data/restricted/scale1b/models/Qwen--Qwen2.5-7B-Instruct--a09a35458c70",
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "decoding": "greedy",
+    "temperature": 0,
+    "seed": 0,
+    "context_limit_tokens": 32768,
+    "action_max_new_tokens": 32,
+    "state_max_new_tokens": 256,
+    "finalizer_max_new_tokens": 512,
+    "local_files_only": true,
+    "network_denied": true,
+    "thread_count": 8
+  },
+  "paired_protocol": {
+    "arms": [
+      "v1_monolithic",
+      "v2_split_constrained"
+    ],
+    "same_public_cases": true,
+    "same_case_order": true,
+    "same_model_snapshot": true,
+    "same_finalizer": true,
+    "same_public_inputs_and_action_menus": true,
+    "fixed_run_order": "v1_then_v2_within_case_id_order",
+    "v1_maximum_repairs_per_output": 1,
+    "v2_maximum_repairs_per_head": 0,
+    "post_first_call_changes_forbidden": [
+      "prompts",
+      "grammars",
+      "schemas",
+      "cases",
+      "labels",
+      "thresholds",
+      "scoring",
+      "runtime"
+    ],
+    "required_paired_reports": [
+      "action_correctness_2x2",
+      "state_exactness_2x2",
+      "terminal_correctness_2x2",
+      "per_case_failure_decomposition",
+      "per_stratum_counts"
+    ]
+  },
+  "preregistered_gates": {
+    "absolute_v2": {
+      "action_syntax_valid_count": {
+        "operator": "==",
+        "value": 28
+      },
+      "state_syntax_valid_count": {
+        "operator": "==",
+        "value": 28
+      },
+      "action_correct_count": {
+        "operator": ">=",
+        "value": 24
+      },
+      "action_correct_per_primary_stratum": {
+        "operator": ">=",
+        "value": 3,
+        "denominator": 4
+      },
+      "state_exact_count": {
+        "operator": ">=",
+        "value": 21
+      },
+      "each_state_field_correct_count": {
+        "operator": ">=",
+        "value": 24
+      },
+      "end_to_end_terminal_correct_count": {
+        "operator": ">=",
+        "value": 7,
+        "denominator": 8
+      },
+      "supported_answer_count": {
+        "operator": ">=",
+        "value": 3,
+        "denominator": 4
+      },
+      "correct_abstention_count": {
+        "operator": "==",
+        "value": 4,
+        "denominator": 4
+      },
+      "unsupported_required_claims": {
+        "operator": "==",
+        "value": 0
+      },
+      "evaluation_family_or_private_label_exposures": {
+        "operator": "==",
+        "value": 0
+      }
+    },
+    "paired_v2_minus_v1": {
+      "action_correct_count_delta": {
+        "operator": ">=",
+        "value": 0
+      },
+      "state_exact_count_delta": {
+        "operator": ">=",
+        "value": 4
+      },
+      "end_to_end_terminal_correct_count_delta": {
+        "operator": ">=",
+        "value": 0
+      },
+      "unsupported_required_claim_count_delta": {
+        "operator": "<=",
+        "value": 0
+      }
+    },
+    "automatic_no_go_conditions": [
+      "artifact_hash_mismatch",
+      "constraint_runtime_failure",
+      "implementation_worker_accessed_restricted_key",
+      "evaluator_labels_changed_after_any_model_output",
+      "post_run_tuning",
+      "evaluation_family_content_detected",
+      "deterministic_answer_substitution",
+      "controller_output_mapped_into_answer"
+    ]
+  },
+  "task111_protected_hashes": {
+    "data/restricted/scale1b/controller_dev/suite_contract.json": "sha256:b4aa831e77e6b8f744387f5a02e1516082bf0b990c010dca2a7d8e83d33f3ef7",
+    "data/restricted/scale1b/controller_dev/results.json": "sha256:02f10aa9c781f132e81679d221b696453cbf1d04d146f37eb730f44a6aab1c1d",
+    "data/restricted/scale1b/controller_dev/summary.json": "sha256:131643b79fc4addb866c1f07e79f503f00f9e659e3f5618f196f61fc6775af96",
+    "data/restricted/scale1b/controller_dev/calls.jsonl": "sha256:1c8e433668d10c242179b7393f67791d0a3127af13210bd4010580d668353654",
+    "docs/review/controller_synthetic_competence.md": "sha256:4663c65a633a1fcd0df3c3e6434d3c926e4541c3d9f0335b5db266f24d0fb769",
+    "orchestration/results/111_controller_synthetic_competence.txt": "sha256:fa641ddbfd31ed19b315f8c88e73c394e8ebebd3c7452ab52465554779b40698"
+  },
+  "artifact_hashes": {
+    "design": "sha256:4acd9e5b796a03b9b1e59c2e700b5da73c2737b0f3081ee33a94565d74fa5349",
+    "action_schema": "sha256:98c954adae305af3f2432a9768c5a55b2e35b5609c33f381783d4adf77f42f36",
+    "state_schema": "sha256:dbed72b243342c096500ba3aea9592d500a8fd445af613aedabbc2a4fd2544eb",
+    "public_execution_packet": "sha256:7a7b0ae0c03a40e8aed93a3d4aa405006278f98f294b7a0add76c7d9b4786080",
+    "restricted_evaluator_key": "sha256:13b74dd4a89e0fc1fa474ed874050c5aeea2c0f0868cdfe7b2f6dbf6ad77e094",
+    "contract_test": "sha256:4be6a7e8a89d65662a954cb8c1c1eaffc1b373bb84745a550654fb211e69f51e"
+  }
+}

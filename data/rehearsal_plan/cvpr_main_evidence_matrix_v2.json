@@ -1,0 +1,631 @@
+{
+  "schema_version": "av-trace.cvpr-main-evidence-matrix/2.0",
+  "matrix_id": "AV-TRACE-CVPR-MAIN-EVIDENCE-MATRIX-V2",
+  "packaging_date": "2026-09-23",
+  "readiness_token": "CVPR_MAIN_BLUEPRINT_READY__PAPER_CLAIMS_BLOCKED",
+  "readiness_interpretation": "The paper blueprint and claim-to-artifact package are ready. Scientific paper claims, human construct validity, scaled benchmark validity, learned end-to-end findings, and public release remain blocked.",
+  "normative_precedence": [
+    "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+    "docs/paper/cvpr_thesis_and_evidence_gates.md"
+  ],
+  "paper_blueprint": "docs/paper/av_trace_cvpr_main_blueprint_v2.md",
+  "stage_vocabulary": {
+    "machine_stage": "MACHINE_ADJUDICATED_PROVISIONAL",
+    "human_stage_1": "H1_HUMAN_VALIDATED",
+    "human_stage_2": "H2_HUMAN_ADJUDICATED_GOLD",
+    "current_h1_count": 0,
+    "current_h2_count": 0,
+    "human_gold_claim_allowed_now": false
+  },
+  "current_state": {
+    "as_of": "2026-09-23T16:47:18+08:00",
+    "infrastructure_gate": "INFRASTRUCTURE_PROVEN",
+    "learned_retrieval_gate": "LEARNED_RETRIEVAL_READY",
+    "construct_validity_gate": "NOT_ACHIEVED",
+    "learned_generation_gate": "NOT_ACHIEVED",
+    "learned_agent_gate": "REPAIR",
+    "end_to_end_gate": "NOT_AUTHORIZED",
+    "paper_claim_gate": "NOT_ACHIEVED",
+    "final_benchmark_gate": "NOT_ACHIEVED",
+    "active_workstream": {
+      "name": "canonical four-source full-timeline index build",
+      "command_observed": "PYTHONPATH=src python scripts/build_mini_pilot_full_timeline.py --execute --resume --threads 8 --device cpu",
+      "state_observed": "RUNNING",
+      "canonical_output_root": "data/restricted/mini_pilot_index_v1",
+      "present_terminal_artifacts_at_observation": [
+        "segment_manifest.json",
+        "resource_manifest.json"
+      ],
+      "missing_required_terminal_artifacts_at_observation": [
+        "observation_manifest.json",
+        "full_timeline_index.json",
+        "build_manifest.json"
+      ],
+      "terminal_completion_claimed": false
+    },
+    "real_family_mining": {
+      "framework_status": "MACHINE_PROVISIONAL_MINING_FRAMEWORK_READY",
+      "real_run_status": "NOT_RUN",
+      "real_family_count": 0,
+      "final_accepted_family_count": 0,
+      "fixture_status": "DRY_RUN_FIXTURE_NOT_REAL_FAMILIES",
+      "dependency": "Complete, frozen, non-smoke canonical four-source full-timeline index"
+    }
+  },
+  "claim_tiers": {
+    "T0": "ACHIEVED_ENGINEERING",
+    "T1": "ACHIEVED_LOW_N_MACHINE_PROVISIONAL_DESCRIPTIVE",
+    "T2": "INTENDED_CONSTRUCT_CLAIM_REQUIRES_H2",
+    "T3": "INTENDED_EMPIRICAL_CLAIM_REQUIRES_H2_LEARNED_EVALUATION",
+    "TX": "PROHIBITED_CURRENTLY"
+  },
+  "claims": [
+    {
+      "claim_id": "BP2-C001",
+      "claim": "AV-TRACE implements auditable matched CLEAN, BLOCKED, RESTORED, and no-trigger execution under fixed budgets.",
+      "tier": "T0",
+      "current_status": "SUPPORTED_ENGINEERING",
+      "allowed_wording_now": "The infrastructure executes and independently replays matched C/B/R episodes and no-trigger controls under fixed budgets.",
+      "forbidden_wording_now": "The current benchmark validates learned-agent recovery on human-gold families.",
+      "current_artifacts": [
+        "docs/review/scale1a_final_audit.md",
+        "docs/review/core_milestone_completion_audit.md",
+        "docs/spec/metrics_protocol.md"
+      ],
+      "required_future_artifacts": [],
+      "required_gate": "INFRASTRUCTURE_PROVEN",
+      "paper_locations": [
+        "method",
+        "implementation",
+        "reproducibility"
+      ]
+    },
+    {
+      "claim_id": "BP2-C002",
+      "claim": "Restoration uses a common supported-answer endpoint, and final-point route certificates operationalize premature stopping.",
+      "tier": "T0",
+      "current_status": "SUPPORTED_ENGINEERING",
+      "allowed_wording_now": "The protocol defines common-endpoint restoration and can score final-point premature stopping with evaluator-private route certificates.",
+      "forbidden_wording_now": "Current learned agents recover or abstain correctly.",
+      "current_artifacts": [
+        "docs/paper/cvpr_thesis_and_evidence_gates.md",
+        "docs/paper/cvpr_pivot_decision_and_6week_plan.md",
+        "docs/spec/metrics_protocol.md"
+      ],
+      "required_future_artifacts": [
+        "Human-valid executable certificate audit",
+        "H2 learned C/B/R and no-trigger trajectories"
+      ],
+      "required_gate": "END_TO_END_DIAGNOSTIC_GO for empirical wording",
+      "paper_locations": [
+        "task definition",
+        "metrics",
+        "matched intervention results after promotion"
+      ]
+    },
+    {
+      "claim_id": "BP2-C003",
+      "claim": "Pinned learned visual and audio retrieval plus fixed no-training fusion are reproducible.",
+      "tier": "T0",
+      "current_status": "SUPPORTED_ENGINEERING",
+      "allowed_wording_now": "Wave R uses audited pinned learned modality retrievers and fixed no-training RRF.",
+      "forbidden_wording_now": "Wave R uses learned multimodal fusion or proves general retriever superiority.",
+      "current_artifacts": [
+        "docs/review/scale1b_wave_r_final_audit.md",
+        "data/rehearsal_plan/scale1b_wave_r_trust_anchor.json"
+      ],
+      "required_future_artifacts": [],
+      "required_gate": "LEARNED_RETRIEVAL_READY",
+      "paper_locations": [
+        "systems",
+        "retrieval sensitivity"
+      ]
+    },
+    {
+      "claim_id": "BP2-C004",
+      "claim": "The provisional full-timeline migration exposed degradation relative to the bounded candidate universe.",
+      "tier": "T1",
+      "current_status": "SUPPORTED_LOW_N_DESCRIPTIVE",
+      "allowed_wording_now": "The machine-provisional Scale-1A migration exposed full-timeline retrieval degradation, including one retained-family exclusion.",
+      "forbidden_wording_now": "Full-timeline retrieval is universally harder by the observed amount.",
+      "current_artifacts": [
+        "docs/review/scale1a_final_audit.md",
+        "docs/overview/av_trace_project_status_for_owner.md"
+      ],
+      "required_future_artifacts": [
+        "H2 source-disjoint bounded-versus-full replication",
+        "Source-cluster uncertainty"
+      ],
+      "required_gate": "PAPER_CLAIM_READY for main empirical wording",
+      "paper_locations": [
+        "motivation",
+        "appendix provisional diagnostic"
+      ]
+    },
+    {
+      "claim_id": "BP2-C005",
+      "claim": "For the tested frozen encoders and provisional families, generic learned modality retrievers did not consistently improve evidence localization.",
+      "tier": "T1",
+      "current_status": "SUPPORTED_LOW_N_DESCRIPTIVE",
+      "allowed_wording_now": "On five machine-provisional families, the tested learned retriever replacements often degraded ranks relative to the frozen controls.",
+      "forbidden_wording_now": "SigLIP2 or CLAP is generally inferior for long-video retrieval.",
+      "current_artifacts": [
+        "docs/review/scale1b_wave_r_final_audit.md",
+        "docs/overview/av_trace_project_status_for_owner.md"
+      ],
+      "required_future_artifacts": [
+        "Human revalidation of every accepted support route",
+        "Source-disjoint F-CTRL versus F-VA replication",
+        "End-to-end propagation analysis"
+      ],
+      "required_gate": "PAPER_CLAIM_READY for bounded main-paper claim",
+      "paper_locations": [
+        "appendix now",
+        "retrieval ablation after promotion"
+      ]
+    },
+    {
+      "claim_id": "BP2-MC1",
+      "claim": "AV-TRACE provides a human-adjudicated, source-disjoint benchmark of matched evidence-access interventions.",
+      "tier": "T2",
+      "current_status": "BLOCKED_BY_HUMAN_VALIDATION_AND_SCALE",
+      "allowed_wording_now": "A human-adjudicated, source-disjoint benchmark is the intended contribution.",
+      "forbidden_wording_now": "The current repository already contains a validated human-gold benchmark.",
+      "current_artifacts": [
+        "docs/annotation/construct_validity_protocol.md",
+        "data/rehearsal_plan/construct_validity_mini_pilot_plan.json",
+        "docs/paper/cvpr_pivot_decision_and_6week_plan.md"
+      ],
+      "required_future_artifacts": [
+        "Gate A GO artifact",
+        "12-family completed human mini-pilot",
+        "At least 8 H2 families and Gate B GO",
+        "60 H2 families from at least 20 source groups",
+        "Whole-source split manifest",
+        "Final construct and leakage audit"
+      ],
+      "required_gate": "60_H2_CORPUS_FREEZE",
+      "paper_locations": [
+        "title",
+        "abstract",
+        "introduction",
+        "data section"
+      ]
+    },
+    {
+      "claim_id": "BP2-MC2",
+      "claim": "Answer correctness and supported-answer correctness or citation validity diverge on held-out H2 families.",
+      "tier": "T3",
+      "current_status": "HYPOTHESIS_ONLY",
+      "allowed_wording_now": "The protocol is designed to expose answer-versus-support divergence.",
+      "forbidden_wording_now": "We have shown that answer accuracy is inadequate for learned agents.",
+      "current_artifacts": [
+        "docs/spec/metrics_protocol.md",
+        "docs/paper/cvpr_execution_blueprint.md"
+      ],
+      "required_future_artifacts": [
+        "H2 held-out learned-system trajectories",
+        "Nonzero answer-correct but unsupported or citation-invalid set",
+        "At least three source groups",
+        "Independent support/citation audit",
+        "Source-cluster estimates"
+      ],
+      "required_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "paper_locations": [
+        "abstract after promotion",
+        "main results",
+        "Figure 1 empirical panel",
+        "Table 6"
+      ]
+    },
+    {
+      "claim_id": "BP2-MC3",
+      "claim": "AV-TRACE empirically separates evidence acquisition from at least two non-retrieval failure stages.",
+      "tier": "T3",
+      "current_status": "HYPOTHESIS_ONLY",
+      "allowed_wording_now": "AV-TRACE operationalizes acquisition, grounding, citation, diagnosis, stopping, and recovery separately.",
+      "forbidden_wording_now": "The current results disentangle all long-video agent failures.",
+      "current_artifacts": [
+        "docs/spec/metrics_protocol.md",
+        "docs/paper/cvpr_thesis_and_evidence_gates.md"
+      ],
+      "required_future_artifacts": [
+        "At least two non-retrieval failure categories",
+        "Each category present on at least two source groups",
+        "Observed-evidence lock and oracle/partial-evidence analyses",
+        "Independent replay and metric audit"
+      ],
+      "required_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "paper_locations": [
+        "abstract after promotion",
+        "failure analysis",
+        "Table 6"
+      ]
+    },
+    {
+      "claim_id": "BP2-MC4",
+      "claim": "Common-endpoint restoration and no-trigger controls measure recovery separately from blocked-state diagnosis.",
+      "tier": "T3",
+      "current_status": "ENGINEERING_SUPPORTED_EMPIRICALLY_BLOCKED",
+      "allowed_wording_now": "The protocol is ready to measure restoration with a common supported-answer endpoint and no-trigger control.",
+      "forbidden_wording_now": "Current learned systems demonstrate recovery.",
+      "current_artifacts": [
+        "docs/paper/cvpr_thesis_and_evidence_gates.md",
+        "docs/spec/metrics_protocol.md",
+        "docs/review/scale1a_final_audit.md"
+      ],
+      "required_future_artifacts": [
+        "H2 pair isolation",
+        "Policy-blind trigger audit",
+        "RESTORED and no-trigger learned trajectories",
+        "Trigger-aligned acquisition, finalization, cost, and latency"
+      ],
+      "required_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "paper_locations": [
+        "task definition now",
+        "Figure 3",
+        "Table 5 after promotion"
+      ]
+    },
+    {
+      "claim_id": "BP2-MC5",
+      "claim": "Explicit evidence-sufficiency control improves intervention behavior relative to ordinary learned ReAct without unacceptable CLEAN degradation.",
+      "tier": "T3",
+      "current_status": "OPTIONAL_HYPOTHESIS_BLOCKED_BY_LEARNED_COMPETENCE",
+      "allowed_wording_now": "This is a preregistered optional comparison; null or adverse outcomes will be reported.",
+      "forbidden_wording_now": "The sufficiency controller outperforms ReAct.",
+      "current_artifacts": [
+        "docs/review/controller_capacity_sensitivity_qwen7b_audit.md",
+        "docs/review/controller_v2_holdout_evaluation.md",
+        "docs/paper/cvpr_pivot_decision_and_6week_plan.md"
+      ],
+      "required_future_artifacts": [
+        "Gate C GO on a new unseen fictional suite",
+        "Same-backbone learned ReAct and sufficiency agents",
+        "CLEAN non-inferiority margin 0.10",
+        "At least 0.15 absolute improvement for a directional BLOCKED or recovery claim",
+        "Source-cluster uncertainty and fairness audit"
+      ],
+      "required_gate": "PAPER_CLAIM_READY",
+      "paper_locations": [
+        "secondary main comparison only if supported",
+        "otherwise null/adverse result"
+      ]
+    },
+    {
+      "claim_id": "BP2-MC6",
+      "claim": "Matched retrieval coverage does not fully determine grounded success, stopping, or recovery.",
+      "tier": "T3",
+      "current_status": "HYPOTHESIS_ONLY",
+      "allowed_wording_now": "The experiment plan includes acquisition-conditioned and identical-observation tests.",
+      "forbidden_wording_now": "Current evidence proves retrieval is not the whole story.",
+      "current_artifacts": [
+        "docs/paper/cvpr_execution_blueprint.md",
+        "data/rehearsal_plan/cvpr_experiment_registry.json"
+      ],
+      "required_future_artifacts": [
+        "Observed-evidence lock",
+        "Oracle-H2 versus retrieved-evidence comparison",
+        "Acquisition-conditioned analysis",
+        "Multi-source non-retrieval separation"
+      ],
+      "required_gate": "END_TO_END_DIAGNOSTIC_GO",
+      "paper_locations": [
+        "main results",
+        "ablation table"
+      ]
+    },
+    {
+      "claim_id": "BP2-MODALITY",
+      "claim": "A named modality is necessary for a named family or adequately sourced stratum.",
+      "tier": "T2",
+      "current_status": "BLOCKED_BY_HUMAN_VALIDATION",
+      "allowed_wording_now": "Current modality assignments are routing or candidate-stratum hypotheses.",
+      "forbidden_wording_now": "Current visual, speech, ambient, or cross-modal labels prove necessity.",
+      "current_artifacts": [
+        "docs/overview/av_trace_project_status_for_owner.md",
+        "docs/paper/cvpr_thesis_and_evidence_gates.md"
+      ],
+      "required_future_artifacts": [
+        "All accepted SESs enumerated",
+        "Human modality-drop answerability",
+        "Derived-representation closure",
+        "Adequate source-group count for any aggregate stratum claim"
+      ],
+      "required_gate": "CONSTRUCT_VALIDITY_MINI_PILOT_GO per family; PAPER_CLAIM_READY for aggregate wording",
+      "paper_locations": [
+        "composition table",
+        "stratified analysis"
+      ]
+    },
+    {
+      "claim_id": "BP2-RELEASE",
+      "claim": "AV-TRACE is a release-ready public benchmark core.",
+      "tier": "TX",
+      "current_status": "PROHIBITED_CURRENTLY",
+      "allowed_wording_now": "Current assets are restricted research materials with artifact-specific rights boundaries.",
+      "forbidden_wording_now": "Current media, transcripts, annotations, embeddings, or weights are publicly redistributable.",
+      "current_artifacts": [
+        "docs/review/mini_pilot_replacement_dossier_final_audit.md",
+        "docs/review/mini_pilot_four_source_acquisition.md",
+        "docs/paper/cvpr_pivot_decision_and_6week_plan.md"
+      ],
+      "required_future_artifacts": [
+        "Asset-level rights and privacy decisions",
+        "Release bill of materials",
+        "Attribution and takedown policy",
+        "Public evaluator and reproducibility audit"
+      ],
+      "required_gate": "FINAL_BENCHMARK_VALIDATED",
+      "paper_locations": [
+        "release statement only after promotion"
+      ]
+    },
+    {
+      "claim_id": "BP2-NOVELTY",
+      "claim": "AV-TRACE is the first, unique, or only long-video agentic audiovisual benchmark.",
+      "tier": "TX",
+      "current_status": "PROHIBITED",
+      "allowed_wording_now": "AV-TRACE combines matched evidence-access interventions with trace-level diagnosis.",
+      "forbidden_wording_now": "Any broad first, unique, only, SOTA, or universal wording.",
+      "current_artifacts": [
+        "docs/research/related_work_matrix.md",
+        "docs/research/novelty_boundary.md",
+        "docs/review/cvpr_pre_submission_risk_register.md"
+      ],
+      "required_future_artifacts": [
+        "Dated submission-time primary-source audit",
+        "Two-reader sentence-level novelty audit"
+      ],
+      "required_gate": "No automatic promotion; only narrow wording supported by a future dated audit",
+      "paper_locations": [
+        "related work",
+        "claim audit"
+      ]
+    }
+  ],
+  "artifact_plan": [
+    {
+      "artifact_id": "A01",
+      "artifact": "Frozen canonical four-source full-timeline index",
+      "current_status": "ACTIVE_INCOMPLETE",
+      "required_contents": [
+        "segment_manifest.json",
+        "observation_manifest.json",
+        "full_timeline_index.json",
+        "resource_manifest.json",
+        "build_manifest.json",
+        "status=COMPLETE",
+        "smoke_seconds=null",
+        "four complete sources",
+        "valid self-hashes and frozen artifact hashes",
+        "full planned lattice counts",
+        "terminal no-family-generation boundary"
+      ],
+      "unlocks": [
+        "A02"
+      ]
+    },
+    {
+      "artifact_id": "A02",
+      "artifact": "Real machine-provisional P0/P1/P2 candidate registry",
+      "current_status": "BLOCKED",
+      "required_contents": [
+        "Real index access",
+        "12 reported candidate targets plus two excluded calibrations or explicit shortfall",
+        "New-source and NOAA-development provenance",
+        "Alternative-route and sidecar challenge",
+        "No H1/H2 or human-gold flags",
+        "Inert C/B/R/no-trigger templates only"
+      ],
+      "unlocks": [
+        "A03"
+      ]
+    },
+    {
+      "artifact_id": "A03",
+      "artifact": "Gate A MINI_PILOT_INPUT_READY decision package",
+      "current_status": "NOT_RUN",
+      "required_contents": [
+        "12 eligible families",
+        "two excluded calibrations",
+        "exactly six source groups",
+        "source, media, lineage, rights and privacy records",
+        "frozen forms, protocol, seed and registry",
+        "at least six trained reviewers with independent roles",
+        "no critical governance hold"
+      ],
+      "unlocks": [
+        "A04"
+      ]
+    },
+    {
+      "artifact_id": "A04",
+      "artifact": "H2 construct-validity mini-pilot and Gate B audit",
+      "current_status": "NOT_RUN",
+      "required_contents": [
+        "12 completed families",
+        "at least 9 H1 and at least 8 H2 for GO",
+        "all independent roles and adjudication",
+        "all accepted SESs and necessity groups",
+        "modality counterfactuals",
+        "pair isolation and exact restoration",
+        "saturation audit",
+        "labor, disagreement, rejection and rights reports"
+      ],
+      "unlocks": [
+        "A06"
+      ]
+    },
+    {
+      "artifact_id": "A05",
+      "artifact": "Learned generator and controller competence Gate C",
+      "current_status": "REPAIR",
+      "required_contents": [
+        "New unseen source-free fictional suite",
+        "Passed learned generator readiness",
+        "Passed learned ReAct and sufficiency controller semantic floors",
+        "Strong model-family sensitivity",
+        "Zero evaluator-private leakage or deterministic answer substitution",
+        "Independent hash-bound audit"
+      ],
+      "unlocks": [
+        "A06"
+      ]
+    },
+    {
+      "artifact_id": "A06",
+      "artifact": "H2 end-to-end mini diagnostic and Gate D",
+      "current_status": "NOT_AUTHORIZED",
+      "required_contents": [
+        "Single-shot RAG, learned ReAct and learned sufficiency",
+        "C/B/R and no-trigger accounting",
+        "At least one intervention-aware separation across at least three source groups",
+        "At least one answer-versus-support or citation divergence",
+        "At least two non-retrieval failure categories on at least two source groups each",
+        "Complete invalids, denominators, costs and replay"
+      ],
+      "unlocks": [
+        "A07"
+      ]
+    },
+    {
+      "artifact_id": "A07",
+      "artifact": "Scaled source-disjoint 60-H2 corpus freeze",
+      "current_status": "NOT_AUTHORIZED",
+      "required_contents": [
+        "60 H2 families",
+        "at least 20 source groups",
+        "at least 8/4/8 development/validation/test source groups",
+        "target 24/12/24 family split",
+        "25 percent reserve",
+        "complete rights decisions",
+        "no test-source tuning"
+      ],
+      "unlocks": [
+        "A08"
+      ]
+    },
+    {
+      "artifact_id": "A08",
+      "artifact": "Frozen main evaluation and independent paper audit",
+      "current_status": "BLOCKED",
+      "required_contents": [
+        "At least four learned system classes",
+        "At least two model/backbone families",
+        "Acquire/Ground/Act dashboard",
+        "Matched effects and ablations",
+        "Source-cluster inference and leave-out sensitivity",
+        "Negative, null and invalid strata",
+        "Metric, replay, leakage, novelty, rights and sentence-level claim audits"
+      ],
+      "unlocks": [
+        "PAPER_CLAIM_READY"
+      ]
+    }
+  ],
+  "top_blockers": [
+    {
+      "rank": 1,
+      "blocker_id": "B01_CANONICAL_FOUR_SOURCE_FULL_TIMELINE_INDEX_INCOMPLETE",
+      "exact_condition": "At observation time the active canonical output had only segment_manifest.json and resource_manifest.json; observation_manifest.json, full_timeline_index.json, and build_manifest.json were absent.",
+      "resolution": "Complete the active build and independently verify the complete non-smoke terminal contract."
+    },
+    {
+      "rank": 2,
+      "blocker_id": "B02_REAL_MACHINE_PROVISIONAL_FAMILY_MINING_NOT_RUN",
+      "exact_condition": "The mining framework reports real family mining run NO, real family count 0, and final accepted family count 0.",
+      "resolution": "After B01, execute the real miner and audit its P-tier outputs without forcing target strata."
+    },
+    {
+      "rank": 3,
+      "blocker_id": "B03_GATE_A_MINI_PILOT_INPUT_READY_NOT_RUN",
+      "exact_condition": "The joint 12-family, two-calibration, six-source, reviewer, packet, seed, role, and governance gate has not been decided.",
+      "resolution": "Assemble and independently decide the full Gate A package."
+    },
+    {
+      "rank": 4,
+      "blocker_id": "B04_HUMAN_CONSTRUCT_VALIDITY_ABSENT",
+      "exact_condition": "There are zero H1 and zero H2 families.",
+      "resolution": "Complete independent human passes, adjudication, saturation, intervention isolation, and Gate B."
+    },
+    {
+      "rank": 5,
+      "blocker_id": "B05_LEARNED_CONTROLLER_GATE_IN_REPAIR",
+      "exact_condition": "Existing v1/v2/v3 competence results fail semantic state, terminal, supported-answer, or abstention floors.",
+      "resolution": "Pass Gate C on a new unseen fictional suite with a competent learned stack and independent audit."
+    },
+    {
+      "rank": 6,
+      "blocker_id": "B06_END_TO_END_H2_DIAGNOSTIC_NOT_AUTHORIZED",
+      "exact_condition": "No human-valid learned C/B/R and no-trigger evaluation exists.",
+      "resolution": "After Gates B and C, run and audit the preregistered H2 mini diagnostic."
+    },
+    {
+      "rank": 7,
+      "blocker_id": "B07_SCALE_SPLIT_AND_RELEASE_NOT_READY",
+      "exact_condition": "The 60-H2, at-least-20-source split, reserve, rights, public evaluator, and release package do not exist.",
+      "resolution": "Pass scale authorization, corpus freeze, main evaluation, and final release/claim audits."
+    }
+  ],
+  "six_week_critical_path": [
+    {
+      "week": 1,
+      "name": "finish_index_and_run_real_mining",
+      "start_state": "Four-source full-timeline build active; real miner fail-closed.",
+      "required_exit": "Frozen complete non-smoke four-source index plus audited real P-tier candidate registry or an explicit honest shortfall.",
+      "gate": "No Gate A promotion yet"
+    },
+    {
+      "week": 2,
+      "name": "gate_a_mobilization",
+      "required_exit": "MINI_PILOT_INPUT_READY GO, REPAIR, or NO-GO",
+      "gate": "A"
+    },
+    {
+      "week": 3,
+      "name": "independent_human_passes",
+      "required_exit": "Complete role-separated forms, full-source searches, counterfactuals, isolation checks, and repair queue.",
+      "gate": "B preparation"
+    },
+    {
+      "week": 4,
+      "name": "adjudication_saturation_and_gate_b",
+      "required_exit": "CONSTRUCT_VALIDITY_MINI_PILOT_GO, REPAIR, or NO-GO",
+      "gate": "B"
+    },
+    {
+      "week": 5,
+      "name": "strong_learned_competence",
+      "required_exit": "LEARNED_CONTROLLER_READY GO, REPAIR, or NO-GO with learned generation readiness also established.",
+      "gate": "C"
+    },
+    {
+      "week": 6,
+      "name": "h2_mini_diagnostic_and_scale_decision",
+      "required_exit": "END_TO_END_DIAGNOSTIC_GO, REPAIR, or NO-GO and first-40 authorization decision only.",
+      "gate": "D and E1"
+    }
+  ],
+  "prohibited_claims": [
+    "Current machine-provisional SESs, necessity groups, support intervals, or modality labels are human gold.",
+    "AV-TRACE is already a validated benchmark.",
+    "AV-TRACE is the first, unique, or only long-video agentic audiovisual benchmark.",
+    "Current controller results demonstrate learned-agent recovery or superiority.",
+    "Syntax validity establishes semantic controller competence.",
+    "SigLIP2 or CLAP is generally superior or inferior for long-video retrieval.",
+    "The fixed RRF baseline is learned multimodal fusion.",
+    "Current restricted media, transcripts, annotations, embeddings, vectors, or model weights are publicly redistributable.",
+    "Episodes or families from one source are statistically independent.",
+    "RESTORED supported-answer success minus BLOCKED diagnosis success is restoration gain.",
+    "Negative, null, excluded, invalid, or failed strata may be omitted."
+  ],
+  "final_decision": {
+    "blueprint_package": "READY",
+    "scientific_paper_claims": "NOT_READY",
+    "current_active_step": "FOUR_SOURCE_CANONICAL_FULL_TIMELINE_BUILD",
+    "next_step_after_build": "REAL_MACHINE_PROVISIONAL_FAMILY_MINING",
+    "paper_claim_ready": false,
+    "final_benchmark_validated": false
+  }
+}

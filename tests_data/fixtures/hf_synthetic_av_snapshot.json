@@ -1,0 +1,112 @@
+{
+  "fixture_kind": "synthetic_behavioral",
+  "synthetic_values": true,
+  "provider": "huggingface",
+  "repository": {
+    "id": "lmms-lab/Video-MME",
+    "url": "https://huggingface.co/datasets/lmms-lab/Video-MME",
+    "revision": "3f70174ae54164dec63098b23704e2858d40169a",
+    "publisher": "lmms-lab",
+    "technical_access_status": "public_academic_restricted",
+    "media_rights_status": "restricted",
+    "license_resolution_status": "unresolved",
+    "license_evidence": [
+      {
+        "source": "official_project_readme",
+        "artifact_class": "source_media_usage_terms",
+        "name": "Academic-use restrictions",
+        "version": "readme-at-06c2315",
+        "url": "https://github.com/MME-Benchmarks/Video-MME",
+        "scope": "Synthetic fixture summary; no redistribution or asset approval",
+        "observed_revision": "06c231500000000000000000000000000000000"
+      }
+    ]
+  },
+  "card": {
+    "title": "Clearly synthetic AV selection fixture",
+    "fixture_notice": "All row identities, URLs, sizes, modality facts, and hashes are synthetic behavioral test data."
+  },
+  "configs": [
+    {
+      "name": "synthetic",
+      "splits": [
+        "test"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "synthetic/test.json",
+      "size": 4096,
+      "oid": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ],
+  "rows": [
+    {
+      "id": "synthetic-av-001",
+      "split": "test",
+      "duration_s": 2400,
+      "canonical_url": "https://huggingface.co/datasets/lmms-lab/Video-MME",
+      "media_url": "https://huggingface.co/datasets/lmms-lab/Video-MME/resolve/3f70174ae54164dec63098b23704e2858d40169a/synthetic/synthetic-av-001.mp4",
+      "has_video": true,
+      "has_audio": true,
+      "has_speech": true,
+      "has_ambient_audio": false,
+      "transcript_available": true,
+      "evidence_available": true,
+      "upstream_namespace": "video-mme",
+      "upstream_asset_id": "synthetic-video-mme-001",
+      "identity_resolution_status": "resolved",
+      "byte_size": 4000,
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "retrieval": {
+        "etag": "\"synthetic-etag-001\""
+      },
+      "source_metadata": {
+        "fixture_is_synthetic": true
+      }
+    },
+    {
+      "id": "synthetic-av-duplicate",
+      "split": "test",
+      "duration_minutes": 42,
+      "canonical_url": "https://huggingface.co/datasets/lmms-lab/Video-MME",
+      "has_video": true,
+      "has_audio": true,
+      "has_speech": false,
+      "has_ambient_audio": true,
+      "upstream_namespace": "video-mme",
+      "upstream_asset_id": "synthetic-video-mme-001",
+      "identity_resolution_status": "resolved",
+      "byte_size": 4200
+    },
+    {
+      "id": "synthetic-av-short",
+      "split": "test",
+      "duration_s": 600,
+      "canonical_url": "https://huggingface.co/datasets/lmms-lab/Video-MME",
+      "has_video": true,
+      "has_audio": true,
+      "has_speech": false,
+      "has_ambient_audio": true,
+      "upstream_namespace": "video-mme",
+      "upstream_asset_id": "synthetic-video-mme-short",
+      "identity_resolution_status": "resolved",
+      "byte_size": 1000
+    },
+    {
+      "id": "synthetic-av-silent",
+      "split": "test",
+      "duration_s": 2700,
+      "canonical_url": "https://huggingface.co/datasets/lmms-lab/Video-MME",
+      "has_video": true,
+      "has_audio": false,
+      "has_speech": false,
+      "has_ambient_audio": false,
+      "upstream_namespace": "video-mme",
+      "upstream_asset_id": "synthetic-video-mme-silent",
+      "identity_resolution_status": "resolved",
+      "byte_size": 4500
+    }
+  ]
+}

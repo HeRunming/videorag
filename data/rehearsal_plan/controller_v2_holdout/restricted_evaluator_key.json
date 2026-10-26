@@ -1,0 +1,552 @@
+{
+  "schema_version": "av-trace.controller-v2-restricted-key/2.0.0",
+  "packet_id": "controller-v2-unseen-synthetic-holdout-20260921",
+  "visibility": "RESTRICTED_EVALUATOR_ONLY",
+  "release_condition": "Only after immutable v1 and v2 raw outputs and run manifests are sealed.",
+  "contains_expected_outputs": true,
+  "implementation_worker_must_not_read": true,
+  "primary_strata": {
+    "v2h-route-01": "routing",
+    "v2h-route-02": "routing",
+    "v2h-route-03": "routing",
+    "v2h-route-04": "routing",
+    "v2h-pointer-01": "pointer_read",
+    "v2h-pointer-02": "pointer_read",
+    "v2h-pointer-03": "pointer_read",
+    "v2h-pointer-04": "pointer_read",
+    "v2h-finalize-01": "finalize",
+    "v2h-finalize-02": "finalize",
+    "v2h-finalize-03": "finalize",
+    "v2h-finalize-04": "finalize",
+    "v2h-abstain-01": "abstain",
+    "v2h-abstain-02": "abstain",
+    "v2h-abstain-03": "abstain",
+    "v2h-abstain-04": "abstain",
+    "v2h-missing-01": "missingness",
+    "v2h-missing-02": "missingness",
+    "v2h-missing-03": "missingness",
+    "v2h-missing-04": "missingness",
+    "v2h-recovery-01": "recovery",
+    "v2h-recovery-02": "recovery",
+    "v2h-recovery-03": "recovery",
+    "v2h-recovery-04": "recovery",
+    "v2h-order-01": "adversarial_menu_order",
+    "v2h-order-02": "adversarial_menu_order",
+    "v2h-order-03": "adversarial_menu_order",
+    "v2h-order-04": "adversarial_menu_order"
+  },
+  "case_labels": {
+    "v2h-route-01": {
+      "action": {
+        "expected_action_index": 2,
+        "expected_action": {"type": "search", "modality": "speech", "query": "courier recited password", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_speech"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-route-02": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "search", "modality": "vision", "query": "small kite painted emblem", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_vision"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-route-03": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "search", "modality": "ambient", "query": "cup contacts table sound", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["ambient"],
+        "missing_hops": ["ambient_event"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_ambient"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-route-04": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "search", "modality": "vision", "query": "hand lifting brass latch", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_vision"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-pointer-01": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.tile_view_8"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-pointer-02": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.dispatch_line_3"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-pointer-03": {
+      "action": {
+        "expected_action_index": 2,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.cabinet_audio_2"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["ambient"],
+        "missing_hops": ["ambient_event"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-pointer-04": {
+      "action": {
+        "expected_action_index": 3,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.scarf_closeup_5"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-finalize-01": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 1.0,
+        "covered_claim_handles": ["v2slot.lantern_color"],
+        "missing_modalities": [],
+        "missing_hops": [],
+        "missingness_cause": "not_missing",
+        "recovery_intent": "finalize_answer"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "answer",
+        "allowed_verdicts": ["answer"],
+        "required_claims": {
+          "v2slot.lantern_color": {
+            "required_terms": ["magenta"],
+            "required_citations": ["v2obs.lantern_K2"]
+          }
+        },
+        "expected_missing_modalities": [],
+        "expected_missing_hops": [],
+        "expected_missingness_cause": "not_missing"
+      }
+    },
+    "v2h-finalize-02": {
+      "action": {
+        "expected_action_index": 2,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 1.0,
+        "covered_claim_handles": ["v2slot.badge_shape", "v2slot.nickname"],
+        "missing_modalities": [],
+        "missing_hops": [],
+        "missingness_cause": "not_missing",
+        "recovery_intent": "finalize_answer"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "answer",
+        "allowed_verdicts": ["answer"],
+        "required_claims": {
+          "v2slot.badge_shape": {
+            "required_terms": ["hexagonal"],
+            "required_citations": ["v2obs.badge_Q4"]
+          },
+          "v2slot.nickname": {
+            "required_terms": ["sparrow"],
+            "required_citations": ["v2obs.nickname_R7"]
+          }
+        },
+        "expected_missing_modalities": [],
+        "expected_missing_hops": [],
+        "expected_missingness_cause": "not_missing"
+      }
+    },
+    "v2h-finalize-03": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 1.0,
+        "covered_claim_handles": ["v2slot.ribbon_color", "v2slot.call_sign"],
+        "missing_modalities": [],
+        "missing_hops": [],
+        "missingness_cause": "not_missing",
+        "recovery_intent": "finalize_answer"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "answer",
+        "allowed_verdicts": ["answer"],
+        "required_claims": {
+          "v2slot.ribbon_color": {
+            "required_terms": ["silver"],
+            "required_citations": ["v2obs.shared_M8"]
+          },
+          "v2slot.call_sign": {
+            "required_terms": ["falcon"],
+            "required_citations": ["v2obs.shared_M8"]
+          }
+        },
+        "expected_missing_modalities": [],
+        "expected_missing_hops": [],
+        "expected_missingness_cause": "not_missing"
+      }
+    },
+    "v2h-finalize-04": {
+      "action": {
+        "expected_action_index": 3,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 1.0,
+        "covered_claim_handles": ["v2slot.ring_count"],
+        "missing_modalities": [],
+        "missing_hops": [],
+        "missingness_cause": "not_missing",
+        "recovery_intent": "finalize_answer"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "answer",
+        "allowed_verdicts": ["answer"],
+        "required_claims": {
+          "v2slot.ring_count": {
+            "required_terms": ["four"],
+            "required_citations": ["v2obs.rings_T6"]
+          }
+        },
+        "expected_missing_modalities": [],
+        "expected_missing_hops": [],
+        "expected_missingness_cause": "not_missing"
+      }
+    },
+    "v2h-abstain-01": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "finalize_abstain"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "abstain",
+        "allowed_verdicts": ["insufficient", "abstain"],
+        "required_claims": {},
+        "expected_missing_modalities": ["speech"],
+        "expected_missing_hops": ["speech_content"],
+        "expected_missingness_cause": "evidence_accessible_but_not_found"
+      }
+    },
+    "v2h-abstain-02": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "recovery_intent": "finalize_abstain"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "abstain",
+        "allowed_verdicts": ["access_failure", "abstain"],
+        "required_claims": {},
+        "expected_missing_modalities": ["vision"],
+        "expected_missing_hops": ["entity_identity"],
+        "expected_missingness_cause": "evidence_in_source_but_inaccessible"
+      }
+    },
+    "v2h-abstain-03": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["ambient"],
+        "missing_hops": ["temporal_order"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "finalize_abstain"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "abstain",
+        "allowed_verdicts": ["insufficient", "abstain"],
+        "required_claims": {},
+        "expected_missing_modalities": ["ambient"],
+        "expected_missing_hops": ["temporal_order"],
+        "expected_missingness_cause": "evidence_accessible_but_not_found"
+      }
+    },
+    "v2h-abstain-04": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "finalize"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["ambient"],
+        "missing_hops": ["ambient_event"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "finalize_abstain"
+      },
+      "finalization": {
+        "terminal_case": true,
+        "expected_mode": "abstain",
+        "allowed_verdicts": ["insufficient", "abstain"],
+        "required_claims": {},
+        "expected_missing_modalities": ["ambient"],
+        "expected_missing_hops": ["ambient_event"],
+        "expected_missingness_cause": "evidence_accessible_but_not_found"
+      }
+    },
+    "v2h-missing-01": {
+      "action": {
+        "expected_action_index": 2,
+        "expected_action": {"type": "status", "modalities": ["speech"]}
+      },
+      "state": {
+        "p_sufficient": 0.25,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content", "cross_modal_binding"],
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "recovery_intent": "check_channel_status"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-missing-02": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "search", "modality": "vision", "query": "object behind opaque screen", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.25,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_vision"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-missing-03": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "search", "modality": "ambient", "query": "bell timing near white card", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.5,
+        "covered_claim_handles": [],
+        "missing_modalities": [],
+        "missing_hops": ["cross_modal_binding"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_ambient"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-missing-04": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.motion_pair_H2"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["comparison"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-recovery-01": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "search", "modality": "speech", "query": "operator called number restored", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "retry_restored_route"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-recovery-02": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "status", "modalities": ["speech"]}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content"],
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "recovery_intent": "check_channel_status"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-recovery-03": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.restored_feed_P6"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-recovery-04": {
+      "action": {
+        "expected_action_index": 2,
+        "expected_action": {"type": "search", "modality": "ambient", "query": "restored route chime", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["ambient"],
+        "missing_hops": ["ambient_event"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "retry_restored_route"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-order-01": {
+      "action": {
+        "expected_action_index": 0,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.metal_tab_A7"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-order-02": {
+      "action": {
+        "expected_action_index": 1,
+        "expected_action": {"type": "status", "modalities": ["speech"]}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["speech"],
+        "missing_hops": ["speech_content"],
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "recovery_intent": "check_channel_status"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-order-03": {
+      "action": {
+        "expected_action_index": 2,
+        "expected_action": {"type": "search", "modality": "ambient", "query": "window tapping rhythm", "top_k": 3}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["ambient"],
+        "missing_hops": ["ambient_event"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "search_ambient"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    },
+    "v2h-order-04": {
+      "action": {
+        "expected_action_index": 3,
+        "expected_action": {"type": "observe", "pointer_id": "v2ptr.index_card_W9"}
+      },
+      "state": {
+        "p_sufficient": 0.0,
+        "covered_claim_handles": [],
+        "missing_modalities": ["vision"],
+        "missing_hops": ["entity_identity"],
+        "missingness_cause": "evidence_accessible_but_not_found",
+        "recovery_intent": "observe_pointer"
+      },
+      "finalization": {"terminal_case": false, "expected_mode": null}
+    }
+  }
+}

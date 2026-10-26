@@ -1,0 +1,62 @@
+{
+  "affected_channel": null,
+  "affected_evidence_ids": [
+    "s4_orange_hexagon"
+  ],
+  "all_blocked_subsets_insufficient": true,
+  "blocked_accessible_evidence_ids": [
+    "s4_chime"
+  ],
+  "blocked_insufficient": true,
+  "blocked_proof_id": "blocked-proof.syn_f07_hexagon_chime",
+  "blocking_intervention_id": "block_syn_f07_hexagon_chime",
+  "clean_accessible_evidence_ids": [
+    "s4_chime",
+    "s4_orange_hexagon"
+  ],
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f07_hexagon_chime",
+  "mechanism": "necessity_group_withholding",
+  "missing_route": {
+    "channel": null,
+    "evidence_ids": [
+      "s4_orange_hexagon"
+    ],
+    "necessity_group_id": "ng_syn_f07_hexagon_chime"
+  },
+  "reachable_ses_ids": [],
+  "removed_evidence_ids": [
+    "s4_orange_hexagon"
+  ],
+  "schema_version": "1.0.0",
+  "validator_results": [
+    {
+      "diagnosed_missing_modalities": [
+        "vision"
+      ],
+      "diagnosed_missingness_cause": "evidence_in_source_but_inaccessible",
+      "final_verdict": "insufficient",
+      "observed_evidence_ids": [
+        "s4_chime"
+      ],
+      "reachable_ses_ids": [],
+      "trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "diagnosed_missing_modalities": [
+        "vision"
+      ],
+      "diagnosed_missingness_cause": "evidence_in_source_but_inaccessible",
+      "final_verdict": "insufficient",
+      "observed_evidence_ids": [
+        "s4_chime"
+      ],
+      "reachable_ses_ids": [],
+      "trajectory_hash": "sha256:db4f71b53244257e3eea724f1af54c378e5a5840bd1e0a0c618e942dda34dced",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f07_hexagon_chime.blocked",
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"task_type":"a_background_music","question_id":1,"video_id":"video1","question":"Which passage contains the music?","options":"{\"A\":\"first\",\"B\":\"second\"}","correct_options":"[\"B\"]","trajectory_with_timestamps":"[{\"timestamp_minute\":2,\"label\":\"audio\"}]"}

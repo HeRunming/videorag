@@ -1,0 +1,692 @@
+{
+  "schema_version": "1.0",
+  "audit_id": "AV-TRACE-TASK88-CORE-MILESTONE-COMPLETION-AUDIT",
+  "audit_date": "2026-09-10",
+  "auditor_role": "independent_completion_auditor",
+  "objective": "From existing public/Hugging Face sources, select, audit, and validate 3–5 20–90 minute long-video assets with genuine audio tracks; produce an exact, executable download list; and complete corresponding MVP data/protocol validation and a Go/No-Go record.",
+  "overall_status": "CORE_MILESTONE_PROVEN",
+  "overall_reason": "All 15 milestone requirements are supported by current authoritative evidence. Task 90 repaired the semantic metric and controller limitations found by Task 89, regenerated the complete Task 87 run, passed 441 tests, independently recomputed 72 metric rows, 40 aggregate rows and 72 final-point route certificates, and reproduced 13/13 selected artifact hashes. The milestone is proved as an engineering/protocol MVP; PROVISIONAL_SCIENTIFIC_INCONCLUSIVE is itself the completed and honest scientific Go/No-Go outcome, while FINAL_BENCHMARK_NOT_YET_VALIDATED remains explicit.",
+  "audit_cutoff": {
+    "utc": "2026-09-10T11:02:12Z",
+    "asia_shanghai": "2026-09-10T19:02:12+08:00",
+    "task87_required_artifacts_present": 11,
+    "task87_required_artifacts_expected": 11,
+    "task89_required_artifacts_present": 3,
+    "task89_required_artifacts_expected": 3
+  },
+  "scope_interpretation": {
+    "selected_asset_set": [
+      "cand-045",
+      "cand-047",
+      "cand-049",
+      "cand-051",
+      "cand-052"
+    ],
+    "selected_asset_count": 5,
+    "asset_source": "Official public NOAA Ocean Today landing pages and exact official NOAA/Ocean Service CDN MP4 objects. The milestone permits public/Hugging Face sources; it does not require both. Hugging Face is used for pinned inference models, not for the five source videos.",
+    "real_av_mvp_pilot_sources": [
+      "cand-049",
+      "cand-051",
+      "cand-052"
+    ],
+    "pilot_candidate_pool": "18 exact eight-second reviewed windows over three complete 41–63 minute source videos",
+    "annotation_stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+    "human_reviewed": false,
+    "gold_annotation": false
+  },
+  "independently_recomputed": {
+    "asset_count": 5,
+    "selected_candidate_ids": [
+      "cand-045",
+      "cand-047",
+      "cand-049",
+      "cand-051",
+      "cand-052"
+    ],
+    "total_payload_bytes": 1955298193,
+    "frozen_plan_sha256": "241a476b503a198eafe208485206385f755cd57756f924e769ce8a37d1d1f6fd",
+    "preflight_plan_sha256": "9b38cbea1c294ca341806cbfef0f4ecdd3cc1120f9951f022274156a2cedc5a7",
+    "preflight_result_sha256": "a519a20761e16aac9a1eaac600f6c612ec8ed9fd64589546655c710f6f525fbf",
+    "acquisition_manifest_sha256": "92b7a1ff740d79a4253071018dc18cc3cb41570ccc62dfb08ff2a9c1c48fe2a1",
+    "media_audit_sha256": "b8c743f48ad328cda46be2ea2569759da95262b404e3f3647eef2d9c2e2efde9",
+    "assets": [
+      {
+        "candidate_id": "cand-045",
+        "public_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar1.html",
+        "exact_download_url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/oceantodaywebinar_040720-lg.mp4",
+        "revision_identity": {
+          "etag": "0x8DC750FFEBB6FC3",
+          "last_modified": "Wed, 15 May 2024 18:51:13 GMT"
+        },
+        "pyav_duration_seconds": 1772.44,
+        "duration_minutes": 29.540667,
+        "size_bytes": 58576631,
+        "sha256": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6",
+        "local_size_matches_plan_and_manifest": true,
+        "local_sha256_matches_manifest": true,
+        "sidecar_source_identity_matches_plan": true,
+        "video_stream_count": 1,
+        "audio_stream_count": 1,
+        "beginning_middle_end_av_decode_passes": 3
+      },
+      {
+        "candidate_id": "cand-047",
+        "public_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar3.html",
+        "exact_download_url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/oceantoday-watchparty-050720b-sm.mp4",
+        "revision_identity": {
+          "etag": "0x8DC7510025A05A8",
+          "last_modified": "Wed, 15 May 2024 18:51:19 GMT"
+        },
+        "pyav_duration_seconds": 1983.7818,
+        "duration_minutes": 33.06303,
+        "size_bytes": 284515787,
+        "sha256": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160",
+        "local_size_matches_plan_and_manifest": true,
+        "local_sha256_matches_manifest": true,
+        "sidecar_source_identity_matches_plan": true,
+        "video_stream_count": 1,
+        "audio_stream_count": 1,
+        "beginning_middle_end_av_decode_passes": 3
+      },
+      {
+        "candidate_id": "cand-049",
+        "public_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar5-070220.html",
+        "exact_download_url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/05_archive_070620_sm.mp4",
+        "revision_identity": {
+          "etag": "0x8DC751001B8FB3B",
+          "last_modified": "Wed, 15 May 2024 18:51:18 GMT"
+        },
+        "pyav_duration_seconds": 2465.329542,
+        "duration_minutes": 41.088826,
+        "size_bytes": 491943858,
+        "sha256": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+        "local_size_matches_plan_and_manifest": true,
+        "local_sha256_matches_manifest": true,
+        "sidecar_source_identity_matches_plan": true,
+        "video_stream_count": 1,
+        "audio_stream_count": 1,
+        "beginning_middle_end_av_decode_passes": 3
+      },
+      {
+        "candidate_id": "cand-051",
+        "public_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar7-trashtalk-1.html",
+        "exact_download_url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/07_trashtalk_archive_0902_smc.mp4",
+        "revision_identity": {
+          "etag": "0x8DC7510021E50C0",
+          "last_modified": "Wed, 15 May 2024 18:51:19 GMT"
+        },
+        "pyav_duration_seconds": 3718.581542,
+        "duration_minutes": 61.976359,
+        "size_bytes": 558522234,
+        "sha256": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+        "local_size_matches_plan_and_manifest": true,
+        "local_sha256_matches_manifest": true,
+        "sidecar_source_identity_matches_plan": true,
+        "video_stream_count": 1,
+        "audio_stream_count": 1,
+        "beginning_middle_end_av_decode_passes": 3
+      },
+      {
+        "candidate_id": "cand-052",
+        "public_landing_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar8-climatealive.html",
+        "exact_download_url": "https://cdn.oceanservice.noaa.gov/oceantodayprod/media/deeperdive/webinars/08_climatealive_archive_1001_smc.mp4",
+        "revision_identity": {
+          "etag": "0x8DC750FF6150259",
+          "last_modified": "Wed, 15 May 2024 18:50:59 GMT"
+        },
+        "pyav_duration_seconds": 3781.144042,
+        "duration_minutes": 63.019067,
+        "size_bytes": 561739683,
+        "sha256": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+        "local_size_matches_plan_and_manifest": true,
+        "local_sha256_matches_manifest": true,
+        "sidecar_source_identity_matches_plan": true,
+        "video_stream_count": 1,
+        "audio_stream_count": 1,
+        "beginning_middle_end_av_decode_passes": 3
+      }
+    ],
+    "decode_summary": {
+      "asset_av_stream_passes": 5,
+      "asset_count": 5,
+      "requested_positions": 15,
+      "video_decode_passes": 15,
+      "audio_decode_passes": 15,
+      "finite_audio_passes": 15,
+      "timeline_plausibility_passes": 5
+    },
+    "content_reconnaissance": {
+      "measurement_count": 120,
+      "coarse_count": 90,
+      "adaptive_count": 30,
+      "measurements_per_asset": 24,
+      "all_measurements_decode_audio_and_video": true,
+      "shortlisted_window_count": 30,
+      "shortlisted_windows_per_asset": 6,
+      "pilot_asset_order_stable_scenarios": "243/243",
+      "pilot_assets": [
+        "cand-049",
+        "cand-051",
+        "cand-052"
+      ]
+    },
+    "real_model_adjudication": {
+      "review_window_count": 18,
+      "real_whisper_execution_count": 18,
+      "real_ast_execution_count": 18,
+      "accepted_count": 6,
+      "deferred_count": 10,
+      "rejected_count": 2,
+      "accepted_assets": [
+        "cand-049",
+        "cand-051",
+        "cand-052"
+      ],
+      "accepted_review_ids": [
+        "noaa01-review-004",
+        "noaa01-review-007",
+        "noaa01-review-011",
+        "noaa01-review-014",
+        "noaa01-review-016",
+        "noaa01-review-017"
+      ],
+      "asr_intelligibility_proxy_pass_count": 14,
+      "specific_non_speech_event_candidate_count": 1,
+      "meaningful_visual_count": 11,
+      "question_evidence_seed_count": 14,
+      "validated_necessary_modalities": {
+        "V": 0,
+        "S": 0,
+        "A": 0
+      },
+      "decision": "GO_PROVISIONAL_EPISODE_CONSTRUCTION"
+    },
+    "real_av_mvp": {
+      "family_count": 6,
+      "asset_count": 3,
+      "reviewed_window_count": 18,
+      "index_record_count": 54,
+      "main_trajectory_count": 72,
+      "valid_trajectory_count": 72,
+      "no_trigger_control_count": 12,
+      "intervention_family_count": 6,
+      "intervention_family_pass_count": 6,
+      "modalities_exercised": {
+        "vision_observations": 178,
+        "speech_observations": 109,
+        "ambient_observations": 108
+      },
+      "metric_rows_recomputed_by_task90": 72,
+      "metric_row_mismatches": 0,
+      "aggregate_rows_recomputed_by_task90": 40,
+      "aggregate_metric_mismatches": 0,
+      "route_certificates_checked": 72,
+      "route_certificate_errors": 0,
+      "agentic_action_sequence_differences": 16,
+      "agentic_family_state_cases": 18,
+      "aggregate_rows_with_global_low_n_warning": 40,
+      "aggregate_row_count": 40,
+      "task87_required_artifacts_present": 11,
+      "task87_required_artifacts_expected": 11,
+      "task87_run_manifest_hashes_matching": 11,
+      "task87_run_manifest_hashes_expected": 11,
+      "task90_replay_hashes_matching": 13,
+      "task90_replay_hashes_expected": 13,
+      "task90_decisions": {
+        "engineering": "ENGINEERING_GO",
+        "provisional_scientific": "PROVISIONAL_SCIENTIFIC_INCONCLUSIVE",
+        "final_benchmark": "FINAL_BENCHMARK_NOT_YET_VALIDATED"
+      },
+      "task90_repairs": [
+        "Supported-Claim Rate now maps asserted public claim handles to evaluator-side claims and claim-specific citations after output validation",
+        "Success@Budget now requires valid in-budget fully supported finalization",
+        "Premature Stop now uses an evaluator-private certificate at the actual final decision point",
+        "react-recovery and evidence-sufficiency use distinct controllers and differ in 16/18 family-state action sequences",
+        "all 40 aggregate rows carry LOW_N_DESCRIPTIVE_PILOT separately from eligibility warnings"
+      ]
+    }
+  },
+  "evidence_matrix": [
+    {
+      "id": 1,
+      "requirement": "source discovery and public/HF provenance",
+      "authoritative_artifacts": [
+        "data/candidates/source_candidates.csv",
+        "data/acquisition_preflight/noaa_webinar_stream_preflight_plan.json",
+        "data/acquisition_preflight/noaa_webinar_stream_preflight_result.json",
+        "data/acquisition_plan/noaa01_exact_asset_plan.json",
+        "docs/review/noaa_webinar_route_recon.md",
+        "data/restricted/noaa01/machine_review/noaa01_model_manifest.json"
+      ],
+      "observed_evidence": "All 5 selected candidate IDs map to official NOAA Ocean Today landing pages. Exact MP4s are frozen on cdn.oceanservice.noaa.gov. The bounded preflight has 8/8 GO objects from 10 available exact routes. Source videos are NOAA, not HF. HF provenance is used for pinned local Whisper and AST models with exact revisions and verified local files.",
+      "status": "PROVEN",
+      "remaining_action": "None for milestone provenance. Do not imply the source videos came from Hugging Face."
+    },
+    {
+      "id": 2,
+      "requirement": "3–5 asset count",
+      "authoritative_artifacts": [
+        "data/acquisition_plan/noaa01_exact_asset_plan.json",
+        "data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json",
+        "data/restricted/noaa01/manifests/noaa01_media_audit.json"
+      ],
+      "observed_evidence": "Exactly 5 assets are selected, downloaded, and audited: cand-045, cand-047, cand-049, cand-051, cand-052.",
+      "status": "PROVEN",
+      "remaining_action": "None."
+    },
+    {
+      "id": 3,
+      "requirement": "20–90 minute duration requirement",
+      "authoritative_artifacts": [
+        "data/acquisition_plan/noaa01_exact_asset_plan.json",
+        "data/restricted/noaa01/manifests/noaa01_media_audit.json"
+      ],
+      "observed_evidence": "Independently read PyAV durations are 29.540667, 33.063030, 41.088826, 61.976359, and 63.019067 minutes; all 5 are within 20–90 minutes and agree with frozen preflight durations within the audit tolerance.",
+      "status": "PROVEN",
+      "remaining_action": "None."
+    },
+    {
+      "id": 4,
+      "requirement": "genuine video and audio streams",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/manifests/noaa01_media_audit.json",
+        "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json"
+      ],
+      "observed_evidence": "All 5 files contain one decoded H.264 video stream and one decoded AAC audio stream. Independent audit reran 15 exact beginning/middle/near-end checks and obtained 15/15 video, 15/15 audio, finite audio samples. Real Whisper and AST executed over all 18 pilot review windows, further proving usable audio content rather than a metadata-only audio track.",
+      "status": "PROVEN",
+      "remaining_action": "External ffprobe remains unavailable, but PyAV decoding and real audio-model inference directly establish the requirement."
+    },
+    {
+      "id": 5,
+      "requirement": "exact URLs/routes/revisions, byte sizes and hashes",
+      "authoritative_artifacts": [
+        "data/acquisition_plan/noaa01_exact_asset_plan.json",
+        "data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json",
+        "data/restricted/noaa01/raw/*.metadata.json"
+      ],
+      "observed_evidence": "Each asset has an exact HTTPS CDN URL, ETag and Last-Modified revision identity, destination basename, byte size, and locally computed SHA-256. All 5 local sizes/hashes match the acquisition manifest and all sidecar expected/observed source identities match the frozen plan. Total is 1,955,298,193 bytes.",
+      "status": "PROVEN",
+      "remaining_action": "None."
+    },
+    {
+      "id": 6,
+      "requirement": "executable download tooling and successful local acquisition",
+      "authoritative_artifacts": [
+        "tools/noaa_exact_asset_downloader.py",
+        "data/access_review/noaa01_acquisition_authorization.json",
+        "data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json",
+        "data/restricted/noaa01/raw/*.metadata.json",
+        "data/restricted/noaa01/raw/*.mp4"
+      ],
+      "observed_evidence": "The fail-closed downloader exposes --execute/--sha256 and exact ranged acquisition. Its current dry-run exits successfully with GO_EXACT_RESTRICTED_DOWNLOAD for 5 assets. Five complete MP4 files and five completion sidecars exist; sidecars record successful exact identity observations, range request counts, final sizes, transfer hashes, and locally recomputed whole-file hashes.",
+      "status": "PROVEN",
+      "remaining_action": "None."
+    },
+    {
+      "id": 7,
+      "requirement": "beginning/middle/end A/V decode",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/manifests/noaa01_media_audit.json",
+        "tools/noaa_download_media_audit.py"
+      ],
+      "observed_evidence": "Stored audit records 5/5 assets and 15/15 positions passing both modalities. An independent PyAV read-only rerun at beginning, middle, and near-end produced 15/15 video and 15/15 audio passes with finite samples.",
+      "status": "PROVEN",
+      "remaining_action": "The legacy audit tool's whole-tree inventory is stage-specific and now reports NO_GO solely because later authorized recon/model files are outside its historical allowlist; this does not contradict the independently rechecked media. The inventory check should eventually be made stage-aware."
+    },
+    {
+      "id": 8,
+      "requirement": "content-window reconnaissance",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/recon/noaa01_window_measurements.jsonl",
+        "data/restricted/noaa01/recon/noaa01_candidate_windows.json",
+        "data/restricted/noaa01/recon/noaa01_content_recon_manifest.json",
+        "data/restricted/noaa01/recon/noaa01_threshold_sensitivity.json",
+        "docs/review/noaa01_content_recon_redteam.md"
+      ],
+      "observed_evidence": "Recomputed 120 windows: 90 coarse plus 30 adaptive, 24 per asset, with A/V decode true on all measurements and no persistent media derivatives. The shortlist contains 30 windows, 6 per asset. The cand-049/cand-051/cand-052 pilot order is reported stable in 243/243 threshold scenarios.",
+      "status": "PROVEN",
+      "remaining_action": "Keep proxy labels scoped as review-routing hypotheses, not modality necessity or prevalence."
+    },
+    {
+      "id": 9,
+      "requirement": "real ASR/audio-event adjudication",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json",
+        "data/restricted/noaa01/machine_review/noaa01_model_manifest.json",
+        "data/restricted/noaa01/machine_review/noaa01_machine_review_manifest.json",
+        "data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+        "tools/noaa_machine_adjudication.py"
+      ],
+      "observed_evidence": "Recomputed 18/18 records with executed local Whisper backend and 18/18 with executed local AST AudioSet backend. Model manifest pins openai/whisper-tiny.en revision 87c7102498dcde7456f24cfd30239ca606ed9063 and MIT/ast-finetuned-audioset-10-10-0.4593 revision f826b80d28226b62986cc218e5cec390b1096902. Both local SHA256SUMS inventories verified. Current counts are 6 accepted, 10 deferred, 2 rejected; 14 intelligibility-proxy passes, 1 specific non-speech candidate, 11 meaningful-visual judgments.",
+      "status": "PROVEN",
+      "remaining_action": "Retain model-output and machine-adjudication limitations; this is not human semantic validation."
+    },
+    {
+      "id": 10,
+      "requirement": "provisional episode input gate",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+        "orchestration/results/85_noaa_real_model_redteam.txt",
+        "data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+        "docs/design/noaa01_real_av_mvp_design.md",
+        "orchestration/results/86_real_av_episode_mvp_design.txt"
+      ],
+      "observed_evidence": "Task 85's current machine-readable gate is GO_PROVISIONAL_EPISODE_CONSTRUCTION with 6 accepted windows across all 3 required pilot assets. The Task 86 implementation design requires at least 5 families, the three pilot assets, ambient anchor review-004, speech anchor review-017, and machine-only labels. These preconditions are presently satisfied at the input-design level.",
+      "status": "PROVEN",
+      "remaining_action": "Completed by Task 87. Retain the provisional and non-gold boundary."
+    },
+    {
+      "id": 11,
+      "requirement": "CLEAN/BLOCKED/RESTORED protocol validation",
+      "authoritative_artifacts": [
+        "orchestration/prompts/87_noaa_real_av_mvp_implementation.md",
+        "data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+        "data/restricted/noaa01/real_av_mvp/interventions.json",
+        "mvp/results/noaa01_real_av_mvp/trajectories.restricted.json",
+        "mvp/results/noaa01_real_av_mvp/runtime_validation.restricted.json",
+        "mvp/results/noaa01_real_av_mvp/report.json",
+        "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json",
+        "docs/review/noaa01_real_av_semantic_metrics_repair.md"
+      ],
+      "observed_evidence": "The Task 90-regenerated run contains 6 families across CLEAN/BLOCKED/RESTORED and four policies, yielding 72/72 valid main trajectories plus 12/12 passing RESTORED no-trigger controls. All 6 intervention families pass support reachability/suppression, deterministic restoration, evidence reacquisition, no-trigger non-recovery, distractor and unchanged-budget checks; all trajectories also have strict final-point runtime validation records.",
+      "status": "PROVEN",
+      "remaining_action": "No action for the bounded engineering milestone. Human semantic/counterfactual validation remains necessary before treating these as benchmark-gold interventions."
+    },
+    {
+      "id": 12,
+      "requirement": "fixed backend and four baseline runs",
+      "authoritative_artifacts": [
+        "orchestration/prompts/87_noaa_real_av_mvp_implementation.md",
+        "data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+        "src/av_trace_real_av/core.py",
+        "data/restricted/noaa01/real_av_mvp/frozen_index.json",
+        "mvp/results/noaa01_real_av_mvp/trajectories.restricted.json",
+        "mvp/results/noaa01_real_av_mvp/report.json",
+        "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json",
+        "docs/review/noaa01_real_av_semantic_metrics_repair.md"
+      ],
+      "observed_evidence": "The deterministic fixed index contains 54 modality records for all 18 reviewed windows, and all four named policies ran in every family/state combination. Task 90 introduced genuinely separate reactive-query-reformulation/2.0 and explicit-evidence-sufficiency/2.0 controllers; their action sequences differ in 16/18 family-state cases. Tool-time source hashing, exact-interval PyAV decode, opaque pointers and the blind policy contract remain enforced.",
+      "status": "PROVEN",
+      "remaining_action": "For later scientific evaluation, add genuine learned baselines and strengthen in-process API blindness to an OS process boundary."
+    },
+    {
+      "id": 13,
+      "requirement": "Acquire/Ground/Act metrics",
+      "authoritative_artifacts": [
+        "orchestration/prompts/87_noaa_real_av_mvp_implementation.md",
+        "data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+        "mvp/results/noaa01_real_av_mvp/episode_metrics.csv",
+        "mvp/results/noaa01_real_av_mvp/summary.csv",
+        "mvp/results/noaa01_real_av_mvp/report.json",
+        "mvp/results/noaa01_real_av_mvp/runtime_validation.restricted.json",
+        "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json",
+        "docs/review/noaa01_real_av_semantic_metrics_repair.md"
+      ],
+      "observed_evidence": "The regenerated outputs contain 72 episode rows, 40 aggregate rows and 72 exact-final-point route certificates. Task 90 independently recomputed them with zero metric, aggregate or certificate errors. Supported-Claim Rate now measures supported asserted claims over asserted claims; Success@Budget requires a valid, in-budget, fully supported finalization; Premature Stop uses actual-final-point route feasibility. Direct Acquire and all Modality Recall remain null where ineligible, direct/single-shot Recovery remains null, and all 40 aggregates carry LOW_N_DESCRIPTIVE_PILOT.",
+      "status": "PROVEN",
+      "remaining_action": "No remaining metric implementation blocker for the bounded MVP. Human-gold semantics and broader validation are still required before scientific benchmark claims."
+    },
+    {
+      "id": 14,
+      "requirement": "engineering and provisional scientific Go/No-Go",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/manifests/noaa01_media_audit.json",
+        "data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+        "orchestration/prompts/87_noaa_real_av_mvp_implementation.md",
+        "mvp/results/noaa01_real_av_mvp/report.json",
+        "mvp/results/noaa01_real_av_mvp/run_manifest.json",
+        "docs/review/noaa01_real_av_mvp_go_no_go.md",
+        "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json",
+        "docs/review/noaa01_real_av_semantic_metrics_repair.md",
+        "orchestration/results/90_real_av_semantic_metrics_repair.txt"
+      ],
+      "observed_evidence": "The Task 90-regenerated Task 87 report, manifest and Go/No-Go record consistently state ENGINEERING_GO / PROVISIONAL_SCIENTIFIC_INCONCLUSIVE / FINAL_BENCHMARK_NOT_YET_VALIDATED. Task 90 retained INCONCLUSIVE after strict metric repairs and distinct controllers because six machine-adjudicated families, three sources, bounded retrieval and non-learned policies cannot justify scientific GO.",
+      "status": "PROVEN",
+      "remaining_action": "Treat ENGINEERING_GO only as proof of executable bounded plumbing. The INCONCLUSIVE scientific decision is the completed Go/No-Go record required by this milestone, not an incomplete deliverable."
+    },
+    {
+      "id": 15,
+      "requirement": "explicit boundary between machine-provisional and human gold",
+      "authoritative_artifacts": [
+        "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json",
+        "data/restricted/noaa01/machine_review/noaa01_machine_review_manifest.json",
+        "data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+        "data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+        "docs/design/noaa01_real_av_mvp_design.md",
+        "mvp/results/noaa01_real_av_mvp/report.json",
+        "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json"
+      ],
+      "observed_evidence": "Current authoritative artifacts, including the Task 90-regenerated Task 87 report, consistently state MACHINE_ADJUDICATED_PROVISIONAL_MVP, human_reviewed=false, gold_annotation=false and learned_model_evaluation=false. The evidence still contains no human-validated modality necessity or publication-final minimality and retains FINAL_BENCHMARK_NOT_YET_VALIDATED.",
+      "status": "PROVEN",
+      "remaining_action": "Task 87, Task 89 and Task 90 preserve the boundary. Continue requiring human validation before benchmark-gold or publication-final claims."
+    }
+  ],
+  "task87_artifact_check": {
+    "required": [
+      "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+      "data/restricted/noaa01/real_av_mvp/frozen_index.json",
+      "data/restricted/noaa01/real_av_mvp/validation.json",
+      "data/restricted/noaa01/real_av_mvp/interventions.json",
+      "mvp/results/noaa01_real_av_mvp/report.json",
+      "mvp/results/noaa01_real_av_mvp/episode_metrics.csv",
+      "mvp/results/noaa01_real_av_mvp/summary.csv",
+      "mvp/results/noaa01_real_av_mvp/run_manifest.json",
+      "mvp/results/noaa01_real_av_mvp/report.md",
+      "docs/review/noaa01_real_av_mvp_go_no_go.md",
+      "orchestration/results/87_noaa_real_av_mvp_implementation.txt"
+    ],
+    "present": [
+      "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+      "data/restricted/noaa01/real_av_mvp/frozen_index.json",
+      "data/restricted/noaa01/real_av_mvp/validation.json",
+      "data/restricted/noaa01/real_av_mvp/interventions.json",
+      "mvp/results/noaa01_real_av_mvp/report.json",
+      "mvp/results/noaa01_real_av_mvp/episode_metrics.csv",
+      "mvp/results/noaa01_real_av_mvp/summary.csv",
+      "mvp/results/noaa01_real_av_mvp/run_manifest.json",
+      "mvp/results/noaa01_real_av_mvp/report.md",
+      "docs/review/noaa01_real_av_mvp_go_no_go.md",
+      "orchestration/results/87_noaa_real_av_mvp_implementation.txt"
+    ],
+    "missing": [],
+    "implementation_paths_present": [
+      "src/av_trace_real_av/__init__.py",
+      "src/av_trace_real_av/core.py",
+      "scripts/build_noaa_real_av_mvp.py",
+      "scripts/run_noaa_real_av_mvp.py",
+      "tests_real_av/test_noaa_real_av.py"
+    ],
+    "assessment": "Task 87 is complete in the shared worktree: 11/11 required generated artifacts exist, and Task 90 regenerated and revalidated the current implementation and outputs."
+  },
+  "task89_redteam_check": {
+    "required": [
+      "docs/review/noaa01_real_av_mvp_redteam.md",
+      "data/restricted/noaa01/real_av_mvp/redteam.json",
+      "orchestration/results/89_noaa_real_av_mvp_redteam.txt"
+    ],
+    "present_count": 3,
+    "missing": [],
+    "redteam_json_sha256": "2e30f1ad1b317ce533877bd53fa17c29d4e1ee0f790a8363d6811225e5cbcfbc",
+    "review_sha256": "64ff52c4fcf4249056d422868b0034cb0eb44ade6441d6d0552cad44753d299c",
+    "result_sha256": "9f2eaac8f1c1bb2ca61cde6c26feca8bf95f74e33a91e7b95ef062a429730727",
+    "decisions": {
+      "engineering": "ENGINEERING_GO",
+      "provisional_scientific": "PROVISIONAL_SCIENTIFIC_INCONCLUSIVE",
+      "final_benchmark": "FINAL_BENCHMARK_NOT_YET_VALIDATED"
+    },
+    "assessment": "Task 89 independently validated the bounded engineering MVP, retained scientific inconclusiveness, and repaired restricted directory/manifest handling."
+  },
+  "task90_post_repair_check": {
+    "required": [
+      "docs/review/noaa01_real_av_semantic_metrics_repair.md",
+      "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json",
+      "orchestration/results/90_real_av_semantic_metrics_repair.txt"
+    ],
+    "present_count": 3,
+    "missing": [],
+    "review_sha256": "0b6d45022307f0118f19cf467ed29923eb389f2e8175cb591f8c87e13a6c1632",
+    "machine_audit_sha256": "760e81a0c0e095edbdb35195cef85fc4cd286a17af10a14c533c5adcba6190c6",
+    "result_sha256": "ede8f14b107775ecf5ada415394efcd6c75221fbc346d023a58b18b4912e247f",
+    "requirements": {
+      "explicit_claim_level_outputs": "PASS",
+      "strict_success_at_budget": "PASS",
+      "actual_final_point_premature_stop": "PASS",
+      "distinct_evidence_sufficiency_controller": "PASS",
+      "global_low_n_warning": "PASS",
+      "full_regeneration": "PASS",
+      "independent_recomputation": "PASS",
+      "permissions_and_leakage": "PASS"
+    },
+    "tests": {
+      "focused": "15/15 passed",
+      "full_selected_suites": "441/441 collected tests passed",
+      "metric_rows": "72/72 recomputed with zero mismatches",
+      "aggregate_rows": "40/40 recomputed with zero mismatches",
+      "route_certificates": "72/72 checked with zero consistency errors",
+      "run_manifest_hashes": "11/11 matched",
+      "deterministic_replay_hashes": "13/13 stable"
+    },
+    "decisions": {
+      "engineering": "ENGINEERING_GO",
+      "provisional_scientific": "PROVISIONAL_SCIENTIFIC_INCONCLUSIVE",
+      "final_benchmark": "FINAL_BENCHMARK_NOT_YET_VALIDATED"
+    },
+    "assessment": "Task 90 repaired all five Task 89 semantic/controller limitations and regenerated the Task 87 outputs. The scientific decision remains honestly inconclusive; this satisfies, rather than blocks, the milestone requirement to complete and record a Go/No-Go decision."
+  },
+  "commands_and_checks_run": [
+    {
+      "command": "python tools/noaa_webinar_route_recon.py --validate-plan data/acquisition_preflight/noaa_webinar_stream_preflight_plan.json",
+      "result": "PASS; 8 exact objects; READY_FOR_BOUNDED_NOAA_STREAM_PREFLIGHT"
+    },
+    {
+      "command": "python tools/noaa_webinar_stream_preflight.py --plan data/acquisition_preflight/noaa_webinar_stream_preflight_plan.json --validate-plan-only",
+      "result": "PASS; 8 exact URLs; bounded preflight; no bearer token"
+    },
+    {
+      "command": "python tools/noaa_exact_asset_downloader.py --dry-run",
+      "result": "PASS; GO_EXACT_RESTRICTED_DOWNLOAD; 5 assets; 1,955,298,193 bytes; no network/write"
+    },
+    {
+      "command": "independent SHA-256 and stat recomputation over all five local MP4 files",
+      "result": "PASS; 5/5 sizes and SHA-256 values match acquisition manifest; aggregate 1,955,298,193 bytes"
+    },
+    {
+      "command": "independent PyAV stream/duration and beginning/middle/near-end decode over all five MP4 files",
+      "result": "PASS; 5/5 one-or-more video and audio streams; 15/15 video decodes; 15/15 audio decodes with finite samples"
+    },
+    {
+      "command": "python tools/noaa_download_media_audit.py --no-write",
+      "result": "NO_GO due only to legacy whole-tree unexpected-file allowlist after later authorized recon/model artifacts were added; all five integrity entries, all five media technical checks, 15 A/V decode positions, secret scans, and tree-unchanged check passed"
+    },
+    {
+      "command": "independent JSONL/JSON recomputation of reconnaissance counts",
+      "result": "PASS; 120 measurements = 90 coarse + 30 adaptive; 24 per asset; 30 shortlisted = 6 per asset; all measurements report A/V decode"
+    },
+    {
+      "command": "sha256sum -c data/restricted/noaa01/models/whisper-tiny.en-87c7102/SHA256SUMS",
+      "result": "PASS; 12/12 files"
+    },
+    {
+      "command": "sha256sum -c data/restricted/noaa01/models/ast-audioset-f826b80/SHA256SUMS",
+      "result": "PASS; 4/4 files"
+    },
+    {
+      "command": "python tools/noaa_machine_adjudication.py --validate-existing --repo-root .",
+      "result": "PASS; VALID; 18 records; decision GO_PROVISIONAL_EPISODE_CONSTRUCTION; 6/10/2 disposition counts; V/S/A likely-necessary counts 0/0/0"
+    },
+    {
+      "command": "independent machine-review record recomputation",
+      "result": "PASS; 18 real local Whisper executions and 18 real local AST executions; accepted windows and aggregate counts match Task 85"
+    },
+    {
+      "command": "pytest -p no:cacheprovider tests/ -ra",
+      "result": "PASS; 343 passed, 11 subtests passed"
+    },
+    {
+      "command": "pytest -p no:cacheprovider tests/test_noaa_webinar_route_recon.py tests/test_noaa_webinar_stream_preflight.py tests/test_noaa_exact_asset_downloader.py tests/test_noaa_download_media_audit.py tests/test_noaa_content_recon.py tests/test_noaa_machine_adjudication.py -ra",
+      "result": "PASS; 91 passed"
+    },
+    {
+      "command": "Task 87 required-artifact and implementation-path existence check after completion",
+      "result": "PASS; 11/11 required generated artifacts and the implementation package/scripts/tests are present"
+    },
+    {
+      "command": "historical independent Task 87 run-manifest SHA-256 recomputation after Task 89 permission/marker repair",
+      "result": "SUPERSEDED_BY_TASK90_REGENERATION; the pre-Task90 10/10 set matched at that time"
+    },
+    {
+      "command": "independent Task 87 trajectory/intervention/count inspection",
+      "result": "PASS; 6 families, 3 assets, 18 windows, 54 index records, 72 trajectories, 12 no-trigger controls, 6/6 intervention families passing, 72/72 trajectories within the reported valid set"
+    },
+    {
+      "command": "Task 89 independent exact-interval media and metric recomputation",
+      "result": "PASS; 18/18 review intervals independently decoded with both A/V; 72 metric rows recomputed with 0 row mismatches and 0 aggregate mismatches"
+    },
+    {
+      "command": "PYTHONPATH=src python -m py_compile src/av_trace_real_av/core.py scripts/build_noaa_real_av_mvp.py scripts/run_noaa_real_av_mvp.py",
+      "result": "PASS against the current Task 90-repaired code"
+    },
+    {
+      "command": "historical PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src pytest -q -p no:cacheprovider tests_real_av after Task 89",
+      "result": "SUPERSEDED_BY_TASK90; 11 tests passed before Task 90 added four focused tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src pytest -q -p no:cacheprovider tests tests_mvp tests_media tests_agent_runtime tests_validation tests_media_pipeline tests_real_av",
+      "result": "PASS in the Task 88 post-repair audit; 441 tests collected and passed"
+    },
+    {
+      "command": "independent Task 90 authoritative-artifact hash recomputation",
+      "result": "PASS; 15/15 hashes in task90_repair_audit.json match current files"
+    },
+    {
+      "command": "independent regenerated Task 87 run-manifest hash recomputation",
+      "result": "PASS; 11/11 artifact hashes match current files"
+    },
+    {
+      "command": "independent strict metric and route-certificate audit over current regenerated outputs",
+      "result": "PASS; 72/72 Supported-Claim Rate, Citation F1, strict Success@Budget and final-point Premature Stop rows checked; 40/40 aggregates checked; 72/72 certificates structurally and semantically consistent"
+    },
+    {
+      "command": "independent controller-path comparison",
+      "result": "PASS; reactive-query-reformulation/2.0 and explicit-evidence-sufficiency/2.0 use separate paths and differ in 16/18 family-state action sequences"
+    },
+    {
+      "command": "independent low-N and null-rule check",
+      "result": "PASS; 40/40 aggregate rows carry LOW_N_DESCRIPTIVE_PILOT; all Modality Recall values and all non-agentic Recovery values are null"
+    },
+    {
+      "command": "Task 90 deterministic full-replay evidence review",
+      "result": "PASS in authoritative Task 90 evidence; second complete 72-trajectory run reproduced 13/13 selected regenerated artifact hashes"
+    }
+  ],
+  "unresolved_gaps": [
+    {
+      "requirement_ids": [
+        7
+      ],
+      "blocking": false,
+      "gap": "The historical noaa_download_media_audit whole-tree inventory is not stage-aware and flags later authorized restricted artifacts as unexpected.",
+      "required_resolution": "Treat the stored Task 78/79 audit plus independent direct revalidation as authoritative for this audit; optionally update the media-audit inventory semantics in a separate production task."
+    },
+    {
+      "requirement_ids": [
+        9,
+        10,
+        15
+      ],
+      "blocking": false,
+      "gap": "No human review or publication-final modality minimality exists.",
+      "required_resolution": "Keep all current labels provisional. Human validation remains required before benchmark-gold or publication-final claims."
+    },
+    {
+      "requirement_ids": [
+        12,
+        13,
+        14
+      ],
+      "blocking": false,
+      "gap": "Task 90 repaired the prior implementation defects, but the experiment remains a six-family, three-source, 18-window, machine-adjudicated pilot using deterministic non-learned policies.",
+      "required_resolution": "Human validation, broader full-timeline data, learned baselines and release review are required before scientific benchmark validation. These are intentionally represented by PROVISIONAL_SCIENTIFIC_INCONCLUSIVE and FINAL_BENCHMARK_NOT_YET_VALIDATED, not by an incomplete milestone status."
+    }
+  ]
+}

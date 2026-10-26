@@ -1,0 +1,38 @@
+{
+  "allowed_prescreen_choices": [
+    "RETAIN_FOR_AUTHORING",
+    "REPAIR_AND_RECHECK",
+    "REJECT"
+  ],
+  "created_date": "2026-10-14",
+  "distribution_authorized": false,
+  "downstream_boundary": "This packet records prescreen observations only and makes no downstream acceptance, tier, or eligibility finding.",
+  "format_version": "1.0.0",
+  "lead_form_count": 20,
+  "lead_form_directory": "lead_forms",
+  "packet_id": "p23-102-human-prescreen-v1",
+  "packet_sha256": "sha256:1183909ce0722da2e36f8deba839e33c8d2a090136bda7095a4c729d6d06b02a",
+  "record_type": "p23_102_source_prescreen_packet",
+  "required_review_checks": [
+    "recurrence",
+    "substitution",
+    "ocr_text",
+    "duplicate",
+    "source_world_audio",
+    "far_coherence",
+    "alternative_route"
+  ],
+  "review_instructions": [
+    "Inspect only the source intervals named by each timestamp handle, expanding source context only when needed.",
+    "Apply the same seven checks to every lead and record one prescreen choice plus a free rationale.",
+    "Treat all modality statements as neutral inspection hypotheses, not as established findings.",
+    "Record any source or derivative exposure in the one P23 source exposure ledger used for this packet.",
+    "The opaque file listing has no review preference; every lead must be completed exactly once."
+  ],
+  "source_access_reference": "restricted-source://P23/P23_102",
+  "source_exposure_ledger": "source_exposure_ledger.json",
+  "source_group_id": "P23",
+  "source_group_rule": "Every source derivative whose origin is P23 is recorded under the single P23 source group.",
+  "source_id": "P23_102",
+  "synthetic_calibration_file": "synthetic_calibration_examples.json"
+}

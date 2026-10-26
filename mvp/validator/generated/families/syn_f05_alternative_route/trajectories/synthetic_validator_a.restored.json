@@ -1,0 +1,770 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 7.25,
+    "total_steps": 8
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f05_alternative_route.restored",
+    "family_id": "syn_f05_alternative_route",
+    "protocol_version": "0.2.0",
+    "question": "Which route was announced, and which direction did its matching arrow point?",
+    "state_role": "RESTORED",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 360.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "channels": [
+              "speech"
+            ]
+          },
+          "tool": "get_channel_status"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.97,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "Exercise the predeclared restoration trigger before evidence acquisition.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [
+        "restore_syn_f05_alternative_route"
+      ],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 0.25,
+        "cost_remaining": 11.75,
+        "cost_used_total": 0.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0000",
+        "response_hash": "sha256:904169898cc925b582bc98ac474b3ca1ab108bda3ee676f62dd6d2c5eeda70f5",
+        "results": [
+          {
+            "channels": {
+              "speech": {
+                "retryable": false,
+                "status": "available"
+              }
+            },
+            "result_type": "channel_status"
+          }
+        ],
+        "status": "ok",
+        "step_index": 0,
+        "tool": "get_channel_status"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "first announcement says ROUTE COBALT",
+            "speaker_hint": null,
+            "time_range": {
+              "end_s": 360.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_speech"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.97,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_speech_route_a.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 10.75,
+        "cost_used_total": 1.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0001",
+        "response_hash": "sha256:85ce9c96ed8028abcbe8721302b5970ab7717e13633af0dbbe8e9e0c13381b08",
+        "results": [
+          {
+            "interval": {
+              "end_s": 54.0,
+              "start_s": 48.0
+            },
+            "preview": "speech candidate at 48.0-54.0s",
+            "result_id": "ptr.465c13018eb746432e97d240a4823a3dc9f3623501dc739a91ac5d2a0b78101e",
+            "result_type": "search_pointer",
+            "score": 1.25
+          },
+          {
+            "interval": {
+              "end_s": 190.0,
+              "start_s": 184.0
+            },
+            "preview": "speech candidate at 184.0-190.0s",
+            "result_id": "ptr.e28e1fa2b0e2be4550f7f8b2dd90b0e2017ef934c5226de7ebeb42c172ad21f5",
+            "result_type": "search_pointer",
+            "score": 0.8
+          }
+        ],
+        "status": "ok",
+        "step_index": 1,
+        "tool": "search_speech"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_word_timestamps": false,
+            "interval": {
+              "end_s": 54.0,
+              "start_s": 48.0
+            },
+            "source": "asr"
+          },
+          "tool": "read_transcript"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.97,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_speech_route_a.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:47Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 9.75,
+        "cost_used_total": 2.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0002",
+        "response_hash": "sha256:50d7445375f05aa8974f3f1c1d5f70a05c942bfbeb19d0a8a4c600c8c828283f",
+        "results": [
+          {
+            "interval": {
+              "end_s": 54.0,
+              "start_s": 48.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "obs.transcript.asr.7083c8cf5c7204c62c3c8e5daae20dd6b978fe6abd4b24e9bf9b608573fa663e",
+            "payload": {
+              "_route_refs": [
+                "sha256:1e90e0e6d4c4187abd498362d1d4712559a7d4beacaad96bc08ee3b417303827"
+              ],
+              "audio_event": "first announcement says ROUTE COBALT",
+              "audio_parameters": {
+                "frequency_hz": 494,
+                "kind": "speech_token"
+              },
+              "description": "first announcement says ROUTE COBALT",
+              "text": "The first announcement says ROUTE COBALT.",
+              "transcript_source": "asr"
+            },
+            "payload_hash": "sha256:8e4862b41baa201264bf3c9911277fa87cd0fcc173e4fbcbf18ca28fb23c0e4c",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 2,
+        "tool": "read_transcript"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "repeat announcement says ROUTE COBALT",
+            "speaker_hint": null,
+            "time_range": {
+              "end_s": 360.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_speech"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_speech_route_b.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0003",
+        "step_index": 3
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:48Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 8.75,
+        "cost_used_total": 3.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0003",
+        "response_hash": "sha256:b91611e7fd35515109382322b1444f9cae494a6a6cb82a7f1e9f99b6007aa800",
+        "results": [
+          {
+            "interval": {
+              "end_s": 190.0,
+              "start_s": 184.0
+            },
+            "preview": "speech candidate at 184.0-190.0s",
+            "result_id": "ptr.e28e1fa2b0e2be4550f7f8b2dd90b0e2017ef934c5226de7ebeb42c172ad21f5",
+            "result_type": "search_pointer",
+            "score": 1.25
+          },
+          {
+            "interval": {
+              "end_s": 54.0,
+              "start_s": 48.0
+            },
+            "preview": "speech candidate at 48.0-54.0s",
+            "result_id": "ptr.465c13018eb746432e97d240a4823a3dc9f3623501dc739a91ac5d2a0b78101e",
+            "result_type": "search_pointer",
+            "score": 0.8
+          }
+        ],
+        "status": "ok",
+        "step_index": 3,
+        "tool": "search_speech"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_word_timestamps": false,
+            "interval": {
+              "end_s": 190.0,
+              "start_s": 184.0
+            },
+            "source": "asr"
+          },
+          "tool": "read_transcript"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_speech_route_b.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0004",
+        "step_index": 4
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:49Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 7.75,
+        "cost_used_total": 4.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0004",
+        "response_hash": "sha256:25a1c6fcc06f040c4f0be2b141038e6fea05c9222fc00f1b1ad57da755814ca5",
+        "results": [
+          {
+            "interval": {
+              "end_s": 190.0,
+              "start_s": 184.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "obs.transcript.asr.96306dbfe3504ed66d3bdb23e43d16a1a821b36be72e75a6a69e983404e33590",
+            "payload": {
+              "_route_refs": [
+                "sha256:ef1018b242eefd245aab0237400dc7076e8a533705f9be95edd941a4dd2f0683"
+              ],
+              "audio_event": "repeat announcement says ROUTE COBALT",
+              "audio_parameters": {
+                "frequency_hz": 494,
+                "kind": "speech_token"
+              },
+              "description": "repeat announcement says ROUTE COBALT",
+              "text": "The repeat announcement says ROUTE COBALT.",
+              "transcript_source": "asr"
+            },
+            "payload_hash": "sha256:57799949c1119f8bbc3b7e67cd17403a0e3683f3b486cdf3d1c6eb3d02473821",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 4,
+        "tool": "read_transcript"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "exclude_result_ids": [],
+            "query": "COBALT ARROW POINTS RIGHT",
+            "time_range": {
+              "end_s": 360.0,
+              "start_s": 0.0
+            },
+            "top_k": 20
+          },
+          "tool": "search_visual"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_cobalt_arrow.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0005",
+        "step_index": 5
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:50Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 6.75,
+        "cost_used_total": 5.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0005",
+        "response_hash": "sha256:81dce51d45d580aeb35f649e9c1baa1c862556b557690f22e1d12397d8502a76",
+        "results": [
+          {
+            "interval": {
+              "end_s": 316.0,
+              "start_s": 310.0
+            },
+            "preview": "vision candidate at 310.0-316.0s",
+            "result_id": "ptr.d5a393ad6971c6148a7752d1ea591fe2ad2dcd9055e238afb3536dae24225ee3",
+            "result_type": "search_pointer",
+            "score": 1.25
+          }
+        ],
+        "status": "ok",
+        "step_index": 5,
+        "tool": "search_visual"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 316.0,
+              "start_s": 310.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "cross_modal_binding",
+            "event_detection",
+            "speech_content"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_cobalt_arrow.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0006",
+        "step_index": 6
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:51Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 4.75,
+        "cost_used_total": 7.25,
+        "episode_id": "syn_f05_alternative_route.restored",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0006",
+        "response_hash": "sha256:6ecdfe5da05a18a69f693e890059ff61bde0a2425bbe7b9e5d493965d07312e7",
+        "results": [
+          {
+            "interval": {
+              "end_s": 316.0,
+              "start_s": 310.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a8860efca298dd1b8b01b9c6c585303343078da3dc8bd7575becdea9bb75e850",
+            "payload": {
+              "_route_refs": [
+                "sha256:216b728b585da9cc60d767abbae1eaf20ce47a8f4ff5755935da7893222f6a03"
+              ],
+              "description": "COBALT ARROW POINTS RIGHT",
+              "inspection": {
+                "include_audio": false,
+                "include_video": true,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 316.0,
+                  "start_s": 310.0
+                }
+              }
+            },
+            "payload_hash": "sha256:90d90961503e20fdccd61a1965444eb7a93a2ef9c6f5824dad0c1770a2ffdfb6",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 6,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "answer",
+            "claims": [
+              {
+                "citations": [
+                  {
+                    "interval": {
+                      "end_s": 54.0,
+                      "start_s": 48.0
+                    },
+                    "modalities": [
+                      "speech"
+                    ],
+                    "observation_id": "obs.transcript.asr.7083c8cf5c7204c62c3c8e5daae20dd6b978fe6abd4b24e9bf9b608573fa663e"
+                  },
+                  {
+                    "interval": {
+                      "end_s": 190.0,
+                      "start_s": 184.0
+                    },
+                    "modalities": [
+                      "speech"
+                    ],
+                    "observation_id": "obs.transcript.asr.96306dbfe3504ed66d3bdb23e43d16a1a821b36be72e75a6a69e983404e33590"
+                  },
+                  {
+                    "interval": {
+                      "end_s": 316.0,
+                      "start_s": 310.0
+                    },
+                    "modalities": [
+                      "vision"
+                    ],
+                    "observation_id": "obs.clip.a8860efca298dd1b8b01b9c6c585303343078da3dc8bd7575becdea9bb75e850"
+                  }
+                ],
+                "claim_id": "validator.claim.0",
+                "confidence": 0.99,
+                "registered_claim_id": "claim_syn_f05_alternative_route",
+                "text": "Route COBALT was announced, and the matching arrow pointed right."
+              }
+            ],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.01,
+                "evidence_in_source_but_inaccessible": 0.01,
+                "not_missing": 0.96,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.01
+              },
+              "description": "An accepted minimal sufficient evidence set was acquired.",
+              "hop_types": [],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.02,
+                "vision": 0.02
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "Route COBALT was announced, and the matching arrow pointed right.",
+            "p_sufficient": 0.98,
+            "termination_reason": "sufficient_evidence",
+            "verdict": "sufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.01,
+            "evidence_in_source_but_inaccessible": 0.01,
+            "not_missing": 0.96,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.01
+          },
+          "next_action_rationale": "All required claims have an accepted citable SES.",
+          "p_sufficient": 0.98,
+          "verdict": "sufficient"
+        },
+        "episode_id": "syn_f05_alternative_route.restored",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_a.r0007",
+        "step_index": 7
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:52Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "answer",
+    "claims": [
+      {
+        "citations": [
+          {
+            "interval": {
+              "end_s": 54.0,
+              "start_s": 48.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "obs.transcript.asr.7083c8cf5c7204c62c3c8e5daae20dd6b978fe6abd4b24e9bf9b608573fa663e"
+          },
+          {
+            "interval": {
+              "end_s": 190.0,
+              "start_s": 184.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "observation_id": "obs.transcript.asr.96306dbfe3504ed66d3bdb23e43d16a1a821b36be72e75a6a69e983404e33590"
+          },
+          {
+            "interval": {
+              "end_s": 316.0,
+              "start_s": 310.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a8860efca298dd1b8b01b9c6c585303343078da3dc8bd7575becdea9bb75e850"
+          }
+        ],
+        "claim_id": "validator.claim.0",
+        "confidence": 0.99,
+        "registered_claim_id": "claim_syn_f05_alternative_route",
+        "text": "Route COBALT was announced, and the matching arrow pointed right."
+      }
+    ],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.01,
+        "evidence_in_source_but_inaccessible": 0.01,
+        "not_missing": 0.96,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.01
+      },
+      "description": "An accepted minimal sufficient evidence set was acquired.",
+      "hop_types": [],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.02,
+        "vision": 0.02
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "Route COBALT was announced, and the matching arrow pointed right.",
+    "p_sufficient": 0.98,
+    "termination_reason": "sufficient_evidence",
+    "verdict": "sufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:6e22438ff81c3aa4d54d7115cb8e32703ca7038a9d1443ddbec148c5c43fec8d",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:62b887505034a455bc2f0791cf058cca8d0dcdc849e5841fd7027fbe067901fe"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_a.syn_f05_alternative_route.restored"
+}

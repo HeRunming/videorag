@@ -1,0 +1,267 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 2.0,
+    "total_steps": 3
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f02_speech_sequence.blocked",
+    "family_id": "syn_f02_speech_sequence",
+    "protocol_version": "0.2.0",
+    "question": "What code was spoken, and what instruction was spoken later?",
+    "state_role": "BLOCKED",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 240.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_word_timestamps": false,
+            "interval": {
+              "end_s": 204.0,
+              "start_s": 198.0
+            },
+            "source": "asr"
+          },
+          "tool": "read_transcript"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "speech_content",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.97,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_speech_action.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f02_speech_sequence.blocked",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 11.0,
+        "cost_used_total": 1.0,
+        "episode_id": "syn_f02_speech_sequence.blocked",
+        "error": {
+          "code": "SPEECH_CHANNEL_UNAVAILABLE",
+          "message": "The requested channel is unavailable.",
+          "retry_after_step": null,
+          "retryable": true
+        },
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "response_hash": "sha256:04aedc15249b1987acd772f612eb05533a04fce267c7cf5e507924d294b7558c",
+        "results": [],
+        "status": "channel_unavailable",
+        "step_index": 0,
+        "tool": "read_transcript"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_word_timestamps": false,
+            "interval": {
+              "end_s": 78.0,
+              "start_s": 72.0
+            },
+            "source": "asr"
+          },
+          "tool": "read_transcript"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "speech_content",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.97,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_speech_code.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f02_speech_sequence.blocked",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 1.0,
+        "cost_remaining": 10.0,
+        "cost_used_total": 2.0,
+        "episode_id": "syn_f02_speech_sequence.blocked",
+        "error": {
+          "code": "SPEECH_CHANNEL_UNAVAILABLE",
+          "message": "The requested channel is unavailable.",
+          "retry_after_step": null,
+          "retryable": true
+        },
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "response_hash": "sha256:d485602364faa372e287f1feade637f458958818aef0a22ce243b4089d11c4bc",
+        "results": [],
+        "status": "channel_unavailable",
+        "step_index": 1,
+        "tool": "read_transcript"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "abstain",
+            "claims": [],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.02,
+                "evidence_in_source_but_inaccessible": 0.94,
+                "not_missing": 0.01,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.02
+              },
+              "description": "Required source evidence exists but the registered route is inaccessible.",
+              "hop_types": [
+                "speech_content",
+                "temporal_order"
+              ],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.97,
+                "vision": 0.02
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "",
+            "p_sufficient": 0.03,
+            "termination_reason": "no_recovery_route",
+            "verdict": "insufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "speech_content",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.97,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.02,
+            "evidence_in_source_but_inaccessible": 0.94,
+            "not_missing": 0.01,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.02
+          },
+          "next_action_rationale": "No accepted SES is reachable; record the blocked access diagnosis.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f02_speech_sequence.blocked",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:47Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "abstain",
+    "claims": [],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.02,
+        "evidence_in_source_but_inaccessible": 0.94,
+        "not_missing": 0.01,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.02
+      },
+      "description": "Required source evidence exists but the registered route is inaccessible.",
+      "hop_types": [
+        "speech_content",
+        "temporal_order"
+      ],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.97,
+        "vision": 0.02
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "",
+    "p_sufficient": 0.03,
+    "termination_reason": "no_recovery_route",
+    "verdict": "insufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:262d3d7f50bceefbc823acf7bacf23403ff7244f0351e84f2a5e74e0207b86db",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:2bbc233efa04fdd7e720409efb28d9d50388a86d30af16767430d1b05de69441"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f02_speech_sequence.blocked"
+}

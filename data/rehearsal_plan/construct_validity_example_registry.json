@@ -1,0 +1,505 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "construct-validity-planning-fixture-v1",
+  "registry_status": "PLANNING_FIXTURE_NOT_REAL_ANNOTATION",
+  "created_at": "2026-09-20T00:00:00+00:00",
+  "notes": "Synthetic planning fixture for deterministic sampling and packet tests. The records named current_* mirror five machine-provisional NOAA family identifiers only; future_* records are synthetic placeholders, not collected examples or annotations.",
+  "records": [
+    {
+      "family_id": "current.noaa01-r004-surf-av",
+      "source_id": "cand-049",
+      "domain": "coastal_safety",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "V+A",
+      "hop_count_candidate": 2,
+      "machine_question": "What water conditions are visible around the person, and which environmental sounds occur in the same interval?",
+      "source_reference": "data/restricted/noaa01/raw/05_archive_070620_sm.mp4",
+      "source_duration_s": 2465.329542,
+      "signals": {
+        "ambient_candidate": true,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": true,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": ["noaa01-r004-surf-av"],
+        "artifact_references": ["data/restricted/noaa01/scale1a/migrated_families.json"],
+        "content_hashes": ["sha256:1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5"],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "current.noaa01-r007-opening-plastic-waste",
+      "source_id": "cand-051",
+      "domain": "marine_debris",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "V",
+      "hop_count_candidate": 1,
+      "machine_question": "Which discarded material appears in the introductory montage?",
+      "source_reference": "data/restricted/noaa01/raw/07_trashtalk_archive_0902_smc.mp4",
+      "source_duration_s": 3777.706599,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": ["noaa01-r007-opening-plastic-waste"],
+        "artifact_references": ["data/restricted/noaa01/scale1a/migrated_families.json"],
+        "content_hashes": ["sha256:279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2"],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "current.noaa01-r011-bag-by-fence",
+      "source_id": "cand-051",
+      "domain": "marine_debris",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "V",
+      "hop_count_candidate": 1,
+      "machine_question": "What is the person carrying while walking beside the fence?",
+      "source_reference": "data/restricted/noaa01/raw/07_trashtalk_archive_0902_smc.mp4",
+      "source_duration_s": 3777.706599,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": ["noaa01-r011-bag-by-fence"],
+        "artifact_references": ["data/restricted/noaa01/scale1a/migrated_families.json"],
+        "content_hashes": ["sha256:279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2"],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "current.noaa01-r016-three-factors-vs",
+      "source_id": "cand-052",
+      "domain": "hurricane_science",
+      "candidate_status": "eligible",
+      "current_tier": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "modality_profile_candidate": "V+S",
+      "hop_count_candidate": 2,
+      "machine_question": "How many hurricane-formation factors are stated in the narration and introduced by the graphic?",
+      "source_reference": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4",
+      "source_duration_s": 2693.503,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": true,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": true,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": true,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": ["noaa01-r016-three-factors-vs"],
+        "artifact_references": ["data/restricted/noaa01/scale1a/migrated_families.json"],
+        "content_hashes": ["sha256:c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1"],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "current.noaa01-r017-north-atlantic-basin",
+      "source_id": "cand-052",
+      "domain": "hurricane_science",
+      "candidate_status": "eligible",
+      "current_tier": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "modality_profile_candidate": "S",
+      "hop_count_candidate": 1,
+      "machine_question": "Which basin does the speaker identify as a main area of hurricane activity?",
+      "source_reference": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4",
+      "source_duration_s": 2693.503,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": true,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": ["noaa01-r017-north-atlantic-basin"],
+        "artifact_references": ["data/restricted/noaa01/scale1a/migrated_families.json"],
+        "content_hashes": ["sha256:c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1"],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.ambient.factory.alarm",
+      "source_id": "future-source-004",
+      "domain": "industrial_training",
+      "candidate_status": "eligible",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "modality_profile_candidate": "A",
+      "hop_count_candidate": 1,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 1800,
+      "signals": {
+        "ambient_candidate": true,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": true,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": true,
+        "rights_privacy_risk": true,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.vsa.field.demonstration",
+      "source_id": "future-source-005",
+      "domain": "field_demonstration",
+      "candidate_status": "eligible",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "modality_profile_candidate": "V+S+A",
+      "hop_count_candidate": 3,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 2400,
+      "signals": {
+        "ambient_candidate": true,
+        "triple_modal_candidate": true,
+        "machine_validator_disagreement": true,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": true,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": true,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.vs.medical.webinar",
+      "source_id": "future-source-006",
+      "domain": "medical_education",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "V+S",
+      "hop_count_candidate": 2,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 3600,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": true,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": true,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.s.civic.meeting",
+      "source_id": "future-source-007",
+      "domain": "civic_meeting",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "S",
+      "hop_count_candidate": 2,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 4200,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": true,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.v.museum.tour",
+      "source_id": "future-source-008",
+      "domain": "museum_education",
+      "candidate_status": "eligible",
+      "current_tier": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "modality_profile_candidate": "V",
+      "hop_count_candidate": 1,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 2100,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": true
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.va.wildlife",
+      "source_id": "future-source-009",
+      "domain": "wildlife_documentary",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "V+A",
+      "hop_count_candidate": 2,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 2700,
+      "signals": {
+        "ambient_candidate": true,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.vs.cooking",
+      "source_id": "future-source-010",
+      "domain": "instructional_cooking",
+      "candidate_status": "eligible",
+      "current_tier": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "modality_profile_candidate": "V+S",
+      "hop_count_candidate": 2,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 1500,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": true
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.ambient.factory.alarm.second",
+      "source_id": "future-source-004",
+      "domain": "industrial_training",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "S+A",
+      "hop_count_candidate": 2,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 1800,
+      "signals": {
+        "ambient_candidate": true,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.vsa.field.demonstration.second",
+      "source_id": "future-source-005",
+      "domain": "field_demonstration",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "V+S+A",
+      "hop_count_candidate": 3,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 2400,
+      "signals": {
+        "ambient_candidate": true,
+        "triple_modal_candidate": true,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": true,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": true,
+        "multiple_alternative_supports": true,
+        "pair_isolation_risk": true,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.vs.medical.webinar.control",
+      "source_id": "future-source-006",
+      "domain": "medical_education",
+      "candidate_status": "eligible",
+      "current_tier": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "modality_profile_candidate": "V+S",
+      "hop_count_candidate": 1,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 3600,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": false,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": false,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": true
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    },
+    {
+      "family_id": "future.s.civic.meeting.second",
+      "source_id": "future-source-007",
+      "domain": "civic_meeting",
+      "candidate_status": "eligible",
+      "current_tier": "P1_MACHINE_CROSS_VALIDATED",
+      "modality_profile_candidate": "S",
+      "hop_count_candidate": 2,
+      "machine_question": "PLANNING PLACEHOLDER ONLY",
+      "source_reference": "FUTURE_SOURCE_NOT_COLLECTED",
+      "source_duration_s": 4200,
+      "signals": {
+        "ambient_candidate": false,
+        "triple_modal_candidate": false,
+        "machine_validator_disagreement": true,
+        "learned_control_ranking_disagreement": false,
+        "correct_answer_wrong_citation": true,
+        "uncertain_minimality": false,
+        "multiple_alternative_supports": false,
+        "pair_isolation_risk": false,
+        "rights_privacy_risk": false,
+        "low_risk_control": false
+      },
+      "provenance": {
+        "record_origin": "planning_fixture",
+        "machine_record_ids": [],
+        "artifact_references": [],
+        "content_hashes": [],
+        "human_review_completed": false
+      }
+    }
+  ]
+}

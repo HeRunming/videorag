@@ -1,0 +1,20 @@
+Copy response_template, replace its values, and return that one JSON object
+only. Follow output_schema exactly. Do not create a wrapper named answer.
+
+Grounding contract:
+1. Use only facts in citable_observations.
+2. Copy claim_handle and observation_id strings exactly; never invent or
+   shorten identifiers.
+3. verdict="answer" is allowed only when every public claim slot is supported.
+   Assert every supplied claim_handle exactly once. Every assertion needs one
+   or more exact visible observation_id citations, and claim_to_citations must
+   duplicate those lists exactly.
+4. For an answer use missing_modalities=[], missing_hops=[],
+   missingness_cause="not_missing", recovery_intent="", and p_sufficient>=0.5.
+5. If any required claim is unsupported, choose insufficient, access_failure,
+   or abstain. Then use answer_text="", asserted_claims=[],
+   claim_to_citations={}, name the missing modality or hop, use a cause other
+   than not_missing, and set p_sufficient<=0.5.
+
+Use exactly the ten keys listed by output_schema. p_sufficient is a JSON
+number. Do not output markdown, a wrapper, commentary, or chain of thought.

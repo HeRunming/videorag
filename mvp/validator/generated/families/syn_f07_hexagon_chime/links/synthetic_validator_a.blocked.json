@@ -1,0 +1,23 @@
+{
+  "backend_manifest_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+  "backend_version": "synthetic-fixed-v1",
+  "episode_id": "syn_f07_hexagon_chime.blocked",
+  "family_annotation_version": "synthetic-v1",
+  "family_hash": "sha256:92c9ed680e9e462b72d734901fb2bd52a9d8fa9c1e87be5bd5e65653c10d74f8",
+  "family_id": "syn_f07_hexagon_chime",
+  "family_path": "families/syn_f07_hexagon_chime/family.snapshot.json",
+  "generated_at": "2026-09-06T00:00:00Z",
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "index_version": "synthetic-1.0.0",
+  "intervention_manifest_hash": "sha256:dfdd12e0fcb0a2e51fdedce6c02d9f630afea30e3ba643fc3052979985b24dd4",
+  "link_id": "link.synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+  "schema_version": "1.0.0",
+  "search_plan_id": "search_then_observe_chronological",
+  "source_manifest_hash": "sha256:f10e55759d33e65e670197d90689fd66b07c21f734dfd2b3f478bd88a5eeccbf",
+  "state_role": "BLOCKED",
+  "trajectory_hash": "sha256:7898f9d576e004c6540890956593bf5a670b1fda40324cc8622538b83fa4bb00",
+  "trajectory_id": "traj.validator-synthetic_validator_a.syn_f07_hexagon_chime.blocked",
+  "trajectory_path": "families/syn_f07_hexagon_chime/trajectories/synthetic_validator_a.blocked.json",
+  "trigger_type": "none",
+  "validator_id": "synthetic_validator_a"
+}

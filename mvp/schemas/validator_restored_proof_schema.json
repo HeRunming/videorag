@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:validator-restored-proof:1.0.0",
+  "title": "AV-TRACE RESTORED recovery proof",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "restored_proof_id",
+    "family_id",
+    "family_annotation_version",
+    "blocking_intervention_id",
+    "restoration_intervention_id",
+    "trigger_type",
+    "trigger_value",
+    "pretrigger_state_equal",
+    "exact_inverse",
+    "terminal_accessible_evidence_ids",
+    "terminal_reachable_ses_ids",
+    "validator_results",
+    "restoration_successful"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "restored_proof_id": {"$ref": "#/$defs/id"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "family_annotation_version": {"type": "string", "minLength": 1},
+    "blocking_intervention_id": {"$ref": "#/$defs/id"},
+    "restoration_intervention_id": {"$ref": "#/$defs/id"},
+    "trigger_type": {"enum": ["fixed_call_index", "get_channel_status"]},
+    "trigger_value": {"type": ["integer", "null"], "minimum": 0},
+    "pretrigger_state_equal": {"const": true},
+    "exact_inverse": {"const": true},
+    "terminal_accessible_evidence_ids": {"$ref": "#/$defs/ids"},
+    "terminal_reachable_ses_ids": {"$ref": "#/$defs/nonempty_ids"},
+    "validator_results": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "validator_id",
+          "trajectory_id",
+          "trajectory_hash",
+          "trigger_event_index",
+          "trigger_hook_ids",
+          "observed_evidence_ids",
+          "acquired_ses_ids",
+          "supported_final_answer",
+          "total_steps",
+          "total_cost"
+        ],
+        "properties": {
+          "validator_id": {"$ref": "#/$defs/id"},
+          "trajectory_id": {"$ref": "#/$defs/id"},
+          "trajectory_hash": {"$ref": "#/$defs/hash"},
+          "trigger_event_index": {"type": "integer", "minimum": 0},
+          "trigger_hook_ids": {"$ref": "#/$defs/nonempty_ids"},
+          "observed_evidence_ids": {"$ref": "#/$defs/nonempty_ids"},
+          "acquired_ses_ids": {"$ref": "#/$defs/nonempty_ids"},
+          "supported_final_answer": {"const": true},
+          "total_steps": {"type": "integer", "minimum": 1},
+          "total_cost": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "restoration_successful": {"const": true}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "ids": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true},
+    "nonempty_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/id"}, "uniqueItems": true}
+  }
+}

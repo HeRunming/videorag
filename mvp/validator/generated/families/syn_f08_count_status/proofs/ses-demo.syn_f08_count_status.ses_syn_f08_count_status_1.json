@@ -1,0 +1,68 @@
+{
+  "claim_ids": [
+    "claim_syn_f08_count_status"
+  ],
+  "demonstration_id": "ses-demo.syn_f08_count_status.ses_syn_f08_count_status_1",
+  "evidence_ids": [
+    "s4_speech_count",
+    "s4_speech_status"
+  ],
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f08_count_status",
+  "hop_ids": [
+    "hop_extract_s4_speech_count",
+    "hop_extract_s4_speech_status",
+    "hop_syn_f08_count_status_route_1"
+  ],
+  "satisfiable": true,
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f08_count_status_1",
+  "validator_demonstrations": [
+    {
+      "clean_observation_ids_by_evidence": {
+        "s4_speech_count": [
+          "obs.transcript.asr.904a5529de10378fb258302052206d5bd56a32c0d8578cdf3a89e2ec1eaeb62e"
+        ],
+        "s4_speech_status": [
+          "obs.transcript.asr.14aa10e6d056410f101c5e5a7a862900bafdcfc14ef7140cce567c382ed7af75"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:53886df66d336f911edfece386b64ac82b944603b51be41fb078e6d71a3a0ebe",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_a.syn_f08_count_status.clean",
+      "restored_observation_ids_by_evidence": {
+        "s4_speech_count": [
+          "obs.transcript.asr.904a5529de10378fb258302052206d5bd56a32c0d8578cdf3a89e2ec1eaeb62e"
+        ],
+        "s4_speech_status": [
+          "obs.transcript.asr.14aa10e6d056410f101c5e5a7a862900bafdcfc14ef7140cce567c382ed7af75"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:dfb99ef65282bf6561003cbb71fa42548c02b923d785ea20ed7d76cbb5c3ae68",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_a.syn_f08_count_status.restored",
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "clean_observation_ids_by_evidence": {
+        "s4_speech_count": [
+          "obs.transcript.asr.904a5529de10378fb258302052206d5bd56a32c0d8578cdf3a89e2ec1eaeb62e"
+        ],
+        "s4_speech_status": [
+          "obs.transcript.asr.14aa10e6d056410f101c5e5a7a862900bafdcfc14ef7140cce567c382ed7af75"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:c82653b2f18a6f982554319c4408f76f5e7d2c0fc37cee273ee7e61aca9358d6",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_b.syn_f08_count_status.clean",
+      "restored_observation_ids_by_evidence": {
+        "s4_speech_count": [
+          "obs.transcript.asr.904a5529de10378fb258302052206d5bd56a32c0d8578cdf3a89e2ec1eaeb62e"
+        ],
+        "s4_speech_status": [
+          "obs.transcript.asr.14aa10e6d056410f101c5e5a7a862900bafdcfc14ef7140cce567c382ed7af75"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:b9ff5c7798f71dab7ac0841dec8d61af78d428110b96663aa4bfd3ffdf2af60c",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_b.syn_f08_count_status.restored",
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

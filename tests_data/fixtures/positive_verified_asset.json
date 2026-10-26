@@ -1,0 +1,83 @@
+{
+  "bridge_version": "1.0.0",
+  "record_id": "verified_asset_syn_v1",
+  "canonical_upstream": {
+    "namespace": "synthetic_direct_grant",
+    "asset_id": "synthetic-asset-001",
+    "revision": "rev1"
+  },
+  "lineage": {
+    "relationship": "original",
+    "parents": []
+  },
+  "manifest": {
+    "asset_id": "asset_syn",
+    "revision": "rev1",
+    "sha256": "sha256:ee9fa9261a5796a5e70a8abf5343252de616554d6d25b92a7052ce429187f60e"
+  },
+  "acquired_asset": {
+    "asset_id": "asset_syn",
+    "relationship_to_manifest": "exact_acquired_bytes",
+    "manifest_artifact_id": null,
+    "content_sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "duration_s": 1200.0
+  },
+  "streams": [
+    {
+      "stream_id": "video1",
+      "kind": "video",
+      "language": null,
+      "sha256": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "duration_s": 1200.0,
+      "role": "acquired",
+      "parent_stream_ids": [],
+      "transformation_ids": []
+    },
+    {
+      "stream_id": "audio1",
+      "kind": "audio",
+      "language": "en",
+      "sha256": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "duration_s": 1200.0,
+      "role": "acquired",
+      "parent_stream_ids": [],
+      "transformation_ids": []
+    }
+  ],
+  "transformations": [
+    {
+      "transformation_id": "asr1",
+      "kind": "automatic_speech_recognition",
+      "input_stream_ids": [
+        "audio1"
+      ],
+      "output_stream_ids": [],
+      "tool": "synthetic-asr",
+      "tool_version": "1",
+      "parameters_sha256": "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+      "source_time_mapping": {
+        "mapping_type": "identity",
+        "source_stream_id": "audio1",
+        "segments": [
+          {
+            "derived_start_s": 0.0,
+            "derived_end_s": 1200.0,
+            "source_start_s": 0.0,
+            "source_end_s": 1200.0
+          }
+        ]
+      }
+    }
+  ],
+  "access": {
+    "technical_access": {
+      "status": "local_verified",
+      "mechanism": "rightsholder_delivery"
+    },
+    "rights_status": {
+      "status": "approved_for_public_release",
+      "rights_decision_id": "rights_syn"
+    },
+    "episode_access_class": "public_core_redistributable"
+  }
+}

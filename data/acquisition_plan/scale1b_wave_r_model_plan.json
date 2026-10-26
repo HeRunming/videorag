@@ -1,0 +1,169 @@
+{
+  "caps": {
+    "clap_bytes": 1073741824,
+    "siglip2_bytes": 2147483648,
+    "wave_r_total_bytes": 3221225472
+  },
+  "created_date": "2026-09-12",
+  "current_decisions": {
+    "clap": "CLAP_CONDITIONAL",
+    "siglip2": "SIGLIP2_CONDITIONAL",
+    "wave_r": "WAVE_R_MODELS_CONDITIONAL"
+  },
+  "expected_total_bytes": 2157357045,
+  "models": [
+    {
+      "allowlist": [
+        {
+          "expected_bytes": 3375,
+          "git_oid": "51f163598c3995137b033afdde373bd25b0c6821",
+          "lfs_sha256": null,
+          "path": "README.md"
+        },
+        {
+          "expected_bytes": 253,
+          "git_oid": "c8cd2a20e58a738f44f267ae19f9568ff1095698",
+          "lfs_sha256": null,
+          "path": "config.json"
+        },
+        {
+          "expected_bytes": 1500800904,
+          "git_oid": "aff60bf4990ccd2fc9de54afb14d8bd3580cdf8a",
+          "lfs_sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b",
+          "path": "model.safetensors"
+        },
+        {
+          "expected_bytes": 394,
+          "git_oid": "2e52d8e8492b5c496ae04c37bfa09760469fb18b",
+          "lfs_sha256": null,
+          "path": "preprocessor_config.json"
+        },
+        {
+          "expected_bytes": 636,
+          "git_oid": "8d6368f7e735fbe4781bf6e956b7c6ad0586df80",
+          "lfs_sha256": null,
+          "path": "special_tokens_map.json"
+        },
+        {
+          "expected_bytes": 34363039,
+          "git_oid": "16d02f7b98cf1fe1ee9bf04143543b2f188f2788",
+          "lfs_sha256": "cb9140fae3ac5122c972d37adf83e1248471a38147ad76f8215c8872c6fd8322",
+          "path": "tokenizer.json"
+        },
+        {
+          "expected_bytes": 4241003,
+          "git_oid": "796efe9ab515c15e146ce7588e6d7b9b8134dbf8",
+          "lfs_sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+          "path": "tokenizer.model"
+        },
+        {
+          "expected_bytes": 47164,
+          "git_oid": "d97c5412159422c3b56fbc99076b1dcc25dd7856",
+          "lfs_sha256": null,
+          "path": "tokenizer_config.json"
+        }
+      ],
+      "cap_bytes": 2147483648,
+      "expected_payload_bytes": 1539456768,
+      "id": "siglip2",
+      "license_expected": "apache-2.0",
+      "metadata_precondition": "Downloader MUST re-fetch official exact-revision API/tree/README and validate before transfer.",
+      "repo_id": "google/siglip2-base-patch16-224",
+      "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+      "selected_weight_representation": "model.safetensors",
+      "snapshot_dir": "data/restricted/scale1b/models/google--siglip2-base-patch16-224--75de2d55ec2d"
+    },
+    {
+      "allowlist": [
+        {
+          "expected_bytes": 4454,
+          "git_oid": "b866f5bee496710d19b98792fc0f68481b181f2a",
+          "lfs_sha256": null,
+          "path": "README.md"
+        },
+        {
+          "expected_bytes": 5390,
+          "git_oid": "70624c940dc3d35b36bc9de57ee5a958c86e032a",
+          "lfs_sha256": null,
+          "path": "config.json"
+        },
+        {
+          "expected_bytes": 456356,
+          "git_oid": "6636bda4a1fd7a63653dffb22683b8162c8de956",
+          "lfs_sha256": null,
+          "path": "merges.txt"
+        },
+        {
+          "expected_bytes": 541,
+          "git_oid": "e8636819eeb1b19f1e5b6f572eca1a101144062e",
+          "lfs_sha256": null,
+          "path": "preprocessor_config.json"
+        },
+        {
+          "expected_bytes": 614525833,
+          "git_oid": "787863087e2243832044c13d5df8a25df65b0da8",
+          "lfs_sha256": "1cd3c601bc4afe0fa87be3de4c13dd2cfadd249fac1e29acf74a9b296c3219bb",
+          "path": "pytorch_model.bin"
+        },
+        {
+          "expected_bytes": 280,
+          "git_oid": "d5698132694f4f1bcff08fa7d937b1701812598e",
+          "lfs_sha256": null,
+          "path": "special_tokens_map.json"
+        },
+        {
+          "expected_bytes": 2108746,
+          "git_oid": "99f518e1ee65361b4d772c6f805508dbf30cfd8b",
+          "lfs_sha256": null,
+          "path": "tokenizer.json"
+        },
+        {
+          "expected_bytes": 384,
+          "git_oid": "058e2e071e2a76af9dc9a10940053477ce8329d3",
+          "lfs_sha256": null,
+          "path": "tokenizer_config.json"
+        },
+        {
+          "expected_bytes": 798293,
+          "git_oid": "4ebe4bb3f3114daf2e4cc349f24873a1175a35d7",
+          "lfs_sha256": null,
+          "path": "vocab.json"
+        }
+      ],
+      "cap_bytes": 1073741824,
+      "expected_payload_bytes": 617900277,
+      "id": "clap",
+      "license_expected": "apache-2.0",
+      "metadata_precondition": "Downloader MUST re-fetch official exact-revision API/tree/README and validate before transfer.",
+      "repo_id": "laion/clap-htsat-unfused",
+      "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+      "selected_weight_representation": "pytorch_model.bin",
+      "snapshot_dir": "data/restricted/scale1b/models/laion--clap-htsat-unfused--8fa0f1c6d043"
+    }
+  ],
+  "network_stop_boundary": "No network operation is performed by plan validation. Execute the exact downloader separately with a bounded curl timeout.",
+  "official_metadata_status": {
+    "prior_exact_revision_metadata_available_from_task92": true,
+    "prior_metadata_archive": "data/restricted/scale1b/acquisition_records/wave_r/prior_task92_metadata",
+    "rule": "Prior metadata freezes the exact plan, but readiness remains CONDITIONAL until the downloader re-fetches and archives current official exact-revision API/tree/README evidence.",
+    "task102_live_refetch_completed": false
+  },
+  "release_boundary": {
+    "redistribution_requires_archived_consistent_apache_2_0_evidence": true,
+    "technical_internal_use_requires_snapshot_ready": true
+  },
+  "schema_version": "1.0",
+  "stage": "SCALE1B_WAVE_R_MODEL_ACQUISITION",
+  "task": 102,
+  "technical_validation": {
+    "clap": "ClapProcessor + ClapModel, in-memory 440 Hz waveform at processor sample rate and one text query",
+    "device": "cpu",
+    "local_files_only": true,
+    "offline_only": true,
+    "replay_tolerance_max_abs": 1e-06,
+    "seed": 0,
+    "siglip2": "Siglip2Processor + Siglip2Model, in-memory RGB gradient and one text query",
+    "synthetic_inputs_persisted": false,
+    "torch_threads": 1
+  }
+}

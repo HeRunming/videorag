@@ -1,0 +1,314 @@
+{
+  "schema_version": "0.2.0",
+  "trajectory_id": "traj_syn_family_restored",
+  "track": "PUBLIC_CORE_FIXED_BACKEND_TRIPLETS",
+  "episode_start": {
+    "protocol_version": "0.2.0",
+    "episode_id": "syn_family.restored",
+    "family_id": "syn_family",
+    "state_role": "RESTORED",
+    "question": "What caused the warning?",
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "video_duration_s": 1200.0,
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "tool_costs": {
+      "search_visual": 1.0,
+      "search_speech": 1.0,
+      "search_ambient_audio": 1.0,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "get_channel_status": 0.25,
+      "finalize": 0.0
+    }
+  },
+  "events": [
+    {
+      "event_type": "tool_exchange",
+      "action": {
+        "protocol_version": "0.2.0",
+        "episode_id": "syn_family.restored",
+        "request_id": "r1",
+        "step_index": 0,
+        "belief_state": {
+          "p_sufficient": 0.2,
+          "verdict": "insufficient",
+          "missing_modality_probabilities": {
+            "vision": 0.1,
+            "speech": 0.9,
+            "ambient": 0.1
+          },
+          "missing_hop_types": [
+            "speech_content"
+          ],
+          "missingness_cause_probabilities": {
+            "source_evidence_absent": 0.02,
+            "evidence_in_source_but_inaccessible": 0.88,
+            "evidence_accessible_but_not_found": 0.04,
+            "not_missing": 0.01,
+            "uncertain": 0.05
+          },
+          "next_action_rationale": "Check the registered speech route."
+        },
+        "action": {
+          "tool": "get_channel_status",
+          "arguments": {
+            "channels": [
+              "speech",
+              "transcript"
+            ]
+          }
+        }
+      },
+      "response": {
+        "protocol_version": "0.2.0",
+        "episode_id": "syn_family.restored",
+        "request_id": "r1",
+        "step_index": 0,
+        "tool": "get_channel_status",
+        "status": "ok",
+        "cost_charged": 0.25,
+        "cost_used_total": 0.25,
+        "cost_remaining": 11.75,
+        "backend_version": "fixed-v0.2",
+        "results": [
+          {
+            "result_type": "channel_status",
+            "channels": {
+              "speech": {
+                "status": "available",
+                "retryable": false
+              },
+              "transcript": {
+                "status": "available",
+                "retryable": false
+              }
+            }
+          }
+        ],
+        "error": null,
+        "response_hash": "sha256:911bd07ed0b8b7db4c6abb6e165584ce789fcae1896fafbfc044836303fd4565"
+      },
+      "active_hook_ids": [
+        "restore1"
+      ],
+      "recorded_at": "2026-09-05T00:00:00Z"
+    },
+    {
+      "event_type": "tool_exchange",
+      "action": {
+        "protocol_version": "0.2.0",
+        "episode_id": "syn_family.restored",
+        "request_id": "r2",
+        "step_index": 1,
+        "belief_state": {
+          "p_sufficient": 0.25,
+          "verdict": "insufficient",
+          "missing_modality_probabilities": {
+            "vision": 0.1,
+            "speech": 0.8,
+            "ambient": 0.1
+          },
+          "missing_hop_types": [
+            "speech_content"
+          ],
+          "missingness_cause_probabilities": {
+            "source_evidence_absent": 0.01,
+            "evidence_in_source_but_inaccessible": 0.05,
+            "evidence_accessible_but_not_found": 0.8,
+            "not_missing": 0.04,
+            "uncertain": 0.1
+          },
+          "next_action_rationale": "Read the restored speech interval."
+        },
+        "action": {
+          "tool": "read_transcript",
+          "arguments": {
+            "interval": {
+              "start_s": 100.0,
+              "end_s": 110.0
+            },
+            "source": "asr",
+            "include_word_timestamps": true
+          }
+        }
+      },
+      "response": {
+        "protocol_version": "0.2.0",
+        "episode_id": "syn_family.restored",
+        "request_id": "r2",
+        "step_index": 1,
+        "tool": "read_transcript",
+        "status": "ok",
+        "cost_charged": 1.0,
+        "cost_used_total": 1.25,
+        "cost_remaining": 10.75,
+        "backend_version": "fixed-v0.2",
+        "results": [
+          {
+            "result_type": "observation",
+            "observation_id": "obs1",
+            "interval": {
+              "start_s": 100.0,
+              "end_s": 110.0
+            },
+            "modalities": [
+              "speech"
+            ],
+            "payload": {
+              "text": "The warning was caused by a pressure drop."
+            },
+            "payload_hash": "sha256:4027453728b6c7d2944da0fd76ff69aca9061aaaf6de954f0b1959a3d9c68aac"
+          }
+        ],
+        "error": null,
+        "response_hash": "sha256:b0ca997314022af9537324b0b23402f5edff62ff5a67f694595687de3a974da3"
+      },
+      "active_hook_ids": [],
+      "recorded_at": "2026-09-05T00:00:01Z"
+    },
+    {
+      "event_type": "finalize",
+      "action": {
+        "protocol_version": "0.2.0",
+        "episode_id": "syn_family.restored",
+        "request_id": "r3",
+        "step_index": 2,
+        "belief_state": {
+          "p_sufficient": 0.96,
+          "verdict": "sufficient",
+          "missing_modality_probabilities": {
+            "vision": 0.02,
+            "speech": 0.02,
+            "ambient": 0.01
+          },
+          "missing_hop_types": [],
+          "missingness_cause_probabilities": {
+            "source_evidence_absent": 0.01,
+            "evidence_in_source_but_inaccessible": 0.01,
+            "evidence_accessible_but_not_found": 0.01,
+            "not_missing": 0.96,
+            "uncertain": 0.01
+          },
+          "next_action_rationale": "Finalize with supported evidence."
+        },
+        "action": {
+          "tool": "finalize",
+          "arguments": {
+            "p_sufficient": 0.96,
+            "verdict": "sufficient",
+            "answer_mode": "answer",
+            "claims": [
+              {
+                "claim_id": "agent_c1",
+                "registered_claim_id": "c1",
+                "text": "The spoken warning identifies the cause.",
+                "confidence": 0.95,
+                "citations": [
+                  {
+                    "observation_id": "obs1",
+                    "interval": {
+                      "start_s": 100.0,
+                      "end_s": 110.0
+                    },
+                    "modalities": [
+                      "speech"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "diagnosis": {
+              "modality_probabilities": {
+                "vision": 0.02,
+                "speech": 0.02,
+                "ambient": 0.01
+              },
+              "hop_types": [],
+              "cause_probabilities": {
+                "source_evidence_absent": 0.01,
+                "evidence_in_source_but_inaccessible": 0.01,
+                "evidence_accessible_but_not_found": 0.01,
+                "not_missing": 0.96,
+                "uncertain": 0.01
+              },
+              "recovery_route_declared": false,
+              "description": ""
+            },
+            "natural_language_answer": "The spoken warning identifies the cause.",
+            "termination_reason": "sufficient_evidence"
+          }
+        }
+      },
+      "active_hook_ids": [],
+      "recorded_at": "2026-09-05T00:00:02Z"
+    }
+  ],
+  "final_output": {
+    "p_sufficient": 0.96,
+    "verdict": "sufficient",
+    "answer_mode": "answer",
+    "claims": [
+      {
+        "claim_id": "agent_c1",
+        "registered_claim_id": "c1",
+        "text": "The spoken warning identifies the cause.",
+        "confidence": 0.95,
+        "citations": [
+          {
+            "observation_id": "obs1",
+            "interval": {
+              "start_s": 100.0,
+              "end_s": 110.0
+            },
+            "modalities": [
+              "speech"
+            ]
+          }
+        ]
+      }
+    ],
+    "diagnosis": {
+      "modality_probabilities": {
+        "vision": 0.02,
+        "speech": 0.02,
+        "ambient": 0.01
+      },
+      "hop_types": [],
+      "cause_probabilities": {
+        "source_evidence_absent": 0.01,
+        "evidence_in_source_but_inaccessible": 0.01,
+        "evidence_accessible_but_not_found": 0.01,
+        "not_missing": 0.96,
+        "uncertain": 0.01
+      },
+      "recovery_route_declared": false,
+      "description": ""
+    },
+    "natural_language_answer": "The spoken warning identifies the cause.",
+    "termination_reason": "sufficient_evidence"
+  },
+  "completion": {
+    "status": "completed",
+    "total_steps": 3,
+    "total_cost": 1.25,
+    "protocol_valid": true
+  },
+  "replay": {
+    "backend_version": "fixed-v0.2",
+    "backend_hash": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "intervention_manifest_hash": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "trajectory_hash": "sha256:33779a756d1e4215aad2f2030927e6006b166f7cf898347f805dc5d936627fed",
+    "replay_seed": 0
+  }
+}

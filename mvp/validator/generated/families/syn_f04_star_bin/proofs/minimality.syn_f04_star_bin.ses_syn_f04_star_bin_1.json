@@ -1,0 +1,32 @@
+{
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f04_star_bin",
+  "full_set_satisfiable": true,
+  "leave_one_out_cases": [
+    {
+      "removed_evidence_id": "s2_yellow_star",
+      "retained_evidence_ids": [
+        "s2_speech_bin"
+      ],
+      "still_sufficient": false,
+      "unsupported_claim_ids": [
+        "claim_syn_f04_star_bin"
+      ]
+    },
+    {
+      "removed_evidence_id": "s2_speech_bin",
+      "retained_evidence_ids": [
+        "s2_yellow_star"
+      ],
+      "still_sufficient": false,
+      "unsupported_claim_ids": [
+        "claim_syn_f04_star_bin"
+      ]
+    }
+  ],
+  "minimal": true,
+  "minimality_result_id": "minimality.syn_f04_star_bin.ses_syn_f04_star_bin_1",
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f04_star_bin_1",
+  "strict_superset_of_accepted_set_ids": []
+}

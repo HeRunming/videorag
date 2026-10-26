@@ -1,0 +1,961 @@
+{
+  "schema_version": "av-trace.end-to-end-redteam-checklist/1.0",
+  "checklist_id": "cvpr-pre-submission-redteam-2026-09-20",
+  "created_at": "2026-09-20",
+  "status": "PLANNED_NOT_EXECUTED",
+  "decision": "NO_GATE_DECISION",
+  "human_review_completed": false,
+  "outcomes_fabricated": false,
+  "ownership": {
+    "owned_paths": [
+      "docs/review/cvpr_pre_submission_risk_register.md",
+      "data/rehearsal_plan/end_to_end_redteam_checklist.json"
+    ],
+    "read_only_boundaries": [
+      "Task-108 implementation and artifacts",
+      "Task-110 implementation and artifacts",
+      "current retrieval checkpoints and results",
+      "source media and historical Pilot-0/Scale-1A/Wave-R results"
+    ]
+  },
+  "authoritative_inputs": [
+    "docs/project_charter.md",
+    "docs/decisions.md",
+    "docs/paper/cvpr_thesis_and_evidence_gates.md",
+    "docs/spec/metrics_protocol.md",
+    "docs/overview/av_trace_project_status_for_owner.md",
+    "docs/research/novelty_boundary.md",
+    "data/rehearsal_plan/cvpr_claim_evidence_ledger.json",
+    "data/rehearsal_plan/construct_validity_mini_pilot_plan.json",
+    "data/rehearsal_plan/scale1b_learned_baseline_plan.json",
+    "orchestration/prompts/108_construct_validity_mini_pilot.md",
+    "orchestration/prompts/110_learned_generation_agent_implementation.md",
+    "src/av_trace_scale1b_agent/",
+    "tests_scale1b_agent/",
+    "data/restricted/scale1b/ga_pilot/experiment_contract.json",
+    "data/restricted/scale1b/ga_pilot/experiment_manifest.json",
+    "data/restricted/scale1b/ga_pilot/actual_qwen_smoke.json"
+  ],
+  "observed_context_not_audit_outcomes": [
+    "The canonical evidence ladder records construct-validity, learned-generation, learned-agent, end-to-end, scale-up, paper-claim and final-validation gates as not achieved.",
+    "The construct-validity mini-pilot protocol is recorded as deferred and not executed.",
+    "The learned generation/agent experiment contract is MACHINE_ADJUDICATED_PROVISIONAL and LOW_N_MACHINE_PROVISIONAL_GA_PILOT.",
+    "The local learned controller backbone is pinned Qwen/Qwen2.5-1.5B-Instruct behind an offline JSONL subprocess boundary.",
+    "The existing actual-Qwen smoke artifact is marked scientifically ineligible because its family was used for prompt development.",
+    "Complete Task-110 result and go/no-go artifacts were not present when this checklist was created."
+  ],
+  "severity_vocabulary": {
+    "CRITICAL": "Failure invalidates the causal construct, evaluation boundary or principal claim.",
+    "HIGH": "Failure makes the central result unconvincing, confounded or non-generalizable.",
+    "MEDIUM": "Failure requires a materially narrower claim and explicit disclosure."
+  },
+  "status_vocabulary": [
+    "NOT_RUN",
+    "PASS",
+    "FAIL",
+    "INCONCLUSIVE",
+    "NOT_APPLICABLE"
+  ],
+  "global_execution_rules": [
+    "NOT_RUN and INCONCLUSIVE do not satisfy a blocking gate.",
+    "NOT_APPLICABLE requires a signed artifact proving that the audited feature is absent from every affected system, result and claim.",
+    "Every PASS must name immutable or hash-bound inputs, the auditor, execution date, exclusions and produced artifact hashes.",
+    "No prose summary can override a failed machine-readable check.",
+    "Development families and sources may not enter primary evaluation after prompt, policy, metric or threshold inspection.",
+    "All invalid, missing, timed-out, malformed, OOM, over-budget and process-crash cases remain in the all-assigned accounting."
+  ],
+  "checks": [
+    {
+      "check_id": "RT-01",
+      "objection": "novelty_overlap",
+      "title": "Dated novelty and priority audit",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "docs/research/novelty_boundary.md",
+        "docs/paper/cvpr_thesis_and_evidence_gates.md",
+        "data/rehearsal_plan/cvpr_claim_evidence_ledger.json",
+        "draft abstract, introduction, related work and contributions"
+      ],
+      "procedure": [
+        "Update the primary-source literature search through the submission cutoff date.",
+        "Create a feature matrix for intervention unit, evidence minimality, modality necessity, agent observability, stopping, restoration endpoint and trace-level diagnosis.",
+        "Have two independent reviewers map every novelty sentence to a supported row in the matrix.",
+        "Search the manuscript for first, unique, only, SOTA and equivalent priority language."
+      ],
+      "required_artifacts": [
+        "dated literature-search log",
+        "primary-source comparison matrix",
+        "two-reviewer novelty-language audit",
+        "updated claim-evidence ledger"
+      ],
+      "pass_criteria": [
+        "No unsupported first, unique, only or SOTA wording remains.",
+        "Every novelty sentence is narrowly grounded in matched evidence-access intervention and trace-level diagnosis.",
+        "Both independent reviewers approve every retained novelty sentence.",
+        "Overlapping and negative prior work is included rather than selectively omitted."
+      ],
+      "failure_action": "Narrow or remove novelty claims; do not promote PAPER_CLAIM_READY."
+    },
+    {
+      "check_id": "RT-02",
+      "objection": "construct_validity",
+      "title": "Execute independent human construct validation",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "data/rehearsal_plan/construct_validity_mini_pilot_plan.json",
+        "docs/annotation/construct_validity_protocol.md",
+        "portable reviewer packets",
+        "provisional family registry"
+      ],
+      "procedure": [
+        "Complete independent author/verifier, blind alternative finder, validator A, validator B and adjudicator forms.",
+        "Validate answerability, claims, intervals, alternatives, minimality, necessity, modality, shortcuts, pair isolation, recovery feasibility and rights/privacy.",
+        "Import forms with the fail-closed Task-108 importer.",
+        "Compute the acceptance funnel, disagreement, labor and decision rules."
+      ],
+      "required_artifacts": [
+        "completed reviewer packets",
+        "validated import report",
+        "adjudication report",
+        "accepted/rejected immutable registry",
+        "funnel, disagreement and labor reports"
+      ],
+      "pass_criteria": [
+        "8 to 12 families are completed across at least five source-disjoint videos.",
+        "All required roles and adjudications are complete.",
+        "At least 75 percent reach H1_HUMAN_VALIDATED.",
+        "At least 60 percent reach H2_HUMAN_ADJUDICATED_GOLD.",
+        "Pair-isolation failure is at most 10 percent.",
+        "No unresolved critical rights, privacy or safety hold remains.",
+        "No systematic modality or minimality failure affects more than 25 percent of completed families."
+      ],
+      "failure_action": "Return CONSTRUCT_VALIDITY_REPAIR or CONSTRUCT_VALIDITY_NO_GO and keep all later gates closed."
+    },
+    {
+      "check_id": "RT-03",
+      "objection": "minimal_evidence_non_uniqueness",
+      "title": "Alternative SES saturation and necessity-group audit",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "full source videos",
+        "candidate claim-evidence graphs",
+        "frozen retrieval stack",
+        "blind alternative-finder logs"
+      ],
+      "procedure": [
+        "Search the full source before revealing the preferred SES.",
+        "Run retrieval-assisted searches for paraphrases, repetitions, wider intervals and cross-modal substitutes.",
+        "Test every accepted SES by removing each evidence member in turn.",
+        "Compute necessity groups as hitting sets over all accepted SESs.",
+        "Use a fresh reviewer for a final holdout alternative search."
+      ],
+      "required_artifacts": [
+        "full-source alternative-search log",
+        "accepted and rejected SES ledger",
+        "leave-one-out minimality table",
+        "necessity hitting-set output",
+        "holdout saturation declaration"
+      ],
+      "pass_criteria": [
+        "Every accepted SES supports all required claims.",
+        "Removing any member from an accepted SES breaks at least one required claim.",
+        "Every declared necessity group intersects every accepted SES.",
+        "The final blind holdout search adds no accepted route that remains reachable in BLOCKED.",
+        "Any unresolved alternative quarantines the family."
+      ],
+      "failure_action": "Repair the family graph or reject the family; do not score its intervention."
+    },
+    {
+      "check_id": "RT-04",
+      "objection": "modality_necessity",
+      "title": "Modality necessity versus routing counterfactual",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "human-valid families",
+        "accepted SES ledger",
+        "ASR, OCR, captions, descriptions and audio-label provenance"
+      ],
+      "procedure": [
+        "Evaluate leave-one-modality conditions for vision, speech and ambient audio.",
+        "Remove all derived representations of the dropped modality.",
+        "Test transcript-only, silent-video, visual-description-only, audio-label-only and cross-modal substitute controls.",
+        "Adjudicate all valid minimal missing-modality sets."
+      ],
+      "required_artifacts": [
+        "per-family modality counterfactual matrix",
+        "derived-leak closure manifest",
+        "adjudicated missing-modality sets",
+        "modality-stratum summary"
+      ],
+      "pass_criteria": [
+        "A modality is called necessary only when its removal and derived-leak closure breaks every accepted SES.",
+        "Controls that retain a valid SES remain answerable.",
+        "Unvalidated modalities are labeled routing or corroboration only and necessity metrics remain null.",
+        "Every claimed V, S, A or cross-modal stratum has an accepted family or an explicit no-go."
+      ],
+      "failure_action": "Remove the modality-necessity label or reject the family/stratum."
+    },
+    {
+      "check_id": "RT-05",
+      "objection": "intervention_leakage",
+      "title": "Policy-visible leakage and pair-isolation audit",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "captured model requests",
+        "CLEAN/BLOCKED/RESTORED trajectories",
+        "no-trigger controls",
+        "backend/intervention manifests"
+      ],
+      "procedure": [
+        "Diff all policy-visible fields before the first causal interaction and before restoration trigger.",
+        "Scan requests and outputs for state, family, intervention, support and evidence identifiers.",
+        "Compare unaffected tool results, budgets, result counts, response shapes and timing.",
+        "Train an adversarial classifier using non-semantic metadata only.",
+        "Replay restoration and no-trigger controls independently."
+      ],
+      "required_artifacts": [
+        "policy-visibility diff",
+        "private-field taint scan",
+        "metadata classifier report",
+        "timing and response-shape report",
+        "no-trigger and restoration replay hashes"
+      ],
+      "pass_criteria": [
+        "No private state, family, intervention, answer or support identifier reaches the policy.",
+        "Pre-causal policy-visible fields are identical except registered evidence availability.",
+        "A non-semantic metadata classifier is statistically indistinguishable from chance.",
+        "Only the registered route and transitive derived leaks change.",
+        "No-trigger controls never restore.",
+        "RESTORED evidence is searched and observed again after the trigger."
+      ],
+      "failure_action": "Treat the intervention effect as confounded and return END_TO_END_NO_GO until repaired."
+    },
+    {
+      "check_id": "RT-06",
+      "objection": "prompt_tuning_leakage",
+      "title": "Prompt, policy and threshold development quarantine",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "prompt commit/hash history",
+        "controller and action-menu history",
+        "metric/threshold history",
+        "family/source access logs",
+        "existing excluded smoke records"
+      ],
+      "procedure": [
+        "Construct a chronological ledger of every family and source inspected during prompt, controller, schema, metric and threshold development.",
+        "Quarantine all touched families and their source videos from primary evaluation.",
+        "Freeze prompt, config, menu, repair and threshold hashes before evaluation.",
+        "Run the primary evaluation only on untouched source-disjoint families."
+      ],
+      "required_artifacts": [
+        "development exposure ledger",
+        "family/source quarantine manifest",
+        "pre-outcome prompt and configuration hash manifest",
+        "untouched evaluation split manifest"
+      ],
+      "pass_criteria": [
+        "Zero primary evaluation family or source was used for development or selection.",
+        "All prompt, policy, repair, menu and threshold hashes were frozen before outcomes.",
+        "Every post-freeze change creates a new version and a fresh untouched split.",
+        "Touched families appear only in separately labeled development diagnostics."
+      ],
+      "failure_action": "Reclassify affected results as development-only and acquire a fresh source-disjoint evaluation split."
+    },
+    {
+      "check_id": "RT-07",
+      "objection": "weak_1_5b_controller",
+      "title": "Controller competence floor and model-capacity sensitivity",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "pinned Qwen2.5-1.5B snapshot",
+        "structured generation/controller fixtures",
+        "human-valid oracle and partial-evidence cases",
+        "stronger controller/backbone configuration"
+      ],
+      "procedure": [
+        "Freeze competence thresholds before aggregate outcomes.",
+        "Run deterministic schema, malformed, timeout, OOM, process-crash and over-budget fixtures.",
+        "Run oracle-evidence, complete-retrieval, partial-evidence, blocked-evidence and simple action-selection tests.",
+        "Repeat the human-valid matched comparison with at least one materially stronger controller/backbone for paper sensitivity."
+      ],
+      "required_artifacts": [
+        "preregistered competence thresholds",
+        "per-family competence matrix",
+        "structured failure report",
+        "stronger-model sensitivity table",
+        "compute, latency and cost report"
+      ],
+      "pass_criteria": [
+        "All deterministic schema and failure-handling fixtures pass.",
+        "At least 90 percent of learned calls produce valid structured output after at most one repair.",
+        "At least 80 percent of human-valid oracle-evidence cases reach the supported-answer endpoint.",
+        "Oracle-evidence diagnostics assert zero unsupported required claims.",
+        "The principal conclusion is not reversed solely by replacing the 1.5B backbone; otherwise claims are explicitly limited to the small model."
+      ],
+      "failure_action": "Do not interpret controller differences as evidence-sufficiency behavior; strengthen the model or narrow the claim."
+    },
+    {
+      "check_id": "RT-08",
+      "objection": "source_domain_bias",
+      "title": "Source, domain and template influence audit",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "frozen sampling and split plan",
+        "accepted family registry",
+        "source/domain/template metadata",
+        "primary matched results"
+      ],
+      "procedure": [
+        "Tabulate source, domain, template, modality and intervention-mechanism composition.",
+        "Verify source-disjoint development and evaluation splits.",
+        "Run leave-one-source-out and leave-one-domain-out analyses.",
+        "Compute source influence on the sign and magnitude of the principal finding."
+      ],
+      "required_artifacts": [
+        "composition table",
+        "source-disjoint split manifest",
+        "leave-one-source/domain-out report",
+        "source-cluster estimates",
+        "influence plot"
+      ],
+      "pass_criteria": [
+        "The scale plan credibly reaches 20 to 30 rights-cleared videos and 60 accepted families.",
+        "The final evaluation covers at least three content domains and both intervention mechanisms.",
+        "No single video contributes more than 10 percent of scored families.",
+        "The principal conclusion retains its direction after removing each source.",
+        "No single domain alone supports the principal conclusion."
+      ],
+      "failure_action": "Hold scale-up or limit claims to the observed source/domain."
+    },
+    {
+      "check_id": "RT-09",
+      "objection": "licensing_release",
+      "title": "Asset, derivative, model and release-rights audit",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY",
+        "FINAL_BENCHMARK_VALIDATED"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "asset acquisition and rights manifests",
+        "evidence snapshots",
+        "model cards and licenses",
+        "planned release bill of materials"
+      ],
+      "procedure": [
+        "Review acquisition, processing, annotation, transcript, derivative, raw-media and public-release decisions per asset.",
+        "Audit model and dataset license obligations and redistribution limits.",
+        "Review privacy, attribution, takedown, quarantine, replacement and jurisdiction policy.",
+        "Diff the proposed public package against approved assets."
+      ],
+      "required_artifacts": [
+        "final asset-level rights manifests",
+        "model-license inventory",
+        "release bill of materials",
+        "attribution file",
+        "privacy review",
+        "approved takedown and replacement policy"
+      ],
+      "pass_criteria": [
+        "No relevant decision is unknown_hold.",
+        "Every public artifact has affirmative release authority and required attribution.",
+        "Restricted media, transcripts, annotations, vectors and weights are excluded from the public package unless separately authorized.",
+        "No model weight is redistributed without license authorization.",
+        "Paper release language exactly matches the approved bill of materials."
+      ],
+      "failure_action": "Keep affected material restricted, replace assets, and remove public-release claims."
+    },
+    {
+      "check_id": "RT-10",
+      "objection": "metrics_multiplicity",
+      "title": "Preregister endpoints, denominators and multiplicity control",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "docs/spec/metrics_protocol.md",
+        "experiment matrix",
+        "planned figures and tables",
+        "paper claim ledger"
+      ],
+      "procedure": [
+        "Freeze primary hypotheses, directions, practical-effect thresholds, equivalence margins, denominators and strata before outcomes.",
+        "Define confirmatory and exploratory hypothesis families.",
+        "Apply Holm to confirmatory families and BH only to labeled exploratory families.",
+        "Map every paper claim and figure to a preregistered result."
+      ],
+      "required_artifacts": [
+        "timestamped statistical analysis plan",
+        "metric registry",
+        "hypothesis-family and correction table",
+        "denominator audit",
+        "claim-to-result map"
+      ],
+      "pass_criteria": [
+        "The full dashboard is primary and no post-hoc weighted scalar replaces it.",
+        "No headline claim uses an unregistered metric, threshold, stratum or denominator.",
+        "All null, negative, excluded, invalid and failed strata are reported.",
+        "Multiplicity correction matches the frozen analysis plan.",
+        "Budget curves, if present, use separate capped runs or declared checkpoints."
+      ],
+      "failure_action": "Relabel analyses exploratory or rerun under a fresh preregistration."
+    },
+    {
+      "check_id": "RT-11",
+      "objection": "statistical_dependence",
+      "title": "Video-cluster uncertainty and pseudo-replication audit",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "family/source membership",
+        "matched metric rows",
+        "frozen analysis code and environment",
+        "power or precision plan"
+      ],
+      "procedure": [
+        "Pair states and systems within family.",
+        "Average families within source video before inference.",
+        "Bootstrap or permute source videos and record seeds.",
+        "Compute source-family sensitivity, intracluster dependence and influence.",
+        "Compare against any naive episode/family analysis and prohibit the latter."
+      ],
+      "required_artifacts": [
+        "cluster membership manifest",
+        "analysis code/environment hash",
+        "resampling seeds",
+        "video-cluster interval tables",
+        "influence and dependence report",
+        "independent recomputation"
+      ],
+      "pass_criteria": [
+        "No episode-level or family-level naive significance supports a claim.",
+        "Primary estimates pair within family, aggregate within video and resample videos.",
+        "Mini-pilot results are labeled descriptive.",
+        "Paper-level inference uses 20 to 30 source videos or a separately justified precision design.",
+        "Independent recomputation has zero material mismatch."
+      ],
+      "failure_action": "Withdraw significance/generalization claims and report descriptive source-level results only."
+    },
+    {
+      "check_id": "RT-12",
+      "objection": "api_model_reproducibility",
+      "title": "API provenance, drift and fallback audit",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "not_applicable_condition": "No API model contributes to an affected result or claim and a signed system inventory proves this.",
+      "inputs": [
+        "system manifest",
+        "API request configurations",
+        "provider responses",
+        "failure/fallback handling"
+      ],
+      "procedure": [
+        "Archive provider, model string, request date, endpoint, parameters, prompts, tool schemas, retries and costs.",
+        "Hash restricted request/response records.",
+        "Repeat a frozen subset to measure nondeterministic variance and drift.",
+        "Inject API failure and verify typed invalid outcomes with no local or deterministic fallback."
+      ],
+      "required_artifacts": [
+        "API provenance manifest",
+        "restricted request/response archive",
+        "repeat-run variance and drift report",
+        "cost log",
+        "fallback-injection report"
+      ],
+      "pass_criteria": [
+        "Primary claims reproduce without API-only systems, or repeated API audits preserve the conclusion.",
+        "Every API row has complete dated provenance and hashed outputs.",
+        "No silent model or local deterministic substitution occurs.",
+        "Unavailable historical versions are labeled non-reproducible and are not decisive."
+      ],
+      "failure_action": "Make API rows secondary/descriptive or remove affected claims."
+    },
+    {
+      "check_id": "RT-13",
+      "objection": "benchmark_contamination",
+      "title": "Memorization, metadata shortcut and duplicate-content audit",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "questions, answers and source metadata",
+        "public transcript/title/description corpus",
+        "model cutoff disclosures where available",
+        "human-valid evaluation families"
+      ],
+      "procedure": [
+        "Run question-only and title/metadata-only baselines.",
+        "Run transcript-only, silent-video, shuffled-evidence and decoy-citation controls.",
+        "Search exact and near-duplicate question/answer phrases in available public corpora.",
+        "Flag high-risk items and repeat principal analyses without them.",
+        "Add newly collected or post-training-cutoff sources where feasible."
+      ],
+      "required_artifacts": [
+        "contamination search log",
+        "shortcut-control matrix",
+        "memorization-risk labels",
+        "source-date/model-cutoff table",
+        "high-risk exclusion sensitivity"
+      ],
+      "pass_criteria": [
+        "No admitted item is answerable from title or metadata alone.",
+        "Primary claims use supported-answer and citation endpoints rather than answer accuracy alone.",
+        "High-risk items are excluded or separately reported.",
+        "The principal conclusion remains after all high-risk items are removed.",
+        "Decoy citations do not receive support credit."
+      ],
+      "failure_action": "Exclude contaminated items, add fresh sources, and narrow evidence-use claims."
+    },
+    {
+      "check_id": "RT-14",
+      "objection": "evaluator_private_leakage",
+      "title": "Evaluator-private taint and post-mapping order audit",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "LEARNED_GENERATION_READY",
+        "LEARNED_AGENT_READY",
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "captured JSONL requests and responses",
+        "public schema validators",
+        "claim/evidence post-mapping code",
+        "worker environment"
+      ],
+      "procedure": [
+        "Taint private IDs, state roles, answers and support labels and trace serialization.",
+        "Fuzz opaque claim, pointer and observation handles.",
+        "Inject unknown/private handles and citations.",
+        "Inspect the model-worker environment for restricted variables.",
+        "Review that evaluator mapping occurs only after strict output validation."
+      ],
+      "required_artifacts": [
+        "taint-flow log",
+        "captured request corpus",
+        "opaque-handle fuzz report",
+        "worker environment audit",
+        "mapping-order review"
+      ],
+      "pass_criteria": [
+        "Zero evaluator-private marker or gold value appears in model-visible requests.",
+        "Unknown or private handles fail closed.",
+        "Opaque-handle renaming does not change semantic access.",
+        "Post-mapping cannot modify model-authored verdict, answer, claims or citations.",
+        "Restricted credentials and proxy variables are absent from the worker."
+      ],
+      "failure_action": "Invalidate affected learned runs and repair the process/schema boundary."
+    },
+    {
+      "check_id": "RT-15",
+      "objection": "textualized_av_proxy",
+      "title": "Native-modality versus textualized-observation validity",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "citable observation payloads",
+        "perception provenance",
+        "human-valid evidence intervals",
+        "raw-frame/raw-audio-capable baseline"
+      ],
+      "procedure": [
+        "Human-audit all citable observations in the mini-pilot.",
+        "Attribute errors separately to retrieval, perception, grounding and policy.",
+        "Run at least one raw-frame/raw-audio-capable baseline or modality-native tool path.",
+        "Repeat the principal policy comparison on the human-audited observation subset."
+      ],
+      "required_artifacts": [
+        "perception provenance table",
+        "human observation audit",
+        "native-modality baseline manifest",
+        "stage-level error decomposition",
+        "audited-observation sensitivity result"
+      ],
+      "pass_criteria": [
+        "Every scored citable observation has correct modality and content provenance.",
+        "The paper does not count ASR, descriptions or event labels as native modality understanding.",
+        "The principal conclusion holds under a raw-modality-capable path or the claim is explicitly limited to agents over audited multimodal retrieval observations.",
+        "Proxy perception errors are separately reported."
+      ],
+      "failure_action": "Narrow audiovisual claims and present the system as an agent over derived observations."
+    },
+    {
+      "check_id": "RT-16",
+      "objection": "baseline_fairness",
+      "title": "Controller fairness, menu-order and policy ablation audit",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "LEARNED_AGENT_READY",
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "ReAct and sufficiency prompts",
+        "controller/action-menu code",
+        "experiment contract",
+        "model token/context logs"
+      ],
+      "procedure": [
+        "Diff all non-policy configuration fields.",
+        "Counterbalance or randomize action-menu order under a frozen seed plan.",
+        "Report prompt tokens, context truncation, repairs and retry counts.",
+        "Verify identical backend, retrieval, tools, budget, generator and failure handling.",
+        "Run a prompt-matched ablation that removes only explicit sufficiency state."
+      ],
+      "required_artifacts": [
+        "paired configuration diff",
+        "menu-order randomization manifest",
+        "token and context report",
+        "state-transition distance report",
+        "prompt-matched ablation table"
+      ],
+      "pass_criteria": [
+        "Only intended policy/prompt fields differ systematically.",
+        "Both controllers receive identical backend, budget, tools, generator, repair and failure contracts.",
+        "Neither controller receives more usable context or retries.",
+        "Results are invariant to menu order within a preregistered tolerance.",
+        "Distinct state transitions are demonstrated without private information."
+      ],
+      "failure_action": "Treat the comparison as prompt/system confounded and do not claim a sufficiency-controller effect."
+    },
+    {
+      "check_id": "RT-17",
+      "objection": "metric_construct_validity",
+      "title": "Independent metric and route-certificate validation",
+      "severity": "CRITICAL",
+      "blocking": true,
+      "blocks_gates": [
+        "END_TO_END_DIAGNOSTIC_GO",
+        "DATA_SCALE_UP_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "raw trajectories",
+        "docs/spec/metrics_protocol.md",
+        "human-adjudicated claims and evidence",
+        "route-feasibility certificates",
+        "published metric rows"
+      ],
+      "procedure": [
+        "Recompute every gate-driving metric independently from raw trajectories.",
+        "Blind-human audit answer correctness and claim/citation support.",
+        "Execute each non-null route certificate from the exact final state.",
+        "Verify common-endpoint restoration, final-decision timing and null eligibility.",
+        "Compare every published row and aggregate against recomputation."
+      ],
+      "required_artifacts": [
+        "independent metric implementation",
+        "row-level and aggregate diff",
+        "human-versus-automatic agreement report",
+        "route-certificate execution logs",
+        "metric version and hash manifest"
+      ],
+      "pass_criteria": [
+        "There are zero arithmetic mismatches in gate-driving metrics.",
+        "There is zero unresolved disagreement on binary supported-answer endpoints in the mini-pilot.",
+        "Raw agreement on claim-support and citation labels is at least 0.90 and all disagreements are adjudicated.",
+        "Every non-null premature-stop score has an executable final-point route including citable observation and finalization.",
+        "No heterogeneous state-target subtraction is called restoration gain."
+      ],
+      "failure_action": "Version and repair metrics, regenerate affected results, and keep scientific gates closed."
+    },
+    {
+      "check_id": "RT-18",
+      "objection": "missing_run_survivorship_bias",
+      "title": "All-assigned case, retry and checkpoint accounting",
+      "severity": "HIGH",
+      "blocking": true,
+      "blocks_gates": [
+        "LEARNED_GENERATION_READY",
+        "LEARNED_AGENT_READY",
+        "END_TO_END_DIAGNOSTIC_GO",
+        "PAPER_CLAIM_READY"
+      ],
+      "status": "NOT_RUN",
+      "inputs": [
+        "frozen experiment matrix",
+        "checkpoints",
+        "restricted trajectories",
+        "metrics and reports",
+        "run manifests"
+      ],
+      "procedure": [
+        "Join every planned case to checkpoint, trajectory, metric and report rows.",
+        "Enumerate retries and typed failures chronologically.",
+        "Verify checkpoint and record hashes and semantic replay.",
+        "Compare complete-case and all-assigned analyses.",
+        "Confirm no failure path substitutes deterministic output."
+      ],
+      "required_artifacts": [
+        "case-accounting ledger",
+        "retry chronology",
+        "checkpoint integrity report",
+        "failure taxonomy",
+        "all-assigned sensitivity table",
+        "manifest hash audit"
+      ],
+      "pass_criteria": [
+        "Every preregistered case appears exactly once in the all-assigned denominator.",
+        "All retries are retained and comply with the frozen repair policy.",
+        "No model failure receives deterministic answer substitution.",
+        "Exclusions are predeclared and visible.",
+        "The principal conclusion is unchanged under all-assigned accounting or is reported as inconclusive."
+      ],
+      "failure_action": "Invalidate completion-based claims and rerun or report the comparison as inconclusive."
+    }
+  ],
+  "decision_rubric": {
+    "END_TO_END_DIAGNOSTIC_GO": {
+      "required_canonical_gates": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+        "LEARNED_GENERATION_READY",
+        "LEARNED_AGENT_READY"
+      ],
+      "required_pass_checks": [
+        "RT-02",
+        "RT-03",
+        "RT-04",
+        "RT-05",
+        "RT-06",
+        "RT-07",
+        "RT-08",
+        "RT-10",
+        "RT-11",
+        "RT-13",
+        "RT-14",
+        "RT-16",
+        "RT-17",
+        "RT-18"
+      ],
+      "conditional_pass_or_not_applicable_checks": [
+        "RT-12"
+      ],
+      "empirical_requirements": [
+        "At least two learned agents and one learned non-agent control share the frozen backend, budget and generator contracts.",
+        "Intervention-aware effects occur across at least three source-disjoint videos and are not wholly attributable to one family.",
+        "At least one human-valid diagnostic separation is not explained by retrieval recall alone.",
+        "At least one validated case separates answer correctness from supported-answer correctness or citation validity.",
+        "Practical-effect thresholds or equivalence margins were frozen before model outcomes.",
+        "Video-cluster uncertainty, invalid runs, no-trigger controls, negative results and complete denominators are reported."
+      ],
+      "go_rule": "All required canonical gates are true, all required checks PASS, conditional checks PASS or have valid gate-scoped NOT_APPLICABLE artifacts, and every empirical requirement is met.",
+      "hold_rule": "Any required check is NOT_RUN or INCONCLUSIVE, or a repairable failure remains.",
+      "no_go_rule": "Human construct validity fails centrally, intervention isolation/leakage cannot be repaired, or all apparent separation is explained by retrieval, metric or evaluation artifacts."
+    },
+    "DATA_SCALE_UP_GO": {
+      "required_canonical_gates": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+        "END_TO_END_DIAGNOSTIC_GO"
+      ],
+      "required_pass_checks": [
+        "RT-02",
+        "RT-03",
+        "RT-04",
+        "RT-05",
+        "RT-06",
+        "RT-07",
+        "RT-08",
+        "RT-09",
+        "RT-10",
+        "RT-11",
+        "RT-13",
+        "RT-14",
+        "RT-15",
+        "RT-16",
+        "RT-17",
+        "RT-18"
+      ],
+      "operational_requirements": [
+        "Measured candidate yield, rejection causes, alternative-SES discovery, reviewer/adjudication labor, compute/storage cost and rights-review throughput exist.",
+        "A frozen sampling plan credibly reaches 20 to 30 rights-cleared videos and 60 accepted families without lowering construct thresholds.",
+        "Source-disjoint splits, modality/mechanism strata, reserve policy, quality control, power or precision targets and reviewer capacity are frozen.",
+        "Evaluation-family prompt, retrieval and fusion tuning is prohibited."
+      ],
+      "go_rule": "All required canonical gates, checks and operational requirements pass with no unresolved critical finding.",
+      "hold_rule": "Any prerequisite is NOT_RUN, INCONCLUSIVE or repairable.",
+      "no_go_rule": "Construct yield, rights throughput or labor makes the target infeasible without weakening SES, necessity, intervention or release rules."
+    },
+    "PAPER_CLAIM_READY": {
+      "required_canonical_gates": [
+        "DATA_SCALE_UP_GO"
+      ],
+      "required_pass_checks": [
+        "RT-01",
+        "RT-02",
+        "RT-03",
+        "RT-04",
+        "RT-05",
+        "RT-06",
+        "RT-07",
+        "RT-08",
+        "RT-09",
+        "RT-10",
+        "RT-11",
+        "RT-13",
+        "RT-14",
+        "RT-15",
+        "RT-16",
+        "RT-17",
+        "RT-18"
+      ],
+      "conditional_checks": {
+        "RT-12": "PASS, unless a signed inventory proves no API model contributes to any affected result or claim."
+      },
+      "paper_requirements": [
+        "The frozen evaluation includes at least four preregistered system classes, including strong learned long-context/non-agent and learned-agent baselines.",
+        "The principal finding survives source, domain, model-capacity, modality, retrieval, prompt, trigger and metric sensitivity analyses.",
+        "The dashboard reports video-cluster uncertainty, costs, invalid runs, denominators, multiplicity corrections and negative/null strata.",
+        "A dated novelty audit and sentence-level abstract/conclusion claim ledger contain no unsupported wording.",
+        "Release claims match the rights-approved release bill of materials and reproducibility package."
+      ],
+      "ready_rule": "All prior scientific gates, required checks, conditional checks and paper requirements pass.",
+      "hold_rule": "Any unresolved CRITICAL or HIGH blocker, NOT_RUN check or INCONCLUSIVE check remains.",
+      "no_go_rule": "The core construct, causal isolation or principal finding fails and cannot be repaired without changing the thesis or benchmark design."
+    }
+  },
+  "recommended_execution_order": [
+    {
+      "phase": 1,
+      "name": "freeze_boundaries",
+      "checks": [
+        "RT-06",
+        "RT-10",
+        "RT-12",
+        "RT-14",
+        "RT-16",
+        "RT-18"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "validate_construct",
+      "checks": [
+        "RT-02",
+        "RT-03",
+        "RT-04",
+        "RT-05",
+        "RT-09",
+        "RT-13",
+        "RT-15",
+        "RT-17"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "establish_model_competence_and_fairness",
+      "checks": [
+        "RT-07",
+        "RT-16"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "run_matched_end_to_end",
+      "checks": [
+        "RT-05",
+        "RT-10",
+        "RT-11",
+        "RT-17",
+        "RT-18"
+      ]
+    },
+    {
+      "phase": 5,
+      "name": "decide_scale",
+      "checks": [
+        "RT-08",
+        "RT-09"
+      ]
+    },
+    {
+      "phase": 6,
+      "name": "freeze_paper_claims",
+      "checks": [
+        "RT-01"
+      ]
+    }
+  ]
+}

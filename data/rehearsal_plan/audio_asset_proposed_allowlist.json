@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.2.0",
+  "prepared_as_of": "2026-09-09",
+  "generation_mode": "live",
+  "decision": "FAIL_CLOSED_SHORTLIST_ONLY_NO_TRANSFER_ALLOWLIST_ISSUED",
+  "decision_reason": "No candidate has both independently verified audio content on the exact proposed rendition and approved item-level processing rights. The 2026-09-09 bounded stream preflight additionally showed that ccp-005 and ccp-006 declare audio tracks but fail the 1,200-second lower duration bound, while the three Omni objects remain HTTP-403 access-blocked and unverified. None of those five is eligible for the long-video pilot core or authorized for acquisition.",
+  "authorized_for_transfer": [],
+  "audio_verified_count": 0,
+  "proposed_primary_after_gate_resolution": [
+    {
+      "candidate_id": "cand-061",
+      "canonical_item_id": "CommonsFile:Grace Hopper - Future Possibilities - Data, Hardware, Software, and People.webm",
+      "title": "Grace Hopper - Future Possibilities - Data, Hardware, Software, and People.webm",
+      "source_family": "WIKIMEDIA_COMMONS",
+      "official_item_url": "https://commons.wikimedia.org/wiki/File:Grace_Hopper_-_Future_Possibilities_-_Data,_Hardware,_Software,_and_People.webm",
+      "exact_duration_s": 5375.0,
+      "duration_gate": "PASS",
+      "proposed_role": "speech-heavy V+S anchor",
+      "audio_status": "UNVERIFIED",
+      "audio_verified": false,
+      "rights_status": "unknown_hold",
+      "processing_rights_status": "NOT_APPROVED",
+      "annotation_rights_status": "NOT_APPROVED",
+      "official_download_route_status": "documented_official_file_download_unfrozen",
+      "official_download_url": "",
+      "metadata_conflicts": [],
+      "unresolved_questions": [
+        "Does the exact selected file independently expose and later decode a non-empty audio stream?",
+        "What immutable file revision, byte size, and provider hash identify the selected rendition?",
+        "Does item/component authority permit local decoding, audio extraction, ASR, indexing, and ML evaluation?",
+        "May newly authored timestamp annotations be released, and under what attribution/takedown terms?",
+        "Are music, slides, archival/partner footage, marks, speakers, and audience components cleared for the intended scope?"
+      ]
+    },
+    {
+      "candidate_id": "cand-048",
+      "canonical_item_id": "NOAA-OceanToday-webinar4",
+      "title": "Shipwrecks and Sanctuaries",
+      "source_family": "NOAA",
+      "official_item_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar4-060520.html",
+      "exact_duration_s": 3000.0,
+      "duration_gate": "PASS",
+      "proposed_role": "field/webinar candidate for V+A / V+S+A",
+      "audio_status": "UNVERIFIED",
+      "audio_verified": false,
+      "rights_status": "unknown_hold",
+      "processing_rights_status": "NOT_APPROVED",
+      "annotation_rights_status": "NOT_APPROVED",
+      "official_download_route_status": "no_verified_acquisition_path",
+      "official_download_url": "",
+      "metadata_conflicts": [],
+      "unresolved_questions": [
+        "Does the exact selected file independently expose and later decode a non-empty audio stream?",
+        "What immutable file revision, byte size, and provider hash identify the selected rendition?",
+        "Does item/component authority permit local decoding, audio extraction, ASR, indexing, and ML evaluation?",
+        "May newly authored timestamp annotations be released, and under what attribution/takedown terms?",
+        "Are music, slides, archival/partner footage, marks, speakers, and audience components cleared for the intended scope?"
+      ]
+    },
+    {
+      "candidate_id": "cand-051",
+      "canonical_item_id": "NOAA-OceanToday-webinar7",
+      "title": "Trash Talk",
+      "source_family": "NOAA",
+      "official_item_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar7-trashtalk-1.html",
+      "exact_duration_s": 3720.0,
+      "duration_gate": "PASS",
+      "proposed_role": "environmental-program V+S+A candidate",
+      "audio_status": "UNVERIFIED",
+      "audio_verified": false,
+      "rights_status": "unknown_hold",
+      "processing_rights_status": "NOT_APPROVED",
+      "annotation_rights_status": "NOT_APPROVED",
+      "official_download_route_status": "no_verified_acquisition_path",
+      "official_download_url": "",
+      "metadata_conflicts": [],
+      "unresolved_questions": [
+        "Does the exact selected file independently expose and later decode a non-empty audio stream?",
+        "What immutable file revision, byte size, and provider hash identify the selected rendition?",
+        "Does item/component authority permit local decoding, audio extraction, ASR, indexing, and ML evaluation?",
+        "May newly authored timestamp annotations be released, and under what attribution/takedown terms?",
+        "Are music, slides, archival/partner footage, marks, speakers, and audience components cleared for the intended scope?"
+      ]
+    }
+  ],
+  "proposed_reserves_after_gate_resolution": [
+    {
+      "candidate_id": "cand-056",
+      "canonical_item_id": "CommonsFile:Blockchain solutionism – Guest lecture at the University of Texas at Austin by Molly White (2022).webm",
+      "title": "Blockchain solutionism – Guest lecture at the University of Texas at Austin by Molly White (2022).webm",
+      "source_family": "WIKIMEDIA_COMMONS",
+      "official_item_url": "https://commons.wikimedia.org/wiki/File:Blockchain_solutionism_%E2%80%93_Guest_lecture_at_the_University_of_Texas_at_Austin_by_Molly_White_(2022).webm",
+      "exact_duration_s": 3067.0,
+      "duration_gate": "PASS",
+      "proposed_role": "speech-heavy V+S reserve",
+      "audio_status": "UNVERIFIED",
+      "audio_verified": false,
+      "rights_status": "unknown_hold",
+      "processing_rights_status": "NOT_APPROVED",
+      "annotation_rights_status": "NOT_APPROVED",
+      "official_download_route_status": "documented_official_file_download_license_unreviewed",
+      "official_download_url": "",
+      "metadata_conflicts": [],
+      "unresolved_questions": [
+        "Does the exact selected file independently expose and later decode a non-empty audio stream?",
+        "What immutable file revision, byte size, and provider hash identify the selected rendition?",
+        "Does item/component authority permit local decoding, audio extraction, ASR, indexing, and ML evaluation?",
+        "May newly authored timestamp annotations be released, and under what attribution/takedown terms?",
+        "Are music, slides, archival/partner footage, marks, speakers, and audience components cleared for the intended scope?"
+      ]
+    }
+  ],
+  "activation_requirements": [
+    "Freeze an immutable exact file identity, byte size, provider hash, and official item-level route.",
+    "Confirm exact duration is 1,200–5,400 seconds.",
+    "Obtain direct approval for local decoding, audio extraction/sampling, ASR, indexing, and ML evaluation.",
+    "Keep annotation/publication approval separate from acquisition and processing approval.",
+    "After authorized acquisition, independently verify at least one decodable, non-empty, synchronized audio stream.",
+    "Inspect actual audio to establish speech and/or ambient content; captions, task labels, and corpus claims are insufficient.",
+    "Complete duplicate, component-rights, contamination, privacy, attribution, retention, and takedown review."
+  ],
+  "compatibility_candidates_not_in_transfer_scope": [
+    "ccp-005",
+    "ccp-006",
+    "ccp-004",
+    "omni-video_284",
+    "omni-video_617",
+    "omni-video_611"
+  ],
+  "rejected_or_deferred": [
+    {
+      "candidate_id": "cand-023",
+      "canonical_item_id": "NASA-SVS-11205",
+      "reason": "STALE_OR_MISMATCHED_ID_HOLD",
+      "audio_status": "UNVERIFIED",
+      "duration_gate": "PASS"
+    },
+    {
+      "candidate_id": "ccp-005",
+      "canonical_item_id": "videomme:K759eXmaMTY",
+      "reason": "EXCLUDE_LONG_VIDEO_CORE_DURATION_BELOW_1200_SECONDS_KEEP_COMPATIBILITY_FIXTURE",
+      "audio_status": "DECLARED_AUDIO_TRACK_NOT_CONTENT_VERIFIED",
+      "duration_gate": "FAIL",
+      "audio_track_declared": true,
+      "content_audio_semantics_verified": false,
+      "exact_duration_s": 745.96421875,
+      "access_authorized": false,
+      "full_acquisition_authorized": false
+    },
+    {
+      "candidate_id": "ccp-006",
+      "canonical_item_id": "videomme:3uV8XZcIBbk",
+      "reason": "EXCLUDE_LONG_VIDEO_CORE_DURATION_BELOW_1200_SECONDS_KEEP_COMPATIBILITY_FIXTURE",
+      "audio_status": "DECLARED_AUDIO_TRACK_NOT_CONTENT_VERIFIED",
+      "duration_gate": "FAIL",
+      "audio_track_declared": true,
+      "content_audio_semantics_verified": false,
+      "exact_duration_s": 766.862,
+      "access_authorized": false,
+      "full_acquisition_authorized": false
+    },
+    {
+      "candidate_id": "ccp-004",
+      "canonical_item_id": "videomme:jWa2yrLGxCM",
+      "reason": "DEFER_PENDING_EXACT_DURATION_STREAM_AND_RIGHTS",
+      "audio_status": "DERIVED_WAV_LISTED_FULL_SOURCE_UNVERIFIED",
+      "duration_gate": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "omni-video_284",
+      "canonical_item_id": "omnivideobench:video_284",
+      "reason": "DEFER_ACCESS_BLOCKED_HTTP_403_UNVERIFIED_NOT_AUDIO_NEGATIVE",
+      "audio_status": "ACCESS_BLOCKED_UNVERIFIED_NOT_AUDIO_NEGATIVE",
+      "duration_gate": "UNRESOLVED",
+      "audio_track_declared": null,
+      "content_audio_semantics_verified": false,
+      "exact_duration_s": null,
+      "access_authorized": false,
+      "full_acquisition_authorized": false
+    },
+    {
+      "candidate_id": "omni-video_617",
+      "canonical_item_id": "omnivideobench:video_617",
+      "reason": "DEFER_ACCESS_BLOCKED_HTTP_403_UNVERIFIED_NOT_AUDIO_NEGATIVE",
+      "audio_status": "ACCESS_BLOCKED_UNVERIFIED_NOT_AUDIO_NEGATIVE",
+      "duration_gate": "UNRESOLVED",
+      "audio_track_declared": null,
+      "content_audio_semantics_verified": false,
+      "exact_duration_s": null,
+      "access_authorized": false,
+      "full_acquisition_authorized": false
+    },
+    {
+      "candidate_id": "omni-video_611",
+      "canonical_item_id": "omnivideobench:video_611",
+      "reason": "DEFER_ACCESS_BLOCKED_HTTP_403_UNVERIFIED_NOT_AUDIO_NEGATIVE",
+      "audio_status": "ACCESS_BLOCKED_UNVERIFIED_NOT_AUDIO_NEGATIVE",
+      "duration_gate": "UNRESOLVED",
+      "audio_track_declared": null,
+      "content_audio_semantics_verified": false,
+      "exact_duration_s": null,
+      "access_authorized": false,
+      "full_acquisition_authorized": false
+    },
+    {
+      "candidate_id": "lvb-alt-ccp-003",
+      "canonical_item_id": "longvideobench:-7wwfGJXEZg",
+      "reason": "REJECT_CURRENT_RENDITION_DEFER_ALTERNATE_UNTIL_LOCATED",
+      "audio_status": "VERIFIED_ABSENT_CURRENT_RENDITION_ALTERNATE_NOT_LOCATED",
+      "duration_gate": "PASS"
+    },
+    {
+      "candidate_id": "lvb-alt-ccp-008",
+      "canonical_item_id": "longvideobench:-PgbM2MhcYQ",
+      "reason": "REJECT_CURRENT_RENDITION_DEFER_ALTERNATE_UNTIL_LOCATED",
+      "audio_status": "VERIFIED_ABSENT_CURRENT_RENDITION_ALTERNATE_NOT_LOCATED",
+      "duration_gate": "PASS"
+    },
+    {
+      "candidate_id": "lvb-alt-ccp-009",
+      "canonical_item_id": "longvideobench:-eRimFrm6kQ",
+      "reason": "REJECT_CURRENT_RENDITION_DEFER_ALTERNATE_UNTIL_LOCATED",
+      "audio_status": "VERIFIED_ABSENT_CURRENT_RENDITION_ALTERNATE_NOT_LOCATED",
+      "duration_gate": "PASS"
+    },
+    {
+      "candidate_id": "lvb-alt-ccp-011",
+      "canonical_item_id": "longvideobench:H5vpBCLo74U",
+      "reason": "REJECT_CURRENT_RENDITION_DEFER_ALTERNATE_UNTIL_LOCATED",
+      "audio_status": "VERIFIED_ABSENT_CURRENT_RENDITION_ALTERNATE_NOT_LOCATED",
+      "duration_gate": "PASS"
+    },
+    {
+      "candidate_id": "lvb-alt-ccp-012",
+      "canonical_item_id": "longvideobench:TMe7oXMJoSM",
+      "reason": "REJECT_CURRENT_RENDITION_DEFER_ALTERNATE_UNTIL_LOCATED",
+      "audio_status": "VERIFIED_ABSENT_CURRENT_RENDITION_ALTERNATE_NOT_LOCATED",
+      "duration_gate": "PASS"
+    }
+  ],
+  "live_precheck_status": "PARTIAL",
+  "live_precheck_complete": false,
+  "live_evidence_path": "data/rehearsal_plan/audio_asset_recon_live_evidence.json",
+  "stream_preflight_status": "EXECUTED_2026-09-09_FAIL_CLOSED",
+  "stream_preflight_evidence_path": "data/acquisition_preflight/hf_audio_stream_preflight_result.json",
+  "stream_preflight_audit_path": "docs/review/hf_audio_stream_preflight_audit.md",
+  "stream_preflight_summary": {
+    "complete_media_downloaded": false,
+    "full_acquisition_authorized": [],
+    "long_video_pilot_core_eligible": [],
+    "flare_declared_audio_duration_fail": [
+      "ccp-005",
+      "ccp-006"
+    ],
+    "omni_access_blocked_unverified": [
+      "omni-video_284",
+      "omni-video_617",
+      "omni-video_611"
+    ]
+  }
+}

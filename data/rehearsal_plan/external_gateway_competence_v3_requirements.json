@@ -1,0 +1,238 @@
+{
+  "schema_version": "av-trace.external-gateway-competence-v3-requirements/1.0",
+  "artifact_id": "external-gateway-competence-v3-requirements-20261012",
+  "date": "2026-10-12",
+  "decision_token": "EXTERNAL_GATEWAY_COMPETENCE_V1_V2_PERMANENT_NO_GO_V3_REQUIRED",
+  "binding_disposition": {
+    "v1": {
+      "execution": "PERMANENT_NO_GO",
+      "historical_evidence_only": true,
+      "repair_or_rearm_forbidden": true
+    },
+    "v2": {
+      "execution": "PERMANENT_NO_GO",
+      "historical_evidence_only": true,
+      "repair_or_rearm_forbidden": true
+    },
+    "forbidden_claim_uses": [
+      "competence",
+      "Gate-C",
+      "H2",
+      "scientific",
+      "benchmark",
+      "model_capability"
+    ],
+    "v3_required_for_any_future_external_gateway_competence_evaluation": true
+  },
+  "v3_scope": {
+    "prospective_only": true,
+    "new_construction_required": true,
+    "v1_or_v2_patch_not_eligible": true,
+    "public_fictional_technical_only": true,
+    "scientific_claim_supported": false,
+    "h2_claim_supported": false,
+    "audiovisual_claim_supported": false,
+    "standalone_gate_c_claim_supported": false,
+    "scientific_execution_authorized": false
+  },
+  "requirements": {
+    "independent_construction_and_nonpublic_entropy": {
+      "mandatory": true,
+      "constructor_independent_of": [
+        "model",
+        "gateway",
+        "runner",
+        "suite_authors",
+        "public_repository"
+      ],
+      "entropy_independently_held": true,
+      "entropy_nonpublic_until_irrevocable_evaluation_consumption": true,
+      "public_seed_or_deterministic_public_regeneration_forbidden": true,
+      "labels_and_canary_not_reproducible_from": [
+        "public_code",
+        "public_seeds",
+        "public_artifacts",
+        "commit_history",
+        "deterministic_generation_logic"
+      ],
+      "fail_closed_on_violation": true
+    },
+    "authenticated_private_manifest": {
+      "mandatory": true,
+      "created_and_authenticated_by_independent_evaluator": true,
+      "authentication_key_outside_runner_and_repository_trust_domain": true,
+      "must_bind": [
+        "public_packet_hashes",
+        "private_label_hashes",
+        "private_canary_commitment",
+        "case_inventory_and_factor_order",
+        "scoring_policy_and_thresholds",
+        "comparator_inventory_hashes",
+        "runner_artifact_trust_anchor",
+        "model_provider_runtime_binding",
+        "retry_policy_and_retry_specific_prompt_hashes",
+        "ledger_namespace_and_permissions"
+      ],
+      "self_asserted_or_unsigned_manifest_forbidden": true,
+      "fail_closed_on_authentication_or_binding_failure": true
+    },
+    "independent_runner_artifact_trust_anchor": {
+      "mandatory": true,
+      "runner_independently_built_or_attested": true,
+      "runner_artifact_hash_pinned_in_private_manifest": true,
+      "renderer_and_evaluator_artifact_hashes_pinned": true,
+      "dependencies_and_configuration_pinned": true,
+      "provider_model_runtime_identity_pinned": true,
+      "repository_worktree_not_a_sufficient_trust_anchor": true,
+      "fail_closed_on_any_drift": true
+    },
+    "fixed_runner_and_retry_prompt_provenance": {
+      "minimum_substantive_case_count": 48,
+      "case_inventory_fixed_before_execution": true,
+      "factor_order_fixed_before_execution": true,
+      "runner_contract_fixed_before_execution": true,
+      "raw_prompt_and_output_hashes_required": true,
+      "prompt_byte_counts_required": true,
+      "initial_attempt_prompt_hashes_precommitted": true,
+      "schema_only_retry_maximum_per_factor": 1,
+      "retry_specific_prompt_hashes_precommitted": true,
+      "retry_hash_must_be_distinct_and_attempt_index_specific": true,
+      "semantic_retries_forbidden": true,
+      "semantic_repairs_forbidden": true,
+      "substitution_forbidden": true,
+      "fallback_forbidden": true,
+      "voting_or_best_of_n_forbidden": true,
+      "fail_closed_on_missing_or_mismatched_attempt_provenance": true
+    },
+    "strict_scoring_semantics": {
+      "unsupported_required_claims_max": 0,
+      "missing_required_claims_max": 0,
+      "wrong_citations_max": 0,
+      "unobserved_citations_max": 0,
+      "contradictory_claims_or_answers_max": 0,
+      "extra_registered_claims_max": 0,
+      "malformed_case_projections_max": 0,
+      "nonempty_abstention_answers_max": 0,
+      "incoherent_or_overinclusive_diagnoses_max": 0,
+      "wrong_citation_definition_includes": [
+        "citation_not_authorized_for_claim",
+        "observed_but_wrong_citation",
+        "citation_order_or_multiplicity_mismatch_when_frozen_as_semantic"
+      ],
+      "substring_presence_never_sufficient": true,
+      "unsupported_wrong_citation_and_answer_errors_counted_separately": true,
+      "evaluator_side_completion_or_target_substitution_forbidden": true,
+      "any_zero_tolerance_violation_fails_run": true
+    },
+    "pinned_comparator_inventory_and_supplemental_audits": {
+      "mandatory": true,
+      "inventory_fixed_and_authenticated_before_execution": true,
+      "inventory_must_include": [
+        "all_prior_public_and_private_suite lineages available to evaluator",
+        "development_packets",
+        "rendered_prompts",
+        "parser_and_scoring_fixtures",
+        "examples_and_documentation",
+        "tests",
+        "reports_and_results",
+        "repository_commit_history",
+        "known_prior_model_outputs"
+      ],
+      "required_primary_checks": [
+        "exact_normalized_text_overlap",
+        "exact_canonical_object_overlap",
+        "exact_rendered_prompt_hash_overlap",
+        "near_question_overlap",
+        "near_rendered_prompt_overlap"
+      ],
+      "supplemental_independent_audits_required": [
+        "leakage_audit",
+        "memorization_or_template_recovery_audit",
+        "public_only_target_recovery_attack",
+        "cross_case_state_reuse_attack"
+      ],
+      "supplemental_audits_may_invalidate_run": true,
+      "supplemental_audits_may_relax_pinned_checks": false,
+      "fail_closed_on_inventory_drift_or_unresolved_overlap": true
+    },
+    "authenticated_one_shot_ledger": {
+      "mandatory": true,
+      "namespace_fixed_and_authenticated_before_execution": true,
+      "namespace_unique_to_suite_model_provider_runtime_and_attempt": true,
+      "evaluator_controlled_ownership": true,
+      "least_privilege_permissions_required": true,
+      "suite_author_model_gateway_and_runner_cannot_reset_or_rearm": true,
+      "atomic_events": [
+        "creation",
+        "arming",
+        "run_start",
+        "retry_consumption",
+        "submission",
+        "evaluation",
+        "consumption",
+        "receipt_creation"
+      ],
+      "append_only_or_tamper_evident_history_required": true,
+      "authenticated_receipts_required": true,
+      "replay_and_namespace_substitution_forbidden": true,
+      "maximum_full_suite_runs": 1,
+      "fail_closed_on_permission_identity_state_or_receipt_failure": true
+    },
+    "transport_smoke_gate": {
+      "mandatory_before_suite_execution": true,
+      "exact_pinned_model_provider_runtime_route_required": true,
+      "independent_adjudication_required": true,
+      "required_decision": "READY",
+      "must_precede": [
+        "competence_ledger_arming",
+        "suite_packet_rendering",
+        "suite_gateway_submission"
+      ],
+      "blocking_states": [
+        "REPAIR",
+        "NO_GO",
+        "timeout",
+        "empty_model_output",
+        "partial_provenance",
+        "model_or_route_substitution"
+      ],
+      "smoke_is_competence_evidence": false
+    }
+  },
+  "observed_transport_facts": [
+    {
+      "model_slug": "gpt-6-astra",
+      "display_name": "GPT-6-Astra",
+      "report_path": "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task202-gpt6-astra-final/task201-20261012T025000Z/run_report.json",
+      "report_sha256": "d304ef9a746be0f948dd519a048f3a52b7364de786dad18323584de12229fafd",
+      "decision": "EXTERNAL_GATEWAY_STRONG_AGENT_SMOKE_REPAIR",
+      "factor_attempts": 7,
+      "valid_factors": 0,
+      "canonical_outputs": 0,
+      "raw_model_outputs": 0,
+      "competence_metric_computed": false,
+      "competence_evidence": false
+    },
+    {
+      "model_slug": "deepseek-v4-pro-ioa",
+      "display_name": "DeepSeek V4 Pro",
+      "report_path": "data/rehearsal_plan/external_gateway_strong_agent_smoke_run_v1/task205-deepseek-v4-pro-independent/task201-20261012T071411Z/run_report.json",
+      "report_sha256": "1bf001112bed2c37a801d9c68c332043b97aec48e0299d314f5c7f19ee199b2a",
+      "decision": "EXTERNAL_GATEWAY_STRONG_AGENT_SMOKE_REPAIR",
+      "factor_attempts": 1,
+      "valid_factors": 0,
+      "canonical_outputs": 0,
+      "raw_model_outputs": 0,
+      "competence_metric_computed": false,
+      "competence_evidence": false
+    }
+  ],
+  "current_execution_state": {
+    "v1_execution_authorized": false,
+    "v2_execution_authorized": false,
+    "v3_execution_authorized": false,
+    "transport_ready_observed": false,
+    "gateway_or_model_calls_for_this_disposition": 0,
+    "reason": "V1 and v2 are permanently ineligible; no v3 satisfying these requirements exists, and observed exact-route smoke decisions are REPAIR rather than READY."
+  }
+}

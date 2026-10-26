@@ -1,0 +1,362 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 4.0,
+    "total_steps": 3
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f01_visual_order.clean",
+    "family_id": "syn_f01_visual_order",
+    "protocol_version": "0.2.0",
+    "question": "Which shape appeared first, and which shape appeared later?",
+    "state_role": "CLEAN",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 240.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "event_detection",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_green_circle.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 10.0,
+        "cost_used_total": 2.0,
+        "episode_id": "syn_f01_visual_order.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "response_hash": "sha256:c419bba0b0398d3f472eed5c0b91c844c520579a922df24aa7fc8ff393b5b4cf",
+        "results": [
+          {
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28",
+            "payload": {
+              "_route_refs": [
+                "sha256:bce6cd915dda17a06f1bc59e17bda959b9f983b4bd7c6f9946ddde668ed0df67"
+              ],
+              "description": "GREEN CIRCLE",
+              "inspection": {
+                "include_audio": false,
+                "include_video": true,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 182.0,
+                  "start_s": 176.0
+                }
+              }
+            },
+            "payload_hash": "sha256:077c1801f0a9fe9a830c762c0da91b1a07eebb59b85c4791100700361147df32",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 0,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": false,
+            "include_video": true,
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "event_detection",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.97
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s1_blue_triangle.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 8.0,
+        "cost_used_total": 4.0,
+        "episode_id": "syn_f01_visual_order.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "response_hash": "sha256:0ca45ca4780bcb89178d9d994aa6b005458ef6f4055585dc44e629b9c6b6ff77",
+        "results": [
+          {
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7",
+            "payload": {
+              "_route_refs": [
+                "sha256:109e1653caa9e06948d638588e66c1bc72888b5db4fffa64b598515766dd4c7e"
+              ],
+              "description": "BLUE TRIANGLE",
+              "inspection": {
+                "include_audio": false,
+                "include_video": true,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 30.0,
+                  "start_s": 24.0
+                }
+              }
+            },
+            "payload_hash": "sha256:3e9db15fddaa21979e6eff180233acfd3d5c1aa40a992ec2d42531346a60176d",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 1,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "answer",
+            "claims": [
+              {
+                "citations": [
+                  {
+                    "interval": {
+                      "end_s": 182.0,
+                      "start_s": 176.0
+                    },
+                    "modalities": [
+                      "vision"
+                    ],
+                    "observation_id": "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+                  },
+                  {
+                    "interval": {
+                      "end_s": 30.0,
+                      "start_s": 24.0
+                    },
+                    "modalities": [
+                      "vision"
+                    ],
+                    "observation_id": "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+                  }
+                ],
+                "claim_id": "validator.claim.0",
+                "confidence": 0.99,
+                "registered_claim_id": "claim_syn_f01_visual_order",
+                "text": "The blue triangle appeared first; the green circle appeared later."
+              }
+            ],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.01,
+                "evidence_in_source_but_inaccessible": 0.01,
+                "not_missing": 0.96,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.01
+              },
+              "description": "An accepted minimal sufficient evidence set was acquired.",
+              "hop_types": [],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.02,
+                "vision": 0.02
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "The blue triangle appeared first; the green circle appeared later.",
+            "p_sufficient": 0.98,
+            "termination_reason": "sufficient_evidence",
+            "verdict": "sufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.01,
+            "evidence_in_source_but_inaccessible": 0.01,
+            "not_missing": 0.96,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.01
+          },
+          "next_action_rationale": "All required claims have an accepted citable SES.",
+          "p_sufficient": 0.98,
+          "verdict": "sufficient"
+        },
+        "episode_id": "syn_f01_visual_order.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:47Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "answer",
+    "claims": [
+      {
+        "citations": [
+          {
+            "interval": {
+              "end_s": 182.0,
+              "start_s": 176.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.c950be63e3ddc176c965010572cdcfcac9b128808c49d49883b6e71329932f28"
+          },
+          {
+            "interval": {
+              "end_s": 30.0,
+              "start_s": 24.0
+            },
+            "modalities": [
+              "vision"
+            ],
+            "observation_id": "obs.clip.a786fb1f6fb36dff61b69033085d9ca1fe532616513ed1dd61d39c0fc767bea7"
+          }
+        ],
+        "claim_id": "validator.claim.0",
+        "confidence": 0.99,
+        "registered_claim_id": "claim_syn_f01_visual_order",
+        "text": "The blue triangle appeared first; the green circle appeared later."
+      }
+    ],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.01,
+        "evidence_in_source_but_inaccessible": 0.01,
+        "not_missing": 0.96,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.01
+      },
+      "description": "An accepted minimal sufficient evidence set was acquired.",
+      "hop_types": [],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.02,
+        "vision": 0.02
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "The blue triangle appeared first; the green circle appeared later.",
+    "p_sufficient": 0.98,
+    "termination_reason": "sufficient_evidence",
+    "verdict": "sufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:55539774ce4b86d48cfc8572fc4abed062df32663bb9c7ff75a19f65e404dcc4",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:3e31c1561a8e79808f7e9fc53532b91b24de056d21d80d3eeac0db7c0ff88adc"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f01_visual_order.clean"
+}

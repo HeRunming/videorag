@@ -1,0 +1,60 @@
+{
+  "blocking_intervention_id": "block_syn_f03_bell_then_square",
+  "exact_inverse": true,
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f03_bell_then_square",
+  "pretrigger_state_equal": true,
+  "restoration_intervention_id": "restore_syn_f03_bell_then_square",
+  "restoration_successful": true,
+  "restored_proof_id": "restored-proof.syn_f03_bell_then_square",
+  "schema_version": "1.0.0",
+  "terminal_accessible_evidence_ids": [
+    "s2_bell",
+    "s2_red_square"
+  ],
+  "terminal_reachable_ses_ids": [
+    "ses_syn_f03_bell_then_square_1"
+  ],
+  "trigger_type": "get_channel_status",
+  "trigger_value": null,
+  "validator_results": [
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f03_bell_then_square_1"
+      ],
+      "observed_evidence_ids": [
+        "s2_bell",
+        "s2_red_square"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 6.25,
+      "total_steps": 6,
+      "trajectory_hash": "sha256:ad1a31401722ddbc2585d886f0ea7c9f03e55df5ace22c1d35a854d782383d9f",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f03_bell_then_square.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f03_bell_then_square"
+      ],
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f03_bell_then_square_1"
+      ],
+      "observed_evidence_ids": [
+        "s2_bell",
+        "s2_red_square"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 4.25,
+      "total_steps": 4,
+      "trajectory_hash": "sha256:3d026d7528db6f0968271e6d01d6a18011a07b59924312a4a0e740a9ff3ee361",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f03_bell_then_square.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f03_bell_then_square"
+      ],
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

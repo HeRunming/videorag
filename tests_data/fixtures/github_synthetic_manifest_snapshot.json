@@ -1,0 +1,19 @@
+{
+  "fixture_kind": "synthetic_behavioral",
+  "synthetic_values": true,
+  "provider": "github",
+  "repository": {
+    "full_name": "official/NASA-media-manifest",
+    "canonical_url": "https://github.com/official/NASA-media-manifest",
+    "commit": "abcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "publisher": "NASA",
+    "technical_access_status": "public_ungated",
+    "media_rights_status": "unknown_hold",
+    "license_resolution_status": "unresolved",
+    "license_evidence": []
+  },
+  "card": {
+    "title": "Synthetic provider-adapter fixture"
+  },
+  "rows": []
+}

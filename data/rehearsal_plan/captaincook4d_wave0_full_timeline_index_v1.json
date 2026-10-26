@@ -1,0 +1,357 @@
+{
+  "schema_version": "av-trace.captaincook4d-wave0-full-timeline-index-plan/1.0",
+  "plan_id": "AV-TRACE-CAPTAINCOOK4D-WAVE0-FULL-TIMELINE-INDEX-V1",
+  "created_date": "2026-10-10",
+  "task_id": 189,
+  "execution_authorization": "TASK189_FULL_EXECUTION_AUTHORIZED",
+  "current_execution_decision": "CAPTAINCOOK4D_WAVE0_FULL_TIMELINE_READY",
+  "scope": {
+    "source_count": 3,
+    "stage": "RESTRICTED_CAPTAINCOOK4D_WAVE0_INDEX_CONSTRUCTION_ONLY",
+    "output_root": "data/restricted/captaincook4d_wave0_index_v1",
+    "allowed_restricted_source_root": "data/restricted/captaincook4d_wave0_sources_v3",
+    "acquisition_manifest_path": "data/restricted/captaincook4d_wave0_sources_v3/manifests/captaincook4d_wave0_acquisition_manifest.json",
+    "acquisition_manifest_sha256": "ee50c9579b77f7ee4f45753adad1d5d1e09569c6b1be5308a82ccbcc9a05934a",
+    "acquisition_decision_required": "CAPTAINCOOK4D_WAVE0_ACQUISITION_READY",
+    "exact_sha256_required_for_every_source": true,
+    "active_staging_tree_allowed": false,
+    "required_non_claims": [
+      "No annotation file was accessed or produced.",
+      "No human semantic review or decision was performed.",
+      "No H tier or modality-necessity label was assigned.",
+      "No public release or redistribution is authorized."
+    ],
+    "allowed_stages": [
+      "Task188 acquisition-manifest verification",
+      "exact source and source-manifest identity verification",
+      "full-timeline segmentation",
+      "speech observation and indexing",
+      "ambient observation and indexing",
+      "vision routing observation and indexing",
+      "vision semantic observation and indexing",
+      "checkpointing",
+      "index freeze",
+      "independent deterministic-resume audit"
+    ],
+    "forbidden_downstream_stages": [
+      "semantic annotations",
+      "candidate families",
+      "family migration",
+      "hard negatives",
+      "interventions",
+      "trajectories",
+      "agent or controller execution",
+      "evaluation",
+      "metric reporting",
+      "media derivatives",
+      "public release or redistribution"
+    ]
+  },
+  "authoritative_input_bindings": {
+    "task153_result": {
+      "path": "orchestration/results/153_semantic_av_source_prescreen_tooling.txt",
+      "sha256": "92f5b4f0510e7cd42408766f25757b3d9211456c0447c1de0721fc1771095fb6",
+      "restricted": false
+    },
+    "task162_result": {
+      "path": "orchestration/results/162_epic_wave1_exact_acquisition.txt",
+      "sha256": "0ef2793f21665051709e660fcf231aeead7e40a09d1269f77b7eca34cc5c62bb",
+      "restricted": false
+    },
+    "task163_result": {
+      "path": "orchestration/results/163_epic_wave1_index_implementation.txt",
+      "sha256": "34c358257a6fbd8e3282e5292c6f36a213e6f7a6e0dc0415bea97277ccff7a36",
+      "restricted": false
+    },
+    "task164_result": {
+      "path": "orchestration/results/164_epic_wave1_full_timeline_build.txt",
+      "sha256": "2490f2fded6601238bd823d00df619550165297c68093a678e3a231016bc7136",
+      "restricted": false
+    },
+    "task165_result": {
+      "path": "orchestration/results/165_epic_family_mining_implementation.txt",
+      "sha256": "0594e324cda5edf21ec26c0717c717ee52811865655b949770faa1d44c5d3e28",
+      "restricted": false
+    },
+    "task188_result": {
+      "path": "orchestration/results/188_captaincook4d_wave0_acquisition_v3.txt",
+      "sha256": "4679404b72373192c59943652782d912bf0fbf05c8193017e8c8aee81a5241d6",
+      "restricted": false
+    },
+    "task188_frozen_selection": {
+      "path": "data/restricted/captaincook4d_wave0_sources_v3/manifests/task188_frozen_selection.json",
+      "sha256": "e75fffa86a63b137c09bf8090a1ac187b42b9b37fd765e04f5a31db6074b2af0",
+      "restricted": true
+    },
+    "task188_technical_audit": {
+      "path": "data/restricted/captaincook4d_wave0_sources_v3/logs/task188_technical_audit.json",
+      "sha256": "6c95c4f02118b536eef1fcaac691709e876cddd3b94d8326172df42c88f28e4c",
+      "restricted": true
+    },
+    "task188_final_hashes": {
+      "path": "data/restricted/captaincook4d_wave0_sources_v3/logs/task188_final_hashes.json",
+      "sha256": "3d8ad6e541b8c8764a41f035bc9b58e0c2a557ce2e73e814d8103e5be9117b7b",
+      "restricted": true
+    },
+    "task153_prescreen_inventory": {
+      "path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+      "sha256": "d751ab4ab429a1a15813e1224e42657586ba7ae6d484ea28a3b798b5f2b72045",
+      "restricted": true
+    },
+    "task153_prescreen_plan": {
+      "path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+      "sha256": "856dd24e90d9d7ed1b9087f98cb44abd58293aeb15c3bbe4cb89ef7c564a914e",
+      "restricted": true
+    }
+  },
+  "sources": [
+    {
+      "source_id": "16_20",
+      "source_group_id": "cc4d_p01_e08",
+      "person_id": 1,
+      "environment_id": 8,
+      "dataset": "CaptainCook4D",
+      "stream": "gopro_360p",
+      "official_duration_seconds": 1930.9,
+      "duration_tolerance_seconds": 0.01,
+      "media_path": "data/restricted/captaincook4d_wave0_sources_v3/16_20_360p.mp4",
+      "media_bytes": 230486870,
+      "media_sha256": "8082945db8c24cb40e3dd76eafc11cb2b3df5a0b8bdb2e5c22e1ada98ae82f12",
+      "media_md5": "74defe8b6b9eca32e05a386cb31296ea",
+      "source_manifest_path": "data/restricted/captaincook4d_wave0_sources_v3/manifests/16_20.source_manifest.json",
+      "source_manifest_sha256": "6c809f2d76288b14571157b505c3399f2011a264017cded21bb23011376668a3",
+      "expected_counts": {
+        "base_cells": 483,
+        "fine_windows": 482,
+        "context_windows": 120,
+        "temporal_segments": 602,
+        "whisper_chunks": 65,
+        "checkpoints": 4
+      }
+    },
+    {
+      "source_id": "15_29",
+      "source_group_id": "cc4d_p02_e02",
+      "person_id": 2,
+      "environment_id": 2,
+      "dataset": "CaptainCook4D",
+      "stream": "gopro_360p",
+      "official_duration_seconds": 1292.82,
+      "duration_tolerance_seconds": 0.01,
+      "media_path": "data/restricted/captaincook4d_wave0_sources_v3/15_29_360p.mp4",
+      "media_bytes": 181454428,
+      "media_sha256": "f1f77f09d6ffd35531f4d23fb3d4bfe3eb350e71a7240ced9ac9b4f28b8b048d",
+      "media_md5": "22bede9e345d59406959a98f012393c3",
+      "source_manifest_path": "data/restricted/captaincook4d_wave0_sources_v3/manifests/15_29.source_manifest.json",
+      "source_manifest_sha256": "a2548e54874807b83815bd81db673e7d8ce678d66572f4895529df831f0b0eff",
+      "expected_counts": {
+        "base_cells": 324,
+        "fine_windows": 323,
+        "context_windows": 80,
+        "temporal_segments": 403,
+        "whisper_chunks": 44,
+        "checkpoints": 4
+      }
+    },
+    {
+      "source_id": "26_22",
+      "source_group_id": "cc4d_p03_e03",
+      "person_id": 3,
+      "environment_id": 3,
+      "dataset": "CaptainCook4D",
+      "stream": "gopro_360p",
+      "official_duration_seconds": 1324.22,
+      "duration_tolerance_seconds": 0.01,
+      "media_path": "data/restricted/captaincook4d_wave0_sources_v3/26_22_360p.mp4",
+      "media_bytes": 131633528,
+      "media_sha256": "3c4b69b4ad37c4318b24d034cf0fdd3fa2eb96b3e85136001b0ea531b5abbd7b",
+      "media_md5": "ab63a75fe9bc333c1a87515ede58d0a2",
+      "source_manifest_path": "data/restricted/captaincook4d_wave0_sources_v3/manifests/26_22.source_manifest.json",
+      "source_manifest_sha256": "fd5ad5f74f7716a89b3925819fe8b2c425513997b4fecd2d570855984f1d1bb3",
+      "expected_counts": {
+        "base_cells": 332,
+        "fine_windows": 331,
+        "context_windows": 82,
+        "temporal_segments": 413,
+        "whisper_chunks": 45,
+        "checkpoints": 4
+      }
+    }
+  ],
+  "totals": {
+    "duration_seconds": 4547.9400000000005,
+    "duration_hours": 1.2633166666666668,
+    "primary_media_bytes": 543574826,
+    "base_cells": 1139,
+    "fine_windows": 1136,
+    "context_windows": 282,
+    "temporal_segments": 1418,
+    "whisper_chunks": 154,
+    "ast_fine_calls": 1136,
+    "clip_frame_forwards": 1139,
+    "checkpoint_count": 12,
+    "maximum_modality_segment_records": 4254
+  },
+  "segmentation": {
+    "time_unit": "integer_microseconds_in_storage",
+    "base_lattice": {
+      "cell_length_seconds": 4,
+      "stride_seconds": 4,
+      "terminal_rule": "retain the final positive sub-four-second cell"
+    },
+    "fine": {
+      "nominal_length_seconds": 8,
+      "stride_seconds": 4,
+      "admission_rule": "duration-start >= 4",
+      "end_rule": "min(start+8, duration)"
+    },
+    "context": {
+      "nominal_length_seconds": 32,
+      "stride_seconds": 16,
+      "admission_rule": "duration-start >= 16",
+      "end_rule": "min(start+32, duration)"
+    },
+    "speech": {
+      "chunk_length_seconds": 30,
+      "stride_seconds": 30,
+      "terminal_rule": "retain the final positive partial chunk"
+    },
+    "vision_frame_rule": "one frame per base cell at min(cell_start+2 seconds, duration-one-microsecond)"
+  },
+  "model_snapshots": {
+    "speech": {
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "snapshot_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102",
+      "snapshot_hash": "sha256:1e098354f3cbd9f339ef8fbdcc0e82ff238786bffa25794493ebe32830f4518a",
+      "weights_path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/model.safetensors",
+      "weights_sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad",
+      "chunk_length_seconds": 30,
+      "sampling_rate_hz": 16000,
+      "local_files_only": true
+    },
+    "ambient": {
+      "model_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "snapshot_path": "data/restricted/noaa01/models/ast-audioset-f826b80",
+      "snapshot_hash": "sha256:acb9247d5f2548c121e7fd213347586e1b781fd8dc329e27505dd269a69cccbc",
+      "weights_path": "data/restricted/noaa01/models/ast-audioset-f826b80/model.safetensors",
+      "weights_sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+      "inference_unit": "fine_window",
+      "sampling_rate_hz": 16000,
+      "top_k_labels": 15,
+      "local_files_only": true
+    },
+    "vision_semantic": {
+      "model_id": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "snapshot_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf",
+      "snapshot_hash": "sha256:2c29598276753a41d293ca65ef8fe60287ed62d8cd94b0ee77ec38ecb41a20f5",
+      "weights_path": "data/restricted/noaa01/models/clip-vit-base-patch32-3d74acf/pytorch_model.bin",
+      "weights_sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+      "dimension": 512,
+      "local_files_only": true,
+      "redistribution_authorized": false
+    },
+    "vision_routing": {
+      "model_id": "opencv-routing/1.0",
+      "revision": "2.0",
+      "haar_snapshot_path": "data/restricted/noaa01/models/opencv-haarcascade-frontalface-default.xml",
+      "haar_snapshot_hash": "sha256:a9ee3c8bf4ab44314001ffa728bbfc388fcc579790b8b2909d71dd80306d2f40",
+      "haar_sha256": "0f7d4527844eb514d4a4948e822da90fbb16a34a0bbbbc6adc6498747a5aafb0"
+    }
+  },
+  "index_policy": {
+    "inventory_rule": "inventory every modality/segment and retain explicit non-searchable reasons",
+    "speech": {
+      "source": "Whisper tiny.en only",
+      "ranker": "bm25-okapi/1.0",
+      "human_or_dataset_annotations_searchable": false
+    },
+    "ambient": {
+      "source": "AST fine-window observations",
+      "ranker": "weighted-sparse-cosine/1.0",
+      "claim_boundary": "provisional model observation, not human event gold"
+    },
+    "vision": {
+      "source": "one CLIP embedding and OpenCV routing observation per four-second cell",
+      "ranker": "clip-text-image-cosine/1.0",
+      "generated_captions_searchable": false
+    },
+    "sealed_inputs": [
+      "CaptainCook4D action annotations",
+      "step annotations",
+      "error annotations",
+      "recipe labels",
+      "benchmark splits and outcomes",
+      "label-derived features",
+      "Task153 human forms or semantic decisions"
+    ],
+    "rights_metadata_searchable": false,
+    "evaluator_annotations_searchable": false
+  },
+  "checkpointing": {
+    "layers_per_source": [
+      "speech",
+      "ambient",
+      "vision_routing",
+      "vision_clip"
+    ],
+    "expected_checkpoint_count": 12,
+    "key": "source_sha256/layer_version/scale/shard_index/config_hash",
+    "commit": "temporary file then fsync hash verification and atomic rename",
+    "reuse": "only exact key, record count, byte count, payload hash, source hash, model binding, and permissions match",
+    "partial_policy": "reject and replace an invalid checkpoint",
+    "decoded_media_allowed": false
+  },
+  "execution_modes": {
+    "dry_preflight": {
+      "default": true,
+      "media_decode": false,
+      "artifact_write": false,
+      "requires_acquisition_ready": true
+    },
+    "smoke": {
+      "default_seconds": 32,
+      "output_root_default": "data/restricted/captaincook4d_wave0_index_v1_smoke",
+      "requires_acquisition_ready": true,
+      "requires_exact_sha256": true
+    },
+    "full": {
+      "output_root": "data/restricted/captaincook4d_wave0_index_v1",
+      "requires_acquisition_ready": true,
+      "requires_exact_sha256": true,
+      "authorized_by_task189": true
+    }
+  },
+  "permissions": {
+    "output_directories": "0700",
+    "output_files": "0600",
+    "source_directory": "0700",
+    "source_media": "0600",
+    "source_manifests": "0600",
+    "symlinks_allowed": false
+  },
+  "storage_caps": {
+    "derived_artifacts_soft_cap_mib": 256,
+    "derived_artifacts_hard_fail_cap_mib": 512,
+    "decoded_media_persistence_allowed": false,
+    "source_media_and_model_snapshots_excluded_from_derived_cap": true
+  },
+  "verification": {
+    "script": "scripts/verify_captaincook4d_wave0_full_timeline.py",
+    "checks": [
+      "Task188 decision and exact acquisition-manifest hash binding",
+      "exact source SHA-256, MD5, bytes, duration, source-manifest hash, streams, sync, EOF, and permissions",
+      "three distinct people and environments",
+      "lattice and observation counts",
+      "checkpoint keys, payload hashes, file hashes, sizes, cardinalities, source bindings, and permissions",
+      "local frozen model inventories and pins",
+      "top-level artifact self-hashes and build artifact hashes",
+      "no absolute or staging paths",
+      "no semantic annotations, families, interventions, trajectories, evaluation, or media derivatives",
+      "derived artifact hard cap",
+      "byte-identical deterministic resume with unchanged checkpoint mtimes"
+    ]
+  }
+}

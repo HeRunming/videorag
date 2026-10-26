@@ -1,0 +1,1250 @@
+{
+  "alias_closure_audit": {
+    "nonselected_v2_contaminated_closure_count": 0,
+    "nonselected_v2_contaminated_closures": [],
+    "selected_v3_1_contaminated_closure_count": 0,
+    "status": "CLEAR",
+    "v2_alias_graph_component_count": 163
+  },
+  "audit_id": "SOURCE_EXPOSURE_ALIAS_MANIFEST_V2_SUPPLEMENTAL_AUDIT",
+  "contamination_events": [],
+  "created_date": "2026-10-15",
+  "decision": {
+    "decision": "PASS",
+    "frozen_inputs_unchanged": true,
+    "reason": "frozen inputs are unchanged; all current post-freeze files are governance/technical artifacts; no strict exposure or selected v3.1 hit was found",
+    "selected_v3_1_hit": false
+  },
+  "final_marker": "SOURCE_EXPOSURE_ALIAS_MANIFEST_V2_SUPPLEMENTAL_AUDIT_PASS",
+  "frozen_input_integrity": {
+    "custodian_private_v3_1_sha256_matches": true,
+    "frozen_ledger_v2_sha256_matches": true,
+    "frozen_manifest_v2_sha256_matches": true,
+    "pinned_inventory": {
+      "changed_file_count": 0,
+      "missing_file_count": 0,
+      "pinned_file_count": 2143,
+      "pinned_file_hashes_unchanged": true,
+      "pinned_inventory_sha256": "361efdbd8af0c0d3cacf471d846ce551207c415ed51299b5e0f40c30875ab379",
+      "status": "UNCHANGED"
+    }
+  },
+  "ignored_governance_artifacts": [
+    {
+      "bytes": 10863,
+      "path": "data/rehearsal_plan/holoassist_exposure_supplement_v1.json",
+      "path_sha256": "3f071963b8b8d9b673cf1ac5282c8decc6790f255101ffdc76bcc154c4c9d730",
+      "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+      "sha256": "47060b97dbf80e84c9ec4c5f7db07e2e2f841269293e402954321e825c85e890"
+    },
+    {
+      "bytes": 8798,
+      "path": "data/rehearsal_plan/holoassist_neutral_lineage_preflight_v1.json",
+      "path_sha256": "a8036274e0a58d300d80eb5fedb70740d62468ab80eb00b51cb69ae67af6b370",
+      "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+      "sha256": "8f0bab442ac2f2e0c97d6aa797b42428bf09615c6a3ca52d645d858e058264cc"
+    },
+    {
+      "bytes": 1229,
+      "path": "data/rehearsal_plan/holoassist_opaque_group_commitment_v1.json",
+      "path_sha256": "a31a47a241f160b48e0ad9e0d20d0fc14442e156de10cf55822887a19e393ba1",
+      "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+      "sha256": "2b2b39da033e1b9be27901bea2a52bae5163f897844236113baed5bb4871d7ac"
+    },
+    {
+      "bytes": 27140,
+      "path": "data/rehearsal_plan/untouched_test_group_ledger_v3_1_public_commitment.json",
+      "path_sha256": "6704fb6f32d07cef32d2c868ca93f981b8b61429a117e7fa557a007a017e50f6",
+      "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+      "sha256": "0e5b98ef6ec19d8ac5124cce53035eccab3f75955f38e7fe0999ab850ef40f15"
+    },
+    {
+      "bytes": 17708,
+      "path": "data/rehearsal_plan/untouched_test_group_ledger_v3_public_commitment.json",
+      "path_sha256": "902c703a2b72e7d9ba09467f2e069c15916278647ee51feecc26a9edbd23a2a1",
+      "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+      "sha256": "ca4da76893a8bb09467fac1bf7f17e9455a5f9c721af8d6f17734003a77a022e"
+    },
+    {
+      "bytes": 25092,
+      "path": "data/restricted/holoassist_opaque_group_universe_v1.json",
+      "path_sha256": "d81d3430ff60e5730b59162a93f2741c6a280312215c6ba428f2dce7db42e804",
+      "rationale": "custodian-private source-authority governance input; comparison against itself is excluded to avoid a tautological exposure",
+      "sha256": "bfed01c6cf5d1fb6ac5befb2959dacedeba649aa0d33112338e7eb49ae4bf529"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:f0a43b8813c7a9eb",
+      "path_sha256": "f0a43b8813c7a9eb8ceeb70800e80dac3a5cd976abd6b1a58633693e574f7314",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "0308e666e97e2b207782ffc62207ccc71f94c51b4f29ec75f2edf13eb8310e9f"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:345d5b4914f99363",
+      "path_sha256": "345d5b4914f9936324af7a245df22e1b6d3aa6404b2ef47d85d17d63da022e50",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "a893212854181ae93d2e65e90ea885635b9376a7efb6b507aabb0e229df48f2f"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:7546d1ab915cb0af",
+      "path_sha256": "7546d1ab915cb0af9ef6bc520cd94be11c28a3f8fe62028025367ed0804ce897",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "0a4b678597181ba6593c6e6ef52ff92014dda901870bf9621f202e1d9c5846b1"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:d48594e31ee6a78c",
+      "path_sha256": "d48594e31ee6a78c1c350d9a144c4cd9dca3952e34768eadacfd9cd894a06d4d",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "398ef254558adff307f4c20b709d3ab78955ab30f4e3e069fbd0c755a2115041"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:27f38a0bec66997b",
+      "path_sha256": "27f38a0bec66997bcee4cf1a0890bdab336ec64d08bd54251c721022f5d40e7f",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "83488fecdcb2d6bd7b5193ab3adb7bc7eb3598639ab02defe8b4e09bbe2975be"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:454b76fc2bd5b9a4",
+      "path_sha256": "454b76fc2bd5b9a4f7a6577d40bb7f7b6ac57148449fb767d75b130b17c0f79a",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "dc2263b3812a4f33eb3ab9215f64c3dcbcbd401cc855e3d377f21bf3e13cf540"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:2f2f73e4f5c228e9",
+      "path_sha256": "2f2f73e4f5c228e977e2e60f3beb7f95ec497134078c239a7add57e24b0a12a5",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "83785183305aafa78fca4fe916ee16a431dd84c1a921c1c9971e343c9261ea68"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:004f425a66202df2",
+      "path_sha256": "004f425a66202df2562d07dcd8068e003335bb02f8d4e82035449f36312ffae0",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "6753f2409ef96d0f1e4976d02e9edbbb1b6fdf2e6df16e939df12c118b3da105"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:8108855729f7bd33",
+      "path_sha256": "8108855729f7bd33e5b9da96337a07a1371dbec0f6b73812e0a363c03499ac81",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "1ecaef267cdc49cf14ee7dbed599fabf5442fc77afacc4533b9eea7400af41c9"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:c843a7f434a89081",
+      "path_sha256": "c843a7f434a890818ee7642f1f110507daa829812d6a12663fc5f3f869b9c142",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "7c59523fa85e7517c8835f6289f03438871b3ee94f72aeb82aa1501999b1a11b"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:beb5a061844d6be0",
+      "path_sha256": "beb5a061844d6be0dd9b6285f1dd31abf58e1abba473bc0b0ab5e8a6b29ce23f",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "565297253115e20d9a6549f9646a49eda08c3fbba31be16763b1b1a3aee0ccdd"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:ecd4b717147a4245",
+      "path_sha256": "ecd4b717147a424535b53f4e7fa703be2a9ce82f15f6fdc515ee2c72e4f72bfc",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "0365f86e3254d9019f796095a87377fd1bf981081085129d61a9f350d3245cc8"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:ff2ca1c1b23b1113",
+      "path_sha256": "ff2ca1c1b23b1113580175127323f7a038b56e3aa2557e4db162b76ae29b4164",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "08b24348867406098a756cee309137b9c32d84b907812ee48bed2057c57ad169"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:94152ffc8ca0dff7",
+      "path_sha256": "94152ffc8ca0dff77d0b69b41cdbe474d8cfe9282ace9e65e5a93fcb0136cc8f",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "31bf2d6f1d659ee24e0fbc098cbf436a201fb7c2437a679da5c0368520d99a30"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:0e77db892c8c0701",
+      "path_sha256": "0e77db892c8c0701d17414d49ff6abd00935864016431fc5ff3d4834684a1d0c",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "a4007313b367210a5819c09975a3ac3ba012c0defac61fdef3f4bcba5dc86ffe"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:aae6c617810ac9c4",
+      "path_sha256": "aae6c617810ac9c43cda811cfbb5cfa03b5f7c2522d9e2790bdc27b3eaaef62e",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "ffe5dbe58dde57f38fc4cdd3c1cea94acb70d01637602905e83ceaa72a4aa378"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:f1fd0f461260bfd8",
+      "path_sha256": "f1fd0f461260bfd8796e64568b79556b3a4c3787cdc89c56bb5ecbe85d5319d8",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "6e03ef34dffeddbe5499fec35a4a5d29a1392777cca43c1ac44ab0deedac5fc8"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:6df6ce6415d4fbe7",
+      "path_sha256": "6df6ce6415d4fbe7b5435efcf1c305600d200f2b5a294322b143f082500b5b8d",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "ac7d9e677d162ac4097bd6e1c3434509d5ad66827508f288497ca733600958d2"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:31dc1ea10d4c7496",
+      "path_sha256": "31dc1ea10d4c749618e19040a8692b4685e3be2c5c8023b25031642d7f4ecbbf",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "3b62076a090837a266fbba49e7f6cba9f189e744c1bbb5ad11041dd536b43638"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:2dadebaf9f8f910f",
+      "path_sha256": "2dadebaf9f8f910f6ecbdc7de9e2d88815e1fc64a9f6d6f38f9a08cad6372072",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "bbc23a3a8a98aba86643707df23105cbcd04438e37d2fd6015d3827438ee9c4b"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:3e92c5a4f9a710a8",
+      "path_sha256": "3e92c5a4f9a710a8e526026a02ba32a1e2e5aab952b53fbe8330af088adfe09c",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "4bbe2ac0a81f20ad22f0984c2ca6a32d53d9a16c06e0adb67ab0147f1d72b998"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:6a0efb2d857d6806",
+      "path_sha256": "6a0efb2d857d6806f80389703b0548aa42a0576d08aba643d3aaa33d74b378b3",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "1dbb41f82ab16386c0714636dbb5c74615c88d4b58825d68c6e145cc355de9ec"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:efd296a1cb68e7d6",
+      "path_sha256": "efd296a1cb68e7d605917d5673faf790960f74a5fef630282d45ab762082f18e",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "ee27d51293c116917af19e0e640a7815c9e486ef2b058842e74f39ec0510c3af"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:286f5c5481ea9b6a",
+      "path_sha256": "286f5c5481ea9b6a34830566eee5a250a11f4e4476bf8effade2237bcd7406e7",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "01cb1496bbde8a0035531b26465de36d58af69fbfe64985d72b096d9670e526d"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:26b08378fdc6a6a9",
+      "path_sha256": "26b08378fdc6a6a9683ea868dac30dbe8be026a1e8dfa88015559839fdaf905c",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "6de617d7906650a01ed8c5e4acf302afca917d08cf6d2a502bf4953bda99f9c6"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:ec41650db7703972",
+      "path_sha256": "ec41650db770397284ef699a6e201b353a29ff2652dda952c7db5921d7461f7a",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "f8f5043ae0370f4cfbc59c66e2ee4d6c571e983750e439a2c14bcdf0d4972fc2"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:15f16cdfd920641a",
+      "path_sha256": "15f16cdfd920641a6b243e25c8c181e1b04c5cb06afcff236a2892914d710d78",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "b7aa0dfb4932ee9cff677c105564b3701169d11d89ceb594b736f3a6bf3e466e"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:77c03b14654d8cb4",
+      "path_sha256": "77c03b14654d8cb4308ad997365bd835180f81fbc8bea05adbf06c4f7a08c617",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "10c0a5aa5b2f9df20c80389e28e41ba4bbe834fad88e182c302b7bd9832a139d"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:b4228241fcacf1d9",
+      "path_sha256": "b4228241fcacf1d93bd1af7684a879de6740b8098f056d2a8cdcee8fbb79f310",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "c07bed15887728a9b5299720a52084c58806c797e74865b13a6002a90789cc83"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:d735318bbfb39943",
+      "path_sha256": "d735318bbfb399432d9d9006b18d30f5593dcba02318b93ba3663318bde12f92",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "6b504f7c32b2917b42d646d31abc340a2dc4ed658b33e99b4c6c6aae84756090"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:a5ee71deb61ef510",
+      "path_sha256": "a5ee71deb61ef5102433cbde032043f9e79f0afa59593e670c51f6769cd3b2e1",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "04c340b119665795f51196585341fd701b6397e95bc910dad8d82a6897c0b40f"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:6fcd9b0b98e16b3c",
+      "path_sha256": "6fcd9b0b98e16b3c52665bcd10e3ddf8af74a809f528398c00448d56c828ba6e",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "82c05ee1ab00e372d83f920d7c4180a27c1f0fd47064bc1d65c966b59445d300"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:23fb320e525aa5a3",
+      "path_sha256": "23fb320e525aa5a3fa4f5bf38dab8a10dbabe19cfb92db45565a4e58297577af",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "f1620218297ee193dda8336d09bd75f8ce5faf869980a989dbd22a72f1a7d170"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:41f5225f2639c610",
+      "path_sha256": "41f5225f2639c6103ad7ae92a54aa85b791a21307a8d27320a5c07315fdd3795",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "a50215472bba79f4d431d64ef4e05d3f82e4d6465fb8c2603a4759450834327e"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:d0c83d6c911eeba4",
+      "path_sha256": "d0c83d6c911eeba4c391b8e7e53671bcac494931082b184f329b92a3770257e0",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "0b74f2135ca9d2caa26324d6522c5dca572ad46ff19d26ba528b8943960c70bb"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:c5ea5242586429cb",
+      "path_sha256": "c5ea5242586429cb3871f6be1c9cb0f3c997415a09aebd3a2a2cc5c2e029c103",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "828996ff1b7f89aa44ca2ba8cca3c062f5b55c0d4af0f4b4de5a6f66449dd746"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:b4a82dfba2536fb2",
+      "path_sha256": "b4a82dfba2536fb25e1d5822cf0dff248cec50375e3bf88879d980bd3f15f72f",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "2714ad7cbba6e2450385ff6a4d4d020b2f2e41afebb21b2a483de49006ec478f"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:f6f1868945cc49fe",
+      "path_sha256": "f6f1868945cc49fe2a9f43f58a89546fc83f25b611e739e88b4fc4685b57cb24",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "17e918cf892dc72b8c212e97b1f3b7b49292529723cae202a7ee16a6bc3bb7fe"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:b3d31ac7610babcb",
+      "path_sha256": "b3d31ac7610babcb6c40751a2cfa9bfd12defcbaf54dcd38babfca515d7bb8d4",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "70d112661ef6b5aa8b5d0e45541cf8a5d2d20d15dca44fbcec4ddac597758ba1"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:89c18c56ed412d01",
+      "path_sha256": "89c18c56ed412d019c1e2a58fa8af6ffb50905055d25bdcf3b9ef3bac06bdf7a",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "a38c64c2e136c43a1629ba520a7f88441738f445e1d006ac68b9fef16cc915ce"
+    },
+    {
+      "bytes": 38,
+      "path": "custodian-private-path:d2790517c9b42fea",
+      "path_sha256": "d2790517c9b42feadc06a3169e46b2efd2a3476badca1c9baf34404eb4292b3c",
+      "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+      "sha256": "9eaccce5d8d64d71d1ad0a00268648350ad4633760c11c267c0394f1b6c296d7"
+    },
+    {
+      "bytes": 169581,
+      "path": "data/restricted/untouched_test_group_ledger_v3_1_private.json",
+      "path_sha256": "d8a1e3b0472c8c260a649ce6fb2f76c065a92bf4b78ff0d3003efaddb56bcb55",
+      "rationale": "custodian-private source-authority governance input; comparison against itself is excluded to avoid a tautological exposure",
+      "sha256": "11f87b1d3d39c5ca12859b7cb5385eaae923add03075a0bd0984155cf403a149"
+    },
+    {
+      "bytes": 132930,
+      "path": "data/restricted/untouched_test_group_ledger_v3_private.json",
+      "path_sha256": "114de80663e4b4ef50b2a1141e5f79118af666e161e56ff8ebbf00be155de5f2",
+      "rationale": "custodian-private source-authority governance input; comparison against itself is excluded to avoid a tautological exposure",
+      "sha256": "d0295fd3081b45054941144f3f15f2499efad3c7e081cad6724e25f2b11b1f68"
+    },
+    {
+      "bytes": 3533,
+      "path": "docs/review/holoassist_exposure_supplement_v1.md",
+      "path_sha256": "3a6fc3e1c31b7d9992a8e3cc2786e7c1991cc626be34a20e6dbd68bf9caf78af",
+      "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+      "sha256": "92b944f0fbca104d4519d69a212bf6c5ff2d4ea82b97b60d35a122f3685d26f8"
+    },
+    {
+      "bytes": 8725,
+      "path": "docs/review/holoassist_neutral_lineage_preflight_v1.md",
+      "path_sha256": "ee5a9805a943c9303a3944f83df00053d829d55f106d9fa187d3128c7e1e4b7f",
+      "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+      "sha256": "5d8e0861348ae44b8fc15f3cfeca958645d6340ac0d25edeeee96d7f15857aa4"
+    },
+    {
+      "bytes": 2978,
+      "path": "docs/review/holoassist_opaque_group_universe_v1.md",
+      "path_sha256": "b1731948e4d515ed6a1dd3b6a04da2a59b1f865d01a5cb2192e4f7adfb9107a4",
+      "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+      "sha256": "40e044201e43fdf7fd686b67af675920e3a2f963836f64f1b257d0f2acb02f54"
+    },
+    {
+      "bytes": 2412,
+      "path": "docs/review/untouched_test_group_ledger_v3.md",
+      "path_sha256": "fdecd16e72742d2e98cd80a0330ce67ddeb2687dad9090531e0705bcbad76fa4",
+      "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+      "sha256": "ab5ff629e512a96fcbf797cb735e4ee5396133a9d2949aca96444d914f838717"
+    },
+    {
+      "bytes": 2110,
+      "path": "docs/review/untouched_test_group_ledger_v3_1.md",
+      "path_sha256": "2bd268bb3ea32a87558d6617f129f02601d1f17d4ea8681368a53f06c600522e",
+      "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+      "sha256": "3a9e43080a85446818ba82241812b4657613c79d0c3b31eccec974544785e3cd"
+    }
+  ],
+  "safety_boundary": {
+    "custodian_private_identity_comparison_performed": true,
+    "media_opened_or_inspected": false,
+    "network_used": false,
+    "public_selected_commitment_values_exposed": false,
+    "public_selected_identities_exposed": false,
+    "semantic_annotation_bodies_opened": false,
+    "transcript_or_caption_bodies_opened": false
+  },
+  "scanner_policy": {
+    "allowlisted_extensions": [
+      ".csv",
+      ".json",
+      ".jsonl",
+      ".log",
+      ".md",
+      ".prompt",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ],
+    "audit_self_output_rule": "Run the unchanged v2 scanner, then omit only this audit's JSON and Markdown outputs to prevent self-referential hashes.",
+    "excluded_directory_names": [
+      ".git",
+      "__pycache__",
+      "annotation",
+      "annotations",
+      "checkpoints",
+      "families",
+      "media",
+      "models",
+      "node_modules",
+      "snapshots",
+      "trajectories"
+    ],
+    "max_file_bytes": 4000000,
+    "roots": [
+      "data",
+      "docs",
+      "orchestration",
+      "mvp"
+    ],
+    "same_as_frozen_manifest_v2": true,
+    "semantic_body_name_tokens": [
+      "caption",
+      "full_timeline_index",
+      "learned_index",
+      "narration",
+      "provisional_audio_facts",
+      "rankings.json",
+      "transcript",
+      "window_index"
+    ],
+    "skipped_by_reason_current_scan": {
+      "excluded_directory": 694,
+      "extension_not_allowlisted": 376,
+      "over_size_limit": 1,
+      "self_output": 2,
+      "semantic_body_extension": 66,
+      "semantic_body_name": 40
+    },
+    "source_tool": "tools/source_exposure_alias_manifest_v2.py"
+  },
+  "schema_version": "av-trace.source-exposure-alias-manifest-v2-supplemental-audit/1.0",
+  "selected_v3_1_private_comparison": {
+    "direct_selected_commitment_exposure_hit_count": 0,
+    "selected_closure_exposure_hit_count": 0,
+    "selected_commitment_count": 12,
+    "selected_commitment_or_closure_exposure_hit_count": 0,
+    "status": "CLEAR"
+  },
+  "supplemental_inventory": {
+    "added_files": [
+      {
+        "bytes": 10863,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/rehearsal_plan/holoassist_exposure_supplement_v1.json",
+        "path_sha256": "3f071963b8b8d9b673cf1ac5282c8decc6790f255101ffdc76bcc154c4c9d730",
+        "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 3,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "47060b97dbf80e84c9ec4c5f7db07e2e2f841269293e402954321e825c85e890",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 8798,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/rehearsal_plan/holoassist_neutral_lineage_preflight_v1.json",
+        "path_sha256": "a8036274e0a58d300d80eb5fedb70740d62468ab80eb00b51cb69ae67af6b370",
+        "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "8f0bab442ac2f2e0c97d6aa797b42428bf09615c6a3ca52d645d858e058264cc",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 1229,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/rehearsal_plan/holoassist_opaque_group_commitment_v1.json",
+        "path_sha256": "a31a47a241f160b48e0ad9e0d20d0fc14442e156de10cf55822887a19e393ba1",
+        "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 3,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "2b2b39da033e1b9be27901bea2a52bae5163f897844236113baed5bb4871d7ac",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 27140,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/rehearsal_plan/untouched_test_group_ledger_v3_1_public_commitment.json",
+        "path_sha256": "6704fb6f32d07cef32d2c868ca93f981b8b61429a117e7fa557a007a017e50f6",
+        "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 12,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "0e5b98ef6ec19d8ac5124cce53035eccab3f75955f38e7fe0999ab850ef40f15",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 17708,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/rehearsal_plan/untouched_test_group_ledger_v3_public_commitment.json",
+        "path_sha256": "902c703a2b72e7d9ba09467f2e069c15916278647ee51feecc26a9edbd23a2a1",
+        "rationale": "downstream manifest/ledger/audit governance artifact; ignored unless it reveals selected identity routing",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 9,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "ca4da76893a8bb09467fac1bf7f17e9455a5f9c721af8d6f17734003a77a022e",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 25092,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/restricted/holoassist_opaque_group_universe_v1.json",
+        "path_sha256": "d81d3430ff60e5730b59162a93f2741c6a280312215c6ba428f2dce7db42e804",
+        "rationale": "custodian-private source-authority governance input; comparison against itself is excluded to avoid a tautological exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 3,
+          "selected_private_group_count": 3,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "bfed01c6cf5d1fb6ac5befb2959dacedeba649aa0d33112338e7eb49ae4bf529",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:f0a43b8813c7a9eb",
+        "path_sha256": "f0a43b8813c7a9eb8ceeb70800e80dac3a5cd976abd6b1a58633693e574f7314",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "0308e666e97e2b207782ffc62207ccc71f94c51b4f29ec75f2edf13eb8310e9f",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:345d5b4914f99363",
+        "path_sha256": "345d5b4914f9936324af7a245df22e1b6d3aa6404b2ef47d85d17d63da022e50",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "a893212854181ae93d2e65e90ea885635b9376a7efb6b507aabb0e229df48f2f",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:7546d1ab915cb0af",
+        "path_sha256": "7546d1ab915cb0af9ef6bc520cd94be11c28a3f8fe62028025367ed0804ce897",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "0a4b678597181ba6593c6e6ef52ff92014dda901870bf9621f202e1d9c5846b1",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:d48594e31ee6a78c",
+        "path_sha256": "d48594e31ee6a78c1c350d9a144c4cd9dca3952e34768eadacfd9cd894a06d4d",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "398ef254558adff307f4c20b709d3ab78955ab30f4e3e069fbd0c755a2115041",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:27f38a0bec66997b",
+        "path_sha256": "27f38a0bec66997bcee4cf1a0890bdab336ec64d08bd54251c721022f5d40e7f",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "83488fecdcb2d6bd7b5193ab3adb7bc7eb3598639ab02defe8b4e09bbe2975be",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:454b76fc2bd5b9a4",
+        "path_sha256": "454b76fc2bd5b9a4f7a6577d40bb7f7b6ac57148449fb767d75b130b17c0f79a",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "dc2263b3812a4f33eb3ab9215f64c3dcbcbd401cc855e3d377f21bf3e13cf540",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:2f2f73e4f5c228e9",
+        "path_sha256": "2f2f73e4f5c228e977e2e60f3beb7f95ec497134078c239a7add57e24b0a12a5",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "83785183305aafa78fca4fe916ee16a431dd84c1a921c1c9971e343c9261ea68",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:004f425a66202df2",
+        "path_sha256": "004f425a66202df2562d07dcd8068e003335bb02f8d4e82035449f36312ffae0",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "6753f2409ef96d0f1e4976d02e9edbbb1b6fdf2e6df16e939df12c118b3da105",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:8108855729f7bd33",
+        "path_sha256": "8108855729f7bd33e5b9da96337a07a1371dbec0f6b73812e0a363c03499ac81",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "1ecaef267cdc49cf14ee7dbed599fabf5442fc77afacc4533b9eea7400af41c9",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:c843a7f434a89081",
+        "path_sha256": "c843a7f434a890818ee7642f1f110507daa829812d6a12663fc5f3f869b9c142",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "7c59523fa85e7517c8835f6289f03438871b3ee94f72aeb82aa1501999b1a11b",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:beb5a061844d6be0",
+        "path_sha256": "beb5a061844d6be0dd9b6285f1dd31abf58e1abba473bc0b0ab5e8a6b29ce23f",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "565297253115e20d9a6549f9646a49eda08c3fbba31be16763b1b1a3aee0ccdd",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:ecd4b717147a4245",
+        "path_sha256": "ecd4b717147a424535b53f4e7fa703be2a9ce82f15f6fdc515ee2c72e4f72bfc",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "0365f86e3254d9019f796095a87377fd1bf981081085129d61a9f350d3245cc8",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:ff2ca1c1b23b1113",
+        "path_sha256": "ff2ca1c1b23b1113580175127323f7a038b56e3aa2557e4db162b76ae29b4164",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "08b24348867406098a756cee309137b9c32d84b907812ee48bed2057c57ad169",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:94152ffc8ca0dff7",
+        "path_sha256": "94152ffc8ca0dff77d0b69b41cdbe474d8cfe9282ace9e65e5a93fcb0136cc8f",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "31bf2d6f1d659ee24e0fbc098cbf436a201fb7c2437a679da5c0368520d99a30",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:0e77db892c8c0701",
+        "path_sha256": "0e77db892c8c0701d17414d49ff6abd00935864016431fc5ff3d4834684a1d0c",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "a4007313b367210a5819c09975a3ac3ba012c0defac61fdef3f4bcba5dc86ffe",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:aae6c617810ac9c4",
+        "path_sha256": "aae6c617810ac9c43cda811cfbb5cfa03b5f7c2522d9e2790bdc27b3eaaef62e",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "ffe5dbe58dde57f38fc4cdd3c1cea94acb70d01637602905e83ceaa72a4aa378",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:f1fd0f461260bfd8",
+        "path_sha256": "f1fd0f461260bfd8796e64568b79556b3a4c3787cdc89c56bb5ecbe85d5319d8",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "6e03ef34dffeddbe5499fec35a4a5d29a1392777cca43c1ac44ab0deedac5fc8",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:6df6ce6415d4fbe7",
+        "path_sha256": "6df6ce6415d4fbe7b5435efcf1c305600d200f2b5a294322b143f082500b5b8d",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "ac7d9e677d162ac4097bd6e1c3434509d5ad66827508f288497ca733600958d2",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:31dc1ea10d4c7496",
+        "path_sha256": "31dc1ea10d4c749618e19040a8692b4685e3be2c5c8023b25031642d7f4ecbbf",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "3b62076a090837a266fbba49e7f6cba9f189e744c1bbb5ad11041dd536b43638",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:2dadebaf9f8f910f",
+        "path_sha256": "2dadebaf9f8f910f6ecbdc7de9e2d88815e1fc64a9f6d6f38f9a08cad6372072",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "bbc23a3a8a98aba86643707df23105cbcd04438e37d2fd6015d3827438ee9c4b",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:3e92c5a4f9a710a8",
+        "path_sha256": "3e92c5a4f9a710a8e526026a02ba32a1e2e5aab952b53fbe8330af088adfe09c",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "4bbe2ac0a81f20ad22f0984c2ca6a32d53d9a16c06e0adb67ab0147f1d72b998",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:6a0efb2d857d6806",
+        "path_sha256": "6a0efb2d857d6806f80389703b0548aa42a0576d08aba643d3aaa33d74b378b3",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "1dbb41f82ab16386c0714636dbb5c74615c88d4b58825d68c6e145cc355de9ec",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:efd296a1cb68e7d6",
+        "path_sha256": "efd296a1cb68e7d605917d5673faf790960f74a5fef630282d45ab762082f18e",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "ee27d51293c116917af19e0e640a7815c9e486ef2b058842e74f39ec0510c3af",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:286f5c5481ea9b6a",
+        "path_sha256": "286f5c5481ea9b6a34830566eee5a250a11f4e4476bf8effade2237bcd7406e7",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "01cb1496bbde8a0035531b26465de36d58af69fbfe64985d72b096d9670e526d",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:26b08378fdc6a6a9",
+        "path_sha256": "26b08378fdc6a6a9683ea868dac30dbe8be026a1e8dfa88015559839fdaf905c",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "6de617d7906650a01ed8c5e4acf302afca917d08cf6d2a502bf4953bda99f9c6",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:ec41650db7703972",
+        "path_sha256": "ec41650db770397284ef699a6e201b353a29ff2652dda952c7db5921d7461f7a",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "f8f5043ae0370f4cfbc59c66e2ee4d6c571e983750e439a2c14bcdf0d4972fc2",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:15f16cdfd920641a",
+        "path_sha256": "15f16cdfd920641a6b243e25c8c181e1b04c5cb06afcff236a2892914d710d78",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "b7aa0dfb4932ee9cff677c105564b3701169d11d89ceb594b736f3a6bf3e466e",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:77c03b14654d8cb4",
+        "path_sha256": "77c03b14654d8cb4308ad997365bd835180f81fbc8bea05adbf06c4f7a08c617",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "10c0a5aa5b2f9df20c80389e28e41ba4bbe834fad88e182c302b7bd9832a139d",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:b4228241fcacf1d9",
+        "path_sha256": "b4228241fcacf1d93bd1af7684a879de6740b8098f056d2a8cdcee8fbb79f310",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "c07bed15887728a9b5299720a52084c58806c797e74865b13a6002a90789cc83",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:d735318bbfb39943",
+        "path_sha256": "d735318bbfb399432d9d9006b18d30f5593dcba02318b93ba3663318bde12f92",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "6b504f7c32b2917b42d646d31abc340a2dc4ed658b33e99b4c6c6aae84756090",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:a5ee71deb61ef510",
+        "path_sha256": "a5ee71deb61ef5102433cbde032043f9e79f0afa59593e670c51f6769cd3b2e1",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "04c340b119665795f51196585341fd701b6397e95bc910dad8d82a6897c0b40f",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:6fcd9b0b98e16b3c",
+        "path_sha256": "6fcd9b0b98e16b3c52665bcd10e3ddf8af74a809f528398c00448d56c828ba6e",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "82c05ee1ab00e372d83f920d7c4180a27c1f0fd47064bc1d65c966b59445d300",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:23fb320e525aa5a3",
+        "path_sha256": "23fb320e525aa5a3fa4f5bf38dab8a10dbabe19cfb92db45565a4e58297577af",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "f1620218297ee193dda8336d09bd75f8ce5faf869980a989dbd22a72f1a7d170",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:41f5225f2639c610",
+        "path_sha256": "41f5225f2639c6103ad7ae92a54aa85b791a21307a8d27320a5c07315fdd3795",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "a50215472bba79f4d431d64ef4e05d3f82e4d6465fb8c2603a4759450834327e",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:d0c83d6c911eeba4",
+        "path_sha256": "d0c83d6c911eeba4c391b8e7e53671bcac494931082b184f329b92a3770257e0",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "0b74f2135ca9d2caa26324d6522c5dca572ad46ff19d26ba528b8943960c70bb",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:c5ea5242586429cb",
+        "path_sha256": "c5ea5242586429cb3871f6be1c9cb0f3c997415a09aebd3a2a2cc5c2e029c103",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "828996ff1b7f89aa44ca2ba8cca3c062f5b55c0d4af0f4b4de5a6f66449dd746",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:b4a82dfba2536fb2",
+        "path_sha256": "b4a82dfba2536fb25e1d5822cf0dff248cec50375e3bf88879d980bd3f15f72f",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "2714ad7cbba6e2450385ff6a4d4d020b2f2e41afebb21b2a483de49006ec478f",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:f6f1868945cc49fe",
+        "path_sha256": "f6f1868945cc49fe2a9f43f58a89546fc83f25b611e739e88b4fc4685b57cb24",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "17e918cf892dc72b8c212e97b1f3b7b49292529723cae202a7ee16a6bc3bb7fe",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:b3d31ac7610babcb",
+        "path_sha256": "b3d31ac7610babcb6c40751a2cfa9bfd12defcbaf54dcd38babfca515d7bb8d4",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "70d112661ef6b5aa8b5d0e45541cf8a5d2d20d15dca44fbcec4ddac597758ba1",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:89c18c56ed412d01",
+        "path_sha256": "89c18c56ed412d019c1e2a58fa8af6ffb50905055d25bdcf3b9ef3bac06bdf7a",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "a38c64c2e136c43a1629ba520a7f88441738f445e1d006ac68b9fef16cc915ce",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 38,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "custodian-private-path:d2790517c9b42fea",
+        "path_sha256": "d2790517c9b42feadc06a3169e46b2efd2a3476badca1c9baf34404eb4292b3c",
+        "rationale": "technical custody timing metadata; no media or semantic body was opened and this source-authority cache is not a routing exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "9eaccce5d8d64d71d1ad0a00268648350ad4633760c11c267c0394f1b6c296d7",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 169581,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/restricted/untouched_test_group_ledger_v3_1_private.json",
+        "path_sha256": "d8a1e3b0472c8c260a649ce6fb2f76c065a92bf4b78ff0d3003efaddb56bcb55",
+        "rationale": "custodian-private source-authority governance input; comparison against itself is excluded to avoid a tautological exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 12,
+          "selected_private_group_count": 12,
+          "v2_alias_closure_count": 52
+        },
+        "sha256": "11f87b1d3d39c5ca12859b7cb5385eaae923add03075a0bd0984155cf403a149",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 132930,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "data/restricted/untouched_test_group_ledger_v3_private.json",
+        "path_sha256": "114de80663e4b4ef50b2a1141e5f79118af666e161e56ff8ebbf00be155de5f2",
+        "rationale": "custodian-private source-authority governance input; comparison against itself is excluded to avoid a tautological exposure",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 9,
+          "selected_private_group_count": 9,
+          "v2_alias_closure_count": 52
+        },
+        "sha256": "d0295fd3081b45054941144f3f15f2499efad3c7e081cad6724e25f2b11b1f68",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 3533,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "docs/review/holoassist_exposure_supplement_v1.md",
+        "path_sha256": "3a6fc3e1c31b7d9992a8e3cc2786e7c1991cc626be34a20e6dbd68bf9caf78af",
+        "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 3,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "92b944f0fbca104d4519d69a212bf6c5ff2d4ea82b97b60d35a122f3685d26f8",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 8725,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "docs/review/holoassist_neutral_lineage_preflight_v1.md",
+        "path_sha256": "ee5a9805a943c9303a3944f83df00053d829d55f106d9fa187d3128c7e1e4b7f",
+        "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "5d8e0861348ae44b8fc15f3cfeca958645d6340ac0d25edeeee96d7f15857aa4",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 2978,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "docs/review/holoassist_opaque_group_universe_v1.md",
+        "path_sha256": "b1731948e4d515ed6a1dd3b6a04da2a59b1f865d01a5cb2192e4f7adfb9107a4",
+        "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "40e044201e43fdf7fd686b67af675920e3a2f963836f64f1b257d0f2acb02f54",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 2412,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "docs/review/untouched_test_group_ledger_v3.md",
+        "path_sha256": "fdecd16e72742d2e98cd80a0330ce67ddeb2687dad9090531e0705bcbad76fa4",
+        "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "ab5ff629e512a96fcbf797cb735e4ee5396133a9d2949aca96444d914f838717",
+        "strict_contamination_event_count": 0
+      },
+      {
+        "bytes": 2110,
+        "classification": "IGNORED_GOVERNANCE_ARTIFACT",
+        "path": "docs/review/untouched_test_group_ledger_v3_1.md",
+        "path_sha256": "2bd268bb3ea32a87558d6617f129f02601d1f17d4ea8681368a53f06c600522e",
+        "rationale": "downstream review/governance artifact; ignored unless an exact selected identity and semantic-routing category co-occur",
+        "reference_counts": {
+          "direct_selected_commitment_group_count": 0,
+          "selected_private_group_count": 0,
+          "v2_alias_closure_count": 0
+        },
+        "sha256": "3a9e43080a85446818ba82241812b4657613c79d0c3b31eccec974544785e3cd",
+        "strict_contamination_event_count": 0
+      }
+    ],
+    "classification_counts": {
+      "IGNORED_GOVERNANCE_ARTIFACT": 54
+    },
+    "ignored_governance_artifact_count": 54,
+    "post_freeze_file_count": 54,
+    "post_freeze_public_inventory_sha256": "27f025335e0ed945b3f79e3b16f8c9e737eb99d4d3ccb3c600e4e4404670e607",
+    "strict_contamination_event_count": 0
+  }
+}

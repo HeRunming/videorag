@@ -1,0 +1,1473 @@
+{
+  "schema_version": "av-trace.scale1a-pilot0-trust-anchor/1.0",
+  "anchor_id": "AV-TRACE-TASK93-SCALE1A-PILOT0-BASELINE",
+  "created_date": "2026-09-11",
+  "decision": "BASELINE_FROZEN",
+  "restricted": true,
+  "baseline": {
+    "name": "NOAA-01 Pilot-0 real-A/V MVP",
+    "stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+    "scope": "18-window bounded candidate-pool protocol/construct-validity MVP",
+    "human_reviewed": false,
+    "gold_annotation": false,
+    "learned_model_evaluation": false,
+    "policy_class": "deterministic-protocol-policy/2.0",
+    "pilot_scale_warning": "LOW_N_DESCRIPTIVE_PILOT"
+  },
+  "source_media": [
+    {
+      "candidate_id": "cand-045",
+      "basename": "oceantodaywebinar_040720-lg.mp4",
+      "path": "data/restricted/noaa01/raw/oceantodaywebinar_040720-lg.mp4",
+      "size_bytes": 58576631,
+      "sha256": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6",
+      "duration_seconds": 1772.44,
+      "video_stream_count": 1,
+      "audio_stream_count": 1
+    },
+    {
+      "candidate_id": "cand-047",
+      "basename": "oceantoday-watchparty-050720b-sm.mp4",
+      "path": "data/restricted/noaa01/raw/oceantoday-watchparty-050720b-sm.mp4",
+      "size_bytes": 284515787,
+      "sha256": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160",
+      "duration_seconds": 1983.7818,
+      "video_stream_count": 1,
+      "audio_stream_count": 1
+    },
+    {
+      "candidate_id": "cand-049",
+      "basename": "05_archive_070620_sm.mp4",
+      "path": "data/restricted/noaa01/raw/05_archive_070620_sm.mp4",
+      "size_bytes": 491943858,
+      "sha256": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+      "duration_seconds": 2465.329542,
+      "video_stream_count": 1,
+      "audio_stream_count": 1
+    },
+    {
+      "candidate_id": "cand-051",
+      "basename": "07_trashtalk_archive_0902_smc.mp4",
+      "path": "data/restricted/noaa01/raw/07_trashtalk_archive_0902_smc.mp4",
+      "size_bytes": 558522234,
+      "sha256": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+      "duration_seconds": 3718.581542,
+      "video_stream_count": 1,
+      "audio_stream_count": 1
+    },
+    {
+      "candidate_id": "cand-052",
+      "basename": "08_climatealive_archive_1001_smc.mp4",
+      "path": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4",
+      "size_bytes": 561739683,
+      "sha256": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+      "duration_seconds": 3781.144042,
+      "video_stream_count": 1,
+      "audio_stream_count": 1
+    }
+  ],
+  "frozen_counts": {
+    "acquired_assets": 5,
+    "acquired_total_bytes": 1955298193,
+    "machine_review_records": 18,
+    "accepted": 6,
+    "deferred": 10,
+    "rejected": 2,
+    "asr_executions": 18,
+    "ast_executions": 18,
+    "mvp_assets": 3,
+    "mvp_families": 6,
+    "index_windows": 18,
+    "index_records": 54,
+    "main_trajectories": 72,
+    "valid_trajectories": 72,
+    "no_trigger_controls": 12,
+    "metric_rows": 72,
+    "aggregate_rows": 40,
+    "runtime_evaluations": 72
+  },
+  "frozen_decisions": {
+    "engineering": "ENGINEERING_GO",
+    "provisional_scientific": "PROVISIONAL_SCIENTIFIC_INCONCLUSIVE",
+    "final_benchmark": "FINAL_BENCHMARK_NOT_YET_VALIDATED"
+  },
+  "frozen_families": [
+    {
+      "family_id": "noaa01-r004-surf-av",
+      "source_review_id": "noaa01-review-004",
+      "asset_id": "cand-049",
+      "interval": {
+        "start_s": 1011.842,
+        "end_s": 1019.842
+      },
+      "candidate_modalities": [
+        "vision",
+        "ambient"
+      ],
+      "evidence_ids": [
+        "e.r004.vision",
+        "e.r004.ambient"
+      ],
+      "support_sets": [
+        [
+          "e.r004.vision",
+          "e.r004.ambient"
+        ]
+      ],
+      "human_reviewed": false,
+      "gold_annotation": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false
+    },
+    {
+      "family_id": "noaa01-r007-opening-plastic-waste",
+      "source_review_id": "noaa01-review-007",
+      "asset_id": "cand-051",
+      "interval": {
+        "start_s": 0.0,
+        "end_s": 8.0
+      },
+      "candidate_modalities": [
+        "vision"
+      ],
+      "evidence_ids": [
+        "e.r007.vision"
+      ],
+      "support_sets": [
+        [
+          "e.r007.vision"
+        ]
+      ],
+      "human_reviewed": false,
+      "gold_annotation": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false
+    },
+    {
+      "family_id": "noaa01-r011-bag-by-fence",
+      "source_review_id": "noaa01-review-011",
+      "asset_id": "cand-051",
+      "interval": {
+        "start_s": 3055.773,
+        "end_s": 3063.773
+      },
+      "candidate_modalities": [
+        "vision"
+      ],
+      "evidence_ids": [
+        "e.r011.vision"
+      ],
+      "support_sets": [
+        [
+          "e.r011.vision"
+        ]
+      ],
+      "human_reviewed": false,
+      "gold_annotation": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false
+    },
+    {
+      "family_id": "noaa01-r014-aircraft-storm-view",
+      "source_review_id": "noaa01-review-014",
+      "asset_id": "cand-052",
+      "interval": {
+        "start_s": 443.899,
+        "end_s": 451.899
+      },
+      "candidate_modalities": [
+        "vision"
+      ],
+      "evidence_ids": [
+        "e.r014.vision"
+      ],
+      "support_sets": [
+        [
+          "e.r014.vision"
+        ]
+      ],
+      "human_reviewed": false,
+      "gold_annotation": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false
+    },
+    {
+      "family_id": "noaa01-r016-three-factors-vs",
+      "source_review_id": "noaa01-review-016",
+      "asset_id": "cand-052",
+      "interval": {
+        "start_s": 1331.698,
+        "end_s": 1339.698
+      },
+      "candidate_modalities": [
+        "vision",
+        "speech"
+      ],
+      "evidence_ids": [
+        "e.r016.vision",
+        "e.r016.speech"
+      ],
+      "support_sets": [
+        [
+          "e.r016.vision",
+          "e.r016.speech"
+        ]
+      ],
+      "human_reviewed": false,
+      "gold_annotation": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false
+    },
+    {
+      "family_id": "noaa01-r017-north-atlantic-basin",
+      "source_review_id": "noaa01-review-017",
+      "asset_id": "cand-052",
+      "interval": {
+        "start_s": 2663.396,
+        "end_s": 2671.396
+      },
+      "candidate_modalities": [
+        "speech"
+      ],
+      "evidence_ids": [
+        "e.r017.speech"
+      ],
+      "support_sets": [
+        [
+          "e.r017.speech"
+        ]
+      ],
+      "human_reviewed": false,
+      "gold_annotation": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false
+    }
+  ],
+  "frozen_metric_aggregates": [
+    {
+      "agent": "direct-long-context",
+      "axis": "Acquire",
+      "metric": "Evidence Recall",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Acquire",
+      "metric": "All-Evidence Success",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Acquire",
+      "metric": "Modality Recall",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Acquire",
+      "metric": "Candidate Modality Routing Coverage",
+      "numerator": 16.0,
+      "denominator": 18,
+      "value": 0.888889
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Ground",
+      "metric": "Answer Score",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Ground",
+      "metric": "Citation F1",
+      "numerator": 13.333334,
+      "denominator": 18,
+      "value": 0.740741
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Ground",
+      "metric": "Supported-Claim Rate",
+      "numerator": 14.0,
+      "denominator": 17,
+      "value": 0.823529
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Act",
+      "metric": "Success@Budget",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Act",
+      "metric": "Premature Stop",
+      "numerator": 0.0,
+      "denominator": 18,
+      "value": 0.0
+    },
+    {
+      "agent": "direct-long-context",
+      "axis": "Act",
+      "metric": "Recovery",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Acquire",
+      "metric": "Evidence Recall",
+      "numerator": 7.0,
+      "denominator": 18,
+      "value": 0.388889
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Acquire",
+      "metric": "All-Evidence Success",
+      "numerator": 4.0,
+      "denominator": 18,
+      "value": 0.222222
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Acquire",
+      "metric": "Modality Recall",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Acquire",
+      "metric": "Candidate Modality Routing Coverage",
+      "numerator": 9.0,
+      "denominator": 18,
+      "value": 0.5
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Ground",
+      "metric": "Answer Score",
+      "numerator": 4.0,
+      "denominator": 18,
+      "value": 0.222222
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Ground",
+      "metric": "Citation F1",
+      "numerator": 8.000002,
+      "denominator": 18,
+      "value": 0.444445
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Ground",
+      "metric": "Supported-Claim Rate",
+      "numerator": 10.0,
+      "denominator": 16,
+      "value": 0.625
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Act",
+      "metric": "Success@Budget",
+      "numerator": 4.0,
+      "denominator": 18,
+      "value": 0.222222
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Act",
+      "metric": "Premature Stop",
+      "numerator": 7.0,
+      "denominator": 18,
+      "value": 0.388889
+    },
+    {
+      "agent": "single-shot-rag",
+      "axis": "Act",
+      "metric": "Recovery",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Acquire",
+      "metric": "Evidence Recall",
+      "numerator": 13.0,
+      "denominator": 18,
+      "value": 0.722222
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Acquire",
+      "metric": "All-Evidence Success",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Acquire",
+      "metric": "Modality Recall",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Acquire",
+      "metric": "Candidate Modality Routing Coverage",
+      "numerator": 14.0,
+      "denominator": 18,
+      "value": 0.777778
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Ground",
+      "metric": "Answer Score",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Ground",
+      "metric": "Citation F1",
+      "numerator": 13.333334,
+      "denominator": 18,
+      "value": 0.740741
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Ground",
+      "metric": "Supported-Claim Rate",
+      "numerator": 14.0,
+      "denominator": 17,
+      "value": 0.823529
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Act",
+      "metric": "Success@Budget",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Act",
+      "metric": "Premature Stop",
+      "numerator": 0.0,
+      "denominator": 18,
+      "value": 0.0
+    },
+    {
+      "agent": "react-recovery",
+      "axis": "Act",
+      "metric": "Recovery",
+      "numerator": 6.0,
+      "denominator": 6,
+      "value": 1.0
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Acquire",
+      "metric": "Evidence Recall",
+      "numerator": 13.0,
+      "denominator": 18,
+      "value": 0.722222
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Acquire",
+      "metric": "All-Evidence Success",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Acquire",
+      "metric": "Modality Recall",
+      "numerator": null,
+      "denominator": 0,
+      "value": null
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Acquire",
+      "metric": "Candidate Modality Routing Coverage",
+      "numerator": 14.0,
+      "denominator": 18,
+      "value": 0.777778
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Ground",
+      "metric": "Answer Score",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Ground",
+      "metric": "Citation F1",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Ground",
+      "metric": "Supported-Claim Rate",
+      "numerator": 12.0,
+      "denominator": 12,
+      "value": 1.0
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Act",
+      "metric": "Success@Budget",
+      "numerator": 12.0,
+      "denominator": 18,
+      "value": 0.666667
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Act",
+      "metric": "Premature Stop",
+      "numerator": 0.0,
+      "denominator": 18,
+      "value": 0.0
+    },
+    {
+      "agent": "evidence-sufficiency",
+      "axis": "Act",
+      "metric": "Recovery",
+      "numerator": 6.0,
+      "denominator": 6,
+      "value": 1.0
+    }
+  ],
+  "metric_aggregate_common_fields": {
+    "eligible_rows": "non-null metric values only",
+    "eligibility_status_when_nonempty": "hypothesis_conditioned",
+    "pilot_scale_warning": "LOW_N_DESCRIPTIVE_PILOT",
+    "all_modality_recall_rows_ineligible": true
+  },
+  "inventory": [
+    {
+      "path": "data/access_review/noaa01_machine_adjudication_authorization.json",
+      "size_bytes": 1780,
+      "sha256": "4bf629fde03a0081436bf1b579d8be801d0d8877de290149906ce047324ccda6",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "machine-adjudication authorization and scope boundary"
+    },
+    {
+      "path": "data/acquisition_plan/noaa01_exact_asset_plan.json",
+      "size_bytes": 7443,
+      "sha256": "241a476b503a198eafe208485206385f755cd57756f924e769ce8a37d1d1f6fd",
+      "mode": "0644",
+      "class": "public-metadata",
+      "semantic_role": "frozen exact five-asset acquisition plan"
+    },
+    {
+      "path": "data/rehearsal_plan/core_milestone_completion_audit.json",
+      "size_bytes": 38611,
+      "sha256": "8f22fc4a6b4ab22b7e808c36b1b584c5357787e47eab8e166cd43f689d3f0df3",
+      "mode": "0644",
+      "class": "public-metadata",
+      "semantic_role": "Task 88 machine-readable milestone completion audit"
+    },
+    {
+      "path": "data/rehearsal_plan/noaa01_real_av_mvp_plan.json",
+      "size_bytes": 89221,
+      "sha256": "25110c538868163ed27baa84e4a9fecbc85c8da2e2bbf8a8823d2138c5f64967",
+      "mode": "0644",
+      "class": "public-metadata",
+      "semantic_role": "Task 86 executable provisional MVP design plan"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_machine_review_export.json",
+      "size_bytes": 35828,
+      "sha256": "0e4d7649f4b6a7910ede6d0577ff2b43afcadb70ffd6bfa4454d463ea64421c2",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "authoritative machine-adjudication evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_machine_review_export_task83_fallback_superseded.json",
+      "size_bytes": 35053,
+      "sha256": "06d3f39b3c0b047928c6485890db8f8655e22a356d4a600198e9204ee9849d55",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "superseded Task 83 provenance; non-authoritative"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_machine_review_manifest.json",
+      "size_bytes": 13793,
+      "sha256": "c97bb1a586f8f4d0c5991095f419b15dac88d85c93a2003f452147973ad50f92",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "authoritative machine-adjudication evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_machine_review_manifest_task83_fallback_superseded.json",
+      "size_bytes": 14117,
+      "sha256": "5da32169a9eeee30d274958f31143ab4640f9f1845145affa1fe7bb39c3dba57",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "superseded Task 83 provenance; non-authoritative"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records.json",
+      "size_bytes": 385250,
+      "sha256": "d6e8b91394dc4548e908fee7b7ee2e16aac17f2c176e665e5b6199b061160c9a",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "authoritative machine-adjudication evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_machine_review_records_task83_fallback_superseded.json",
+      "size_bytes": 279817,
+      "sha256": "030ef27ac1ef9d7bf6fef0e407c07a4f5de3269f27a493d147362e3ff6e1378c",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "superseded Task 83 provenance; non-authoritative"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_model_manifest.json",
+      "size_bytes": 11040,
+      "sha256": "cee948e25912acbd6d72b3ff9779a92b38f1f7898525ac861a3135397685e5c1",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "authoritative machine-adjudication evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_model_manifest_task83_fallback_superseded.json",
+      "size_bytes": 4388,
+      "sha256": "c57f341eddbc3599318b89c0fdae8ca89b35feb595e2fd0927e9780f67763cdc",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "superseded Task 83 provenance; non-authoritative"
+    },
+    {
+      "path": "data/restricted/noaa01/machine_review/noaa01_real_model_redteam.json",
+      "size_bytes": 12703,
+      "sha256": "fc1ddadb0ac9b68bfa3007c6f59dde5d08c57770165ff676b2358452a38338a0",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "authoritative machine-adjudication evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/manifests/noaa01_acquisition_manifest.json",
+      "size_bytes": 2392,
+      "sha256": "92b7a1ff740d79a4253071018dc18cc3cb41570ccc62dfb08ff2a9c1c48fe2a1",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "restricted acquisition identity manifest"
+    },
+    {
+      "path": "data/restricted/noaa01/manifests/noaa01_media_audit.json",
+      "size_bytes": 67149,
+      "sha256": "b8c743f48ad328cda46be2ea2569759da95262b404e3f3647eef2d9c2e2efde9",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "restricted A/V integrity and decode audit"
+    },
+    {
+      "path": "data/restricted/noaa01/models/ast-audioset-f826b80/README.md",
+      "size_bytes": 1165,
+      "sha256": "dbc8ce1fc5abd1635d073640d8cb032901bfe264a5e06507f363f10a6112cfc8",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/ast-audioset-f826b80/SHA256SUMS",
+      "size_bytes": 533,
+      "sha256": "e761a5fd61f1651dcde10754f75e4a7da2c261b659ba88c70fa301d6f3f98931",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/ast-audioset-f826b80/config.json",
+      "size_bytes": 26763,
+      "sha256": "a93d525511d77e8ecc933d09674b85099815bbbb417c228a4edd655e252fb9ff",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/ast-audioset-f826b80/model.safetensors",
+      "size_bytes": 346404948,
+      "sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/ast-audioset-f826b80/preprocessor_config.json",
+      "size_bytes": 297,
+      "sha256": "8d04ba5a9c6fca5d39d0de2b1fd05ecf79deb589fbba279728bbebac39934231",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/download_attempt.json",
+      "size_bytes": 562,
+      "sha256": "fbe711ae1af5288557d9d07c45d26f3c955b2a4717508fbab193e2ef69153f04",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/opencv-haarcascade-frontalface-default.xml",
+      "size_bytes": 930127,
+      "sha256": "0f7d4527844eb514d4a4948e822da90fbb16a34a0bbbbc6adc6498747a5aafb0",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/task83_download_attempt.json",
+      "size_bytes": 1040,
+      "sha256": "72a7c0c762f3c1e36552def1e9c9fa844d5a89dc4d6e9a995a9f56cb005adb36",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/README.md",
+      "size_bytes": 14861,
+      "sha256": "13627ce3d7dce389223eab7b6ed06738f0f1c786e5245e650b029e4e314c8ff1",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/SHA256SUMS",
+      "size_bytes": 1645,
+      "sha256": "7dd4e01eabf11b2c419b7d9ac9634d215ad209d13db019fcffd7cb1f483eaccb",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/added_tokens.json",
+      "size_bytes": 34604,
+      "sha256": "560be47bea388757f8d4cc185c5d82067426cbb6361e38016dd90ddc01ab203a",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/config.json",
+      "size_bytes": 1937,
+      "sha256": "b5366317df280f79e6cc366f259f379674f81a8721d458acf2e00680ccb10b1d",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/generation_config.json",
+      "size_bytes": 1621,
+      "sha256": "38744c19d5cede6ff4dab5079c6d6ddc02ca726960bbef208fb602ad5a030eab",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/merges.txt",
+      "size_bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/model.safetensors",
+      "size_bytes": 151060136,
+      "sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/normalizer.json",
+      "size_bytes": 52666,
+      "sha256": "bf1c507dc8724ca9cf9903640dacfb69dae2f00edee4f21ceba106a7392f26dd",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/preprocessor_config.json",
+      "size_bytes": 184990,
+      "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/special_tokens_map.json",
+      "size_bytes": 1830,
+      "sha256": "014f8f802366ed818919550be0ad9e35907327cb9e142e8aaa102420f460bda8",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/tokenizer.json",
+      "size_bytes": 2405679,
+      "sha256": "5eb60cec1e77aeeb6869a2bb5a8e01a84c3fe5d072d75369343021fe6f5310d0",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/tokenizer_config.json",
+      "size_bytes": 805,
+      "sha256": "14f84bdf4b9ecdbd4738ddc81c17a1baedfc02bb93c6e049c951e15a1b40b70d",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/models/whisper-tiny.en-87c7102/vocab.json",
+      "size_bytes": 798156,
+      "sha256": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "pinned machine-adjudication model/runtime dependency"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/05_archive_070620_sm.mp4",
+      "size_bytes": 491943858,
+      "sha256": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "immutable source media"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/05_archive_070620_sm.mp4.metadata.json",
+      "size_bytes": 2149,
+      "sha256": "cfacdf6eb94d7546e653a4c74c6b004d83e87e3a404e16f85f9d661e663071cf",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "source provenance sidecar"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/07_trashtalk_archive_0902_smc.mp4",
+      "size_bytes": 558522234,
+      "sha256": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "immutable source media"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/07_trashtalk_archive_0902_smc.mp4.metadata.json",
+      "size_bytes": 2194,
+      "sha256": "80ea6658b7fc3905ac23bb76ab3fd13624ee65190bcf8b9626f08dbc69b0edf0",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "source provenance sidecar"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4",
+      "size_bytes": 561739683,
+      "sha256": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "immutable source media"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/08_climatealive_archive_1001_smc.mp4.metadata.json",
+      "size_bytes": 2209,
+      "sha256": "2c8682d13baea96147a6d1eabefc9cfbbcbc243675ad979eb249e7d88f1df9b7",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "source provenance sidecar"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/oceantoday-watchparty-050720b-sm.mp4",
+      "size_bytes": 284515787,
+      "sha256": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "immutable source media"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/oceantoday-watchparty-050720b-sm.mp4.metadata.json",
+      "size_bytes": 2209,
+      "sha256": "80b1e95e2c302096368e76bcc9969800d127d320feaaf783f23a726d2a1de18d",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "source provenance sidecar"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/oceantodaywebinar_040720-lg.mp4",
+      "size_bytes": 58576631,
+      "sha256": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "immutable source media"
+    },
+    {
+      "path": "data/restricted/noaa01/raw/oceantodaywebinar_040720-lg.mp4.metadata.json",
+      "size_bytes": 2193,
+      "sha256": "c01071a0c48ba166442bd2f98aa2aa4f7acb4466ce947643f3179bc65e557659",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "source provenance sidecar"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/frozen_index.json",
+      "size_bytes": 44409,
+      "sha256": "f75c2b8ff3a480bd293ef450276a94952930385df9f8754f2e2deb98ecb17235",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 family/index/intervention/validation or audit artifact"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/interventions.json",
+      "size_bytes": 4117,
+      "sha256": "9799d72ee379c6ae856dd27fcb37dde1df80db21540ec4257800ac946ee2ed75",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 family/index/intervention/validation or audit artifact"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+      "size_bytes": 42911,
+      "sha256": "fe533ed9f89e7222a43b4507672b3adc48e779a5b119d31b5f2d21395c9bdc47",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 family/index/intervention/validation or audit artifact"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/redteam.json",
+      "size_bytes": 24599,
+      "sha256": "2e30f1ad1b317ce533877bd53fa17c29d4e1ee0f790a8363d6811225e5cbcfbc",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 family/index/intervention/validation or audit artifact"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/task90_repair_audit.json",
+      "size_bytes": 9451,
+      "sha256": "760e81a0c0e095edbdb35195cef85fc4cd286a17af10a14c533c5adcba6190c6",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 family/index/intervention/validation or audit artifact"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/validation.json",
+      "size_bytes": 15536,
+      "sha256": "0bba9208312de80b434eacb3fe3307aa6ae6feac4c8883bac022d1d87822f6f5",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 family/index/intervention/validation or audit artifact"
+    },
+    {
+      "path": "data/restricted/noaa01/recon/noaa01_candidate_windows.json",
+      "size_bytes": 89026,
+      "sha256": "53d580fc8e96f9106f4f45f9cf9772763807a7fcc98c062c1fc9a602f96dc0bc",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "content reconnaissance evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/recon/noaa01_content_recon_manifest.json",
+      "size_bytes": 8922,
+      "sha256": "53376eef9f001c771fc5bf4cb741b64a9891e3b954981034f50d4a36fb97485c",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "content reconnaissance evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/recon/noaa01_threshold_sensitivity.json",
+      "size_bytes": 45698,
+      "sha256": "101be846d2378d245f442b79dbaeabfe69c82e10f13d1533424c948923b05900",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "content reconnaissance evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/recon/noaa01_window_measurements.jsonl",
+      "size_bytes": 255923,
+      "sha256": "df7b26bb9ca0615c18c406b70a649240ea212ea7d9c68e01c8d8ca7dc29afb7a",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "content reconnaissance evidence"
+    },
+    {
+      "path": "data/restricted/noaa01/review/noaa01_manual_review_queue.json",
+      "size_bytes": 15209,
+      "sha256": "b706528bdc6754c0369cc19243198040c32a7f97a7032d707a24eaf959022b5f",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "bounded review queue/template input"
+    },
+    {
+      "path": "data/restricted/noaa01/review/noaa01_manual_review_template.json",
+      "size_bytes": 17247,
+      "sha256": "57bf749bd438c2bd186365b0fb70bdc4297b9efab4afc0f11c06b246aad86122",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "bounded review queue/template input"
+    },
+    {
+      "path": "docs/design/noaa01_real_av_mvp_design.md",
+      "size_bytes": 32338,
+      "sha256": "fa64384f7bd72db79292c6af8a150e78a6f45508d7b0578ddec9be384a523c96",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 86 provisional MVP design"
+    },
+    {
+      "path": "docs/review/core_milestone_completion_audit.md",
+      "size_bytes": 11968,
+      "sha256": "517beef81e15ffa5db30506dbd331b28bc83696652820ab8ce848f62e96ffe7a",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "core milestone completion decision"
+    },
+    {
+      "path": "docs/review/noaa01_content_recon.md",
+      "size_bytes": 4083,
+      "sha256": "c255a786d6bbec43555403ed3d6477c936d97a04cb8a0495876cdc8041d4dc56",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 80 content reconnaissance review"
+    },
+    {
+      "path": "docs/review/noaa01_content_recon_redteam.md",
+      "size_bytes": 13413,
+      "sha256": "5a6cded9bc9ee91e979f7bf8b16c03f7272f6dd1918cee6a852c4417b178666b",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 81 content reconnaissance red-team"
+    },
+    {
+      "path": "docs/review/noaa01_download_media_audit.md",
+      "size_bytes": 7109,
+      "sha256": "1a199c18e1fd963276d8263df9c642f9a97bd4483a4a1635e329737f4f7ba947",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "NOAA source-media audit review"
+    },
+    {
+      "path": "docs/review/noaa01_machine_adjudication.md",
+      "size_bytes": 6087,
+      "sha256": "d4e0813d322c22d4e52def9302a6523de933024b86cba047d71bf94b630fd65b",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 84 machine-adjudication review"
+    },
+    {
+      "path": "docs/review/noaa01_manual_review_guide.md",
+      "size_bytes": 5173,
+      "sha256": "a22e9dfbe1938ab5092bb3a6ca958950f1f2fc69ff24b82733e9257caaef2211",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 82 manual-review guide"
+    },
+    {
+      "path": "docs/review/noaa01_real_av_mvp_go_no_go.md",
+      "size_bytes": 3336,
+      "sha256": "4c40c44974d2cfde969806ac5bacca10f91462c181628011e22db95dd775c7b5",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Pilot-0 Go/No-Go review"
+    },
+    {
+      "path": "docs/review/noaa01_real_av_mvp_redteam.md",
+      "size_bytes": 13383,
+      "sha256": "64ff52c4fcf4249056d422868b0034cb0eb44ade6441d6d0552cad44753d299c",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "independent Pilot-0 red-team review"
+    },
+    {
+      "path": "docs/review/noaa01_real_av_semantic_metrics_repair.md",
+      "size_bytes": 7344,
+      "sha256": "0b6d45022307f0118f19cf467ed29923eb389f2e8175cb591f8c87e13a6c1632",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 90 semantic metric repair review"
+    },
+    {
+      "path": "docs/review/noaa01_real_model_adjudication_redteam.md",
+      "size_bytes": 8021,
+      "sha256": "e313cd30a042f3950f951184e6a67c0431ed04bd66711f0eb0648305f4178b7a",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 85 machine-adjudication red-team review"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/episode_metrics.csv",
+      "size_bytes": 15661,
+      "sha256": "9239990777e331488a05a35ec82e01595e26f3ec6dfa32528496b34259c4319a",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Pilot-0 per-trajectory metrics"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/report.json",
+      "size_bytes": 20856,
+      "sha256": "b333170114f993cb8b0d254ee8a80d0eebd9aec8ea0d88e4380cf7ccb2c9fe5c",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Pilot-0 structured report"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/report.md",
+      "size_bytes": 3331,
+      "sha256": "b4690000d508e7cec8c0bd4f97c670eb948a5749ed6c4a1f58df8280526995e7",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Pilot-0 narrative report"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/run_manifest.json",
+      "size_bytes": 2222,
+      "sha256": "48aa16ea16bdfd6db75b59acc2c18c99209fb1818f0f8de11e69db909582840c",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "Pilot-0 run manifest containing restricted paths/hashes"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/runtime_validation.restricted.json",
+      "size_bytes": 204910,
+      "sha256": "1bb6593f77f0aaed3fb9e1378b7812a69c7deb1a4399bfccff4bc7fdefb0116c",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "evaluator-private route/claim validation"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/summary.csv",
+      "size_bytes": 4483,
+      "sha256": "0d37f47805e3419ae33c8535c84b338d0a4d1ea3c6da4e57009099134e189840",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Pilot-0 aggregate metrics"
+    },
+    {
+      "path": "mvp/results/noaa01_real_av_mvp/trajectories.restricted.json",
+      "size_bytes": 832428,
+      "sha256": "144cb00429642ca1136d2f87e0db3715b429a5265a87ccb30a43c450e5484e80",
+      "mode": "0600",
+      "class": "restricted",
+      "semantic_role": "evaluator-private trajectories and observations"
+    },
+    {
+      "path": "orchestration/results/78_noaa_download_media_audit.txt",
+      "size_bytes": 2397,
+      "sha256": "e94702f73cd8d777f33bca97e2c97785de1eb055bb5dc5bef1484ca7a762f1f3",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "NOAA download/media audit execution record"
+    },
+    {
+      "path": "orchestration/results/79_noaa_audit_recovery.txt",
+      "size_bytes": 2280,
+      "sha256": "72781a314e790eb4bda1cc1082286b980bc408e559a573200d5640eb51ae22ad",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "NOAA media-audit recovery record"
+    },
+    {
+      "path": "orchestration/results/80_noaa_content_recon.txt",
+      "size_bytes": 1419,
+      "sha256": "0d3d4be35a0bbdc5d302756ef3f1ce5418c97fda7b825deb147ffed1b1c41744",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "content reconnaissance execution record"
+    },
+    {
+      "path": "orchestration/results/81_noaa_content_recon_redteam.txt",
+      "size_bytes": 1838,
+      "sha256": "a1ed1de4489fc9005bc00120ac1afd45e4ccc39e46e64767a79b9d4803a84aa6",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "content reconnaissance red-team record"
+    },
+    {
+      "path": "orchestration/results/82_noaa_manual_review_packet.txt",
+      "size_bytes": 1302,
+      "sha256": "24985565b6c93494d2f22d03ecbf9ab5e13755a4eeb51030ab651d45a0372e1e",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "manual-review packet execution record"
+    },
+    {
+      "path": "orchestration/results/83_noaa_machine_adjudication.txt",
+      "size_bytes": 1260,
+      "sha256": "91d90014dff03f288364d71df9188c28a858af13700f7c631d9327f336499360",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "machine-adjudication execution record"
+    },
+    {
+      "path": "orchestration/results/84_noaa_real_model_adjudication.txt",
+      "size_bytes": 1260,
+      "sha256": "3fd49c59bbc70afea721ca26492b0eb4394f3648a3764c9b638c160c68bdcce1",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "real-model adjudication execution record"
+    },
+    {
+      "path": "orchestration/results/85_noaa_real_model_redteam.txt",
+      "size_bytes": 2765,
+      "sha256": "ef9afd4a04f59ee8884cd861bd74e7992489022194f54d0a2021e8b8f8638345",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 85 execution record"
+    },
+    {
+      "path": "orchestration/results/86_real_av_episode_mvp_design.txt",
+      "size_bytes": 3640,
+      "sha256": "82bd48c1029a0bc2842b45e4c7cb7db9f0190b71bc7a44686c981a1db32e61ac",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 86 design record"
+    },
+    {
+      "path": "orchestration/results/87_noaa_real_av_mvp_implementation.txt",
+      "size_bytes": 2335,
+      "sha256": "51be65812b8e114c9ce460800089787ec1b0074e35a3834ec310c81ff718b401",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 87 implementation record"
+    },
+    {
+      "path": "orchestration/results/88_core_milestone_completion_audit.txt",
+      "size_bytes": 3792,
+      "sha256": "d4fb4126b7e7b301c442ba2835186fba71f469c43886ef8b948030e206ce7a93",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 88 completion audit record"
+    },
+    {
+      "path": "orchestration/results/89_noaa_real_av_mvp_redteam.txt",
+      "size_bytes": 2451,
+      "sha256": "9f2eaac8f1c1bb2ca61cde6c26feca8bf95f74e33a91e7b95ef062a429730727",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 89 red-team execution record"
+    },
+    {
+      "path": "orchestration/results/90_real_av_semantic_metrics_repair.txt",
+      "size_bytes": 3327,
+      "sha256": "ede8f14b107775ecf5ada415394efcd6c75221fbc346d023a58b18b4912e247f",
+      "mode": "0644",
+      "class": "public-safe",
+      "semantic_role": "Task 90 repair execution record"
+    },
+    {
+      "path": "scripts/build_noaa_real_av_mvp.py",
+      "size_bytes": 416,
+      "sha256": "a8cea94baa161f8a018bc4e954a06d47514f65be24a33aae4a91f8c76d2ae12c",
+      "mode": "0644",
+      "class": "public-code",
+      "semantic_role": "Pilot-0 build entrypoint"
+    },
+    {
+      "path": "scripts/run_noaa_real_av_mvp.py",
+      "size_bytes": 445,
+      "sha256": "3f858fae6de0cf4adfdb2272af5eeaa65c998e1b48d3aa40029dd12c67a660a6",
+      "mode": "0644",
+      "class": "public-code",
+      "semantic_role": "Pilot-0 run entrypoint"
+    },
+    {
+      "path": "src/av_trace_real_av/__init__.py",
+      "size_bytes": 283,
+      "sha256": "f8f1298b2c3304c7b84909d33b83540f75e42b703a922fdbc25345453e8c5330",
+      "mode": "0644",
+      "class": "public-code",
+      "semantic_role": "Pilot-0 runtime package entry"
+    },
+    {
+      "path": "src/av_trace_real_av/core.py",
+      "size_bytes": 102951,
+      "sha256": "24f6a5e82fc8c0f817f9062c73a546059ac612e35d84fc2e02d25a40466625ad",
+      "mode": "0644",
+      "class": "public-code",
+      "semantic_role": "Pilot-0 builder/runtime/metric implementation"
+    },
+    {
+      "path": "tests_real_av/test_noaa_real_av.py",
+      "size_bytes": 12742,
+      "sha256": "e4dccff0fb8cf8e5079de6ccf02752ca0e2ace378d8fafb6c37fc37b683d4bf1",
+      "mode": "0644",
+      "class": "public-code",
+      "semantic_role": "Pilot-0 regression specification"
+    }
+  ],
+  "inventory_summary": {
+    "file_count": 94,
+    "total_size_bytes": 2460604512,
+    "restricted_count": 58,
+    "public_safe_count": 28,
+    "public_code_count": 5,
+    "public_metadata_count": 3,
+    "self_referential_task93_deliverables_excluded": true
+  },
+  "permission_observations": {
+    "restricted_parent_mode": "0700",
+    "child_directory_modes": {
+      "data/restricted/noaa01/machine_review": "0755",
+      "data/restricted/noaa01/manifests": "0700",
+      "data/restricted/noaa01/models": "0700",
+      "data/restricted/noaa01/raw": "0700",
+      "data/restricted/noaa01/real_av_mvp": "0700",
+      "data/restricted/noaa01/recon": "0755",
+      "data/restricted/noaa01/review": "0755"
+    },
+    "assessment": "PASS: every inventoried restricted file is 0600 and data/restricted/noaa01 is 0700. The three 0755 child directories are not effectively traversable by group/other through the 0700 parent; tightening them later is allowed hardening, not baseline semantic drift."
+  },
+  "independent_audit": {
+    "method": "Independent direct reads, streaming SHA-256, stat mode/size checks, JSON cross-link checks, CSV parsing, and aggregate recomputation. Pilot-0 producer output was not used as the source of expected metric values.",
+    "check_count": 108,
+    "passed_check_count": 108,
+    "failed_check_count": 0,
+    "stale_hash_inconsistencies": [],
+    "permission_inconsistencies": [],
+    "decision_inconsistencies": [],
+    "count_inconsistencies": [],
+    "aggregate_inconsistencies": [],
+    "checks": {
+      "source_media": "5/5 size and SHA-256 identities match the acquisition manifest; all have at least one audio and video stream; total bytes are 1,955,298,193; all durations are 20–90 minutes",
+      "machine_review": "18 records and export rows; 18 Whisper and 18 AST executions; dispositions 6/10/2; accepted IDs match Task 85; likely-necessary V/S/A counts remain 0/0/0",
+      "model_snapshots": "all 12 Whisper and 4 AST files match pinned sizes and SHA256SUMS",
+      "index_links": "canonical index self-hash and family links to index, validation, and interventions match",
+      "runtime": "72 trajectories form the exact 6-family x 3-state x 4-policy cross-product; 72 runtime evaluations; 12/12 no-trigger controls pass",
+      "metrics": "72 episode rows independently reduced to 40 aggregate rows; zero mismatch against summary.csv and report.json",
+      "artifact_manifests": "11/11 run-manifest hashes and 15/15 Task-90 authoritative hashes match current bytes",
+      "permissions": "all 58 restricted inventory files are 0600; public inventory files are not group/world writable; no inventory path is a symlink",
+      "decisions": "report, run manifest, and Task-90 audit agree on ENGINEERING_GO / PROVISIONAL_SCIENTIFIC_INCONCLUSIVE / FINAL_BENCHMARK_NOT_YET_VALIDATED"
+    }
+  },
+  "migration_invariants": [
+    {
+      "id": "M01",
+      "requirement": "The five source MP4 byte sizes and SHA-256 identities remain unchanged. Scale-1A must read them in place and must not rename, rewrite, transcode, or persist media derivatives."
+    },
+    {
+      "id": "M02",
+      "requirement": "The 94 inventoried Pilot-0 dependency/output files remain the immutable comparison snapshot. Intentional drift requires a path-level report and a new anchor; it must never be silently accepted."
+    },
+    {
+      "id": "M03",
+      "requirement": "The six family/source-review/asset/interval tuples remain the paired migration cohort. Alternative evidence may be attached only in versioned Scale-1A artifacts; Pilot-0 family semantics remain unchanged."
+    },
+    {
+      "id": "M04",
+      "requirement": "CLEAN/BLOCKED/RESTORED retain paired budgets, intervention targets, pre-trigger equivalence, deterministic answer-independent triggers, post-trigger route restoration, required reacquisition, and no-trigger controls."
+    },
+    {
+      "id": "M05",
+      "requirement": "Policy-visible data remains limited to question, tools, budgets, opaque pointers, generic previews, modalities, and source-time intervals; evaluator-private state, family, intervention, answer, claim, support-set, and route identifiers remain hidden."
+    },
+    {
+      "id": "M06",
+      "requirement": "Citable observations remain bound to hash-verified original media and exact source intervals and are decoded at access time; no persistent media derivative is created without a later explicit authorization."
+    },
+    {
+      "id": "M07",
+      "requirement": "All current annotations remain machine-adjudicated, provisional, non-human and non-gold. Modality Recall remains null until a separately recorded validation gate exists."
+    },
+    {
+      "id": "M08",
+      "requirement": "Task-90 metric semantics remain fixed for paired comparison: claim-level Supported-Claim Rate, strict Success@Budget, final-point Premature Stop, eligibility-aware nulls, and LOW_N_DESCRIPTIVE_PILOT."
+    },
+    {
+      "id": "M09",
+      "requirement": "Pilot-0 aggregates and decisions remain immutable reference values. Scale-1A results use a separate namespace and identify corpus/index/policy versions rather than overwrite Pilot-0 outputs."
+    },
+    {
+      "id": "M10",
+      "requirement": "Restricted files remain 0600 and effectively protected by a 0700 NOAA parent. Restricted paths, transcripts, predictions, and media identifiers must not leak to public outputs."
+    },
+    {
+      "id": "M11",
+      "requirement": "If shared implementation changes, legacy Pilot-0 build/run must reproduce the frozen selected outputs; otherwise migration is a declared baseline break requiring review."
+    },
+    {
+      "id": "M12",
+      "requirement": "The acquisition cohort remains five audited source assets, while the paired MVP cohort remains three assets. These counts must not be conflated."
+    }
+  ],
+  "allowed_scale1a_differences": [
+    {
+      "id": "A01",
+      "difference": "A separate full-timeline multi-scale index with more windows/records and a new index hash/version."
+    },
+    {
+      "id": "A02",
+      "difference": "Additional same-video distractors and alternative support candidates with explicit provenance and counterfactual status."
+    },
+    {
+      "id": "A03",
+      "difference": "New visual, speech, ambient, multimodal, or learned retrievers with pinned model/revision/configuration provenance."
+    },
+    {
+      "id": "A04",
+      "difference": "Different rankings, retrieved pointers, costs, trajectories, and metrics caused by the full-timeline corpus, provided condition labels and Pilot-0 references are retained."
+    },
+    {
+      "id": "A05",
+      "difference": "A versioned backend/tool adapter or shared-code extension that preserves visibility boundaries, C/B/R semantics, and legacy replay."
+    },
+    {
+      "id": "A06",
+      "difference": "Later additional families or assets recorded as additions rather than replacements for the paired six-family cohort."
+    },
+    {
+      "id": "A07",
+      "difference": "Later human promotion through separately versioned artifacts; this anchor itself remains machine-only and non-gold."
+    }
+  ],
+  "verifier_specification": {
+    "proposed_command": "python tools/verify_scale1a_pilot0_anchor.py --repo-root . --anchor data/rehearsal_plan/scale1a_pilot0_trust_anchor.json --strict",
+    "note": "The verifier is specified but deliberately not created: Task 93 may create only the three declared deliverables and may not modify production code.",
+    "required_algorithm": [
+      "Require decision BASELINE_FROZEN.",
+      "Reject missing inventory files or symlinks; recompute every size, SHA-256, and POSIX mode.",
+      "Cross-check source-media identities and total bytes against acquisition and media-audit manifests.",
+      "Recompute machine-review counts, real-model execution counts, accepted IDs, and non-gold provenance.",
+      "Recompute the canonical frozen-index self-hash and family links to index, validation, and interventions.",
+      "Recompute family identities/intervals, trajectory cross-product, controls, runtime evaluations, and decisions.",
+      "Parse episode_metrics.csv and independently reproduce all 40 aggregate rows, including null eligibility, numerator, denominator, value, family/source counts, statuses, and warnings; compare with summary.csv and report.json.",
+      "Verify run-manifest and Task-90 hashes and enforce public/restricted permission boundaries.",
+      "Exit 0 only on complete agreement; exit 2 for semantic/content drift and exit 3 for permission or leakage-boundary drift, with a machine-readable mismatch list."
+    ],
+    "canonical_hash_rules": {
+      "file_sha256": "raw bytes, lowercase hexadecimal SHA-256",
+      "prefixed_manifest_hash": "sha256:<lowercase hexadecimal digest>",
+      "index_self_hash": "SHA-256 of UTF-8 JSON with sorted keys, compact separators, ensure_ascii=false, and top-level index_hash removed",
+      "floating_point_comparison": "exact at the stored six-decimal Pilot-0 representation; null remains ineligible and is never coerced to zero"
+    }
+  }
+}

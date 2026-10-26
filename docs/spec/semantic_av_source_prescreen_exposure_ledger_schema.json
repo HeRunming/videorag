@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:semantic-av-source-prescreen-exposure-ledger:1.0.0",
+  "title": "AV-TRACE semantic source-prescreener exposure ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "plan_id",
+    "form_id",
+    "ledger_status",
+    "events",
+    "ledger_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "semantic_av_source_prescreen_exposure_ledger"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "form_id": {"type": "string", "minLength": 1},
+    "ledger_status": {"const": "SOURCE_LEVEL_BLIND_ROLE_EXCLUSIONS"},
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "reviewer_id",
+          "source_id",
+          "source_group_id",
+          "sample_ids",
+          "exposure_categories",
+          "started_at",
+          "completed_at",
+          "blind_role_exclusions"
+        ],
+        "properties": {
+          "event_id": {"type": "string", "minLength": 1},
+          "reviewer_id": {"type": "string", "minLength": 1},
+          "source_id": {"type": "string", "minLength": 1},
+          "source_group_id": {"type": "string", "minLength": 1},
+          "sample_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          },
+          "exposure_categories": {
+            "const": ["source_content", "candidate_semantic_facts"]
+          },
+          "started_at": {"type": "string", "format": "date-time"},
+          "completed_at": {"type": "string", "format": "date-time"},
+          "blind_role_exclusions": {
+            "const": [
+              "blind_alternative_evidence_finder",
+              "blind_post_adjudication_saturation_auditor"
+            ]
+          }
+        }
+      }
+    },
+    "ledger_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}

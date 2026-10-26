@@ -1,0 +1,1686 @@
+{
+  "schema_version": "av-trace.controller-v2-public-holdout/2.0.0",
+  "packet_id": "controller-v2-unseen-synthetic-holdout-20260921",
+  "visibility": "PUBLIC_TO_IMPLEMENTATION_WORKER",
+  "synthetic_only": true,
+  "contains_source_media": false,
+  "contains_expected_outputs": false,
+  "model_inputs_only": true,
+  "case_order_frozen": true,
+  "cases": [
+    {
+      "case_id": "v2h-route-01",
+      "policy": "evidence_sufficiency",
+      "question": "Which password is recited by the courier?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.password",
+          "description": "The recited password."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 5,
+        "cost": 5.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "courier background noise",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "courier visible badge",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "courier recited password",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.password"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-route-02",
+      "policy": "react",
+      "question": "What emblem is painted on the small kite?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.emblem",
+          "description": "The painted kite emblem."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "small kite painted emblem",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "description of kite",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "kite sound",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.emblem"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-route-03",
+      "policy": "evidence_sufficiency",
+      "question": "What noise follows the ceramic cup touching the table?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.noise",
+          "description": "The sound after contact."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 5,
+        "cost": 5.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "spoken account of cup",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "cup contacts table sound",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "cup touches table",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.noise"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-route-04",
+      "policy": "react",
+      "question": "Which hand lifts the brass latch?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.hand",
+          "description": "The hand that lifts the latch."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 5,
+        "cost": 5.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "spoken latch direction",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "hand lifting brass latch",
+          "top_k": 3
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "vision"
+          ]
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.hand"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-pointer-01",
+      "policy": "react",
+      "question": "Which numeral is etched into the wooden tile?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.numeral",
+          "description": "The etched numeral."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.tile_view_8",
+          "modality": "vision",
+          "preview": "Close view of the wooden tile."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "wooden tile numeral",
+          "top_k": 3
+        },
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.tile_view_8"
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.numeral"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-pointer-02",
+      "policy": "evidence_sufficiency",
+      "question": "What destination does the dispatcher announce?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.destination",
+          "description": "The announced destination."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.dispatch_line_3",
+          "modality": "speech",
+          "preview": "Candidate dispatcher transcript line."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.dispatch_line_3"
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "speech"
+          ]
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "dispatcher destination",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.destination"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-pointer-03",
+      "policy": "react",
+      "question": "What mechanical sound occurs beside the cabinet?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.mechanical_sound",
+          "description": "The nearby mechanical sound."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.cabinet_audio_2",
+          "modality": "ambient",
+          "preview": "Short audio candidate near the cabinet."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "cabinet mechanical sound",
+          "top_k": 3
+        },
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.cabinet_audio_2"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.mechanical_sound"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-pointer-04",
+      "policy": "evidence_sufficiency",
+      "question": "What pattern appears on the folded scarf?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.pattern",
+          "description": "The scarf pattern."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.scarf_closeup_5",
+          "modality": "vision",
+          "preview": "Candidate close-up of the scarf."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "vision",
+            "query": "folded scarf pattern",
+            "top_k": 3
+          },
+          "response": {
+            "status": "ok"
+          }
+        }
+      ],
+      "no_progress_rounds": 1,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "folded scarf pattern",
+          "top_k": 3
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "vision"
+          ]
+        },
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.scarf_closeup_5"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.pattern"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-finalize-01",
+      "policy": "evidence_sufficiency",
+      "question": "What color is the paper lantern?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.lantern_color",
+          "description": "The paper lantern color."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.lantern_K2",
+          "modality": "vision",
+          "content": "The paper lantern is magenta.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 2,
+        "cost": 1.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "paper lantern color",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.lantern_color"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-finalize-02",
+      "policy": "react",
+      "question": "State the badge shape and the spoken nickname.",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.badge_shape",
+          "description": "The visible badge shape."
+        },
+        {
+          "claim_handle": "v2slot.nickname",
+          "description": "The spoken nickname."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.badge_Q4",
+          "modality": "vision",
+          "content": "The badge is hexagonal.",
+          "citable": true
+        },
+        {
+          "observation_id": "v2obs.nickname_R7",
+          "modality": "speech",
+          "content": "The speaker uses the nickname Sparrow.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 2,
+        "cost": 1.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "spoken nickname",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "badge shape",
+          "top_k": 3
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.badge_shape",
+          "v2slot.nickname"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-finalize-03",
+      "policy": "evidence_sufficiency",
+      "question": "Give the ribbon color and the call sign.",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.ribbon_color",
+          "description": "The ribbon color."
+        },
+        {
+          "claim_handle": "v2slot.call_sign",
+          "description": "The spoken call sign."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.shared_M8",
+          "modality": "speech",
+          "content": "The ribbon is silver, and the speaker calls it Falcon.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 2,
+        "cost": 1.0
+      },
+      "action_menu": [
+        {
+          "type": "status",
+          "modalities": [
+            "speech",
+            "vision"
+          ]
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.ribbon_color",
+          "v2slot.call_sign"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-finalize-04",
+      "policy": "react",
+      "question": "How many copper rings are on the peg?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.ring_count",
+          "description": "The number of copper rings."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.rings_T6",
+          "modality": "vision",
+          "content": "Exactly four copper rings are on the peg.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 2,
+        "cost": 1.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "rings sound",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "spoken ring count",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "copper rings peg",
+          "top_k": 3
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.ring_count"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-abstain-01",
+      "policy": "evidence_sufficiency",
+      "question": "What sentence is whispered after the door shuts?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.whisper",
+          "description": "The whispered sentence."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "status",
+            "modalities": [
+              "speech"
+            ]
+          },
+          "response": {
+            "status": "ok",
+            "channels": {
+              "speech": {
+                "status": "available",
+                "retryable": false
+              }
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 2,
+      "remaining_budget": {
+        "steps": 1,
+        "cost": 0.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.whisper"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-abstain-02",
+      "policy": "react",
+      "question": "Which symbol is printed inside the sealed envelope?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.envelope_symbol",
+          "description": "The symbol inside the envelope."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "vision",
+            "query": "inside sealed envelope",
+            "top_k": 3
+          },
+          "response": {
+            "status": "access_failure",
+            "error": {
+              "code": "CHANNEL_BLOCKED",
+              "retryable": false
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 2,
+      "remaining_budget": {
+        "steps": 1,
+        "cost": 0.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.envelope_symbol"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-abstain-03",
+      "policy": "evidence_sufficiency",
+      "question": "Does the blue flag rise before or after the horn?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.flag_order",
+          "description": "The order of the flag and horn events."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.flag_partial_J1",
+          "modality": "vision",
+          "content": "The blue flag is visible in a raised position.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 2,
+      "remaining_budget": {
+        "steps": 1,
+        "cost": 0.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.flag_order"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-abstain-04",
+      "policy": "react",
+      "question": "Which tone sounds while the drawer opens?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.drawer_tone",
+          "description": "The tone during drawer opening."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "ambient",
+            "query": "tone while drawer opens",
+            "top_k": 3
+          },
+          "response": {
+            "status": "ok",
+            "pointers": []
+          }
+        }
+      ],
+      "no_progress_rounds": 2,
+      "remaining_budget": {
+        "steps": 1,
+        "cost": 0.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.drawer_tone"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-missing-01",
+      "policy": "evidence_sufficiency",
+      "question": "What word is spoken when the green lamp flashes?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.flash_word",
+          "description": "The word spoken at the flash."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.green_flash_L4",
+          "modality": "vision",
+          "content": "The green lamp flashes.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "speech",
+            "query": "word at green flash",
+            "top_k": 3
+          },
+          "response": {
+            "status": "access_failure",
+            "error": {
+              "code": "ROUTE_INACCESSIBLE",
+              "retryable": true
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 1,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 2.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "green lamp flash",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "alternate word at flash",
+          "top_k": 3
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "speech"
+          ]
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.flash_word"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-missing-02",
+      "policy": "react",
+      "question": "What color is the object behind the opaque screen?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.hidden_color",
+          "description": "The hidden object's color."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.screen_N3",
+          "modality": "vision",
+          "content": "An opaque screen fully covers the object.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 2.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "object behind opaque screen",
+          "top_k": 3
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "vision"
+          ]
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "description of hidden object",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.hidden_color"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-missing-03",
+      "policy": "evidence_sufficiency",
+      "question": "Which bell ring coincides with the white card?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.coincidence",
+          "description": "The bell ring bound to the white card."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [
+        {
+          "observation_id": "v2obs.white_card_C9",
+          "modality": "vision",
+          "content": "A white card is raised.",
+          "citable": true
+        },
+        {
+          "observation_id": "v2obs.bells_D5",
+          "modality": "ambient",
+          "content": "Two distinct bell rings are audible.",
+          "citable": true
+        }
+      ],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "white card timing",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "bell timing near white card",
+          "top_k": 3
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "vision",
+            "ambient"
+          ]
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.coincidence"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-missing-04",
+      "policy": "react",
+      "question": "Is the dial turned farther than the pointer moves?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.motion_compare",
+          "description": "The comparison between dial and pointer motion."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.motion_pair_H2",
+          "modality": "vision",
+          "preview": "Candidate view containing both moving parts."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "dial pointer movement comparison",
+          "top_k": 3
+        },
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.motion_pair_H2"
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.motion_compare"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-recovery-01",
+      "policy": "evidence_sufficiency",
+      "question": "What number does the operator call out?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.called_number",
+          "description": "The called-out number."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "status",
+            "modalities": [
+              "speech"
+            ]
+          },
+          "response": {
+            "status": "ok",
+            "channels": {
+              "speech": {
+                "status": "available",
+                "retryable": false
+              }
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "operator called number restored",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.called_number"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-recovery-02",
+      "policy": "react",
+      "question": "Which shape does the guide name?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.named_shape",
+          "description": "The shape named by the guide."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "speech",
+            "query": "guide named shape",
+            "top_k": 3
+          },
+          "response": {
+            "status": "access_failure",
+            "error": {
+              "code": "ROUTE_INACCESSIBLE",
+              "retryable": true
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 1,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "guide shape retry",
+          "top_k": 3
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "speech"
+          ]
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.named_shape"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-recovery-03",
+      "policy": "evidence_sufficiency",
+      "question": "What label appears on the restored camera feed?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.feed_label",
+          "description": "The label on the restored feed."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.restored_feed_P6",
+          "modality": "vision",
+          "preview": "Candidate frame returned after route restoration."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "vision",
+            "query": "camera feed label",
+            "top_k": 3
+          },
+          "response": {
+            "status": "ok",
+            "pointers": [
+              {
+                "pointer_id": "v2ptr.restored_feed_P6"
+              }
+            ]
+          }
+        }
+      ],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "camera feed label",
+          "top_k": 3
+        },
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.restored_feed_P6"
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "vision"
+          ]
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.feed_label"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-recovery-04",
+      "policy": "react",
+      "question": "What chime returns after the audio route is restored?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.returned_chime",
+          "description": "The chime on the restored route."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "status",
+            "modalities": [
+              "ambient"
+            ]
+          },
+          "response": {
+            "status": "ok",
+            "channels": {
+              "ambient": {
+                "status": "available",
+                "retryable": false
+              }
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "object during returned chime",
+          "top_k": 3
+        },
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "restored route chime",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.returned_chime"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-order-01",
+      "policy": "react",
+      "question": "Which letter is stamped on the metal tab?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.tab_letter",
+          "description": "The stamped letter."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.metal_tab_A7",
+          "modality": "vision",
+          "preview": "Close candidate view of the metal tab."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.metal_tab_A7"
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "spoken tab letter",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "metal tab letter",
+          "top_k": 3
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.tab_letter"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-order-02",
+      "policy": "evidence_sufficiency",
+      "question": "What phrase is available on the temporarily blocked speech route?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.blocked_phrase",
+          "description": "The phrase on the blocked speech route."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [
+        {
+          "turn": 0,
+          "action": {
+            "type": "search",
+            "modality": "speech",
+            "query": "blocked route phrase",
+            "top_k": 3
+          },
+          "response": {
+            "status": "access_failure",
+            "error": {
+              "code": "ROUTE_INACCESSIBLE",
+              "retryable": true
+            }
+          }
+        }
+      ],
+      "no_progress_rounds": 1,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "status",
+          "modalities": [
+            "speech"
+          ]
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "alternate blocked phrase",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "speaker mouth",
+          "top_k": 3
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.blocked_phrase"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-order-03",
+      "policy": "react",
+      "question": "Which tapping rhythm is heard near the window?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.rhythm",
+          "description": "The tapping rhythm."
+        }
+      ],
+      "known_pointers": [],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 4,
+        "cost": 4.0
+      },
+      "action_menu": [
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "description of tapping",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "window movement",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "ambient",
+          "query": "window tapping rhythm",
+          "top_k": 3
+        },
+        {
+          "type": "finalize"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.rhythm"
+        ]
+      }
+    },
+    {
+      "case_id": "v2h-order-04",
+      "policy": "evidence_sufficiency",
+      "question": "What word is shown on the index card?",
+      "public_claim_slots": [
+        {
+          "claim_handle": "v2slot.card_word",
+          "description": "The word on the index card."
+        }
+      ],
+      "known_pointers": [
+        {
+          "pointer_id": "v2ptr.index_card_W9",
+          "modality": "vision",
+          "preview": "Candidate close-up of the index card."
+        }
+      ],
+      "citable_observations": [],
+      "recent_public_events": [],
+      "no_progress_rounds": 0,
+      "remaining_budget": {
+        "steps": 3,
+        "cost": 3.0
+      },
+      "action_menu": [
+        {
+          "type": "finalize"
+        },
+        {
+          "type": "search",
+          "modality": "speech",
+          "query": "spoken card word",
+          "top_k": 3
+        },
+        {
+          "type": "search",
+          "modality": "vision",
+          "query": "index card word",
+          "top_k": 3
+        },
+        {
+          "type": "observe",
+          "pointer_id": "v2ptr.index_card_W9"
+        }
+      ],
+      "action_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-action:2.0.0",
+        "allowed_action_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "state_output_contract": {
+        "schema_id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+        "allowed_claim_handles": [
+          "v2slot.card_word"
+        ]
+      }
+    }
+  ]
+}

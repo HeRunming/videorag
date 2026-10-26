@@ -1,0 +1,300 @@
+{
+  "schema_version": "av-trace.epic-av-access-registry/1.0",
+  "task_id": 157,
+  "registry_id": "av-trace-epic-av-access-preflight-v1-20260924",
+  "created_at": "2026-09-24",
+  "decision_token": "EPIC_AV_ACCESS_REPAIR",
+  "scope": "EPIC-KITCHENS-100_PLUS_EPIC-SOUNDS_METADATA_AND_ACCESS_PREFLIGHT_ONLY",
+  "network": {
+    "stopped_by_user": true,
+    "network_activity_after_stop_instruction": 0,
+    "successful_http_responses": 0,
+    "successful_official_listings": 0,
+    "media_downloads": 0,
+    "media_bytes_downloaded": 0,
+    "freshness_claim": false,
+    "failure_record": "data/source_recon/epic_av_access_v1/network_stop_record.json"
+  },
+  "governing_inputs": [
+    "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+    "orchestration/results/152_licensed_dataset_source_pivot.txt",
+    "orchestration/results/155_licensed_dataset_hf_access_audit.txt",
+    "docs/data/dataset_inventory.csv",
+    "docs/pilot/risk_register.md",
+    "docs/review/preflight_audit.md",
+    "data/rehearsal_plan/licensed_dataset_source_registry_v1.json",
+    "data/rehearsal_plan/licensed_dataset_hf_access_registry_v1.json"
+  ],
+  "official_sources_retained_locally": [
+    {
+      "source_class": "project",
+      "url": "https://epic-kitchens.github.io/2020-100",
+      "live_checked_in_task_157": false
+    },
+    {
+      "source_class": "annotation_repository",
+      "url": "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+      "live_checked_in_task_157": false
+    },
+    {
+      "source_class": "annotation_license_file",
+      "url": "https://github.com/epic-kitchens/epic-kitchens-100-annotations/blob/master/license.txt",
+      "live_checked_in_task_157": false
+    }
+  ],
+  "releases": {
+    "epic_kitchens_100": {
+      "release_name": "EPIC-KITCHENS-100",
+      "project_release_route": "2020-100",
+      "immutable_package_revision": null,
+      "immutable_annotation_commit": null,
+      "status": "PARTIALLY_PINNED"
+    },
+    "epic_sounds": {
+      "release_name": "EPIC-SOUNDS",
+      "exact_release": null,
+      "immutable_annotation_commit": null,
+      "status": "UNPINNED"
+    }
+  },
+  "terms": {
+    "annotation_repository": {
+      "license": "CC BY-NC 4.0",
+      "exact_revision_archived": false,
+      "scope": "COVERED_ANNOTATION_REPOSITORY_ARTIFACTS_ONLY",
+      "raw_media_covered": false,
+      "status": "PARTIAL"
+    },
+    "participant_video_audio": {
+      "agreement_name": null,
+      "exact_terms_archived": false,
+      "acceptance_evidence_present": false,
+      "research_use": "UNKNOWN_HOLD",
+      "internal_processing": "UNKNOWN_HOLD",
+      "new_restricted_annotation": "UNKNOWN_HOLD",
+      "derived_records": "UNKNOWN_HOLD_BY_ARTIFACT_CLASS",
+      "raw_redistribution": "NOT_AUTHORIZED",
+      "status": "UNRESOLVED"
+    },
+    "epic_sounds_annotations": {
+      "exact_terms_archived": false,
+      "status": "UNKNOWN_HOLD"
+    }
+  },
+  "access": {
+    "retained_route_description": "Accept official EPIC terms and use the official downloader.",
+    "route_observed_date": "2026-09-05",
+    "current_route_refreshed": false,
+    "registration_form_archived": false,
+    "registered_account_evidence_present": false,
+    "credential_presence_checked_without_reading_values": true,
+    "credential_environment_variables_present": false,
+    "authenticated_listing_proven": false,
+    "media_access_proven": false
+  },
+  "official_downloader": {
+    "upstream_state": "NOT_REFRESHED",
+    "prior_official_source_derived_state": "DESCRIBED_AS_ACTIVE_ON_2026-09-05",
+    "local_executable_found": false,
+    "local_python_distribution_found": false,
+    "local_repository_or_package_found": false,
+    "revision_pinned": false,
+    "credentials_configured": false,
+    "listing_tested": false,
+    "download_tested": false
+  },
+  "dataset_metadata": {
+    "reported_video_count": 700,
+    "reported_hours": 100,
+    "reported_kitchens": 45,
+    "arithmetic_mean_minutes_per_video": 8.5714285714,
+    "duration_distribution": {
+      "minimum_minutes": null,
+      "median_minutes": null,
+      "maximum_minutes": null,
+      "quantiles": null,
+      "count_20_to_90_minutes": null,
+      "status": "NOT_COLLECTED"
+    },
+    "exact_source_video_ids": [],
+    "exact_session_ids": [],
+    "exact_participant_ids": [],
+    "exact_kitchen_ids": [],
+    "exact_source_group_count": 0
+  },
+  "native_audio": {
+    "dataset_level_support": true,
+    "basis": [
+      "retained official-source-derived inventory records native audio",
+      "EPIC-SOUNDS records sound events aligned to EPIC-KITCHENS-100 recordings"
+    ],
+    "official_file_manifest_audio_field_captured": false,
+    "selected_file_stream_metadata_verified": false,
+    "codec": null,
+    "channels": null,
+    "sample_rate_hz": null,
+    "audio_video_duration_match_verified": false,
+    "synchronization_verified": false,
+    "status": "DATASET_LEVEL_ONLY_SELECTED_FILES_UNVERIFIED"
+  },
+  "epic_sounds_linkage": {
+    "linked_dataset": "EPIC-KITCHENS-100",
+    "reported_categorized_events": 78366,
+    "reported_uncategorized_events": 39187,
+    "reported_total_events": 117553,
+    "exact_revision": null,
+    "join_keys_captured": false,
+    "schema_captured": false,
+    "coverage_validated": false,
+    "version_compatibility_validated": false,
+    "inherit_source_group_and_split": true,
+    "status": "CONCEPTUALLY_LINKED_NOT_JOIN_VALIDATED"
+  },
+  "source_group": {
+    "unit": "PARTICIPANT_X_KITCHEN_LINEAGE",
+    "definition": "All recordings or sessions for the linked participant/kitchen lineage plus every media derivative, narration, action/object annotation, EPIC-SOUNDS event, timestamp, feature, index, question, and authored record.",
+    "broaden_on_identity_or_household_overlap": true,
+    "all_derivatives_inherit_split": true,
+    "cross_dataset_overlap_check": [
+      "HD-EPIC"
+    ]
+  },
+  "privacy": {
+    "risk": "HIGH",
+    "signals": [
+      "hands_and_identity_cues",
+      "voices",
+      "private_homes_and_kitchens",
+      "household_possessions",
+      "routines",
+      "location_or_context_clues",
+      "possible_bystanders",
+      "stable_cross_recording_reidentification_cues"
+    ],
+    "controls_unresolved": [
+      "retention_period",
+      "withdrawal_and_deletion_workflow",
+      "incident_response",
+      "approved_storage_boundary",
+      "approved_access_roster"
+    ],
+    "prohibited_release_classes": [
+      "raw_video",
+      "raw_audio",
+      "clips",
+      "frames",
+      "thumbnails",
+      "waveforms",
+      "transcripts",
+      "reversible_features"
+    ]
+  },
+  "leakage_controls": {
+    "risk": "CRITICAL",
+    "sealed_during_selection_and_initial_authoring": [
+      "narration_text",
+      "narration_timestamps",
+      "action_segments",
+      "verb_labels",
+      "noun_labels",
+      "object_labels",
+      "recipe_or_benchmark_labels",
+      "epic_sounds_category_names",
+      "epic_sounds_free_text",
+      "epic_sounds_onset_offset",
+      "annotation_derived_features",
+      "prior_questions_answers_and_evidence"
+    ],
+    "selection_safe_fields": [
+      "release",
+      "opaque_source_group_id",
+      "opaque_video_or_session_id",
+      "duration",
+      "file_size",
+      "checksum",
+      "video_stream_presence",
+      "audio_stream_presence",
+      "capture_status",
+      "rights_status",
+      "nonsemantic_privacy_flags",
+      "overlap_keys"
+    ],
+    "role_separation": {
+      "data_custodian": "Builds stripped selection manifest and controls annotation vault.",
+      "selector": "Uses only selection-safe fields.",
+      "initial_author": "Uses selected raw audiovisual material only after separate authorization and has no annotation-vault access.",
+      "post_authoring_auditor": "May join sealed annotations only after source selection and initial authoring freeze."
+    },
+    "exposure_rule": "Any semantic-annotation exposure is logged and makes the affected source ineligible for untouched evaluation.",
+    "deterministic_selection": "SHA256(AVTRACE-EPIC-V1|release|source_group_id)",
+    "existing_annotations_establish_project_tiers": false
+  },
+  "candidate_pool": {
+    "requested_range": {
+      "minimum": 8,
+      "maximum": 12
+    },
+    "planned_target": 10,
+    "exact_candidates_identified": 0,
+    "status": "NOT_ESTABLISHED_NO_OFFICIAL_NONSEMANTIC_LISTING",
+    "placeholder_ids_created": false,
+    "reason": "No official source listing or exact participant/kitchen/video/session IDs were available; IDs were not invented.",
+    "future_protocol": [
+      "Pin exact media, annotation, EPIC-SOUNDS, and downloader revisions and terms.",
+      "Request opaque IDs, durations, sizes, checksums, stream-presence fields, and overlap keys only.",
+      "Filter on rights, duration, declared audio, privacy, and overlap without opening semantic annotations.",
+      "Rank eligible groups by the precommitted hash.",
+      "Retain 10 provisional groups and 2 replacements where the official listing permits."
+    ]
+  },
+  "decisions": {
+    "metadata_listing": {
+      "status": "REPAIR",
+      "authorized_now": false,
+      "basis": "Network stopped and no official listing or immutable revisions were obtained."
+    },
+    "media_acquisition": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No accepted current media terms, account evidence, exact allowlist, or working official downloader."
+    },
+    "media_processing": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No authorized acquired files or artifact-specific processing approval."
+    },
+    "restricted_annotation": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No processing approval, source pool, privacy closure, or implemented sealed authoring packet."
+    },
+    "scientific_execution": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No frozen source groups or authorized authored records."
+    },
+    "derived_record_release": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "Media terms, privacy review, and artifact-class release terms remain unresolved."
+    },
+    "raw_media_release": {
+      "status": "NOT_AUTHORIZED",
+      "basis": "No affirmative redistribution authority is archived."
+    }
+  },
+  "readiness_closure": [
+    "Archive current official registration workflow and accepted media agreement evidence.",
+    "Archive exact video/audio, EPIC-KITCHENS annotation, and EPIC-SOUNDS terms.",
+    "Pin immutable package, repository, and downloader revisions.",
+    "Complete a bounded official metadata-only listing.",
+    "Capture exact source IDs and the duration distribution.",
+    "Verify selected-file audio declarations and EPIC-SOUNDS joins at metadata level.",
+    "Create an 8-to-12-group nonsemantic pool with privacy and overlap checks.",
+    "Approve restricted storage, retention, deletion, and incident controls.",
+    "Implement annotation-vault separation and exposure logging.",
+    "Issue separate written acquisition, processing, restricted-annotation, and release decisions."
+  ],
+  "evidence": [
+    "data/source_recon/epic_av_access_v1/network_stop_record.json",
+    "data/source_recon/epic_av_access_v1/environment_readiness.json",
+    "data/source_recon/epic_av_access_v1/local_evidence_index.json",
+    "data/source_recon/epic_av_access_v1/project_2026.headers.txt",
+    "data/source_recon/epic_av_access_v1/evidence_manifest.json"
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "caps": {
+    "minimum_available_disk_bytes": 53687091200,
+    "minimum_available_ram_bytes": 68719476736,
+    "selected_payload_bytes": 19327352832,
+    "total_acquisition_bytes": 21474836480
+  },
+  "created_date": "2026-10-08",
+  "model": {
+    "allowlist": [
+      {
+        "expected_bytes": 728,
+        "git_oid": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "lfs_sha256": null,
+        "path": "config.json"
+      },
+      {
+        "expected_bytes": 239,
+        "git_oid": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "lfs_sha256": null,
+        "path": "generation_config.json"
+      },
+      {
+        "expected_bytes": 3996250744,
+        "git_oid": "8d46cf470aff053c27fd6d956d4d69af9460bd2a",
+        "lfs_sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+        "path": "model-00001-of-00005.safetensors"
+      },
+      {
+        "expected_bytes": 3993160032,
+        "git_oid": "e726a2bcb3b100cba7ae899689cc029d8a08b20c",
+        "lfs_sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+        "path": "model-00002-of-00005.safetensors"
+      },
+      {
+        "expected_bytes": 3959604768,
+        "git_oid": "c94db38adbcb837246c797986365b8e4603ef3ac",
+        "lfs_sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+        "path": "model-00003-of-00005.safetensors"
+      },
+      {
+        "expected_bytes": 3187841392,
+        "git_oid": "a6c92dd09e29e1f72271e087f89ee033b321101c",
+        "lfs_sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+        "path": "model-00004-of-00005.safetensors"
+      },
+      {
+        "expected_bytes": 1244659840,
+        "git_oid": "7bbb0cbc623d70925a3a82b301a99cb52ac9ed5b",
+        "lfs_sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+        "path": "model-00005-of-00005.safetensors"
+      },
+      {
+        "expected_bytes": 32878,
+        "git_oid": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "lfs_sha256": null,
+        "path": "model.safetensors.index.json"
+      },
+      {
+        "expected_bytes": 11422654,
+        "git_oid": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+        "lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "path": "tokenizer.json"
+      },
+      {
+        "expected_bytes": 9732,
+        "git_oid": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "lfs_sha256": null,
+        "path": "tokenizer_config.json"
+      }
+    ],
+    "expected_payload_bytes": 16392983007,
+    "expected_weight_bytes": 16381516776,
+    "metadata_dir": "data/restricted/strong_baselines/acquisition_records/qwen3-8b-b968826d9c46",
+    "official_tree": [
+      {
+        "expected_bytes": 1570,
+        "git_oid": "52373fe24473b1aa44333d318f578ae6bf04b49b",
+        "lfs_sha256": null,
+        "path": ".gitattributes",
+        "selected_for_snapshot": false
+      },
+      {
+        "expected_bytes": 11343,
+        "git_oid": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+        "lfs_sha256": null,
+        "path": "LICENSE",
+        "selected_for_snapshot": false
+      },
+      {
+        "expected_bytes": 16660,
+        "git_oid": "ecc3ebd0849aa08d9484bd911dddfd5261b10d30",
+        "lfs_sha256": null,
+        "path": "README.md",
+        "selected_for_snapshot": false
+      },
+      {
+        "expected_bytes": 728,
+        "git_oid": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "lfs_sha256": null,
+        "path": "config.json",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 239,
+        "git_oid": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "lfs_sha256": null,
+        "path": "generation_config.json",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 1671853,
+        "git_oid": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "lfs_sha256": null,
+        "path": "merges.txt",
+        "selected_for_snapshot": false
+      },
+      {
+        "expected_bytes": 3996250744,
+        "git_oid": "8d46cf470aff053c27fd6d956d4d69af9460bd2a",
+        "lfs_sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+        "path": "model-00001-of-00005.safetensors",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 3993160032,
+        "git_oid": "e726a2bcb3b100cba7ae899689cc029d8a08b20c",
+        "lfs_sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+        "path": "model-00002-of-00005.safetensors",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 3959604768,
+        "git_oid": "c94db38adbcb837246c797986365b8e4603ef3ac",
+        "lfs_sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+        "path": "model-00003-of-00005.safetensors",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 3187841392,
+        "git_oid": "a6c92dd09e29e1f72271e087f89ee033b321101c",
+        "lfs_sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+        "path": "model-00004-of-00005.safetensors",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 1244659840,
+        "git_oid": "7bbb0cbc623d70925a3a82b301a99cb52ac9ed5b",
+        "lfs_sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+        "path": "model-00005-of-00005.safetensors",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 32878,
+        "git_oid": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "lfs_sha256": null,
+        "path": "model.safetensors.index.json",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 11422654,
+        "git_oid": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+        "lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "path": "tokenizer.json",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 9732,
+        "git_oid": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "lfs_sha256": null,
+        "path": "tokenizer_config.json",
+        "selected_for_snapshot": true
+      },
+      {
+        "expected_bytes": 2776833,
+        "git_oid": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "lfs_sha256": null,
+        "path": "vocab.json",
+        "selected_for_snapshot": false
+      }
+    ],
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "snapshot_dir": "data/restricted/strong_baselines/models/Qwen--Qwen3-8B--b968826d9c46",
+    "staging_dir": "data/restricted/strong_baselines/models/.task179-qwen3-8b.stage",
+    "weight_layout": {
+      "index": "model.safetensors.index.json",
+      "kind": "sharded_safetensors",
+      "required_shards": [
+        "model-00001-of-00005.safetensors",
+        "model-00002-of-00005.safetensors",
+        "model-00003-of-00005.safetensors",
+        "model-00004-of-00005.safetensors",
+        "model-00005-of-00005.safetensors"
+      ]
+    }
+  },
+  "network": {
+    "existing_hf_auth_required": true,
+    "official_metadata_origin": "https://huggingface.co",
+    "ordinary_retry_only": true,
+    "required_hf_endpoint": "https://hf-mirror.com",
+    "required_proxy": "https://proxy.example.invalid:3128",
+    "resume_required": true
+  },
+  "runtime_canary": {
+    "adapter_schema_version": "av-trace.granite-native-adapter/2.0",
+    "address_space_limit_bytes": 51539607552,
+    "case_ids": [
+      "qwen3-acq-controller-001",
+      "qwen3-acq-finalizer-001"
+    ],
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "factor_count": 7,
+    "local_files_only": true,
+    "max_new_tokens_per_factor": 256,
+    "schema_only_retries_per_factor": 0,
+    "scope": "tiny_public_fictional_model_neutral_adapter_v2_load_smoke_only",
+    "threads": 8,
+    "timeout_seconds": 1800,
+    "trust_remote_code": false
+  },
+  "schema_version": "av-trace.qwen3-8b-acquisition-plan/1.0",
+  "task": 179
+}

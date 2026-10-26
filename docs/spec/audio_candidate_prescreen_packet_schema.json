@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:audio-candidate-prescreen-packet:1.0.0",
+  "title": "AV-TRACE reviewer-blind audio-candidate prescreen packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "packet_id",
+    "candidate_code",
+    "packet_status",
+    "source_binding",
+    "inspection_order",
+    "adapter_requests",
+    "review_prompts",
+    "blindness_contract",
+    "scope",
+    "packet_payload_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "audio_candidate_prescreen_packet"},
+    "packet_id": {"$ref": "#/$defs/id"},
+    "candidate_code": {"$ref": "#/$defs/id"},
+    "packet_status": {"const": "DRAFT_NOT_DISTRIBUTABLE"},
+    "source_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_group_id",
+        "source_content_sha256",
+        "source_duration_s",
+        "adapter_reference",
+        "focal_start_s",
+        "focal_end_s"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "source_content_sha256": {"$ref": "#/$defs/sha256"},
+        "source_duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "adapter_reference": {"type": "string", "minLength": 1},
+        "focal_start_s": {"type": "number", "minimum": 0},
+        "focal_end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "inspection_order": {
+      "const": [
+        "audio_only_focal",
+        "synchronized_av_focal",
+        "audio_only_recurrence_probes"
+      ]
+    },
+    "adapter_requests": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/adapter_request"}
+    },
+    "review_prompts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audio_only",
+        "synchronized_av",
+        "recurrence",
+        "privacy_safety",
+        "eligibility"
+      ],
+      "properties": {
+        "audio_only": {"$ref": "#/$defs/prompts"},
+        "synchronized_av": {"$ref": "#/$defs/prompts"},
+        "recurrence": {"$ref": "#/$defs/prompts"},
+        "privacy_safety": {"$ref": "#/$defs/prompts"},
+        "eligibility": {"$ref": "#/$defs/prompts"}
+      }
+    },
+    "blindness_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "machine_labels_visible",
+        "machine_ranks_visible",
+        "machine_scores_visible",
+        "proposed_question_visible",
+        "proposed_answer_visible",
+        "proposed_profile_visible",
+        "calibration_expected_outputs_visible_during_candidate_review"
+      ],
+      "properties": {
+        "machine_labels_visible": {"const": false},
+        "machine_ranks_visible": {"const": false},
+        "machine_scores_visible": {"const": false},
+        "proposed_question_visible": {"const": false},
+        "proposed_answer_visible": {"const": false},
+        "proposed_profile_visible": {"const": false},
+        "calibration_expected_outputs_visible_during_candidate_review": {
+          "const": false
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "media_embedded",
+        "adapter_execution_authorized",
+        "human_review_performed",
+        "human_decision_recorded",
+        "necessity_assigned",
+        "minimality_assigned",
+        "h1_assigned",
+        "h2_assigned",
+        "gate_a_eligible"
+      ],
+      "properties": {
+        "media_embedded": {"const": false},
+        "adapter_execution_authorized": {"const": false},
+        "human_review_performed": {"const": false},
+        "human_decision_recorded": {"const": false},
+        "necessity_assigned": {"const": false},
+        "minimality_assigned": {"const": false},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "gate_a_eligible": {"const": false}
+      }
+    },
+    "packet_payload_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "prompts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "adapter_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "inspection_phase",
+        "inspection_order",
+        "stream_mode",
+        "adapter_reference",
+        "source_content_sha256",
+        "start_s",
+        "end_s",
+        "bounded_duration_s",
+        "extract_media",
+        "persist_media",
+        "execute"
+      ],
+      "properties": {
+        "request_id": {"$ref": "#/$defs/id"},
+        "inspection_phase": {
+          "enum": [
+            "audio_only_focal",
+            "synchronized_av_focal",
+            "audio_only_recurrence_probes"
+          ]
+        },
+        "inspection_order": {"type": "integer", "minimum": 1, "maximum": 5},
+        "stream_mode": {"enum": ["audio_only", "synchronized_av"]},
+        "adapter_reference": {"type": "string", "minLength": 1},
+        "source_content_sha256": {"$ref": "#/$defs/sha256"},
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0},
+        "bounded_duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "extract_media": {"const": false},
+        "persist_media": {"const": false},
+        "execute": {"const": false}
+      }
+    }
+  }
+}

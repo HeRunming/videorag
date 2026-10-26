@@ -1,0 +1,23 @@
+{
+  "backend_manifest_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+  "backend_version": "synthetic-fixed-v1",
+  "episode_id": "syn_f08_count_status.clean",
+  "family_annotation_version": "synthetic-v1",
+  "family_hash": "sha256:db2fde2657037813d5f4fddf14183e5d0ad95989b598f07e0821bf5bd3d679ef",
+  "family_id": "syn_f08_count_status",
+  "family_path": "families/syn_f08_count_status/family.snapshot.json",
+  "generated_at": "2026-09-06T00:00:00Z",
+  "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+  "index_version": "synthetic-1.0.0",
+  "intervention_manifest_hash": "sha256:04537e5c7fa28c1538bbbeb4acec7b21885a480d29b1307e42d5e6c0be5db9dc",
+  "link_id": "link.synthetic_validator_b.syn_f08_count_status.clean",
+  "schema_version": "1.0.0",
+  "search_plan_id": "direct_observe_reverse_chronological",
+  "source_manifest_hash": "sha256:f10e55759d33e65e670197d90689fd66b07c21f734dfd2b3f478bd88a5eeccbf",
+  "state_role": "CLEAN",
+  "trajectory_hash": "sha256:c82653b2f18a6f982554319c4408f76f5e7d2c0fc37cee273ee7e61aca9358d6",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f08_count_status.clean",
+  "trajectory_path": "families/syn_f08_count_status/trajectories/synthetic_validator_b.clean.json",
+  "trigger_type": "none",
+  "validator_id": "synthetic_validator_b"
+}

@@ -1,0 +1,585 @@
+{
+  "annotation": {
+    "adjudicator": "synthetic_adjudicator",
+    "alternative_evidence_finder": "synthetic_alternative_finder",
+    "alternative_search_completed": true,
+    "authors": [
+      "synthetic_author"
+    ],
+    "shortcut_audits": [
+      {
+        "audit_type": "question_only",
+        "notes": "Answers are arbitrary registered tokens.",
+        "status": "pass"
+      },
+      {
+        "audit_type": "intervention_artifact",
+        "notes": "No condition marker is embedded in source media.",
+        "status": "pass"
+      }
+    ],
+    "status": "accepted",
+    "validators": [
+      "synthetic_validator_a",
+      "synthetic_validator_b"
+    ],
+    "version": "synthetic-v1"
+  },
+  "answer_spec": {
+    "display_answer": "Route COBALT was announced, and the matching arrow pointed right.",
+    "forbidden_claim_ids": [],
+    "optional_claim_ids": [],
+    "required_claim_ids": [
+      "claim_syn_f05_alternative_route"
+    ]
+  },
+  "claim_evidence_graph": {
+    "accepted_sufficient_sets": [
+      {
+        "claim_ids": [
+          "claim_syn_f05_alternative_route"
+        ],
+        "evidence_ids": [
+          "s3_speech_route_a",
+          "s3_cobalt_arrow"
+        ],
+        "hop_ids": [
+          "hop_extract_s3_speech_route_a",
+          "hop_extract_s3_cobalt_arrow",
+          "hop_syn_f05_alternative_route_route_1"
+        ],
+        "minimality_validated": true,
+        "satisfiability_validated": true,
+        "set_id": "ses_syn_f05_alternative_route_1",
+        "validator_ids": [
+          "synthetic_validator_a",
+          "synthetic_validator_b"
+        ]
+      },
+      {
+        "claim_ids": [
+          "claim_syn_f05_alternative_route"
+        ],
+        "evidence_ids": [
+          "s3_speech_route_b",
+          "s3_cobalt_arrow"
+        ],
+        "hop_ids": [
+          "hop_extract_s3_speech_route_b",
+          "hop_extract_s3_cobalt_arrow",
+          "hop_syn_f05_alternative_route_route_2"
+        ],
+        "minimality_validated": true,
+        "satisfiability_validated": true,
+        "set_id": "ses_syn_f05_alternative_route_2",
+        "validator_ids": [
+          "synthetic_validator_a",
+          "synthetic_validator_b"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "accepted_aliases": [
+          "Route COBALT was announced, and the matching arrow pointed right."
+        ],
+        "answer_value": {
+          "direction": "right",
+          "route": "COBALT"
+        },
+        "claim_id": "claim_syn_f05_alternative_route",
+        "contradiction_claim_ids": [],
+        "proposition": "Route COBALT was announced, and the matching arrow pointed right.",
+        "requirement": "required"
+      }
+    ],
+    "evidence_units": [
+      {
+        "evidence_id": "s3_speech_route_a",
+        "intervals": [
+          {
+            "end_s": 54.0,
+            "start_s": 48.0
+          }
+        ],
+        "modality": "speech",
+        "observation": "first announcement says ROUTE COBALT",
+        "provenance": {
+          "asset_id": "syn_source_03",
+          "stream_hash": "sha256:ca4f6dabcf7b7174ca536959d6fc54a7eb8a8ce39324ae0500eb6ca42e1e065f",
+          "transformation_ids": [
+            "exact_transcript_v1"
+          ]
+        },
+        "stream_id": "syn_source_03_audio"
+      },
+      {
+        "evidence_id": "s3_speech_route_b",
+        "intervals": [
+          {
+            "end_s": 190.0,
+            "start_s": 184.0
+          }
+        ],
+        "modality": "speech",
+        "observation": "repeat announcement says ROUTE COBALT",
+        "provenance": {
+          "asset_id": "syn_source_03",
+          "stream_hash": "sha256:ca4f6dabcf7b7174ca536959d6fc54a7eb8a8ce39324ae0500eb6ca42e1e065f",
+          "transformation_ids": [
+            "exact_transcript_v1"
+          ]
+        },
+        "stream_id": "syn_source_03_audio"
+      },
+      {
+        "evidence_id": "s3_cobalt_arrow",
+        "intervals": [
+          {
+            "end_s": 316.0,
+            "start_s": 310.0
+          }
+        ],
+        "modality": "vision",
+        "observation": "COBALT ARROW POINTS RIGHT",
+        "provenance": {
+          "asset_id": "syn_source_03",
+          "stream_hash": "sha256:8b87f7a602e71beab303b324823c888bbc9068ce6c4ccf5335d5ee844b851254",
+          "transformation_ids": []
+        },
+        "stream_id": "syn_source_03_video"
+      }
+    ],
+    "hops": [
+      {
+        "description": "Extract the registered speech observation: first announcement says ROUTE COBALT.",
+        "hop_id": "hop_extract_s3_speech_route_a",
+        "hop_type": "speech_content",
+        "input_evidence_ids": [
+          "s3_speech_route_a"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Extract the registered speech observation: repeat announcement says ROUTE COBALT.",
+        "hop_id": "hop_extract_s3_speech_route_b",
+        "hop_type": "speech_content",
+        "input_evidence_ids": [
+          "s3_speech_route_b"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Extract the registered vision observation: COBALT ARROW POINTS RIGHT.",
+        "hop_id": "hop_extract_s3_cobalt_arrow",
+        "hop_type": "event_detection",
+        "input_evidence_ids": [
+          "s3_cobalt_arrow"
+        ],
+        "input_hop_ids": []
+      },
+      {
+        "description": "Combine temporally registered evidence for accepted route 1.",
+        "hop_id": "hop_syn_f05_alternative_route_route_1",
+        "hop_type": "cross_modal_binding",
+        "input_evidence_ids": [],
+        "input_hop_ids": [
+          "hop_extract_s3_speech_route_a",
+          "hop_extract_s3_cobalt_arrow"
+        ]
+      },
+      {
+        "description": "Combine temporally registered evidence for accepted route 2.",
+        "hop_id": "hop_syn_f05_alternative_route_route_2",
+        "hop_type": "cross_modal_binding",
+        "input_evidence_ids": [],
+        "input_hop_ids": [
+          "hop_extract_s3_speech_route_b",
+          "hop_extract_s3_cobalt_arrow"
+        ]
+      }
+    ],
+    "necessity_groups": [
+      {
+        "claim_ids": [
+          "claim_syn_f05_alternative_route"
+        ],
+        "group_id": "ng_syn_f05_alternative_route",
+        "intersects_all_accepted_sets": true,
+        "member_evidence_ids": [
+          "s3_speech_route_a",
+          "s3_speech_route_b"
+        ],
+        "removal_validated": true,
+        "required_hop_ids": [
+          "hop_extract_s3_speech_route_a",
+          "hop_extract_s3_speech_route_b",
+          "hop_syn_f05_alternative_route_route_1",
+          "hop_syn_f05_alternative_route_route_2"
+        ],
+        "required_modalities": [
+          "speech"
+        ]
+      }
+    ],
+    "support_edges": [
+      {
+        "edge_id": "edge_s3_speech_route_a_extract",
+        "from_ids": [
+          "s3_speech_route_a"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s3_speech_route_a"
+      },
+      {
+        "edge_id": "edge_s3_speech_route_b_extract",
+        "from_ids": [
+          "s3_speech_route_b"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s3_speech_route_b"
+      },
+      {
+        "edge_id": "edge_s3_cobalt_arrow_extract",
+        "from_ids": [
+          "s3_cobalt_arrow"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_extract_s3_cobalt_arrow"
+      },
+      {
+        "edge_id": "edge_syn_f05_alternative_route_route_1",
+        "from_ids": [
+          "hop_extract_s3_speech_route_a",
+          "hop_extract_s3_cobalt_arrow"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_syn_f05_alternative_route_route_1"
+      },
+      {
+        "edge_id": "edge_syn_f05_alternative_route_claim_1",
+        "from_ids": [
+          "hop_syn_f05_alternative_route_route_1"
+        ],
+        "relation": "hop_supports_claim",
+        "to_id": "claim_syn_f05_alternative_route"
+      },
+      {
+        "edge_id": "edge_syn_f05_alternative_route_route_2",
+        "from_ids": [
+          "hop_extract_s3_speech_route_b",
+          "hop_extract_s3_cobalt_arrow"
+        ],
+        "relation": "supports_hop",
+        "to_id": "hop_syn_f05_alternative_route_route_2"
+      },
+      {
+        "edge_id": "edge_syn_f05_alternative_route_claim_2",
+        "from_ids": [
+          "hop_syn_f05_alternative_route_route_2"
+        ],
+        "relation": "hop_supports_claim",
+        "to_id": "claim_syn_f05_alternative_route"
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "anchor_episode_id": null,
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f05_alternative_route.clean",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s3_speech_route_a",
+          "s3_speech_route_b",
+          "s3_cobalt_arrow"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f05_alternative_route",
+      "interventions": [],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f05_alternative_route_1",
+          "ses_syn_f05_alternative_route_2"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [],
+        "gold_missing_hop_types": [],
+        "gold_missing_modality_sets": [],
+        "gold_missing_necessity_group_ids": [],
+        "initial_accessible_sufficient": true,
+        "missingness_cause": "not_missing",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:a0504d18116f73c0eb3cef20c8eaaacfac235680c09d3a2468f8c2042af77545",
+        "seed": 20260905
+      },
+      "state_role": "CLEAN"
+    },
+    {
+      "anchor_episode_id": "syn_f05_alternative_route.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f05_alternative_route.blocked",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s3_cobalt_arrow"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f05_alternative_route",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s3_speech_route_a",
+            "s3_speech_route_b"
+          ],
+          "affected_necessity_group_id": "ng_syn_f05_alternative_route",
+          "intervention_id": "block_syn_f05_alternative_route",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [],
+        "expected_final_sufficiency": "insufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s3_speech_route_a",
+          "hop_extract_s3_speech_route_b",
+          "hop_syn_f05_alternative_route_route_1",
+          "hop_syn_f05_alternative_route_route_2"
+        ],
+        "gold_missing_hop_types": [
+          "cross_modal_binding",
+          "speech_content"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "speech"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f05_alternative_route"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:a0504d18116f73c0eb3cef20c8eaaacfac235680c09d3a2468f8c2042af77545",
+        "seed": 20260905
+      },
+      "state_role": "BLOCKED"
+    },
+    {
+      "anchor_episode_id": "syn_f05_alternative_route.clean",
+      "backend": {
+        "backend_version": "synthetic-fixed-v1",
+        "index_hash": "sha256:98a040ea94aa6a5d0b062aea7f2d2bb904efd2643b5a92b3862bff9b12467eb9",
+        "tool_api_version": "0.2.0",
+        "track": "EXTERNAL_COMPATIBILITY_UNPOOLED"
+      },
+      "budget": {
+        "cost_limit": 12.0,
+        "max_steps": 10,
+        "tool_costs": {
+          "finalize": 0.0,
+          "get_channel_status": 0.25,
+          "inspect_clip": 2.0,
+          "read_transcript": 1.0,
+          "search_ambient_audio": 1.0,
+          "search_speech": 1.0,
+          "search_visual": 1.0
+        }
+      },
+      "episode_id": "syn_f05_alternative_route.restored",
+      "initial_state": {
+        "accessible_evidence_ids": [
+          "s3_cobalt_arrow"
+        ],
+        "enabled_channels": [
+          "visual",
+          "speech",
+          "ambient",
+          "clip",
+          "transcript"
+        ]
+      },
+      "intervention_family_id": "if_syn_f05_alternative_route",
+      "interventions": [
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "episode_start"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s3_speech_route_a",
+            "s3_speech_route_b"
+          ],
+          "affected_necessity_group_id": "ng_syn_f05_alternative_route",
+          "intervention_id": "block_syn_f05_alternative_route",
+          "mechanism": "necessity_group_withholding",
+          "phase": "blocked",
+          "restoration": {
+            "enabled": false,
+            "restores_intervention_id": null,
+            "trigger_type": "none",
+            "trigger_value": null
+          }
+        },
+        {
+          "activation": {
+            "call_index": null,
+            "hook": "on_restore"
+          },
+          "affected_channel": null,
+          "affected_evidence_ids": [
+            "s3_speech_route_a",
+            "s3_speech_route_b"
+          ],
+          "affected_necessity_group_id": "ng_syn_f05_alternative_route",
+          "intervention_id": "restore_syn_f05_alternative_route",
+          "mechanism": "necessity_group_withholding",
+          "phase": "restoration",
+          "restoration": {
+            "enabled": true,
+            "restores_intervention_id": "block_syn_f05_alternative_route",
+            "trigger_type": "get_channel_status",
+            "trigger_value": null
+          }
+        }
+      ],
+      "oracle": {
+        "accepted_final_set_ids": [
+          "ses_syn_f05_alternative_route_1",
+          "ses_syn_f05_alternative_route_2"
+        ],
+        "expected_final_sufficiency": "sufficient",
+        "gold_missing_hop_ids": [
+          "hop_extract_s3_speech_route_a",
+          "hop_extract_s3_speech_route_b",
+          "hop_syn_f05_alternative_route_route_1",
+          "hop_syn_f05_alternative_route_route_2"
+        ],
+        "gold_missing_hop_types": [
+          "cross_modal_binding",
+          "speech_content"
+        ],
+        "gold_missing_modality_sets": [
+          [
+            "speech"
+          ]
+        ],
+        "gold_missing_necessity_group_ids": [
+          "ng_syn_f05_alternative_route"
+        ],
+        "initial_accessible_sufficient": false,
+        "missingness_cause": "evidence_in_source_but_inaccessible",
+        "source_sufficient": true
+      },
+      "replay": {
+        "deterministic": true,
+        "manifest_hash": "sha256:a0504d18116f73c0eb3cef20c8eaaacfac235680c09d3a2468f8c2042af77545",
+        "seed": 20260905
+      },
+      "state_role": "RESTORED"
+    }
+  ],
+  "family_id": "syn_f05_alternative_route",
+  "intervention_family_id": "if_syn_f05_alternative_route",
+  "intervention_mechanism": "necessity_group_withholding",
+  "question": {
+    "answer_type": "structured_claims",
+    "question_only_risk": "low",
+    "requested_granularity": "Return the exact registered values for both linked observations.",
+    "text": "Which route was announced, and which direction did its matching arrow point?"
+  },
+  "schema_version": "0.2.0",
+  "source": {
+    "access_class": "restricted_compatibility",
+    "asset_id": "syn_source_03",
+    "content_hash": "sha256:36b74655786d7c6ffc22086d566d30dd7c2396bf1cd54228af240aa3d21b310f",
+    "duration_s": 360.0,
+    "manifest_asset_id": "syn_source_03",
+    "manifest_revision": "synthetic-v1",
+    "rights_decision_id": "rights_syn_source_03",
+    "streams": [
+      {
+        "hash": "sha256:8b87f7a602e71beab303b324823c888bbc9068ce6c4ccf5335d5ee844b851254",
+        "kind": "video",
+        "language": null,
+        "stream_id": "syn_source_03_video"
+      },
+      {
+        "hash": "sha256:ca4f6dabcf7b7174ca536959d6fc54a7eb8a8ce39324ae0500eb6ca42e1e065f",
+        "kind": "audio",
+        "language": "en-x-synthetic",
+        "stream_id": "syn_source_03_audio"
+      }
+    ]
+  },
+  "split": "development"
+}

@@ -1,0 +1,183 @@
+{
+  "blind_mining_boundary": {
+    "allowed_inputs": [
+      "SigLIP2 visual segment embeddings and exact intervals",
+      "quality-gated Whisper chunks and BM25 statistics",
+      "CLAP audio segment embeddings, RMS, and quality flags",
+      "temporal separation",
+      "embedding-based object/state continuity hypotheses",
+      "whole-source recurrence and alternative-route searches"
+    ],
+    "machine_retrieval_is_not_semantic_evidence": true,
+    "network_access": false,
+    "raw_media_decoded_by_miner": false,
+    "sealed_inputs": [
+      "EPIC action labels",
+      "EPIC narration labels and timestamps",
+      "EPIC-SOUNDS labels and timestamps",
+      "task or procedure labels",
+      "benchmark splits or outcomes",
+      "human semantic annotations",
+      "existing candidate-family labels"
+    ],
+    "semantic_annotation_parameter_exposed": false
+  },
+  "candidate_contract": {
+    "accepted_family_count": 0,
+    "accepted_ses_count": 0,
+    "future_test_eligible": false,
+    "gate_a_credit": false,
+    "h_tier_count": 0,
+    "machine_provisional_statuses": [
+      "KEEP",
+      "REJECT",
+      "REPAIR"
+    ],
+    "required_outputs": [
+      "exact evidence record handles and integer-microsecond timestamps",
+      "modality-work hypotheses",
+      "atomic claim templates",
+      "alternative-route and substitution risks",
+      "whole-source recurrence checks",
+      "far-coherence metrics and hypothesis when applicable",
+      "source calibration diagnostics and exact filter-flow counts",
+      "candidate and registry deterministic hashes"
+    ]
+  },
+  "canonical_input": {
+    "future_index_may_be_absent_in_plan_mode": true,
+    "index_root": "data/restricted/epic_p23_102_full_timeline_index_v1",
+    "required_build_status": "COMPLETE",
+    "required_files": [
+      "segment_manifest.json",
+      "observation_manifest.json",
+      "full_timeline_index.json",
+      "resource_manifest.json",
+      "checkpoint_manifest.json",
+      "build_manifest.json"
+    ],
+    "required_index_decision": "EPIC_P23_102_FULL_TIMELINE_PIPELINE_READY",
+    "required_mode": "full",
+    "required_source_group_id": "P23",
+    "required_source_id": "P23_102",
+    "smoke_forbidden": true
+  },
+  "created_date": "2026-10-14",
+  "execution": {
+    "default_mode": "plan",
+    "default_output": "data/restricted/epic_p23_102_family_mining_v1_dev/candidate_registry.json",
+    "mine_requires_complete_future_index": true,
+    "modes": [
+      "plan",
+      "mine",
+      "check"
+    ],
+    "plan_mode_reads_index": false,
+    "plan_mode_writes_output": false
+  },
+  "generation": {
+    "audio": {
+      "inventory_only_asr_counts_as_speech": false,
+      "maximum_overlapping_speech_tokens_for_independence": 8,
+      "minimum_audio_novelty": 0.16,
+      "minimum_rms_full_scale": 1e-05,
+      "near_silence_is_ineligible": true
+    },
+    "far": {
+      "distance_alone_is_never_coherence": true,
+      "first_component_time_bin_seconds": 600.0,
+      "maximum_endpoint_reuse": 1,
+      "maximum_per_first_component_time_bin": 2,
+      "maximum_per_separation_bucket": 2,
+      "maximum_retained_review_leads": 8,
+      "minimum_audio_continuity": 0.8,
+      "minimum_center_separation_seconds": 120.0,
+      "minimum_visual_continuity": 0.88,
+      "pair_generation_scope": "all eligible separated searchable fine-window pairs",
+      "separation_bucket_seconds": [
+        120.0,
+        300.0,
+        600.0,
+        1200.0
+      ],
+      "shared_salient_term_minimum": 1,
+      "strong_visual_continuity": 0.96
+    },
+    "fine_visual_windows_only": true,
+    "local": {
+      "diversity_time_bin_seconds": 300.0,
+      "maximum_per_time_bin": 2,
+      "maximum_retained_review_leads": 12,
+      "minimum_center_separation_seconds": 12.0,
+      "minimum_speech_quality": 0.2,
+      "visual_transition_calibration": {
+        "distribution": "all searchable fine-window local-neighbor cosine distances",
+        "minimum_absolute_effect": 0.02,
+        "quantile": 0.95,
+        "quantile_interpolation": "linear",
+        "robust_mad_multiplier": 2.0,
+        "semantic_labels_used": false,
+        "threshold_rule": "max(minimum_absolute_effect, quantile, median + robust_mad_multiplier * median_absolute_deviation)"
+      }
+    },
+    "recurrence": {
+      "minimum_center_separation_seconds": 16.0,
+      "speech_bm25_route_cap": 5,
+      "visual_route_cap": 5,
+      "visual_similarity_threshold": 0.985
+    }
+  },
+  "human_prescreen_gate": {
+    "even_complete_prescreen_does_not_accept_or_assign_tiers": true,
+    "full_source_recurrence_review_required": true,
+    "normal_acceptance_pipeline_not_implemented_here": true,
+    "prescreen_join_occurs_after_machine_ranking": true,
+    "prescreen_labels_never_feed_back_into_machine_ranking": true,
+    "protocol_scope": "SOURCE_UNIFORM_ALL_MACHINE_LEADS",
+    "required_before_any_accepted_family_ses_or_h_tier": true,
+    "same_form_and_exposure_policy_for_every_machine_lead": true
+  },
+  "implementation_decision": "EPIC_P23_102_FAMILY_MINING_PIPELINE_READY",
+  "plan_id": "AV-TRACE-EPIC-P23-102-FAMILY-MINING-V1",
+  "plan_kind": "DETERMINISTIC_DEVELOPMENT_ONLY_SOURCE_CALIBRATED",
+  "plan_payload_sha256": "sha256:a798a999b361a5c05f07d164886ad633a1922677ac4a18a1924f3ce0cb8ae1df",
+  "post_index_commands": {
+    "check": "python tools/epic_p23_102_family_mining_v1.py --mode check --registry data/restricted/epic_p23_102_family_mining_v1_dev/candidate_registry.json",
+    "mine": "python tools/epic_p23_102_family_mining_v1.py --mode mine --output data/restricted/epic_p23_102_family_mining_v1_dev/candidate_registry.json",
+    "mine_with_prescreen": "python tools/epic_p23_102_family_mining_v1.py --mode mine --prescreen <completed-source-uniform-prescreen.json> --output data/restricted/epic_p23_102_family_mining_v1_dev/candidate_registry.json",
+    "plan": "python tools/epic_p23_102_family_mining_v1.py --mode plan"
+  },
+  "repair_completion_token": "EPIC_P23_102_FAMILY_MINING_REPAIR_READY",
+  "resource_estimate": {
+    "candidate_working_set_peak_mib": "approximately 32-96",
+    "dominant_operations": [
+      "fine-window vector decode",
+      "source-only transition quantile and robust-MAD calibration",
+      "local-neighbor transition scoring",
+      "bounded recurrence search",
+      "all eligible separated fine-window far-pair coherence scoring",
+      "deterministic diversity-capped candidate materialization",
+      "BM25 recurrence replay"
+    ],
+    "expected_fine_windows": 892,
+    "expected_speech_chunks": 119,
+    "media_decode_passes": 0,
+    "model_inference_runs": 0,
+    "network_requests": 0,
+    "single_cpu_wall_clock": "approximately 2-30 minutes",
+    "vector_decode_peak_mib": "approximately 8-20"
+  },
+  "schema_version": "av-trace.epic-p23-102-family-mining-plan/1.0",
+  "target_profiles": {
+    "empty_profile_is_valid": true,
+    "independent_non_speech_absence_requires_honest_zero": true,
+    "profiles": [
+      "V+A",
+      "V+S",
+      "V+S+A",
+      "coherent_far_multi_hop"
+    ],
+    "quota_forcing_forbidden": true,
+    "speech_absence_requires_honest_zero": true
+  }
+}

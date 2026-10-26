@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:semantic-av-source-prescreen-annotation:1.0.0",
+  "title": "AV-TRACE human semantic A/V source-prescreen annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "form_id",
+    "plan_id",
+    "plan_sha256",
+    "completion_status",
+    "human_semantic_prescreen_only",
+    "reviewer",
+    "source_reviews",
+    "prohibited_assignments"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "semantic_av_source_prescreen_annotation"},
+    "form_id": {"$ref": "#/$defs/id"},
+    "plan_id": {"$ref": "#/$defs/id"},
+    "plan_sha256": {"$ref": "#/$defs/sha256"},
+    "completion_status": {"enum": ["not_started", "completed"]},
+    "human_semantic_prescreen_only": {"const": true},
+    "reviewer": {"$ref": "#/$defs/reviewer"},
+    "source_reviews": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source_review"}
+    },
+    "prohibited_assignments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "necessity_assigned",
+        "h1_assigned",
+        "h2_assigned",
+        "blind_finder_eligible_for_reviewed_sources",
+        "saturation_auditor_eligible_for_reviewed_sources"
+      ],
+      "properties": {
+        "necessity_assigned": {"const": false},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "blind_finder_eligible_for_reviewed_sources": {"const": false},
+        "saturation_auditor_eligible_for_reviewed_sources": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "nullable_datetime": {
+      "anyOf": [{"type": "string", "format": "date-time"}, {"type": "null"}]
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "training_attested",
+        "protocol_version",
+        "started_at",
+        "completed_at"
+      ],
+      "properties": {
+        "reviewer_id": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "training_attested": {"type": "boolean"},
+        "protocol_version": {"const": "semantic-av-source-prescreen-v1"},
+        "started_at": {"$ref": "#/$defs/nullable_datetime"},
+        "completed_at": {"$ref": "#/$defs/nullable_datetime"}
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "notes"],
+      "properties": {
+        "level": {"enum": ["none", "low", "high", "unknown"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "visual_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observation_id",
+        "start_offset_s",
+        "end_offset_s",
+        "description",
+        "dynamic",
+        "non_text",
+        "candidate_fact_ids"
+      ],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/id"},
+        "start_offset_s": {"type": "number", "minimum": 0},
+        "end_offset_s": {"type": "number", "exclusiveMinimum": 0},
+        "description": {"type": "string", "minLength": 1},
+        "dynamic": {"const": true},
+        "non_text": {"const": true},
+        "candidate_fact_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "audio_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observation_id",
+        "start_offset_s",
+        "end_offset_s",
+        "description",
+        "concrete",
+        "non_speech",
+        "candidate_fact_ids"
+      ],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/id"},
+        "start_offset_s": {"type": "number", "minimum": 0},
+        "end_offset_s": {"type": "number", "exclusiveMinimum": 0},
+        "description": {"type": "string", "minLength": 1},
+        "concrete": {"const": true},
+        "non_speech": {"const": true},
+        "candidate_fact_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "sample_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sample_id",
+        "review_status",
+        "dynamic_non_text_visual_events",
+        "concrete_non_speech_audio_events",
+        "speech_presence",
+        "substitution_risk",
+        "notes"
+      ],
+      "properties": {
+        "sample_id": {"$ref": "#/$defs/id"},
+        "review_status": {"enum": ["not_reviewed", "reviewed"]},
+        "dynamic_non_text_visual_events": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/visual_event"}
+        },
+        "concrete_non_speech_audio_events": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/audio_event"}
+        },
+        "speech_presence": {"enum": ["unknown", "absent", "possible", "present"]},
+        "substitution_risk": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["transcript", "ocr", "caption", "narration"],
+          "properties": {
+            "transcript": {"$ref": "#/$defs/risk"},
+            "ocr": {"$ref": "#/$defs/risk"},
+            "caption": {"$ref": "#/$defs/risk"},
+            "narration": {"$ref": "#/$defs/risk"}
+          }
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carries_fact", "observation_ids", "notes"],
+      "properties": {
+        "carries_fact": {"type": "boolean"},
+        "observation_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "candidate_fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fact_id",
+        "fact_statement",
+        "sample_ids",
+        "carried_by",
+        "substitution_resistant",
+        "authoring_caution"
+      ],
+      "properties": {
+        "fact_id": {"$ref": "#/$defs/id"},
+        "fact_statement": {"type": "string", "minLength": 1},
+        "sample_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "carried_by": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["vision", "non_speech_audio", "speech"],
+          "properties": {
+            "vision": {"$ref": "#/$defs/carrier"},
+            "non_speech_audio": {"$ref": "#/$defs/carrier"},
+            "speech": {"$ref": "#/$defs/carrier"}
+          }
+        },
+        "substitution_resistant": {"type": "boolean"},
+        "authoring_caution": {"type": "string"}
+      }
+    },
+    "recurrence_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recurrence_id",
+        "kind",
+        "modality",
+        "sample_ids",
+        "description",
+        "authoring_implication"
+      ],
+      "properties": {
+        "recurrence_id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["recurring_event", "exact_duplicate", "near_duplicate"]},
+        "modality": {"enum": ["vision", "non_speech_audio", "speech", "cross_modal"]},
+        "sample_ids": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "description": {"type": "string", "minLength": 1},
+        "authoring_implication": {"type": "string", "minLength": 1}
+      }
+    },
+    "concern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["concern_id", "severity", "description", "mitigation_status"],
+      "properties": {
+        "concern_id": {"$ref": "#/$defs/id"},
+        "severity": {"enum": ["low", "medium", "high", "critical"]},
+        "description": {"type": "string", "minLength": 1},
+        "mitigation_status": {"enum": ["unresolved", "mitigated", "not_applicable"]}
+      }
+    },
+    "source_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_group_id",
+        "sample_reviews",
+        "candidate_facts",
+        "temporal_recurrence",
+        "privacy_review",
+        "safety_review",
+        "authoring_eligibility",
+        "decision_rationale",
+        "repair_actions",
+        "authoring_constraints"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "sample_reviews": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sample_review"}
+        },
+        "candidate_facts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/candidate_fact"}
+        },
+        "temporal_recurrence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["assessment_status", "groups", "notes"],
+          "properties": {
+            "assessment_status": {"enum": ["not_assessed", "complete"]},
+            "groups": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/recurrence_group"}
+            },
+            "notes": {"type": "string"}
+          }
+        },
+        "privacy_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["assessment_status", "concerns", "notes"],
+          "properties": {
+            "assessment_status": {"enum": ["not_assessed", "no_concern", "concern_present"]},
+            "concerns": {"type": "array", "items": {"$ref": "#/$defs/concern"}},
+            "notes": {"type": "string"}
+          }
+        },
+        "safety_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["assessment_status", "concerns", "notes"],
+          "properties": {
+            "assessment_status": {"enum": ["not_assessed", "no_concern", "concern_present"]},
+            "concerns": {"type": "array", "items": {"$ref": "#/$defs/concern"}},
+            "notes": {"type": "string"}
+          }
+        },
+        "authoring_eligibility": {"enum": ["undecided", "pass", "repair", "no_go"]},
+        "decision_rationale": {"type": "string"},
+        "repair_actions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "authoring_constraints": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

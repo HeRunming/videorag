@@ -1,0 +1,35 @@
+{
+  "schema_version": "av-trace.publish-targets/1.0",
+  "recorded_date": "2026-10-26",
+  "github": {
+    "repository": "HeRunming/videorag",
+    "url": "https://github.com/HeRunming/videorag",
+    "visibility": "public",
+    "default_branch": "main",
+    "observed_state": "EMPTY_REPOSITORY",
+    "credential_status": "ROTATION_REQUIRED_BEFORE_UPLOAD"
+  },
+  "huggingface": {
+    "repository": "blackBOX25I47/videorag",
+    "url": "https://huggingface.co/datasets/blackBOX25I47/videorag",
+    "repo_type": "dataset",
+    "visibility": "public",
+    "gated": false,
+    "published_date": "2026-10-26",
+    "publication_status": "METADATA_ONLY_RELEASE_VERIFIED",
+    "published_file_count_excluding_platform_gitattributes": 10,
+    "commit_receipt": "Recorded outside the public snapshot in /tmp/av-trace-publish-result.json to avoid a self-referential snapshot/commit cycle.",
+    "existing_cli_identity": "blackBOX25I47",
+    "upload_scope": "PROJECT_OWNED_METADATA_ONLY"
+  },
+  "credential_boundary": {
+    "tokens_pasted_into_chat_may_be_used": false,
+    "required_action": "Revoke both pasted tokens and issue new least-privilege credentials through hidden interactive login or protected environment injection.",
+    "tokens_recorded_in_repository": false
+  },
+  "license": {
+    "project_code_and_documentation": "Apache-2.0",
+    "third_party_assets_included": false,
+    "raw_media_upload_authorized": false
+  }
+}

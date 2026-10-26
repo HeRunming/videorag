@@ -1,0 +1,509 @@
+{
+  "artifacts_for_future_authorized_run": [
+    "authoring_contract.json",
+    "target_manifest.json",
+    "prompt_manifest.json",
+    "raw_attempts.jsonl",
+    "accepted_factor_manifest.json",
+    "ambient_semantic_tuple_collisions.json",
+    "asr_audit_inventory.json",
+    "authored_queries.json",
+    "audits.json",
+    "resource_runtime.json",
+    "seal.json"
+  ],
+  "audit_models": {
+    "ambient_query_similarity": {
+      "query_text_only": true,
+      "repo_id": "laion/clap-htsat-unfused",
+      "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a"
+    },
+    "asr_literal_leakage": {
+      "repo_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "target_clips_only": true,
+      "transcript_never_visible_to_authoring_model": true
+    },
+    "visual_query_similarity": {
+      "query_text_only": true,
+      "repo_id": "google/siglip2-base-patch16-224",
+      "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2"
+    }
+  },
+  "audits": {
+    "embedding_cosine_threshold": 0.995,
+    "factor_identity_error_codes": [
+      "MODEL_VISUAL_QUERY_DESCRIPTION_IDENTITY",
+      "MODEL_AMBIENT_QUERY_DESCRIPTION_IDENTITY"
+    ],
+    "factor_identity_immediate_rejection": true,
+    "factor_identity_schema_repair_eligible": false,
+    "family_query_uniqueness_required": true,
+    "forbidden_literal_classes": [
+      "ids",
+      "timestamps",
+      "source_or_dataset names",
+      "provisional slot literals",
+      "answer keys",
+      "final-text modality labels",
+      "copied contiguous four-token ASR phrases"
+    ],
+    "lexical_jaccard_threshold": 0.92,
+    "near_identity_gate_retained": true,
+    "normalized_exact_duplicates_fail": true,
+    "optional_template_baseline_explicitly_excluded": true,
+    "paired_factor_semantic_containment_required": true,
+    "query_embeddings_persisted": false,
+    "target_or_non_target_embeddings_read": false,
+    "template_only_primary_queries_forbidden": true,
+    "visual_agent_free_passive_permitted_when_contained": true,
+    "visual_query_nearby_unaffected": true,
+    "visual_query_standalone_by_fail_closed": true
+  },
+  "authoring_route": {
+    "acoustic_concept_registry": {
+      "broad_startswith_matching": false,
+      "context_bound_actions": [
+        "slam",
+        "drop",
+        "break",
+        "shatter",
+        "tear",
+        "rip",
+        "chop",
+        "cut",
+        "stir",
+        "pour",
+        "clap",
+        "stomp",
+        "open",
+        "close",
+        "slide"
+      ],
+      "exact_form_matching_only": true,
+      "manifest_sha256": "sha256:1e3b097804f1bcd18baa43be4edb60450da82f4ad0ab2c84a09c9f925cd4dda7",
+      "single_source_of_truth": "ACOUSTIC_CONCEPT_REGISTRY"
+    },
+    "acoustic_context_gate": {
+      "accepted_binding_families": [
+        "auditory adjective plus event",
+        "event plus immediately postposed auditory adjective",
+        "event plus sound/noise noun",
+        "sound of event",
+        "event is heard/audible",
+        "event echoes/rings out",
+        "controlled adjacent acoustic modifiers"
+      ],
+      "accepted_marker_token_not_recounted_as_independent_mention": true,
+      "all_ambiguous_mentions_must_bind_locally": true,
+      "ambient_minimum_normalized_words": 2,
+      "ambiguous_action_tokens_require_local_auditory_binding": [
+        "click",
+        "crinkling",
+        "crumpling",
+        "echo",
+        "impact",
+        "knock",
+        "rattle",
+        "ring",
+        "scrape",
+        "scratch",
+        "snap",
+        "splash",
+        "tap"
+      ],
+      "clap_gate_retained_as_embedding_auxiliary": true,
+      "controlled_auditory_marker_role_is_exclusive": true,
+      "controlled_r10_positives": [
+        "scraping noise",
+        "throat clearing",
+        "sound of a button click",
+        "audible clicking",
+        "single beep",
+        "ready beep"
+      ],
+      "controlled_r11_positives": [
+        "a knock echoes",
+        "knock echoes",
+        "an echo is heard"
+      ],
+      "controlled_r13_positives": [
+        "a bell rings audibly",
+        "a bell is audibly ringing"
+      ],
+      "deterministic_lexical_gate": "fail_closed_before_clap_embedding_diagnostic",
+      "exact_rejected_r10_regressions": [
+        "a beep sounds while a person taps a button",
+        "color choice impacts sound quality",
+        "click sound menu button",
+        "sound quiet",
+        "a beep sounds while a person asks a question"
+      ],
+      "exact_rejected_r11_regressions": [
+        "the design echoes a theme",
+        "echo button",
+        "a beep sounds while the design echoes a theme"
+      ],
+      "exact_rejected_r13_regressions": [
+        "a bell rings near a label that is audibly scratched",
+        "a bell rings while a person audibly taps a button",
+        "a bell rings in a room with the sound of a button click"
+      ],
+      "exact_rejected_regressions": [
+        "color choice impacts appearance",
+        "person taps a button",
+        "clicks a menu button",
+        "hand scratches a label"
+      ],
+      "generic_sound_or_quiet_insufficient": true,
+      "mixed_valid_event_does_not_rescue_unbound_ambiguous_mention": true,
+      "unambiguous_acoustic_events_pass_directly": [
+        "beep",
+        "clank",
+        "hiss",
+        "rustle",
+        "throat-clearing",
+        "thud"
+      ],
+      "visual_minimum_normalized_words": 3,
+      "whole_sentence_sound_keyword_bypass_forbidden": true
+    },
+    "acoustic_normalization": {
+      "clear_possessive_or_determiner_throat": "throat-clearing",
+      "lexical_speech_remains_forbidden": true,
+      "nonlexical_vocalization_quarantine_unchanged": true
+    },
+    "ambient_semantic_tuple_duplicate_gate": {
+      "authoring_retry_permitted": false,
+      "automatic_rewrite_permitted": false,
+      "collision_ledger_emitted": true,
+      "global_duplicate_findings_emitted": true,
+      "ordinal_disambiguation_permitted": false,
+      "replacement_governance": "outer_R22_selection_only",
+      "same_family_duplicate_tuple": "FAIL_CLOSED",
+      "synonym_template_substitution_permitted": false
+    },
+    "ambient_token_constraint": {
+      "constraint_kind": "canonical_ambient_tuple_token_prefix_trie",
+      "constraint_leaf_count": 7680,
+      "constraint_manifest": {
+        "assistant_prefill": "{",
+        "canonical_json": {
+          "acoustic_property_key_order": [
+            "loudness",
+            "temporal_pattern",
+            "timbre"
+          ],
+          "allow_nan": false,
+          "ensure_ascii": false,
+          "separators": [
+            ",",
+            ":"
+          ],
+          "sort_keys": true,
+          "top_level_key_order": [
+            "acoustic_properties",
+            "event_kind"
+          ]
+        },
+        "canonical_strings_sha256": "sha256:cabae9e09515751677e247533c0bee30611c4f6a23220efadd4d5863b7be3631",
+        "constraint_kind": "canonical_ambient_tuple_token_prefix_trie",
+        "leaf_count": 7680,
+        "leaf_policy": "only_eos_or_model_stop_tokens_allowed",
+        "reachable_count": 7680,
+        "registry_sha256": "sha256:adcd8505fa038e2580fb0f104e95eb22ab78286ea4047c7257d0d8f8eb559749",
+        "schema_repair_permitted": false,
+        "schema_version": "av-trace.ambient-token-prefix-constraint/1.0",
+        "semantic_substitution_permitted": false
+      },
+      "constraint_manifest_sha256": "sha256:d3e6b3c4c0c2de8a3b252ea5a1a77094a944f52f7a7dbb678cf5a991e1302628",
+      "constraint_reachable_count": 7680
+    },
+    "component_local_composition_validation": {
+      "clause_binding_source": "accepted_description_projection_by_ordinal",
+      "coverage_required": [
+        "visual",
+        "acoustic"
+      ],
+      "cross_component_bridge_gates_unchanged": true,
+      "explicit_continuity_causality_reference_patterns_forbidden": true,
+      "local_agent_and_entity_terms_permitted": true,
+      "local_possessive_coreference_exception": "possessive their/his/her only with an earlier explicit same-clause human-agent antecedent and no bridge marker",
+      "normalized_exact_text_and_sha256_required": true,
+      "visual_query_local_clause_coverage_forbidden": true
+    },
+    "component_semantic_fail_closed": {
+      "cross_component_cardinality_reference_meta_language_forbidden": true,
+      "expanded_explicit_causality_phrases_forbidden": true,
+      "final_mechanical_causality_revalidated": true,
+      "nominal_result_without_causal_phrase_permitted": true,
+      "ordinary_object_another_wording_permitted": true
+    },
+    "composition_model_authored_natural_language": false,
+    "composition_model_output_schema": [
+      "relation_kind"
+    ],
+    "composition_relation_kind_by_shape": {
+      "one_component": "local_cooccurrence",
+      "two_component_ordered": "ordered_1_then_2"
+    },
+    "exact_target_decode_only": true,
+    "factorization": {
+      "ambient_factor_keys": ":component:N:ambient",
+      "ambient_media_contract": "audio_only_video_absent",
+      "ambient_prompt_count": 28,
+      "composition_factor_keys": ":family_composition",
+      "composition_media_contract": "text_only_no_media",
+      "composition_prompt_count": 20,
+      "initial_factor_calls": 76,
+      "missing_extra_cross_clip_cross_modality_rejected": true,
+      "same_clip_visual_ambient_pairing_required": true,
+      "visual_factor_keys": ":component:N:visual",
+      "visual_media_contract": "video_only_audio_absent",
+      "visual_prompt_count": 28
+    },
+    "family_text_generation": "mechanical_from_accepted_component_factors_and_frozen_shape",
+    "full_source_scan": false,
+    "lexical_speech_gate": {
+      "answer_forms": [
+        "answer",
+        "answers",
+        "answered",
+        "answering"
+      ],
+      "ask_forms": [
+        "ask",
+        "asks",
+        "asked",
+        "asking"
+      ],
+      "broad_prefix_matching": false,
+      "matching": "exact_normalized_inflection_lexicon",
+      "prefix_false_positives_rejected": [
+        "single",
+        "ready"
+      ],
+      "question_forms": [
+        "question",
+        "questions",
+        "questioned",
+        "questioning"
+      ]
+    },
+    "outputs_per_component": [
+      "visual_description",
+      "visual_query",
+      "ambient_description",
+      "ambient_query"
+    ],
+    "outputs_per_family": [
+      "mechanical_family_compositional_description",
+      "mechanical_family_compositional_query"
+    ],
+    "paired_factor_semantic_containment": {
+      "accepted_r15_alternatives": [
+        "hand lifts metal bowl -> Which metal bowl is a hand lifting from the counter?",
+        "hand lifts metal bowl -> Which metal bowl is being lifted from the counter?",
+        "hand lifts metal bowl -> metal bowl lifting from the counter"
+      ],
+      "controlled_passive_action_map_active": false,
+      "exact_rejected_r15_regressions": [
+        "hand lifts metal bowl -> metal bowl is lifted by hand",
+        "worker and sealed box stand nearby -> sealed by worker",
+        "covered bowl sits while hand rests nearby -> covered by hand",
+        "red bowl sits while hand rests nearby -> red by hand",
+        "new noun, material, or action in an agent-free query"
+      ],
+      "minimum_anchored_content_concepts": 1,
+      "query_may_add_specific_semantics": false,
+      "question_scaffold_whitelist": true,
+      "sound_concept_inflection_equivalence": true,
+      "visual_agentive_passive_supported": false,
+      "visual_generic_person_action_query_forbidden": true,
+      "visual_query_by_policy": "every standalone by token fails closed; nearby remains an ordinary token",
+      "visual_query_locative_by_tradeoff": "conservatively_rejected_for_precision"
+    },
+    "primary_model": {
+      "deterministic_generation": {
+        "do_sample": false,
+        "max_new_tokens": 640,
+        "seed": 0
+      },
+      "direct_audio_video": true,
+      "fallback_substitution": false,
+      "repo_id": "Qwen/Qwen2.5-Omni-7B",
+      "revision": "ae9e1690543ffd5c0221dc27f79834d0294cba00",
+      "semantic_retries": 0,
+      "snapshot": "data/restricted/strong_baselines/models/Qwen--Qwen2.5-Omni-7B--ae9e1690543f"
+    },
+    "prompt_field_roles_and_examples": "mechanically_verifiable_positive_and_negative_examples",
+    "structured_ambient_semantics": {
+      "accepted_and_final_bindings": [
+        "tuple",
+        "description",
+        "query",
+        "registry",
+        "generator",
+        "template"
+      ],
+      "accepted_factor_validator": "validate_accepted_ambient_factor",
+      "accepted_fields_preserved_through_assembly": true,
+      "action_event_kinds_forbidden": [
+        "break",
+        "chop",
+        "clap",
+        "close",
+        "cut",
+        "drop",
+        "open",
+        "place",
+        "pour",
+        "rip",
+        "shatter",
+        "slam",
+        "slide",
+        "stir",
+        "stomp",
+        "tear"
+      ],
+      "all_allowed_combinations_round_trip_audited": true,
+      "ambient_lifecycle": "raw_tuple_to_accepted_factor_once",
+      "ambient_schema_repair_permitted": false,
+      "assembly_consumes": "validated_accepted_ambient_factor",
+      "combination_count": 7680,
+      "composition_consumes": "validated_accepted_visual_ambient_text_projection",
+      "constraint_leaf_count": 7680,
+      "constraint_manifest_sha256": "sha256:d3e6b3c4c0c2de8a3b252ea5a1a77094a944f52f7a7dbb678cf5a991e1302628",
+      "constraint_reachable_count": 7680,
+      "content_atom_dimensions": [
+        "event_kind",
+        "timbre",
+        "loudness",
+        "temporal_pattern"
+      ],
+      "content_atom_equality_required": true,
+      "continuous_liquid_flow_defined": true,
+      "description_query_generation": "deterministic_mechanical_from_same_tuple",
+      "event_kind_count": 64,
+      "exact_top_level_keys": [
+        "event_kind",
+        "acoustic_properties"
+      ],
+      "generator_sha256": "sha256:fdaf3ced8892230dc57aa6634c875f441605125ffc1cd9fba01ed7163b3fe086",
+      "independent_description_parse_back_required": true,
+      "independent_query_parse_back_required": true,
+      "legacy_natural_language_helpers": "historical_tests_and_derived_text_sanity_only",
+      "mechanical_text_model_calls": 0,
+      "model_output": "closed_source_free_acoustic_tuple_only",
+      "pour_event_kind_forbidden": true,
+      "r17_raw_paper_regression_rejected": true,
+      "raw_accepted_swap_fails_closed": true,
+      "raw_attempt_parsed_hash_binds": "canonical_ambient_semantics",
+      "raw_attempt_replay_requires_accepted_binding_equality": true,
+      "raw_tuple_validator": "validate_ambient_factor_output",
+      "registry_sha256": "sha256:adcd8505fa038e2580fb0f104e95eb22ab78286ea4047c7257d0d8f8eb559749",
+      "single_declarative_template_spec": "AMBIENT_TEMPLATE_SPEC",
+      "source_free_crinkle_crisp_soft_repeated_passes": true,
+      "source_hint_field_forbidden_even_when_null": true,
+      "source_material_object_agent_location_direction_forbidden": true,
+      "strict_frozen_template_grammar_parser": true,
+      "template_sha256": "sha256:90588713a2401977a220d287344748fdb3e1aab04a7e72beed1d87da7c7aca1c",
+      "unique_pair_count": 7680,
+      "unknown_combinations_fail_closed": true
+    }
+  },
+  "commands": {
+    "future_authorized_execute": "python tools/p23_102_query_authoring_v2.py --execute --authorization <approved-authorization-receipt.json>",
+    "plan": "python tools/p23_102_query_authoring_v2.py --plan",
+    "preflight": "python tools/p23_102_query_authoring_v2.py --preflight",
+    "synthetic_self_test": "python tools/p23_102_query_authoring_v2.py --synthetic-self-test",
+    "targeted_tests": "pytest -q tooling/tests/test_p23_102_query_authoring_v2.py"
+  },
+  "created_date": "2026-10-23",
+  "decision": "R23_A_IMPLEMENTATION_READY",
+  "fail_closed": {
+    "all_local_models_required": true,
+    "any_audit_finding_blocks_seal": true,
+    "execute_requires_external_authorization_receipt": true,
+    "invalid_model_json_blocks_seal": true,
+    "network_denied": true,
+    "partial_output_install_forbidden": true,
+    "silent_fallback_forbidden": true
+  },
+  "implementation_files": [
+    "tools/p23_102_query_authoring_v2.py",
+    "tooling/tests/test_p23_102_query_authoring_v2.py",
+    "docs/design/p23_102_query_authoring_v2.md",
+    "tools/p23_102_r22_deterministic_replay.py"
+  ],
+  "pipeline_id": "AV-TRACE-P23-102-QUERY-AUTHORING-V2",
+  "pipeline_sha256": "sha256:6ae1c46007ca6ec93ac30b71ccf0db7e406cfa20215df0f5df1b0309f95aad5b",
+  "plan_payload_sha256": "sha256:4658b6db4910194c068c02f4118cb85b87fdf0555656b2e65aca5f6367a11e39",
+  "resource_estimate": {
+    "asr_audit_calls": 28,
+    "authoring_model_calls": 76,
+    "cpu_wall_clock": "approximately 4-16 hours on an 8-thread host; hardware dependent",
+    "dominant_costs": [
+      "loading the 21 GiB Qwen2.5-Omni snapshot",
+      "28 deterministic video-only visual factor generations",
+      "28 deterministic audio-only ambient factor generations",
+      "20 deterministic text-only relation-kind generations",
+      "28 PyAV exact-interval decodes and ASR passes",
+      "query-only SigLIP2 and CLAP text embedding audits"
+    ],
+    "gpu_required": false,
+    "local_model_storage_already_present_gib": "approximately 23 for Omni, SigLIP2, CLAP, and Whisper snapshots",
+    "maximum_authoring_model_calls": 124,
+    "maximum_schema_only_repair_calls": 48,
+    "mechanical_ambient_text_model_calls": 0,
+    "network_requests": 0,
+    "peak_ram_gib": "approximately 28-48 for Qwen2.5-Omni CPU BF16 plus media tensors",
+    "target_clip_extractions": 28,
+    "temporary_target_media_gib": "approximately 0.3-1.5",
+    "text_embedding_passes": 2
+  },
+  "schema_version": "av-trace.p23-102-query-authoring-plan/23.0",
+  "scope": {
+    "authorization_receipt_created": false,
+    "development_only": true,
+    "full_pipeline_run": false,
+    "machine_authored_not_human_validated": true,
+    "models_loaded_by_this_task": false,
+    "old_authorization_receipts_valid": false,
+    "plan_status_current": true,
+    "real_execution_performed": false,
+    "retrieval_scoring_performed": false,
+    "target_media_decoded_by_this_task": false
+  },
+  "strict_authoring_separation": {
+    "allowed_inputs": [
+      "frozen provisional family structure and unfilled slot names",
+      "frozen evidence interval and handle bindings",
+      "development-only source split and provisional leakage gate",
+      "exact target clip pixels and audio only",
+      "pinned local authoring and audit model snapshots"
+    ],
+    "forbidden_inputs": [
+      "candidate_registry rankings or scores",
+      "full-timeline index records or vectors",
+      "non-target media or vectors",
+      "retrieval diagnostic rankings, metrics, or outcomes",
+      "intervention outcomes",
+      "answer keys or accepted-support mappings",
+      "human semantic labels"
+    ],
+    "private_ids_timestamps_model_visible": false,
+    "scoring_stage": "SEALED_LATER_STAGE"
+  },
+  "target_scope": {
+    "ambient_handle_queries": 28,
+    "evidence_handles": 56,
+    "family_compositional_queries": 20,
+    "far_ordered_two_component_families": 8,
+    "near_local_one_component_families": 12,
+    "primary_query_count": 76,
+    "repaired_provisional_families": 20,
+    "unique_exact_target_clips": 28,
+    "visual_handle_queries": 28
+  }
+}

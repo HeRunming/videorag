@@ -1,0 +1,124 @@
+{
+  "bindings": {
+    "dependency_manifest": {
+      "dependency_manifest_payload_sha256": "sha256:6051e6baff067754d0841677adefb88d0d7f6286113484b64689799c9c3a4160",
+      "entries": [
+        {
+          "dependency_id": "parent_ambient_tool",
+          "kind": "file",
+          "path": "tools/p23_102_query_authoring_v2.py",
+          "sha256": "sha256:6ae1c46007ca6ec93ac30b71ccf0db7e406cfa20215df0f5df1b0309f95aad5b"
+        },
+        {
+          "dependency_id": "v5_inherited_tool",
+          "kind": "file",
+          "path": "tools/p23_102_global_distinctiveness_v5.py",
+          "sha256": "sha256:46da4d0ba443d3ca66cacf8c671f8eb0b4791e647d42fabb7fbf9572406633d8"
+        },
+        {
+          "dependency_id": "v6_inherited_tests",
+          "kind": "file",
+          "path": "tooling/tests/test_p23_102_global_distinctiveness_v6.py",
+          "sha256": "sha256:e871c94b0bab154df8a6252bd61ffb130b8b996fd03963cbffd02809d8135785"
+        },
+        {
+          "dependency_id": "v6_inherited_tool",
+          "kind": "file",
+          "path": "tools/p23_102_global_distinctiveness_v6.py",
+          "sha256": "sha256:537addf1a9d2aeda91ff4c553a2d5405db477492fba30e8af0788eeaabe09d21"
+        },
+        {
+          "dependency_id": "v7_design_doc",
+          "kind": "file",
+          "path": "docs/design/p23_102_global_distinctiveness_v7.md",
+          "sha256": "sha256:3541fcf4a8874a86fa3a355f4fb6673cc538726aa9d7e19e01b32ff75aab5bef"
+        },
+        {
+          "dependency_id": "v7_tests",
+          "kind": "file",
+          "path": "tooling/tests/test_p23_102_global_distinctiveness_v7.py",
+          "sha256": "sha256:2b70fb09631f481c0bb5558e22f6ea0c3b7b3ae431600f7172b78e2fc7bb0260"
+        },
+        {
+          "dependency_id": "v7_tool",
+          "kind": "file",
+          "path": "tools/p23_102_global_distinctiveness_v7.py",
+          "sha256": "sha256:ed7c60a4858a079f2702cb41b17ac089304a71f22f885d84dfb2abb15119129b"
+        },
+        {
+          "dependency_id": "parent_ambient_output_schema",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:ce319be17a34d2f5e84e5d0041b28033073d5e56868d4aab5c4590d64d211ca4"
+        },
+        {
+          "dependency_id": "review_principal_registry_manifest",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:b0f8f1a1c8faeeb336a84700654e061d6165b02d77316b981c625c9d0f786555"
+        },
+        {
+          "dependency_id": "review_principal_registry_schema",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:344d24e735d6eb319f0103f97de2b7c63ce555a5009475a222626d1b625f045c"
+        },
+        {
+          "dependency_id": "runtime_constants",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:b8afc03e9ef2306724cc03a7674c26c79d7dc3811a1dfa754704614c105c6979"
+        },
+        {
+          "dependency_id": "synthetic_fixture",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:6b5166cd707aad978dc76138ac6ba482bd92c6db2a38817f550ba0ff1da00d1b"
+        },
+        {
+          "dependency_id": "v5_family_registry_manifest",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:16711f1fb6b775bb07628bf4bfa8cc212140645666017f4c55601a7b38dc7ef7"
+        },
+        {
+          "dependency_id": "v5_gate_manifest",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:80a4e67fe2f61c7a3bf3f24096cf57698160997ef4c74234f45b32df572834d1"
+        },
+        {
+          "dependency_id": "v5_generator_manifest",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:1f150275dd853b9334d13ed01a1f6d1396adbef67a1fedd70bc2acd57da02573"
+        },
+        {
+          "dependency_id": "v5_schema_manifest",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:28a65eaa76f4762d2da42151b5c18ed59a9262bab9d5571e263c82c5f50deca2"
+        },
+        {
+          "dependency_id": "v5_visual_registry_manifest",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:6a6990de645a573349213c86420ea6ac2b55d772607ee05e4fe06582de27fd6c"
+        },
+        {
+          "dependency_id": "v7_review_receipt_schema",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:d366eb4f3df908897a783af8765a9fe4684ec36a3ffac79878a2938122f54f4b"
+        },
+        {
+          "dependency_id": "v7_typed_audit_schema",
+          "kind": "semantic_manifest",
+          "sha256": "sha256:ee2f131840caa2abc54188a37ca42b6ee1cb85fb648050e8eb14b10f4aae68ee"
+        }
+      ],
+      "schema_version": "av-trace.p23-102-r23b-dependency-manifest/1.0"
+    },
+    "dependency_manifest_payload_sha256": "sha256:6051e6baff067754d0841677adefb88d0d7f6286113484b64689799c9c3a4160",
+    "plan_file_expected_canonical_sha256": "sha256:2fba69fd755ef63089c15306b30ec6d4eaa07d4d189b76b16ffe7f60a7783844",
+    "plan_payload_sha256": "sha256:b773779477bc2b91be6099d6ce67b89b9c6ff7879df7390b7b2f05c88ab935b3"
+  },
+  "commitment_request_payload_sha256": "sha256:94a57d8d12165ae98b2ca8521ab3391a9b0f379173e24e2dccee0e980ad6fc7e",
+  "date": "2026-10-23",
+  "decision": "R23_B_V7_DESIGN_READY",
+  "execution": false,
+  "external_attested": false,
+  "identity_disclaimer": "principal registry consistency is not proof of real-human identity",
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "request_purpose": "REQUEST_FUTURE_INDEPENDENT_EXTERNAL_AUTHORIZATION_BINDING",
+  "schema_version": "av-trace.p23-102-r23b-external-commitment-request/5.0"
+}

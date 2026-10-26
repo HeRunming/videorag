@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "prepared_as_of": "2026-09-09",
+  "decision": "NO_GO_FULL_ACQUISITION_OR_LONG_VIDEO_PILOT_CORE",
+  "decision_reason": "None of the five preflight objects is both scientifically eligible for the 1,200–5,400-second long-video pilot core and authorized for full acquisition. The FLARE demos are exact declared-A/V compatibility examples but are too short; the Omni objects are access-blocked and unverified.",
+  "evidence": {
+    "plan": "data/acquisition_preflight/hf_audio_stream_preflight_plan.json",
+    "live_result": "data/acquisition_preflight/hf_audio_stream_preflight_result.json",
+    "independent_audit": "docs/review/hf_audio_stream_preflight_audit.md",
+    "live_generated_at": "2026-09-09T06:18:13Z"
+  },
+  "authorization": {
+    "authorized_for_additional_stream_preflight": [],
+    "authorized_for_full_acquisition": [],
+    "authorized_for_transfer": [],
+    "authorized_for_pilot_core": []
+  },
+  "transfer_audit": {
+    "request_count": 9,
+    "range_request_count": 4,
+    "response_body_bytes": 4194304,
+    "maximum_observed_response_bytes": 1048576,
+    "complete_object_range_observed": false,
+    "complete_media_downloaded": false,
+    "media_persisted_by_preflight": false,
+    "credentials_or_signed_urls_persisted": false
+  },
+  "scientific_gate_definitions": {
+    "audio_track_declared": "Container metadata contains at least one soun handler; this does not require decoding media samples.",
+    "content_audio_semantics_verified": "Decoded audible content and its speech/ambient/semantic role have been inspected; this preflight did not perform that work.",
+    "duration_eligible": "Exact container duration is within the inclusive 1,200–5,400-second gate.",
+    "access_authorized": "The exact item may be accessed for the specified bounded or acquisition action under an explicit approved scope; reachability alone is insufficient.",
+    "full_acquisition_authorized": "A separate approval permits complete transfer and intended processing; no preflight result grants it."
+  },
+  "candidates": [
+    {
+      "candidate_id": "ccp-005",
+      "identity_verified": true,
+      "audio_track_declared": true,
+      "content_audio_semantics_verified": false,
+      "duration_seconds": 745.96421875,
+      "duration_eligible": false,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false,
+      "disposition": "ENGINEERING_COMPATIBILITY_FIXTURE_ONLY"
+    },
+    {
+      "candidate_id": "ccp-006",
+      "identity_verified": true,
+      "audio_track_declared": true,
+      "content_audio_semantics_verified": false,
+      "duration_seconds": 766.862,
+      "duration_eligible": false,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false,
+      "disposition": "ENGINEERING_COMPATIBILITY_FIXTURE_ONLY"
+    },
+    {
+      "candidate_id": "omni-video_284",
+      "identity_verified": false,
+      "audio_track_declared": null,
+      "content_audio_semantics_verified": false,
+      "duration_seconds": null,
+      "duration_eligible": null,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false,
+      "disposition": "ACCESS_BLOCKED_UNVERIFIED_NOT_AUDIO_NEGATIVE"
+    },
+    {
+      "candidate_id": "omni-video_617",
+      "identity_verified": false,
+      "audio_track_declared": null,
+      "content_audio_semantics_verified": false,
+      "duration_seconds": null,
+      "duration_eligible": null,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false,
+      "disposition": "ACCESS_BLOCKED_UNVERIFIED_NOT_AUDIO_NEGATIVE"
+    },
+    {
+      "candidate_id": "omni-video_611",
+      "identity_verified": false,
+      "audio_track_declared": null,
+      "content_audio_semantics_verified": false,
+      "duration_seconds": null,
+      "duration_eligible": null,
+      "access_authorized": false,
+      "full_acquisition_authorized": false,
+      "scientifically_eligible_for_long_video_core": false,
+      "disposition": "ACCESS_BLOCKED_UNVERIFIED_NOT_AUDIO_NEGATIVE"
+    }
+  ],
+  "recommended_next_route": [
+    "Keep ccp-005 and ccp-006 as exact engineering/container compatibility fixtures, outside the pilot core.",
+    "Expand immutable exact-object discovery for candidates already within the 1,200–5,400-second gate; do not relax the 20-minute lower bound.",
+    "Resolve Omni gate/access only if expected scientific value justifies a new item-scoped authorization; if approved, repeat bounded inspection before considering acquisition.",
+    "Require separate positive decisions for decoded audio semantics, access, processing, full acquisition, and pilot inclusion."
+  ]
+}

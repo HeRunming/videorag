@@ -1,0 +1,611 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:episode-family:0.2.0",
+  "title": "AV-TRACE Pilot-0 episode family",
+  "description": "Normative structural schema for one Pilot-0 family. Scientific invariants are defined in semantic_validator_spec.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "family_id",
+    "intervention_family_id",
+    "intervention_mechanism",
+    "split",
+    "source",
+    "question",
+    "answer_spec",
+    "claim_evidence_graph",
+    "episodes",
+    "annotation"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.2.0"},
+    "family_id": {"$ref": "#/$defs/id"},
+    "intervention_family_id": {"$ref": "#/$defs/id"},
+    "intervention_mechanism": {
+      "enum": ["necessity_group_withholding", "modality_channel_outage"]
+    },
+    "split": {"enum": ["development", "test", "sequestered_test"]},
+    "source": {"$ref": "#/$defs/source"},
+    "question": {"$ref": "#/$defs/question"},
+    "answer_spec": {"$ref": "#/$defs/answer_spec"},
+    "claim_evidence_graph": {"$ref": "#/$defs/graph"},
+    "episodes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "allOf": [
+            {"$ref": "#/$defs/episode"},
+            {
+              "properties": {
+                "state_role": {"const": "CLEAN"},
+                "anchor_episode_id": {"type": "null"}
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/episode"},
+            {
+              "properties": {
+                "state_role": {"const": "BLOCKED"},
+                "anchor_episode_id": {"$ref": "#/$defs/id"}
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {"$ref": "#/$defs/episode"},
+            {
+              "properties": {
+                "state_role": {"const": "RESTORED"},
+                "anchor_episode_id": {"$ref": "#/$defs/id"}
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "annotation": {"$ref": "#/$defs/annotation"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "id_array": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/id"},
+      "uniqueItems": true
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset_id",
+        "manifest_asset_id",
+        "manifest_revision",
+        "rights_decision_id",
+        "duration_s",
+        "content_hash",
+        "streams",
+        "access_class"
+      ],
+      "properties": {
+        "asset_id": {"$ref": "#/$defs/id"},
+        "manifest_asset_id": {"$ref": "#/$defs/id"},
+        "manifest_revision": {"type": "string", "minLength": 1},
+        "rights_decision_id": {"$ref": "#/$defs/id"},
+        "duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "content_hash": {"$ref": "#/$defs/sha256"},
+        "streams": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["stream_id", "kind", "hash"],
+            "properties": {
+              "stream_id": {"$ref": "#/$defs/id"},
+              "kind": {"enum": ["video", "audio", "subtitle", "transcript", "metadata"]},
+              "language": {"type": ["string", "null"]},
+              "hash": {"$ref": "#/$defs/sha256"}
+            }
+          }
+        },
+        "access_class": {
+          "enum": ["public_core_redistributable", "restricted_compatibility"]
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "answer_type", "requested_granularity", "question_only_risk"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "answer_type": {"enum": ["structured_claims", "boolean", "ordered_events", "count"]},
+        "requested_granularity": {"type": "string", "minLength": 1, "maxLength": 500},
+        "question_only_risk": {"enum": ["low", "medium", "high", "not_tested"]}
+      }
+    },
+    "answer_spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_claim_ids", "optional_claim_ids", "forbidden_claim_ids"],
+      "properties": {
+        "required_claim_ids": {"$ref": "#/$defs/id_array"},
+        "optional_claim_ids": {"$ref": "#/$defs/id_array"},
+        "forbidden_claim_ids": {"$ref": "#/$defs/id_array"},
+        "display_answer": {"type": "string", "maxLength": 1000}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "proposition", "requirement", "answer_value", "accepted_aliases"],
+      "properties": {
+        "claim_id": {"$ref": "#/$defs/id"},
+        "proposition": {"type": "string", "minLength": 1},
+        "requirement": {"enum": ["required", "optional", "forbidden"]},
+        "answer_value": {},
+        "accepted_aliases": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "contradiction_claim_ids": {"$ref": "#/$defs/id_array"}
+      }
+    },
+    "evidence_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "intervals",
+        "modality",
+        "stream_id",
+        "observation",
+        "provenance"
+      ],
+      "properties": {
+        "evidence_id": {"$ref": "#/$defs/id"},
+        "intervals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/interval"}
+        },
+        "modality": {"enum": ["vision", "speech", "ambient"]},
+        "stream_id": {"$ref": "#/$defs/id"},
+        "observation": {"type": "string", "minLength": 1},
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["asset_id", "stream_hash", "transformation_ids"],
+          "properties": {
+            "asset_id": {"$ref": "#/$defs/id"},
+            "stream_hash": {"$ref": "#/$defs/sha256"},
+            "transformation_ids": {"$ref": "#/$defs/id_array"}
+          }
+        }
+      }
+    },
+    "hop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hop_id", "hop_type", "description", "input_evidence_ids", "input_hop_ids"],
+      "properties": {
+        "hop_id": {"$ref": "#/$defs/id"},
+        "hop_type": {
+          "enum": [
+            "entity_identity",
+            "event_detection",
+            "speech_content",
+            "ambient_event",
+            "temporal_order",
+            "cross_modal_binding",
+            "causal_link",
+            "state_change",
+            "comparison",
+            "counting",
+            "other_registered"
+          ]
+        },
+        "description": {"type": "string", "minLength": 1},
+        "input_evidence_ids": {"$ref": "#/$defs/id_array"},
+        "input_hop_ids": {"$ref": "#/$defs/id_array"}
+      }
+    },
+    "support_edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["edge_id", "relation", "from_ids", "to_id"],
+      "properties": {
+        "edge_id": {"$ref": "#/$defs/id"},
+        "relation": {
+          "enum": ["direct_support", "supports_hop", "hop_supports_claim", "contradicts"]
+        },
+        "from_ids": {"$ref": "#/$defs/id_array"},
+        "to_id": {"$ref": "#/$defs/id"}
+      }
+    },
+    "sufficient_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "set_id",
+        "claim_ids",
+        "evidence_ids",
+        "hop_ids",
+        "satisfiability_validated",
+        "minimality_validated",
+        "validator_ids"
+      ],
+      "properties": {
+        "set_id": {"$ref": "#/$defs/id"},
+        "claim_ids": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 1}]
+        },
+        "evidence_ids": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 1}]
+        },
+        "hop_ids": {"$ref": "#/$defs/id_array"},
+        "satisfiability_validated": {"const": true},
+        "minimality_validated": {"const": true},
+        "validator_ids": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 2}]
+        }
+      }
+    },
+    "necessity_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "claim_ids",
+        "member_evidence_ids",
+        "required_modalities",
+        "required_hop_ids",
+        "intersects_all_accepted_sets",
+        "removal_validated"
+      ],
+      "properties": {
+        "group_id": {"$ref": "#/$defs/id"},
+        "claim_ids": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 1}]
+        },
+        "member_evidence_ids": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 1}]
+        },
+        "required_modalities": {
+          "type": "array",
+          "items": {"enum": ["vision", "speech", "ambient"]},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "required_hop_ids": {"$ref": "#/$defs/id_array"},
+        "intersects_all_accepted_sets": {"const": true},
+        "removal_validated": {"const": true}
+      }
+    },
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claims",
+        "evidence_units",
+        "hops",
+        "support_edges",
+        "accepted_sufficient_sets",
+        "necessity_groups"
+      ],
+      "properties": {
+        "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
+        "evidence_units": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence_unit"}},
+        "hops": {"type": "array", "items": {"$ref": "#/$defs/hop"}},
+        "support_edges": {"type": "array", "items": {"$ref": "#/$defs/support_edge"}},
+        "accepted_sufficient_sets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sufficient_set"}
+        },
+        "necessity_groups": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/necessity_group"}
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cost_limit", "max_steps", "tool_costs"],
+      "properties": {
+        "cost_limit": {"type": "number", "exclusiveMinimum": 0},
+        "max_steps": {"type": "integer", "minimum": 1},
+        "tool_costs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "search_visual",
+            "search_speech",
+            "search_ambient_audio",
+            "inspect_clip",
+            "read_transcript",
+            "get_channel_status",
+            "finalize"
+          ],
+          "properties": {
+            "search_visual": {"type": "number", "minimum": 0},
+            "search_speech": {"type": "number", "minimum": 0},
+            "search_ambient_audio": {"type": "number", "minimum": 0},
+            "inspect_clip": {"type": "number", "minimum": 0},
+            "read_transcript": {"type": "number", "minimum": 0},
+            "get_channel_status": {"type": "number", "minimum": 0},
+            "finalize": {"type": "number", "minimum": 0}
+          }
+        }
+      }
+    },
+    "intervention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "intervention_id",
+        "mechanism",
+        "phase",
+        "affected_necessity_group_id",
+        "affected_evidence_ids",
+        "affected_channel",
+        "activation",
+        "restoration"
+      ],
+      "properties": {
+        "intervention_id": {"$ref": "#/$defs/id"},
+        "mechanism": {
+          "enum": ["necessity_group_withholding", "modality_channel_outage"]
+        },
+        "phase": {"enum": ["blocked", "restoration"]},
+        "affected_necessity_group_id": {
+          "oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]
+        },
+        "affected_evidence_ids": {"$ref": "#/$defs/id_array"},
+        "affected_channel": {
+          "enum": ["visual", "speech", "ambient", null]
+        },
+        "activation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["hook", "call_index"],
+          "properties": {
+            "hook": {"enum": ["episode_start", "before_call", "on_restore"]},
+            "call_index": {"type": ["integer", "null"], "minimum": 0}
+          }
+        },
+        "restoration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["enabled", "trigger_type", "trigger_value", "restores_intervention_id"],
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "trigger_type": {"enum": ["none", "fixed_call_index", "get_channel_status"]},
+            "trigger_value": {"type": ["integer", "null"], "minimum": 0},
+            "restores_intervention_id": {
+              "oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]
+            }
+          }
+        }
+      }
+    },
+    "episode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "episode_id",
+        "state_role",
+        "anchor_episode_id",
+        "intervention_family_id",
+        "backend",
+        "budget",
+        "initial_state",
+        "interventions",
+        "oracle",
+        "replay"
+      ],
+      "properties": {
+        "episode_id": {"$ref": "#/$defs/id"},
+        "state_role": {"enum": ["CLEAN", "BLOCKED", "RESTORED"]},
+        "anchor_episode_id": {
+          "oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]
+        },
+        "intervention_family_id": {"$ref": "#/$defs/id"},
+        "backend": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["track", "backend_version", "tool_api_version", "index_hash"],
+          "properties": {
+            "track": {
+              "enum": [
+                "PUBLIC_CORE_FIXED_BACKEND_TRIPLETS",
+                "EXTERNAL_COMPATIBILITY_UNPOOLED",
+                "ORACLE_EVIDENCE_DIAGNOSTIC"
+              ]
+            },
+            "backend_version": {"type": "string", "minLength": 1},
+            "tool_api_version": {"const": "0.2.0"},
+            "index_hash": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "budget": {"$ref": "#/$defs/budget"},
+        "initial_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["enabled_channels", "accessible_evidence_ids"],
+          "properties": {
+            "enabled_channels": {
+              "type": "array",
+              "items": {"enum": ["visual", "speech", "ambient", "clip", "transcript"]},
+              "uniqueItems": true
+            },
+            "accessible_evidence_ids": {"$ref": "#/$defs/id_array"}
+          }
+        },
+        "interventions": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/intervention"}
+        },
+        "oracle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_sufficient",
+            "initial_accessible_sufficient",
+            "expected_final_sufficiency",
+            "gold_missing_necessity_group_ids",
+            "gold_missing_modality_sets",
+            "gold_missing_hop_ids",
+            "gold_missing_hop_types",
+            "missingness_cause",
+            "accepted_final_set_ids"
+          ],
+          "properties": {
+            "source_sufficient": {"const": true},
+            "initial_accessible_sufficient": {"type": "boolean"},
+            "expected_final_sufficiency": {"enum": ["sufficient", "insufficient"]},
+            "gold_missing_necessity_group_ids": {"$ref": "#/$defs/id_array"},
+            "gold_missing_modality_sets": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {"enum": ["vision", "speech", "ambient"]},
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "gold_missing_hop_ids": {"$ref": "#/$defs/id_array"},
+            "gold_missing_hop_types": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "entity_identity",
+                  "event_detection",
+                  "speech_content",
+                  "ambient_event",
+                  "temporal_order",
+                  "cross_modal_binding",
+                  "causal_link",
+                  "state_change",
+                  "comparison",
+                  "counting",
+                  "other_registered"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "missingness_cause": {
+              "enum": [
+                "not_missing",
+                "evidence_in_source_but_inaccessible",
+                "evidence_accessible_but_not_found"
+              ]
+            },
+            "accepted_final_set_ids": {"$ref": "#/$defs/id_array"}
+          }
+        },
+        "replay": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["seed", "manifest_hash", "deterministic"],
+          "properties": {
+            "seed": {"type": "integer", "minimum": 0},
+            "manifest_hash": {"$ref": "#/$defs/sha256"},
+            "deterministic": {"const": true}
+          }
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "version",
+        "authors",
+        "alternative_evidence_finder",
+        "validators",
+        "adjudicator",
+        "alternative_search_completed",
+        "shortcut_audits"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "independent_review",
+            "necessity_test",
+            "adjudication",
+            "accepted",
+            "frozen",
+            "quarantined"
+          ]
+        },
+        "version": {"type": "string", "minLength": 1},
+        "authors": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 1}]
+        },
+        "alternative_evidence_finder": {"$ref": "#/$defs/id"},
+        "validators": {
+          "allOf": [{"$ref": "#/$defs/id_array"}, {"minItems": 2}]
+        },
+        "adjudicator": {"$ref": "#/$defs/id"},
+        "alternative_search_completed": {"type": "boolean"},
+        "shortcut_audits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["audit_type", "status"],
+            "properties": {
+              "audit_type": {
+                "enum": [
+                  "question_only",
+                  "metadata_only",
+                  "transcript_only",
+                  "silent_video",
+                  "ambient_only",
+                  "temporal_shuffle",
+                  "snippet_only",
+                  "duplicate_evidence",
+                  "contamination",
+                  "intervention_artifact"
+                ]
+              },
+              "status": {"enum": ["pass", "fail", "not_applicable", "pending"]},
+              "notes": {"type": "string", "maxLength": 1000}
+            }
+          }
+        }
+      }
+    }
+  }
+}

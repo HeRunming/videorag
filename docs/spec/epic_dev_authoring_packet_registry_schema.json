@@ -1,0 +1,328 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:epic-dev-authoring-packet-registry:1.0.0",
+  "title": "AV-TRACE EPIC development authoring packet registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "registry_id",
+    "created_date",
+    "artifact_classification",
+    "packet_status",
+    "source_registry_binding",
+    "scope",
+    "source_prescreen_bindings",
+    "proposal_packets",
+    "calibration_rejection_examples",
+    "registry_payload_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "epic_dev_authoring_packet_registry"},
+    "registry_id": {"$ref": "#/$defs/id"},
+    "created_date": {"const": "2026-10-02"},
+    "artifact_classification": {
+      "const": "DEVELOPMENT_ONLY_NON_DISTRIBUTABLE_AUTHORING_REHEARSAL"
+    },
+    "packet_status": {"const": "DRAFT_NOT_DISTRIBUTABLE"},
+    "source_registry_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "file_sha256", "registry_payload_sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "file_sha256": {"$ref": "#/$defs/sha256"},
+        "registry_payload_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "development_only",
+        "distribution_authorized",
+        "future_test_eligible",
+        "gate_a_eligible",
+        "human_review_performed",
+        "human_decision_recorded",
+        "h1_assigned",
+        "h2_assigned",
+        "necessity_claimed",
+        "minimality_claimed"
+      ],
+      "properties": {
+        "development_only": {"const": true},
+        "distribution_authorized": {"const": false},
+        "future_test_eligible": {"const": false},
+        "gate_a_eligible": {"const": false},
+        "human_review_performed": {"const": false},
+        "human_decision_recorded": {"const": false},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "necessity_claimed": {"const": false},
+        "minimality_claimed": {"const": false}
+      }
+    },
+    "source_prescreen_bindings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/source_prescreen_binding"}
+    },
+    "proposal_packets": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/proposal_packet"}
+    },
+    "calibration_rejection_examples": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/calibration"}
+    },
+    "registry_payload_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "sample_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sample_id", "start_s", "end_s"],
+      "properties": {
+        "sample_id": {"$ref": "#/$defs/id"},
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "source_prescreen_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_group_id",
+        "inventory_path",
+        "plan_path",
+        "prescreener_form_path",
+        "blank_import_path",
+        "blank_exposure_path",
+        "plan_id",
+        "plan_sha256",
+        "sampling_algorithm",
+        "sample_intervals",
+        "proposal_semantics_visible_to_prescreener"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "inventory_path": {"type": "string", "minLength": 1},
+        "plan_path": {"type": "string", "minLength": 1},
+        "prescreener_form_path": {"type": "string", "minLength": 1},
+        "blank_import_path": {"type": "string", "minLength": 1},
+        "blank_exposure_path": {"type": "string", "minLength": 1},
+        "plan_id": {"$ref": "#/$defs/id"},
+        "plan_sha256": {"$ref": "#/$defs/sha256"},
+        "sampling_algorithm": {
+          "const": "source-uniform-temporal-bin-sha256-jitter-v1"
+        },
+        "sample_intervals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sample_binding"}
+        },
+        "proposal_semantics_visible_to_prescreener": {"const": false}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "text", "human_validated"],
+      "properties": {
+        "claim_id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string", "minLength": 1},
+        "human_validated": {"const": false}
+      }
+    },
+    "evidence_hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "interval",
+        "modality",
+        "carrier_class",
+        "hypothesis",
+        "record_references",
+        "human_semantic_validation_status"
+      ],
+      "properties": {
+        "evidence_id": {"$ref": "#/$defs/id"},
+        "interval": {"$ref": "#/$defs/interval"},
+        "modality": {"enum": ["vision", "audio", "speech"]},
+        "carrier_class": {"type": "string", "minLength": 1},
+        "hypothesis": {"type": "string", "minLength": 1},
+        "record_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "human_semantic_validation_status": {"const": "NOT_PERFORMED"}
+      }
+    },
+    "proposal_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_id",
+        "proposal_id",
+        "source_id",
+        "source_group_id",
+        "task167_proposal_payload_sha256",
+        "question_hypothesis",
+        "answer_hypothesis",
+        "claim_hypotheses",
+        "evidence_hypotheses",
+        "task153_prescreen_binding",
+        "author_verifier_form_path",
+        "role_exposure_policy",
+        "scope",
+        "packet_payload_sha256"
+      ],
+      "properties": {
+        "packet_id": {"$ref": "#/$defs/id"},
+        "proposal_id": {"$ref": "#/$defs/id"},
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "task167_proposal_payload_sha256": {"$ref": "#/$defs/sha256"},
+        "question_hypothesis": {"type": "string", "minLength": 1},
+        "answer_hypothesis": {"type": "string", "minLength": 1},
+        "claim_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/claim"}
+        },
+        "evidence_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/evidence_hypothesis"}
+        },
+        "task153_prescreen_binding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["plan_id", "plan_sha256", "sample_ids", "sample_intervals"],
+          "properties": {
+            "plan_id": {"$ref": "#/$defs/id"},
+            "plan_sha256": {"$ref": "#/$defs/sha256"},
+            "sample_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/id"},
+              "uniqueItems": true
+            },
+            "sample_intervals": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/sample_binding"}
+            }
+          }
+        },
+        "author_verifier_form_path": {"type": "string", "minLength": 1},
+        "role_exposure_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_level_exposure",
+            "excluded_future_roles"
+          ],
+          "properties": {
+            "source_level_exposure": {"const": true},
+            "excluded_future_roles": {
+              "const": [
+                "blind_alternative_evidence_finder",
+                "blind_post_adjudication_saturation_auditor"
+              ]
+            }
+          }
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "future_test_eligible",
+            "gate_a_eligible",
+            "human_review_performed",
+            "human_decision_recorded",
+            "h1_assigned",
+            "h2_assigned"
+          ],
+          "properties": {
+            "future_test_eligible": {"const": false},
+            "gate_a_eligible": {"const": false},
+            "human_review_performed": {"const": false},
+            "human_decision_recorded": {"const": false},
+            "h1_assigned": {"const": false},
+            "h2_assigned": {"const": false}
+          }
+        },
+        "packet_payload_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calibration_id",
+        "source_proposal_id",
+        "source_id",
+        "example_type",
+        "inherited_machine_disposition",
+        "not_a_human_decision",
+        "question_hypothesis",
+        "answer_hypothesis",
+        "rejection_signals",
+        "calibration_lesson",
+        "file_path",
+        "future_test_eligible",
+        "gate_a_eligible"
+      ],
+      "properties": {
+        "calibration_id": {"$ref": "#/$defs/id"},
+        "source_proposal_id": {"$ref": "#/$defs/id"},
+        "source_id": {"$ref": "#/$defs/id"},
+        "example_type": {"const": "TASK167_MACHINE_REJECTION_CALIBRATION"},
+        "inherited_machine_disposition": {"const": "REJECT"},
+        "not_a_human_decision": {"const": true},
+        "question_hypothesis": {"type": "string", "minLength": 1},
+        "answer_hypothesis": {"type": "string", "minLength": 1},
+        "rejection_signals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "calibration_lesson": {"type": "string", "minLength": 1},
+        "file_path": {"type": "string", "minLength": 1},
+        "future_test_eligible": {"const": false},
+        "gate_a_eligible": {"const": false}
+      }
+    }
+  }
+}

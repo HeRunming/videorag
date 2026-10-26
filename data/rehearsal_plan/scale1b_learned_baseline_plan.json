@@ -1,0 +1,448 @@
+{
+  "schema_version": "1.0",
+  "task": 92,
+  "created_date": "2026-09-11",
+  "stage": "SCALE1B_PLANNING",
+  "decision": "READY_FOR_BOUNDED_DOWNLOADS",
+  "scope": {
+    "heavyweight_downloads_executed": false,
+    "production_code_modified": false,
+    "pilot0_or_scale1a_artifacts_modified": false,
+    "claim_boundary": "This plan authorizes only staged downloads and validation. It does not mark any learned execution gate ready."
+  },
+  "local_inventory": {
+    "host": {
+      "architecture": "x86_64",
+      "kernel": "5.4.241-1-tlinux4-0017.7",
+      "cpu_model": "AMD EPYC 9K84 96-Core Processor",
+      "sockets": 2,
+      "physical_cores_total": 192,
+      "logical_cpus": 384,
+      "ram_total_bytes_approx": 2418925581107,
+      "ram_available_bytes_approx": 1759218604442,
+      "swap_bytes": 0,
+      "filesystem_type": "fuse.dop-fuse",
+      "filesystem_available_bytes_approx": 5607509301657600
+    },
+    "gpu": {
+      "nvidia_smi_binary_present": true,
+      "nvidia_smi_operational": false,
+      "torch_cuda_available": false,
+      "torch_cuda_device_count": 0,
+      "status": "CPU_ONLY_IN_CURRENT_RUNTIME",
+      "required_recheck": [
+        "nvidia-smi query succeeds",
+        "torch.cuda.is_available is true",
+        "allocation and one forward pass succeed",
+        "peak VRAM is recorded"
+      ]
+    },
+    "runtime": {
+      "python": "3.13.11",
+      "torch": "2.10.0",
+      "torchvision": "0.25.0+8ac84ee",
+      "torchaudio": "2.10.0+27b7ebd",
+      "transformers": "5.2.0",
+      "tokenizers": "0.22.2",
+      "accelerate": "1.9.0",
+      "datasets": "4.0.0",
+      "huggingface_hub": "1.5.0",
+      "pyav": "16.1.0",
+      "numpy": "1.26.4",
+      "scipy": "1.18.0",
+      "qwen_vl_utils": "0.0.14",
+      "pillow": "12.1.0",
+      "ffmpeg_executable": false,
+      "ffprobe_executable": false,
+      "pyav_libraries_available": true,
+      "missing_optional_packages": [
+        "sentence-transformers",
+        "open-clip-torch",
+        "faiss-cpu",
+        "faiss-gpu",
+        "rank-bm25",
+        "bitsandbytes",
+        "librosa",
+        "soundfile",
+        "scikit-learn"
+      ],
+      "compatibility_risks": [
+        "Python 3.13 model-specific dependency support must be smoke-tested",
+        "Transformers audio imports may require NumPy long and ulong aliases",
+        "flash-attn is installed but current CUDA is unavailable"
+      ]
+    },
+    "existing_snapshots": [
+      {
+        "repo_id": "openai/whisper-tiny.en",
+        "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+        "local_dir": "data/restricted/noaa01/models/whisper-tiny.en-87c7102",
+        "weight_file": "model.safetensors",
+        "weight_bytes": 151060136,
+        "weight_sha256": "db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad",
+        "role": "timestamped English speech observation candidate"
+      },
+      {
+        "repo_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+        "local_dir": "data/restricted/noaa01/models/ast-audioset-f826b80",
+        "weight_file": "model.safetensors",
+        "weight_bytes": 346404948,
+        "weight_sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+        "role": "audio event proposal and CLAP cross-check, not audio-text retrieval"
+      }
+    ],
+    "network": {
+      "ordinary_sandbox_proxy_dns": "FAILED",
+      "authorized_proxy_official_hf_api": "SUCCEEDED",
+      "hf_cli_auth_reverified": false,
+      "heavyweight_download_tested": false,
+      "classification": "CONTEXT_DEPENDENT_REPREFLIGHT_REQUIRED",
+      "credential_policy": "Proxy and authentication values are runtime-only and must not be stored in artifacts."
+    }
+  },
+  "baseline_stack": {
+    "retrieval": [
+      {
+        "id": "speech_bm25",
+        "class": "lexical_control",
+        "learned": false,
+        "model_id": null,
+        "revision_policy": "Pin repository tokenizer, Whisper chunks, configuration and index hashes.",
+        "input": "query text and pinned Whisper text chunks",
+        "output": "ranked speech segment IDs and scores",
+        "resource": "CPU, negligible model storage",
+        "integration_surface": [
+          "src/av_trace_media_pipeline/indexing.py",
+          "search_speech public tool"
+        ],
+        "limitation": "Lexical control; inherits ASR errors and does not measure semantic audio retrieval.",
+        "fallback": "Repository deterministic token-overlap retrieval, labeled non-BM25 and non-learned."
+      },
+      {
+        "id": "visual_siglip2",
+        "class": "learned_visual_text",
+        "learned": true,
+        "model_id": "google/siglip2-base-patch16-224",
+        "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+        "license_metadata": "apache-2.0",
+        "license_verification": "Official Hugging Face API metadata verified 2026-09-11; archive model card before download.",
+        "input": "sampled RGB frames and query text",
+        "output": "normalized visual and text embeddings with similarity score",
+        "snapshot_bytes": 1539458338,
+        "weight_bytes": 1500800904,
+        "resource": "Expected 2-4 GB working RAM or VRAM plus batch buffers; measure at smoke test.",
+        "integration_surface": [
+          "Scale-1A segment sidecar embeddings",
+          "search_visual scoring adapter"
+        ],
+        "scientific_role": "Primary learned visual retrieval versus handcrafted and lexical controls.",
+        "limitation": "Frame pooling is not native temporal reasoning.",
+        "fallback": "Handcrafted visual routing remains diagnostic only; learned retrieval gate is false."
+      },
+      {
+        "id": "audio_clap",
+        "class": "learned_audio_text",
+        "learned": true,
+        "model_id": "laion/clap-htsat-unfused",
+        "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+        "license_metadata": "apache-2.0",
+        "license_verification": "Official Hugging Face API metadata verified 2026-09-11; archive model card before download.",
+        "input": "PyAV-decoded waveform and query text",
+        "output": "normalized audio and text embeddings with similarity score",
+        "snapshot_bytes": 617901754,
+        "weight_bytes": 614525833,
+        "resource": "Expected 2-4 GB working RAM or VRAM; measure at smoke test.",
+        "integration_surface": [
+          "Scale-1A segment sidecar embeddings",
+          "search_ambient_audio scoring adapter"
+        ],
+        "scientific_role": "Primary open-vocabulary non-speech/audio retrieval.",
+        "limitation": "Requires domain and segment-duration calibration; AST remains only an event-label cross-check.",
+        "fallback": "AST-label lexical search, explicitly non-learned open-vocabulary retrieval; learned audio gate is false."
+      },
+      {
+        "id": "train_split_logistic_fusion",
+        "class": "learned_multimodal_fusion",
+        "learned": true,
+        "model_id": "local/logistic-fusion-v1",
+        "revision_policy": "Hash code, feature schema, optimizer, seed, training family IDs, labels and learned coefficients.",
+        "input": "BM25, SigLIP2 and CLAP scores/ranks plus modality-availability features",
+        "output": "calibrated fused candidate score",
+        "resource": "CPU; KB-MB artifact",
+        "integration_surface": [
+          "frozen retrieval sidecar",
+          "fused search/rerank adapter"
+        ],
+        "scientific_role": "Actually learned score fusion without another large foundation model.",
+        "limitation": "Not admissible until a disjoint non-evaluation training split exists.",
+        "fallback": "Equal-weight reciprocal-rank fusion with learned=false; LEARNED_RETRIEVAL_READY remains false."
+      }
+    ],
+    "generation": [
+      {
+        "id": "grounded_qwen15",
+        "class": "evidence_conditioned_text_generator",
+        "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "license_metadata": "apache-2.0",
+        "license_verification": "Official Hugging Face API metadata and included LICENSE verified 2026-09-11.",
+        "input": "question and only policy-acquired observations",
+        "output": "strict answer, assertions, claim handles, citations and insufficiency JSON",
+        "snapshot_bytes": 3098973447,
+        "weight_bytes": 3087467144,
+        "resource": "Roughly 4-8 GB working RAM depending dtype/context; GPU preferred but CPU smoke is possible.",
+        "integration_surface": [
+          "Task-90 finalization contract",
+          "post-validation evaluator claim mapping"
+        ],
+        "scientific_role": "Minimal local learned grounded generator and shared controller backbone.",
+        "limitation": "Textualized evidence is not native audiovisual generation and the small model may be weak.",
+        "fallback": "Versioned API model under API provenance rules; deterministic generator is protocol control only."
+      },
+      {
+        "id": "direct_smolvlm2",
+        "class": "multimodal_direct_optional",
+        "model_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+        "revision": "482adb537c021c86670beed01cd58990d01e72e4",
+        "license_metadata": "apache-2.0",
+        "license_verification": "Official Hugging Face API metadata verified 2026-09-11; archive model card before download.",
+        "input": "sampled video frames and question, optionally derived transcript/event text",
+        "output": "structured answer and citations where observations can be addressed",
+        "snapshot_bytes": 8992155310,
+        "weight_bytes": 8987374056,
+        "resource": "Target at least 16 GB usable GPU for practical runs; CPU smoke only on current host.",
+        "integration_surface": [
+          "direct long-context baseline adapter",
+          "same Task-90 output validator"
+        ],
+        "scientific_role": "Direct learned visual/video comparison.",
+        "limitation": "Does not prove native ambient-audio understanding; any derived audio text must be disclosed.",
+        "fallback": "Omit row; retain deterministic direct-context protocol probe as learned=false."
+      }
+    ],
+    "agents": [
+      {
+        "id": "learned_react_qwen15",
+        "model_ref": "grounded_qwen15",
+        "controller_version": "learned-react-json-v1",
+        "policy": "Reactive query formulation, tool observation and bounded recovery.",
+        "budget_contract": "Identical backend, top-k, max steps, tool costs and context cap to sufficiency controller.",
+        "integration_surface": "src/av_trace_agent_runtime JSONL opaque-ID boundary",
+        "limitation": "One backbone and one prompt family do not establish model diversity."
+      },
+      {
+        "id": "learned_sufficiency_qwen15",
+        "model_ref": "grounded_qwen15",
+        "controller_version": "learned-evidence-sufficiency-json-v1",
+        "policy": "Explicit public claim-slot coverage, missing modality/hop/cause, channel checks, supported stop or justified abstention.",
+        "budget_contract": "Identical backend, top-k, max steps, tool costs and context cap to ReAct controller.",
+        "integration_surface": "src/av_trace_agent_runtime JSONL opaque-ID boundary",
+        "limitation": "Must not receive evaluator support sets, state role, trigger or answer key."
+      }
+    ],
+    "optional_upgrade": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "license_metadata": "apache-2.0",
+      "snapshot_bytes": 15242807270,
+      "activation_condition": "Only after a suitable GPU and the complete 1.5B validation ladder are proven."
+    }
+  },
+  "download_plan": {
+    "root": "data/restricted/scale1b",
+    "permissions": {
+      "directories": "0700",
+      "files": "0600",
+      "umask": "077"
+    },
+    "waves": [
+      {
+        "wave": "R",
+        "purpose": "learned retrieval",
+        "models": [
+          "visual_siglip2",
+          "audio_clap"
+        ],
+        "expected_bytes": 2157360092,
+        "prerequisites": [
+          "fresh official API preflight",
+          "frozen allowlist",
+          "model-card and license metadata archive"
+        ]
+      },
+      {
+        "wave": "G_A",
+        "purpose": "grounded generation and learned controllers",
+        "models": [
+          "grounded_qwen15"
+        ],
+        "expected_bytes": 3098973447,
+        "prerequisites": [
+          "Wave R L0 and L1 pass",
+          "CPU or GPU one-model resource preflight"
+        ]
+      },
+      {
+        "wave": "D_OPTIONAL",
+        "purpose": "direct multimodal baseline",
+        "models": [
+          "direct_smolvlm2"
+        ],
+        "expected_bytes": 8992155310,
+        "prerequisites": [
+          "working GPU strongly preferred",
+          "core Scale-1B stack already passes one-family run"
+        ]
+      }
+    ],
+    "snapshot_directories": {
+      "visual_siglip2": "data/restricted/scale1b/models/google--siglip2-base-patch16-224--75de2d55ec2d",
+      "audio_clap": "data/restricted/scale1b/models/laion--clap-htsat-unfused--8fa0f1c6d043",
+      "grounded_qwen15": "data/restricted/scale1b/models/Qwen--Qwen2.5-1.5B-Instruct--989aa7980e4c",
+      "direct_smolvlm2": "data/restricted/scale1b/models/HuggingFaceTB--SmolVLM2-2.2B-Instruct--482adb537c02"
+    },
+    "checksum_policy": [
+      "Pin full 40-hex repository commit before transfer.",
+      "Archive official API metadata, model card, license metadata, file allowlist and expected byte sizes.",
+      "Download into a temporary restricted directory.",
+      "Compute SHA-256 for every local file and store canonical manifest.",
+      "Validate safetensors structure where applicable.",
+      "Atomically promote only after file set and sizes match.",
+      "Treat mirror transport as non-authoritative unless exact pinned files pass local verification."
+    ],
+    "command_templates": {
+      "hf_cli": "umask 077; hf download REPO_ID --revision FULL_40_HEX_COMMIT --local-dir TEMP_RESTRICTED_SNAPSHOT_DIR --include FILE_1 --include FILE_2",
+      "direct_curl": "umask 077; curl --fail --location --retry 3 --output TEMP_RESTRICTED_SNAPSHOT_DIR/FILE 'https://huggingface.co/REPO_ID/resolve/FULL_40_HEX_COMMIT/FILE?download=true'; sha256sum TEMP_RESTRICTED_SNAPSHOT_DIR/FILE",
+      "offline_load": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python SCALE1B_SMOKE_SCRIPT --model-dir EXACT_LOCAL_SNAPSHOT --local-files-only"
+    }
+  },
+  "validation_ladder": [
+    {
+      "level": "L0",
+      "name": "import_and_offline_load",
+      "checks": [
+        "file set, sizes and SHA-256",
+        "offline processor/model import under Python 3.13",
+        "CPU load with local_files_only",
+        "no implicit network",
+        "finite parameters and outputs",
+        "independent GPU allocation check for GPU runs"
+      ]
+    },
+    {
+      "level": "L1",
+      "name": "one_segment_inference",
+      "checks": [
+        "SigLIP2 one frame and two queries",
+        "CLAP one ten-second waveform and two queries",
+        "Qwen one strict structured finalization",
+        "SmolVLM2 fixed small frame set if enabled",
+        "two-run rank or output reproducibility"
+      ]
+    },
+    {
+      "level": "L2",
+      "name": "one_family_end_to_end",
+      "checks": [
+        "CLEAN BLOCKED RESTORED",
+        "learned retrieval, generation and both agents",
+        "opaque identifiers",
+        "budget and intervention invariants",
+        "no silent deterministic substitution"
+      ]
+    },
+    {
+      "level": "L3",
+      "name": "all_six_full_timeline",
+      "checks": [
+        "all six Task-85 provisional families",
+        "full-timeline Scale-1A index",
+        "Acquire Ground Act metrics",
+        "bounded-to-full degradation",
+        "explicit failures and nulls",
+        "LOW_N_DESCRIPTIVE_PILOT"
+      ]
+    },
+    {
+      "level": "L4",
+      "name": "reproducibility_and_failure_injection",
+      "checks": [
+        "config and artifact hashes",
+        "deterministic embedding/index replay",
+        "corrupt snapshot",
+        "empty audio",
+        "malformed JSON",
+        "timeout",
+        "OOM",
+        "over-budget",
+        "API failure",
+        "fail-closed behavior"
+      ]
+    }
+  ],
+  "gates": {
+    "LEARNED_RETRIEVAL_READY": {
+      "current": false,
+      "requires": [
+        "SigLIP2 and CLAP pass L0-L3",
+        "common frozen timeline coverage",
+        "leakage-safe learned fusion train split and pinned coefficients",
+        "deterministic public retrieval output",
+        "no answer or evidence labels in searchable features"
+      ]
+    },
+    "LEARNED_GENERATION_READY": {
+      "current": false,
+      "requires": [
+        "Qwen 1.5B passes L0-L3 within measured limits",
+        "strict JSON and one-repair fail-closed contract",
+        "claim-specific citations and evaluator-private post-mapping",
+        "blocked and partial evidence leakage tests"
+      ]
+    },
+    "LEARNED_AGENT_READY": {
+      "current": false,
+      "requires": [
+        "ReAct and sufficiency controllers share fixed backend and budgets",
+        "distinct versioned prompts and state transitions",
+        "opaque-ID wire validation",
+        "CLEAN BLOCKED RESTORED and no-trigger controls",
+        "typed timeout OOM malformed and over-budget failures",
+        "no deterministic output substitution"
+      ]
+    },
+    "SCALE1B_READY": {
+      "current": false,
+      "requires": [
+        "all three learned gates true",
+        "Scale-1A full-timeline index frozen",
+        "Pilot-0 trust invariants preserved",
+        "measured viable execution device for each model",
+        "all-six run and replay",
+        "consistent manifests",
+        "independent leakage and metric red-team"
+      ]
+    }
+  },
+  "provenance": {
+    "official_metadata_checked_at": "2026-09-11",
+    "official_metadata_source": "Hugging Face model API for exact repository IDs",
+    "online_verified_candidates": [
+      "google/siglip2-base-patch16-224",
+      "laion/clap-htsat-unfused",
+      "Qwen/Qwen2.5-1.5B-Instruct",
+      "Qwen/Qwen2.5-7B-Instruct",
+      "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+    ],
+    "pending_online_or_runtime_verification": [
+      "fresh metadata and license recheck immediately before download",
+      "HF CLI authentication status",
+      "actual model file SHA-256 after download",
+      "Python 3.13 load compatibility",
+      "actual peak RAM VRAM latency and throughput",
+      "SmolVLM2 exact video sampling behavior under installed Transformers",
+      "API-only provider versioning if a local fallback is needed"
+    ]
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:epic-dev-authoring-role-form:1.0.0",
+  "title": "AV-TRACE EPIC development author/verifier blank form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "form_id",
+    "packet_id",
+    "proposal_id",
+    "source_id",
+    "source_group_id",
+    "packet_status",
+    "completion_status",
+    "reviewer",
+    "immutable_assignment",
+    "immutable_assignment_sha256",
+    "review_fields",
+    "source_level_exposure_policy",
+    "prohibited_outcomes"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "epic_dev_author_verifier_form"},
+    "form_id": {"$ref": "#/$defs/id"},
+    "packet_id": {"$ref": "#/$defs/id"},
+    "proposal_id": {"$ref": "#/$defs/id"},
+    "source_id": {"$ref": "#/$defs/id"},
+    "source_group_id": {"$ref": "#/$defs/id"},
+    "packet_status": {"const": "DRAFT_NOT_DISTRIBUTABLE"},
+    "completion_status": {"enum": ["not_started", "completed"]},
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "training_attested",
+        "started_at",
+        "completed_at"
+      ],
+      "properties": {
+        "reviewer_id": {
+          "anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]
+        },
+        "training_attested": {"type": "boolean"},
+        "started_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "immutable_assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "source_content_sha256",
+        "task167_proposal_payload_sha256",
+        "task153_plan_id",
+        "task153_plan_sha256",
+        "task153_sample_ids",
+        "prescreen_must_be_completed_before_authoring",
+        "question_hypothesis",
+        "answer_hypothesis",
+        "claim_hypotheses",
+        "evidence_hypotheses",
+        "alternative_route_hypotheses"
+      ],
+      "properties": {
+        "role": {"const": "question_claim_author_or_verifier"},
+        "source_content_sha256": {"$ref": "#/$defs/sha256"},
+        "task167_proposal_payload_sha256": {"$ref": "#/$defs/sha256"},
+        "task153_plan_id": {"$ref": "#/$defs/id"},
+        "task153_plan_sha256": {"$ref": "#/$defs/sha256"},
+        "task153_sample_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "prescreen_must_be_completed_before_authoring": {"const": true},
+        "question_hypothesis": {"type": "string", "minLength": 1},
+        "answer_hypothesis": {"type": "string", "minLength": 1},
+        "claim_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim_id", "text", "human_validated"],
+            "properties": {
+              "claim_id": {"$ref": "#/$defs/id"},
+              "text": {"type": "string", "minLength": 1},
+              "human_validated": {"const": false}
+            }
+          }
+        },
+        "evidence_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "evidence_id",
+              "interval",
+              "modality",
+              "carrier_class",
+              "hypothesis",
+              "record_references",
+              "human_semantic_validation_status"
+            ],
+            "properties": {
+              "evidence_id": {"$ref": "#/$defs/id"},
+              "interval": {"$ref": "#/$defs/interval"},
+              "modality": {"enum": ["vision", "audio", "speech"]},
+              "carrier_class": {"type": "string", "minLength": 1},
+              "hypothesis": {"type": "string", "minLength": 1},
+              "record_references": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "string", "minLength": 1},
+                "uniqueItems": true
+              },
+              "human_semantic_validation_status": {"const": "NOT_PERFORMED"}
+            }
+          }
+        },
+        "alternative_route_hypotheses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["route_id", "route_type", "description", "machine_status"],
+            "properties": {
+              "route_id": {"$ref": "#/$defs/id"},
+              "route_type": {"type": "string", "minLength": 1},
+              "description": {"type": "string", "minLength": 1},
+              "machine_status": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "immutable_assignment_sha256": {"$ref": "#/$defs/sha256"},
+    "review_fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_check",
+        "answer_check",
+        "claim_checks",
+        "evidence_checks",
+        "alternative_route_checks",
+        "full_source_recurrence_notes",
+        "ocr_transcript_caption_narration_notes",
+        "privacy_notes",
+        "safety_notes",
+        "proposed_repairs",
+        "general_notes"
+      ],
+      "properties": {
+        "question_check": {"$ref": "#/$defs/blank_check"},
+        "answer_check": {"$ref": "#/$defs/blank_check"},
+        "claim_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id_check"}
+        },
+        "evidence_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id_check"}
+        },
+        "alternative_route_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id_check"}
+        },
+        "full_source_recurrence_notes": {"type": "string"},
+        "ocr_transcript_caption_narration_notes": {"type": "string"},
+        "privacy_notes": {"type": "string"},
+        "safety_notes": {"type": "string"},
+        "proposed_repairs": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "general_notes": {"type": "string"}
+      }
+    },
+    "source_level_exposure_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exposure_must_be_recorded",
+        "excluded_future_roles"
+      ],
+      "properties": {
+        "exposure_must_be_recorded": {"const": true},
+        "excluded_future_roles": {
+          "const": [
+            "blind_alternative_evidence_finder",
+            "blind_post_adjudication_saturation_auditor"
+          ]
+        }
+      }
+    },
+    "prohibited_outcomes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "future_test_eligible",
+        "gate_a_eligible",
+        "necessity_assigned",
+        "minimality_assigned",
+        "h1_assigned",
+        "h2_assigned",
+        "human_gold"
+      ],
+      "properties": {
+        "future_test_eligible": {"const": false},
+        "gate_a_eligible": {"const": false},
+        "necessity_assigned": {"const": false},
+        "minimality_assigned": {"const": false},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "human_gold": {"const": false}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "not_started"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "null"},
+              "training_attested": {"const": false},
+              "started_at": {"type": "null"},
+              "completed_at": {"type": "null"}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_s", "end_s"],
+      "properties": {
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "blank_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finding", "notes"],
+      "properties": {
+        "finding": {"const": "not_recorded"},
+        "notes": {"const": ""}
+      }
+    },
+    "id_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_id", "finding", "notes"],
+      "properties": {
+        "item_id": {"$ref": "#/$defs/id"},
+        "finding": {"const": "not_recorded"},
+        "notes": {"const": ""}
+      }
+    }
+  }
+}

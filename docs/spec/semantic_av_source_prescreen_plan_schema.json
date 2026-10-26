@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:semantic-av-source-prescreen-plan:1.0.0",
+  "title": "AV-TRACE deterministic semantic A/V source-prescreen sample plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "plan_id",
+    "created_at",
+    "inventory_id",
+    "inventory_sha256",
+    "seed",
+    "algorithm",
+    "sample_count",
+    "interval_duration_s",
+    "source_uniformity",
+    "samples",
+    "plan_sha256",
+    "semantic_labels_present"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "semantic_av_source_prescreen_plan"},
+    "plan_id": {"$ref": "#/$defs/id"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "inventory_id": {"$ref": "#/$defs/id"},
+    "inventory_sha256": {"$ref": "#/$defs/sha256"},
+    "seed": {"type": "string", "minLength": 1},
+    "algorithm": {
+      "const": "source-uniform-temporal-bin-sha256-jitter-v1"
+    },
+    "sample_count": {"type": "integer", "minimum": 1},
+    "interval_duration_s": {"type": "number", "exclusiveMinimum": 0},
+    "source_uniformity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_count", "minimum_per_source", "maximum_per_source"],
+      "properties": {
+        "source_count": {"type": "integer", "minimum": 1},
+        "minimum_per_source": {"type": "integer", "minimum": 1},
+        "maximum_per_source": {"type": "integer", "minimum": 1}
+      }
+    },
+    "samples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sample"}
+    },
+    "plan_sha256": {"$ref": "#/$defs/sha256"},
+    "semantic_labels_present": {"const": false}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sample_id",
+        "source_id",
+        "source_group_id",
+        "source_content_sha256",
+        "start_s",
+        "end_s",
+        "adapter_request"
+      ],
+      "properties": {
+        "sample_id": {"$ref": "#/$defs/id"},
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_group_id": {"$ref": "#/$defs/id"},
+        "source_content_sha256": {"$ref": "#/$defs/sha256"},
+        "start_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "exclusiveMinimum": 0},
+        "adapter_request": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["adapter_reference", "extract_media"],
+          "properties": {
+            "adapter_reference": {"type": "string", "minLength": 1},
+            "extract_media": {"const": false}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "mini-pilot-candidate-disposition-v1",
+  "created_at": "2026-09-23",
+  "decision_token": "CANDIDATE_SCIENCE_REPAIR",
+  "registry": {
+    "path": "data/restricted/mini_pilot_family_candidates_v1/candidate_registry.json",
+    "registry_id": "mini-pilot-family-candidate-proposals-v1",
+    "internal_registry_hash": "sha256:2287bb50d34ef2422ae63df89c81533d7eb7e982f6c6b65e5492f33faa107a85",
+    "status": "MACHINE_PROVISIONAL_CANDIDATE_PROPOSALS",
+    "human_reviewed_count": 0,
+    "human_gold_count": 0,
+    "final_accepted_family_count": 0
+  },
+  "audit_boundary": {
+    "candidate_registry_modified": false,
+    "canonical_data_modified": false,
+    "miner_code_modified": false,
+    "human_validation_performed": false,
+    "p_tier_promotions_made": false,
+    "scientific_execution_authorized": false
+  },
+  "disposition_vocabulary": {
+    "KEEP": "Scientifically plausible without substantive candidate repair; human validation would still be required.",
+    "REPAIR": "Underlying source material may support a family, but the question, evidence graph, labels, or intervention must be revised before human review.",
+    "REJECT": "The mined proposal lacks a coherent or semantically specific family and should not enter human review.",
+    "DEMOTE_TO_CALIBRATION": "Retain only as a development, negative, or reviewer-calibration case outside reported denominators."
+  },
+  "labor_band_definition": {
+    "moderate": "approximately 7-10 active reviewer-hours per family",
+    "high": "approximately 10-15 active reviewer-hours per family",
+    "very_high": "approximately 14-20 active reviewer-hours per family",
+    "status": "planning_estimate_not_measured"
+  },
+  "cross_cutting_findings": {
+    "placeholder_question_count": 14,
+    "placeholder_answer_count": 14,
+    "lecture_ambient_slots_audited": [
+      "F02",
+      "F05",
+      "F06",
+      "F08"
+    ],
+    "lecture_ambient_slots_passing_as_currently_authored": [],
+    "lecture_dynamic_nontext_visual_slots_passing_as_currently_authored": [],
+    "structurally_impossible_target_cells": [
+      {
+        "slot_id": "F05",
+        "target_hop": "one_hop",
+        "target_temporal": "far_separated",
+        "reason": "The miner defines one_hop as one distinct interval, which necessarily has zero center separation."
+      },
+      {
+        "slot_id": "F09",
+        "target_hop": "one_hop",
+        "target_temporal": "far_separated",
+        "reason": "The miner defines one_hop as one distinct interval, which necessarily has zero center separation."
+      }
+    ],
+    "legacy_intervention_templates_require_v2_reinstantiation": true,
+    "required_primary_restoration_contract": "data/rehearsal_plan/exogenous_restoration_protocol_v2.json"
+  },
+  "summary": {
+    "slot_count": 14,
+    "keep_count": 0,
+    "repair_count": 8,
+    "reject_count": 4,
+    "demote_to_calibration_count": 2,
+    "formal_calibration_slots": [
+      "CAL01",
+      "CAL02"
+    ],
+    "additional_development_calibration_reserves": [
+      "F01",
+      "F07"
+    ],
+    "conditionally_repairable_reported_slots": [
+      "F03",
+      "F06",
+      "F09",
+      "F10",
+      "F11",
+      "F12"
+    ]
+  },
+  "candidate_dispositions": [
+    {
+      "slot_id": "F01",
+      "candidate_family_id": "mpf.f01.ef30614f729f",
+      "source_id": "SG-OXFORD-QM-001",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "DEMOTE_TO_CALIBRATION",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER",
+      "evidence_semantic_specificity": "LOW_BOARD_TEXT_QUERY_SIMILARITY",
+      "route_assessment": "VISION_PIXELS_BUT_OCR_TRANSCRIPT_DUPLICATE_RISK",
+      "preferred_ses_assessment": "NOT_MINIMAL_OVER_OVERLAPPING_BOARD_WINDOWS",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "HIGH_20_MATCHES",
+      "scientific_hop_label": "one_hop_plausible",
+      "scientific_temporal_label": "near_local_plausible",
+      "intervention_feasibility": "LOW_UNTIL_SPEECH_OCR_AND_SIDECAR_ROUTES_CLOSED_AND_V2_CONVERSION_COMPLETE",
+      "human_labor_band": "high",
+      "primary_reason": "Useful OCR/board-duplication stress case, but not a defensible standalone visual family."
+    },
+    {
+      "slot_id": "F02",
+      "candidate_family_id": "mpf.f02.a4c088bc3784",
+      "source_id": "SG-OXFORD-QM-001",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REJECT",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_AND_NO_COHERENT_JOINT_FACT",
+      "evidence_semantic_specificity": "FAIL_AMBIENT_MACHINE_LABEL_ARTIFACT",
+      "route_assessment": "SPEECH_PLUS_SPEECH_DOMINATED_CLASSROOM_AUDIO_NOT_MEANINGFUL_S_PLUS_A",
+      "preferred_ses_assessment": "INCOHERENT_UNRELATED_INTERVALS",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "HIGH_20_MATCHES",
+      "scientific_hop_label": "not_established",
+      "scientific_temporal_label": "far_separated_but_not_compositional",
+      "intervention_feasibility": "NO_MEANINGFUL_ROUTE_TO_ISOLATE",
+      "human_labor_band": "very_high",
+      "primary_reason": "Ambient interval is dominated by speech and low-confidence generic or implausible labels."
+    },
+    {
+      "slot_id": "F03",
+      "candidate_family_id": "mpf.f03.903e4f3d7c88",
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REPAIR",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_SOURCE_CONTENT_SUPPORTS_SUBSTANTIVE_QUESTION",
+      "evidence_semantic_specificity": "HIGH_FOR_SPEECH_AFTER_HUMAN_TRANSCRIPTION_CHECK",
+      "route_assessment": "GENUINE_SPEECH_WITH_OFFICIAL_TRANSCRIPT_DUPLICATE",
+      "preferred_ses_assessment": "PLAUSIBLE_ONE_INTERVAL_AFTER_TIGHTENING_AND_FULL_SOURCE_REPEAT_SEARCH",
+      "alternative_route_risk": "MACHINE_NOT_DETECTED_HUMAN_SEARCH_REQUIRED",
+      "sidecar_risk": "HIGH_20_MATCHES",
+      "scientific_hop_label": "one_hop_plausible",
+      "scientific_temporal_label": "near_local_plausible",
+      "intervention_feasibility": "CONDITIONAL_EXPLICIT_SPEECH_OUTAGE_AFTER_TEXT_ROUTE_CLOSURE_AND_V2_CONVERSION",
+      "human_labor_band": "moderate",
+      "proposed_question": "What reason is given for opposing education, and what question does Birkin use to challenge that position?",
+      "proposed_answer_hypothesis": "Consciousness is said to cripple children's souls; Birkin asks whether one would rather know or not know that the little red flowers are there.",
+      "primary_reason": "The selected speech interval contains a coherent literary argument despite the unusable registry wording."
+    },
+    {
+      "slot_id": "F04",
+      "candidate_family_id": "mpf.f04.05b6f8fb3592",
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REJECT",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER",
+      "evidence_semantic_specificity": "FAIL_VISUAL_RETRIEVAL_FALSE_POSITIVE",
+      "route_assessment": "OPENING_TALKING_HEAD_AND_CLOSING_TITLE_CARD_NOT_LITERARY_QUOTATION_VISUAL",
+      "preferred_ses_assessment": "INCOHERENT_VISUAL_AND_SPEECH_PAIR",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "HIGH_20_MATCHES",
+      "scientific_hop_label": "not_established",
+      "scientific_temporal_label": "far_separated_but_not_compositional",
+      "intervention_feasibility": "NO_MEANINGFUL_ROUTE_TO_ISOLATE",
+      "human_labor_band": "high",
+      "primary_reason": "The selected visual is an Oxford closing card and does not support the claimed visual cue."
+    },
+    {
+      "slot_id": "F05",
+      "candidate_family_id": "mpf.f05.c15af8590b8f",
+      "source_id": "SG-MIT-RES12-003-L01",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REJECT",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER",
+      "evidence_semantic_specificity": "FAIL_AMBIENT_CLASS_LABEL_IS_NOT_ANSWER_CONTENT",
+      "route_assessment": "SPEECH_DOMINATED_LECTURE_AUDIO_WITH_WRITING_AND_IMPLAUSIBLE_LOW_SCORE_LABELS",
+      "preferred_ses_assessment": "GENERIC_WRITING_CLASS_RECURS_AT_MULTIPLE_UNRELATED_INTERVALS",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "PRESENT_1_MATCH",
+      "scientific_hop_label": "one_hop",
+      "scientific_temporal_label": "near_local",
+      "target_label_defect": "one_hop_far_separated_is_structurally_impossible",
+      "intervention_feasibility": "NOT_MEANINGFUL_AS_AMBIENT_CHANNEL_OUTAGE",
+      "human_labor_band": "very_high",
+      "primary_reason": "No semantically answer-bearing non-speech event is demonstrated."
+    },
+    {
+      "slot_id": "F06",
+      "candidate_family_id": "mpf.f06.b77b359d7d0c",
+      "source_id": "SG-MIT-RES12-003-L01",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REPAIR",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_DIAGRAM_AND_SPEECH_MAY_SUPPORT_NARROW_QUESTION",
+      "evidence_semantic_specificity": "MIXED_VISUAL_AND_SPEECH_PLAUSIBLE_AMBIENT_FAILS",
+      "route_assessment": "STATIC_DIAGRAM_PLUS_SPEECH_NOT_DYNAMIC_VISUAL_AND_NOT_TRIPLE_MODAL",
+      "preferred_ses_assessment": "DROP_AMBIENT_REANCHOR_SPEECH_AND_REBUILD_SES",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "HIGH_20_MATCHES",
+      "scientific_hop_label": "multi_hop_plausible_after_repair",
+      "scientific_temporal_label": "near_local_plausible_after_repair",
+      "intervention_feasibility": "CONDITIONAL_ROUTE_WITHHOLDING_AFTER_ACCEPTED_V_PLUS_S_SES_AND_V2_CONVERSION",
+      "human_labor_band": "high",
+      "proposed_profile": "V+S",
+      "proposed_question_pattern": "Identify the depicted parts of Reynolds's setup and the narrated change in the dye stream as flow increases.",
+      "primary_reason": "The lecture contains a relevant schematic and explanation, but ambient contributes no semantic information."
+    },
+    {
+      "slot_id": "F07",
+      "candidate_family_id": "mpf.f07.170fc4a6799f",
+      "source_id": "SG-YALE-PHYS200-L01",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "DEMOTE_TO_CALIBRATION",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER",
+      "evidence_semantic_specificity": "MEDIUM_BOARD_DERIVATION_BUT_TEXT_DUPLICATION_DOMINATES",
+      "route_assessment": "BOARD_OCR_AND_SPEECH_DUPLICATE_NOT_STANDALONE_DYNAMIC_VISION",
+      "preferred_ses_assessment": "NOT_MINIMAL_OVER_NEARBY_BOARD_WINDOWS",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "PRESENT_1_MATCH",
+      "scientific_hop_label": "one_hop_plausible",
+      "scientific_temporal_label": "near_local_plausible",
+      "intervention_feasibility": "LOW_UNTIL_SPEECH_AND_OCR_ROUTES_CLOSED",
+      "human_labor_band": "high",
+      "primary_reason": "Useful board/OCR route-closure stress case, not broad visual evidence."
+    },
+    {
+      "slot_id": "F08",
+      "candidate_family_id": "mpf.f08.8c681dd9920c",
+      "source_id": "SG-YALE-PHYS200-L01",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REJECT",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER",
+      "evidence_semantic_specificity": "FAIL_MOVING_APPARATUS_AND_AMBIENT_CLAIMS",
+      "route_assessment": "UNRELATED_BOARD_VISUAL_AND_CHALK_WRITING_INTERVAL",
+      "preferred_ses_assessment": "SEMANTICALLY_INCOHERENT",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "PRESENT_1_MATCH",
+      "scientific_hop_label": "not_established",
+      "scientific_temporal_label": "far_separated_but_not_compositional",
+      "intervention_feasibility": "NO_ANSWER_BEARING_AMBIENT_ROUTE",
+      "human_labor_band": "very_high",
+      "primary_reason": "Chalk writing does not encode the physics answer, and the visual is not a moving apparatus."
+    },
+    {
+      "slot_id": "F09",
+      "candidate_family_id": "mpf.f09.a5f55f4bbcde",
+      "source_id": "cand-049",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P0_MACHINE_CANDIDATE",
+      "disposition": "REPAIR",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_REAL_ENVIRONMENTAL_AUDIO_IS_PRESENT",
+      "evidence_semantic_specificity": "POTENTIALLY_MEANINGFUL_SURF_AUDIO_REQUIRES_HUMAN_LISTENING",
+      "route_assessment": "AMBIENT_PLAUSIBLE_BUT_VISIBLE_AND_SPOKEN_DUPLICATES_PRESENT",
+      "preferred_ses_assessment": "INTERVAL_MINIMALITY_UNLIKELY_BECAUSE_SURF_RECURS",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "NONE_LOADED",
+      "scientific_hop_label": "one_hop",
+      "scientific_temporal_label": "near_local",
+      "target_label_defect": "one_hop_far_separated_is_structurally_impossible",
+      "intervention_feasibility": "CONDITIONAL_ON_SEMANTIC_AUDIO_PRE_SCREEN_AND_CROSS_MODAL_ROUTE_CLOSURE",
+      "human_labor_band": "high",
+      "proposed_question_pattern": "Author a human-audible environmental question only if the answer is not inferable from frames or narration.",
+      "primary_reason": "Best current ambient lead, but current claim merely restates AST labels and does not establish ambient necessity."
+    },
+    {
+      "slot_id": "F10",
+      "candidate_family_id": "mpf.f10.123ccac9f597",
+      "source_id": "cand-049",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REPAIR",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_DYNAMIC_RESCUE_VISUAL_AND_INSTRUCTION_EXIST",
+      "evidence_semantic_specificity": "VISUAL_AND_SPEECH_MEANINGFUL_AMBIENT_UNRELATED",
+      "route_assessment": "DROP_AMBIENT_AND_REAUTHOR_AS_V_PLUS_S",
+      "preferred_ses_assessment": "CURRENT_TRIPLE_MODAL_SES_INCOHERENT",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "NONE_LOADED",
+      "scientific_hop_label": "recompute_after_reauthoring",
+      "scientific_temporal_label": "recompute_after_reauthoring",
+      "intervention_feasibility": "CONDITIONAL_AFTER_NEW_ACCEPTED_SES_AND_V2_CONVERSION",
+      "human_labor_band": "high",
+      "proposed_profile": "V+S",
+      "proposed_question_pattern": "Connect a visually demonstrated water-safety action with a spoken rescue instruction.",
+      "primary_reason": "The source supplies genuine dynamic visual evidence, but the selected distant surf audio is not necessary for the rescue answer."
+    },
+    {
+      "slot_id": "F11",
+      "candidate_family_id": "mpf.f11.f49cafe96e36",
+      "source_id": "cand-052",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P0_MACHINE_CANDIDATE",
+      "disposition": "REPAIR",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_ORIGINAL_SEED_QUESTION_IS_SUBSTANTIVE",
+      "evidence_semantic_specificity": "HIGH_FOR_SPEECH_AFTER_VISIBLE_TEXT_AUDIT",
+      "route_assessment": "GENUINE_SPEECH_WITH_WEBINAR_OCR_AND_CHAT_RISK",
+      "preferred_ses_assessment": "PLAUSIBLE_ONE_INTERVAL_AFTER_TIGHTENING_AND_REPEAT_SEARCH",
+      "alternative_route_risk": "MACHINE_NOT_DETECTED_HUMAN_SEARCH_REQUIRED",
+      "sidecar_risk": "NONE_LOADED",
+      "scientific_hop_label": "one_hop_plausible",
+      "scientific_temporal_label": "near_local_plausible",
+      "intervention_feasibility": "CONDITIONAL_EXPLICIT_SPEECH_OUTAGE_AFTER_VISIBLE_TEXT_CLOSURE_AND_V2_CONVERSION",
+      "human_labor_band": "moderate",
+      "proposed_question": "Which basin does the speaker identify as a main area of hurricane activity?",
+      "proposed_answer_hypothesis": "The North Atlantic Basin.",
+      "primary_reason": "The underlying migrated speech family remains semantically coherent."
+    },
+    {
+      "slot_id": "F12",
+      "candidate_family_id": "mpf.f12.67218a175be2",
+      "source_id": "cand-052",
+      "included_in_reported_denominator": true,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REPAIR",
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_ORIGINAL_SEED_QUESTION_IS_SUBSTANTIVE",
+      "evidence_semantic_specificity": "CURRENT_PREFERRED_PAIR_WRONG_ALTERNATIVE_1332S_IS_CORRECT",
+      "route_assessment": "LOCAL_GRAPHIC_AND_NARRATION_ARE_DUPLICATE_OR_CORROBORATIVE",
+      "preferred_ses_assessment": "REANCHOR_TO_1332_1340_AND_MODEL_MODALITIES_AS_ALTERNATIVE_SES_UNLESS_REAUTHORED",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "NONE_LOADED",
+      "scientific_hop_label": "one_hop_after_reanchoring",
+      "scientific_temporal_label": "near_local_after_reanchoring",
+      "intervention_feasibility": "CONDITIONAL_SPEECH_ROUTE_WITHHOLDING_AFTER_VISIBLE_TEXT_AND_DUPLICATE_ROUTE_CLOSURE",
+      "human_labor_band": "high",
+      "preferred_option_b_profile": "S",
+      "proposed_question": "How many hurricane-formation factors does the narration state?",
+      "proposed_answer_hypothesis": "Three.",
+      "primary_reason": "The correct local seed evidence exists, but the miner selected unrelated storm-surge visual and hurricane-season speech intervals; the graphic is duplicate or corroborative rather than demonstrably necessary."
+    },
+    {
+      "slot_id": "CAL01",
+      "candidate_family_id": "mpf.cal01.ab0936432574",
+      "source_id": "cand-051",
+      "included_in_reported_denominator": false,
+      "registry_tier_preserved": "P0_MACHINE_CANDIDATE",
+      "disposition": "REPAIR",
+      "calibration_only": true,
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_AND_WRONG_INTRODUCTORY_MONTAGE_LOCATION",
+      "evidence_semantic_specificity": "MEANINGFUL_PLASTIC_WASTE_VISUAL_WITH_TEXT_AND_SPEECH_DUPLICATES",
+      "route_assessment": "VISUAL_ROUTE_EXISTS_BUT_IS_NOT_LOW_RISK",
+      "preferred_ses_assessment": "REPEATED_PLASTIC_IMAGERY_AND_CAPTIONS_CREATE_HIGH_ALTERNATIVE_RISK",
+      "alternative_route_risk": "HIGH",
+      "sidecar_risk": "NONE_LOADED",
+      "scientific_hop_label": "one_hop_plausible",
+      "scientific_temporal_label": "near_local_plausible",
+      "intervention_feasibility": "SUITABLE_FOR_ROUTE_CLOSURE_FORM_CALIBRATION_AFTER_REPAIR",
+      "human_labor_band": "high",
+      "proposed_question_pattern": "What discarded material is visibly piled up in the selected scene?",
+      "proposed_answer_hypothesis": "Plastic trash or plastic waste.",
+      "primary_reason": "Useful difficult calibration for repeated visual, caption, and narration alternatives."
+    },
+    {
+      "slot_id": "CAL02",
+      "candidate_family_id": "mpf.cal02.3ff4229aaa0f",
+      "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+      "included_in_reported_denominator": false,
+      "registry_tier_preserved": "P2_MACHINE_COUNTERFACTUAL_VALIDATED",
+      "disposition": "REPAIR",
+      "calibration_only": true,
+      "question_answer_meaningfulness": "FAIL_PLACEHOLDER_BUT_SPEECH_CONTENT_SUPPORTS_SIMPLE_CALIBRATION",
+      "evidence_semantic_specificity": "HIGH_FOR_SPEECH_AFTER_TIGHTENING",
+      "route_assessment": "GENUINE_SPEECH_WITH_DIRECT_OFFICIAL_TRANSCRIPT_DUPLICATE",
+      "preferred_ses_assessment": "PLAUSIBLE_AFTER_REPEAT_SEARCH",
+      "alternative_route_risk": "MACHINE_NOT_DETECTED_HUMAN_SEARCH_REQUIRED",
+      "sidecar_risk": "HIGH_10_MATCHES",
+      "scientific_hop_label": "one_hop_plausible",
+      "scientific_temporal_label": "near_local_plausible",
+      "intervention_feasibility": "SUITABLE_FOR_SPEECH_OUTAGE_AND_SIDECAR_CLOSURE_CALIBRATION_AFTER_V2_CONVERSION",
+      "human_labor_band": "moderate",
+      "proposed_question_pattern": "Which two countries are described as having meant a lot to Lawrence?",
+      "proposed_answer_hypothesis": "Germany and Italy.",
+      "primary_reason": "A simple speech/timing calibration can be authored from the interval."
+    }
+  ],
+  "pilot_options": {
+    "A_current_six_sources_narrow_scope": {
+      "recommendation": "CONDITIONAL_DEVELOPMENTAL_OPTION_ONLY",
+      "claim_scope": "lecture_and_webinar_evidence_navigation; no broad audiovisual, semantic ambient, or dynamic-visual claim",
+      "source_groups": [
+        "SG-OXFORD-QM-001",
+        "SG-OXFORD-DHL-CONSCIOUSNESS",
+        "SG-MIT-RES12-003-L01",
+        "SG-YALE-PHYS200-L01",
+        "cand-049",
+        "cand-052"
+      ],
+      "slot_plan": [
+        {
+          "slot_id": "A01",
+          "source_id": "SG-OXFORD-QM-001",
+          "lineage": "NEW_LOCAL_SPEECH",
+          "profile": "S",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "A02",
+          "source_id": "SG-OXFORD-QM-001",
+          "lineage": "NEW_SEPARATED_BOARD_TO_SPEECH",
+          "profile": "V+S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "A03",
+          "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+          "lineage": "REPAIRED_F03",
+          "profile": "S",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "A04",
+          "source_id": "SG-OXFORD-DHL-CONSCIOUSNESS",
+          "lineage": "NEW_FAR_SPEECH_SYNTHESIS_REPLACEMENT_FOR_F04",
+          "profile": "S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "A05",
+          "source_id": "SG-MIT-RES12-003-L01",
+          "lineage": "REPAIRED_F06_REANCHORED_LOCAL_V_PLUS_S",
+          "profile": "V+S",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "A06",
+          "source_id": "SG-MIT-RES12-003-L01",
+          "lineage": "NEW_FAR_SPEECH_SYNTHESIS_REPLACEMENT_FOR_F05",
+          "profile": "S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "A07",
+          "source_id": "SG-YALE-PHYS200-L01",
+          "lineage": "NEW_LOCAL_BOARD_STATE_REPLACEMENT_FOR_F07",
+          "profile": "V",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "A08",
+          "source_id": "SG-YALE-PHYS200-L01",
+          "lineage": "NEW_FAR_BOARD_PLUS_SPEECH_REPLACEMENT_FOR_F08",
+          "profile": "V+S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "A09",
+          "source_id": "cand-049",
+          "lineage": "NEW_DYNAMIC_VISUAL_SAFETY_REPLACEMENT_FOR_F09",
+          "profile": "V",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "A10",
+          "source_id": "cand-049",
+          "lineage": "REPAIRED_F10_WITHOUT_AMBIENT",
+          "profile": "V+S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "A11",
+          "source_id": "cand-052",
+          "lineage": "REPAIRED_F11",
+          "profile": "S",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "A12",
+          "source_id": "cand-052",
+          "lineage": "NEW_FAR_SPEECH_SYNTHESIS_REPLACEMENT_FOR_F12",
+          "profile": "S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        }
+      ],
+      "target_totals": {
+        "profiles": {
+          "V": 2,
+          "S": 6,
+          "V+S": 4,
+          "A": 0,
+          "V+A/S+A": 0,
+          "V+S+A": 0
+        },
+        "hop": {
+          "one_hop": 6,
+          "multi_hop": 6
+        },
+        "temporal": {
+          "near_local": 6,
+          "far_separated": 6
+        },
+        "intervention": {
+          "SILENT_ROUTE_WITHHOLDING": 6,
+          "EXPLICIT_CHANNEL_OUTAGE": 6
+        }
+      },
+      "formal_calibrations": [
+        "REPAIRED_CAL01",
+        "REPAIRED_CAL02"
+      ],
+      "current_slots_development_only": [
+        "F01",
+        "F02",
+        "F04",
+        "F05",
+        "F07",
+        "F08",
+        "F09",
+        "F12"
+      ],
+      "conditionally_retained_current_reported_slots": [
+        "F03",
+        "F06",
+        "F10",
+        "F11"
+      ],
+      "ambient_reported_stratum_allowed": false,
+      "v_plus_s_plus_a_reported_stratum_allowed": false,
+      "satisfies_task141_source_composition_repair": false
+    },
+    "B_preferred_event_centric_replacement_wave": {
+      "recommendation": "PREFERRED",
+      "source_groups": [
+        "cand-049",
+        "cand-052",
+        "NEW-EVENT-01_FIELD_PROCEDURE_OR_MAINTENANCE",
+        "NEW-EVENT-02_OBSERVATIONAL_ENVIRONMENT_OR_WILDLIFE",
+        "NEW-EVENT-03_INDUSTRIAL_OR_LABORATORY_PROCESS",
+        "NEW-EVENT-04_ASSEMBLY_REPAIR_OR_MISSION_OPERATION"
+      ],
+      "slot_plan": [
+        {
+          "slot_id": "B01",
+          "source_id": "cand-049",
+          "lineage": "REPAIRED_F09_CONDITIONAL",
+          "profile": "A",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "B02",
+          "source_id": "cand-049",
+          "lineage": "REPAIRED_F10_NO_AMBIENT",
+          "profile": "S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "B03",
+          "source_id": "cand-052",
+          "lineage": "REPAIRED_F11",
+          "profile": "V+S",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "B04",
+          "source_id": "cand-052",
+          "lineage": "REPAIRED_REANCHORED_F12",
+          "profile": "V+S",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "B05",
+          "source_id": "NEW-EVENT-01_FIELD_PROCEDURE_OR_MAINTENANCE",
+          "lineage": "NEW",
+          "profile": "V",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "B06",
+          "source_id": "NEW-EVENT-01_FIELD_PROCEDURE_OR_MAINTENANCE",
+          "lineage": "NEW",
+          "profile": "V+A",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "B07",
+          "source_id": "NEW-EVENT-02_OBSERVATIONAL_ENVIRONMENT_OR_WILDLIFE",
+          "lineage": "NEW",
+          "profile": "V",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "B08",
+          "source_id": "NEW-EVENT-02_OBSERVATIONAL_ENVIRONMENT_OR_WILDLIFE",
+          "lineage": "NEW",
+          "profile": "V+S+A",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "B09",
+          "source_id": "NEW-EVENT-03_INDUSTRIAL_OR_LABORATORY_PROCESS",
+          "lineage": "NEW",
+          "profile": "A",
+          "hop": "one_hop",
+          "temporal": "near_local",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        },
+        {
+          "slot_id": "B10",
+          "source_id": "NEW-EVENT-03_INDUSTRIAL_OR_LABORATORY_PROCESS",
+          "lineage": "NEW",
+          "profile": "S+A",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "B11",
+          "source_id": "NEW-EVENT-04_ASSEMBLY_REPAIR_OR_MISSION_OPERATION",
+          "lineage": "NEW",
+          "profile": "S",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "SILENT_ROUTE_WITHHOLDING"
+        },
+        {
+          "slot_id": "B12",
+          "source_id": "NEW-EVENT-04_ASSEMBLY_REPAIR_OR_MISSION_OPERATION",
+          "lineage": "NEW",
+          "profile": "V+S+A",
+          "hop": "multi_hop",
+          "temporal": "far_separated",
+          "mechanism": "EXPLICIT_CHANNEL_OUTAGE"
+        }
+      ],
+      "target_totals": {
+        "profiles": {
+          "V": 2,
+          "S": 2,
+          "A": 2,
+          "V+S": 2,
+          "V+A/S+A": 2,
+          "V+S+A": 2
+        },
+        "hop": {
+          "one_hop": 6,
+          "multi_hop": 6
+        },
+        "temporal": {
+          "near_local": 6,
+          "far_separated": 6
+        },
+        "intervention": {
+          "SILENT_ROUTE_WITHHOLDING": 6,
+          "EXPLICIT_CHANNEL_OUTAGE": 6
+        }
+      },
+      "current_sources_development_or_calibration_only": {
+        "SG-OXFORD-QM-001": [
+          "F01",
+          "F02"
+        ],
+        "SG-OXFORD-DHL-CONSCIOUSNESS": [
+          "F03",
+          "F04",
+          "CAL02"
+        ],
+        "SG-MIT-RES12-003-L01": [
+          "F05",
+          "F06"
+        ],
+        "SG-YALE-PHYS200-L01": [
+          "F07",
+          "F08"
+        ],
+        "cand-051": [
+          "CAL01"
+        ]
+      },
+      "conditionally_retained_current_reported_slots": [
+        "F09",
+        "F10",
+        "F11",
+        "F12"
+      ],
+      "formal_calibrations": [
+        "REPAIRED_CAL01",
+        "REPAIRED_CAL02"
+      ],
+      "new_source_preconditions": [
+        "complete source dossier and exact first-party or owner-controlled route",
+        "duration and synchronized audio/video pass",
+        "affirmative processing and annotation authority",
+        "privacy safety component and source-disjointness pass",
+        "human semantic non-speech pre-screen where ambient is targeted",
+        "human dynamic non-text visual pre-screen where vision is targeted",
+        "two defensible families without weakened necessity or minimality rules"
+      ],
+      "satisfies_task141_source_composition_repair_if_preconditions_pass": true
+    }
+  },
+  "required_before_gate_a_decision": [
+    "freeze revised source registry and claim scope",
+    "remove impossible one_hop_far_separated cells",
+    "replace all placeholder questions answers and claims",
+    "run semantic modality pre-screen",
+    "classify visual routes as dynamic_nontext diagram board_ocr title_overlay or talking_head",
+    "rebuild semantic SES and necessity groups",
+    "close transcript ASR caption OCR visible-text repeated-window and cross-modal alternatives",
+    "convert interventions to exogenous restoration protocol v2",
+    "resolve NOAA rights and privacy holds or replace sources",
+    "freeze two calibration families reviewer roster forms packets assignments and sampling seed"
+  ],
+  "final_boundary_statement": "This disposition is a planning and scientific-audit artifact. It does not modify the registry, promote any P tier, assign H1 or H2, claim human validation, authorize annotation, or authorize scientific execution."
+}

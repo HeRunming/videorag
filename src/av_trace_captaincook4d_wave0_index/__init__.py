@@ -1,0 +1,53 @@
+"""Restricted CaptainCook4D Wave-0 full-timeline indexing."""
+
+from .core import (
+    FORBIDDEN_SEARCH_KEYS,
+    INDEX_VERSION,
+    SCHEMA_VERSION,
+    CaptainCook4DWave0IndexError,
+    IndexConfig,
+    LocalFrozenModels,
+    MediaBackend,
+    ModelBackend,
+    PyAVMediaBackend,
+    build_captaincook4d_wave0_index,
+    build_full_timeline_index,
+    search_ambient,
+    search_fused,
+    search_speech,
+    search_visual,
+)
+from .sources import (
+    PLAN_RELATIVE_PATH,
+    CaptainCook4DSourceSpec,
+    CaptainCook4DWave0Plan,
+    CaptainCook4DWave0SourceError,
+    computed_counts,
+    load_plan_definition,
+    load_source_plan,
+)
+
+__all__ = [
+    "FORBIDDEN_SEARCH_KEYS",
+    "INDEX_VERSION",
+    "PLAN_RELATIVE_PATH",
+    "SCHEMA_VERSION",
+    "CaptainCook4DSourceSpec",
+    "CaptainCook4DWave0IndexError",
+    "CaptainCook4DWave0Plan",
+    "CaptainCook4DWave0SourceError",
+    "IndexConfig",
+    "LocalFrozenModels",
+    "MediaBackend",
+    "ModelBackend",
+    "PyAVMediaBackend",
+    "build_captaincook4d_wave0_index",
+    "build_full_timeline_index",
+    "computed_counts",
+    "load_plan_definition",
+    "load_source_plan",
+    "search_ambient",
+    "search_fused",
+    "search_speech",
+    "search_visual",
+]

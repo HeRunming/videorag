@@ -1,0 +1,280 @@
+{
+  "template_version": "1.0.0",
+  "template_status": "blank_rehearsal_template_not_annotation",
+  "aligned_specs": {
+    "episode_schema": "urn:av-trace:schema:episode-family:0.2.0",
+    "acquisition_manifest_schema": "urn:av-trace:schema:acquisition-manifest:0.2.0",
+    "trajectory_schema": "urn:av-trace:schema:trajectory:0.2.0",
+    "annotation_guideline": "docs/spec/annotation_guideline_v0.md",
+    "semantic_validator": "docs/spec/semantic_validator_spec.md"
+  },
+  "record_identity": {
+    "rehearsal_record_id": null,
+    "slot_id": null,
+    "candidate_key": null,
+    "family_id": null,
+    "version": "draft-0",
+    "status": "draft",
+    "track": null,
+    "created_at": null,
+    "updated_at": null
+  },
+  "role_assignments": {
+    "source_intake_owner": null,
+    "rights_reviewer": null,
+    "technical_reviewer": null,
+    "author_ids": [],
+    "alternative_evidence_finder": null,
+    "validator_a": null,
+    "validator_b": null,
+    "adjudicator": null,
+    "independence_confirmed": false,
+    "conflict_notes": null
+  },
+  "source_intake": {
+    "dataset_family": null,
+    "upstream_dataset": null,
+    "official_release_locator": null,
+    "release_item_id": null,
+    "release_revision": null,
+    "source_asset_id": null,
+    "manifest_asset_id": null,
+    "manifest_revision": null,
+    "rights_decision_id": null,
+    "rights_gate_status": "unknown_hold",
+    "all_six_rights_decisions_explicit": false,
+    "any_unknown_hold": true,
+    "authorized_acquisition_method": null,
+    "content_sha256": null,
+    "duration_s": null,
+    "streams": [],
+    "has_video": null,
+    "has_audio": null,
+    "has_speech": null,
+    "has_ambient_audio": null,
+    "audio_intelligible": null,
+    "privacy_safety_status": "not_reviewed",
+    "embedded_components_status": "not_reviewed",
+    "technical_review_result": "not_run",
+    "technical_rejection_codes": [],
+    "source_disjointness_notes": null
+  },
+  "question_authoring": {
+    "question_text": null,
+    "answer_type": null,
+    "requested_granularity": null,
+    "display_answer": null,
+    "question_only_risk": "not_tested",
+    "intended_modality_stratum": null,
+    "intended_hop_count": null,
+    "intended_temporal_span_class": null,
+    "earliest_evidence_start_s": null,
+    "latest_evidence_end_s": null,
+    "evidence_cluster_separation_s": null,
+    "metadata_answerable": null,
+    "common_knowledge_answerable": null,
+    "prohibited_modality_answerable": null,
+    "author_notes": null
+  },
+  "answer_spec": {
+    "required_claim_ids": [],
+    "optional_claim_ids": [],
+    "forbidden_claim_ids": [],
+    "display_answer": null
+  },
+  "claim_graph": {
+    "claims": [],
+    "hops": [],
+    "support_edges": [],
+    "dag_check": "not_run",
+    "all_required_claims_covered": false
+  },
+  "evidence_units": [],
+  "alternative_search": {
+    "finder_blinded_to_author_preferred_ses": false,
+    "full_source_review_completed": false,
+    "search_started_at": null,
+    "search_completed_at": null,
+    "search_methods": [],
+    "candidate_routes": [],
+    "duplicate_or_derived_routes": [],
+    "unresolved_regions": [],
+    "exhaustive_enumeration_credible": false,
+    "finder_recommendation": null
+  },
+  "necessity_testing": {
+    "accepted_sufficient_sets": [],
+    "leave_one_out_tests": [],
+    "necessity_groups": [],
+    "hitting_set_check": "not_run",
+    "derived_leak_inventory": [],
+    "blocked_reachability_check": "not_run",
+    "alternative_ses_present": false,
+    "alternative_ses_set_ids": [],
+    "necessity_recommendation": null
+  },
+  "intervention_construction": {
+    "intervention_mechanism": null,
+    "affected_necessity_group_id": null,
+    "affected_evidence_ids": [],
+    "affected_channel": null,
+    "blocked_activation_hook": null,
+    "blocked_call_index": null,
+    "restoration_trigger_type": null,
+    "restoration_trigger_value": null,
+    "backend_version": null,
+    "tool_api_version": "0.2.0",
+    "index_hash": null,
+    "budget": {
+      "cost_limit": null,
+      "max_steps": null,
+      "tool_costs": {
+        "search_visual": null,
+        "search_speech": null,
+        "search_ambient_audio": null,
+        "inspect_clip": null,
+        "read_transcript": null,
+        "get_channel_status": null,
+        "finalize": null
+      }
+    },
+    "clean_initial_accessible_sufficient": null,
+    "blocked_initial_accessible_sufficient": null,
+    "blocked_expected_final_sufficiency": null,
+    "restored_expected_final_sufficiency": null,
+    "pretrigger_blocked_restored_equivalence": "not_run",
+    "pair_diff_isolation": "not_run",
+    "restoration_exactness": "not_run",
+    "intervention_artifact_audit": "not_run"
+  },
+  "validator_trajectories": [
+    {
+      "validator_role": "validator_a",
+      "validator_id": null,
+      "blind_start": true,
+      "clean": {
+        "trajectory_id": null,
+        "schema_valid": false,
+        "supported_required_claims": false,
+        "accepted_set_id_used": null,
+        "within_budget": false,
+        "outcome": "not_run"
+      },
+      "blocked": {
+        "trajectory_id": null,
+        "schema_valid": false,
+        "blocked_target_supported": null,
+        "diagnosed_in_source_but_inaccessible": null,
+        "premature_stop": null,
+        "within_budget": false,
+        "outcome": "not_run"
+      },
+      "restored": {
+        "trajectory_id": null,
+        "schema_valid": false,
+        "supported_required_claims": false,
+        "accepted_set_id_used": null,
+        "restoration_response_observed": null,
+        "within_budget": false,
+        "outcome": "not_run"
+      },
+      "notes": null
+    },
+    {
+      "validator_role": "validator_b",
+      "validator_id": null,
+      "blind_start": true,
+      "clean": {
+        "trajectory_id": null,
+        "schema_valid": false,
+        "supported_required_claims": false,
+        "accepted_set_id_used": null,
+        "within_budget": false,
+        "outcome": "not_run"
+      },
+      "blocked": {
+        "trajectory_id": null,
+        "schema_valid": false,
+        "blocked_target_supported": null,
+        "diagnosed_in_source_but_inaccessible": null,
+        "premature_stop": null,
+        "within_budget": false,
+        "outcome": "not_run"
+      },
+      "restored": {
+        "trajectory_id": null,
+        "schema_valid": false,
+        "supported_required_claims": false,
+        "accepted_set_id_used": null,
+        "restoration_response_observed": null,
+        "within_budget": false,
+        "outcome": "not_run"
+      },
+      "notes": null
+    }
+  ],
+  "shortcut_audits": [
+    {"audit_type": "question_only", "status": "pending", "notes": null},
+    {"audit_type": "metadata_only", "status": "pending", "notes": null},
+    {"audit_type": "transcript_only", "status": "pending", "notes": null},
+    {"audit_type": "silent_video", "status": "pending", "notes": null},
+    {"audit_type": "ambient_only", "status": "pending", "notes": null},
+    {"audit_type": "temporal_shuffle", "status": "pending", "notes": null},
+    {"audit_type": "snippet_only", "status": "pending", "notes": null},
+    {"audit_type": "duplicate_evidence", "status": "pending", "notes": null},
+    {"audit_type": "contamination", "status": "pending", "notes": null},
+    {"audit_type": "intervention_artifact", "status": "pending", "notes": null}
+  ],
+  "adjudication": {
+    "required": null,
+    "reason_codes": [],
+    "issues": [],
+    "decision": "pending",
+    "repair_actions": [],
+    "adjudicator_id": null,
+    "decided_at": null,
+    "new_version_required": false
+  },
+  "rejection": {
+    "rejected": false,
+    "stage": null,
+    "reason_codes": [],
+    "primary_reason": null,
+    "rejected_by": null,
+    "rejected_at": null,
+    "replacement_slot_id": null,
+    "replacement_candidate_key": null,
+    "salvageable_metadata_or_work": [],
+    "notes": null
+  },
+  "timing": {
+    "source_intake_minutes": null,
+    "rights_access_review_minutes": null,
+    "technical_audio_review_minutes": null,
+    "question_authoring_minutes": null,
+    "claim_graph_minutes": null,
+    "evidence_unit_minutes": null,
+    "alternative_search_minutes": null,
+    "necessity_testing_minutes": null,
+    "intervention_construction_minutes": null,
+    "validator_a_minutes": null,
+    "validator_b_minutes": null,
+    "adjudication_minutes": null,
+    "semantic_lint_minutes": null,
+    "replay_repair_minutes": null,
+    "rejection_minutes": null,
+    "total_person_minutes": null,
+    "elapsed_calendar_hours": null,
+    "blocked_wait_hours": null
+  },
+  "gate_summary": {
+    "schema_validation": "not_run",
+    "semantic_validation": "not_run",
+    "rights_gate": "fail_closed",
+    "technical_gate": "not_run",
+    "human_validity_gate": "not_run",
+    "pair_isolation_gate": "not_run",
+    "replay_gate": "not_run",
+    "final_disposition": "pending"
+  }
+}

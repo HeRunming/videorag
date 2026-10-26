@@ -1,0 +1,631 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "av-trace-mini-pilot-replacement-candidates-v1",
+  "created_at": "2026-09-22",
+  "decision": "REPLACEMENT_CANDIDATE_POOL_READY_FOR_DOSSIER_PREFLIGHT",
+  "decision_scope": "METADATA_CANDIDATE_POOL_ONLY_NOT_ACQUISITION_READY",
+  "caveat": "The ranked pool contains at least four distinct underlying lecture source-group candidates, but only three producer collections: Oxford Podcasts, MIT OpenCourseWare, and Open Yale Courses. If the frozen requirement means four independent producers or collections rather than four source groups, the decision is REPAIR and a fourth producer or collection must be discovered.",
+  "evidence_mode": {
+    "network_used_for_task_127_finalization": false,
+    "media_downloaded": false,
+    "media_bytes_persisted": 0,
+    "basis": "Conservative official-source facts and official-page URLs already established in the Task 127 prompt; Task 127 did not independently revisit, archive, or probe the pages.",
+    "evidence_date": "2026-09-22"
+  },
+  "scope": {
+    "owned_files": [
+      "data/rehearsal_plan/mini_pilot_replacement_candidates.json",
+      "docs/review/mini_pilot_replacement_discovery.md",
+      "orchestration/results/127_mini_pilot_replacement_discovery.txt"
+    ],
+    "candidate_count": 11,
+    "distinct_candidate_domains": 11,
+    "producer_collection_count": 3,
+    "primary_dossier_candidates": 4,
+    "named_reserves": 2,
+    "additional_metadata_candidates": 5
+  },
+  "source_group_rule": "Each distinct underlying lecture asset is a candidate source group. Alternate encodings, video/audio versions, transcripts, captions, mirrors, excerpts, and derivatives of one lecture remain in the same source group.",
+  "threshold_interpretation": {
+    "four_distinct_source_groups": {
+      "met_at_metadata_candidate_level": true,
+      "basis": "The top four identify four distinct underlying lecture assets.",
+      "eligibility_warning": "This is discovery sufficiency only; zero candidates are eligible for acquisition."
+    },
+    "four_independent_producers_or_collections": {
+      "met": false,
+      "available_count": 3,
+      "available": [
+        "Oxford Podcasts",
+        "MIT OpenCourseWare",
+        "Open Yale Courses"
+      ],
+      "required_decision_if_frozen": "REPAIR"
+    }
+  },
+  "global_status": {
+    "eligible_for_acquisition_count": 0,
+    "eligible_for_bounded_acquisition_count": 0,
+    "all_candidates_require_task_128": true,
+    "next_gate": "Task 128 exact-route, exact-item-license, item-component, privacy, technical-object, and source-lineage dossier preflight",
+    "acquisition_authorized": false,
+    "processing_authorized": false,
+    "human_annotation_authorized": false
+  },
+  "task_128_required_checks": [
+    "Archive the exact official episode, lecture, course, license, terms, and credits pages with date, byte count, and SHA-256.",
+    "Resolve the exact underlying lecture asset and collapse video, audio, transcript, captions, mirrors, excerpts, and alternate encodings into one source group.",
+    "Extract and allowlist only exact official first-party media and transcript routes; do not infer an object URL from a page or use a third-party mirror.",
+    "Freeze redirect chain, final host, object size, MIME, ETag or immutable identity, Last-Modified when available, and byte-range behavior before any approved bounded read.",
+    "Verify exact duration, complete synchronized audio/video tracks, codecs, time base, and object identity without treating a transcript or course download control as media proof.",
+    "Bind the item-level license to the exact lecture rendition and determine whether processing and human annotation are authorized.",
+    "Audit slides, figures, photographs, readings, film/news excerpts, software screens, marks, music, audience material, and every other third-party component or Credits exclusion.",
+    "Audit minors, audience members, personal information, sensitive examples, and other privacy or safety concerns.",
+    "Check source lineage, mirrors, duplicates, and all development-source fingerprints before split assignment.",
+    "Fail closed: only a separately approved dossier may advance a candidate to bounded acquisition."
+  ],
+  "collection_evidence": [
+    {
+      "producer_collection": "Oxford Podcasts",
+      "official_domain": "podcasts.ox.ac.uk",
+      "evidence_date": "2026-09-22",
+      "official_urls": [
+        "https://podcasts.ox.ac.uk/",
+        "https://podcasts.ox.ac.uk/001-introduction-quantum-mechanics-probability-amplitudes-and-quantum-states"
+      ],
+      "task_provided_facts": [
+        "Official episode pages expose Download Video, Download Audio, and Download Transcript controls.",
+        "The named episodes carry episode-level Creative Commons Attribution-NonCommercial-ShareAlike 2.0 UK terms."
+      ],
+      "task_128_hold": "Archive each exact episode page and prove that the stated license covers the exact A/V and transcript objects and all included components."
+    },
+    {
+      "producer_collection": "MIT OpenCourseWare",
+      "official_domain": "ocw.mit.edu",
+      "evidence_date": "2026-09-22",
+      "official_urls": [
+        "https://ocw.mit.edu/courses/res-12-003-fluid-motions-sediment-transport-and-current-generated-sedimentary-structures-fall-2006/",
+        "https://ocw.mit.edu/courses/sts-042-einstein-oppenheimer-feynman-physics-in-the-20th-century-fall-2020/",
+        "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/",
+        "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+        "https://ocw.mit.edu/pages/privacy-and-terms-of-use/"
+      ],
+      "task_provided_facts": [
+        "Official course pages expose a Download Course route.",
+        "MIT OpenCourseWare Creative Commons terms apply subject to third-party exclusions.",
+        "STS.042 includes lecture 1 and other lecture files described as 85-154 MB."
+      ],
+      "task_128_hold": "A course-level download and general OCW terms do not establish the exact lecture-media route or clear excluded third-party components."
+    },
+    {
+      "producer_collection": "Open Yale Courses",
+      "official_domain": "oyc.yale.edu",
+      "evidence_date": "2026-09-22",
+      "official_urls": [
+        "https://oyc.yale.edu/physics/phys-200",
+        "https://oyc.yale.edu/history/hist-202",
+        "https://oyc.yale.edu/philosophy/phil-181",
+        "https://oyc.yale.edu/psychology/psyc-110",
+        "https://oyc.yale.edu/terms"
+      ],
+      "task_provided_facts": [
+        "Official course pages state that lectures are downloadable as video, audio, and transcript without registration.",
+        "Most Yale-owned Open Yale Courses content is offered under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 terms.",
+        "Third-party material identified through Credits is excluded."
+      ],
+      "task_128_hold": "Archive the exact lecture and Credits pages and bind the exact lecture assets to Yale-owned content before any acquisition."
+    }
+  ],
+  "candidates": [
+    {
+      "rank": 1,
+      "candidate_id": "repl-oxford-qm-001",
+      "candidate_source_group_id": "SG-CAND-OXFORD-QM-001",
+      "selection_tier": "PRIMARY_DOSSIER_ORDER",
+      "producer_collection": "Oxford Podcasts",
+      "official_domain": "podcasts.ox.ac.uk",
+      "subject_domain": "quantum_physics",
+      "course_or_series": "Quantum Mechanics",
+      "underlying_asset": "Lecture 001",
+      "title": "001. Introduction to Quantum Mechanics, Probability Amplitudes and Quantum States",
+      "official_landing_url": "https://podcasts.ox.ac.uk/001-introduction-quantum-mechanics-probability-amplitudes-and-quantum-states",
+      "duration": {
+        "display": "00:44:05",
+        "seconds": 2645,
+        "precision": "task_provided_episode_duration"
+      },
+      "official_route_observation": "The official episode page is reported to expose Download Video, Download Audio, and Download Transcript controls.",
+      "license_observation": "Episode-level CC BY-NC-SA 2.0 UK is reported.",
+      "visual_speech_hypothesis": "High-priority speech plus instructional-visual complement candidate; exact board, slide, camera, and transcript redundancy must be inspected.",
+      "privacy_music_hypothesis": "Lecture format suggests low privacy and music exposure, but neither is cleared without a full item/component pass.",
+      "ranking_rationale": "In-range supplied duration, direct official download controls, low expected privacy/music burden, and strong physics speech/visual complement.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact official video/audio/transcript object identities are not frozen.",
+        "The episode license has not been archived and bound to each exact object.",
+        "Slides, figures, marks, music, likenesses, and other components are unaudited.",
+        "Technical A/V identity, synchronization, privacy, lineage, and duplicate checks are incomplete."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://podcasts.ox.ac.uk/001-introduction-quantum-mechanics-probability-amplitudes-and-quantum-states",
+          "source_type": "official_episode_page",
+          "supports": "Task-provided title, duration, download controls, transcript availability, and episode-level license observation.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "candidate_id": "repl-oxford-critical-reasoning-fallacies",
+      "candidate_source_group_id": "SG-CAND-OXFORD-FALLACIES",
+      "selection_tier": "PRIMARY_DOSSIER_ORDER",
+      "producer_collection": "Oxford Podcasts",
+      "official_domain": "podcasts.ox.ac.uk",
+      "subject_domain": "critical_reasoning",
+      "course_or_series": "Critical Reasoning",
+      "underlying_asset": "Fallacies episode",
+      "title": "Fallacies",
+      "official_landing_url": null,
+      "official_page_locator": "Oxford Podcasts official episode page for Critical Reasoning: Fallacies; exact landing URL must be frozen in Task 128.",
+      "duration": {
+        "display": "01:32:48",
+        "seconds": 5568,
+        "precision": "task_provided_episode_duration",
+        "frozen_window_note": "This is 168 seconds above the earlier 5,400-second ceiling; Task 128 must resolve the duration rule without silently relaxing it."
+      },
+      "official_route_observation": "The official episode page is reported to expose Download Video, Download Audio, and Download Transcript controls.",
+      "license_observation": "Episode-level CC BY-NC-SA 2.0 UK is reported.",
+      "visual_speech_hypothesis": "Strong speech/reasoning candidate with possible supporting visuals; exact visual value and transcript substitution risk are unverified.",
+      "privacy_music_hypothesis": "Lecture format suggests low privacy and music exposure, but neither is cleared.",
+      "ranking_rationale": "Direct official download likelihood and reasoning-rich speech make it useful, but the supplied runtime exceeds the prior 90-minute ceiling and is an explicit Task 128 hold.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact official episode landing and media object URLs are not frozen.",
+        "Runtime conflicts with the earlier 20-90 minute window by 168 seconds.",
+        "License-to-object binding and all component exclusions are unaudited.",
+        "Visual contribution, transcript substitute routes, privacy, music, and lineage remain unverified."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://podcasts.ox.ac.uk/",
+          "source_type": "official_collection_page",
+          "supports": "Official Oxford Podcasts collection context; the Task 127 prompt supplies the named episode, duration, download-control, and license observations.",
+          "archive_state": "EXACT_EPISODE_PAGE_TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "candidate_id": "repl-mit-res12-003-lecture-1",
+      "candidate_source_group_id": "SG-CAND-MIT-RES12-003-L01",
+      "selection_tier": "PRIMARY_DOSSIER_ORDER",
+      "producer_collection": "MIT OpenCourseWare",
+      "official_domain": "ocw.mit.edu",
+      "subject_domain": "fluid_dynamics_and_sediment_transport",
+      "course_or_series": "RES.12-003 Fluid Motions, Sediment Transport, and Current-Generated Sedimentary Structures",
+      "underlying_asset": "Lecture 1",
+      "title": "Lecture 1: Fluid Dynamics",
+      "official_landing_url": "https://ocw.mit.edu/courses/res-12-003-fluid-motions-sediment-transport-and-current-generated-sedimentary-structures-fall-2006/",
+      "duration": {
+        "display": null,
+        "seconds": null,
+        "precision": "NOT_PROVIDED_DO_NOT_INFER"
+      },
+      "official_route_observation": "The official course exposes lecture videos and a Download Course control; no exact individual media route is asserted here.",
+      "license_observation": "MIT OCW Creative Commons terms are reported, with third-party exclusions.",
+      "visual_speech_hypothesis": "High-priority visual/speech complement candidate because fluid-dynamics instruction may contain diagrams or demonstrations; the exact lecture must prove this.",
+      "privacy_music_hypothesis": "Institutional lecture format suggests low privacy/music burden, subject to exact-content review.",
+      "ranking_rationale": "Potentially strong dynamic visual evidence paired with technical speech, from an official institutional collection with a course-download path.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact Lecture 1 page and exact first-party media/transcript objects are not frozen.",
+        "Exact duration and A/V streams are unknown.",
+        "Course-level CC terms do not clear third-party slides, figures, clips, readings, marks, or other components.",
+        "Privacy, music, lineage, duplicates, and processing/annotation authority remain unverified."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/courses/res-12-003-fluid-motions-sediment-transport-and-current-generated-sedimentary-structures-fall-2006/",
+          "source_type": "official_course_page",
+          "supports": "Task-provided course identity, lecture-video availability, and Download Course observation.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided MIT OCW Creative Commons and third-party-exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "candidate_id": "repl-yale-phys-200-lecture-1",
+      "candidate_source_group_id": "SG-CAND-YALE-PHYS200-L01",
+      "selection_tier": "PRIMARY_DOSSIER_ORDER",
+      "producer_collection": "Open Yale Courses",
+      "official_domain": "oyc.yale.edu",
+      "subject_domain": "classical_mechanics",
+      "course_or_series": "PHYS-200 Fundamentals of Physics I",
+      "underlying_asset": "Lecture 1",
+      "title": "PHYS-200 Lecture 1",
+      "official_landing_url": "https://oyc.yale.edu/physics/phys-200/lecture-1",
+      "duration": {
+        "display": "approximately 75 minutes",
+        "seconds": null,
+        "precision": "task_provided_course_level_characterization_not_exact_item_duration"
+      },
+      "official_route_observation": "Open Yale Courses is reported to offer downloadable video, audio, and transcript without registration.",
+      "license_observation": "Most Yale-owned course content is reported as CC BY-NC-SA 3.0; third-party Credits exclusions apply.",
+      "visual_speech_hypothesis": "Classroom physics is a promising board/demonstration plus speech candidate; exact visual events and transcript redundancy require review.",
+      "privacy_music_hypothesis": "Classroom lecture format suggests low music and manageable privacy, but audience and component checks remain mandatory.",
+      "ranking_rationale": "Likely in-range classroom lecture with direct multi-format official availability and complementary physics visuals/speech.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact video/audio/transcript objects and exact duration are not frozen.",
+        "The exact lecture's Yale-owned versus Credits-excluded components are not classified.",
+        "Board content, demonstrations, images, marks, audience, privacy, music, and likenesses are unaudited.",
+        "Technical object identity, processing/annotation authority, lineage, and duplicate checks are incomplete."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/physics/phys-200/lecture-1",
+          "source_type": "official_lecture_page",
+          "supports": "Task-provided course/lecture candidate and approximately 75-minute classroom format.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/terms",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided Yale-owned CC BY-NC-SA 3.0 and third-party Credits exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "candidate_id": "repl-mit-2-003j-lecture-1",
+      "candidate_source_group_id": "SG-CAND-MIT-2-003J-L01",
+      "selection_tier": "NAMED_RESERVE",
+      "producer_collection": "MIT OpenCourseWare",
+      "official_domain": "ocw.mit.edu",
+      "subject_domain": "engineering_dynamics_and_control",
+      "course_or_series": "2.003J Dynamics and Control I",
+      "underlying_asset": "Lecture 1",
+      "title": "2.003J Dynamics and Control I: Lecture 1",
+      "official_landing_url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/",
+      "duration": {
+        "display": null,
+        "seconds": null,
+        "precision": "NOT_PROVIDED_DO_NOT_INFER"
+      },
+      "official_route_observation": "Official MIT OCW lecture-video/course-download availability is reported; the exact lecture asset is unresolved.",
+      "license_observation": "MIT OCW Creative Commons terms are reported, with third-party exclusions.",
+      "visual_speech_hypothesis": "Potential engineering diagrams or physical demonstrations may complement speech; not yet observed at item level.",
+      "privacy_music_hypothesis": "Expected low privacy/music exposure, unverified.",
+      "ranking_rationale": "Named reserve for technical visual/speech coverage if the fluid-dynamics candidate fails.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact lecture identity, route, duration, license binding, components, privacy, music, A/V properties, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/",
+          "source_type": "official_course_resource_page",
+          "supports": "Task-provided Dynamics and Control lecture-video candidate.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided OCW license and third-party exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "candidate_id": "repl-yale-hist-202-lecture-1",
+      "candidate_source_group_id": "SG-CAND-YALE-HIST202-L01",
+      "selection_tier": "NAMED_RESERVE",
+      "producer_collection": "Open Yale Courses",
+      "official_domain": "oyc.yale.edu",
+      "subject_domain": "european_history",
+      "course_or_series": "HIST-202 European Civilization, 1648-1945",
+      "underlying_asset": "Lecture 1",
+      "title": "HIST-202 Lecture 1",
+      "official_landing_url": "https://oyc.yale.edu/history/hist-202/lecture-1",
+      "duration": {
+        "display": "approximately 50 minutes",
+        "seconds": null,
+        "precision": "task_provided_course_level_characterization_not_exact_item_duration"
+      },
+      "official_route_observation": "Open Yale Courses is reported to offer downloadable video, audio, and transcript without registration.",
+      "license_observation": "Most Yale-owned course content is reported as CC BY-NC-SA 3.0; third-party Credits exclusions apply.",
+      "visual_speech_hypothesis": "Strong speech candidate with possible board/map/image support; visual necessity is uncertain.",
+      "privacy_music_hypothesis": "Lecture format suggests low privacy/music burden, unverified.",
+      "ranking_rationale": "Named reserve with a favorable supplied course-level runtime and strong speech content from an official multi-format source.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact lecture objects, exact duration, Credits exclusions, visual contribution, privacy, music, A/V properties, license binding, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/history/hist-202/lecture-1",
+          "source_type": "official_lecture_page",
+          "supports": "Task-provided course candidate and approximately 50-minute lecture characterization.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/terms",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided Yale-owned license and Credits exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "candidate_id": "repl-oxford-dh-lawrence-consciousness",
+      "candidate_source_group_id": "SG-CAND-OXFORD-DHL-CONSCIOUSNESS",
+      "selection_tier": "ADDITIONAL_METADATA_CANDIDATE",
+      "producer_collection": "Oxford Podcasts",
+      "official_domain": "podcasts.ox.ac.uk",
+      "subject_domain": "literary_studies",
+      "course_or_series": "D.H. Lawrence",
+      "underlying_asset": "Lecture 1",
+      "title": "D.H. Lawrence 1: Consciousness",
+      "official_landing_url": null,
+      "official_page_locator": "Oxford Podcasts official episode page for D.H. Lawrence 1: Consciousness; exact landing URL must be frozen in Task 128.",
+      "duration": {
+        "display": "00:48:28",
+        "seconds": 2908,
+        "precision": "task_provided_episode_duration"
+      },
+      "official_route_observation": "The official episode page is reported to expose Download Video, Download Audio, and Download Transcript controls.",
+      "license_observation": "Episode-level CC BY-NC-SA 2.0 UK is reported.",
+      "visual_speech_hypothesis": "Likely speech-dominant lecture; useful as a speech reserve but visual contribution is unknown.",
+      "privacy_music_hypothesis": "Lecture format suggests low privacy/music exposure, unverified.",
+      "ranking_rationale": "Good supplied duration and direct official download pattern, but likely weaker visual complement than the top four.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact landing/media routes, license binding, components, visual value, privacy, music, technical identity, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://podcasts.ox.ac.uk/",
+          "source_type": "official_collection_page",
+          "supports": "Official Oxford Podcasts collection context; the Task 127 prompt supplies the title, duration, download-control, and license observations.",
+          "archive_state": "EXACT_EPISODE_PAGE_TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "candidate_id": "repl-mit-sts-042-lecture-1",
+      "candidate_source_group_id": "SG-CAND-MIT-STS042-L01",
+      "selection_tier": "ADDITIONAL_METADATA_CANDIDATE",
+      "producer_collection": "MIT OpenCourseWare",
+      "official_domain": "ocw.mit.edu",
+      "subject_domain": "history_of_physics_and_science_studies",
+      "course_or_series": "STS.042 Physics in the 20th Century",
+      "underlying_asset": "Lecture 1",
+      "title": "STS.042 Lecture 1",
+      "official_landing_url": "https://ocw.mit.edu/courses/sts-042-einstein-oppenheimer-feynman-physics-in-the-20th-century-fall-2020/",
+      "duration": {
+        "display": null,
+        "seconds": null,
+        "precision": "NOT_PROVIDED_DO_NOT_INFER"
+      },
+      "file_size_observation": "The task reports Lecture 1 and other lecture files in an 85-154 MB range; no per-item size is assigned here.",
+      "official_route_observation": "Official MIT OCW course/download availability is reported; no exact lecture-media object is asserted.",
+      "license_observation": "MIT OCW Creative Commons terms are reported, with third-party exclusions.",
+      "visual_speech_hypothesis": "Likely speech-heavy with slide/image support; exact visual necessity and component burden are unknown.",
+      "privacy_music_hypothesis": "Expected low privacy/music burden, unverified.",
+      "ranking_rationale": "Credible institutional lecture lead with reported downloadable files, but duration, exact object, and third-party image/slide scope are unresolved.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact per-lecture file identity and size are not assigned.",
+        "Duration, route, license-to-object binding, components, privacy, music, A/V properties, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/courses/sts-042-einstein-oppenheimer-feynman-physics-in-the-20th-century-fall-2020/",
+          "source_type": "official_course_page",
+          "supports": "Task-provided STS.042 lecture-file candidate and collection context.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided OCW license and exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "candidate_id": "repl-mit-9-13-lecture-1",
+      "candidate_source_group_id": "SG-CAND-MIT-9-13-L01",
+      "selection_tier": "ADDITIONAL_METADATA_CANDIDATE",
+      "producer_collection": "MIT OpenCourseWare",
+      "official_domain": "ocw.mit.edu",
+      "subject_domain": "neuroscience",
+      "course_or_series": "9.13 The Human Brain",
+      "underlying_asset": "Lecture 1",
+      "title": "9.13 The Human Brain: Lecture 1",
+      "official_landing_url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+      "duration": {
+        "display": null,
+        "seconds": null,
+        "precision": "NOT_PROVIDED_DO_NOT_INFER"
+      },
+      "official_route_observation": "Official MIT OCW lecture-video/course-download availability is reported; no exact individual media route is asserted.",
+      "license_observation": "MIT OCW Creative Commons terms are reported, with third-party exclusions.",
+      "visual_speech_hypothesis": "Potentially useful speech plus diagrams/imaging, but biomedical imagery and slide rights may increase component-review burden.",
+      "privacy_music_hypothesis": "Lecture format suggests low audience privacy/music exposure; any human-subject or clinical imagery must be reviewed.",
+      "ranking_rationale": "Adds a distinct neuroscience domain but likely has a higher image/component audit burden.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact lecture route, duration, medical/third-party imagery, privacy, license binding, A/V properties, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+          "source_type": "official_course_page",
+          "supports": "Task-provided Human Brain lecture-video candidate.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided OCW license and exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "candidate_id": "repl-yale-phil-181-lecture-1",
+      "candidate_source_group_id": "SG-CAND-YALE-PHIL181-L01",
+      "selection_tier": "ADDITIONAL_METADATA_CANDIDATE",
+      "producer_collection": "Open Yale Courses",
+      "official_domain": "oyc.yale.edu",
+      "subject_domain": "philosophy_and_human_nature",
+      "course_or_series": "PHIL-181 Philosophy and the Science of Human Nature",
+      "underlying_asset": "Lecture 1",
+      "title": "PHIL-181 Lecture 1",
+      "official_landing_url": "https://oyc.yale.edu/philosophy/phil-181/lecture-1",
+      "duration": {
+        "display": null,
+        "seconds": null,
+        "precision": "NOT_PROVIDED_DO_NOT_INFER"
+      },
+      "official_route_observation": "Open Yale Courses is reported to offer downloadable video, audio, and transcript without registration.",
+      "license_observation": "Most Yale-owned course content is reported as CC BY-NC-SA 3.0; third-party Credits exclusions apply.",
+      "visual_speech_hypothesis": "Strong speech/reasoning reserve; visual necessity may be weak and must be demonstrated.",
+      "privacy_music_hypothesis": "Lecture format suggests low privacy/music burden, unverified.",
+      "ranking_rationale": "Distinct reasoning domain and strong speech potential, ranked below candidates with clearer visual complement.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact lecture object, duration, Credits scope, visual contribution, privacy, music, A/V properties, license binding, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/philosophy/phil-181/lecture-1",
+          "source_type": "official_lecture_page",
+          "supports": "Task-provided Philosophy and Science of Human Nature candidate.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/terms",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided Yale-owned license and Credits exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "candidate_id": "repl-yale-psyc-110-lecture-1",
+      "candidate_source_group_id": "SG-CAND-YALE-PSYC110-L01",
+      "selection_tier": "ADDITIONAL_METADATA_CANDIDATE",
+      "producer_collection": "Open Yale Courses",
+      "official_domain": "oyc.yale.edu",
+      "subject_domain": "introductory_psychology",
+      "course_or_series": "PSYC-110 Introduction to Psychology",
+      "underlying_asset": "Lecture 1",
+      "title": "PSYC-110 Lecture 1",
+      "official_landing_url": "https://oyc.yale.edu/psychology/psyc-110/lecture-1",
+      "duration": {
+        "display": null,
+        "seconds": null,
+        "precision": "NOT_PROVIDED_DO_NOT_INFER"
+      },
+      "official_route_observation": "Open Yale Courses is reported to offer downloadable video, audio, and transcript without registration.",
+      "license_observation": "Most Yale-owned course content is reported as CC BY-NC-SA 3.0; third-party Credits exclusions apply.",
+      "visual_speech_hypothesis": "Speech-rich lecture candidate; exact slides, examples, and visual contribution are unknown.",
+      "privacy_music_hypothesis": "Lecture format suggests low audience privacy/music exposure, while examples involving people require exact review.",
+      "ranking_rationale": "Distinct psychology domain and strong speech potential, but unknown duration and possible third-party example/image burden lower priority.",
+      "status": "REQUIRES_TASK_128_DOSSIER_PREFLIGHT",
+      "eligible_for_acquisition": false,
+      "exact_media_url": null,
+      "blocking_items": [
+        "Exact lecture object, duration, Credits scope, examples/images, privacy, music, A/V properties, license binding, and lineage remain unresolved."
+      ],
+      "dated_evidence": [
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/psychology/psyc-110/lecture-1",
+          "source_type": "official_lecture_page",
+          "supports": "Task-provided Introduction to Psychology candidate.",
+          "archive_state": "TASK_128_REQUIRED"
+        },
+        {
+          "evidence_date": "2026-09-22",
+          "url": "https://oyc.yale.edu/terms",
+          "source_type": "official_terms_page",
+          "supports": "Task-provided Yale-owned license and Credits exclusion boundary.",
+          "archive_state": "TASK_128_REQUIRED"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "json_parse_required": true,
+    "minimum_ranked_candidates": 8,
+    "actual_ranked_candidates": 11,
+    "minimum_distinct_domains": 3,
+    "actual_distinct_domains": 11,
+    "required_top_four": [
+      "repl-oxford-qm-001",
+      "repl-oxford-critical-reasoning-fallacies",
+      "repl-mit-res12-003-lecture-1",
+      "repl-yale-phys-200-lecture-1"
+    ],
+    "required_named_reserves": [
+      "repl-mit-2-003j-lecture-1",
+      "repl-yale-hist-202-lecture-1"
+    ],
+    "exact_media_urls_recorded": 0,
+    "unprovided_exact_durations_invented": 0
+  }
+}

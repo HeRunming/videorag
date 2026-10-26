@@ -1,0 +1,626 @@
+{
+  "schema_version": "av-trace.cvpr-pivot-gate-registry/1.0",
+  "registry_id": "av-trace-cvpr-pivot-20260922",
+  "frozen_at": "2026-09-22",
+  "decision": "CVPR_PIVOT_FROZEN",
+  "results_created_by_this_registry": false,
+  "paper_position": {
+    "primary_contribution": "HUMAN_ADJUDICATED_MATCHED_INTERVENTION_BENCHMARK_AND_DIAGNOSTIC_PROTOCOL",
+    "controller_role": "DIAGNOSTIC_BASELINE_NOT_PROPOSED_METHOD",
+    "frozen_thesis": "AV-TRACE tests long-video audiovisual reliability with human-adjudicated source-disjoint matched episode families that hold the question, evidence graph, backend, and budget fixed while changing evidence-route availability; it diagnoses whether answer accuracy and retrieval recall conceal failures of acquisition, support, citation, insufficiency diagnosis, stopping, and recovery across strong learned baselines.",
+    "benchmark_contribution_achieved": false,
+    "human_reviewed_family_count": 0,
+    "H1_family_count": 0,
+    "H2_family_count": 0
+  },
+  "current_evidence_state": {
+    "INFRASTRUCTURE_PROVEN": true,
+    "LEARNED_RETRIEVAL_READY": true,
+    "LEARNED_GENERATION_COMPONENT_READY_NARROW": true,
+    "STRONG_CONTROLLER_MODEL_SNAPSHOT_READY": true,
+    "STRONG_AGENT_BASELINE_READY": false,
+    "CONSTRUCT_VALIDITY_MINI_PILOT_GO": false,
+    "END_TO_END_DIAGNOSTIC_GO": false,
+    "FIRST_40_SCALED_REVIEWS_AUTHORIZED": false,
+    "FULL_60_H2_PRODUCTION_AUTHORIZED": false,
+    "PAPER_CLAIM_READY": false,
+    "FINAL_BENCHMARK_VALIDATED": false
+  },
+  "controller_findings": {
+    "interpretation": "Syntax factorization improved output validity and action selection in some settings, but semantic public-state estimation and terminal behavior remain below frozen competence gates. These findings motivate a benchmark-first pivot and do not establish a controller method contribution.",
+    "task_114_qwen7b_monolithic": {
+      "decision": "QWEN7B_CONTROLLER_SYNTHETIC_COMPETENCE_NO_GO",
+      "suite_use": "SYNTHETIC_DEVELOPMENT_ONLY",
+      "valid_structured_outputs": {
+        "count": 11,
+        "denominator": 16
+      },
+      "oracle_supported_answers": {
+        "count": 1,
+        "denominator": 4
+      },
+      "unsupported_required_claims": 0
+    },
+    "task_120_controller_v2": {
+      "decision": "CONTROLLER_V2_HOLDOUT_NO_GO",
+      "suite_use": "SEALED_UNSEEN_SYNTHETIC_HOLDOUT",
+      "action_syntax": {
+        "count": 28,
+        "denominator": 28
+      },
+      "action_correct": {
+        "count": 15,
+        "denominator": 28
+      },
+      "state_syntax": {
+        "count": 28,
+        "denominator": 28
+      },
+      "joint_state_exact": {
+        "count": 0,
+        "denominator": 28
+      },
+      "terminal_correct": {
+        "count": 0,
+        "denominator": 8
+      },
+      "supported_answers": {
+        "count": 0,
+        "denominator": 4
+      },
+      "correct_abstentions": {
+        "count": 0,
+        "denominator": 4
+      },
+      "unsupported_required_claims": 0,
+      "scientific_evaluation_families_authorized": false
+    },
+    "task_121_controller_v3": {
+      "decision": "NO_GO",
+      "suite_use": "CONSUMED_TASK111_DEVELOPMENT_DATA",
+      "action_syntax": {
+        "count": 16,
+        "denominator": 16
+      },
+      "action_correct": {
+        "count": 14,
+        "denominator": 16
+      },
+      "joint_state_exact": {
+        "count": 0,
+        "denominator": 16
+      },
+      "terminal_correct": {
+        "count": 1,
+        "denominator": 8
+      },
+      "supported_answers": {
+        "count": 1,
+        "denominator": 5
+      },
+      "correct_abstentions": {
+        "count": 0,
+        "denominator": 3
+      },
+      "unsupported_required_claims": 0,
+      "new_unseen_holdout_authorized": false
+    },
+    "comparison_warning": "Task-120 v2 and Task-121 v3 used different suites; their aggregates are descriptive and are not a paired improvement estimate."
+  },
+  "claims": {
+    "retained_current": [
+      {
+        "claim_id": "PIVOT-C001",
+        "claim": "Audited matched C/B/R execution and replay infrastructure exists.",
+        "status": "SUPPORTED_ENGINEERING_ONLY"
+      },
+      {
+        "claim_id": "PIVOT-C002",
+        "claim": "Restoration uses a common supported-answer endpoint.",
+        "status": "SUPPORTED_ENGINEERING_ONLY"
+      },
+      {
+        "claim_id": "PIVOT-C003",
+        "claim": "Final-point route certificates operationalize premature stopping.",
+        "status": "SUPPORTED_ENGINEERING_ONLY"
+      },
+      {
+        "claim_id": "PIVOT-C004",
+        "claim": "Pinned learned modality retrieval and fixed no-training fusion are reproducible.",
+        "status": "SUPPORTED_ENGINEERING_ONLY"
+      }
+    ],
+    "retained_gated": [
+      {
+        "claim_id": "PIVOT-MC1",
+        "claim": "AV-TRACE provides a human-adjudicated source-disjoint matched intervention benchmark.",
+        "required_gate": "60_H2_CORPUS_FREEZE"
+      },
+      {
+        "claim_id": "PIVOT-MC2",
+        "claim": "Answer correctness and supported-answer correctness diverge on held-out H2 families.",
+        "required_gate": "END_TO_END_DIAGNOSTIC_GO"
+      },
+      {
+        "claim_id": "PIVOT-MC3",
+        "claim": "AV-TRACE separates at least two non-retrieval failure stages across multiple source groups.",
+        "required_gate": "END_TO_END_DIAGNOSTIC_GO"
+      },
+      {
+        "claim_id": "PIVOT-MC4",
+        "claim": "Common-endpoint restoration and no-trigger controls measure recovery separately from diagnosis.",
+        "required_gate": "END_TO_END_DIAGNOSTIC_GO"
+      }
+    ],
+    "secondary_only": [
+      "Generic learned retrieval is not automatically beneficial.",
+      "Full-timeline retrieval is harder than shortlisted retrieval.",
+      "Explicit sufficiency control differs from or outperforms ReAct.",
+      "Modality necessity outside individually H2-validated families and adequately sourced strata."
+    ],
+    "dropped": [
+      "Controller v2 or v3 is the paper's novel proposed method.",
+      "Current controller findings demonstrate learned-agent recovery.",
+      "Syntax validity implies semantic controller competence.",
+      "Current NOAA families form a validated benchmark or primary test set.",
+      "Current machine-provisional SES, necessity, or modality labels are human gold.",
+      "Broad first, unique, SOTA, universal reliability, population-ranking, or out-of-domain generalization claims.",
+      "Immediate commitment to 60-H2 production."
+    ]
+  },
+  "pilot": {
+    "status": "AUTHORIZED_AFTER_MINI_PILOT_INPUT_READY",
+    "completed_family_target": 12,
+    "source_group_target": 6,
+    "families_per_source_target": 2,
+    "minimum_content_domains": 3,
+    "maximum_gate_defining_current_noaa_families": 4,
+    "maximum_current_noaa_source_groups": 2,
+    "required_new_non_noaa_families": 8,
+    "required_new_non_noaa_source_groups": 4,
+    "minimum_non_noaa_domains": 2,
+    "calibration_family_count_excluded_from_denominators": 2,
+    "roles_per_family": [
+      "question_claim_author_or_independent_verifier",
+      "blind_full_source_alternative_evidence_finder",
+      "validator_a",
+      "validator_b",
+      "independent_adjudicator",
+      "blind_post_adjudication_saturation_auditor"
+    ],
+    "candidate_strata": {
+      "modality_route": {
+        "vision_dominant": 2,
+        "speech_dominant": 2,
+        "ambient_dominant": 2,
+        "vision_plus_speech": 2,
+        "vision_plus_ambient_or_speech_plus_ambient": 2,
+        "vision_plus_speech_plus_ambient": 2
+      },
+      "intervention": {
+        "necessity_group_withholding": 6,
+        "modality_channel_outage": 6
+      },
+      "reasoning": {
+        "one_hop": 6,
+        "multi_hop": 6
+      },
+      "temporal": {
+        "near_local": 6,
+        "far_separated": 6
+      },
+      "minimum_high_alternative_support_risk": 6,
+      "minimum_deterministic_low_risk_controls": 2
+    },
+    "report_label": "LOW_N_MINI_PILOT_DESCRIPTIVE_ONLY"
+  },
+  "strong_baseline_matrix": {
+    "required_learned_classes": [
+      "PINNED_DIRECT_OR_LONG_CONTEXT_AUDIOVISUAL_NON_AGENT",
+      "SINGLE_SHOT_LEARNED_RAG",
+      "LEARNED_REACT",
+      "LEARNED_EVIDENCE_SUFFICIENCY_CONTROL"
+    ],
+    "required_diagnostics": [
+      "ORACLE_H2_EVIDENCE_CONDITIONED_GENERATOR",
+      "PARTIAL_EVIDENCE_GENERATOR",
+      "DETERMINISTIC_REACT_PROTOCOL_CONTROL",
+      "DETERMINISTIC_SUFFICIENCY_PROTOCOL_CONTROL",
+      "RESTORED_NO_TRIGGER_CONTROL"
+    ],
+    "minimum_backbone_families_in_final_paper": 2,
+    "fairness_contract": [
+      "Same backbone for learned ReAct and learned sufficiency where practical.",
+      "Same backend, candidate universe, tools, grounded finalizer, budget, repair policy, and failure handling.",
+      "No deterministic controller is called a learned baseline.",
+      "A text-only controller cannot substitute for the required direct audiovisual baseline."
+    ]
+  },
+  "gates": [
+    {
+      "gate_id": "A",
+      "name": "MINI_PILOT_INPUT_READY",
+      "current_status": "NOT_RUN",
+      "go": [
+        "12 eligible family candidates and 2 excluded calibration families.",
+        "Exactly 6 pilot source groups satisfying source and domain rules.",
+        "Complete source dossiers, hashes, media, lineage, and technical checks.",
+        "Affirmative processing and annotation authority for every source.",
+        "Frozen forms, protocol version, sampling seed, and candidate registry.",
+        "At least 6 trained reviewers with valid independent role assignment.",
+        "No unresolved critical rights, privacy, or safety hold."
+      ],
+      "repair": [
+        "The six-source design remains feasible but candidate, role, technical, or non-critical rights records require completion or replacement."
+      ],
+      "no_go": [
+        "Fewer than 6 eligible source groups can be assembled without weakening source, rights, privacy, or technical rules.",
+        "A required pilot stratum cannot be sampled and no narrower claim is frozen before review."
+      ]
+    },
+    {
+      "gate_id": "B",
+      "name": "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+      "current_status": "NOT_RUN",
+      "go": [
+        "12 of 12 families complete across the 6 frozen source groups.",
+        "Every required role and adjudication complete.",
+        "At least 9 of 12 families reach H1.",
+        "At least 8 of 12 families reach H2.",
+        "Pair-isolation failures are at most 1 of 12.",
+        "No unresolved critical governance hold.",
+        "Systematic minimality or modality failure affects no more than 3 of 12.",
+        "At least 2 accepted source groups are outside the current NOAA lineage.",
+        "At least 1 ambient and 1 V+S+A family reach H2, or those strata are removed from the planned paper.",
+        "Saturation audit finds no new unblocked accepted route, or every discovery is repaired and re-audited.",
+        "Observed labor and H2 yield support an unchanged-criteria route to 60 H2."
+      ],
+      "repair": [
+        "At least 5 of 12 families reach H1, or failures are localized to repairable wording, interval, route, role, form, or source defects.",
+        "No evidence shows that the central SES, necessity, and intervention construct is unreviewable."
+      ],
+      "no_go": [
+        "Fewer than 5 of 12 families reach H1.",
+        "At least 6 of 12 families are rejected.",
+        "Systematic alternative-support, minimality, necessity, intervention-isolation, or governance failures undermine the construct.",
+        "The intended data cannot be used under required rights or privacy rules."
+      ]
+    },
+    {
+      "gate_id": "C",
+      "name": "LEARNED_CONTROLLER_READY",
+      "current_status": "REPAIR",
+      "required_unseen_suite": true,
+      "go_thresholds": {
+        "action_syntax_rate": 1.0,
+        "every_state_head_syntax_rate": 1.0,
+        "action_correct_rate_minimum": 0.8,
+        "every_semantic_state_head_rate_minimum": 0.75,
+        "joint_exact_state_rate_minimum": 0.5,
+        "terminal_correct_rate_minimum": 0.75,
+        "valid_structured_after_at_most_one_repair_rate_minimum": 0.9,
+        "oracle_evidence_supported_answer_rate_minimum": 0.8,
+        "unsupported_required_claim_count": 0,
+        "process_failure_count": 0,
+        "constraint_runtime_failure_count": 0,
+        "evaluator_private_exposure_count": 0,
+        "deterministic_answer_substitution_count": 0,
+        "controller_state_to_answer_mapping_count": 0
+      },
+      "go": [
+        "Every go_threshold passes on one frozen unseen fictional suite.",
+        "The run and independent audit are hash-bound and fail closed.",
+        "No prohibited development source, evaluation family, or evaluator-private label is accessed."
+      ],
+      "repair": [
+        "Syntax and safety pass but one or more semantic floors fail.",
+        "Repair is confined to consumed synthetic or development data and does not change future labels, gates, or test content."
+      ],
+      "no_go": [
+        "A second frozen unseen suite after repair still fails a semantic floor.",
+        "Evaluator leakage, post-output tuning, deterministic substitution, or controller-state-to-answer mapping occurs.",
+        "Competence requires oracle or evaluation-private information."
+      ],
+      "prohibited_tuning_sources": [
+        "Task-120 restricted labels or per-case evaluation content",
+        "future H2 test sources",
+        "human adjudication rationales",
+        "r017",
+        "NOAA evaluation families",
+        "any scientific evaluation family"
+      ]
+    },
+    {
+      "gate_id": "D",
+      "name": "END_TO_END_DIAGNOSTIC_GO",
+      "current_status": "NOT_AUTHORIZED",
+      "prerequisites": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+        "LEARNED_CONTROLLER_READY"
+      ],
+      "go": [
+        "Learned single-shot RAG, learned ReAct, and learned sufficiency control complete under frozen common contracts.",
+        "Complete C/B/R and no-trigger accounting is independently replayed.",
+        "At least 1 intervention-aware separation occurs across at least 3 source groups and is not wholly attributable to one family.",
+        "At least 1 H2 case separates answer correctness from supported-answer correctness or citation validity.",
+        "At least 2 non-retrieval failure categories occur, each on at least 2 source groups.",
+        "Source-level denominators and complete invalid-run accounting are reported.",
+        "A directional ReAct-versus-sufficiency claim uses a 0.10 absolute CLEAN supported-answer non-inferiority margin.",
+        "A directional controller claim requires at least 0.15 absolute improvement in BLOCKED false sufficiency, premature stopping, or common-endpoint restoration."
+      ],
+      "repair": [
+        "Construct and controller gates pass but the low-N diagnostic is inconclusive.",
+        "A typed execution defect or source-coverage shortfall is repairable without outcome-based family replacement or evaluator leakage."
+      ],
+      "no_go": [
+        "Human-valid intervention isolation or leakage closure fails.",
+        "All apparent differences are explained by retrieval recall or metric artifacts.",
+        "No answer-versus-support or citation divergence appears.",
+        "No non-retrieval failure-stage separation survives audit.",
+        "A valid strong learned baseline cannot execute without evaluator-private assistance."
+      ]
+    },
+    {
+      "gate_id": "E1",
+      "name": "FIRST_40_SCALED_REVIEWS_AUTHORIZED",
+      "current_status": "NOT_AUTHORIZED",
+      "prerequisites": [
+        "CONSTRUCT_VALIDITY_MINI_PILOT_GO",
+        "LEARNED_CONTROLLER_READY",
+        "END_TO_END_DIAGNOSTIC_GO"
+      ],
+      "go": [
+        "A frozen pool of 120 to 160 P-tier candidates from 30 to 40 source groups exists.",
+        "At least 25 rights-eligible source groups are available for the 20-source target plus a 25 percent reserve.",
+        "Source-disjoint development, validation, and test rules are frozen.",
+        "Staffing, labor, compute, storage, and rights-review capacity are approved.",
+        "No construct threshold is relaxed."
+      ],
+      "repair": [
+        "Scientific gates pass but candidate, rights, reserve, staffing, or budget capacity is incomplete and repairable without changing the construct."
+      ],
+      "no_go": [
+        "Any prerequisite gate is NO_GO.",
+        "The pool or reserve can be reached only by weaker construct, rights, privacy, or split rules."
+      ]
+    },
+    {
+      "gate_id": "E2",
+      "name": "FULL_60_H2_PRODUCTION_AUTHORIZED",
+      "current_status": "NOT_AUTHORIZED",
+      "prerequisite": "FIRST_40_SCALED_REVIEWS_COMPLETED",
+      "go": [
+        "Observed H2 yield after the first 40 reviews is at least 60 percent.",
+        "Acceptance does not require weakening SES, necessity, modality, or pair-isolation rules.",
+        "Every high-risk stratum has at least 5 completed reviews.",
+        "Measured source preparation, annotation labor, rights throughput, compute, and storage fit the remaining schedule and budget.",
+        "The rights-eligible reserve remains at least 25 percent.",
+        "The frozen route still reaches 60 H2 families from at least 20 source groups."
+      ],
+      "repair": [
+        "Yield or throughput misses a floor for a localized versionable reason that can be rerun without test-outcome use or weaker acceptance."
+      ],
+      "no_go": [
+        "H2 yield is below 60 percent without a localized repair.",
+        "Rights, labor, source diversity, or reviewer capacity makes 60 H2 infeasible.",
+        "A required stratum cannot be filled under unchanged H2 rules.",
+        "The principal diagnostic conclusion no longer supports the benchmark thesis."
+      ]
+    },
+    {
+      "gate_id": "F",
+      "name": "60_H2_CORPUS_FREEZE",
+      "current_status": "NOT_RUN",
+      "go": [
+        "60 H2 families from at least 20 source groups.",
+        "Source split is at least 8 development, 4 validation, and 8 untouched test source groups with target family split 24, 12, and 24.",
+        "Complete rights decisions and no applicable unknown_hold.",
+        "At least 25 percent source and family reserve for rights failure, withdrawal, or construct defect.",
+        "Frozen prompts, models, retrieval, budgets, metrics, practical thresholds, invalid-run reserve, and release scope.",
+        "No weakened construct criteria and no test-source tuning."
+      ],
+      "repair": [
+        "The authorized production wave is scientifically valid but has fewer than 60 H2 families, fewer than 20 eligible source groups, an underfilled composition stratum, or an incomplete non-critical rights or release record.",
+        "The deficit can be filled from the frozen reserve or a new rights-first source wave without changing test outcomes, construct thresholds, or split rules."
+      ],
+      "no_go": [
+        "The 60 H2 or 20 source-group minima cannot be reached without weaker construct or governance rules.",
+        "Test privacy or source disjointness has been broken.",
+        "A critical rights, leakage, pair-isolation, or construct defect affects the frozen core and cannot be repaired from the reserve.",
+        "Required source or domain composition remains infeasible."
+      ]
+    },
+    {
+      "gate_id": "G",
+      "name": "PAPER_CLAIM_READY",
+      "current_status": "NOT_RUN",
+      "go": [
+        "Gate F and every prior scientific gate are GO.",
+        "At least four preregistered learned system classes and at least two backbone or model families are complete.",
+        "Source-cluster uncertainty, source and domain leave-out sensitivity, required ablations, costs, invalid runs, denominators, and negative or null strata are complete.",
+        "The principal finding survives retrieval, capacity, modality, prompt, trigger, metric, and source sensitivity.",
+        "Independent metric, replay, leakage, rights or release, novelty, and sentence-level claim audits pass.",
+        "Every abstract and conclusion statement maps to a frozen result and uses the approved release boundary."
+      ],
+      "repair": [
+        "The benchmark and main evaluation remain valid, but a non-critical missing baseline, ablation, audit, uncertainty analysis, or wording defect prevents a complete claim package.",
+        "Repair does not permit rerunning the locked test set to select a favorable result."
+      ],
+      "no_go": [
+        "The core matched-intervention construct or causal isolation fails.",
+        "The principal result is explained by one source, one domain, retrieval alone, evaluator leakage, or an invalid metric.",
+        "Strong baselines or source-level inference are absent.",
+        "Release wording exceeds actual rights.",
+        "An unsupported headline claim remains after audit."
+      ]
+    }
+  ],
+  "authorizations": {
+    "candidate_source_preparation": "AUTHORIZED",
+    "rights_and_technical_dossier_work": "AUTHORIZED",
+    "reviewer_training_and_excluded_calibration": "AUTHORIZED",
+    "twelve_family_human_pilot_execution": "AUTHORIZED_ONLY_AFTER_GATE_A_GO",
+    "controller_repair_on_consumed_synthetic_development_data": "AUTHORIZED",
+    "new_unseen_controller_suite_execution": "AUTHORIZED_ONLY_AFTER_PREREGISTRATION_AND_FREEZE",
+    "h2_scientific_mini_diagnostic": "NOT_AUTHORIZED_UNTIL_GATES_B_AND_C_GO",
+    "first_40_scaled_reviews": "NOT_AUTHORIZED_UNTIL_GATE_E1_GO",
+    "full_60_h2_production": "NOT_AUTHORIZED_UNTIL_GATE_E2_GO",
+    "scientific_evaluation_family_prompt_tuning": "PROHIBITED",
+    "task120_holdout_label_tuning": "PROHIBITED"
+  },
+  "six_week_plan": [
+    {
+      "week": 1,
+      "name": "FREEZE_AND_MOBILIZE",
+      "critical_outputs": [
+        "Task ownership and independent audit assignments.",
+        "At least 6 trained reviewers and 2 excluded calibration families.",
+        "At least 10 candidate source groups under rights and technical review.",
+        "Frozen strong-baseline fairness and competence contracts."
+      ]
+    },
+    {
+      "week": 2,
+      "name": "SOURCE_AND_INPUT_GATE",
+      "critical_outputs": [
+        "Exactly 6 eligible pilot source groups.",
+        "12 pilot family candidates and frozen role assignments.",
+        "Complete source dossiers, rights decisions, media checks, seed, and packets.",
+        "Gate A decision."
+      ]
+    },
+    {
+      "week": 3,
+      "name": "INDEPENDENT_HUMAN_PASSES",
+      "critical_outputs": [
+        "Complete author or verifier, blind finder, and validator A/B records.",
+        "Full-source, alternative-route, counterfactual, and pair-isolation logs.",
+        "Explicit repair queue with no hidden denominator changes."
+      ]
+    },
+    {
+      "week": 4,
+      "name": "ADJUDICATION_AND_SATURATION",
+      "critical_outputs": [
+        "Adjudication and blind saturation audit for all 12 families.",
+        "Immutable import and full funnel, agreement, labor, governance, and rejection report.",
+        "Gate B decision."
+      ]
+    },
+    {
+      "week": 5,
+      "name": "STRONG_AGENT_COMPETENCE",
+      "critical_outputs": [
+        "Repair only on consumed synthetic development data.",
+        "Frozen new unseen fictional suite.",
+        "One execution and independent audit.",
+        "Gate C decision."
+      ]
+    },
+    {
+      "week": 6,
+      "name": "H2_MINI_DIAGNOSTIC_AND_SCALE_DECISION",
+      "critical_outputs": [
+        "If Gates B and C are GO, execute and audit the H2 mini diagnostic.",
+        "Gate D decision.",
+        "Gate E1 first-40-review authorization decision.",
+        "If either prerequisite is not GO, execute only its authorized repair branch."
+      ]
+    }
+  ],
+  "dependencies": {
+    "labor": {
+      "pilot_total_person_hours_range": [
+        100,
+        220
+      ],
+      "pilot_direct_review_hours_range": [
+        72,
+        126
+      ],
+      "pilot_training_calibration_hours_range": [
+        15,
+        25
+      ],
+      "pilot_source_rights_technical_hours_range": [
+        24,
+        60
+      ],
+      "pilot_coordination_reporting_hours_range": [
+        10,
+        20
+      ],
+      "sixty_h2_program_person_hours_range": [
+        680,
+        1480
+      ]
+    },
+    "compute": {
+      "qwen7b_existing_peak_rss_planning_range_gb": [
+        15,
+        16
+      ],
+      "v3_development_case_count": 16,
+      "v3_development_model_calls": 122,
+      "v3_summed_generation_latency_seconds": 355.43709,
+      "sixty_h2_episode_count_per_system": 180,
+      "four_class_minimum_core_trajectory_count": 720,
+      "warning": "Existing compute observations are planning evidence, not forecasts. Direct audiovisual baselines may require separately approved GPU capacity and pinned snapshots."
+    },
+    "rights": [
+      "Item-level acquisition and processing authority.",
+      "Separate media, transcript, annotation, feature, evaluator, and ID release decisions.",
+      "Component-level music, image, speaker, mark, privacy, and third-party review.",
+      "Retention, takedown, withdrawal, quarantine, deletion, and replacement procedures.",
+      "Physical and logical separation of public and restricted pipelines.",
+      "Any applicable unknown_hold blocks H2 freeze."
+    ]
+  },
+  "source_preparation_required_fields": [
+    "canonical_asset_and_source_group_lineage",
+    "content_hash_duration_streams_timebase_decode_and_edit_checks",
+    "authorized_acquisition_route",
+    "processing_and_annotation_authority",
+    "separate_release_decisions_by_artifact_type",
+    "dated_license_or_grant_evidence_and_attribution",
+    "privacy_safety_marks_music_and_third_party_component_review",
+    "retention_access_takedown_withdrawal_quarantine_deletion_replacement",
+    "full_source_video_speech_and_ambient_technical_readiness",
+    "candidate_stratum_hypotheses_without_preclaimed_necessity"
+  ],
+  "authoritative_inputs": [
+    {
+      "path": "docs/paper/cvpr_thesis_and_evidence_gates.md",
+      "sha256": "c35383b2401579b801a1f9e39eb8591e484d622e585b8a951b5dfee420f09e6b"
+    },
+    {
+      "path": "docs/paper/cvpr_execution_blueprint.md",
+      "sha256": "0e399e394a95dfafe32a5bb68b939456b0f1259568d5ac5ad44c1a54922e4e11"
+    },
+    {
+      "path": "docs/review/cvpr_pre_submission_risk_register.md",
+      "sha256": "72e3a93e9f027179d353050bfab635abb6078063ce5f6faddd99870ea2d9b3a4"
+    },
+    {
+      "path": "docs/review/cvpr_pivot_review_data_construct.md",
+      "sha256": "c35bc2fd32aa06d742853bb78a760f3a0e1102180e287fa81ef4362b5ddb18dd"
+    },
+    {
+      "path": "docs/review/controller_capacity_sensitivity_qwen7b_audit.md",
+      "sha256": "e78084ef5979dea4c297af728f366afdbb9148eecbb261c882e202a925f15960"
+    },
+    {
+      "path": "data/restricted/scale1b/controller_v2_holdout_evaluation/safe_aggregate.json",
+      "sha256": "b8983dba388e0abe711c20dc107a4510a456ba6815a482df3e8a6e8cb3fd2f0c"
+    },
+    {
+      "path": "orchestration/results/121_controller_v3_development.txt",
+      "sha256": "d9617cf96ad123ecb19af5354b4d90d95ef6288cdff80afa427cd40f7422f0fa"
+    }
+  ],
+  "restricted_evidence_boundary": {
+    "restricted_controller_v2_evaluator_key_read": false,
+    "restricted_per_case_labels_read": false,
+    "safe_aggregate_only": true
+  }
+}

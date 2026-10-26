@@ -1,0 +1,14 @@
+{
+  "fixture_kind": "schema_faithful_reconnaissance",
+  "synthetic_values": true,
+  "provider": "huggingface",
+  "repository": {
+    "id": "debugger123/LoVR-benchmark",
+    "url": "https://huggingface.co/datasets/debugger123/LoVR-benchmark",
+    "revision": "main",
+    "technical_access_status": "public_ungated",
+    "license_resolution_status": "unresolved",
+    "license_evidence": []
+  },
+  "rows": []
+}

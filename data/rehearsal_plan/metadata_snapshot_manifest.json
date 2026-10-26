@@ -1,0 +1,1224 @@
+{
+  "access_date": "2026-09-07",
+  "candidate_resolution_counts": {
+    "duration_out_of_range_candidates": 1,
+    "freeze_ready": 0,
+    "metadata_verified_exact_duration_unavailable_candidates": 3,
+    "outside_task48_target_set": 1,
+    "parent_row_absent_candidates": 2,
+    "parent_row_present_candidates": 7,
+    "strict_exact_second_duration_pass_candidates": 3,
+    "target_linked_candidates": 9,
+    "total": 10
+  },
+  "created_date": "2026-09-07",
+  "fetched_remote_artifacts": [
+    {
+      "byte_size": 1312,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/ds_info_longvideobench_LongVideoBench-Meta_cdf3444.json",
+      "revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+      "sha256": "c14ece66295775c51b220f7e8676520bce1e64c91da859d47886357c2df24b66",
+      "url": "https://datasets-server.huggingface.co/info?dataset=longvideobench%2FLongVideoBench-Meta"
+    },
+    {
+      "byte_size": 11893,
+      "contains_media_bytes": false,
+      "content_type": "text/markdown",
+      "local_path": "data/hf_recon/snapshots/github_MME-Benchmarks_Video-MME_README_06c2315.md",
+      "revision": "06c2315",
+      "sha256": "df3132ed6c4d17c7f47acc0ee832e352185edd9d5b30bacc9a0195e948124668",
+      "url": "https://raw.githubusercontent.com/MME-Benchmarks/Video-MME/06c2315/README.md"
+    },
+    {
+      "byte_size": 4338,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/github_api_yrywill_LongVidSearch_commit_main.json",
+      "revision": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e",
+      "sha256": "3d85c5c2e73815557ae8021e36878a7d7239974f58a196936efb1f91433391df",
+      "url": "https://api.github.com/repos/yrywill/LongVidSearch/commits/main"
+    },
+    {
+      "byte_size": 297135,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/github_api_yrywill_LongVidSearch_tree_4aa5620.json",
+      "revision": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e",
+      "sha256": "01ca9be50ca9e69e80ccd989bd843734e86b4ff68d4f49ca39cc05a10c9a7ea3",
+      "url": "https://api.github.com/repos/yrywill/LongVidSearch/git/trees/4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e?recursive=1"
+    },
+    {
+      "byte_size": 8848,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/github_yrywill_LongVidSearch_-7wwfGJXEZg_qa_4aa5620.json",
+      "revision": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e",
+      "sha256": "7c70f543be3c6ea153422234df2f5c9e9bc34b05a8999a36cde25d4cf10c7845",
+      "url": "https://raw.githubusercontent.com/yrywill/LongVidSearch/4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e/dataset/-7wwfGJXEZg_qa.json"
+    },
+    {
+      "byte_size": 8819,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/github_yrywill_LongVidSearch_-PgbM2MhcYQ_qa_4aa5620.json",
+      "revision": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e",
+      "sha256": "8a56b01f6ae1e9bdeddc5721167b9bd1333b3813d0de841ab1a3a5721f5614e7",
+      "url": "https://raw.githubusercontent.com/yrywill/LongVidSearch/4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e/dataset/-PgbM2MhcYQ_qa.json"
+    },
+    {
+      "byte_size": 10028,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/github_yrywill_LongVidSearch_-eRimFrm6kQ_qa_4aa5620.json",
+      "revision": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e",
+      "sha256": "fd433309e9af4a12c1b2974726a9ee05afefc6b5677415ca0c062f0fbc0fbcc6",
+      "url": "https://raw.githubusercontent.com/yrywill/LongVidSearch/4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e/dataset/-eRimFrm6kQ_qa.json"
+    },
+    {
+      "byte_size": 9509,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/github_yrywill_LongVidSearch_-hgJVx12Qk4_qa_4aa5620.json",
+      "revision": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e",
+      "sha256": "a71d5d014b151f67b03d2f6dbbcebc24b9d11892f802323e6d67aa030ed123d1",
+      "url": "https://raw.githubusercontent.com/yrywill/LongVidSearch/4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e/dataset/-hgJVx12Qk4_qa.json"
+    },
+    {
+      "byte_size": 5543,
+      "contains_media_bytes": false,
+      "content_type": "text/markdown",
+      "local_path": "data/hf_recon/snapshots/hf_AnonymousFLARE_FLARE_README.md",
+      "revision": "ed89d868647a3658fe6989ba06b7a7117c2624d9",
+      "sha256": "2aa1f4e8d1fc9bd887daca06a2d179e7cca4ba229209bc0738a370281583fd82",
+      "url": "https://huggingface.co/datasets/AnonymousFLARE/FLARE/resolve/ed89d868647a3658fe6989ba06b7a7117c2624d9/README.md"
+    },
+    {
+      "byte_size": 618,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_AnonymousFLARE_FLARE_demo_sample_0_clip-query-unified.jsonl",
+      "revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "sha256": "c72d448eb732d2736a50d3dbe60e6f33a3615a0542b958694dfb860591abd027",
+      "url": "https://huggingface.co/datasets/AnonymousFLARE/FLARE_demo/resolve/a7e85c038a16b86afe1109b33cd131ec80d67cb3/sample_0/clip-query-unified.jsonl"
+    },
+    {
+      "byte_size": 285061,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_AnonymousFLARE_FLARE_demo_sample_0_video-caption-unified.jsonl",
+      "revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "sha256": "aba2955b2f554c7c3bc04777372b9565178a9e4a1458a648377cf9ef264e0a53",
+      "url": "https://huggingface.co/datasets/AnonymousFLARE/FLARE_demo/resolve/a7e85c038a16b86afe1109b33cd131ec80d67cb3/sample_0/video-caption-unified.jsonl"
+    },
+    {
+      "byte_size": 625,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_AnonymousFLARE_FLARE_demo_sample_1_clip-query-unified.jsonl",
+      "revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "sha256": "12fa661954b585dc0c7bfa5c7b4a875779ee8d03cdad66aeb229cd13783d49e3",
+      "url": "https://huggingface.co/datasets/AnonymousFLARE/FLARE_demo/resolve/a7e85c038a16b86afe1109b33cd131ec80d67cb3/sample_1/clip-query-unified.jsonl"
+    },
+    {
+      "byte_size": 241838,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_AnonymousFLARE_FLARE_demo_sample_1_video-caption-unified.jsonl",
+      "revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "sha256": "cf4c000f2033a0a887a56a50331e81175f5f7526e2ee2996b6345cf1de036691",
+      "url": "https://huggingface.co/datasets/AnonymousFLARE/FLARE_demo/resolve/a7e85c038a16b86afe1109b33cd131ec80d67cb3/sample_1/video-caption-unified.jsonl"
+    },
+    {
+      "byte_size": 7995,
+      "contains_media_bytes": false,
+      "content_type": "text/markdown",
+      "local_path": "data/hf_recon/snapshots/hf_DISLab_VRAG-Bench_README_b491a12.md",
+      "revision": "b491a124585148c6d1dc30145932fce1d87b63dd",
+      "sha256": "febcfa5c5f9f990ab5d0266c438bff6e2d3ca8365a94e87dd7fe37cb22e57aa7",
+      "url": "https://hf-mirror.com/datasets/DISLab/VRAG-Bench/resolve/b491a124585148c6d1dc30145932fce1d87b63dd/README.md?download=true"
+    },
+    {
+      "byte_size": 7296,
+      "contains_media_bytes": false,
+      "content_type": "text/markdown",
+      "local_path": "data/hf_recon/snapshots/hf_Fishiing_LongVidSearch_README.md",
+      "revision": "96cdf541ad916fe3e401ad7d1e387f660dd3336f",
+      "sha256": "0e6c65027daf35d8b793c2bca9247acebb377ed9266318b25b0090de7ed994c9",
+      "url": "https://huggingface.co/datasets/Fishiing/LongVidSearch/resolve/96cdf541ad916fe3e401ad7d1e387f660dd3336f/README.md"
+    },
+    {
+      "byte_size": 5162640,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_Fishiing_LongVidSearch_full-QA_3000.json",
+      "revision": "96cdf541ad916fe3e401ad7d1e387f660dd3336f",
+      "sha256": "370711f1299202cd40d559440859476bf3a2d2ca74540dad5226786558ee123b",
+      "url": "https://huggingface.co/datasets/Fishiing/LongVidSearch/resolve/96cdf541ad916fe3e401ad7d1e387f660dd3336f/full-QA(3000).json"
+    },
+    {
+      "byte_size": 507041,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_Heinz217_TraceAV-Bench_a_background_music_cc96f31.jsonl",
+      "revision": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "sha256": "d8085d724ac0cc8a0f2ae63917956c31da82f66d8e6293dfbfa20c317905a0ce",
+      "url": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench/resolve/cc96f31d1d30b56bd4be02bb660bee394896c288/data/a_background_music.jsonl"
+    },
+    {
+      "byte_size": 39524,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_Heinz217_TraceAV-Bench_video_name_mapping_cc96f31.jsonl",
+      "revision": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "sha256": "9690729364dcf4a5f3a2d61503b4633cfa12d26e7c4601b338617f9720ec61b7",
+      "url": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench/resolve/cc96f31d1d30b56bd4be02bb660bee394896c288/data/video_name_mapping.jsonl"
+    },
+    {
+      "byte_size": 8170,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_AnonymousFLARE_FLARE.json",
+      "revision": "ed89d868647a3658fe6989ba06b7a7117c2624d9",
+      "sha256": "a42ba146f9356c64199d32f14881c314452546bbed3ad55b012ca532cb8ebd69",
+      "url": "https://huggingface.co/api/datasets/AnonymousFLARE/FLARE"
+    },
+    {
+      "byte_size": 5374,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_AnonymousFLARE_FLARE_demo.json",
+      "revision": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "sha256": "e36abda90393013329d5ff12d3b372cc7c9f7aa5eab7c063afdddb1ea689a538",
+      "url": "https://huggingface.co/api/datasets/AnonymousFLARE/FLARE_demo"
+    },
+    {
+      "byte_size": 1836,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_DISLab_VRAG-Bench.json",
+      "revision": "b491a124585148c6d1dc30145932fce1d87b63dd",
+      "sha256": "183b8b4f9a68ac3afc7e9e2b21fc769c8eb774f78f8a71eca588b17271490447",
+      "url": "https://huggingface.co/api/datasets/DISLab/VRAG-Bench"
+    },
+    {
+      "byte_size": 118207,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_Fishiing_LongVidSearch.json",
+      "revision": "96cdf541ad916fe3e401ad7d1e387f660dd3336f",
+      "sha256": "2598ff0d553adf25a90828da4d7375420d4390cc7038c7df6c76eb6c79c3aec2",
+      "url": "https://huggingface.co/api/datasets/Fishiing/LongVidSearch"
+    },
+    {
+      "byte_size": 5475,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_Heinz217_TraceAV-Bench.json",
+      "revision": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "sha256": "e65a40a922e0bcac3ae0a495a59886349dcf290c56eba3d0ff341ad670a12caf",
+      "url": "https://huggingface.co/api/datasets/Heinz217/TraceAV-Bench"
+    },
+    {
+      "byte_size": 2688,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_MBZUAI_longshot-bench.json",
+      "revision": "5a16213fadcbbbacd40b6feb6e5b048e5c180ddc",
+      "sha256": "254d05fb7a6c3f81179826e71031c115604bfde1ca610ac1cb0397d2252c79af",
+      "url": "https://huggingface.co/api/datasets/MBZUAI/longshot-bench"
+    },
+    {
+      "byte_size": 143777,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_NJU-LINK_OmniVideoBench.json",
+      "revision": "1b1aa0899fca5aa92e4fe5dcd3b60be58efff6ca",
+      "sha256": "efc4a4a5186db007125b23262b2e57c0bc5d75a4ef3775805912bf0f608b7dc7",
+      "url": "https://huggingface.co/api/datasets/NJU-LINK/OmniVideoBench"
+    },
+    {
+      "byte_size": 79549,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_buaaplay_VES-Bench.json",
+      "revision": "b1cdbb370ad866090e6fec82ccb9e699b10edbc7",
+      "sha256": "a1f844b2f6632e4e8a01038342239854338c9ca85e21ea9e3642cef486a69c6a",
+      "url": "https://huggingface.co/api/datasets/buaaplay/VES-Bench"
+    },
+    {
+      "byte_size": 3239,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_debugger123_LoVR-benchmark.json",
+      "revision": "5a46a68fd666b3390af92902d9199e70bc51ebe2",
+      "sha256": "f38d587ae772e1237113ca513942082cbd15994f47e3eb996423f2ffcf1107b3",
+      "url": "https://huggingface.co/api/datasets/debugger123/LoVR-benchmark"
+    },
+    {
+      "byte_size": 6377,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_lmms-lab_Video-MME.json",
+      "revision": "ead1408f75b618502df9a1d8e0950166bf0a2a0b",
+      "sha256": "69fa32fce6ae145dbf251df523a70de70e149023c89664a6a77385db739c7ac3",
+      "url": "https://huggingface.co/api/datasets/lmms-eval/Video-MME"
+    },
+    {
+      "byte_size": 2167,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_longvideobench_LongVideoBench-Meta.json",
+      "revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+      "sha256": "489fa6d52eca857aeff38c1b762cdc2e5b54b7c1722e55fef101464620a8253a",
+      "url": "https://huggingface.co/api/datasets/longvideobench/LongVideoBench-Meta"
+    },
+    {
+      "byte_size": 10561,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/hf_api_longvideobench_LongVideoBench.json",
+      "revision": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "sha256": "719b9b9fcb8307e40993cd19e88577226cf643972523ffbda279ce9c6f47a3cb",
+      "url": "https://huggingface.co/api/datasets/longvideobench/LongVideoBench"
+    },
+    {
+      "byte_size": 677,
+      "contains_media_bytes": false,
+      "content_type": "text/markdown",
+      "local_path": "data/hf_recon/snapshots/hf_lmms-lab_Video-MME_README.md",
+      "revision": "ead1408f75b618502df9a1d8e0950166bf0a2a0b",
+      "sha256": "02064f953193262356856fa9345f0260d13dfbc94f16f13039bc23098b16e15b",
+      "url": "https://huggingface.co/datasets/lmms-eval/Video-MME/resolve/ead1408f75b618502df9a1d8e0950166bf0a2a0b/README.md"
+    },
+    {
+      "byte_size": 345889,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_Heinz217_TraceAV-Bench_a_environmental_sound_cc96f31.jsonl",
+      "revision": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "sha256": "5a5e7af576566093dce69dc6fd8eb9a1c5e2c97d5f3d70211a0b315cdc0b3c46",
+      "url": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench/resolve/cc96f31d1d30b56bd4be02bb660bee394896c288/data/a_environmental_sound.jsonl"
+    },
+    {
+      "byte_size": 457735,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_Heinz217_TraceAV-Bench_a_speech_context_cc96f31.jsonl",
+      "revision": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "sha256": "ffdea1f5cfde262fa13a634fc11a851531e9c0d70802119d10e9cfee883a3f49",
+      "url": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench/resolve/cc96f31d1d30b56bd4be02bb660bee394896c288/data/a_speech_context.jsonl"
+    },
+    {
+      "byte_size": 392687,
+      "contains_media_bytes": false,
+      "content_type": "application/x-ndjson",
+      "local_path": "data/hf_recon/snapshots/hf_Heinz217_TraceAV-Bench_av_cross_modality_matching_cc96f31.jsonl",
+      "revision": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "sha256": "d04dbbba9f4401b804f93bdf9814d17038b11dc58a1b03a5237e4978adbc5ab7",
+      "url": "https://huggingface.co/datasets/Heinz217/TraceAV-Bench/resolve/cc96f31d1d30b56bd4be02bb660bee394896c288/data/av_cross_modality_matching.jsonl"
+    }
+  ],
+  "local_generated_artifacts": [
+    {
+      "byte_size": 3514,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/task46_parent_row_fetch_audit_2026-09-07.json",
+      "purpose": "Task 46 network/fetch execution audit",
+      "sha256": "df352cdb6be07c47a088e2a0c44667f5220e4b95747f98fec09f4f1ab5f9f561"
+    },
+    {
+      "byte_size": 23990,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/longvideobench_parent_rows_cdf3444602208c95f453e7683583a077ce38ddbf_targets.json",
+      "purpose": "Task 48 extracted LongVideoBench target rows and source aggregates",
+      "sha256": "61709bc37b7e79383bb3884b0b740767a49c000f8be5cf74e6d117b8e41fd29a"
+    },
+    {
+      "byte_size": 15304,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/videomme_parent_rows_ead1408f75b618502df9a1d8e0950166bf0a2a0b_targets.json",
+      "purpose": "Task 48 extracted Video-MME target rows and source aggregates",
+      "sha256": "2cd7cec8c3a2b3cff434d945fc918ca3dd778ac0d430cba54757b0dcd3eb3b0d"
+    },
+    {
+      "byte_size": 490496,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/traceav_modality_lvb_join_cc96f31d1d30b56bd4be02bb660bee394896c288_cdf3444602208c95f453e7683583a077ce38ddbf.json",
+      "purpose": "Task 49 full text-only TraceAV modality-row mapping and LongVideoBench-Meta join audit",
+      "sha256": "0346ba48eaba710fbafe3e123b9aebeec0bbd6b3b2988c792de36d6500624982"
+    },
+    {
+      "byte_size": 446772,
+      "contains_media_bytes": false,
+      "content_type": "application/json",
+      "local_path": "data/hf_recon/snapshots/direct_lvb_candidate_ranking_cdf3444602208c95f453e7683583a077ce38ddbf.json",
+      "purpose": "Task 50 deterministic source-level LongVideoBench candidate aggregation and ranking audit",
+      "sha256": "2562f9f6d6a5bcd56239ae6b1dd5495650de72949162169aeda836c0f812ff43"
+    }
+  ],
+  "manifest_version": "3.0",
+  "media_downloaded": false,
+  "network_fetch_status": "Task 48 used only three parent-orchestrator-provided local metadata Parquet files; no network access was used. Exact byte sizes and SHA-256 values were independently reverified before parsing.",
+  "notes": [
+    "The three Task 48 Parquet files are verified metadata tables, not downloaded media assets.",
+    "PyArrow 21.0.0 inspected all logical schemas and Hugging Face feature metadata; no binary, image, audio, or video payload columns/features were present.",
+    "All matching repeated QA rows were preserved with zero-based split row indices and grouped into one source-level aggregate per requested canonical ID.",
+    "Duration/split/path/subtitle/source URL/task metadata were filled only when present in verified parent rows. Video-MME categorical duration labels were not converted into seconds.",
+    "Media/container streams, speech, ambient sound, decode status, complete-source status, rights, and content-level dedup remain unverified/held.",
+    "Task 49 parsed 303 TraceAV speech/environmental/cross-modal annotation rows. None of the 44 rows whose official mapping source is lvbench matched the verified LongVideoBench-Meta tables, so no addition passed the exact-duration and parent-row gates.",
+    "The one diagnostic exact-ID collision across namespaces was TraceAV video490 mapped as videomme:mOiEOs3ZlT8; the LongVideoBench-Meta row is 12.01 seconds, outside the 1,200-5,400 second range, and was not selected.",
+    "Task 50 selected two direct LongVideoBench source candidates from the verified metadata tables without requiring upstream TraceAV or LongVidSearch annotations; all modality and rights fields remain unverified/held.",
+    "The final LVB request scope is exactly the five strict-shortlist IDs: -PgbM2MhcYQ, -eRimFrm6kQ, -7wwfGJXEZg, H5vpBCLo74U, and TMe7oXMJoSM."
+  ],
+  "prior_provisional_technical_queue": [
+    "ccp-001",
+    "ccp-002",
+    "ccp-005",
+    "ccp-006"
+  ],
+  "prohibited_payloads_downloaded": {
+    "archives": false,
+    "clips": false,
+    "cookies": false,
+    "embeddings": false,
+    "media": false,
+    "model_weights": false,
+    "non_allowlisted_or_media_bearing_parquet": false,
+    "thumbnails": false,
+    "youtube_content": false
+  },
+  "proposed_technical_shortlist": [
+    {
+      "candidate_id": "ccp-008",
+      "canonical_source_id": "longvideobench:-PgbM2MhcYQ",
+      "duration_s": 2987.08,
+      "rank": 1,
+      "split": "LongVideoBench-Meta/test",
+      "status": "PRE_DOWNLOAD_TECHNICAL_CANDIDATE_NOT_APPROVED",
+      "role": "primary"
+    },
+    {
+      "candidate_id": "ccp-009",
+      "canonical_source_id": "longvideobench:-eRimFrm6kQ",
+      "duration_s": 1540.88,
+      "rank": 2,
+      "split": "LongVideoBench-Meta/validation",
+      "status": "PRE_DOWNLOAD_TECHNICAL_CANDIDATE_NOT_APPROVED",
+      "role": "primary"
+    },
+    {
+      "candidate_id": "ccp-003",
+      "canonical_source_id": "longvideobench:-7wwfGJXEZg",
+      "duration_s": 1515.2,
+      "rank": 3,
+      "split": "LongVideoBench-Meta/test",
+      "status": "PRE_DOWNLOAD_TECHNICAL_CANDIDATE_NOT_APPROVED",
+      "role": "primary"
+    },
+    {
+      "candidate_id": "ccp-011",
+      "canonical_source_id": "longvideobench:H5vpBCLo74U",
+      "duration_s": 1805.13,
+      "rank": 4,
+      "split": "LongVideoBench-Meta/test",
+      "status": "PRE_DOWNLOAD_TECHNICAL_CANDIDATE_NOT_APPROVED",
+      "role": "primary"
+    },
+    {
+      "candidate_id": "ccp-012",
+      "canonical_source_id": "longvideobench:TMe7oXMJoSM",
+      "duration_s": 2805.11,
+      "rank": 5,
+      "split": "LongVideoBench-Meta/validation",
+      "status": "PRE_DOWNLOAD_TECHNICAL_CANDIDATE_NOT_APPROVED",
+      "role": "active_reserve"
+    }
+  ],
+  "revalidation_summary": {
+    "artifact_count": 31,
+    "byte_size_matches": 31,
+    "candidate_relevant_full_revisions_consistent": true,
+    "live_remote_revision_check": "NOT_ATTEMPTED_TASK48_NETWORK_PROHIBITED",
+    "parse_failures": 0,
+    "revalidated_date": "2026-09-07",
+    "revisions_checked_from_pinned_official_snapshots": {
+      "AnonymousFLARE/FLARE": "ed89d868647a3658fe6989ba06b7a7117c2624d9",
+      "AnonymousFLARE/FLARE_demo": "a7e85c038a16b86afe1109b33cd131ec80d67cb3",
+      "Fishiing/LongVidSearch": "96cdf541ad916fe3e401ad7d1e387f660dd3336f",
+      "Heinz217/TraceAV-Bench": "cc96f31d1d30b56bd4be02bb660bee394896c288",
+      "MBZUAI/longshot-bench": "5a16213fadcbbbacd40b6feb6e5b048e5c180ddc",
+      "NJU-LINK/OmniVideoBench": "1b1aa0899fca5aa92e4fe5dcd3b60be58efff6ca",
+      "buaaplay/VES-Bench": "b1cdbb370ad866090e6fec82ccb9e699b10edbc7",
+      "debugger123/LoVR-benchmark": "5a46a68fd666b3390af92902d9199e70bc51ebe2",
+      "lmms-eval/Video-MME": "ead1408f75b618502df9a1d8e0950166bf0a2a0b",
+      "longvideobench/LongVideoBench": "60d1c89c1919a198b73be39c2babb213b29d6a5c",
+      "longvideobench/LongVideoBench-Meta": "cdf3444602208c95f453e7683583a077ce38ddbf",
+      "yrywill/LongVidSearch": "4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e"
+    },
+    "sha256_matches": 31
+  },
+  "task41_download_attempts": [
+    {
+      "artifact": "LongVideoBench-Meta validation Parquet",
+      "expected_bytes": 426680,
+      "expected_sha256": "5f370287edbfb9875562b116686d50208d0d40615f5b407f970448868b6bc108",
+      "primary": "huggingface.co pinned resolve",
+      "result": "both failed before response bytes: proxy DNS",
+      "retry": "hf-mirror.com pinned resolve"
+    },
+    {
+      "artifact": "LongVideoBench-Meta test Parquet",
+      "expected_bytes": 1612265,
+      "expected_sha256": "9015fc7f9e83e4a6479fa533c2c7df8c42a9bab67a7e01be6320262e249a1bec",
+      "primary": "huggingface.co pinned resolve",
+      "result": "both failed before response bytes: proxy DNS",
+      "retry": "hf-mirror.com pinned resolve"
+    },
+    {
+      "artifact": "Video-MME metadata Parquet",
+      "expected_bytes": 405167,
+      "expected_sha256": "7fffab8ed38ecc2f9f0eca4c44d8a11636f0ee96116ede83580c8b9ae0faf986",
+      "primary": "huggingface.co pinned resolve",
+      "result": "both failed before response bytes: proxy DNS",
+      "retry": "hf-mirror.com pinned resolve"
+    },
+    {
+      "artifact": "LongShOT postvalid_v2_test.jsonl",
+      "expected_bytes": 11095822,
+      "expected_sha256": "f323f1f7244869c1220781970fb16099e885b86944a779d80499d634e6d47ad7",
+      "primary": "huggingface.co pinned resolve",
+      "result": "both failed before response bytes: proxy DNS; repository remains gated in pinned API",
+      "retry": "hf-mirror.com pinned resolve"
+    },
+    {
+      "artifact": "VES-Bench schema inspection",
+      "expected_bytes": null,
+      "expected_sha256": null,
+      "primary": "datasets-server info",
+      "result": "both failed before response bytes: proxy DNS; Parquet not requested because schema precondition was not met",
+      "retry": "datasets-server first-rows"
+    },
+    {
+      "artifact": "OmniVideoBench video_61 row filter",
+      "expected_bytes": null,
+      "expected_sha256": null,
+      "primary": "datasets-server filter",
+      "result": "failed before response bytes: proxy DNS",
+      "retry": "not repeated after proxy-DNS failure to stay within endpoint retry limit"
+    }
+  ],
+  "task46_parent_row_resolution": {
+    "approved_parquet_fetches": {
+      "downloaded": 0,
+      "hf_mirror_fallback_attempts": 3,
+      "primary_attempts": 3,
+      "result": "FAILED_BEFORE_RESPONSE_BYTES_PROXY_DNS"
+    },
+    "audit_snapshot": "data/hf_recon/snapshots/task46_parent_row_fetch_audit_2026-09-07.json",
+    "audit_snapshot_bytes": 3514,
+    "audit_snapshot_sha256": "df352cdb6be07c47a088e2a0c44667f5220e4b95747f98fec09f4f1ab5f9f561",
+    "blocker": "Required proxy DNS failure prevented every remote response and therefore prevented source-byte verification, Parquet schema inspection, parsing, and target-row extraction.",
+    "expected_objects": [
+      {
+        "dataset": "longvideobench/LongVideoBench-Meta",
+        "expected_bytes": 426680,
+        "expected_lfs_sha256": "5f370287edbfb9875562b116686d50208d0d40615f5b407f970448868b6bc108",
+        "path": "data/validation-00000-of-00001.parquet",
+        "revision": "cdf3444602208c95f453e7683583a077ce38ddbf"
+      },
+      {
+        "dataset": "longvideobench/LongVideoBench-Meta",
+        "expected_bytes": 1612265,
+        "expected_lfs_sha256": "9015fc7f9e83e4a6479fa533c2c7df8c42a9bab67a7e01be6320262e249a1bec",
+        "path": "data/test-00000-of-00001.parquet",
+        "revision": "cdf3444602208c95f453e7683583a077ce38ddbf"
+      },
+      {
+        "dataset": "lmms-eval/Video-MME",
+        "expected_bytes": 405167,
+        "expected_lfs_sha256": "7fffab8ed38ecc2f9f0eca4c44d8a11636f0ee96116ede83580c8b9ae0faf986",
+        "path": "videomme/test-00000-of-00001.parquet",
+        "revision": "ead1408f75b618502df9a1d8e0950166bf0a2a0b"
+      }
+    ],
+    "four_to_five_source_disjoint_candidates_pass": false,
+    "head_checks": {
+      "attempted": 3,
+      "remote_responses": 0,
+      "result": "FAILED_BEFORE_RESPONSE_BYTES_PROXY_DNS"
+    },
+    "metadata_gate_pass_count": 0,
+    "schema_inspected_for_embedded_media": false,
+    "source_parquet_size_hash_verified": false,
+    "superseded_by_task48_local_ingestion": true,
+    "target_row_snapshots_created": [],
+    "target_rows_resolved": 0
+  },
+  "task48_verified_parent_metadata_ingestion": {
+    "extracted_artifacts": [
+      {
+        "byte_size": 23990,
+        "contains_media_bytes": false,
+        "content_type": "application/json",
+        "local_path": "data/hf_recon/snapshots/longvideobench_parent_rows_cdf3444602208c95f453e7683583a077ce38ddbf_targets.json",
+        "purpose": "Task 48 extracted LongVideoBench target rows and source aggregates",
+        "sha256": "61709bc37b7e79383bb3884b0b740767a49c000f8be5cf74e6d117b8e41fd29a"
+      },
+      {
+        "byte_size": 15304,
+        "contains_media_bytes": false,
+        "content_type": "application/json",
+        "local_path": "data/hf_recon/snapshots/videomme_parent_rows_ead1408f75b618502df9a1d8e0950166bf0a2a0b_targets.json",
+        "purpose": "Task 48 extracted Video-MME target rows and source aggregates",
+        "sha256": "2cd7cec8c3a2b3cff434d945fc918ca3dd778ac0d430cba54757b0dcd3eb3b0d"
+      }
+    ],
+    "media_downloaded": false,
+    "network_used": false,
+    "procedure": "task48-parent-metadata-ingest-v1",
+    "pyarrow_version": "21.0.0",
+    "rights_status": "all holds preserved; no acquisition approval created",
+    "shortlist": {
+      "eligible_count": 3,
+      "reason": "Only three source-disjoint candidates have verified exact-second durations in range. Video-MME provides only categorical duration labels, two LongVideoBench targets are absent, and one LongVideoBench target is below 1200 seconds.",
+      "requested_size": "4-5",
+      "requested_size_achieved": false,
+      "status": "PRE_DOWNLOAD_TECHNICAL_CANDIDATES_NOT_APPROVED",
+      "strict_rule": "exact duration_s between 1200 and 5400 inclusive; known canonical ID and verified parent lineage; one row per canonical source ID"
+    },
+    "source_parquets": [
+      {
+        "binary_or_media_payload_columns": [],
+        "byte_size": 426680,
+        "contains_media_bytes": false,
+        "content_type": "application/vnd.apache.parquet",
+        "dataset": "longvideobench/LongVideoBench-Meta",
+        "declared_media_features": [],
+        "local_path": "data/hf_recon/snapshots/hf_longvideobench_LongVideoBench-Meta_cdf3444602208c95f453e7683583a077ce38ddbf_validation.parquet",
+        "metadata_only": true,
+        "revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+        "row_count": 1337,
+        "row_group_count": 2,
+        "schema": [
+          {
+            "name": "video_id",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "video_path",
+            "type": "string"
+          },
+          {
+            "name": "subtitle_path",
+            "type": "string"
+          },
+          {
+            "name": "correct_choice",
+            "type": "int64"
+          },
+          {
+            "name": "question",
+            "type": "string"
+          },
+          {
+            "name": "option0",
+            "type": "string"
+          },
+          {
+            "name": "option1",
+            "type": "string"
+          },
+          {
+            "name": "option2",
+            "type": "string"
+          },
+          {
+            "name": "option3",
+            "type": "string"
+          },
+          {
+            "name": "option4",
+            "type": "string"
+          },
+          {
+            "name": "duration",
+            "type": "double"
+          },
+          {
+            "name": "duration_group",
+            "type": "int64"
+          },
+          {
+            "name": "question_category",
+            "type": "string"
+          },
+          {
+            "name": "topic_category",
+            "type": "string"
+          },
+          {
+            "name": "starting_timestamp_for_subtitles",
+            "type": "double"
+          }
+        ],
+        "schema_inspected_with": "pyarrow 21.0.0",
+        "sha256": "5f370287edbfb9875562b116686d50208d0d40615f5b407f970448868b6bc108",
+        "split": "validation",
+        "upstream_path": "data/validation-00000-of-00001.parquet"
+      },
+      {
+        "binary_or_media_payload_columns": [],
+        "byte_size": 1612265,
+        "contains_media_bytes": false,
+        "content_type": "application/vnd.apache.parquet",
+        "dataset": "longvideobench/LongVideoBench-Meta",
+        "declared_media_features": [],
+        "local_path": "data/hf_recon/snapshots/hf_longvideobench_LongVideoBench-Meta_cdf3444602208c95f453e7683583a077ce38ddbf_test.parquet",
+        "metadata_only": true,
+        "revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+        "row_count": 5341,
+        "row_group_count": 6,
+        "schema": [
+          {
+            "name": "video_id",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "video_path",
+            "type": "string"
+          },
+          {
+            "name": "subtitle_path",
+            "type": "string"
+          },
+          {
+            "name": "correct_choice",
+            "type": "int64"
+          },
+          {
+            "name": "question",
+            "type": "string"
+          },
+          {
+            "name": "option0",
+            "type": "string"
+          },
+          {
+            "name": "option1",
+            "type": "string"
+          },
+          {
+            "name": "option2",
+            "type": "string"
+          },
+          {
+            "name": "option3",
+            "type": "string"
+          },
+          {
+            "name": "option4",
+            "type": "string"
+          },
+          {
+            "name": "duration",
+            "type": "double"
+          },
+          {
+            "name": "duration_group",
+            "type": "int64"
+          },
+          {
+            "name": "question_category",
+            "type": "string"
+          },
+          {
+            "name": "topic_category",
+            "type": "string"
+          },
+          {
+            "name": "starting_timestamp_for_subtitles",
+            "type": "double"
+          }
+        ],
+        "schema_inspected_with": "pyarrow 21.0.0",
+        "sha256": "9015fc7f9e83e4a6479fa533c2c7df8c42a9bab67a7e01be6320262e249a1bec",
+        "split": "test",
+        "upstream_path": "data/test-00000-of-00001.parquet"
+      },
+      {
+        "binary_or_media_payload_columns": [],
+        "byte_size": 405167,
+        "contains_media_bytes": false,
+        "content_type": "application/vnd.apache.parquet",
+        "dataset": "lmms-eval/Video-MME",
+        "declared_media_features": [],
+        "local_path": "data/hf_recon/snapshots/hf_lmms-eval_Video-MME_ead1408f75b618502df9a1d8e0950166bf0a2a0b_test.parquet",
+        "metadata_only": true,
+        "revision": "ead1408f75b618502df9a1d8e0950166bf0a2a0b",
+        "row_count": 2700,
+        "row_group_count": 3,
+        "schema": [
+          {
+            "name": "video_id",
+            "type": "string"
+          },
+          {
+            "name": "duration",
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "type": "string"
+          },
+          {
+            "name": "sub_category",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "name": "videoID",
+            "type": "string"
+          },
+          {
+            "name": "question_id",
+            "type": "string"
+          },
+          {
+            "name": "task_type",
+            "type": "string"
+          },
+          {
+            "name": "question",
+            "type": "string"
+          },
+          {
+            "name": "options",
+            "type": "list<element: string>"
+          },
+          {
+            "name": "answer",
+            "type": "string"
+          }
+        ],
+        "schema_inspected_with": "pyarrow 21.0.0",
+        "sha256": "7fffab8ed38ecc2f9f0eca4c44d8a11636f0ee96116ede83580c8b9ae0faf986",
+        "split": "test",
+        "upstream_path": "videomme/test-00000-of-00001.parquet"
+      }
+    ],
+    "target_summary": {
+      "absent_id_count": 2,
+      "absent_ids": [
+        "-WnyRMZqV1U",
+        "20lTg3yUrO4"
+      ],
+      "matching_qa_rows": 21,
+      "present_id_count": 7,
+      "present_ids": [
+        "-7wwfGJXEZg",
+        "-PgbM2MhcYQ",
+        "-eRimFrm6kQ",
+        "-hgJVx12Qk4",
+        "K759eXmaMTY",
+        "3uV8XZcIBbk",
+        "jWa2yrLGxCM"
+      ],
+      "requested_ids": 9
+    }
+  },
+  "task49_traceav_candidate_expansion": {
+    "derived_audit_path": "data/hf_recon/snapshots/traceav_modality_lvb_join_cc96f31d1d30b56bd4be02bb660bee394896c288_cdf3444602208c95f453e7683583a077ce38ddbf.json",
+    "diagnostic_cross_namespace_duration_s": 12.01,
+    "diagnostic_cross_namespace_exact_matches": 1,
+    "diagnostic_cross_namespace_match_id": "mOiEOs3ZlT8",
+    "eligible_additions": 0,
+    "final_strict_shortlist_count": 3,
+    "input_rows": 303,
+    "interpretation": "TraceAV task_type and trajectory labels are upstream annotation labels only. They do not verify AV-TRACE modality necessity, media streams, speech, ambient sound, cross-modal necessity, or complete-source availability.",
+    "longvideobench_meta_revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+    "mapped_source_counts": {
+      "lvbench": 44,
+      "omnivideobench": 48,
+      "videomme": 211
+    },
+    "media_downloaded": false,
+    "network_used": false,
+    "procedure": "task49-traceav-modality-to-longvideobench-meta-join-v1",
+    "prohibited_payloads_downloaded": false,
+    "selected_additions": [],
+    "selection_status": "NO_ADDITION; PROVISIONAL_NOT_APPROVED preserved",
+    "strict_lvbench_exact_parent_matches": 0,
+    "strict_lvbench_unique_parent_ids": 37,
+    "traceav_revision": "cc96f31d1d30b56bd4be02bb660bee394896c288"
+  },
+  "timezone": "Asia/Shanghai",
+  "unresolved_fetches": [
+    {
+      "effect": "no LongShOT candidate row added",
+      "endpoint_family": "LongShOT postvalid_v2_test.jsonl",
+      "status": "gated_route_http_401_after_HEAD_attempt"
+    },
+    {
+      "effect": "schema not captured; Parquet was not downloaded",
+      "endpoint_family": "VES-Bench datasets-server schema",
+      "status": "proxy_dns_or_mirror_tls_failure"
+    },
+    {
+      "effect": "ccp-007 pipeline revision remains unresolved",
+      "endpoint_family": "TraceAV-Bench-Sub GitHub commit",
+      "status": "proxy_dns_failure; HF mirror not applicable/404"
+    }
+  ],
+  "validation_summary": {
+    "all_declared_formats_parse": true,
+    "all_sha256_verified": true,
+    "artifact_count": 42,
+    "contains_media_bytes": false,
+    "media_signatures_detected": 0,
+    "metadata_parquet_count": 3,
+    "metadata_parquet_is_media": false
+  },
+  "verified_metadata_parquet_artifacts": [
+    {
+      "binary_or_media_payload_columns": [],
+      "byte_size": 426680,
+      "contains_media_bytes": false,
+      "content_type": "application/vnd.apache.parquet",
+      "dataset": "longvideobench/LongVideoBench-Meta",
+      "declared_media_features": [],
+      "local_path": "data/hf_recon/snapshots/hf_longvideobench_LongVideoBench-Meta_cdf3444602208c95f453e7683583a077ce38ddbf_validation.parquet",
+      "metadata_only": true,
+      "revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+      "row_count": 1337,
+      "row_group_count": 2,
+      "schema": [
+        {
+          "name": "video_id",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "video_path",
+          "type": "string"
+        },
+        {
+          "name": "subtitle_path",
+          "type": "string"
+        },
+        {
+          "name": "correct_choice",
+          "type": "int64"
+        },
+        {
+          "name": "question",
+          "type": "string"
+        },
+        {
+          "name": "option0",
+          "type": "string"
+        },
+        {
+          "name": "option1",
+          "type": "string"
+        },
+        {
+          "name": "option2",
+          "type": "string"
+        },
+        {
+          "name": "option3",
+          "type": "string"
+        },
+        {
+          "name": "option4",
+          "type": "string"
+        },
+        {
+          "name": "duration",
+          "type": "double"
+        },
+        {
+          "name": "duration_group",
+          "type": "int64"
+        },
+        {
+          "name": "question_category",
+          "type": "string"
+        },
+        {
+          "name": "topic_category",
+          "type": "string"
+        },
+        {
+          "name": "starting_timestamp_for_subtitles",
+          "type": "double"
+        }
+      ],
+      "schema_inspected_with": "pyarrow 21.0.0",
+      "sha256": "5f370287edbfb9875562b116686d50208d0d40615f5b407f970448868b6bc108",
+      "split": "validation",
+      "upstream_path": "data/validation-00000-of-00001.parquet"
+    },
+    {
+      "binary_or_media_payload_columns": [],
+      "byte_size": 1612265,
+      "contains_media_bytes": false,
+      "content_type": "application/vnd.apache.parquet",
+      "dataset": "longvideobench/LongVideoBench-Meta",
+      "declared_media_features": [],
+      "local_path": "data/hf_recon/snapshots/hf_longvideobench_LongVideoBench-Meta_cdf3444602208c95f453e7683583a077ce38ddbf_test.parquet",
+      "metadata_only": true,
+      "revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+      "row_count": 5341,
+      "row_group_count": 6,
+      "schema": [
+        {
+          "name": "video_id",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "video_path",
+          "type": "string"
+        },
+        {
+          "name": "subtitle_path",
+          "type": "string"
+        },
+        {
+          "name": "correct_choice",
+          "type": "int64"
+        },
+        {
+          "name": "question",
+          "type": "string"
+        },
+        {
+          "name": "option0",
+          "type": "string"
+        },
+        {
+          "name": "option1",
+          "type": "string"
+        },
+        {
+          "name": "option2",
+          "type": "string"
+        },
+        {
+          "name": "option3",
+          "type": "string"
+        },
+        {
+          "name": "option4",
+          "type": "string"
+        },
+        {
+          "name": "duration",
+          "type": "double"
+        },
+        {
+          "name": "duration_group",
+          "type": "int64"
+        },
+        {
+          "name": "question_category",
+          "type": "string"
+        },
+        {
+          "name": "topic_category",
+          "type": "string"
+        },
+        {
+          "name": "starting_timestamp_for_subtitles",
+          "type": "double"
+        }
+      ],
+      "schema_inspected_with": "pyarrow 21.0.0",
+      "sha256": "9015fc7f9e83e4a6479fa533c2c7df8c42a9bab67a7e01be6320262e249a1bec",
+      "split": "test",
+      "upstream_path": "data/test-00000-of-00001.parquet"
+    },
+    {
+      "binary_or_media_payload_columns": [],
+      "byte_size": 405167,
+      "contains_media_bytes": false,
+      "content_type": "application/vnd.apache.parquet",
+      "dataset": "lmms-eval/Video-MME",
+      "declared_media_features": [],
+      "local_path": "data/hf_recon/snapshots/hf_lmms-eval_Video-MME_ead1408f75b618502df9a1d8e0950166bf0a2a0b_test.parquet",
+      "metadata_only": true,
+      "revision": "ead1408f75b618502df9a1d8e0950166bf0a2a0b",
+      "row_count": 2700,
+      "row_group_count": 3,
+      "schema": [
+        {
+          "name": "video_id",
+          "type": "string"
+        },
+        {
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "name": "domain",
+          "type": "string"
+        },
+        {
+          "name": "sub_category",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "name": "videoID",
+          "type": "string"
+        },
+        {
+          "name": "question_id",
+          "type": "string"
+        },
+        {
+          "name": "task_type",
+          "type": "string"
+        },
+        {
+          "name": "question",
+          "type": "string"
+        },
+        {
+          "name": "options",
+          "type": "list<element: string>"
+        },
+        {
+          "name": "answer",
+          "type": "string"
+        }
+      ],
+      "schema_inspected_with": "pyarrow 21.0.0",
+      "sha256": "7fffab8ed38ecc2f9f0eca4c44d8a11636f0ee96116ede83580c8b9ae0faf986",
+      "split": "test",
+      "upstream_path": "videomme/test-00000-of-00001.parquet"
+    }
+  ],
+  "task50_direct_lvb_candidate_expansion": {
+    "procedure": "task50-direct-longvideobench-source-ranking-v1",
+    "run_date": "2026-09-07",
+    "integration_date": "2026-09-08",
+    "network_used": false,
+    "media_downloaded": false,
+    "subtitle_payload_downloaded": false,
+    "longvideobench_meta_revision": "cdf3444602208c95f453e7683583a077ce38ddbf",
+    "source_parquet_hashes": {
+      "validation": "5f370287edbfb9875562b116686d50208d0d40615f5b407f970448868b6bc108",
+      "test": "9015fc7f9e83e4a6479fa533c2c7df8c42a9bab67a7e01be6320262e249a1bec"
+    },
+    "schemas_verified_metadata_only": true,
+    "total_unique_video_ids": 3761,
+    "eligible_unseen_unique_video_ids": 459,
+    "hard_requirements": "not in pre-Task-50 candidate pool; one internally consistent split-level aggregate per canonical video_id; duration 1200-5400 seconds inclusive; valid relative <video_id>.mp4 metadata path; immutable LongVideoBench-Meta revision; PROVISIONAL_NOT_APPROVED and unknown_hold preserved",
+    "deterministic_ranking": {
+      "speech_cross_modal_profile": "subtitle path present; topic novel versus NP/KG/KH; question category novel versus E3E/O3O; count of QA rows explicitly anchoring screen state/change to subtitle/conversation/speech wording descending; temporal wording count descending; QA-row count descending; distance from 1800 seconds ascending; video_id ascending",
+      "ambient_visual_temporal_profile": "subtitle path present; topic novel versus NP/KG/KH; question category novel versus E3E/O3O; count of QA rows mentioning music/singing/song/applause/sound terms descending; temporal/change wording count descending; QA-row count descending; duration descending; video_id ascending",
+      "interpretation": "Lexical and category signals are deterministic metadata-only inspection leads, not verification of streams, speech, ambient sound, cross-modal necessity, or AV-TRACE hop structure."
+    },
+    "selected_additions": [
+      {
+        "candidate_id": "ccp-011",
+        "video_id": "H5vpBCLo74U",
+        "role": "primary",
+        "profile_rank": 1,
+        "profile": "speech_cross_modal",
+        "split": "test",
+        "zero_based_row_indices": [
+          2976,
+          2977,
+          2978
+        ],
+        "row_ids": [
+          "H5vpBCLo74U_0",
+          "H5vpBCLo74U_1",
+          "H5vpBCLo74U_2"
+        ],
+        "duration_s": 1805.13,
+        "video_path": "H5vpBCLo74U.mp4",
+        "subtitle_path": "H5vpBCLo74U_en.json",
+        "subtitle_offset_s": 0.0,
+        "topic_category": "KC-Knowledge-Computer-Science",
+        "question_categories": {
+          "T2E": 3
+        },
+        "qa_rows": 3,
+        "approval_status": "PROVISIONAL_NOT_APPROVED",
+        "source_media_rights_status": "unknown_hold"
+      },
+      {
+        "candidate_id": "ccp-012",
+        "video_id": "TMe7oXMJoSM",
+        "role": "active_reserve",
+        "profile_rank": 1,
+        "profile": "ambient_visual_temporal",
+        "split": "validation",
+        "zero_based_row_indices": [
+          602,
+          603,
+          604
+        ],
+        "row_ids": [
+          "TMe7oXMJoSM_0",
+          "TMe7oXMJoSM_1",
+          "TMe7oXMJoSM_2"
+        ],
+        "duration_s": 2805.11,
+        "video_path": "TMe7oXMJoSM.mp4",
+        "subtitle_path": "TMe7oXMJoSM_en.json",
+        "subtitle_offset_s": 0.0,
+        "topic_category": "KA-Knowledge-Art",
+        "question_categories": {
+          "TAA": 3
+        },
+        "qa_rows": 3,
+        "approval_status": "PROVISIONAL_NOT_APPROVED",
+        "source_media_rights_status": "unknown_hold"
+      }
+    ],
+    "final_strict_shortlist_count": 5,
+    "final_lvb_request_scope": [
+      "-PgbM2MhcYQ",
+      "-eRimFrm6kQ",
+      "-7wwfGJXEZg",
+      "H5vpBCLo74U",
+      "TMe7oXMJoSM"
+    ],
+    "selection_status": "TWO_ADDITIONS_SELECTED; PRE_DOWNLOAD_TECHNICAL_CANDIDATES_NOT_APPROVED",
+    "dedup_limit": "Exact canonical IDs and obvious metadata identity signals were checked; media-level duplicate/re-upload identity remains unverified without authorized payload access.",
+    "derived_audit_path": "data/hf_recon/snapshots/direct_lvb_candidate_ranking_cdf3444602208c95f453e7683583a077ce38ddbf.json",
+    "derived_audit_sha256": "2562f9f6d6a5bcd56239ae6b1dd5495650de72949162169aeda836c0f812ff43",
+    "derived_audit_byte_size": 446772
+  }
+}

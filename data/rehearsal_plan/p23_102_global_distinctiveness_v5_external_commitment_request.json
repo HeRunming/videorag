@@ -1,0 +1,38 @@
+{
+  "bindings": {
+    "adjudication_schema_sha256": "sha256:921d7206cbb991a9eb16f03350860130c79340c5cc2f2fb35ebe3095b98d2917",
+    "commitment_request_schema_sha256": "sha256:0a9f627ac10ee2d2855f1f596adbb162d591075698a20b5f8ac285643dbe4f08",
+    "design_doc_sha256": "sha256:e79c6eddd62499fe2bff47b182326cf58a0b22efa8cd4e59a297a9ea0eab50d1",
+    "gate_manifest_sha256": "sha256:80a4e67fe2f61c7a3bf3f24096cf57698160997ef4c74234f45b32df572834d1",
+    "parent_ambient_tool_source_sha256": "sha256:6ae1c46007ca6ec93ac30b71ccf0db7e406cfa20215df0f5df1b0309f95aad5b",
+    "plan_file_expected_canonical_sha256": "sha256:27d8173b4f789000d58d2cf1f720356b490ae34c6c6e17ab9e4889ab7aa75a9c",
+    "plan_payload_sha256": "sha256:127149d5b8d5a5c4ae697337012380c87ba7bbeb2a20089f14353487fc997a0c",
+    "raw_audit_encoding_schema_sha256": "sha256:d4f9b7f9ea7877e54253039cc84c8aa77cf08b98973d3266c1956efe020d76f7",
+    "review_packet_schema_sha256": "sha256:ffe8826b85c10ac5a586a3a164296dc840dbeecdfa4180f4fd18455058dfdf33",
+    "review_receipt_schema_sha256": "sha256:e809ebcb90db35a373d0a4beb78e6eab6c150cb371aa83b8dd870419e87d1142",
+    "review_submission_schema_sha256": "sha256:fc0869f0944593f8bed2f1769c73d4d00dfef6d15526b281a1cb42da39cfd60c",
+    "runtime_constants": {
+      "human_review_rate": 0.2,
+      "jaccard_max_exclusive": 0.92,
+      "max_visual_objects": 2,
+      "minimum_bundle_component_count": 1,
+      "minimum_bundle_sample_count": 1,
+      "minimum_discriminative_dimensions": 2,
+      "minimum_expected_query_count": 1,
+      "raw_audit_encoding_version": 2,
+      "reviewer_count": 2
+    },
+    "runtime_constants_sha256": "sha256:067015ae865879d89aea35aaf5fa3e59b6b42e91a270cd12cc580aa0018dcbd5",
+    "schema_manifest_sha256": "sha256:28a65eaa76f4762d2da42151b5c18ed59a9262bab9d5571e263c82c5f50deca2",
+    "tests_source_sha256": "sha256:17cd5878463ebd20029971c7a6bc4018412263c4c214f127c0c4da29ead3d532",
+    "tool_source_sha256": "sha256:46da4d0ba443d3ca66cacf8c671f8eb0b4791e647d42fabb7fbf9572406633d8"
+  },
+  "commitment_request_payload_sha256": "sha256:a6467a664f84c780fc5816e9675fed2b752440200820d927180e9b29fcd6be6d",
+  "date": "2026-10-23",
+  "decision": "R23_B_V5_DESIGN_READY",
+  "execution": false,
+  "external_attested": false,
+  "integrity_claim": "CURRENT_IMPLEMENTATION_RECOMPUTED_INTEGRITY_NOT_EXTERNAL_AUTHORIZATION",
+  "request_purpose": "REQUEST_FUTURE_INDEPENDENT_EXTERNAL_AUTHORIZATION_BINDING",
+  "schema_version": "av-trace.p23-102-r23b-external-commitment-request/3.0"
+}

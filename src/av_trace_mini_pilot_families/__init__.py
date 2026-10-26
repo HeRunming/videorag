@@ -1,0 +1,73 @@
+"""Machine-provisional family mining for the AV-TRACE human mini-pilot."""
+
+from .adapters import (
+    FamilyInputError,
+    MiningInputs,
+    TranscriptRoute,
+    load_canonical_new_source_index,
+    load_frozen_noaa_development,
+    load_mining_inputs,
+    parse_official_sidecar,
+    sidecar_query,
+)
+from .contracts import (
+    HUMAN_TIERS,
+    P_TIERS,
+    SCHEMA_VERSION,
+    SlotSpec,
+    assert_machine_provisional_only,
+    validate_candidate_registry,
+    validate_slot_matrix,
+)
+from .fixtures import (
+    build_dry_run_fixture_registry,
+    plan_from_registry,
+    slot_mappings,
+    slot_specs,
+)
+from .mining import (
+    FrozenClipQueryEncoder,
+    HashFixtureEncoder,
+    build_candidate_registry,
+    cbr_no_trigger_templates,
+    derived_route_closure,
+    machine_leave_one_out,
+    machine_modality_drops,
+    mine_slot,
+    search_ambient_labels,
+    search_speech_bm25,
+    search_visual_vectors,
+)
+
+__all__ = [
+    "HUMAN_TIERS",
+    "P_TIERS",
+    "SCHEMA_VERSION",
+    "FamilyInputError",
+    "FrozenClipQueryEncoder",
+    "HashFixtureEncoder",
+    "MiningInputs",
+    "SlotSpec",
+    "TranscriptRoute",
+    "assert_machine_provisional_only",
+    "build_candidate_registry",
+    "build_dry_run_fixture_registry",
+    "cbr_no_trigger_templates",
+    "derived_route_closure",
+    "load_canonical_new_source_index",
+    "load_frozen_noaa_development",
+    "load_mining_inputs",
+    "machine_leave_one_out",
+    "machine_modality_drops",
+    "mine_slot",
+    "parse_official_sidecar",
+    "plan_from_registry",
+    "search_ambient_labels",
+    "search_speech_bm25",
+    "search_visual_vectors",
+    "sidecar_query",
+    "slot_mappings",
+    "slot_specs",
+    "validate_candidate_registry",
+    "validate_slot_matrix",
+]

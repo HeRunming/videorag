@@ -1,0 +1,1084 @@
+{
+  "schema_version": "av-trace.licensed-dataset-source-registry/1.0",
+  "task_id": 152,
+  "registry_id": "av-trace-licensed-dataset-source-pivot-v1-20260923",
+  "created_at": "2026-09-23",
+  "decision_token": "LICENSED_DATASET_SOURCE_PIVOT_REPAIR",
+  "decision_scope": "DATASET_LEVEL_SOURCE_POOL_AND_CONDITIONAL_SELECTION_CONTRACT_ONLY",
+  "authorizations_created": {
+    "metadata_listing": false,
+    "media_acquisition": false,
+    "media_processing": false,
+    "content_annotation": false,
+    "human_packet_distribution": false,
+    "scientific_execution": false,
+    "derived_output_release": false,
+    "raw_media_release": false
+  },
+  "governing_inputs": [
+    "orchestration/results/141_cvpr_main_blueprint_redteam.txt",
+    "orchestration/results/144_mini_pilot_candidate_scientific_audit.txt",
+    "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+    "docs/project_charter.md",
+    "docs/pilot/pilot_0_plan.md",
+    "docs/paper/cvpr_execution_blueprint.md",
+    "docs/paper/cvpr_pivot_v2_addendum.md"
+  ],
+  "evidence_boundary": {
+    "network_stopped_by_user": true,
+    "no_network_after_stop_instruction": true,
+    "full_media_downloads": 0,
+    "media_segments_downloaded": 0,
+    "successful_target_asset_listings": 0,
+    "successful_official_page_responses_in_task_152": 0,
+    "failed_official_fetches": [
+      {
+        "target": "EPIC-KITCHENS-100 official project page",
+        "result": "FAILED_BEFORE_HTTP_PROXY_HOSTNAME_NOT_RESOLVED",
+        "persisted_response_body_bytes": 0
+      },
+      {
+        "target": "EPIC-KITCHENS-100 official project page escalated retry",
+        "result": "INTERRUPTED_NO_SUCCESSFUL_RESPONSE_OBSERVED",
+        "persisted_response_body_bytes": 0
+      }
+    ],
+    "freshness_claim_after": null,
+    "local_evidence_dates": [
+      "2026-09-05",
+      "2026-09-07"
+    ],
+    "official_source_derived_local_inputs": [
+      "docs/data/dataset_inventory.csv",
+      "docs/data/hf_dataset_recon.md",
+      "docs/data/data_source_audit.md",
+      "docs/data/license_risk_register.md",
+      "docs/review/preflight_audit.md",
+      "docs/review/cross_document_conflicts.csv",
+      "data/hf_recon/dataset_releases.csv",
+      "data/hf_recon/redteam_findings.csv",
+      "data/hf_recon/snapshots/hf_api_DISLab_VRAG-Bench.json",
+      "data/hf_recon/snapshots/hf_DISLab_VRAG-Bench_README_b491a12.md"
+    ]
+  },
+  "local_access_readiness": {
+    "huggingface": {
+      "authenticated": true,
+      "account_identity_redacted": true,
+      "token_printed": false,
+      "target_dataset_access_proven": false,
+      "target_dataset_repositories_cached": false,
+      "readiness": "ACCOUNT_AUTHENTICATED_DATASET_AUTHORITY_NOT_ESTABLISHED"
+    },
+    "proxy": {
+      "environment_variable_names_present": true,
+      "successful_general_web_route": false,
+      "observed_failure": "CONFIGURED_PROXY_HOSTNAME_COULD_NOT_BE_RESOLVED"
+    },
+    "aws": {
+      "environment_credentials_present": false,
+      "standard_credentials_file_present": false,
+      "aws_cli_installed": false,
+      "readiness": "NOT_READY"
+    },
+    "ego4d_cli": {
+      "installed": false,
+      "temporary_aws_credentials_present": false,
+      "accepted_agreement_evidence_present": false,
+      "readiness": "NOT_READY"
+    },
+    "dataset_specific_acceptance_records_present": false,
+    "secrets_exposed": false
+  },
+  "status_vocabulary": {
+    "UNKNOWN_HOLD": "No affirmative project use decision may be made from the collected evidence.",
+    "NO_ACCESS_EVIDENCE": "No local proof of accepted terms plus usable dataset-specific access exists.",
+    "METADATA_AUTH_ONLY": "A platform login exists, but media authority and target access are not established.",
+    "DATASET_LEVEL_YES_SELECTED_ASSET_UNVERIFIED": "Official-source-derived local evidence describes the capability at dataset level, but no selected file was verified.",
+    "RESERVE_UNKNOWN_HOLD": "Named technical candidate with insufficient official evidence to enter the pilot."
+  },
+  "candidates": [
+    {
+      "candidate_id": "LDS-EGO4D-V21",
+      "dataset_name": "Ego4D",
+      "official_source": "https://ego4d-data.org/",
+      "exact_dataset_version": "v2.1",
+      "tool_version": "ego4d CLI 1.5.2 recorded by prior official-source audit",
+      "version_confidence": "LOCALLY_RECORDED_FROM_OFFICIAL_DOCUMENTATION_2026-09-07",
+      "license_agreement": {
+        "name": "Ego4D License Agreement",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD_NO_LOCAL_ACCEPTANCE_EVIDENCE",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD_BY_ARTIFACT_CLASS",
+        "aggregate_publication": "UNKNOWN_HOLD_EXACT_CLAUSE_NOT_ARCHIVED",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "Register, accept official agreement, obtain temporary AWS credentials, and use the official ego4d CLI with an explicit UID allowlist.",
+        "authenticated_listing_possible_in_principle": true,
+        "local_route_ready": false,
+        "blockers": [
+          "accepted_agreement_evidence_absent",
+          "temporary_aws_credentials_absent",
+          "ego4d_cli_not_installed",
+          "exact_source_group_ids_absent"
+        ]
+      },
+      "duration": {
+        "reported_corpus_hours": 3670,
+        "item_level_untrimmed_distribution": "NOT_COLLECTED",
+        "relevant_subset_evidence": "V-RAGBench card describes a distinct Ego4D subset of source videos over one hour with 86 minute mean, but exact UIDs are unavailable and this does not establish the direct Ego4D distribution.",
+        "pilot_20_to_90_min_group_available": "UNKNOWN"
+      },
+      "native_audio": {
+        "dataset_level": "AAC_WHEN_PRESENT_METADATA_FIELDS_NULLABLE",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "STRONG_NATURALISTIC_EGOCENTRIC_ACTIVITY",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "narrations",
+          "subset-dependent AV speech and corrected transcriptions"
+        ],
+        "non_speech": [
+          "no universal source-world non-speech event taxonomy established"
+        ],
+        "other": [
+          "moments",
+          "forecasting",
+          "task annotations",
+          "features depending on subset"
+        ]
+      },
+      "privacy_constraints": [
+        "faces",
+        "homes",
+        "voices",
+        "bystanders",
+        "locations_and_context",
+        "personal_routines",
+        "participant_withdrawal_and_deletion_obligations_to_review"
+      ],
+      "source_group_definition": "Conservatively group participant or wearer plus continuous recording lineage; at minimum keep origin_video_id, all video_component_uid objects, clips, encodes, narrations, features, and benchmark derivatives together. Use participant-level split grouping when participant identity is available.",
+      "existing_annotation_leakage_risk": "HIGH",
+      "leakage_controls": [
+        "selection_sees_only_rights_duration_stream_and_nonsemantic_capture_fields",
+        "seal_narrations_features_and_task_labels_until_after_source_freeze",
+        "independent_raw_av_authoring",
+        "all_derivatives_inherit_source_split"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 1,
+        "pilot_families": 2,
+        "initial_listing_target_groups": "8_TO_12_IF_ALLOWED",
+        "broad_scale_note": "Use a small minimum-necessary subset because privacy, access, and storage burden are high."
+      },
+      "pilot_role": "CONDITIONAL_LDS_P01",
+      "current_disposition": "REPAIR"
+    },
+    {
+      "candidate_id": "LDS-EGOEXO4D-V2",
+      "dataset_name": "Ego-Exo4D",
+      "official_source": "https://ego-exo4d-data.org/",
+      "exact_dataset_version": "V2",
+      "version_confidence": "LOCALLY_RECORDED_FROM_OFFICIAL_PROJECT_2026-09-05",
+      "license_agreement": {
+        "name": "Ego-Exo4D License Agreement",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD",
+        "local_summary": "Prior official-source audit says the access page describes research and commercial coverage with redistribution and other restrictions; exact intended use must match the signed form."
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD_NO_LOCAL_ACCEPTANCE_EVIDENCE",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD_BY_ARTIFACT_CLASS",
+        "aggregate_publication": "UNKNOWN_HOLD_EXACT_CLAUSE_NOT_ARCHIVED",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "Register, sign the official V2 agreement, and use official download tooling.",
+        "authenticated_listing_possible_in_principle": true,
+        "local_route_ready": false,
+        "blockers": [
+          "accepted_agreement_evidence_absent",
+          "official_downloader_not_installed_or_verified",
+          "exact_source_group_ids_absent"
+        ]
+      },
+      "duration": {
+        "reported_take_count": 5035,
+        "reported_summed_video_hours": 1286.3,
+        "reported_ego_video_hours": 221.26,
+        "item_level_untrimmed_distribution": "NOT_COLLECTED",
+        "warning": "Summed multi-camera video hours are not wall-clock take or session duration.",
+        "pilot_20_to_90_min_group_available": "UNKNOWN"
+      },
+      "native_audio": {
+        "dataset_level": "DATASET_LEVEL_YES_SELECTED_ASSET_UNVERIFIED_MODALITY_VARIES",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "STRONG_SYNCHRONIZED_SKILLED_ACTIVITY",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "narrations",
+          "no universal transcript guarantee"
+        ],
+        "non_speech": [
+          "no universal non-speech event taxonomy established"
+        ],
+        "other": [
+          "task and temporal labels",
+          "camera pose",
+          "synchronized ego and exo views"
+        ]
+      },
+      "privacy_constraints": [
+        "faces",
+        "voices",
+        "locations",
+        "third_parties",
+        "multi_view_reidentification",
+        "participant_withdrawal_and_deletion_obligations_to_review"
+      ],
+      "source_group_definition": "Group participant or team by capture session, task, and scene lineage. A take_uid is nested within the group; all synchronized views, poses, narrations, annotations, and repeated participant or scene derivatives remain together.",
+      "existing_annotation_leakage_risk": "HIGH",
+      "leakage_controls": [
+        "select_non_kitchen_group_from_nonsemantic_metadata",
+        "seal_task_labels_narrations_poses_and_alternate_views_during_initial_authoring",
+        "treat_alternate_views_as_derived_leaks_in_intervention_closure",
+        "all_derivatives_inherit_source_split"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 1,
+        "pilot_families": 2,
+        "initial_listing_target_groups": "8_TO_12_IF_ALLOWED",
+        "broad_scale_note": "Count wall-clock source groups, not camera-hours; use selected views only after rights and route-closure review."
+      },
+      "pilot_role": "CONDITIONAL_LDS_P02_NON_KITCHEN",
+      "current_disposition": "REPAIR"
+    },
+    {
+      "candidate_id": "LDS-EPIC100-SOUNDS",
+      "dataset_name": "EPIC-KITCHENS-100 plus EPIC-SOUNDS",
+      "official_source": "https://epic-kitchens.github.io/2020-100",
+      "exact_dataset_version": "EPIC-KITCHENS-100_2020-100; EPIC-SOUNDS exact revision not pinned",
+      "version_confidence": "PARTIAL",
+      "license_agreement": {
+        "name": "CC BY-NC 4.0 for the annotation repository only; exact raw-media package terms unresolved",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD_FOR_MEDIA"
+      },
+      "permitted_use": {
+        "research": "ANNOTATION_FILES_ONLY_WITHIN_CC_BY_NC_4_0_SCOPE_MEDIA_UNKNOWN_HOLD",
+        "new_annotation": "UNKNOWN_HOLD_WHEN_MEDIA_DEPENDENT",
+        "derived_outputs": "UNKNOWN_HOLD_BY_ARTIFACT_CLASS",
+        "aggregate_publication": "UNKNOWN_HOLD_FOR_MEDIA_DEPENDENT_RESULTS",
+        "annotation_release": "ONLY_IF_WITHIN_EXACT_CC_BY_NC_SCOPE_AND_NOT_DERIVED_FROM_UNCLEARED_MEDIA_TERMS",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "Accept official terms and use the official downloader.",
+        "authenticated_listing_possible_in_principle": true,
+        "local_route_ready": false,
+        "blockers": [
+          "raw_media_terms_not_archived",
+          "terms_acceptance_record_absent",
+          "official_downloader_not_verified_locally",
+          "exact_source_group_ids_absent"
+        ]
+      },
+      "duration": {
+        "reported_video_count": 700,
+        "reported_corpus_hours": 100,
+        "arithmetic_mean_minutes": 8.57,
+        "item_level_untrimmed_distribution": "NOT_COLLECTED",
+        "local_qualitative_note": "Many recordings are described as tens of minutes.",
+        "pilot_20_to_90_min_group_available": "PLAUSIBLE_NOT_ENUMERATED"
+      },
+      "native_audio": {
+        "dataset_level": "DATASET_LEVEL_YES_SELECTED_ASSET_UNVERIFIED",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "STRONG_UNSCRIPTED_EGOCENTRIC_KITCHEN_ACTIVITY",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "narrations",
+          "no verbatim transcript guarantee"
+        ],
+        "non_speech": [
+          "EPIC-SOUNDS 78366 categorized events",
+          "EPIC-SOUNDS 39187 uncategorized events"
+        ],
+        "other": [
+          "dense action segments",
+          "object labels",
+          "action labels"
+        ]
+      },
+      "privacy_constraints": [
+        "hands_and_identity_cues",
+        "homes_and_kitchens",
+        "voices",
+        "routines",
+        "possible_bystanders",
+        "kitchen_safety"
+      ],
+      "source_group_definition": "Group all media and derivatives for one participant or kitchen lineage, including recordings, clips, narrations, action and object labels, and EPIC-SOUNDS events.",
+      "existing_annotation_leakage_risk": "CRITICAL",
+      "leakage_controls": [
+        "do_not_select_source_or_question_by_action_or_sound_label",
+        "seal_all_semantic_labels_and_timestamps",
+        "independent_raw_av_authoring_first",
+        "open_upstream_labels_only_for_logged_post_authoring_audit"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 1,
+        "pilot_families": 2,
+        "initial_listing_target_groups": "8_TO_12_ELIGIBLE_PARTICIPANT_KITCHEN_GROUPS_IF_ALLOWED",
+        "broad_scale_note": "Strong pilot fit, but only recordings meeting the untrimmed duration and native-audio gates qualify."
+      },
+      "pilot_role": "CONDITIONAL_LDS_P03",
+      "current_disposition": "REPAIR"
+    },
+    {
+      "candidate_id": "LDS-ASSEMBLY101",
+      "dataset_name": "Assembly101",
+      "official_source": "https://assembly-101.github.io/",
+      "exact_dataset_version": "UNRESOLVED",
+      "version_confidence": "INSUFFICIENT",
+      "license_agreement": {
+        "name": "Exact official package license unresolved",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD",
+        "aggregate_publication": "UNKNOWN_HOLD",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "Official project download scripts and hosted packages; exact package and authorization route must be pinned.",
+        "authenticated_listing_possible_in_principle": "UNKNOWN",
+        "local_route_ready": false,
+        "blockers": [
+          "exact_release_unresolved",
+          "exact_package_license_unresolved",
+          "previous_count_and_duration_interpretation_withdrawn",
+          "exact_source_group_ids_absent",
+          "audio_channel_consistency_unverified"
+        ]
+      },
+      "duration": {
+        "reported_video_count": "WITHDRAWN_PENDING_VERIFICATION",
+        "reported_corpus_hours": "WITHDRAWN_PENDING_VERIFICATION",
+        "item_level_untrimmed_distribution": "NOT_COLLECTED",
+        "warning": "Do not use the earlier combined 4321 video, 513 hour, 15 view quantities for planning.",
+        "pilot_20_to_90_min_group_available": "UNKNOWN"
+      },
+      "native_audio": {
+        "dataset_level": "SOURCE_VIDEOS_DESCRIBED_AS_AUDIO_BEARING_CHANNEL_CONSISTENCY_UNKNOWN",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "STRONG_MULTI_VIEW_TOY_ASSEMBLY_AND_MISTAKES",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "speech transcripts not a primary guarantee"
+        ],
+        "non_speech": [
+          "no source-world non-speech event taxonomy established"
+        ],
+        "other": [
+          "more than 1M fine-grained and coarse action annotations reported",
+          "temporal segments",
+          "mistakes"
+        ]
+      },
+      "privacy_constraints": [
+        "faces",
+        "voices",
+        "participant_identity",
+        "controlled_setting_but_reidentification_possible"
+      ],
+      "source_group_definition": "Group participant by assembly session lineage, keeping every synchronized static and ego view, clips, action labels, mistake labels, and derivatives together. If participants repeat, the participant is the split-level leakage block.",
+      "existing_annotation_leakage_risk": "HIGH",
+      "leakage_controls": [
+        "selection_uses_only_nonsemantic_metadata",
+        "seal_action_and_mistake_labels",
+        "independent_raw_av_authoring",
+        "count_elapsed_wall_clock_once_not_sum_of_views"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 1,
+        "pilot_families": 2,
+        "initial_listing_target_groups": "8_TO_12_IF_OFFICIAL_METADATA_SUPPORTS_GROUPING",
+        "broad_scale_note": "Acquire only required views; a coherent 20 to 90 minute session must exist without concatenating unrelated takes."
+      },
+      "pilot_role": "CONDITIONAL_LDS_P04",
+      "current_disposition": "REPAIR"
+    },
+    {
+      "candidate_id": "LDS-HDEPIC",
+      "dataset_name": "HD-EPIC",
+      "official_source": "https://hd-epic.github.io/",
+      "exact_dataset_version": "UNRESOLVED",
+      "version_confidence": "PARTIAL_OFFICIAL_PROJECT_STATS_ONLY",
+      "license_agreement": {
+        "name": "Official HD-EPIC terms or agreement, exact text unresolved",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD",
+        "aggregate_publication": "UNKNOWN_HOLD",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "Apply or register through the official project release and use its authorized download path.",
+        "authenticated_listing_possible_in_principle": true,
+        "local_route_ready": false,
+        "blockers": [
+          "exact_release_unresolved",
+          "exact_terms_unarchived",
+          "registration_or_acceptance_record_absent",
+          "exact_source_group_ids_absent"
+        ]
+      },
+      "duration": {
+        "reported_video_count": 156,
+        "reported_corpus_hours": 41.3,
+        "arithmetic_mean_minutes": 15.88,
+        "item_level_untrimmed_distribution": "NOT_COLLECTED",
+        "local_qualitative_note": "Long continuous egocentric sequences are reported.",
+        "pilot_20_to_90_min_group_available": "PLAUSIBLE_NOT_ENUMERATED"
+      },
+      "native_audio": {
+        "dataset_level": "RICH_AUDIO_AND_MULTIMODAL_SENSORS_REPORTED_RELEASED_CHANNELS_UNVERIFIED",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "STRONG_HIGH_RESOLUTION_EGOCENTRIC_KITCHEN_ACTIVITY",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "participant narrations automatically transcribed then manually corrected"
+        ],
+        "non_speech": [
+          "51000 audio events reported"
+        ],
+        "other": [
+          "59000 actions reported",
+          "precise action boundaries",
+          "object annotations",
+          "multimodal sensor timestamps"
+        ]
+      },
+      "privacy_constraints": [
+        "high_resolution_homes",
+        "voices",
+        "identity",
+        "routines",
+        "sensor_rich_reidentification",
+        "participant_withdrawal_and_deletion_obligations_to_review"
+      ],
+      "source_group_definition": "Group all media, audio, sensor streams, narrations, annotations, and derivatives for one participant or kitchen recording lineage.",
+      "existing_annotation_leakage_risk": "CRITICAL",
+      "leakage_controls": [
+        "seal_corrected_narrations_action_labels_and_audio_event_labels",
+        "independent_raw_av_authoring",
+        "post_authoring_blind_coverage_audit_only",
+        "cross_dataset_identity_and_scene_check_against_EPIC_KITCHENS"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 1,
+        "pilot_families": 2,
+        "initial_listing_target_groups": "ALL_ELIGIBLE_GROUP_METADATA_BUT_NO_MEDIA_IF_SMALL",
+        "broad_scale_note": "Small participant pool and correlated EPIC lineage limit independent source count."
+      },
+      "pilot_role": "CONDITIONAL_LDS_P05",
+      "current_disposition": "REPAIR"
+    },
+    {
+      "candidate_id": "LDS-EGOLIFE",
+      "dataset_name": "EgoLife",
+      "official_source": "https://huggingface.co/datasets/lmms-lab/EgoLife",
+      "exact_dataset_version": "HF visible revision 143fb31; official repository license revision c0545c1",
+      "version_confidence": "LOCALLY_RECORDED_FROM_OFFICIAL_SURFACES_2026-09-07",
+      "license_agreement": {
+        "name": "CONFLICT_HF_METADATA_MIT_VS_OFFICIAL_REPOSITORY_S_LAB_LICENSE_1_0",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD_STRICTER_S_LAB_TERMS_CONTROL_PENDING_CLARIFICATION"
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD_LICENSE_CONFLICT",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD",
+        "aggregate_publication": "UNKNOWN_HOLD",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "Official Hugging Face release plus official repository instructions, subject to the stricter unresolved S-Lab terms.",
+        "authenticated_listing_possible_in_principle": true,
+        "local_route_ready": false,
+        "platform_authentication_present": true,
+        "blockers": [
+          "license_scope_conflict",
+          "no_target_listing_run",
+          "no_media_authority_record",
+          "privacy_controls_not_approved",
+          "exact_source_group_selection_absent"
+        ]
+      },
+      "duration": {
+        "reported_corpus_hours": 300,
+        "reported_participants": 6,
+        "reported_days": 7,
+        "item_level_untrimmed_distribution": "NOT_COLLECTED",
+        "relevant_subset_evidence": "V-RAGBench's distinct EgoLife subset uses source videos over one hour and reports 379 minute mean.",
+        "pilot_20_to_90_min_group_available": "PLAUSIBLE_AS_WINDOW_BUT_WHOLE_HOUSEHOLD_WEEK_REMAINS_SOURCE_GROUP"
+      },
+      "native_audio": {
+        "dataset_level": "MULTIMODAL_ARIA_AND_SYNCHRONIZED_VIEWS_DESCRIBED_PER_FILE_AUDIO_UNVERIFIED",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "STRONG_MULTI_DAY_NATURALISTIC_ACTIVITY",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "timestamped transcripts",
+          "dense captions"
+        ],
+        "non_speech": [
+          "QA need_audio field exists",
+          "no complete source-world non-speech event taxonomy established"
+        ],
+        "other": [
+          "EgoLifeQA",
+          "target_time",
+          "keywords",
+          "reason fields"
+        ]
+      },
+      "privacy_constraints": [
+        "shared_residence",
+        "identifiable_participants",
+        "conversations",
+        "routines",
+        "health_and_sensitive_habits_possible",
+        "bystanders",
+        "cross_participant_reidentification",
+        "withdrawal_and_deletion_obligations_to_review"
+      ],
+      "source_group_definition": "Treat the entire synchronized six-participant household-week as one source group. A native 20 to 90 minute continuous file or recording session may be selected only as a nested asset, without arbitrary semantic trimming; no day or participant enters another split.",
+      "existing_annotation_leakage_risk": "CRITICAL",
+      "leakage_controls": [
+        "exclude_all_existing_QA_and_paraphrases",
+        "hash_and_semantic_near_duplicate_screen",
+        "select_without_transcript_caption_QA_or_target_time",
+        "seal_text_and_QA_until_post_authoring_audit"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 1,
+        "pilot_families": 2,
+        "initial_listing_target_groups": 1,
+        "broad_scale_note": "Counts as one independent household-week group and cannot supply train validation and test groups."
+      },
+      "pilot_role": "CONDITIONAL_LDS_P06",
+      "current_disposition": "REPAIR"
+    },
+    {
+      "candidate_id": "LDS-MECCANO-RESERVE",
+      "dataset_name": "MECCANO",
+      "official_source": "NOT_CAPTURED_IN_LOCAL_EVIDENCE",
+      "exact_dataset_version": "UNKNOWN",
+      "version_confidence": "INSUFFICIENT",
+      "license_agreement": {
+        "name": "UNKNOWN",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD",
+        "aggregate_publication": "UNKNOWN_HOLD",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "UNKNOWN_OFFICIAL_PRIMARY_SOURCE_NOT_CAPTURED",
+        "authenticated_listing_possible_in_principle": "UNKNOWN",
+        "local_route_ready": false,
+        "blockers": [
+          "official_release_snapshot_absent",
+          "license_absent",
+          "route_absent",
+          "ids_absent"
+        ]
+      },
+      "duration": {
+        "item_level_untrimmed_distribution": "UNKNOWN",
+        "pilot_20_to_90_min_group_available": "UNKNOWN"
+      },
+      "native_audio": {
+        "dataset_level": "UNKNOWN",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "TECHNICALLY_PLAUSIBLE_EVENT_CENTRIC_ASSEMBLY_BUT_NOT_VERIFIED",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "UNKNOWN"
+        ],
+        "non_speech": [
+          "UNKNOWN"
+        ],
+        "other": [
+          "UNKNOWN"
+        ]
+      },
+      "privacy_constraints": [
+        "UNKNOWN_REQUIRES_OFFICIAL_REVIEW"
+      ],
+      "source_group_definition": "UNRESOLVED_PENDING_OFFICIAL_SCHEMA",
+      "existing_annotation_leakage_risk": "UNKNOWN_HIGH_BY_DEFAULT",
+      "leakage_controls": [
+        "do_not_use_until_official_release_and_schema_are_archived"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 0,
+        "pilot_families": 0,
+        "initial_listing_target_groups": 0,
+        "broad_scale_note": "Reserve only."
+      },
+      "pilot_role": "RESERVE_ONLY",
+      "current_disposition": "RESERVE_UNKNOWN_HOLD"
+    },
+    {
+      "candidate_id": "LDS-CAPTAINCOOK4D-RESERVE",
+      "dataset_name": "CaptainCook4D",
+      "official_source": "NOT_CAPTURED_IN_LOCAL_EVIDENCE",
+      "exact_dataset_version": "UNKNOWN",
+      "version_confidence": "INSUFFICIENT",
+      "license_agreement": {
+        "name": "UNKNOWN",
+        "exact_text_archived": false,
+        "local_acceptance_evidence": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "permitted_use": {
+        "research": "UNKNOWN_HOLD",
+        "new_annotation": "UNKNOWN_HOLD",
+        "derived_outputs": "UNKNOWN_HOLD",
+        "aggregate_publication": "UNKNOWN_HOLD",
+        "annotation_release": "UNKNOWN_HOLD",
+        "transcript_release": "UNKNOWN_HOLD",
+        "feature_embedding_release": "UNKNOWN_HOLD",
+        "raw_media_release": "NOT_AUTHORIZED"
+      },
+      "download_auth_route": {
+        "route": "UNKNOWN_OFFICIAL_PRIMARY_SOURCE_NOT_CAPTURED",
+        "authenticated_listing_possible_in_principle": "UNKNOWN",
+        "local_route_ready": false,
+        "blockers": [
+          "official_release_snapshot_absent",
+          "license_absent",
+          "route_absent",
+          "ids_absent"
+        ]
+      },
+      "duration": {
+        "item_level_untrimmed_distribution": "UNKNOWN",
+        "pilot_20_to_90_min_group_available": "UNKNOWN"
+      },
+      "native_audio": {
+        "dataset_level": "UNKNOWN",
+        "selected_asset_verified": false,
+        "status": "UNKNOWN_HOLD"
+      },
+      "dynamic_non_text_visual": {
+        "capture_hypothesis": "TECHNICALLY_PLAUSIBLE_EVENT_CENTRIC_COOKING_BUT_NOT_VERIFIED",
+        "human_semantic_prescreen_passed": false
+      },
+      "existing_annotations": {
+        "speech": [
+          "UNKNOWN"
+        ],
+        "non_speech": [
+          "UNKNOWN"
+        ],
+        "other": [
+          "UNKNOWN"
+        ]
+      },
+      "privacy_constraints": [
+        "UNKNOWN_REQUIRES_OFFICIAL_REVIEW"
+      ],
+      "source_group_definition": "UNRESOLVED_PENDING_OFFICIAL_SCHEMA",
+      "existing_annotation_leakage_risk": "UNKNOWN_HIGH_BY_DEFAULT",
+      "leakage_controls": [
+        "do_not_use_until_official_release_and_schema_are_archived"
+      ],
+      "realistic_sample_size": {
+        "pilot_source_groups": 0,
+        "pilot_families": 0,
+        "initial_listing_target_groups": 0,
+        "broad_scale_note": "Reserve only."
+      },
+      "pilot_role": "RESERVE_ONLY",
+      "current_disposition": "RESERVE_UNKNOWN_HOLD"
+    }
+  ],
+  "conditional_pilot": {
+    "status": "EXACT_ALLOCATION_BUT_SOURCE_IDS_TBD_NOT_GATE_A_READY",
+    "source_group_count": 6,
+    "family_count": 12,
+    "families_per_source": 2,
+    "source_id_status": "ZERO_EXACT_SOURCE_GROUP_IDS_ENUMERATED",
+    "source_slots": [
+      {
+        "pilot_source_id": "LDS-P01",
+        "dataset_candidate_id": "LDS-EGO4D-V21",
+        "canonical_source_group_id": "TBD_AFTER_LICENSED_LISTING",
+        "required_group": "non-kitchen continuous naturalistic recording lineage with native audio and a 20 to 90 minute coherent untrimmed timeline",
+        "families": [
+          "LDF01",
+          "LDF02"
+        ],
+        "lineage_block": "META_EGO"
+      },
+      {
+        "pilot_source_id": "LDS-P02",
+        "dataset_candidate_id": "LDS-EGOEXO4D-V2",
+        "canonical_source_group_id": "TBD_AFTER_LICENSED_LISTING",
+        "required_group": "non-kitchen skilled-activity session with synchronized ego and exo views, native audio, and a 20 to 90 minute wall-clock timeline",
+        "families": [
+          "LDF03",
+          "LDF04"
+        ],
+        "lineage_block": "META_EGO"
+      },
+      {
+        "pilot_source_id": "LDS-P03",
+        "dataset_candidate_id": "LDS-EPIC100-SOUNDS",
+        "canonical_source_group_id": "TBD_AFTER_LICENSED_LISTING",
+        "required_group": "participant or kitchen lineage containing an eligible untrimmed recording with native audio",
+        "families": [
+          "LDF05",
+          "LDF06"
+        ],
+        "lineage_block": "OXFORD_EPIC"
+      },
+      {
+        "pilot_source_id": "LDS-P04",
+        "dataset_candidate_id": "LDS-ASSEMBLY101",
+        "canonical_source_group_id": "TBD_AFTER_LICENSED_LISTING",
+        "required_group": "coherent assembly session with all synchronized views grouped and no concatenation of unrelated takes",
+        "families": [
+          "LDF07",
+          "LDF08"
+        ],
+        "lineage_block": "ASSEMBLY101"
+      },
+      {
+        "pilot_source_id": "LDS-P05",
+        "dataset_candidate_id": "LDS-HDEPIC",
+        "canonical_source_group_id": "TBD_AFTER_LICENSED_LISTING",
+        "required_group": "participant or kitchen lineage containing an eligible continuous sequence with released native audio",
+        "families": [
+          "LDF09",
+          "LDF10"
+        ],
+        "lineage_block": "OXFORD_EPIC"
+      },
+      {
+        "pilot_source_id": "LDS-P06",
+        "dataset_candidate_id": "LDS-EGOLIFE",
+        "canonical_source_group_id": "TBD_AFTER_LICENSED_LISTING",
+        "required_group": "native 20 to 90 minute continuous file or recording session nested in the whole household-week leakage group, without arbitrary semantic trimming",
+        "families": [
+          "LDF11",
+          "LDF12"
+        ],
+        "lineage_block": "EGOLIFE"
+      }
+    ],
+    "lineage_accounting": {
+      "conservative_lineage_count": 4,
+      "lineages": {
+        "META_EGO": [
+          "LDS-P01",
+          "LDS-P02"
+        ],
+        "OXFORD_EPIC": [
+          "LDS-P03",
+          "LDS-P05"
+        ],
+        "ASSEMBLY101": [
+          "LDS-P04"
+        ],
+        "EGOLIFE": [
+          "LDS-P06"
+        ]
+      },
+      "at_least_three_lineages_satisfied_by_allocation": true,
+      "at_most_two_groups_per_correlated_lineage_satisfied": true,
+      "note": "This is allocation-level lineage diversity only; exact selected source identities are absent."
+    },
+    "capture_format_targets": [
+      "naturalistic_single_ego_daily_activity",
+      "synchronized_ego_exo_skilled_activity",
+      "unscripted_head_mounted_kitchen",
+      "controlled_multi_view_assembly",
+      "high_resolution_multi_sensor_egocentric_kitchen",
+      "multi_day_ego_plus_third_person_household_activity"
+    ],
+    "family_matrix": [
+      {
+        "family_id": "LDF01",
+        "pilot_source_id": "LDS-P01",
+        "profile": "A",
+        "hop": "one",
+        "temporal": "near",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF02",
+        "pilot_source_id": "LDS-P01",
+        "profile": "V+S+A",
+        "hop": "multi",
+        "temporal": "far",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF03",
+        "pilot_source_id": "LDS-P02",
+        "profile": "V",
+        "hop": "one",
+        "temporal": "near",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF04",
+        "pilot_source_id": "LDS-P02",
+        "profile": "V+S",
+        "hop": "multi",
+        "temporal": "far",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF05",
+        "pilot_source_id": "LDS-P03",
+        "profile": "A",
+        "hop": "one",
+        "temporal": "near",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF06",
+        "pilot_source_id": "LDS-P03",
+        "profile": "V+A",
+        "hop": "multi",
+        "temporal": "far",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF07",
+        "pilot_source_id": "LDS-P04",
+        "profile": "V",
+        "hop": "one",
+        "temporal": "near",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF08",
+        "pilot_source_id": "LDS-P04",
+        "profile": "V+S",
+        "hop": "multi",
+        "temporal": "far",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF09",
+        "pilot_source_id": "LDS-P05",
+        "profile": "S+A",
+        "hop": "multi",
+        "temporal": "far",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF10",
+        "pilot_source_id": "LDS-P05",
+        "profile": "V+S+A",
+        "hop": "multi",
+        "temporal": "far",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF11",
+        "pilot_source_id": "LDS-P06",
+        "profile": "S",
+        "hop": "one",
+        "temporal": "near",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      },
+      {
+        "family_id": "LDF12",
+        "pilot_source_id": "LDS-P06",
+        "profile": "S",
+        "hop": "one",
+        "temporal": "near",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "status": "AUTHORING_TARGET_NOT_SCIENTIFIC_LABEL"
+      }
+    ],
+    "matrix_invariants": {
+      "profiles": {
+        "V": 2,
+        "S": 2,
+        "A": 2,
+        "V+S": 2,
+        "V+A_OR_S+A": 2,
+        "V+S+A": 2
+      },
+      "hop": {
+        "one": 6,
+        "multi": 6
+      },
+      "temporal": {
+        "near": 6,
+        "far": 6
+      },
+      "mechanism": {
+        "SILENT_ROUTE_WITHHOLDING": 6,
+        "EXPLICIT_CHANNEL_OUTAGE": 6
+      },
+      "force_quota_over_semantics": false
+    }
+  },
+  "pre_outcome_selection_protocol": {
+    "selection_occurs_before": [
+      "question_authoring",
+      "answer_authoring",
+      "evidence_interval_inspection",
+      "human_answerability_outcomes",
+      "retrieval_scores",
+      "model_outputs",
+      "intervention_outcomes"
+    ],
+    "steps": [
+      "Archive exact release manifest, terms text and hash, acceptance identity and date, and artifact-specific permissions.",
+      "Use official authenticated metadata-only listing to collect canonical IDs, group fields, wall-clock duration, stream declarations, capture format, broad domain, and byte estimates.",
+      "Build within-dataset and cross-dataset leakage blocks before sampling.",
+      "Filter only on rights, 20 to 90 minute coherent untrimmed duration, native audio declaration, event-centric capture, privacy status, development overlap, kitchen quota, and storage budget.",
+      "Keep narrations, transcripts, captions, action labels, sound labels, QA, evidence intervals, mistakes, and benchmark outcomes sealed.",
+      "Canonicalize eligible IDs and rank by SHA256 of AVTRACE-LICENSED-PILOT-V1, dataset release, and source group ID.",
+      "Choose the lowest hash per slot and freeze the next-lowest as replacement.",
+      "Freeze every pilot source as development-touched and ineligible for future primary test.",
+      "After separate acquisition authorization, verify containers, hashes, duration, time base, video motion, native audio, channels, sample rate, synchronization, and dropouts.",
+      "Run human semantic audio and dynamic non-text visual prescreens, then author independently from raw AV before opening existing semantic labels."
+    ],
+    "hash_formula": "SHA256('AVTRACE-LICENSED-PILOT-V1|' + dataset_release + '|' + source_group_id)",
+    "semantic_labels_visible_to_selector": false,
+    "outcome_conditioned_replacement_allowed": false,
+    "source_group_split_unit": true
+  },
+  "readiness_gates": [
+    "exact_release_and_terms_archived_for_all_six_slots",
+    "named_project_access_accepted_where_required",
+    "acquisition_processing_annotation_derived_output_and_aggregate_publication_permissions_affirmative",
+    "public_release_decisions_separate",
+    "official_metadata_only_listing_completed",
+    "six_exact_source_group_ids_and_replacements_frozen",
+    "20_to_90_min_coherent_untrimmed_duration_verified",
+    "synchronized_native_audio_verified",
+    "at_least_two_semantic_non_speech_audio_source_prescreens_pass",
+    "at_least_two_dynamic_non_text_visual_source_prescreens_pass",
+    "annotation_leakage_controls_pass",
+    "privacy_storage_withdrawal_and_deletion_controls_approved",
+    "twelve_candidate_records_and_task145_manifests_frozen",
+    "task149_calibration_reviewer_blindness_and_gate_a_conditions_pass"
+  ],
+  "summary": {
+    "candidate_datasets_evaluated": 8,
+    "conditional_pilot_dataset_slots": 6,
+    "reserve_datasets": 2,
+    "exact_source_group_ids_established": 0,
+    "datasets_with_current_local_media_access_proven": 0,
+    "selected_assets_with_native_audio_verified": 0,
+    "datasets_with_exact_operating_media_terms_archived": 0,
+    "pilot_lineage_blocks_if_filled": 4,
+    "pilot_family_slots": 12,
+    "source_pivot_preferred": true,
+    "gate_a_ready": false,
+    "honest_result": "LICENSED_DATASET_POOL_IS_TECHNICALLY_PREFERRED_BUT_EXACT_RIGHTS_ACCESS_SOURCE_IDS_DURATION_AND_AUDIO_REMAIN_UNRESOLVED"
+  }
+}

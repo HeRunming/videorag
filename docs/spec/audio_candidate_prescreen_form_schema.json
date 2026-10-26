@@ -1,0 +1,420 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:audio-candidate-prescreen-form:1.0.0",
+  "title": "AV-TRACE human listening and semantic-prescreen form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "form_id",
+    "packet_id",
+    "candidate_code",
+    "packet_payload_sha256",
+    "source_id",
+    "source_group_id",
+    "completion_status",
+    "reviewer",
+    "inspection_protocol",
+    "audio_only_review",
+    "audiovisual_review",
+    "recurrence_review",
+    "privacy_review",
+    "safety_review",
+    "authoring_eligibility",
+    "source_level_exposure_policy",
+    "prohibited_outcomes"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_type": {"const": "audio_candidate_prescreen_form"},
+    "form_id": {"$ref": "#/$defs/id"},
+    "packet_id": {"$ref": "#/$defs/id"},
+    "candidate_code": {"$ref": "#/$defs/id"},
+    "packet_payload_sha256": {"$ref": "#/$defs/sha256"},
+    "source_id": {"$ref": "#/$defs/id"},
+    "source_group_id": {"$ref": "#/$defs/id"},
+    "completion_status": {
+      "enum": ["not_started", "in_progress", "completed"]
+    },
+    "reviewer": {"$ref": "#/$defs/reviewer"},
+    "inspection_protocol": {"$ref": "#/$defs/inspection_protocol"},
+    "audio_only_review": {"$ref": "#/$defs/audio_only_review"},
+    "audiovisual_review": {"$ref": "#/$defs/audiovisual_review"},
+    "recurrence_review": {"$ref": "#/$defs/recurrence_review"},
+    "privacy_review": {"$ref": "#/$defs/concern_review"},
+    "safety_review": {"$ref": "#/$defs/concern_review"},
+    "authoring_eligibility": {"$ref": "#/$defs/eligibility"},
+    "source_level_exposure_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exposure_must_flow_to_construct_ledger",
+        "exposure_scope",
+        "excluded_future_roles"
+      ],
+      "properties": {
+        "exposure_must_flow_to_construct_ledger": {"const": true},
+        "exposure_scope": {"const": "source_group"},
+        "excluded_future_roles": {
+          "const": [
+            "blind_alternative_evidence_finder",
+            "blind_post_adjudication_saturation_auditor"
+          ]
+        }
+      }
+    },
+    "prohibited_outcomes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "necessity_assigned",
+        "minimality_assigned",
+        "h1_assigned",
+        "h2_assigned",
+        "human_gold",
+        "gate_a_result"
+      ],
+      "properties": {
+        "necessity_assigned": {"const": false},
+        "minimality_assigned": {"const": false},
+        "h1_assigned": {"const": false},
+        "h2_assigned": {"const": false},
+        "human_gold": {"const": false},
+        "gate_a_result": {"const": false}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"completion_status": {"const": "not_started"}},
+        "required": ["completion_status"]
+      },
+      "then": {
+        "properties": {
+          "reviewer": {
+            "properties": {
+              "reviewer_id": {"type": "null"},
+              "training_attested": {"const": false},
+              "started_at": {"type": "null"},
+              "first_exposed_at": {"type": "null"},
+              "completed_at": {"type": "null"},
+              "source_content_exposure_attested": {"const": false}
+            }
+          },
+          "authoring_eligibility": {
+            "properties": {"decision": {"const": "UNDECIDED"}}
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,159}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "nullable_datetime": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "review_status": {
+      "enum": ["not_reviewed", "reviewed"]
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "training_attested",
+        "protocol_version",
+        "started_at",
+        "first_exposed_at",
+        "completed_at",
+        "source_content_exposure_attested"
+      ],
+      "properties": {
+        "reviewer_id": {
+          "anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]
+        },
+        "training_attested": {"type": "boolean"},
+        "protocol_version": {
+          "const": "audio-candidate-prescreen-v1"
+        },
+        "started_at": {"$ref": "#/$defs/nullable_datetime"},
+        "first_exposed_at": {"$ref": "#/$defs/nullable_datetime"},
+        "completed_at": {"$ref": "#/$defs/nullable_datetime"},
+        "source_content_exposure_attested": {"type": "boolean"}
+      }
+    },
+    "inspection_protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_order",
+        "phase_order_attested",
+        "audio_only_completed_before_av_started",
+        "audio_only_completed_at",
+        "av_started_at",
+        "av_completed_at",
+        "machine_semantics_were_not_visible"
+      ],
+      "properties": {
+        "required_order": {
+          "const": [
+            "audio_only_focal",
+            "synchronized_av_focal",
+            "audio_only_recurrence_probes"
+          ]
+        },
+        "phase_order_attested": {"type": ["boolean", "null"]},
+        "audio_only_completed_before_av_started": {
+          "type": ["boolean", "null"]
+        },
+        "audio_only_completed_at": {"$ref": "#/$defs/nullable_datetime"},
+        "av_started_at": {"$ref": "#/$defs/nullable_datetime"},
+        "av_completed_at": {"$ref": "#/$defs/nullable_datetime"},
+        "machine_semantics_were_not_visible": {
+          "type": ["boolean", "null"]
+        }
+      }
+    },
+    "count_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "exact_count",
+        "minimum_count",
+        "maximum_count",
+        "unit_description",
+        "confidence",
+        "notes"
+      ],
+      "properties": {
+        "mode": {
+          "enum": ["unknown", "exact", "range", "not_countable"]
+        },
+        "exact_count": {"type": ["integer", "null"], "minimum": 0},
+        "minimum_count": {"type": ["integer", "null"], "minimum": 0},
+        "maximum_count": {"type": ["integer", "null"], "minimum": 0},
+        "unit_description": {"type": "string"},
+        "confidence": {
+          "enum": ["unknown", "low", "medium", "high"]
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "notes"],
+      "properties": {
+        "level": {"enum": ["unknown", "none", "low", "high"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "audio_only_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_status",
+        "event_descriptions",
+        "distinct_episode_count",
+        "repeated_subevent_count",
+        "tentative_source_world_fact",
+        "fact_confidence",
+        "speech_presence",
+        "music_presence",
+        "non_speech_event_salience",
+        "notes"
+      ],
+      "properties": {
+        "review_status": {"$ref": "#/$defs/review_status"},
+        "event_descriptions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "distinct_episode_count": {"$ref": "#/$defs/count_observation"},
+        "repeated_subevent_count": {"$ref": "#/$defs/count_observation"},
+        "tentative_source_world_fact": {"type": "string"},
+        "fact_confidence": {
+          "enum": ["unknown", "low", "medium", "high"]
+        },
+        "speech_presence": {
+          "enum": ["unknown", "absent", "possible", "present", "dominant"]
+        },
+        "music_presence": {
+          "enum": ["unknown", "absent", "possible", "present", "dominant"]
+        },
+        "non_speech_event_salience": {
+          "enum": ["unknown", "absent", "weak", "clear", "dominant"]
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "audiovisual_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_status",
+        "grounded_source_world_fact",
+        "source_world_non_speech_event",
+        "dynamic_visual_evidence",
+        "distinct_episode_count_after_vision",
+        "count_changed_after_vision",
+        "count_change_reason",
+        "audio_changes_answerability",
+        "speech_substitution_risk",
+        "music_substitution_risk",
+        "vision_substitution_risk",
+        "transcript_caption_ocr_narration_risk",
+        "notes"
+      ],
+      "properties": {
+        "review_status": {"$ref": "#/$defs/review_status"},
+        "grounded_source_world_fact": {"type": "string"},
+        "source_world_non_speech_event": {
+          "enum": ["unknown", "no", "uncertain", "yes"]
+        },
+        "dynamic_visual_evidence": {"type": "string"},
+        "distinct_episode_count_after_vision": {
+          "$ref": "#/$defs/count_observation"
+        },
+        "count_changed_after_vision": {"type": ["boolean", "null"]},
+        "count_change_reason": {"type": "string"},
+        "audio_changes_answerability": {
+          "enum": ["unknown", "no", "uncertain", "yes"]
+        },
+        "speech_substitution_risk": {"$ref": "#/$defs/risk"},
+        "music_substitution_risk": {"$ref": "#/$defs/risk"},
+        "vision_substitution_risk": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["level", "notes"],
+          "properties": {
+            "level": {
+              "enum": ["unknown", "none", "partial", "full"]
+            },
+            "notes": {"type": "string"}
+          }
+        },
+        "transcript_caption_ocr_narration_risk": {"$ref": "#/$defs/risk"},
+        "notes": {"type": "string"}
+      }
+    },
+    "probe_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "review_status",
+        "same_or_similar_event",
+        "observed_episode_count",
+        "notes"
+      ],
+      "properties": {
+        "request_id": {"$ref": "#/$defs/id"},
+        "review_status": {"$ref": "#/$defs/review_status"},
+        "same_or_similar_event": {
+          "enum": ["unknown", "no", "possible", "yes"]
+        },
+        "observed_episode_count": {"$ref": "#/$defs/count_observation"},
+        "notes": {"type": "string"}
+      }
+    },
+    "recurrence_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessment_status",
+        "probe_results",
+        "bounded_recurrence_assessment",
+        "within_focal_recurrence_notes",
+        "authoring_implication",
+        "full_source_closure_claimed"
+      ],
+      "properties": {
+        "assessment_status": {
+          "enum": ["not_assessed", "complete"]
+        },
+        "probe_results": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/probe_result"}
+        },
+        "bounded_recurrence_assessment": {
+          "enum": ["unknown", "not_observed", "possible", "observed"]
+        },
+        "within_focal_recurrence_notes": {"type": "string"},
+        "authoring_implication": {"type": "string"},
+        "full_source_closure_claimed": {"const": false}
+      }
+    },
+    "concern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "concern_id",
+        "severity",
+        "description",
+        "mitigation_status"
+      ],
+      "properties": {
+        "concern_id": {"$ref": "#/$defs/id"},
+        "severity": {
+          "enum": ["low", "medium", "high", "critical"]
+        },
+        "description": {"type": "string", "minLength": 1},
+        "mitigation_status": {
+          "enum": ["unresolved", "mitigated", "not_applicable"]
+        }
+      }
+    },
+    "concern_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assessment_status", "concerns", "notes"],
+      "properties": {
+        "assessment_status": {
+          "enum": ["not_assessed", "no_concern", "concern_present"]
+        },
+        "concerns": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/concern"}
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "rationale",
+        "repair_actions",
+        "authoring_constraints"
+      ],
+      "properties": {
+        "decision": {
+          "enum": ["UNDECIDED", "READY", "REPAIR", "NO_GO"]
+        },
+        "rationale": {"type": "string"},
+        "repair_actions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "authoring_constraints": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

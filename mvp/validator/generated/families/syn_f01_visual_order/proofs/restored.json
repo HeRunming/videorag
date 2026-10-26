@@ -1,0 +1,60 @@
+{
+  "blocking_intervention_id": "block_syn_f01_visual_order",
+  "exact_inverse": true,
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f01_visual_order",
+  "pretrigger_state_equal": true,
+  "restoration_intervention_id": "restore_syn_f01_visual_order",
+  "restoration_successful": true,
+  "restored_proof_id": "restored-proof.syn_f01_visual_order",
+  "schema_version": "1.0.0",
+  "terminal_accessible_evidence_ids": [
+    "s1_blue_triangle",
+    "s1_green_circle"
+  ],
+  "terminal_reachable_ses_ids": [
+    "ses_syn_f01_visual_order_1"
+  ],
+  "trigger_type": "get_channel_status",
+  "trigger_value": null,
+  "validator_results": [
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f01_visual_order_1"
+      ],
+      "observed_evidence_ids": [
+        "s1_blue_triangle",
+        "s1_green_circle"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 6.25,
+      "total_steps": 6,
+      "trajectory_hash": "sha256:7f5b354823da202abca28101cb6d4c457236c9642a6a1a8ea9f26cc195de00e1",
+      "trajectory_id": "traj.validator-synthetic_validator_a.syn_f01_visual_order.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f01_visual_order"
+      ],
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "acquired_ses_ids": [
+        "ses_syn_f01_visual_order_1"
+      ],
+      "observed_evidence_ids": [
+        "s1_blue_triangle",
+        "s1_green_circle"
+      ],
+      "supported_final_answer": true,
+      "total_cost": 4.25,
+      "total_steps": 4,
+      "trajectory_hash": "sha256:a1e8b62015320f0999cfff49b0f3219c31ed733e6ef690c60c929a69999a3198",
+      "trajectory_id": "traj.validator-synthetic_validator_b.syn_f01_visual_order.restored",
+      "trigger_event_index": 0,
+      "trigger_hook_ids": [
+        "restore_syn_f01_visual_order"
+      ],
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

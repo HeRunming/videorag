@@ -1,0 +1,955 @@
+{
+  "schema_version": "av-trace.pilot-v5-targeted-source-prospecting/1.0",
+  "plan_id": "av-trace-pilot-v5-targeted-source-prospecting-2026-10-12",
+  "created_date": "2026-10-12",
+  "decision_token": "PILOT_V5_TARGETED_PROSPECTING_READY",
+  "artifact_classification": "PROSPECTIVE_SOURCE_AND_ASSET_ROUTING_PLAN_ONLY",
+  "scope": {
+    "objective": "Rank prospective routes to fill the honest pilot-v4 shortages without relabeling, quota forcing, or fabricated evidence.",
+    "shortages": {
+      "V+S": 2,
+      "V+S+A": 2,
+      "multi_hop": 1,
+      "far_separated": 5
+    },
+    "joint_structural_interpretation": "All five missing far families must be coherent multi-hop compositions. Four may replace current near/multi slots; one must also replace a current one/near slot to close the remaining multi-hop shortage.",
+    "human_semantic_review_performed": false,
+    "new_media_downloaded": false,
+    "new_access_obtained": false,
+    "new_rights_verified": false,
+    "accepted_ses_created": 0,
+    "h1_assigned": 0,
+    "h2_assigned": 0,
+    "gate_a_go_asserted": false
+  },
+  "authoritative_local_inputs": [
+    "docs/paper/cvpr_pivot_v2_addendum.md",
+    "docs/paper/av_trace_cvpr_evaluation_preregistration.md",
+    "docs/review/pilot_v4_candidate_integration_audit.md",
+    "docs/review/pilot_v4_human_packets_audit.md",
+    "data/rehearsal_plan/pilot_v4_candidate_matrix.json",
+    "docs/review/semantic_audio_discovery_v1.md",
+    "data/restricted/semantic_audio_discovery_v1/provisional_audio_facts.json",
+    "data/restricted/epic_wave1_index_v1/full_timeline_index.json",
+    "data/restricted/epic_family_candidates_v2_dev/candidate_registry.json",
+    "data/restricted/captaincook4d_wave0_index_v1/full_timeline_index.json",
+    "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+    "data/restricted/noaa01/scale1a/full_timeline_index.json",
+    "data/restricted/noaa01/manifests/noaa01_media_audit.json",
+    "data/source_recon/assembly_epic_access_v2/derived/epic_provisional_candidates.json",
+    "data/source_recon/captaincook4d_access_v1/derived/selection_v1.json",
+    "data/rehearsal_plan/assembly101_authenticated_registry_v1.json",
+    "data/rehearsal_plan/licensed_dataset_source_registry_v1.json",
+    "data/rehearsal_plan/third_lineage_access_registry_v1.json",
+    "data/rehearsal_plan/event_centric_source_dossiers_v1.json"
+  ],
+  "evidence_summary": {
+    "current_exact_sources": {
+      "epic": {
+        "source_ids": [
+          "P27_101",
+          "P28_103"
+        ],
+        "total_duration_seconds": 3185.36,
+        "complete_timeline_index": true,
+        "substantive_speech_leads_in_current_candidate_registry": 0
+      },
+      "captaincook4d": {
+        "source_ids": [
+          "15_29",
+          "16_20",
+          "26_22"
+        ],
+        "total_duration_seconds": 4547.94,
+        "complete_timeline_index": true,
+        "substantive_speech_hypotheses_in_current_candidate_registry": 0
+      },
+      "noaa": {
+        "source_ids": [
+          "cand-045",
+          "cand-047",
+          "cand-049",
+          "cand-051",
+          "cand-052"
+        ],
+        "duration_seconds_by_source": {
+          "cand-045": 1772.44,
+          "cand-047": 1983.7818,
+          "cand-049": 2465.329542,
+          "cand-051": 3718.581542,
+          "cand-052": 3781.144042
+        },
+        "synchronized_audio_video_technically_verified": true,
+        "human_semantic_prescreen_completed": false
+      }
+    },
+    "semantic_audio_discovery": {
+      "sources_searched": 5,
+      "duration_seconds": 7733.3,
+      "windows": 1932,
+      "retained_provisional_profiles": {
+        "A": 2,
+        "V+A": 8,
+        "S+A": 0,
+        "V+S": 0,
+        "V+S+A": 0
+      },
+      "human_listening_performed": false,
+      "interpretation": "Current exact EPIC/CaptainCook4D sources are useful for audio and far-state prospecting but do not presently support the missing speech profiles."
+    },
+    "existing_far_hypotheses": {
+      "plausible_machine_expert_provisional_count": 1,
+      "lead": "15_29 whole-to-diced tomato state composition",
+      "rejected_pair_not_to_restore": "16_20 unrelated early hand-separation plus later onion-stirring pair"
+    }
+  },
+  "global_eligibility_criteria": {
+    "source_disjointness": {
+      "required_grouping_fields": [
+        "participant_or_household",
+        "environment_or_kitchen",
+        "continuous_recording_lineage",
+        "synchronized_session_or_take",
+        "publisher_production_family",
+        "all_clips_encodes_annotations_and_derivatives"
+      ],
+      "correlated_lineage_rules": [
+        "EPIC-KITCHENS and HD-EPIC are one correlated Oxford/EPIC lineage unless an identity and kitchen audit proves otherwise.",
+        "Ego4D and Ego-Exo4D are one correlated Meta/Ego lineage.",
+        "All Assembly101 views and repeated sessions for one participant remain in one split block.",
+        "All CaptainCook4D streams for one participant-environment group remain in one split block.",
+        "Mirrors, excerpts, alternate encodes, and benchmark derivatives do not create new source groups."
+      ]
+    },
+    "rights_and_access": {
+      "required_before_acquisition": [
+        "immutable release and exact object identity",
+        "checksum or provider-bound object hash",
+        "operative media terms rather than only code or annotation license",
+        "affirmative internal-processing authority",
+        "affirmative restricted-human-annotation authority",
+        "privacy consent withdrawal retention deletion and least-privilege controls",
+        "artifact-specific release decisions"
+      ],
+      "public_hosting_or_login_is_authority": false
+    },
+    "long_video_and_streams": {
+      "preferred_duration_seconds_inclusive": [
+        1200,
+        5400
+      ],
+      "duration_counting_rule": "Count coherent session wall-clock duration once; never sum synchronized camera-view hours.",
+      "required_stream_evidence": [
+        "one decodable video stream",
+        "one native synchronized audio stream",
+        "audio codec channels and sample rate",
+        "nonempty decoded audio samples",
+        "audio-video start and end alignment within frozen tolerance",
+        "stable source-time mapping"
+      ],
+      "subtitles_or_transcripts_prove_audio": false
+    },
+    "semantic_profiles": {
+      "V": "Dynamic non-text visual evidence changes answerability.",
+      "S": "Substantive speech changes answerability.",
+      "A": "A concrete localizable source-world non-speech event changes answerability.",
+      "V+S": "Vision and speech each carry a non-duplicative necessary answer component after route closure.",
+      "V+S+A": "Vision, substantive speech, and concrete non-speech audio each carry a non-duplicative necessary answer component after route closure.",
+      "excluded_as_ambient_by_default": [
+        "music_or_score",
+        "applause",
+        "generic_room_noise",
+        "coarse_AST_or_CLAP_label",
+        "generic_handling_noise",
+        "visible_or_spoken_duplicate"
+      ]
+    },
+    "temporal_structure": {
+      "one_hop_far_allowed": false,
+      "far_requires": [
+        "multi-hop composition",
+        "genuine temporal separation",
+        "same-object_or_material_state_change_or other explicit semantic relation",
+        "every component needed for one composed answer",
+        "full-source recurrence and alternative-route challenge"
+      ],
+      "distance_alone_is_far_evidence": false
+    },
+    "timestamp_annotations": {
+      "preferred": [
+        "native source-time",
+        "stable time base",
+        "dense human timestamps",
+        "joinable source and participant IDs"
+      ],
+      "semantic_annotations_sealed_during_selection_and_initial_authoring": true,
+      "permitted_post_authoring_uses": [
+        "recurrence audit",
+        "missed-route audit",
+        "temporal-boundary challenge",
+        "lineage verification",
+        "contamination and near-duplicate checks"
+      ],
+      "existing_labels_establish_av_trace_tiers": false
+    },
+    "acquisition_cost_bands": {
+      "LOW": "Exact local media and full index already present; no transfer required.",
+      "MEDIUM": "Exact IDs durations hashes and routes known; selective acquisition and indexing required.",
+      "HIGH": "Gate or agreement, duration/audio, privacy, or multiview decisions unresolved.",
+      "VERY_HIGH": "Item/component rights, exact object, audio, timestamps, and editing provenance unresolved."
+    }
+  },
+  "candidate_routes": [
+    {
+      "rank": 1,
+      "route_id": "PV5-R01-NOAA-CAND049-RESCUE",
+      "candidate_class": "A_CURRENT_EXACT_HUMAN_PRESCREEN",
+      "route_name": "NOAA cand-049 rescue and water-safety reauthoring",
+      "source_ids_or_pool": [
+        "cand-049"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 0,
+        "multi_hop": 1,
+        "far_separated": 1
+      },
+      "source_disjointness": {
+        "source_group": "cand-049 complete source and all embedded or repeated clip lineages",
+        "development_touched": true,
+        "future_test_eligible": false,
+        "independent_lineage_credit": "NOAA production lineage only"
+      },
+      "rights_access": {
+        "exact_local_media_present": true,
+        "restricted_machine_processing_previously_performed": true,
+        "human_annotation_authority": "NOT_ESTABLISHED",
+        "public_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration_seconds": 2465.329542,
+        "native_audio": "AAC stereo 48 kHz technically verified",
+        "speech_available": true,
+        "ambient_available": "surf is present as a machine and prior direct-review lead but was rejected as a distinct answer route",
+        "timestamps": "complete source-time index and exact candidate intervals exist"
+      },
+      "acquisition_cost": {
+        "band": "LOW",
+        "reason": "No new transfer or indexing is required; human source prescreen and route closure dominate cost."
+      },
+      "go_evidence_requirements": [
+        "Affirmative restricted-human-annotation authority and exposure ledger.",
+        "Blind source-uniform dynamic-visual prescreen passes.",
+        "A two-part authored answer uses a genuinely separated dynamic demonstration and substantive spoken instruction or rescue sequence.",
+        "Speech-only, animation-only, visible 911 or captions, repeated rescue animation, repeated speech, and question-prior routes cannot answer the complete question.",
+        "All far components form one coherent safety-response claim.",
+        "Fresh normal-mode author and independent verifier agree that the profile is V+S and the family is multi-hop/far."
+      ],
+      "repair_evidence_requirements": [
+        "One modality is useful but independently sufficient.",
+        "The repeated rescue sequence is a complete alternate but a narrower source-specific question may close it.",
+        "Rights or privacy are unresolved while semantic suitability remains plausible."
+      ],
+      "no_go_evidence_requirements": [
+        "Speech alone or vision/OCR alone answers all atomic claims.",
+        "The only far construction uses the previously excluded unrelated surf interval.",
+        "No source-specific human annotation authority can be obtained.",
+        "The repeated animation and speech routes cannot be closed without weakening the question."
+      ],
+      "prohibitions": [
+        "Do not restore the rejected ambient surf candidate.",
+        "Do not append surf audio to force V+S+A."
+      ]
+    },
+    {
+      "rank": 2,
+      "route_id": "PV5-R02-NOAA-CAND047-DEEP-OCEAN",
+      "candidate_class": "A_CURRENT_EXACT_HUMAN_PRESCREEN",
+      "route_name": "NOAA cand-047 deep-ocean clips and hands-on demonstration",
+      "source_ids_or_pool": [
+        "cand-047"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 0,
+        "multi_hop": 1,
+        "far_separated": 1
+      },
+      "source_disjointness": {
+        "source_group": "cand-047 complete watch-party source plus embedded expedition-clip provenance",
+        "development_touched": true,
+        "future_test_eligible": false,
+        "embedded_clip_provenance_required": true
+      },
+      "rights_access": {
+        "exact_local_media_present": true,
+        "human_annotation_authority": "NOT_ESTABLISHED",
+        "embedded_clip_component_rights": "UNRESOLVED",
+        "public_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration_seconds": 1983.7818,
+        "native_audio": "AAC stereo 48 kHz technically verified",
+        "speech_available": true,
+        "ambient_available": "unverified; machine labels are not semantic evidence",
+        "timestamps": "complete source-time index exists; no accepted family timestamps"
+      },
+      "acquisition_cost": {
+        "band": "LOW",
+        "reason": "Exact local media/index exist; component-rights review and human prescreen are the main costs."
+      },
+      "go_evidence_requirements": [
+        "Exact embedded-clip provenance and restricted annotation authority close.",
+        "Human prescreen identifies a dynamic animal, ROV, or physical demonstration fact not fully stated by narration or text.",
+        "A separated explanation or later demonstration contributes a second necessary claim.",
+        "Polls, subtitles, title cards, voice-over, repeated clips, and question priors do not answer the complete question.",
+        "Fresh authoring yields a coherent V+S multi-hop/far family."
+      ],
+      "repair_evidence_requirements": [
+        "Dynamic visual evidence exists but narration is a near-complete substitute.",
+        "The source supports only a near/local V+S family.",
+        "Component rights or embedded-source lineage remain open."
+      ],
+      "no_go_evidence_requirements": [
+        "All candidate visuals are fully described by narration or on-screen text.",
+        "All separated intervals are different topics or replayed versions of the same clip.",
+        "No usable component-level annotation authority exists."
+      ],
+      "prohibitions": [
+        "Do not count score, voice-over bed, or generic underwater ambience as A.",
+        "Do not treat replayed clips as independent far evidence."
+      ]
+    },
+    {
+      "rank": 3,
+      "route_id": "PV5-R03-NOAA-CAND051-DEBRIS",
+      "candidate_class": "A_CURRENT_EXACT_HUMAN_PRESCREEN",
+      "route_name": "NOAA cand-051 marine-debris field and embedded clips",
+      "source_ids_or_pool": [
+        "cand-051"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 1,
+        "multi_hop": 1,
+        "far_separated": 1
+      },
+      "source_disjointness": {
+        "source_group": "cand-051 complete source and all embedded field-clip lineages",
+        "development_touched": true,
+        "future_test_eligible": false,
+        "independent_lineage_credit": "NOAA production lineage only"
+      },
+      "rights_access": {
+        "exact_local_media_present": true,
+        "human_annotation_authority": "NOT_ESTABLISHED",
+        "embedded_clip_component_rights": "UNRESOLVED",
+        "public_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration_seconds": 3718.581542,
+        "native_audio": "AAC stereo 48 kHz technically verified",
+        "speech_available": true,
+        "ambient_available": "unverified; current aggregate AST labels are noisy and non-semantic",
+        "timestamps": "complete source-time index exists"
+      },
+      "acquisition_cost": {
+        "band": "LOW",
+        "reason": "No new media transfer; long full-source human review and component-rights tracing are required."
+      },
+      "go_evidence_requirements": [
+        "Human prescreen locates a dynamic field action or material state, substantive speech, and a concrete source-world non-speech event.",
+        "Audio-first review identifies the event without machine labels or expected answer.",
+        "Each of V, S, and A carries a distinct necessary claim component after caption, OCR, transcript, narration, music, and repeat-clip closure.",
+        "Separated components form one debris-collection, sorting, transport, or consequence chain.",
+        "Fresh normal-mode authoring and independent verification support V+S+A and multi-hop/far."
+      ],
+      "repair_evidence_requirements": [
+        "A V+S family survives but the non-speech event is incidental or duplicated.",
+        "A concrete audio event exists but the visual or speech component is independently sufficient.",
+        "Component rights are repairable but not closed."
+      ],
+      "no_go_evidence_requirements": [
+        "Only narration, captions, slides, or generic debris visuals carry the answer.",
+        "All non-speech candidates are score, generic handling, animal-label false positives, or inaudible under narration.",
+        "Separated clips lack one source-world chain."
+      ],
+      "prohibitions": [
+        "Do not infer V+S+A from co-occurrence alone.",
+        "Do not use aggregate AST class totals as sound identity."
+      ]
+    },
+    {
+      "rank": 4,
+      "route_id": "PV5-R04-EPIC-RESERVE",
+      "candidate_class": "B_ADDITIONAL_EXACT_DATASET_ASSETS",
+      "route_name": "Distinct EPIC participant-group reserve acquisition",
+      "source_ids_or_pool": [
+        "P02_108",
+        "P35_107",
+        "P12_101",
+        "P01_101",
+        "P23_102",
+        "P33_109",
+        "P04_123",
+        "P06_101",
+        "P22_114",
+        "P03_103"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 1,
+        "multi_hop": 2,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "grouping_unit": "complete participant lineage and all kitchens, videos, annotations, EPIC-SOUNDS events, and derivatives",
+        "distinct_from_current_sources": "Select participants other than P27 and P28.",
+        "lineage_cap": "At most one additional Oxford/EPIC source group should be used if capture-lineage diversity would otherwise collapse.",
+        "future_test_eligible": false
+      },
+      "rights_access": {
+        "exact_official_ids_durations_and_routes_known": true,
+        "sample_official_media_route_proven": true,
+        "acquisition_authorized_by_this_plan": false,
+        "processing_and_annotation_authority": "REQUIRES_SEPARATE_APPROVAL",
+        "license_evidence": "CC BY-NC 4.0 evidence exists at project/deposit level; project custody, privacy, and artifact-specific release review remain required."
+      },
+      "duration_audio_timestamp": {
+        "duration_minutes_range": [
+          21.527,
+          59.492
+        ],
+        "native_audio": "dataset-level support established through EPIC-SOUNDS; selected-file technical verification required",
+        "speech_available": "narration expected but must be independently verified and not selected from labels",
+        "ambient_available": "dataset-level sound annotations exist but must remain sealed",
+        "timestamps": "dense action, narration, and sound timestamps exist but are sealed until post-authoring audit"
+      },
+      "acquisition_cost": {
+        "band": "MEDIUM",
+        "reason": "Exact routes and metadata are known; selective media acquisition, full indexing, governance, and human prescreen are required."
+      },
+      "go_evidence_requirements": [
+        "A source-specific allowlist freezes exact participant, video, checksum, and stream facts before semantic inspection.",
+        "Selected-file native audio and A/V synchronization pass.",
+        "Restricted processing and human annotation authority close.",
+        "Action, narration, and EPIC-SOUNDS labels remain sealed during selection and initial authoring.",
+        "At least one selected participant group yields a V+S or V+S+A candidate with non-duplicative modality roles and one coherent far composition.",
+        "No participant/kitchen overlap with P27, P28, or HD-EPIC split blocks."
+      ],
+      "repair_evidence_requirements": [
+        "Technical access is ready but annotation authority or privacy controls remain incomplete.",
+        "Only V+A or far visual candidates survive while speech is non-substantive.",
+        "A candidate survives only after a narrower question that preserves the frozen construct."
+      ],
+      "no_go_evidence_requirements": [
+        "Selected files lack native audio.",
+        "Narration or visible action alone answers every proposed multimodal question.",
+        "Semantic labels were used to outcome-select source groups or evidence intervals.",
+        "Only correlated EPIC-family sources can fill all remaining cells."
+      ],
+      "prohibitions": [
+        "Do not select by action, narration, or sound label.",
+        "Do not count EPIC and HD-EPIC as independent publisher lineages."
+      ]
+    },
+    {
+      "rank": 5,
+      "route_id": "PV5-R05-CC4D-RESERVE",
+      "candidate_class": "B_ADDITIONAL_EXACT_DATASET_ASSETS",
+      "route_name": "Distinct CaptainCook4D participant-environment reserve acquisition",
+      "source_ids_or_pool": [
+        "25_1",
+        "25_109",
+        "2_13",
+        "16_23",
+        "23_19",
+        "23_24",
+        "16_17"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 0,
+        "V+S+A": 1,
+        "multi_hop": 2,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "grouping_unit": "participant_id plus environment_id plus all official streams and derivatives",
+        "distinct_from_current_sources": "Use groups outside cc4d_p01_e08, cc4d_p02_e02, and cc4d_p03_e03.",
+        "candidate_groups": [
+          "cc4d_p04_e06",
+          "cc4d_p05_e07",
+          "cc4d_p06_e01",
+          "cc4d_p07_e02",
+          "cc4d_p08_e05",
+          "cc4d_p03_e02",
+          "cc4d_p04_e08"
+        ],
+        "future_test_eligible": false
+      },
+      "rights_access": {
+        "exact_official_routes_and_durations_known": true,
+        "native_audio_for_reserve_files": "UNVERIFIED",
+        "human_annotation_authority": "NOT_AUTHORIZED",
+        "operative_consent_and_irb_documents_archived": false,
+        "public_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration_minutes_range": [
+          21.508,
+          35.449
+        ],
+        "native_audio": "must be established by bounded selected-file technical verification before acquisition",
+        "speech_available": "unknown and expected to be sparse; no speech-profile credit without direct review",
+        "ambient_available": "plausible source-world procedure sounds; human audio-first prescreen required",
+        "timestamps": "official recording duration and dense dataset annotations exist; semantic annotations remain sealed"
+      },
+      "acquisition_cost": {
+        "band": "MEDIUM",
+        "reason": "Exact groups and official routes are enumerated; selected-file stream verification, acquisition, indexing, and governance remain."
+      },
+      "go_evidence_requirements": [
+        "Exact selected-file route resolves and bounded technical probe proves native synchronized audio.",
+        "Separate governance authorizes internal processing and restricted annotation.",
+        "Participant and environment groups are disjoint from the current three and from one another.",
+        "Human prescreen identifies a coherent setup-result, state-change, or error-recovery far composition.",
+        "Any V+S+A candidate has independently substantive speech and a concrete non-speech event; presumed kitchen talk does not count."
+      ],
+      "repair_evidence_requirements": [
+        "Strong far visual or V+A candidates exist but substantive speech is absent.",
+        "Audio is technically present but human listening finds only recurrent or duplicative procedure noise.",
+        "Consent, IRB, or annotation authority remains incomplete."
+      ],
+      "no_go_evidence_requirements": [
+        "Reserve files lack native audio or usable time bases.",
+        "All far pairs are arbitrary stages with no shared object, material, or causal chain.",
+        "No governance route permits restricted human annotation.",
+        "V+S+A is supportable only by relabeling generic procedure sound or non-substantive speech."
+      ],
+      "prohibitions": [
+        "Do not use task graphs, recipe steps, error labels, or action timestamps during selection and initial authoring.",
+        "Do not count interval distance as semantic composition."
+      ]
+    },
+    {
+      "rank": 6,
+      "route_id": "PV5-R06-CURRENT-EPIC-CC-FAR-PASS",
+      "candidate_class": "A_CURRENT_EXACT_HUMAN_PRESCREEN",
+      "route_name": "Blinded far-composition pass over current EPIC and CaptainCook4D timelines",
+      "source_ids_or_pool": [
+        "P27_101",
+        "P28_103",
+        "15_29",
+        "16_20",
+        "26_22"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 0,
+        "V+S+A": 0,
+        "multi_hop": 1,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "source_groups": [
+          "P27",
+          "P28",
+          "cc4d_p02_e02",
+          "cc4d_p01_e08",
+          "cc4d_p03_e03"
+        ],
+        "development_touched": true,
+        "future_test_eligible": false
+      },
+      "rights_access": {
+        "exact_local_media_present": true,
+        "human_annotation_authority": "NOT_CURRENTLY_AUTHORIZED",
+        "public_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration_seconds_range": [
+          1292.824867,
+          1930.895633
+        ],
+        "native_audio": "technically present in acquired exact files",
+        "speech_available": "current quality-passing speech is non-substantive",
+        "ambient_available": "Task193 produced provisional A and V+A leads",
+        "timestamps": "complete 4-second lattice and full-timeline indices exist"
+      },
+      "acquisition_cost": {
+        "band": "LOW",
+        "reason": "No transfer or new indexing; trained-human source review and route closure are required."
+      },
+      "go_evidence_requirements": [
+        "Annotation authority closes.",
+        "Reviewers blinded to old candidate profiles find same-object/material, setup-result, tool-state, or error-recovery chains.",
+        "Every component is directly inspected and needed for one composed answer.",
+        "Full-source recurrence search does not reveal a local substitute.",
+        "At least one new far candidate is independent of the retained 15_29 tomato-state hypothesis."
+      ],
+      "repair_evidence_requirements": [
+        "A coherent chain exists but one component is visually or semantically underspecified.",
+        "The chain is near/local under the frozen threshold.",
+        "Only an A or V+A route survives without speech."
+      ],
+      "no_go_evidence_requirements": [
+        "Only the existing 15_29 tomato hypothesis survives.",
+        "Candidate pairs are unrelated actions joined by temporal distance.",
+        "The rejected 16_20 parent pair is the only apparent far option.",
+        "All putative far chains collapse to one local interval after minimality review."
+      ],
+      "prohibitions": [
+        "Do not relabel Task193 local spans as far.",
+        "Do not restore rejected parent records."
+      ]
+    },
+    {
+      "rank": 7,
+      "route_id": "PV5-R07-ASSEMBLY101",
+      "candidate_class": "B_ADDITIONAL_PUBLIC_OR_HF_DATASET",
+      "route_name": "Assembly101 gated-HF access and technical repair",
+      "source_ids_or_pool": [
+        "8 frozen primary participant-blocked sessions",
+        "2 frozen replacement participant-blocked sessions"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 1,
+        "multi_hop": 2,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "grouping_unit": "participant lineage with all sessions, synchronized views, annotations, and derivatives",
+        "independent_lineage": true,
+        "future_test_eligible": "only if selected prospectively before semantic exposure and all split rules pass"
+      },
+      "rights_access": {
+        "pinned_hf_revision": "bfc15ea5e3f0bc8f8c232af6c1b45aa137a9d967",
+        "authenticated_metadata_ready": true,
+        "media_access": "403 GatedRepo for all ten representative probes",
+        "license_evidence": "CC BY-NC 4.0 stated by official sources",
+        "processing_annotation_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "wall_clock_duration": "UNRESOLVED",
+        "native_audio": "UNRESOLVED",
+        "speech_available": "UNRESOLVED",
+        "ambient_available": "UNRESOLVED",
+        "timestamps": "dense action and mistake annotations exist but remain sealed"
+      },
+      "acquisition_cost": {
+        "band": "HIGH",
+        "reason": "Requires gate authorization, duration/audio probing, privacy/custody approval, selective multiview acquisition, and indexing."
+      },
+      "go_evidence_requirements": [
+        "The existing account obtains access to the pinned revision without changing the frozen pool.",
+        "At least four participant-blocked sessions pass 1200-5400 second wall-clock duration and native synchronized audio checks.",
+        "Restricted processing and annotation authority, privacy, retention, and minimum-view controls close.",
+        "Semantic labels remain sealed during source selection and initial authoring.",
+        "At least one session supplies substantive speech plus dynamic assembly/recovery action; V+S+A additionally requires a concrete source-world non-speech event."
+      ],
+      "repair_evidence_requirements": [
+        "Media access closes but duration or audio is missing for some sessions.",
+        "Sessions support far visual procedure reasoning but not substantive speech.",
+        "Privacy or annotation authority remains incomplete."
+      ],
+      "no_go_evidence_requirements": [
+        "Gate access remains unavailable for the pinned revision.",
+        "Representative sessions lack native audio or fall outside the duration gate.",
+        "Participant/privacy terms do not permit restricted processing and annotation.",
+        "Speech is absent and only V or V+A families are possible after the speech-profile shortage is considered."
+      ],
+      "prohibitions": [
+        "Do not sum synchronized view durations.",
+        "Do not select by action, mistake, task, object, or timestamp labels."
+      ]
+    },
+    {
+      "rank": 8,
+      "route_id": "PV5-R08-HD-EPIC",
+      "candidate_class": "B_ADDITIONAL_LICENSED_DATASET",
+      "route_name": "HD-EPIC exact-release and selected-asset repair",
+      "source_ids_or_pool": [
+        "exact source IDs not yet pinned"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 2,
+        "multi_hop": 2,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "grouping_unit": "participant and kitchen recording lineage with all sensor, narration, audio-event, and derived artifacts",
+        "correlated_with_epic": true,
+        "independent_lineage_credit": false,
+        "cross_dataset_overlap_audit_required": true
+      },
+      "rights_access": {
+        "exact_release": "UNRESOLVED",
+        "operative_terms": "UNRESOLVED",
+        "current_access": "NO_ACCESS_EVIDENCE",
+        "processing_annotation_release": "UNKNOWN_HOLD"
+      },
+      "duration_audio_timestamp": {
+        "dataset_level_duration_evidence": "156 videos and 41.3 hours reported locally; exact item distribution absent",
+        "native_audio": "rich audio described but selected-file status unverified",
+        "speech_available": "corrected narrations reported",
+        "ambient_available": "approximately 51K audio events reported in local evidence",
+        "timestamps": "dense narration, action, and audio timestamps reported but exact release not pinned"
+      },
+      "acquisition_cost": {
+        "band": "HIGH",
+        "reason": "Requires exact release, agreement, source IDs, checksums, selected-file stream verification, overlap audit, and sealed-label workflow."
+      },
+      "go_evidence_requirements": [
+        "Pin immutable release, operative agreement, exact source IDs, durations, checksums, and official routes.",
+        "Verify selected-file native synchronized audio and 1200-5400 second duration.",
+        "Close participant/kitchen overlap against EPIC-KITCHENS and place correlated groups in one split block.",
+        "Keep corrected narrations, action labels, and audio-event labels sealed through independent authoring.",
+        "At least two source-disjoint groups yield genuine V+S+A candidates after human audio-first and A/V prescreens."
+      ],
+      "repair_evidence_requirements": [
+        "Exact release and access close but overlap or annotation authority remains open.",
+        "Only one triple-modal source group survives.",
+        "Narration and visible action duplicate the audio event for the proposed answer."
+      ],
+      "no_go_evidence_requirements": [
+        "No exact usable release or agreement can be pinned.",
+        "Selected files lack synchronized native audio.",
+        "All viable groups overlap current EPIC participants or kitchens.",
+        "Existing labels are required to locate the candidate facts."
+      ],
+      "prohibitions": [
+        "Do not count HD-EPIC as an independent publisher lineage from EPIC.",
+        "Do not use corrected narration or audio-event timestamps to select candidate intervals."
+      ]
+    },
+    {
+      "rank": 9,
+      "route_id": "PV5-R09-MECCANO",
+      "candidate_class": "B_ADDITIONAL_LICENSED_DATASET",
+      "route_name": "MECCANO official-release and independent-lineage repair",
+      "source_ids_or_pool": [
+        "exact source IDs not yet established"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 1,
+        "multi_hop": 2,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "grouping_unit": "participant plus continuous recording/session lineage and all derivatives",
+        "independent_lineage": "PLAUSIBLE_NOT_PROVEN",
+        "overlap_audit_required": true
+      },
+      "rights_access": {
+        "exact_release": "UNRESOLVED",
+        "operative_license": "UNRESOLVED",
+        "official_route": "UNRESOLVED",
+        "processing_annotation_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration": "UNRESOLVED",
+        "native_audio": "UNRESOLVED",
+        "speech_available": "UNRESOLVED",
+        "ambient_available": "UNRESOLVED",
+        "timestamps": "UNRESOLVED"
+      },
+      "acquisition_cost": {
+        "band": "HIGH",
+        "reason": "All exact release, route, rights, duration, audio, and timestamp fields require repair before source selection."
+      },
+      "go_evidence_requirements": [
+        "Official immutable release and operative data/media terms are archived.",
+        "At least six source groups have exact IDs, 1200-5400 second duration, hashes, and native synchronized audio.",
+        "Restricted processing and annotation authority close.",
+        "At least two selected groups have substantive speech; otherwise this route is not credited toward V+S or V+S+A.",
+        "Independent authoring produces coherent procedural far compositions without opening labels."
+      ],
+      "repair_evidence_requirements": [
+        "Official release and routes are found but selected-file audio or duration remains incomplete.",
+        "The dataset is useful for far/multi or V+A but not speech profiles.",
+        "Independence or participant overlap remains unresolved."
+      ],
+      "no_go_evidence_requirements": [
+        "No official immutable release or usable terms exist.",
+        "Long source groups or native audio are absent.",
+        "Human annotation is not permitted.",
+        "Speech-profile support is inferred only from dataset descriptions."
+      ],
+      "prohibitions": [
+        "Do not accept unverified mirrors.",
+        "Do not invent source IDs from paper-level counts."
+      ]
+    },
+    {
+      "rank": 10,
+      "route_id": "PV5-R10-PUBLIC-LONG-ASSETS",
+      "candidate_class": "B_ADDITIONAL_PUBLIC_EXACT_ASSETS_AND_C_NARROWING_RESERVE",
+      "route_name": "Rights-first public field, mission, and archival process assets",
+      "source_ids_or_pool": [
+        "EC-USGS-SHIFT-CURVES",
+        "EC-NASA-MOONBOUND",
+        "EC-NASA-TO-THE-RESCUE",
+        "EC-NASA-PATHFINDERS",
+        "EC-NASA-PLANETARY-DEFENDERS",
+        "EC-NARA-CITY-UNDER-ICE",
+        "NARA:2569665 Army Satellites"
+      ],
+      "current_disposition": "REPAIR",
+      "target_contributions": {
+        "V+S": 1,
+        "V+S+A": 1,
+        "multi_hop": 2,
+        "far_separated": 2
+      },
+      "source_disjointness": {
+        "grouping_unit": "item plus production, publisher, archive, embedded-footage, and alternate-encode lineage",
+        "publisher_family_cap": "Multiple NASA or JPL documentaries do not count as independent capture-format lineages.",
+        "future_test_eligible": "only after prospective source freeze and complete rights/contamination review"
+      },
+      "rights_access": {
+        "exact_item_rights": "UNRESOLVED_FOR_ALL_LISTED_ROUTES",
+        "component_rights": "UNRESOLVED",
+        "official_object_identity": "partial; strongest existing route is Pathfinders HLS master, still on hold",
+        "processing_annotation_release": "NOT_AUTHORIZED"
+      },
+      "duration_audio_timestamp": {
+        "duration": "mostly 28-75 minutes from official or prior official metadata; exact object validation incomplete",
+        "native_audio": "unverified except manifest-level AAC advertisement for Pathfinders",
+        "speech_available": "likely narration but selected-object verification absent",
+        "ambient_available": "source-world event audio may be masked or replaced by score and narration",
+        "timestamps": "native source time possible after acquisition; dense event annotations generally absent"
+      },
+      "acquisition_cost": {
+        "band": "VERY_HIGH",
+        "reason": "Requires item and component rights, exact object, bounded stream verification, editorial provenance, timestamp authoring, and likely full manual indexing."
+      },
+      "go_evidence_requirements": [
+        "Exact first-party object and immutable identity are frozen.",
+        "Item and every material component permit internal processing and restricted annotation.",
+        "Native synchronized audio and duration pass bounded technical verification.",
+        "Human prescreen identifies dynamic non-text action, substantive speech, and when claimed a concrete source-world non-speech event not replaced by score.",
+        "A coherent far composition is authorable without archive montage or narration-alone shortcuts."
+      ],
+      "repair_evidence_requirements": [
+        "Exact object and technical streams are known but component rights or annotation authority remain open.",
+        "The source supports far V+S but not V+S+A.",
+        "Sparse timestamps make acquisition scientifically plausible but labor-heavy."
+      ],
+      "no_go_evidence_requirements": [
+        "Only general federal or institutional policy is available rather than item/component rights.",
+        "Music, archive montage, narration, or captions completely determine the answer.",
+        "No stable first-party object or synchronized audio stream exists.",
+        "Expected labor exceeds 40 hours per surviving candidate."
+      ],
+      "prohibitions": [
+        "Do not treat institutional hosting as public-domain clearance.",
+        "Do not treat documentary score or archival sound bed as semantic ambient evidence."
+      ],
+      "explicit_no_go_subroutes": [
+        {
+          "route": "VES-Bench current metadata route",
+          "reason": "No item-level duration field; evidence endpoints cannot be treated as full-video duration; rights and audio are unresolved."
+        },
+        {
+          "route": "LongVideoBench current exact renditions",
+          "reason": "Audited selected MP4s are silent; subtitles do not establish speech audio."
+        },
+        {
+          "route": "OmniVideoBench or TraceAV currently probed objects",
+          "reason": "Access returned HTTP 403 before identity, duration, or stream verification; rights and annotation authority remain unresolved."
+        },
+        {
+          "route": "Wikimedia Commons event wave",
+          "reason": "Existing dossiered records are lecture or ceremony dominated with source-chain, music, privacy, and semantic-audio failures."
+        }
+      ]
+    }
+  ],
+  "execution_waves": [
+    {
+      "wave": 0,
+      "name": "Current exact-source semantic prescreen",
+      "new_media_acquisition": false,
+      "routes": [
+        "PV5-R01-NOAA-CAND049-RESCUE",
+        "PV5-R02-NOAA-CAND047-DEEP-OCEAN",
+        "PV5-R03-NOAA-CAND051-DEBRIS",
+        "PV5-R06-CURRENT-EPIC-CC-FAR-PASS"
+      ],
+      "go": "At least two defensible V+S prospects survive, or one V+S plus two coherent far prospects survive, under unchanged semantic and rights rules.",
+      "repair": "Useful source facts exist but rights, recurrence, component lineage, or substitution fields remain open.",
+      "no_go": "All speech-vision pairs are duplicate routes and all far pairs are arbitrary or distance-only."
+    },
+    {
+      "wave": 1,
+      "name": "Selective exact research-dataset acquisition",
+      "maximum_new_source_groups": 6,
+      "route_caps": {
+        "EPIC_distinct_participant_groups": 2,
+        "CaptainCook4D_distinct_participant_environment_groups": 2,
+        "Assembly101_groups_if_repaired": 2
+      },
+      "go": "The combined pool contains at least two source-disjoint V+S, two source-disjoint V+S+A, and six far/multi prospects before author/verifier acceptance.",
+      "repair": "One triple-modal or two far cells remain open and a distinct rights-ready route is concretely identified.",
+      "no_go": "Required cells remain empty across three or more lineages, or only correlated EPIC-family sources can fill them."
+    },
+    {
+      "wave": 2,
+      "name": "High-cost independent-lineage or public-asset repair",
+      "routes": [
+        "PV5-R08-HD-EPIC",
+        "PV5-R09-MECCANO",
+        "PV5-R10-PUBLIC-LONG-ASSETS"
+      ],
+      "go": "Exact route-specific rights, audio, duration, timestamp, and semantic gates close and the route adds a missing source-disjoint stratum.",
+      "repair": "The route remains scientifically plausible but one bounded technical or governance field remains open.",
+      "no_go": "The route requires weaker rights, source grouping, modality, temporal, or blindness rules, or exceeds the acquisition-cost stop rule."
+    }
+  ],
+  "prospective_narrowing_rules": [
+    {
+      "stratum": "V+S+A",
+      "trigger": "Fewer than two source-disjoint triple-modal candidates survive after at least 12 rights-eligible audio-verified long-source prescreens across at least four lineages, including at least six initially plausible triple-modal intervals.",
+      "action": "Remove V+S+A from the pilot denominator and paper claims before scientific execution; report negative feasibility evidence.",
+      "forbidden_action": "Relabel V+A, S+A, co-occurrence, score, or duplicate routes as V+S+A."
+    },
+    {
+      "stratum": "far_separated_exact_balance",
+      "trigger": "Fewer than five new coherent far replacements survive after complete review of the current exact pool, at least four new source-disjoint long groups, and at least 20 far-composition attempts.",
+      "action": "Replace the exact 6/6 far balance with descriptive far/multi feasibility reporting in a prospectively versioned narrower pilot.",
+      "forbidden_action": "Pair unrelated intervals or use temporal distance alone."
+    },
+    {
+      "stratum": "V+S_modality_necessity",
+      "trigger": "Fewer than two candidates survive speech-only, vision-only, OCR/caption/transcript, repeat-clip, and question-prior challenges.",
+      "action": "Narrow claims to corroborative audiovisual routing or source navigation rather than V+S necessity.",
+      "forbidden_action": "Count duplicate spoken and visible text as two necessary modalities."
+    },
+    {
+      "stratum": "broad_pilot_matrix",
+      "trigger": "Any required cell is fillable only by weakening rights, source-disjointness, semantic-prescreen, minimality, temporal-coherence, or blindness rules.",
+      "action": "Set Gate A to NO_GO for the broad matrix and preregister a narrower pilot.",
+      "forbidden_action": "Preserve quotas through relabeling or fabricated evidence."
+    }
+  ],
+  "global_stop_rules": [
+    "Stop broad V+S+A prospecting after 12 long source groups across four lineages complete semantic prescreen without two triple-modal survivors.",
+    "Stop exact far-balance prospecting after 20 far-composition attempts across at least ten source groups yield fewer than five coherent far families.",
+    "Stop a route when estimated acquisition, indexing, governance, and prescreen labor exceeds 40 hours per surviving candidate.",
+    "Stop immediately if a route requires semantic labels for source or interval outcome selection.",
+    "Stop immediately if exact rights, annotation authority, source grouping, native audio, or stable timestamps cannot be established without assumption."
+  ],
+  "final_boundary_statement": "This plan ranks evidence requirements and acquisition routes only. It does not claim human listening, semantic validation, access, rights, accepted SESs, H tiers, Gate-A GO, scientific execution, or release.",
+  "final_token": "PILOT_V5_TARGETED_PROSPECTING_READY"
+}

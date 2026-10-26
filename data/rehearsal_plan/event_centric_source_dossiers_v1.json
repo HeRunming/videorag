@@ -1,0 +1,1280 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "av-trace-event-centric-source-dossiers-v1",
+  "created_at": "2026-09-23",
+  "decision_token": "REPAIR",
+  "decision_scope": "DISCOVERY_SIDECAR_ONLY_NOT_EXACT_ACQUISITION_READY",
+  "evidence_mode": "LOCAL_REPOSITORY_EVIDENCE_ONLY_AFTER_USER_STOPPED_FURTHER_BROWSING_AND_PROBING",
+  "scope": {
+    "candidate_source_group_count": 14,
+    "capture_format_count": 7,
+    "capture_formats": [
+      "field_or_instrument_procedure_training",
+      "field_safety_demonstration",
+      "observational_environment_or_maritime_operations",
+      "mission_training_or_operations_documentary",
+      "engineering_failure_recovery_documentary",
+      "industrial_or_military_process_archival_film",
+      "public_performance_or_ceremony"
+    ],
+    "new_network_requests_completed_by_task143": 0,
+    "new_media_range_requests_completed_by_task143": 0,
+    "media_downloaded_by_task143": false,
+    "media_bytes_persisted_by_task143": 0,
+    "canonical_source_or_index_roots_modified": false,
+    "human_annotation_performed": false,
+    "human_necessity_claimed": false,
+    "public_release_claimed": false,
+    "exact_acquisition_ready_count": 0,
+    "ranked_for_exact_acquisition_preflight_count": 6
+  },
+  "basis": {
+    "frozen_decisions": [
+      "orchestration/results/122_cvpr_pivot_decision.txt",
+      "orchestration/results/141_cvpr_main_blueprint_redteam.txt",
+      "docs/review/cvpr_main_blueprint_v2_redteam.md",
+      "orchestration/results/144_mini_pilot_candidate_scientific_audit.txt",
+      "docs/review/mini_pilot_family_candidates_scientific_audit.md"
+    ],
+    "source_and_rights_audits": [
+      "docs/data/data_source_audit.md",
+      "docs/data/license_risk_register.md",
+      "docs/review/candidate_pool_review.md",
+      "docs/review/human_mini_pilot_source_pool_plan.md",
+      "docs/review/mini_pilot_source_dossier_preflight.md",
+      "docs/review/mini_pilot_replacement_dossier_final_audit.md",
+      "docs/review/mini_pilot_four_source_acquisition.md",
+      "docs/review/audio_asset_recon.md"
+    ],
+    "machine_readable_sources": [
+      "data/candidates/source_candidates.csv",
+      "data/rehearsal_plan/human_mini_pilot_source_pool_plan.json",
+      "data/rehearsal_plan/mini_pilot_source_dossier_status.json",
+      "data/rehearsal_plan/mini_pilot_replacement_dossier_status.json",
+      "data/rehearsal_plan/audio_asset_recon_candidates.csv",
+      "data/restricted/source_dossiers/mini_pilot_v1/SG-USGS-SHIFT-CURVES.json",
+      "data/restricted/source_dossiers/mini_pilot_v1/SG-USGS-SIX-ERUPTIONS.json",
+      "data/restricted/source_dossiers/mini_pilot_v1/SG-NASA-PATHFINDERS.json",
+      "data/restricted/source_dossiers/mini_pilot_v1/SG-COMMONS-BLOCKCHAIN.json"
+    ],
+    "tooling_reviewed": [
+      "tools/audio_asset_recon.py",
+      "tools/ves_long_candidate_recon.py",
+      "tools/ves_discovery_preflight_plan.py",
+      "tools/ves_discovery_stream_preflight.py",
+      "tools/noaa_webinar_route_recon.py",
+      "tools/noaa_webinar_stream_preflight.py"
+    ]
+  },
+  "selection_policy": {
+    "native_duration_target_seconds": {
+      "minimum": 1800,
+      "maximum": 7200,
+      "note": "This discovery wave uses the user-requested 30-120 minute target. A later pilot gate may retain the stricter 1200-5400 second repository window."
+    },
+    "positive_signals": [
+      "first-party institutional host or revision-pinned Commons record",
+      "public-domain, federal-work, or item-level Creative Commons evidence",
+      "dynamic non-text visual state changes",
+      "semantically relevant non-speech sound plausibly tied to source-world events",
+      "field procedure, wildlife/environment observation, industrial/lab process, maintenance/assembly, mission operation, sports/performance/event, or demonstration capture",
+      "official direct-download, API, HLS, or catalog route that can be frozen without generic platform extraction"
+    ],
+    "negative_signals": [
+      "lecture, webinar, talking-head, slide, OCR, or transcript dominance",
+      "generic applause, room tone, chalk, writing, or score used as semantic ambient evidence",
+      "unresolved exact route, item rights, uploader authority, partner footage, music, privacy, or component scope",
+      "historical film with unresolved restrictions, sensitive imagery, or unclear soundtrack rights",
+      "same production family counted as independent capture diversity"
+    ],
+    "event_centricity_is_hypothesis": true,
+    "semantic_audio_is_hypothesis_until_human_prescreen": true,
+    "dynamic_visual_is_hypothesis_until_human_prescreen": true
+  },
+  "decision_vocabulary": {
+    "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT": "Discovery evidence is strong enough to spend a separate bounded preflight on exact route, stream identity, rights, component, privacy, and disjointness. It is not acquisition permission.",
+    "RESERVE_REPAIR": "Potentially useful, but one or more important identity, rights, format, or semantic-modality facts are incomplete.",
+    "REJECT_WEAK_OR_AMBIGUOUS": "Do not spend the next exact-preflight slots without materially new evidence."
+  },
+  "ranked_preflight_queue": [
+    {
+      "rank": 1,
+      "source_group_id": "EC-USGS-SHIFT-CURVES",
+      "reason": "Best direct match to a long field/instrument procedure; prior official-page observations recorded 01:17:31, Download Video, Download Transcript, and Public Domain, but the saved dossier failed to preserve a successful page or exact object."
+    },
+    {
+      "rank": 2,
+      "source_group_id": "EC-NASA-MOONBOUND",
+      "reason": "Shorter but highly action-rich astronaut-training documentary with verified official title/runtime and strong dynamic-visual/operational-audio hypotheses; exact first-party object and component authority remain unresolved."
+    },
+    {
+      "rank": 3,
+      "source_group_id": "EC-NASA-TO-THE-RESCUE",
+      "reason": "Natural engineering failure/workaround/restoration narrative and mission-control audio hypothesis; item/component rights and exact route need repair."
+    },
+    {
+      "rank": 4,
+      "source_group_id": "EC-NOAA-SHIPWRECKS",
+      "reason": "Official 50-minute institutional program with underwater/ROV and maritime-operation potential; presentation dominance and partner/music rights must be tested before retention."
+    },
+    {
+      "rank": 5,
+      "source_group_id": "EC-NASA-PATHFINDERS",
+      "reason": "A 60-minute exact first-party HLS master and advertised A/V variants are already frozen; the next preflight must remain rights-first because JPL/Caltech and component authority are unresolved."
+    },
+    {
+      "rank": 6,
+      "source_group_id": "EC-NASA-PLANETARY-DEFENDERS",
+      "reason": "Approximately 75 minutes with detection, modeling, exercise, and response stages; exact runtime/object and partner, dramatized, music, and likeness scope require repair."
+    }
+  ],
+  "summary": {
+    "rank_for_exact_acquisition_preflight": 6,
+    "reserve_repair": 5,
+    "reject_weak_or_ambiguous": 3,
+    "public_domain_or_federal_work_candidates": 12,
+    "creative_commons_candidates": 2,
+    "candidates_with_exact_first_party_media_route_established": 1,
+    "candidates_with_locally_decoded_streams": 0,
+    "candidates_with_affirmative_processing_decision": 0,
+    "candidates_with_affirmative_annotation_decision": 0,
+    "candidates_with_affirmative_release_decision": 0
+  },
+  "candidates": [
+    {
+      "source_group_id": "EC-USGS-SHIFT-CURVES",
+      "disposition": "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT",
+      "preflight_rank": 1,
+      "title": "Developing and Applying Shift Curves using GRSAT",
+      "canonical_url": "https://www.usgs.gov/media/videos/developing-and-applying-shift-curves-using-grsat",
+      "canonical_id": "USGS-media-video-developing-and-applying-shift-curves-using-grsat",
+      "publisher_rightsholder": {
+        "publisher": "U.S. Geological Survey",
+        "rightsholder_status": "USGS-authored/public-domain status was observed in the frozen source plan but is not proven by the currently saved successful evidence."
+      },
+      "domain": "hydrologic field procedure and instrument/software workflow",
+      "capture_format": "field_or_instrument_procedure_training",
+      "event_centricity": {
+        "status": "STRONG_HYPOTHESIS_NOT_SEMANTICALLY_VERIFIED",
+        "dynamic_visual_evidence": "Expected setup, measurement, software/field state transitions, and application steps.",
+        "non_speech_audio": "Possible equipment, field, and handling sounds; may be only incidental UI/room noise."
+      },
+      "duration_streams": {
+        "duration_seconds": 4651,
+        "duration_display": "01:17:31",
+        "duration_evidence": "Frozen plan's prior official-page observation; current saved dossier could not independently reproduce the item page.",
+        "streams": "UNVERIFIED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.usgs.gov/media/videos/developing-and-applying-shift-curves-using-grsat",
+          "supports": "Frozen plan records title, duration, Download Video, Download Transcript, and Public Domain marking.",
+          "archive_status": "NOT_SUCCESSFULLY_PRESERVED; saved attempts are WAF/403/405 bodies."
+        },
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "supports": "USGS-authored information is generally public domain while non-USGS components can remain protected.",
+          "archive_status": "NOT_SUCCESSFULLY_PRESERVED_IN_CURRENT_DOSSIER"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "screen-recorded accounts, credentials, or personal identifiers",
+        "third-party software screens and marks",
+        "possible non-USGS inserts",
+        "music or stock material not yet screened",
+        "adult presenters/operators and location details not yet reviewed"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Only the official USGS Download Video route after successful item-page capture and exact-object freezing; no player extraction or mirror.",
+        "exact_media_url": null,
+        "current_route_status": "NOT_ESTABLISHED",
+        "bounded_preflight_needed": "HEAD plus closed-budget container ranges after route repair; reject full-object 200 responses."
+      },
+      "expected_routes": {
+        "V": "procedural setup, instrument/software states, and visible application outcome",
+        "S": "spoken instructions and rationale",
+        "A": "equipment/field sounds only if a semantic role survives human pre-screen",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+A",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "HIGH; official transcript route was advertised.",
+        "ocr": "HIGH; screen interfaces and labels may duplicate visible procedure.",
+        "other": "Repeated step narration and software state labels may create unimodal substitutes."
+      },
+      "decisions": {
+        "acquisition": "HOLD_PENDING_EXACT_ROUTE_AND_RIGHTS_REPAIR",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "No successful saved item-level page.",
+        "No exact media or transcript object.",
+        "No stream or synchronization evidence.",
+        "No affirmative processing or annotation boundary."
+      ]
+    },
+    {
+      "source_group_id": "EC-NASA-MOONBOUND",
+      "disposition": "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT",
+      "preflight_rank": 2,
+      "title": "Moonbound | For All Humanity",
+      "canonical_url": "https://plus.nasa.gov/video/moonbound-for-all-humanity/",
+      "canonical_id": "NASA+-moonbound-for-all-humanity",
+      "publisher_rightsholder": {
+        "publisher": "National Aeronautics and Space Administration",
+        "rightsholder_status": "NASA-produced status and component scope are not yet established item by item; NASA identifiers, contractor/partner material, and likeness interests remain separate."
+      },
+      "domain": "astronaut training and mission preparation",
+      "capture_format": "mission_training_or_operations_documentary",
+      "event_centricity": {
+        "status": "STRONG_HYPOTHESIS_NOT_SEMANTICALLY_VERIFIED",
+        "dynamic_visual_evidence": "Training progression, physical procedures, facilities, equipment, and crew action.",
+        "non_speech_audio": "Training/facility/equipment sounds may be meaningful but must be separated from narration and score."
+      },
+      "duration_streams": {
+        "duration_seconds": 2202,
+        "duration_display": "00:36:42",
+        "duration_evidence": "Official NASA+ landing/series evidence reviewed on 2026-09-05.",
+        "streams": "NOT PROBED",
+        "synchronized_av": "EXPECTED_NOT_VERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://plus.nasa.gov/video/moonbound-for-all-humanity/",
+          "supports": "Official identity and runtime.",
+          "archive_status": "REPOSITORY AUDIT RECORD; no Task-143 refresh."
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "supports": "General NASA use guidance and third-party/marks/likeness caveats.",
+          "archive_status": "FAMILY-LEVEL_ONLY_NOT_ITEM_CLEARANCE"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "crew likeness and publicity interests",
+        "NASA and contractor facility marks",
+        "partner or contractor footage",
+        "documentary score or music",
+        "training procedures with possible operational sensitivity"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NASA+/NASA downloadable route only; never extract an embedded third-party platform.",
+        "exact_media_url": null,
+        "current_route_status": "LANDING_ONLY",
+        "bounded_preflight_needed": "Freeze NASA+ post/content/asset IDs, master or direct object, headers, duration, and A/V variants."
+      },
+      "expected_routes": {
+        "V": "body/equipment configuration and visible procedure progression",
+        "S": "crew and expert explanations",
+        "A": "equipment, alarms, impacts, water/facility sounds if source-world semantic",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+A",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN; captions/transcript not established.",
+        "ocr": "MEDIUM; lower-third labels and procedure overlays may reveal claims.",
+        "other": "Narration may fully describe visible actions; score may be mistaken for ambient."
+      },
+      "decisions": {
+        "acquisition": "HOLD_PENDING_EXACT_ROUTE_AND_COMPONENT_RIGHTS",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "No exact first-party media object frozen.",
+        "No item/component rights ledger.",
+        "No semantic A/V pre-screen.",
+        "No processing, annotation, or release approval."
+      ]
+    },
+    {
+      "source_group_id": "EC-NASA-EXPLORERS-LAUNCH",
+      "disposition": "RESERVE_REPAIR",
+      "preflight_rank": null,
+      "title": "NASA Explorers: The Launch",
+      "canonical_url": "https://plus.nasa.gov/video/nasa-explorers-the-launch/",
+      "canonical_id": "NASA+-nasa-explorers-the-launch",
+      "publisher_rightsholder": {
+        "publisher": "National Aeronautics and Space Administration",
+        "rightsholder_status": "Government-source candidate; contractor/partner footage, score, staff likenesses, and marks are unresolved."
+      },
+      "domain": "OSIRIS-REx mission operations",
+      "capture_format": "mission_training_or_operations_documentary",
+      "event_centricity": {
+        "status": "STRONG_HYPOTHESIS_NOT_SEMANTICALLY_VERIFIED",
+        "dynamic_visual_evidence": "Launch and operations sequence with changing equipment and mission states.",
+        "non_speech_audio": "Operations/launch sounds may be meaningful; narration and music may dominate."
+      },
+      "duration_streams": {
+        "duration_seconds": 1401,
+        "duration_display": "00:23:21",
+        "duration_evidence": "Official NASA+ landing evidence reviewed on 2026-09-05.",
+        "streams": "NOT PROBED",
+        "synchronized_av": "EXPECTED_NOT_VERIFIED",
+        "duration_note": "Below this wave's preferred 30-minute target, but retained as a narrow reserve because it is action-rich and within the repository's older 20-minute floor."
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://plus.nasa.gov/video/nasa-explorers-the-launch/",
+          "supports": "Official episode identity and 00:23:21 runtime.",
+          "archive_status": "REPOSITORY AUDIT RECORD; no Task-143 refresh."
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "supports": "General NASA use guidance and exceptions.",
+          "archive_status": "FAMILY-LEVEL_ONLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "contractor and partner footage",
+        "documentary score",
+        "identifiable staff",
+        "mission and institutional marks",
+        "display-title collision with another NASA+ short; canonical episode context is required"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NASA+ route after post/content/asset identity capture.",
+        "exact_media_url": null,
+        "current_route_status": "LANDING_ONLY",
+        "bounded_preflight_needed": "Resolve the exact OSIRIS-REx episode object and reject title-only matching."
+      },
+      "expected_routes": {
+        "V": "launch preparation and changing mission states",
+        "S": "mission explanation and callouts",
+        "A": "launch/operations sounds if not replaced by score",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "MEDIUM; mission graphics and lower thirds.",
+        "other": "Narration may be a complete substitute for visible progression."
+      },
+      "decisions": {
+        "acquisition": "HOLD_PENDING_DURATION_POLICY_EXCEPTION_OR_REPLACEMENT_AND_EXACT_ROUTE",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Below preferred 30-minute duration.",
+        "No exact media object.",
+        "Title collision risk.",
+        "No component-rights or semantic modality review."
+      ]
+    },
+    {
+      "source_group_id": "EC-NASA-TO-THE-RESCUE",
+      "disposition": "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT",
+      "preflight_rank": 3,
+      "title": "JPL and the Space Age: To the Rescue",
+      "canonical_url": "https://plus.nasa.gov/video/jpl-and-the-space-age-to-the-rescue/",
+      "canonical_id": "NASA+-jpl-to-the-rescue",
+      "publisher_rightsholder": {
+        "publisher": "NASA/JPL",
+        "rightsholder_status": "JPL is managed by Caltech; NASA hosting and general guidance do not resolve documentary component ownership."
+      },
+      "domain": "spacecraft engineering recovery",
+      "capture_format": "engineering_failure_recovery_documentary",
+      "event_centricity": {
+        "status": "PROMISING_HYPOTHESIS_NOT_SEMANTICALLY_VERIFIED",
+        "dynamic_visual_evidence": "Problem diagnosis, hardware/mission state changes, workaround, and recovery.",
+        "non_speech_audio": "Mission-control and equipment sounds may be relevant but could be archival inserts or narration-covered."
+      },
+      "duration_streams": {
+        "duration_seconds": 3452,
+        "duration_display": "00:57:32",
+        "duration_evidence": "Official NASA+ evidence reviewed on 2026-09-05.",
+        "streams": "NOT PROBED FOR THIS ITEM",
+        "synchronized_av": "EXPECTED_NOT_VERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://plus.nasa.gov/video/jpl-and-the-space-age-to-the-rescue/",
+          "supports": "Official identity and runtime.",
+          "archive_status": "REPOSITORY AUDIT RECORD; no Task-143 refresh."
+        },
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "supports": "General NASA guidance captured in the Pathfinders dossier; not item clearance.",
+          "archive_status": "SUCCESSFUL_FAMILY_POLICY_SNAPSHOT_IN_OTHER_ITEM_DOSSIER"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "JPL/Caltech production rights",
+        "documentary score",
+        "archival and partner clips",
+        "mission marks",
+        "identifiable engineers and interviewees"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NASA+ HLS/direct route only after binding item post/content/asset IDs.",
+        "exact_media_url": null,
+        "current_route_status": "LANDING_ONLY",
+        "bounded_preflight_needed": "Use the Pathfinders dossier pattern but require successful JPL/Caltech rights evidence before media ranges."
+      },
+      "expected_routes": {
+        "V": "hardware or mission-state evidence across failure and recovery",
+        "S": "engineering explanations and decisions",
+        "A": "mission-control/equipment audio only if source-world and necessary",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "MEDIUM; maps, diagrams, captions, and labels.",
+        "other": "Narrative voiceover may make all visual evidence text-recoverable."
+      },
+      "decisions": {
+        "acquisition": "HOLD_PENDING_EXACT_ROUTE_AND_JPL_COMPONENT_AUTHORITY",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "No exact item media object.",
+        "No successful JPL/Caltech rights record.",
+        "No component ledger or semantic pre-screen."
+      ]
+    },
+    {
+      "source_group_id": "EC-NOAA-SHIPWRECKS",
+      "disposition": "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT",
+      "preflight_rank": 4,
+      "title": "Shipwrecks and Sanctuaries",
+      "canonical_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar4-060520.html",
+      "canonical_id": "NOAA-OceanToday-webinar4",
+      "publisher_rightsholder": {
+        "publisher": "National Oceanic and Atmospheric Administration",
+        "rightsholder_status": "NOAA-produced material may be federal work, but partner/guest/shipwreck/360 footage, music, and likeness scope are unresolved."
+      },
+      "domain": "maritime archaeology and sanctuary observation",
+      "capture_format": "observational_environment_or_maritime_operations",
+      "event_centricity": {
+        "status": "MIXED_PRESENTATION_WITH_ACTION_CLIPS_NOT_SEMANTICALLY_VERIFIED",
+        "dynamic_visual_evidence": "Underwater/ROV and shipwreck imagery may provide dynamic observation evidence.",
+        "non_speech_audio": "Underwater/ROV or vessel sound is possible but may be absent, dubbed, or covered by speech/music."
+      },
+      "duration_streams": {
+        "duration_seconds": 3000,
+        "duration_display": "00:50:00",
+        "duration_evidence": "Official NOAA landing-page observation reviewed on 2026-09-05 and reconciled in the audio recon.",
+        "streams": "NOT PROBED FOR THIS ITEM",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar4-060520.html",
+          "supports": "Official title and 50-minute runtime.",
+          "archive_status": "REPOSITORY AUDIT RECORD; no Task-143 refresh."
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.noaa.gov/disclaimer",
+          "supports": "Government-work and credited third-party caveat.",
+          "archive_status": "FAMILY-LEVEL_ONLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "partner and guest material",
+        "360-video or expedition components",
+        "music",
+        "presenter likenesses",
+        "marks and protected archaeological-location information"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NOAA landing/CDN route only; no extraction from embedded YouTube or other players.",
+        "exact_media_url": null,
+        "current_route_status": "OFFICIAL_LANDING_VERIFIED_EXACT_OBJECT_UNRESOLVED",
+        "bounded_preflight_needed": "Run NOAA exact-route reconciliation, then closed-budget container parse if authorized."
+      },
+      "expected_routes": {
+        "V": "ROV/underwater state, artifacts, navigation, and site context",
+        "S": "expert explanation",
+        "A": "ROV/vessel/environment sounds if independently semantic",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN; captions/transcript not frozen.",
+        "ocr": "HIGH; webinar titles, slides, charts, and captions may duplicate claims.",
+        "other": "Presentation sections may dominate and render action clips too sparse."
+      },
+      "decisions": {
+        "acquisition": "HOLD_PENDING_EXACT_ROUTE_AND_COMPONENT_REVIEW",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Exact rendition not frozen.",
+        "No stream probe.",
+        "Event-centric share of runtime unknown.",
+        "Partner/music/likeness rights unresolved."
+      ]
+    },
+    {
+      "source_group_id": "EC-NARA-CITY-UNDER-ICE",
+      "disposition": "RESERVE_REPAIR",
+      "preflight_rank": null,
+      "title": "The Big Picture: City Under the Ice",
+      "canonical_url": "https://catalog.archives.gov/id/2569752",
+      "canonical_id": "NAID:2569752",
+      "publisher_rightsholder": {
+        "publisher": "National Archives and Records Administration",
+        "rightsholder_status": "NARA custody is not a public-domain determination; item restriction and donor/third-party status are unresolved."
+      },
+      "domain": "Arctic engineering and military logistics",
+      "capture_format": "industrial_or_military_process_archival_film",
+      "event_centricity": {
+        "status": "STRONG_TITLE_LEVEL_HYPOTHESIS_IDENTITY_AND_DURATION_UNRESOLVED",
+        "dynamic_visual_evidence": "Construction, machinery, logistics, and operation of an under-ice facility.",
+        "non_speech_audio": "Machinery and environmental sounds may be meaningful, but historical narration/music may dominate."
+      },
+      "duration_streams": {
+        "duration_seconds": null,
+        "duration_display": null,
+        "duration_evidence": "Cleared as unresolved by the 2026-09-05 candidate audit.",
+        "streams": "UNVERIFIED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://catalog.archives.gov/id/2569752",
+          "supports": "Official catalog locator only; current record was not independently readable.",
+          "archive_status": "IDENTITY_RUNTIME_RESTRICTIONS_UNRESOLVED"
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.archives.gov/research/motion-pictures/permissions",
+          "supports": "NARA warns that not all holdings are public domain and users must resolve restrictions.",
+          "archive_status": "FAMILY-LEVEL_ONLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "military operations and security context",
+        "contractor or foreign footage",
+        "music and stock footage",
+        "identifiable service members",
+        "environmental and geopolitical sensitivity"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NARA catalog-described digital object only after a readable restriction record and exact downloadable rendition are frozen.",
+        "exact_media_url": null,
+        "current_route_status": "CATALOG_LOCATOR_ONLY",
+        "bounded_preflight_needed": "First resolve title, local ID, duration, use restrictions, and official object; only then probe."
+      },
+      "expected_routes": {
+        "V": "construction and machinery state transitions",
+        "S": "historical narration and explanations",
+        "A": "machinery/environmental sound if authentic and not score-dominated",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+A",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "LOW_TO_MEDIUM; titles and diagrams may appear.",
+        "other": "Narration may fully describe process; music may mask original sound."
+      },
+      "decisions": {
+        "acquisition": "HOLD_PENDING_IDENTITY_DURATION_RESTRICTION_AND_ROUTE",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Exact duration unknown.",
+        "Catalog record and restrictions unresolved.",
+        "No exact object or streams.",
+        "No component/privacy/processing decision."
+      ]
+    },
+    {
+      "source_group_id": "EC-NASA-PLANETARY-DEFENDERS",
+      "disposition": "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT",
+      "preflight_rank": 6,
+      "title": "Planetary Defenders",
+      "canonical_url": "https://plus.nasa.gov/video/planetary-defenders/",
+      "canonical_id": "NASA+-planetary-defenders",
+      "publisher_rightsholder": {
+        "publisher": "National Aeronautics and Space Administration",
+        "rightsholder_status": "NASA-hosted documentary; international/partner, dramatized, music, expert-likeness, and exact production authority are unresolved."
+      },
+      "domain": "planetary-defense detection, modeling, exercise, and response",
+      "capture_format": "mission_training_or_operations_documentary",
+      "event_centricity": {
+        "status": "PROMISING_BUT_DOCUMENTARY_EDIT_AND_RIGHTS_HEAVY",
+        "dynamic_visual_evidence": "Field/mission exercises and detection-response stages are expected.",
+        "non_speech_audio": "Field/mission sounds are possible but may be score- or voiceover-dominated."
+      },
+      "duration_streams": {
+        "duration_seconds": 4500,
+        "duration_display": "~01:15:00",
+        "duration_evidence": "Approximate official government screening notice retained in the candidate audit; prior 00:53:14 was rejected.",
+        "streams": "NOT PROBED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://plus.nasa.gov/video/planetary-defenders/",
+          "supports": "Official item identity.",
+          "archive_status": "RUNTIME_APPROXIMATE"
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "supports": "General NASA use guidance.",
+          "archive_status": "NOT_ITEM_CLEARANCE"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "international and partner footage",
+        "dramatized or licensed inserts",
+        "documentary score",
+        "expert likenesses",
+        "institutional marks"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NASA+ route only after exact rendition and object identity are established.",
+        "exact_media_url": null,
+        "current_route_status": "LANDING_ONLY",
+        "bounded_preflight_needed": "Resolve exact runtime/object before consuming a top-six preflight slot."
+      },
+      "expected_routes": {
+        "V": "instrument, field, and exercise state changes",
+        "S": "scientific and operational explanations",
+        "A": "field/mission sounds conditional",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "MEDIUM",
+        "other": "Documentary narration may collapse visual necessity."
+      },
+      "decisions": {
+        "acquisition": "HOLD",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Duration remains approximate.",
+        "No exact object.",
+        "High partner/music/component burden."
+      ]
+    },
+    {
+      "source_group_id": "EC-NASA-PATHFINDERS",
+      "disposition": "RANK_FOR_EXACT_ACQUISITION_PREFLIGHT",
+      "preflight_rank": 5,
+      "title": "JPL and the Space Age: The Pathfinders",
+      "canonical_url": "https://plus.nasa.gov/video/jpl-and-the-space-age-the-pathfinders/",
+      "canonical_id": "NASA+ post 2391 / content-id 9199 / HLS asset 11211",
+      "publisher_rightsholder": {
+        "publisher": "NASA/JPL",
+        "rightsholder_status": "Exact NASA+ route is frozen, but JPL/Caltech and documentary component authority are unresolved."
+      },
+      "domain": "Mars mission engineering history",
+      "capture_format": "engineering_failure_recovery_documentary",
+      "event_centricity": {
+        "status": "PROMISING_BUT_ARCHIVAL_DOCUMENTARY_AND_NOT_CONTENT_REVIEWED",
+        "dynamic_visual_evidence": "Mission hardware and operations are expected across a long narrative.",
+        "non_speech_audio": "Mechanical/mission audio may exist, but score and narration are likely confounds."
+      },
+      "duration_streams": {
+        "duration_seconds": 3600,
+        "duration_display": "01:00:00",
+        "duration_evidence": "NASA+ metadata.",
+        "streams": "HLS master advertises H.264 video, AAC audio, audio-only rendition, and in-stream English captions.",
+        "synchronized_av": "SUPPORTED_BY_MANIFEST_NOT_DECODED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://plus.nasa.gov/video/jpl-and-the-space-age-the-pathfinders/",
+          "supports": "NASA+ post/content identity and HLS binding.",
+          "archive_status": "SUCCESSFUL"
+        },
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "supports": "General NASA guidance and third-party/marks/likeness caveats.",
+          "archive_status": "SUCCESSFUL_FAMILY_POLICY_ONLY"
+        },
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+          "supports": "Would be needed for JPL/Caltech authority.",
+          "archive_status": "FAILED_403"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "JPL/Caltech rights",
+        "documentary score",
+        "archive and partner footage",
+        "NASA/JPL marks",
+        "identifiable people"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Frozen first-party HLS master https://nasaplus.akamaized.net/output/11211.m3u8, but no segment access before rights repair.",
+        "exact_media_url": "https://nasaplus.akamaized.net/output/11211.m3u8",
+        "current_route_status": "EXACT_MASTER_ESTABLISHED_MEDIA_SEGMENTS_NOT_PROBED",
+        "bounded_preflight_needed": "After rights repair, inspect only minimal HLS media metadata/segments under a closed budget."
+      },
+      "expected_routes": {
+        "V": "mission/hardware state",
+        "S": "interviews and narration",
+        "A": "mission/mechanical sound conditional",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+S+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "MEDIUM; in-stream English captions advertised.",
+        "ocr": "MEDIUM; titles, maps, mission graphics.",
+        "other": "Archival narration and captions may substitute for visual routes."
+      },
+      "decisions": {
+        "acquisition": "HOLD_DESPITE_EXACT_MASTER",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "JPL/Caltech and component authority unresolved.",
+        "No bounded segment/container parse.",
+        "No semantic event-centricity screen."
+      ]
+    },
+    {
+      "source_group_id": "EC-NARA-MEMPHIS-BELLE",
+      "disposition": "RESERVE_REPAIR",
+      "preflight_rank": null,
+      "title": "The Memphis Belle: A Story of a Flying Fortress",
+      "canonical_url": "https://catalog.archives.gov/id/38755",
+      "canonical_id": "NAID:38755",
+      "publisher_rightsholder": {
+        "publisher": "National Archives and Records Administration",
+        "rightsholder_status": "Corrected official catalog identifier; custody does not establish copyright or other restrictions."
+      },
+      "domain": "World War II aviation operations",
+      "capture_format": "industrial_or_military_process_archival_film",
+      "event_centricity": {
+        "status": "ACTION_RICH_BUT_SAFETY_RIGHTS_AND_SCORE_RISK_HIGH",
+        "dynamic_visual_evidence": "Aircraft preparation, flight, and combat operation.",
+        "non_speech_audio": "Aircraft/combat sound may be meaningful but could be dubbed or score-covered."
+      },
+      "duration_streams": {
+        "duration_seconds": 2460,
+        "duration_display": "~00:41:00",
+        "duration_evidence": "Approximate; official highlight did not expose exact runtime.",
+        "streams": "UNVERIFIED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://catalog.archives.gov/id/38755",
+          "supports": "Corrected official title/identifier mapping.",
+          "archive_status": "RUNTIME_AND_RESTRICTIONS_INCOMPLETE"
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.archives.gov/research/motion-pictures/permissions",
+          "supports": "No blanket public-domain status for NARA holdings.",
+          "archive_status": "FAMILY-LEVEL_ONLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "combat/death imagery",
+        "music",
+        "identifiable service members",
+        "military markings",
+        "possible third-party footage"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NARA digital object after exact restrictions and object identity.",
+        "exact_media_url": null,
+        "current_route_status": "CATALOG_ID_ONLY",
+        "bounded_preflight_needed": "Resolve exact duration, restriction record, digital-object route, and soundtrack provenance."
+      },
+      "expected_routes": {
+        "V": "aviation procedure and mission stages",
+        "S": "narration and crew statements",
+        "A": "aircraft/operation sound conditional",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "LOW",
+        "other": "Narration and editorial score may replace or mask authentic event sound."
+      },
+      "decisions": {
+        "acquisition": "HOLD",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Approximate duration only.",
+        "No item restriction decision.",
+        "High safety and music burden.",
+        "No exact object."
+      ]
+    },
+    {
+      "source_group_id": "EC-NARA-THUNDERBOLT",
+      "disposition": "RESERVE_REPAIR",
+      "preflight_rank": null,
+      "title": "Thunderbolt",
+      "canonical_url": "https://catalog.archives.gov/id/36060",
+      "canonical_id": "NAID:36060",
+      "publisher_rightsholder": {
+        "publisher": "National Archives and Records Administration",
+        "rightsholder_status": "Candidate register mapping was not re-reviewed in the 2026-09-05 audit; restrictions remain unresolved."
+      },
+      "domain": "World War II aviation operations",
+      "capture_format": "industrial_or_military_process_archival_film",
+      "event_centricity": {
+        "status": "ACTION_RICH_BUT_UNVERIFIED_AND_HIGH_RISK",
+        "dynamic_visual_evidence": "Aircraft operations and combat progression.",
+        "non_speech_audio": "Aircraft/combat audio may be semantic but authenticity and score dominance are unknown."
+      },
+      "duration_streams": {
+        "duration_seconds": 2640,
+        "duration_display": "00:44:00",
+        "duration_evidence": "Prior candidate metadata only; not re-reviewed in the sampled audit.",
+        "streams": "UNVERIFIED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://catalog.archives.gov/id/36060",
+          "supports": "Official catalog locator from the candidate inventory.",
+          "archive_status": "NOT_REVIEWED_THIS_AUDIT"
+        },
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://www.archives.gov/research/motion-pictures/permissions",
+          "supports": "NARA restriction caveat.",
+          "archive_status": "FAMILY-LEVEL_ONLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "combat casualties",
+        "music",
+        "military and foreign footage",
+        "identifiable people",
+        "historical propaganda context"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official NARA route only after fresh metadata and restrictions review.",
+        "exact_media_url": null,
+        "current_route_status": "STALE_METADATA_ONLY",
+        "bounded_preflight_needed": "Fresh item verification precedes all technical probing."
+      },
+      "expected_routes": {
+        "V": "aircraft operation and combat state",
+        "S": "narration",
+        "A": "aircraft/combat sound conditional",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "LOW",
+        "other": "Editorial narration and music can dominate."
+      },
+      "decisions": {
+        "acquisition": "HOLD",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Stale, not independently reviewed metadata.",
+        "No restrictions/object/streams.",
+        "High safety and soundtrack risk."
+      ]
+    },
+    {
+      "source_group_id": "EC-NOAA-BEACH-BAY-SAFE",
+      "disposition": "RESERVE_REPAIR",
+      "preflight_rank": null,
+      "title": "Beach and Bay Safe",
+      "canonical_url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar5-070220.html",
+      "canonical_id": "NOAA-OceanToday-webinar5",
+      "publisher_rightsholder": {
+        "publisher": "National Oceanic and Atmospheric Administration",
+        "rightsholder_status": "Existing restricted development source; NOAA and component rights remain unknown_hold for broader use."
+      },
+      "domain": "field safety and ocean conditions",
+      "capture_format": "field_safety_demonstration",
+      "event_centricity": {
+        "status": "SEMANTICALLY_SCREENED_PROMISING_DYNAMIC_VISUAL_AND_SURF_AUDIO_BUT_WEBINAR_WRAPPER",
+        "dynamic_visual_evidence": "Direct frame audit found real beach footage and a rescue animation.",
+        "non_speech_audio": "Surf is the strongest current environmental-audio lead, but waves are visible and discussed in speech and recur throughout."
+      },
+      "duration_streams": {
+        "duration_seconds": 2465.329542,
+        "duration_display": "41:05.33",
+        "duration_evidence": "Existing restricted local decoded source.",
+        "streams": "Decoded A/V present in prior NOAA work.",
+        "synchronized_av": "SUPPORTED_BY_EXISTING_RESTRICTED_SOURCE_AUDIT"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://oceantoday.noaa.gov/deeperdive/webinars/webinar5-070220.html",
+          "supports": "Official title and 41-minute page duration.",
+          "archive_status": "OFFICIAL_PAGE_EVIDENCE"
+        },
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.noaa.gov/disclaimer",
+          "supports": "Government-work and third-party caveat.",
+          "archive_status": "FAMILY-LEVEL_ONLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "possible minors and bystanders",
+        "guest demonstrations",
+        "third-party safety footage",
+        "music",
+        "marks and likenesses"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Reuse existing restricted exact source; do not redownload.",
+        "exact_media_url": null,
+        "current_route_status": "ALREADY_ACQUIRED_RESTRICTED_DEVELOPMENT_SOURCE",
+        "bounded_preflight_needed": "No exact-acquisition preflight needed unless a different public/reconstructable rendition is pursued."
+      },
+      "expected_routes": {
+        "V": "beach condition and safety action",
+        "S": "instructions and explanations",
+        "A": "surf only if human review proves audible property changes answerability beyond visible/speech routes",
+        "likely_profiles": [
+          "V",
+          "V+S",
+          "V+A"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "HIGH; speech may directly explain safety conditions.",
+        "ocr": "HIGH; webinar text and captions.",
+        "other": "Repeated surf and visible waves threaten ambient necessity."
+      },
+      "decisions": {
+        "acquisition": "NO_NEW_ACQUISITION_REUSE_RESTRICTED_ONLY",
+        "processing": "QUALIFIED_EXISTING_RESTRICTED_DEVELOPMENT_ONLY",
+        "annotation": "HOLD_PENDING_SOURCE_RIGHTS_PRIVACY_AND_SEMANTIC_GATE",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "Development-touched and ineligible for future primary test.",
+        "Rights/privacy unknown_hold.",
+        "Ambient necessity not established.",
+        "Webinar wrapper limits capture-format diversity."
+      ]
+    },
+    {
+      "source_group_id": "EC-USGS-SIX-ERUPTIONS",
+      "disposition": "REJECT_WEAK_OR_AMBIGUOUS",
+      "preflight_rank": null,
+      "title": "Six Eruptions at Two Volcanoes Over the Past Three Years",
+      "canonical_url": "https://www.usgs.gov/media/videos/pubtalk-112023-six-eruptions-two-volcanoes-over-past-three-years",
+      "canonical_id": "USGS-media-video-pubtalk-112023-six-eruptions-two-volcanoes-over-past-three-years",
+      "publisher_rightsholder": {
+        "publisher": "U.S. Geological Survey",
+        "rightsholder_status": "Public Domain marking was recorded in the frozen plan but not successfully preserved in the saved dossier."
+      },
+      "domain": "volcano observations and eruption history",
+      "capture_format": "observational_environment_or_maritime_operations",
+      "event_centricity": {
+        "status": "LECTURE_DOMINANT_WITH_POSSIBLE_EVENT_INSERTS",
+        "dynamic_visual_evidence": "Maps and eruption footage may be useful, but the source is a public lecture and likely presentation-heavy.",
+        "non_speech_audio": "Eruption sound may be absent, dubbed, score-covered, or nonessential."
+      },
+      "duration_streams": {
+        "duration_seconds": 3355,
+        "duration_display": "00:55:55",
+        "duration_evidence": "Frozen plan prior official-page observation; saved dossier contains only WAF/405 evidence.",
+        "streams": "UNVERIFIED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://www.usgs.gov/media/videos/pubtalk-112023-six-eruptions-two-volcanoes-over-past-three-years",
+          "supports": "Plan-level title, duration, downloads, and Public Domain observation.",
+          "archive_status": "FAILED_TO_PRESERVE_SUCCESSFULLY"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "photographs and maps",
+        "observatory/partner footage",
+        "music",
+        "audience questions",
+        "lecture slides and marks"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official USGS download only after page/route repair.",
+        "exact_media_url": null,
+        "current_route_status": "NOT_ESTABLISHED",
+        "bounded_preflight_needed": "Not prioritized unless a non-presentation alternative fails."
+      },
+      "expected_routes": {
+        "V": "eruption imagery/maps",
+        "S": "expert lecture",
+        "A": "weak/uncertain",
+        "likely_profiles": [
+          "S",
+          "V+S"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "HIGH; official transcript was advertised.",
+        "ocr": "HIGH; slide/map text.",
+        "other": "Presentation dominance conflicts with the wave objective."
+      },
+      "decisions": {
+        "acquisition": "NO_GO_FOR_THIS_WAVE_UNLESS_RECONSIDERED_AS_PRESENTATION_CONTROL",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "No successful saved item page or exact object.",
+        "Lecture dominance.",
+        "Semantic non-speech evidence unlikely.",
+        "Component rights unresolved."
+      ]
+    },
+    {
+      "source_group_id": "EC-COMMONS-BLOCKCHAIN",
+      "disposition": "REJECT_WEAK_OR_AMBIGUOUS",
+      "preflight_rank": null,
+      "title": "Abuse on the blockchain – Guest lecture at Stanford University by Molly White (2022).webm",
+      "canonical_url": "https://commons.wikimedia.org/wiki/File:Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_(2022).webm",
+      "canonical_id": "Commons pageid 126021487 / oldid 1032015587 / SHA-1 53f1de165f9b9c98a6bf1562315fb6ce5a4a61cc",
+      "publisher_rightsholder": {
+        "publisher": "Wikimedia Commons; file page names Molly White as author",
+        "rightsholder_status": "CC BY 3.0 is reported, but recording-owner authority is not affirmatively established and the page carries License review needed (video)."
+      },
+      "domain": "technology-policy lecture",
+      "capture_format": "public_performance_or_ceremony",
+      "event_centricity": {
+        "status": "LECTURE_DOMINANT",
+        "dynamic_visual_evidence": "Slides, websites, and screenshots rather than dynamic non-text action.",
+        "non_speech_audio": "No meaningful non-speech route established."
+      },
+      "duration_streams": {
+        "duration_seconds": 2354.101,
+        "duration_display": "39:14.101",
+        "duration_evidence": "Official MediaWiki API; corrects the frozen plan's erroneous 01:00:56.",
+        "streams": "VP9 1920x1080 video and Opus stereo 48 kHz audio declared by official API.",
+        "synchronized_av": "SUPPORTED_BY_API_METADATA_NOT_DECODED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_(2022).webm",
+          "supports": "Page/revision/source/license identity.",
+          "archive_status": "OFFICIAL_API_SNAPSHOT_SUCCESSFUL_BUT_LICENSE_REVIEW_UNRESOLVED"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "sensitive abuse/harassment examples",
+        "website/account screenshots",
+        "slide and logo rights",
+        "speaker likeness",
+        "YouTube import provenance",
+        "unresolved video license review"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official Commons original only after license-review and owner-authority repair.",
+        "exact_media_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_%282022%29.webm",
+        "current_route_status": "EXACT_METADATA_OBJECT_ESTABLISHED_ORIGINAL_NOT_FETCHED",
+        "bounded_preflight_needed": "Not prioritized for this event-centric wave."
+      },
+      "expected_routes": {
+        "V": "slides/screenshots",
+        "S": "lecture speech",
+        "A": "none expected",
+        "likely_profiles": [
+          "S",
+          "V+S"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "VERY_HIGH",
+        "other": "Lecture and slide dominance directly conflict with event-centric objectives."
+      },
+      "decisions": {
+        "acquisition": "NO_GO_FOR_EVENT_CENTRIC_WAVE",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "License review needed.",
+        "YouTube import/owner authority unresolved.",
+        "Lecture/slide dominance.",
+        "Sensitive and third-party screen content."
+      ]
+    },
+    {
+      "source_group_id": "EC-COMMONS-WIKIMANIA-2024-OPENING",
+      "disposition": "REJECT_WEAK_OR_AMBIGUOUS",
+      "preflight_rank": null,
+      "title": "Wikimania 2024 - Gdańsk Main Hall - Day 1 - Opening ceremony & Wikimedian of the Year Awards.webm",
+      "canonical_url": "https://commons.wikimedia.org/wiki/File:Wikimania_2024_-_Gda%C5%84sk_Main_Hall_-_Day_1_-_Opening_ceremony_%26_Wikimedian_of_the_Year_Awards.webm",
+      "canonical_id": "CommonsFile:Wikimania 2024 - Gdańsk Main Hall - Day 1 - Opening ceremony & Wikimedian of the Year Awards.webm",
+      "publisher_rightsholder": {
+        "publisher": "Wikimedia Commons / credited uploader",
+        "rightsholder_status": "Exact pageid/oldid, license, source chain, and uploader authority are not pinned in the reviewed evidence."
+      },
+      "domain": "community ceremony and awards event",
+      "capture_format": "public_performance_or_ceremony",
+      "event_centricity": {
+        "status": "EVENT_RECORDING_BUT_POOR_FIT_FOR_SEMANTIC_AMBIENT_AND_PRIVACY",
+        "dynamic_visual_evidence": "Stage transitions, awards, presenters, and audience reactions.",
+        "non_speech_audio": "Applause and music are likely but generic or rights-burdened, not acceptable semantic ambient evidence by default."
+      },
+      "duration_streams": {
+        "duration_seconds": 3148,
+        "duration_display": "00:52:28",
+        "duration_evidence": "Official program/file observation recorded in the 2026-09-05 audit.",
+        "streams": "UNVERIFIED",
+        "synchronized_av": "UNVERIFIED"
+      },
+      "rights_evidence": [
+        {
+          "snapshot_date": "2026-09-05",
+          "url": "https://commons.wikimedia.org/wiki/File:Wikimania_2024_-_Gda%C5%84sk_Main_Hall_-_Day_1_-_Opening_ceremony_%26_Wikimedian_of_the_Year_Awards.webm",
+          "supports": "Canonical corrected title/path and duration.",
+          "archive_status": "REVISION_AND_LICENSE_PROVENANCE_UNRESOLVED"
+        }
+      ],
+      "privacy_music_marks_risks": [
+        "music and performance rights",
+        "attendee and audience likenesses",
+        "third-party slides",
+        "venue and sponsor marks",
+        "crowd privacy"
+      ],
+      "acquisition_method": {
+        "allowed_candidate_route": "Official Commons original after revision/license/source-chain pinning.",
+        "exact_media_url": null,
+        "current_route_status": "FILE_PAGE_ONLY",
+        "bounded_preflight_needed": "Not prioritized; event format does not offset music/privacy and semantic-audio weakness."
+      },
+      "expected_routes": {
+        "V": "stage actions and awards",
+        "S": "presentations",
+        "A": "applause/music/room sound, not acceptable without specific semantic necessity",
+        "likely_profiles": [
+          "V",
+          "S",
+          "V+S"
+        ]
+      },
+      "shortcut_risk": {
+        "transcript": "UNKNOWN",
+        "ocr": "HIGH; stage screens, names, award titles.",
+        "other": "Generic applause and music cannot satisfy ambient quotas."
+      },
+      "decisions": {
+        "acquisition": "NO_GO_FOR_THIS_WAVE",
+        "processing": "HOLD",
+        "annotation": "HOLD",
+        "release": "NOT_AUTHORIZED"
+      },
+      "exact_acquisition_ready": false,
+      "blocking_items": [
+        "License revision/source chain not pinned.",
+        "High music/privacy/marks burden.",
+        "Likely presentation and ceremony semantics rather than target procedures or observations."
+      ]
+    }
+  ],
+  "portfolio_gaps": [
+    "No sports source group with sufficiently exact first-party rights, duration, and route evidence was found before browsing stopped.",
+    "No wildlife-only observation source group with sufficiently exact first-party rights, duration, and route evidence was found before browsing stopped.",
+    "No clean assembly/repair source with item-level CC/public-domain evidence and an exact route was found before browsing stopped.",
+    "The only exact first-party media route already established is NASA Pathfinders, but it remains a rights/component HOLD and is not exact-acquisition ready.",
+    "The best current semantic environmental-audio evidence is NOAA Beach and Bay Safe, but it is development-touched, webinar-wrapped, rights-held, and does not establish ambient necessity."
+  ],
+  "required_next_actions": [
+    "Do not acquire any candidate from this package now.",
+    "If browsing/probing is later reauthorized, run exact preflight only for the six ranked groups in order, stopping candidates that fail rights or event-centricity before media ranges.",
+    "For every candidate, save dated item and policy snapshots with hashes; freeze exact object identity; separately decide acquisition, processing, annotation, and release.",
+    "Require a semantic pre-authoring scan to verify dynamic non-text visual evidence and semantically relevant non-speech audio; do not infer these from titles, metadata, or generic audio labels.",
+    "Continue discovery for wildlife, assembly/repair, industrial/lab, and sports/performance groups because the current portfolio does not fill those formats robustly."
+  ],
+  "final_boundary_statement": "This package is a rights-first, metadata-only discovery sidecar. It does not authorize acquisition, processing, annotation, benchmark use, or release; does not claim human necessity; and does not claim that any source is public-release ready."
+}

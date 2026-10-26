@@ -1,0 +1,2494 @@
+{
+  "anchor_id": "AV-TRACE-TASK101-SCALE1B-WAVE-R",
+  "anchor_sha256": "sha256:b0eb3d63bc05998df19c8fd4223f0f8075c793a0551f2a4e1eabe3516cba15b2",
+  "artifact_inventory": [
+    {
+      "mode": "0644",
+      "path": "data/rehearsal_plan/scale1b_learned_baseline_plan.json",
+      "semantic_role": "upstream learned-baseline inventory plan",
+      "sha256": "sha256:71515404754f0bab5a0b037dd82aef8fda587ff33fd8cb3cd8eab4efa54154b3",
+      "size_bytes": 18637
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/models/scale1a_clip_acquisition_manifest.json",
+      "semantic_role": "frozen CLIP technical-use acquisition evidence",
+      "sha256": "sha256:e154c79a1536b11df26dd1313f8386e846613cedcfa5d8561b2aa2afb467e808",
+      "size_bytes": 9919
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/build_manifest.json",
+      "semantic_role": "Scale-1A build provenance and model identities",
+      "sha256": "sha256:90c8a4f83fc8c3c4d284f8d6e6db6c049acbd07968d697d240d79311628f6dea",
+      "size_bytes": 20880
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/final_audit.json",
+      "semantic_role": "independent final Scale-1A audit",
+      "sha256": "sha256:eced27ab6125296ef5f3ac060140f5db5e58658afbb532f5a8aea5c518369f1a",
+      "size_bytes": 11553
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/fixed_query_suite.json",
+      "semantic_role": "frozen Scale-1A top-20 rankings",
+      "sha256": "sha256:9879d0da7bb8fba6c5c24b712f0ac512608f91036b15940fb2eb7caf9c620d17",
+      "size_bytes": 25820
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/full_timeline_index.json",
+      "semantic_role": "frozen BM25/AST/CLIP/RRF index payload",
+      "sha256": "sha256:4ae19541e0a4e77af72f59ab6ae0a11b3e4f35e8d3887e1c21467d6329a6f0af",
+      "size_bytes": 29428569
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/hard_negatives.json",
+      "semantic_role": "frozen provisional/validated hard-negative registry",
+      "sha256": "sha256:405f99cd913a9f90231c30060b16072df98a265cd43f058a246514defb9c1ab7",
+      "size_bytes": 155448
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/interventions.json",
+      "semantic_role": "frozen intervention definitions",
+      "sha256": "sha256:3e121819ea7e13aa7278fc88e5a2820fb7b5ce4d44c21c6e088c56d215798751",
+      "size_bytes": 21036
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/migrated_families.json",
+      "semantic_role": "retained/excluded provisional family definitions and support routes",
+      "sha256": "sha256:26d1375df19106cc1d656e8cbc72927a1a9bdf46bceab5d972e2308fa6dab2ca",
+      "size_bytes": 21295
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/observation_manifest.json",
+      "semantic_role": "frozen modality observations and checkpoint registry",
+      "sha256": "sha256:27d862aa98c460966859b1babab916af61e2f18291de1e78082b13a2590d20b1",
+      "size_bytes": 21574
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/segment_manifest.json",
+      "semantic_role": "frozen segment lattice and source binding",
+      "sha256": "sha256:481b56b139ef4c603c8a438ce04b67ade594c48bc3890533681486cb5aa54d23",
+      "size_bytes": 2940854
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/task99_repair_audit.json",
+      "semantic_role": "current diagnostic-contract repair evidence",
+      "sha256": "sha256:da603731547136903c4284b0f924bbb3437a75e65b59f771816d2b35442f8c2e",
+      "size_bytes": 12767
+    },
+    {
+      "mode": "0600",
+      "path": "data/restricted/noaa01/scale1a/trajectories.json",
+      "semantic_role": "frozen action-level Scale-1A trajectories",
+      "sha256": "sha256:17782702b54657b3515fdaa6066717d6fc0ad49a2b75ab9e2103df6cf4122b87",
+      "size_bytes": 2388310
+    },
+    {
+      "mode": "0644",
+      "path": "docs/design/scale1b_learned_baseline_inventory.md",
+      "semantic_role": "upstream learned-baseline design inventory",
+      "sha256": "sha256:833b503002f76f4123fcd4b89521d7f76d0500a8f985311ebce67cb46788272d",
+      "size_bytes": 22161
+    },
+    {
+      "mode": "0644",
+      "path": "mvp/results/scale1a_full_timeline/episode_metrics.csv",
+      "semantic_role": "current strict episode metrics",
+      "sha256": "sha256:7994837f6fd0b1edd19c3c2d5e312a174a548cefb89641e5239fe7093c54870c",
+      "size_bytes": 90237
+    },
+    {
+      "mode": "0644",
+      "path": "mvp/results/scale1a_full_timeline/report.json",
+      "semantic_role": "current machine-readable report",
+      "sha256": "sha256:9aafd8fe640883a9ed381db941bee9a4581a33d54b319a7383a6c1f71974bd64",
+      "size_bytes": 255847
+    },
+    {
+      "mode": "0644",
+      "path": "mvp/results/scale1a_full_timeline/report.md",
+      "semantic_role": "current public report",
+      "sha256": "sha256:4d9a54692d1b5404b6002775a0e3738c5deae1b388d58e3747bcf78c19cdd305",
+      "size_bytes": 713
+    },
+    {
+      "mode": "0644",
+      "path": "mvp/results/scale1a_full_timeline/retrieval_metrics.csv",
+      "semantic_role": "current learned=false retrieval trajectory metrics",
+      "sha256": "sha256:dcf60c8850462e282900db0e20a357e481a511c65b63899cfb8315e4297a2742",
+      "size_bytes": 19066
+    },
+    {
+      "mode": "0644",
+      "path": "mvp/results/scale1a_full_timeline/run_manifest.json",
+      "semantic_role": "current result hash manifest",
+      "sha256": "sha256:3ef8eba122a62caba36e7602a0a93ea92b64b4b601fd346e4991ea9c4c98f9e4",
+      "size_bytes": 1949
+    },
+    {
+      "mode": "0644",
+      "path": "mvp/results/scale1a_full_timeline/summary.csv",
+      "semantic_role": "current aggregate metric rows",
+      "sha256": "sha256:d6d0d61547cb0baa7062b147c668c20ccb7e65682196582de0509bddd59c73d4",
+      "size_bytes": 69771
+    }
+  ],
+  "candidate_universe": {
+    "base_cells": 3433,
+    "context_windows": 855,
+    "fine_windows": 3428,
+    "immutable_rule": "Wave R sidecars must use these exact source, segment/chunk IDs, intervals and candidate membership.",
+    "per_source_speech_chunks": {
+      "cand-045": 60,
+      "cand-047": 67,
+      "cand-049": 83,
+      "cand-051": 124,
+      "cand-052": 127
+    },
+    "per_source_timeline_segments": {
+      "cand-045": 553,
+      "cand-047": 618,
+      "cand-049": 770,
+      "cand-051": 1161,
+      "cand-052": 1181
+    },
+    "records": {
+      "ambient": 4283,
+      "speech": 461,
+      "vision": 4283
+    },
+    "source_count": 5,
+    "source_refs": [
+      "cand-045",
+      "cand-047",
+      "cand-049",
+      "cand-051",
+      "cand-052"
+    ],
+    "speech_chunks": 461,
+    "timeline_segments": 4283
+  },
+  "checkpoint_inventory": {
+    "canonical_inventory_hash": "sha256:a8ab4013df7842463112bb75434242f8ddf02c03b123835ae84e2630db4bd4f8",
+    "count": 20,
+    "records": [
+      {
+        "key": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6/ast-audioset-top15/1.0/fine/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-045/ambient.json",
+        "payload_hash": "sha256:11197ebd6200855d5e7291843dec058ccafec5bc5caed5a1fb509bbcc1087fb2",
+        "record_count": 443,
+        "sha256": "sha256:6f3767d82124e9ff9954b51176b673b5558a5ad6bae19c69d7a582d6a6e5668e",
+        "size_bytes": 1803905
+      },
+      {
+        "key": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6/whisper-tiny-en-timestamped/1.0/30-second/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-045/speech.json",
+        "payload_hash": "sha256:dd60c91ce01ce21469e8def629935507db8be3c13a635024b876a66403651f2c",
+        "record_count": 60,
+        "sha256": "sha256:6b0871bf2498cbc5294362b5a9e4782cf78e2d543178e65f67da286b7c183306",
+        "size_bytes": 524505
+      },
+      {
+        "key": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6/clip-visual/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-045/vision_clip.json",
+        "payload_hash": "sha256:aa1dc7fe0989a80f1e8a07e6951594b993aa4f360ef163100663568d9367cad9",
+        "record_count": 444,
+        "sha256": "sha256:61bb9ff9dc83dc6f77ed0fb492ce1075e86c1442c4d0583cf610eebffd56f025",
+        "size_bytes": 2259979
+      },
+      {
+        "key": "03da99e7a33a1ad18ad57376e6517639f950e39b4fe67f898c54a948e17f9ad6/opencv-routing/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-045/vision_routing.json",
+        "payload_hash": "sha256:d130e5f3cf0d3a68c0c969cc82787a46d85ddcb7b35bb0fe0e462672d1df5959",
+        "record_count": 444,
+        "sha256": "sha256:44ef478eb4da5a3b0228e725c86048a2df2574877860920595e04a0060761dd9",
+        "size_bytes": 341570
+      },
+      {
+        "key": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160/ast-audioset-top15/1.0/fine/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-047/ambient.json",
+        "payload_hash": "sha256:81d59225884b617d6880b2c176a176514cbd9b8d9a9aca03c117b71981ec3f43",
+        "record_count": 495,
+        "sha256": "sha256:a92bed953faf5039fc9abfc3c8072b1e986bc3bb8f9201697e184cbf18b8a9d1",
+        "size_bytes": 2015187
+      },
+      {
+        "key": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160/whisper-tiny-en-timestamped/1.0/30-second/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-047/speech.json",
+        "payload_hash": "sha256:69430c8ec1c4f3622e7cea800af77fa084e82b2a030be57ba923ef0101bb6788",
+        "record_count": 67,
+        "sha256": "sha256:ba77cd99ab65e08326a389e828216a1a51cff74c8d1e521fddeefd6ed8bec7fd",
+        "size_bytes": 554842
+      },
+      {
+        "key": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160/clip-visual/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-047/vision_clip.json",
+        "payload_hash": "sha256:fa6f3bb91bab9d01df2159e510b9bbc774623f4bde5b30e1c2672f009134d0e4",
+        "record_count": 496,
+        "sha256": "sha256:94ba1f9a8be56660494f12521c20f260ed3a54ef27da7192713c6f412ce1dbf4",
+        "size_bytes": 2525244
+      },
+      {
+        "key": "ddfb6c2ffa2794f20bb5d2d4330b89807dfaeed7156a3d7cab372e78bd184160/opencv-routing/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-047/vision_routing.json",
+        "payload_hash": "sha256:0f78898f3fbac71e45223c577f0e2e7599ca922fe5a2dc935f9563c89ec04baa",
+        "record_count": 496,
+        "sha256": "sha256:8c108932233d2a864b8b302adfc9091d0c64a190ca6fe90c66bdd033de2707f6",
+        "size_bytes": 381387
+      },
+      {
+        "key": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5/ast-audioset-top15/1.0/fine/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-049/ambient.json",
+        "payload_hash": "sha256:8500ca74700a72f0108e053631d0b48c86df917bc4a4b3b93917dd34677d13d3",
+        "record_count": 616,
+        "sha256": "sha256:afa081a86f675287bf9abddfef055aa7c0f70b92fb8c98b3c90fa24f5ebb338f",
+        "size_bytes": 2507579
+      },
+      {
+        "key": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5/whisper-tiny-en-timestamped/1.0/30-second/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-049/speech.json",
+        "payload_hash": "sha256:90df69156dde1e6c0f28c22850103ff8a3c6c0e5107bca232cfedda6173d6550",
+        "record_count": 83,
+        "sha256": "sha256:09ab977936b598cf5a7ffd51f73a505e17c315c5d4aa2b3553a563356828d2af",
+        "size_bytes": 738176
+      },
+      {
+        "key": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5/clip-visual/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-049/vision_clip.json",
+        "payload_hash": "sha256:28154a6e77b6d921300bbd57255f4d4adf19eb5e4784b677039159b01bf4eb0e",
+        "record_count": 617,
+        "sha256": "sha256:9e57b9dfd2f1e3d0c1279f8782625bdfb78c32350cef90fb91b65d7a9dc10305",
+        "size_bytes": 3144248
+      },
+      {
+        "key": "1934c31cb0311a46daab367f840eb549d29bb1e9e1475a73287912bba03069e5/opencv-routing/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-049/vision_routing.json",
+        "payload_hash": "sha256:ee70399f9bdd1315a1aabf35370e9f9cd55cec1e0903db0ac1cb3387c29b848b",
+        "record_count": 617,
+        "sha256": "sha256:01136dafec35f5f37bf76aa32257b97528c76dcb5413d4d4a62fbb7b01c3ecb8",
+        "size_bytes": 474960
+      },
+      {
+        "key": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2/ast-audioset-top15/1.0/fine/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-051/ambient.json",
+        "payload_hash": "sha256:ed270cd12b8d93eda355aa91f65531b76af660ac657d76205728bab23a7f0044",
+        "record_count": 929,
+        "sha256": "sha256:a3c393e5edaa639a9524e0d57e49a27082523605abf5f78d862e471bfc568972",
+        "size_bytes": 3784242
+      },
+      {
+        "key": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2/whisper-tiny-en-timestamped/1.0/30-second/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-051/speech.json",
+        "payload_hash": "sha256:58b46dd01c7ce5b0ce502936f08cc965aeb0a054ca9ad0036ab5b60285e45b12",
+        "record_count": 124,
+        "sha256": "sha256:9d345c07c650cbdebca8629e8f39b788b9e6396dd700dab1a8f2c150656ce10e",
+        "size_bytes": 1104499
+      },
+      {
+        "key": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2/clip-visual/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-051/vision_clip.json",
+        "payload_hash": "sha256:82118db7c51f7aec414b2bb93c0c7a9d615a466b1d2c043dc712c2680d65e0fc",
+        "record_count": 930,
+        "sha256": "sha256:8396b74d66481efdf08e256f2d38572ccc188c9498654ea7b498701d9039c386",
+        "size_bytes": 4740355
+      },
+      {
+        "key": "279f6b3841188e805b153ab0c7f0c85cdc584dd6bce6090f9e2a0b2d06d951b2/opencv-routing/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-051/vision_routing.json",
+        "payload_hash": "sha256:90e5bcca06341c459814b5a517ada6c5a06b23dcafa1243a071ccbf0979f946e",
+        "record_count": 930,
+        "sha256": "sha256:69c3a5b490d934832607c3c04d8a99094b08c54dd34375d5fc07f3f413f5c90d",
+        "size_bytes": 716652
+      },
+      {
+        "key": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1/ast-audioset-top15/1.0/fine/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-052/ambient.json",
+        "payload_hash": "sha256:bd2bdc6f7bb093331e9c3dfe443801ccc94269f7ffdfdc471472665a767e5c41",
+        "record_count": 945,
+        "sha256": "sha256:943c6c749d7bd2ddeaa9e884c5b56cfafedfc61c312903e31184a7f8a8406927",
+        "size_bytes": 3852365
+      },
+      {
+        "key": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1/whisper-tiny-en-timestamped/1.0/30-second/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-052/speech.json",
+        "payload_hash": "sha256:d89bbd69e6f923317c77dc32cee5583e5ccf9d9e2ce941ae1ff6cbc56a69fbdf",
+        "record_count": 127,
+        "sha256": "sha256:a57d316638754189485c0162122b08f9b4684f5e599089e730acca64bbaec862",
+        "size_bytes": 1143048
+      },
+      {
+        "key": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1/clip-visual/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-052/vision_clip.json",
+        "payload_hash": "sha256:79a38747b30e3af2acace1068941f12290328faa14eef69938760dba0d03dce3",
+        "record_count": 946,
+        "sha256": "sha256:62761e212b1e7ab76a3232f1f45784dbc49b20ee0b07e58d0430f498475a04bb",
+        "size_bytes": 4821975
+      },
+      {
+        "key": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1/opencv-routing/1.0/base/0/sha256:e711c0a7dd5951a361963620d2855bde379f8228240ee2802afb24c71c6b1ca2",
+        "mode": "0600",
+        "path": "data/restricted/noaa01/scale1a/checkpoints/cand-052/vision_routing.json",
+        "payload_hash": "sha256:4e1dbdce3da8e780e5fdba521c5ea4a4dc946bc1bffc97526bc3231959d8cc89",
+        "record_count": 946,
+        "sha256": "sha256:54f5c4156979483e5d113dc98615d568b5b64e3e4d7ba56833e286d7177e552c",
+        "size_bytes": 729054
+      }
+    ]
+  },
+  "created_date": "2026-09-12",
+  "decision": "WAVE_R_CONTRACT_FROZEN",
+  "experiment_contract": {
+    "alternative_support_policy": "New model-discovered alternatives are UNADJUDICATED_ALTERNATIVE and excluded until separately adjudicated.",
+    "comparison_rows": [
+      {
+        "candidate_modality": "vision",
+        "eligible_families": [
+          "noaa01-r004-surf-av",
+          "noaa01-r007-opening-plastic-waste",
+          "noaa01-r011-bag-by-fence",
+          "noaa01-r016-three-factors-vs"
+        ],
+        "learned": false,
+        "retriever": "openai/clip-vit-base-patch32@3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+        "role": "frozen control for this contract; foundation encoder but not a newly evaluated Wave-R learned system",
+        "row_id": "V-CLIP",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "candidate_modality": "vision",
+        "eligible_families": [
+          "noaa01-r004-surf-av",
+          "noaa01-r007-opening-plastic-waste",
+          "noaa01-r011-bag-by-fence",
+          "noaa01-r016-three-factors-vs"
+        ],
+        "learned": true,
+        "paired_control": "V-CLIP",
+        "retriever": "google/siglip2-base-patch16-224@75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+        "row_id": "V-SIGLIP2",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "candidate_modality": "ambient",
+        "eligible_families": [
+          "noaa01-r004-surf-av"
+        ],
+        "learned": false,
+        "retriever": "MIT/ast-finetuned-audioset-10-10-0.4593@f826b80d28226b62986cc218e5cec390b1096902 + frozen sparse ranker",
+        "role": "frozen sparse control; AST predictions are fixed observations",
+        "row_id": "A-AST",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "candidate_modality": "ambient",
+        "eligible_families": [
+          "noaa01-r004-surf-av"
+        ],
+        "learned": true,
+        "paired_control": "A-AST",
+        "retriever": "laion/clap-htsat-unfused@8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+        "row_id": "A-CLAP",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "candidate_modality": "speech",
+        "eligible_families": [
+          "noaa01-r016-three-factors-vs",
+          "noaa01-r017-north-atlantic-basin"
+        ],
+        "learned": false,
+        "retriever": "frozen bm25-okapi/1.0",
+        "role": "unchanged fusion input",
+        "row_id": "S-BM25",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "eligible_families": [
+          "noaa01-r004-surf-av",
+          "noaa01-r007-opening-plastic-waste",
+          "noaa01-r011-bag-by-fence",
+          "noaa01-r016-three-factors-vs",
+          "noaa01-r017-north-atlantic-basin"
+        ],
+        "fusion": "fixed_equal_weight_rrf",
+        "inputs": {
+          "ambient": "A-AST",
+          "speech": "S-BM25",
+          "vision": "V-CLIP"
+        },
+        "row_id": "F-CTRL",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "eligible_families": [
+          "noaa01-r004-surf-av",
+          "noaa01-r007-opening-plastic-waste",
+          "noaa01-r011-bag-by-fence",
+          "noaa01-r016-three-factors-vs",
+          "noaa01-r017-north-atlantic-basin"
+        ],
+        "fusion": "fixed_equal_weight_rrf",
+        "inputs": {
+          "ambient": "A-AST",
+          "speech": "S-BM25",
+          "vision": "V-SIGLIP2"
+        },
+        "paired_control": "F-CTRL",
+        "row_id": "F-V",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "eligible_families": [
+          "noaa01-r004-surf-av",
+          "noaa01-r007-opening-plastic-waste",
+          "noaa01-r011-bag-by-fence",
+          "noaa01-r016-three-factors-vs",
+          "noaa01-r017-north-atlantic-basin"
+        ],
+        "fusion": "fixed_equal_weight_rrf",
+        "inputs": {
+          "ambient": "A-CLAP",
+          "speech": "S-BM25",
+          "vision": "V-CLIP"
+        },
+        "paired_control": "F-CTRL",
+        "row_id": "F-A",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      },
+      {
+        "eligible_families": [
+          "noaa01-r004-surf-av",
+          "noaa01-r007-opening-plastic-waste",
+          "noaa01-r011-bag-by-fence",
+          "noaa01-r016-three-factors-vs",
+          "noaa01-r017-north-atlantic-basin"
+        ],
+        "fusion": "fixed_equal_weight_rrf",
+        "inputs": {
+          "ambient": "A-CLAP",
+          "speech": "S-BM25",
+          "vision": "V-SIGLIP2"
+        },
+        "paired_control": "F-CTRL",
+        "row_id": "F-VA",
+        "scope": [
+          "source_scoped",
+          "cross_source"
+        ]
+      }
+    ],
+    "contract_document": "docs/design/scale1b_wave_r_experiment_contract.md",
+    "evaluation_only_family_ids": [
+      "noaa01-r004-surf-av",
+      "noaa01-r007-opening-plastic-waste",
+      "noaa01-r011-bag-by-fence",
+      "noaa01-r016-three-factors-vs",
+      "noaa01-r017-north-atlantic-basin"
+    ],
+    "excluded_audit_family_ids": [
+      "noaa01-r014-aircraft-storm-view"
+    ],
+    "fusion": {
+      "disabled_reason": "NO_DISJOINT_TRAINING_SPLIT",
+      "input_depth": 20,
+      "learned": false,
+      "logistic_fusion_enabled": false,
+      "rrf_k": 60,
+      "type": "weighted-rrf/1.0",
+      "weights": {
+        "ambient": 1.0,
+        "speech": 1.0,
+        "vision": 1.0
+      }
+    },
+    "metrics": [
+      "Recall@K",
+      "All-Evidence@K",
+      "first_accepted_evidence_rank",
+      "MRR",
+      "nDCG@K",
+      "paired_first_rank_delta",
+      "paired_recall_delta@K",
+      "paired_all_evidence_delta@K",
+      "source_to_cross_degradation",
+      "latency",
+      "peak_RSS",
+      "storage"
+    ],
+    "no_evaluation_tuning": true,
+    "primary_scope": "source_scoped",
+    "stress_scope": "cross_source",
+    "top_k": [
+      1,
+      5,
+      10,
+      20
+    ]
+  },
+  "families": [
+    {
+      "accepted_support_routes": {
+        "ambient": [
+          "seg.1934c31cb031.fine.000253",
+          "seg.1934c31cb031.context.000062",
+          "seg.1934c31cb031.context.000063"
+        ],
+        "vision": [
+          "seg.1934c31cb031.fine.000253",
+          "seg.1934c31cb031.context.000062",
+          "seg.1934c31cb031.context.000063"
+        ]
+      },
+      "accepted_support_set_ids": [
+        "ses.noaa01-r004-surf-av"
+      ],
+      "corroboration_not_modality_necessity": false,
+      "cross_modal_route": null,
+      "disposition": "retained",
+      "exclusion_reasons": [],
+      "family_id": "noaa01-r004-surf-av",
+      "gold_annotation": false,
+      "human_reviewed": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false,
+      "primary_query_by_modality": {
+        "ambient": "environmental sounds same interval water",
+        "vision": "person water conditions near shore"
+      },
+      "provisional_modalities": [
+        "vision",
+        "ambient"
+      ],
+      "secondary_robustness_queries": [
+        "environmental sounds same interval water"
+      ],
+      "source_ref": "cand-049",
+      "support_statuses": [
+        "machine_validated_provisional"
+      ]
+    },
+    {
+      "accepted_support_routes": {
+        "vision": [
+          "seg.279f6b384118.fine.000000",
+          "seg.279f6b384118.context.000000"
+        ]
+      },
+      "accepted_support_set_ids": [
+        "ses.noaa01-r007-opening-plastic-waste"
+      ],
+      "corroboration_not_modality_necessity": false,
+      "cross_modal_route": null,
+      "disposition": "retained",
+      "exclusion_reasons": [],
+      "family_id": "noaa01-r007-opening-plastic-waste",
+      "gold_annotation": false,
+      "human_reviewed": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false,
+      "primary_query_by_modality": {
+        "vision": "discarded material introductory montage"
+      },
+      "provisional_modalities": [
+        "vision"
+      ],
+      "secondary_robustness_queries": [
+        "waste material shown in montage"
+      ],
+      "source_ref": "cand-051",
+      "support_statuses": [
+        "machine_validated_provisional"
+      ]
+    },
+    {
+      "accepted_support_routes": {
+        "vision": [
+          "seg.279f6b384118.fine.000764",
+          "seg.279f6b384118.context.000190",
+          "seg.279f6b384118.context.000191"
+        ]
+      },
+      "accepted_support_set_ids": [
+        "ses.noaa01-r011-bag-by-fence"
+      ],
+      "corroboration_not_modality_necessity": false,
+      "cross_modal_route": null,
+      "disposition": "retained",
+      "exclusion_reasons": [],
+      "family_id": "noaa01-r011-bag-by-fence",
+      "gold_annotation": false,
+      "human_reviewed": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false,
+      "primary_query_by_modality": {
+        "vision": "person carrying object beside fence"
+      },
+      "provisional_modalities": [
+        "vision"
+      ],
+      "secondary_robustness_queries": [
+        "walking beside fence carrying something"
+      ],
+      "source_ref": "cand-051",
+      "support_statuses": [
+        "machine_validated_provisional"
+      ]
+    },
+    {
+      "accepted_support_routes": {
+        "vision": [
+          "seg.c4f5d8c6e60d.fine.000111",
+          "seg.c4f5d8c6e60d.context.000027"
+        ]
+      },
+      "accepted_support_set_ids": [
+        "ses.noaa01-r014-aircraft-storm-view"
+      ],
+      "corroboration_not_modality_necessity": false,
+      "cross_modal_route": null,
+      "disposition": "excluded",
+      "exclusion_reasons": [
+        "VISION_SUPPORT_NOT_TOP20"
+      ],
+      "family_id": "noaa01-r014-aircraft-storm-view",
+      "gold_annotation": false,
+      "human_reviewed": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false,
+      "primary_query_by_modality": {
+        "vision": "view shown collecting observations inside hurricane"
+      },
+      "provisional_modalities": [
+        "vision"
+      ],
+      "secondary_robustness_queries": [
+        "hurricane observation segment visual scene"
+      ],
+      "source_ref": "cand-052",
+      "support_statuses": [
+        "machine_validated_provisional"
+      ]
+    },
+    {
+      "accepted_support_routes": {
+        "speech": [
+          "asr.11a2eaf6b4520c2f6f19"
+        ],
+        "vision": [
+          "seg.c4f5d8c6e60d.fine.000333",
+          "seg.c4f5d8c6e60d.context.000082",
+          "seg.c4f5d8c6e60d.context.000083"
+        ]
+      },
+      "accepted_support_set_ids": [
+        "ses.noaa01-r016-three-factors-vs"
+      ],
+      "corroboration_not_modality_necessity": true,
+      "cross_modal_route": {
+        "from": "speech_chunk",
+        "rank": 1,
+        "to": "exact_visual_interval_inspection"
+      },
+      "disposition": "retained",
+      "exclusion_reasons": [],
+      "family_id": "noaa01-r016-three-factors-vs",
+      "gold_annotation": false,
+      "human_reviewed": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false,
+      "primary_query_by_modality": {
+        "speech": "how many hurricane formation factors stated",
+        "vision": "how many hurricane formation factors stated"
+      },
+      "provisional_modalities": [
+        "vision",
+        "speech"
+      ],
+      "secondary_robustness_queries": [
+        "formation factors educational graphic"
+      ],
+      "source_ref": "cand-052",
+      "support_statuses": [
+        "machine_validated_provisional"
+      ]
+    },
+    {
+      "accepted_support_routes": {
+        "speech": [
+          "asr.ddde423a3db6b38552d1",
+          "asr.f68a5d162f943b823bbc"
+        ]
+      },
+      "accepted_support_set_ids": [
+        "ses.noaa01-r017-north-atlantic-basin"
+      ],
+      "corroboration_not_modality_necessity": false,
+      "cross_modal_route": null,
+      "disposition": "retained",
+      "exclusion_reasons": [],
+      "family_id": "noaa01-r017-north-atlantic-basin",
+      "gold_annotation": false,
+      "human_reviewed": false,
+      "minimality_human_validated": false,
+      "modality_necessity_human_validated": false,
+      "primary_query_by_modality": {
+        "speech": "speaker main area hurricane activity basin"
+      },
+      "provisional_modalities": [
+        "speech"
+      ],
+      "secondary_robustness_queries": [
+        "which basin main hurricane activity"
+      ],
+      "source_ref": "cand-052",
+      "support_statuses": [
+        "machine_validated_provisional"
+      ]
+    }
+  ],
+  "frozen_scale1a_operational_metrics": {
+    "aggregates": [
+      {
+        "All-Evidence@1": 0.0,
+        "All-Evidence@10": 0.75,
+        "All-Evidence@20": 0.75,
+        "All-Evidence@5": 0.25,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 0.18571429,
+        "Recall@1": 0.0,
+        "Recall@10": 0.75,
+        "Recall@20": 0.75,
+        "Recall@5": 0.25,
+        "eligible_row_count": 4,
+        "first_accepted_evidence_rank_mean_over_hits": 6.33333333,
+        "first_rank_hit_count": 3,
+        "nDCG@20_route_binary": 0.31333198,
+        "ranker": "vision",
+        "scope": "source_scoped"
+      },
+      {
+        "All-Evidence@1": 0.0,
+        "All-Evidence@10": 1.0,
+        "All-Evidence@20": 1.0,
+        "All-Evidence@5": 0.0,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 0.1,
+        "Recall@1": 0.0,
+        "Recall@10": 1.0,
+        "Recall@20": 1.0,
+        "Recall@5": 0.0,
+        "eligible_row_count": 1,
+        "first_accepted_evidence_rank_mean_over_hits": 10.0,
+        "first_rank_hit_count": 1,
+        "nDCG@20_route_binary": 0.28906483,
+        "ranker": "ambient",
+        "scope": "source_scoped"
+      },
+      {
+        "All-Evidence@1": 1.0,
+        "All-Evidence@10": 1.0,
+        "All-Evidence@20": 1.0,
+        "All-Evidence@5": 1.0,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 1.0,
+        "Recall@1": 1.0,
+        "Recall@10": 1.0,
+        "Recall@20": 1.0,
+        "Recall@5": 1.0,
+        "eligible_row_count": 2,
+        "first_accepted_evidence_rank_mean_over_hits": 1.0,
+        "first_rank_hit_count": 2,
+        "nDCG@20_route_binary": 1.0,
+        "ranker": "speech",
+        "scope": "source_scoped"
+      },
+      {
+        "All-Evidence@1": 0.2,
+        "All-Evidence@10": 0.8,
+        "All-Evidence@20": 0.8,
+        "All-Evidence@5": 0.4,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 0.39857143,
+        "Recall@1": 0.2,
+        "Recall@10": 0.9,
+        "Recall@20": 0.9,
+        "Recall@5": 0.5,
+        "eligible_row_count": 5,
+        "first_accepted_evidence_rank_mean_over_hits": 4.4,
+        "first_rank_hit_count": 5,
+        "nDCG@20_route_binary": 0.54111889,
+        "ranker": "fused",
+        "scope": "source_scoped"
+      },
+      {
+        "All-Evidence@1": 0.0,
+        "All-Evidence@10": 0.5,
+        "All-Evidence@20": 0.75,
+        "All-Evidence@5": 0.25,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 0.16944444,
+        "Recall@1": 0.0,
+        "Recall@10": 0.5,
+        "Recall@20": 0.75,
+        "Recall@5": 0.25,
+        "eligible_row_count": 4,
+        "first_accepted_evidence_rank_mean_over_hits": 8.66666667,
+        "first_rank_hit_count": 3,
+        "nDCG@20_route_binary": 0.29548994,
+        "ranker": "vision",
+        "scope": "cross_source"
+      },
+      {
+        "All-Evidence@1": 0.0,
+        "All-Evidence@10": 0.0,
+        "All-Evidence@20": 1.0,
+        "All-Evidence@5": 0.0,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 0.06666667,
+        "Recall@1": 0.0,
+        "Recall@10": 0.0,
+        "Recall@20": 1.0,
+        "Recall@5": 0.0,
+        "eligible_row_count": 1,
+        "first_accepted_evidence_rank_mean_over_hits": 15.0,
+        "first_rank_hit_count": 1,
+        "nDCG@20_route_binary": 0.25,
+        "ranker": "ambient",
+        "scope": "cross_source"
+      },
+      {
+        "All-Evidence@1": 1.0,
+        "All-Evidence@10": 1.0,
+        "All-Evidence@20": 1.0,
+        "All-Evidence@5": 1.0,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 1.0,
+        "Recall@1": 1.0,
+        "Recall@10": 1.0,
+        "Recall@20": 1.0,
+        "Recall@5": 1.0,
+        "eligible_row_count": 2,
+        "first_accepted_evidence_rank_mean_over_hits": 1.0,
+        "first_rank_hit_count": 2,
+        "nDCG@20_route_binary": 1.0,
+        "ranker": "speech",
+        "scope": "cross_source"
+      },
+      {
+        "All-Evidence@1": 0.2,
+        "All-Evidence@10": 0.6,
+        "All-Evidence@20": 0.8,
+        "All-Evidence@5": 0.4,
+        "LOW_N_DESCRIPTIVE_WAVE_R": true,
+        "MRR_route_macro": 0.38555556,
+        "Recall@1": 0.2,
+        "Recall@10": 0.7,
+        "Recall@20": 0.9,
+        "Recall@5": 0.5,
+        "eligible_row_count": 5,
+        "first_accepted_evidence_rank_mean_over_hits": 5.8,
+        "first_rank_hit_count": 5,
+        "nDCG@20_route_binary": 0.52507723,
+        "ranker": "fused",
+        "scope": "cross_source"
+      }
+    ],
+    "definition": "Metrics recomputed from the byte-frozen fixed_query_suite top-20 outputs. For multimodal families its vision and fused rankings include the existing label-independent temporal-binding behavior.",
+    "rows": [
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.1,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "ambient"
+        ],
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 10,
+        "nDCG@20_route_binary": 0.28906483,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "scale1a_AST_sparse",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "ambient": 10
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.1,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "ambient",
+          "vision"
+        ],
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 10,
+        "nDCG@20_route_binary": 0.35447857,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "ambient": 10,
+          "vision": 10
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.1,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 10,
+        "nDCG@20_route_binary": 0.28906483,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "vision": 10
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.06666667,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "ambient"
+        ],
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 15,
+        "nDCG@20_route_binary": 0.25,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "scale1a_AST_sparse",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "ambient": 15
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.06666667,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "ambient",
+          "vision"
+        ],
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 15,
+        "nDCG@20_route_binary": 0.3065736,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "ambient": 15,
+          "vision": 15
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.06666667,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 15,
+        "nDCG@20_route_binary": 0.25,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "vision": 15
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.14285714,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 7,
+        "nDCG@20_route_binary": 0.33333333,
+        "query_by_modality": {
+          "vision": "discarded material introductory montage"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "vision": 7
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.14285714,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 7,
+        "nDCG@20_route_binary": 0.33333333,
+        "query_by_modality": {
+          "vision": "discarded material introductory montage"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "vision": 7
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.11111111,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 9,
+        "nDCG@20_route_binary": 0.30103,
+        "query_by_modality": {
+          "vision": "discarded material introductory montage"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "vision": 9
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.11111111,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 9,
+        "nDCG@20_route_binary": 0.30103,
+        "query_by_modality": {
+          "vision": "discarded material introductory montage"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "vision": 9
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "nDCG@20_route_binary": 0.63092975,
+        "query_by_modality": {
+          "vision": "person carrying object beside fence"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "nDCG@20_route_binary": 0.63092975,
+        "query_by_modality": {
+          "vision": "person carrying object beside fence"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "nDCG@20_route_binary": 0.63092975,
+        "query_by_modality": {
+          "vision": "person carrying object beside fence"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "nDCG@20_route_binary": 0.63092975,
+        "query_by_modality": {
+          "vision": "person carrying object beside fence"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.25,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.5,
+          "20": 0.5,
+          "5": 0.5
+        },
+        "applicable_support_routes": [
+          "speech",
+          "vision"
+        ],
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 2,
+        "nDCG@20_route_binary": 0.38685281,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "speech": 2,
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "speech"
+        ],
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 1,
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "scale1a_BM25",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": null,
+        "nDCG@20_route_binary": 0.0,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.25,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.5,
+          "20": 0.5,
+          "5": 0.5
+        },
+        "applicable_support_routes": [
+          "speech",
+          "vision"
+        ],
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 2,
+        "nDCG@20_route_binary": 0.38685281,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "speech": 2,
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "speech"
+        ],
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 1,
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "scale1a_BM25",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "applicable_support_routes": [
+          "vision"
+        ],
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": null,
+        "nDCG@20_route_binary": 0.0,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "scale1a_operational_vision_CLIP_or_temporal_binding",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "speech"
+        ],
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "speaker main area hurricane activity basin"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "speech"
+        ],
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "speaker main area hurricane activity basin"
+        },
+        "row_id": "scale1a_BM25",
+        "scope": "source_scoped",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "speech"
+        ],
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "speaker main area hurricane activity basin"
+        },
+        "row_id": "scale1a_fixed_RRF",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "applicable_support_routes": [
+          "speech"
+        ],
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "speaker main area hurricane activity basin"
+        },
+        "row_id": "scale1a_BM25",
+        "scope": "cross_source",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      }
+    ]
+  },
+  "gates": {
+    "CLAP_SNAPSHOT_READY": {
+      "current": false,
+      "kind": "technical_readiness",
+      "requires": [
+        "exact pinned snapshot and allowlist",
+        "local SHA-256 and size validation",
+        "offline local-only audio/text load",
+        "finite normalized embeddings",
+        "deterministic replay",
+        "separate redistribution decision"
+      ]
+    },
+    "LEARNED_AUDIO_RETRIEVAL_READY": {
+      "current": false,
+      "kind": "technical_readiness",
+      "requires": [
+        "CLAP_SNAPSHOT_READY",
+        "3428/3428 fine vectors",
+        "4283/4283 segment vectors",
+        "both scopes and r004",
+        "matched A-AST and A-CLAP rows",
+        "resource and leakage audit"
+      ]
+    },
+    "LEARNED_RETRIEVAL_READY": {
+      "current": false,
+      "does_not_require_beating_control": true,
+      "kind": "technical_readiness",
+      "requires": [
+        "both learned modality readiness gates",
+        "all comparison and fixed-RRF rows",
+        "frozen hashes and no evaluation tuning",
+        "typed null/failure rows",
+        "deterministic replay",
+        "independent leakage and metric audit"
+      ]
+    },
+    "LEARNED_VISUAL_RETRIEVAL_READY": {
+      "current": false,
+      "kind": "technical_readiness",
+      "requires": [
+        "SIGLIP2_SNAPSHOT_READY",
+        "3433/3433 frame vectors",
+        "4283/4283 segment vectors",
+        "both scopes and four visual-route families",
+        "matched V-CLIP and V-SIGLIP2 rows",
+        "resource and leakage audit"
+      ]
+    },
+    "SIGLIP2_SNAPSHOT_READY": {
+      "current": false,
+      "kind": "technical_readiness",
+      "requires": [
+        "exact pinned snapshot and allowlist",
+        "local SHA-256 and size validation",
+        "offline local-only image/text load",
+        "finite normalized embeddings",
+        "deterministic replay",
+        "separate redistribution decision"
+      ]
+    },
+    "WAVE_R_DIAGNOSTIC_GO": {
+      "current": null,
+      "improvement_required": false,
+      "kind": "scientific_result",
+      "requires": [
+        "LEARNED_RETRIEVAL_READY",
+        "nontrivial reproducible paired separation on at least two retained families in source_scoped primary",
+        "at least one change persists cross-source or changes fusion All-Evidence@K"
+      ]
+    },
+    "WAVE_R_DIAGNOSTIC_INCONCLUSIVE": {
+      "current": null,
+      "kind": "scientific_result",
+      "when": "readiness passes but differences are tied, too sparse, one-family-only, route-ambiguous, or otherwise insufficient"
+    },
+    "WAVE_R_NO_GO": {
+      "current": null,
+      "kind": "integrity_failure",
+      "when": "snapshot, parity, freeze, leakage, fixed fusion, metric, or replay contract fails",
+      "worse_than_control_is_no_go": false
+    }
+  },
+  "limitations": [
+    "Five retained machine-adjudicated families over three source videos.",
+    "Deterministic protocol policies, not learned-system evaluation.",
+    "No human-validated gold evidence, minimality, or modality necessity.",
+    "Only r016/r017 qualify for validated-negative displacement.",
+    "r007 remains below the frozen Recall@5 shortcut gate.",
+    "Only one ambient-audio family is eligible for AST-vs-CLAP; its aggregate is purely descriptive.",
+    "The excluded r014 family cannot be restored based on Wave-R performance.",
+    "Readiness and scientific outcome are separate; a weaker learned retriever can still satisfy readiness."
+  ],
+  "models": {
+    "ast": {
+      "model_id": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "snapshot_hash": "sha256:acb9247d5f2548c121e7fd213347586e1b781fd8dc329e27505dd269a69cccbc",
+      "weight_sha256": "sha256:ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d"
+    },
+    "clap_target": {
+      "model_id": "laion/clap-htsat-unfused",
+      "revision": "8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a",
+      "snapshot_ready": false
+    },
+    "clip": {
+      "model_id": "openai/clip-vit-base-patch32",
+      "redistribution_decision": "NOT_AUTHORIZED",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "snapshot_hash": "sha256:2c29598276753a41d293ca65ef8fe60287ed62d8cd94b0ee77ec38ecb41a20f5",
+      "technical_inference_decision": "CLIP_SNAPSHOT_READY",
+      "weight_sha256": "sha256:a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f"
+    },
+    "siglip2_target": {
+      "model_id": "google/siglip2-base-patch16-224",
+      "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+      "snapshot_ready": false
+    },
+    "whisper": {
+      "model_id": "openai/whisper-tiny.en",
+      "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+      "snapshot_hash": "sha256:1e098354f3cbd9f339ef8fbdcc0e82ff238786bffa25794493ebe32830f4518a",
+      "weight_sha256": "sha256:db59695928ded6043adaef491a53ef4e12da9611184d77c53baa691a60b958ad"
+    }
+  },
+  "scale1a_decisions": {
+    "diagnostic": "SCALE1A_DIAGNOSTIC_INCONCLUSIVE",
+    "engineering": "SCALE1A_ENGINEERING_GO",
+    "final_benchmark": "FINAL_BENCHMARK_NOT_YET_VALIDATED",
+    "milestone": "SCALE1A_MILESTONE_PROVEN"
+  },
+  "schema_version": "av-trace.scale1b-wave-r-contract/1.0",
+  "scientific_boundary": {
+    "gold_annotation": false,
+    "human_reviewed": false,
+    "learned_model_evaluation_completed": false,
+    "modality_necessity_human_validated": false,
+    "warning": "LOW_N_DESCRIPTIVE_WAVE_R"
+  },
+  "scope": "Freeze the Scale-1A learned-retrieval comparison and the no-evaluation-tuning Wave-R experiment contract.",
+  "semantic_hashes": {
+    "fixed_query_suite_ranking_hash": "sha256:713146e91b7ca9abab978befa396cc506485fd1dcd32796fe0593b5de8353cca",
+    "hard_negative_hash": "sha256:c71a05fb2bde27121fb7381a3240e4ae13867105c4d18f43bf7462210986736b",
+    "interventions_hash": "sha256:7bb625db727ea35c9f1daefdd1093a06da55b735635d4ee1904632b7279c1433",
+    "migration_hash": "sha256:066acf9c4d78181bcc80e007f3cb94a22a3c9d1093b837ad5e4df3fd49f39496",
+    "observation_manifest_hash": "sha256:dd2ff4c9bd84fbe7b49abff6c5788d4c19d902ca36f6a4021ffdcd2b6654c76e",
+    "root_index_hash": "sha256:48209ed3fced65a019cd3a6f8bb55605fc44beebd929c847e25e92386758c91b",
+    "run_manifest_hash": "sha256:abe9d75b94c7fb029565f669598e37223ef3797f38ca52c9c62dfd4715761222",
+    "segment_manifest_hash": "sha256:b9e8f3836ffbb2a2c8ca53ada2413877ed5896a112e4c65e592cf17deee2ce54",
+    "trajectory_semantic_hash": "sha256:3844f8a96eed6e99eac0aeada98cf01cb16b71e35b31b0d83f32d9670cd54e82"
+  },
+  "stage": "MACHINE_ADJUDICATED_PROVISIONAL_MVP",
+  "task": 101,
+  "verification": {
+    "artifact_count": 20,
+    "artifact_hashes_recomputed": true,
+    "checkpoint_count": 20,
+    "comparison_row_count": 9,
+    "contract_consistent": true,
+    "direct_control_preflight_row_count": 24,
+    "excluded_family_count": 1,
+    "modes_recomputed": true,
+    "operational_metric_row_count": 24,
+    "retained_family_count": 5,
+    "semantic_hashes_cross_checked": true
+  },
+  "wave_r_direct_control_preflight": {
+    "reason": "Wave R direct CLIP-vs-SigLIP2 must isolate the visual encoder before temporal binding. These control rows were recomputed read-only from the frozen index and queries and are not substituted for the frozen Scale-1A operational rows.",
+    "rows": [
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": null,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.0,
+        "query": "person water conditions near shore",
+        "row_id": "V-CLIP",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.1,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 10,
+        "modality": "ambient",
+        "nDCG@20_route_binary": 0.28906483,
+        "query": "environmental sounds same interval water",
+        "row_id": "A-AST",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "ambient": 10
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.05,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 20,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.27919075,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "F-CTRL",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "ambient": 20,
+          "vision": 20
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": null,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.0,
+        "query": "person water conditions near shore",
+        "row_id": "V-CLIP",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.06666667,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": 15,
+        "modality": "ambient",
+        "nDCG@20_route_binary": 0.25,
+        "query": "environmental sounds same interval water",
+        "row_id": "A-AST",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "ambient": 15
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r004-surf-av",
+        "first_accepted_evidence_rank": null,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.0,
+        "query_by_modality": {
+          "ambient": "environmental sounds same interval water",
+          "vision": "person water conditions near shore"
+        },
+        "row_id": "F-CTRL",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "ambient": null,
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.14285714,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 7,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.33333333,
+        "query": "discarded material introductory montage",
+        "row_id": "V-CLIP",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 7
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.14285714,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 7,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.33333333,
+        "query_by_modality": {
+          "vision": "discarded material introductory montage"
+        },
+        "row_id": "F-CTRL",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 7
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.11111111,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 9,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.30103,
+        "query": "discarded material introductory montage",
+        "row_id": "V-CLIP",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 9
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.11111111,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r007-opening-plastic-waste",
+        "first_accepted_evidence_rank": 9,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.30103,
+        "query_by_modality": {
+          "vision": "discarded material introductory montage"
+        },
+        "row_id": "F-CTRL",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 9
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.63092975,
+        "query": "person carrying object beside fence",
+        "row_id": "V-CLIP",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.63092975,
+        "query_by_modality": {
+          "vision": "person carrying object beside fence"
+        },
+        "row_id": "F-CTRL",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.63092975,
+        "query": "person carrying object beside fence",
+        "row_id": "V-CLIP",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 0.5,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r011-bag-by-fence",
+        "first_accepted_evidence_rank": 2,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.63092975,
+        "query_by_modality": {
+          "vision": "person carrying object beside fence"
+        },
+        "row_id": "F-CTRL",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": 2
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": null,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.0,
+        "query": "how many hurricane formation factors stated",
+        "row_id": "V-CLIP",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 1,
+        "modality": "speech",
+        "nDCG@20_route_binary": 1.0,
+        "query": "how many hurricane formation factors stated",
+        "row_id": "S-BM25",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.25,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.5,
+          "20": 0.5,
+          "5": 0.5
+        },
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 2,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.38685281,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "F-CTRL",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 2,
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.0,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": null,
+        "modality": "vision",
+        "nDCG@20_route_binary": 0.0,
+        "query": "how many hurricane formation factors stated",
+        "row_id": "V-CLIP",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 1,
+        "modality": "speech",
+        "nDCG@20_route_binary": 1.0,
+        "query": "how many hurricane formation factors stated",
+        "row_id": "S-BM25",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 0.0,
+          "10": 0.0,
+          "20": 0.0,
+          "5": 0.0
+        },
+        "MRR_route_macro": 0.25,
+        "Recall@K": {
+          "1": 0.0,
+          "10": 0.5,
+          "20": 0.5,
+          "5": 0.5
+        },
+        "family_id": "noaa01-r016-three-factors-vs",
+        "first_accepted_evidence_rank": 2,
+        "modality": "fused",
+        "nDCG@20_route_binary": 0.38685281,
+        "query_by_modality": {
+          "speech": "how many hurricane formation factors stated",
+          "vision": "how many hurricane formation factors stated"
+        },
+        "row_id": "F-CTRL",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 2,
+          "vision": null
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "modality": "speech",
+        "nDCG@20_route_binary": 1.0,
+        "query": "speaker main area hurricane activity basin",
+        "row_id": "S-BM25",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "modality": "fused",
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "speaker main area hurricane activity basin"
+        },
+        "row_id": "F-CTRL",
+        "scope": "source_scoped",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "modality": "speech",
+        "nDCG@20_route_binary": 1.0,
+        "query": "speaker main area hurricane activity basin",
+        "row_id": "S-BM25",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      },
+      {
+        "All-Evidence@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "MRR_route_macro": 1.0,
+        "Recall@K": {
+          "1": 1.0,
+          "10": 1.0,
+          "20": 1.0,
+          "5": 1.0
+        },
+        "family_id": "noaa01-r017-north-atlantic-basin",
+        "first_accepted_evidence_rank": 1,
+        "modality": "fused",
+        "nDCG@20_route_binary": 1.0,
+        "query_by_modality": {
+          "speech": "speaker main area hurricane activity basin"
+        },
+        "row_id": "F-CTRL",
+        "scope": "cross_source",
+        "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT",
+        "support_route_ranks": {
+          "speech": 1
+        }
+      }
+    ],
+    "status": "TASK101_READ_ONLY_RECOMPUTATION_NOT_SCALE1A_OUTPUT"
+  }
+}

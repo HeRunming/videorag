@@ -1,0 +1,345 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "av-trace-commons-event-source-dossiers-v1",
+  "task": 154,
+  "created_at": "2026-09-24",
+  "decision_token": "COMMONS_EVENT_SOURCE_PREFLIGHT_NO_GO",
+  "decision_scope": "STOPPED_FAIL_CLOSED_COMMONS_RECONNAISSANCE",
+  "boundary": {
+    "user_stop_instruction_obeyed": true,
+    "network_requests_after_stop_instruction": 0,
+    "successful_task154_network_responses": 0,
+    "task154_api_responses_saved": 0,
+    "task154_head_probes_completed": 0,
+    "task154_range_probes_completed": 0,
+    "task154_manifest_probes_completed": 0,
+    "full_media_downloads": 0,
+    "media_payload_bytes_saved": 0,
+    "human_semantic_prescreen_performed": false,
+    "human_construct_labels_assigned": false,
+    "scientific_evaluation_performed": false,
+    "evidence_mode": "PRE_EXISTING_SAVED_LOCAL_EVIDENCE_ONLY"
+  },
+  "governing_inputs": [
+    "orchestration/results/141_cvpr_main_blueprint_redteam.txt",
+    "orchestration/results/144_mini_pilot_candidate_scientific_audit.txt",
+    "orchestration/prompts/147_event_source_live_preflight.md",
+    "orchestration/results/147_event_centric_live_preflight.txt",
+    "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+    "orchestration/results/152_licensed_dataset_source_pivot.txt",
+    "docs/review/event_centric_source_discovery_v1.md",
+    "data/rehearsal_plan/event_centric_source_dossiers_v1.json",
+    "data/restricted/source_dossiers/mini_pilot_v1/SG-COMMONS-BLOCKCHAIN.json",
+    "data/candidates/source_candidates.csv",
+    "data/candidates/top30_review_queue.csv"
+  ],
+  "decision_rule": {
+    "exact_preflight_ready": "Exact Commons file page and revision, direct Commons original, saved bounded official metadata or media probe, complete license and uploader/author source chain sufficient for the proposed use, affirmative acquisition plus internal-processing and restricted-annotation decisions, no unresolved critical component/privacy hold, and a plausible event-centric visual/audio route.",
+    "preflight_repair": "A genuinely event-centric candidate with a credible Commons route remains blocked only by repairable exact metadata, technical, source-chain, component, privacy, or semantic-prescreen fields.",
+    "preflight_no_go": "The source is presentation-dominant, a YouTube import without verified recording authority, carries a license-review flag, is generic ambient or music-heavy, or otherwise remains a poor event-centric fit even if some metadata can be repaired."
+  },
+  "counts": {
+    "commons_inventory_rows_reviewed_for_relevance": 22,
+    "decision_bearing_candidate_dossiers": 2,
+    "exact_preflight_ready": 0,
+    "preflight_repair": 0,
+    "preflight_no_go": 2,
+    "unpromoted_discovery_leads_not_in_decision_counts": 20,
+    "candidates_with_saved_official_commons_api_snapshot": 1,
+    "candidates_with_exact_pageid_and_oldid": 1,
+    "candidates_with_exact_direct_original_url": 1,
+    "candidates_with_complete_requested_technical_metadata": 1,
+    "genuinely_event_centric_long_candidates_with_complete_requested_fields": 0,
+    "exactly_verified_source_creator_lineages": 1,
+    "eligible_independent_source_creator_lineages": 0,
+    "exactly_verified_capture_formats": 1,
+    "eligible_event_centric_capture_formats": 0,
+    "target_at_least_12_candidates_met": false,
+    "target_at_least_4_lineages_met": false,
+    "target_at_least_4_capture_formats_met": false,
+    "target_at_least_4_exact_preflight_ready_from_3_lineages_met": false
+  },
+  "inventory_exclusion_summary": {
+    "reason_not_to_convert_all_22_rows_into_dossiers": "The prior Commons inventory is dominated by lectures, readings, conference ceremonies, and unresolved or stale filenames. After network stop, most rows lack an exact saved page revision, direct original, license/source chain, byte size, codecs, and audio-channel record. Promoting them would invent exactness.",
+    "dominant_mismatch_classes": [
+      "lecture or slideshow",
+      "public reading or talking-head presentation",
+      "ceremony with likely music, applause, stage screens, and crowd likenesses",
+      "unresolved exact file identity"
+    ],
+    "unpromoted_candidate_ids": [
+      "cand-056",
+      "cand-057",
+      "cand-058",
+      "cand-059",
+      "cand-060",
+      "cand-061",
+      "cand-062",
+      "cand-063",
+      "cand-064",
+      "cand-065",
+      "cand-066",
+      "cand-067",
+      "cand-068",
+      "cand-069",
+      "cand-070",
+      "cand-071",
+      "cand-073",
+      "cand-074",
+      "cand-075",
+      "cand-076"
+    ]
+  },
+  "sources": [
+    {
+      "source_group_id": "SG-COMMONS-BLOCKCHAIN",
+      "candidate_id": "cand-055",
+      "title": "Abuse on the blockchain – Guest lecture at Stanford University by Molly White (2022).webm",
+      "decision": "PREFLIGHT_NO_GO",
+      "decision_reason": "The only complete saved Commons metadata dossier is a lecture/slide/screenshot recording, not a genuinely event-centric process or observation source. It is also a YouTube import, the saved official metadata exposes License review needed (video), and recording-owner and component authority are not affirmatively established.",
+      "event_fit": {
+        "event_centric": false,
+        "capture_format": "lecture_with_slides_screenshots_and_q_and_a",
+        "rejection_triggers": [
+          "lecture and slide dominance",
+          "YouTube import without archived proof that the originating account controlled the recording",
+          "License review needed (video)",
+          "very high OCR and speech shortcut risk",
+          "no concrete semantically relevant non-speech event established"
+        ]
+      },
+      "exact_identity": {
+        "file_page": "https://commons.wikimedia.org/wiki/File:Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_(2022).webm",
+        "pageid": 126021487,
+        "oldid": 1032015587,
+        "parentid": 1029465326,
+        "revision_timestamp": "2025-05-15T17:32:41Z",
+        "upload_timestamp": "2022-11-27T20:21:10Z",
+        "upload_user": "Czar",
+        "revision_user": "YouTubeBot",
+        "file_sha1": "53f1de165f9b9c98a6bf1562315fb6ce5a4a61cc",
+        "identity_status": "EXACT_OFFICIAL_API_METADATA_FROZEN"
+      },
+      "direct_original_media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Abuse_on_the_blockchain_%E2%80%93_Guest_lecture_at_Stanford_University_by_Molly_White_%282022%29.webm",
+        "mime": "video/webm",
+        "byte_size": 82285120,
+        "original_object_fetched": false,
+        "original_object_head_or_range_tested": false,
+        "status": "URL_AND_OBJECT_METADATA_FROM_OFFICIAL_COMMONS_API_ONLY"
+      },
+      "license_and_lineage": {
+        "license_short_name": "CC BY 3.0",
+        "license_name": "Creative Commons Attribution 3.0",
+        "license_code": "cc-by-3.0",
+        "attribution_required": true,
+        "attribution": "Molly White",
+        "share_alike": false,
+        "author": "Molly White",
+        "source_chain": "The Commons file page identifies Molly White as author and cites YouTube video hXBZ-BXfCSY. Commons upload user Czar imported the media from that YouTube route with video2commons. The later saved revision was made by YouTubeBot.",
+        "uploader_authority_status": "UNRESOLVED",
+        "license_review_status": "UNRESOLVED_FLAG_PRESENT",
+        "license_review_evidence": [
+          "Wikitext includes {{LicenseReview}}.",
+          "Official extmetadata categories include License review needed (video)."
+        ]
+      },
+      "technical_metadata": {
+        "duration_seconds": 2354.101,
+        "duration_display": "00:39:14.101",
+        "container": "WebM/Matroska",
+        "video_codec": "VP9",
+        "video_codec_tag": "V_VP9",
+        "width": 1920,
+        "height": 1080,
+        "frame_rate": 25,
+        "audio_codec": "Opus",
+        "audio_codec_tag": "A_OPUS",
+        "audio_sample_rate_hz": 48000,
+        "audio_channels": 2,
+        "audio_channel_mode": "stereo",
+        "audio_language": "eng",
+        "synchronized_av_status": "SUPPORTED_BY_OFFICIAL_API_CONTAINER_METADATA_NOT_LOCALLY_DECODED",
+        "bounded_probe": "Official MediaWiki API metadata request only; 11,595 response-body bytes. No original-media HEAD, range, manifest, or decode probe."
+      },
+      "description_and_categories": {
+        "description_summary": "A March 7, 2022 Stanford guest lecture by Molly White on abuse and harassment involving blockchain systems. The file description says student video and audio were removed and student questions were replaced with text summaries; linked slides and websites are part of the presentation context.",
+        "categories": [
+          "Media from YouTube",
+          "GorillaWarfare",
+          "Blockchain",
+          "License review needed (video)",
+          "Uploaded with video2commons",
+          "Videos of 2022",
+          "Videos of lectures"
+        ]
+      },
+      "component_and_people_risks": {
+        "slides_screenshots_websites": "HOLD",
+        "logos_marks": "HOLD",
+        "music": "NOT_AUDITED",
+        "archive_or_partner_footage": "HOLD",
+        "speaker_likeness": "IDENTIFIABLE",
+        "audience_privacy": "Description states student media was removed, but full-source verification was not performed.",
+        "sensitive_content": "Discussion and examples concern abuse and harassment.",
+        "takedown_process": "NOT_ESTABLISHED"
+      },
+      "semantic_prescreen": {
+        "status": "NOT_PERFORMED_SOURCE_REJECTED",
+        "dynamic_non_text_visual_hypothesis": "Not supported by saved evidence; slides, screenshots, and websites dominate the described visual route.",
+        "non_speech_audio_hypothesis": "No concrete source-world event sound is established.",
+        "shortcut_risks": "Very high speech, slide, OCR, and text-summary shortcut risk.",
+        "interpretation": "Metadata hypotheses only; not human-verified."
+      },
+      "artifact_decisions": {
+        "acquisition": "NO_GO_FOR_EVENT_CENTRIC_POOL",
+        "internal_processing": "NOT_AUTHORIZED",
+        "restricted_human_annotation": "NOT_AUTHORIZED",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_or_timed_text_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "NOT_AUTHORIZED",
+        "derived_features_embeddings_release": "NOT_AUTHORIZED"
+      },
+      "evidence": [
+        {
+          "path": "data/source_recon/commons_event_sources_v1/SG-COMMONS-BLOCKCHAIN/01_file_api.json",
+          "bytes": 11595,
+          "sha256": "93b1f6f45bc72135b9c5a135aedc7111f4e6c2168f6ef044bfaab4c35145a7d8"
+        },
+        {
+          "path": "data/source_recon/commons_event_sources_v1/SG-COMMONS-BLOCKCHAIN/01_file_api.headers",
+          "bytes": 1637,
+          "sha256": "c1068d703cb458ae7e1e809ba27d89349707c5c4c790a749461faf9465cb8e04"
+        },
+        {
+          "path": "data/source_recon/commons_event_sources_v1/SG-COMMONS-BLOCKCHAIN/01_file_api.curlmeta",
+          "bytes": 523,
+          "sha256": "08049f40d377aa7d3af11b9cfaa3c5004ddc89e0b0f8bb49d7e7a5b33a8c2b53"
+        }
+      ]
+    },
+    {
+      "source_group_id": "EC-COMMONS-WIKIMANIA-2024-OPENING",
+      "candidate_id": "cand-072",
+      "title": "Wikimania 2024 - Gdańsk Main Hall - Day 1 - Opening ceremony & Wikimedian of the Year Awards.webm",
+      "decision": "PREFLIGHT_NO_GO",
+      "decision_reason": "Prior repository evidence identifies a genuine long ceremony recording, but the Task-154 package has no saved exact pageid/oldid, direct original, license/source chain, byte size, codecs, or audio-channel metadata. More importantly, the ceremony is likely dominated by stage speech, screens, awards, applause, music, and audience imagery, creating the exact music/privacy/generic-ambient failure modes excluded by the task.",
+      "event_fit": {
+        "event_centric": true,
+        "capture_format": "conference_opening_ceremony_and_awards",
+        "rejection_triggers": [
+          "music and performance-rights burden",
+          "audience and attendee likeness/privacy burden",
+          "generic applause is not accepted as semantic event audio",
+          "stage speech and screen/OCR dominance risk",
+          "no exact saved revision, direct original, or technical metadata"
+        ]
+      },
+      "exact_identity": {
+        "file_page": "https://commons.wikimedia.org/wiki/File:Wikimania_2024_-_Gda%C5%84sk_Main_Hall_-_Day_1_-_Opening_ceremony_%26_Wikimedian_of_the_Year_Awards.webm",
+        "pageid": null,
+        "oldid": null,
+        "revision_timestamp": null,
+        "file_sha1": null,
+        "identity_status": "CORRECTED_OFFICIAL_FILE_TITLE_FROM_PRIOR_REVIEW_BUT_REVISION_NOT_FROZEN"
+      },
+      "direct_original_media": {
+        "url": null,
+        "mime": null,
+        "byte_size": null,
+        "original_object_fetched": false,
+        "original_object_head_or_range_tested": false,
+        "status": "NOT_ESTABLISHED_IN_SAVED_EVIDENCE"
+      },
+      "license_and_lineage": {
+        "license_short_name": null,
+        "license_name": null,
+        "license_code": null,
+        "attribution_required": null,
+        "attribution": null,
+        "share_alike": null,
+        "author": null,
+        "source_chain": "Wikimedia Commons / credited uploader was the prior repository-level description; the exact uploader, production authority, revision, and source chain were not frozen.",
+        "uploader_authority_status": "UNRESOLVED",
+        "license_review_status": "UNRESOLVED_NO_SAVED_API_RECORD"
+      },
+      "technical_metadata": {
+        "duration_seconds": 3148,
+        "duration_display": "00:52:28",
+        "duration_status": "PRIOR_OFFICIAL_PROGRAM_OR_FILE_OBSERVATION_NOT_TASK154_API_FROZEN",
+        "container": null,
+        "video_codec": null,
+        "audio_codec": null,
+        "audio_channels": null,
+        "byte_size": null,
+        "synchronized_av_status": "UNVERIFIED",
+        "bounded_probe": "None in Task 154."
+      },
+      "description_and_categories": {
+        "description_summary": "Opening ceremony and Wikimedian of the Year awards in the Wikimania 2024 Gdańsk Main Hall; prior notes identify stage transitions, presenters, award segments, screens, and audience reactions.",
+        "categories": null,
+        "status": "PRIOR_REPOSITORY_SUMMARY_ONLY_NOT_EXACT_API_METADATA"
+      },
+      "component_and_people_risks": {
+        "music_and_performance": "HIGH",
+        "slides_and_stage_screens": "HIGH",
+        "venue_sponsor_marks": "HOLD",
+        "attendee_audience_likenesses": "HIGH",
+        "crowd_privacy": "HIGH",
+        "takedown_process": "NOT_ESTABLISHED"
+      },
+      "semantic_prescreen": {
+        "status": "NOT_PERFORMED_SOURCE_REJECTED",
+        "dynamic_non_text_visual_hypothesis": "Stage transitions, award handoffs, and audience reactions may be visible.",
+        "non_speech_audio_hypothesis": "Applause and music are likely, but they are generic or rights-burdened and are not counted as semantic-audio evidence.",
+        "shortcut_risks": "High speech, stage-screen text, captions, and award-title OCR risk.",
+        "interpretation": "Metadata hypotheses only; not human-verified."
+      },
+      "artifact_decisions": {
+        "acquisition": "NO_GO_FOR_THIS_POOL",
+        "internal_processing": "NOT_AUTHORIZED",
+        "restricted_human_annotation": "NOT_AUTHORIZED",
+        "raw_media_release": "NOT_AUTHORIZED",
+        "clip_frame_audio_release": "NOT_AUTHORIZED",
+        "transcript_or_timed_text_release": "NOT_AUTHORIZED",
+        "annotation_evaluator_release": "NOT_AUTHORIZED",
+        "derived_features_embeddings_release": "NOT_AUTHORIZED"
+      },
+      "evidence": [
+        {
+          "path": "data/rehearsal_plan/event_centric_source_dossiers_v1.json",
+          "bytes": 59346,
+          "sha256": "59fb92f51a44fd8619e99e418b4ae28eaa3cfb98b23757d3e9be5d9eaf5da06a",
+          "role": "Prior repository synthesis; not a Task-154 official API response."
+        },
+        {
+          "path": "docs/review/event_centric_source_discovery_v1.md",
+          "bytes": 15558,
+          "sha256": "696b64bf8be8fa873161a28e5cc5ef8ac53f44a5e7da2ca0a3a059859f98ac64",
+          "role": "Prior rejection rationale and corrected file-title record."
+        }
+      ]
+    }
+  ],
+  "global_artifact_decisions": {
+    "acquisition": "NOT_AUTHORIZED",
+    "internal_processing": "NOT_AUTHORIZED",
+    "restricted_human_annotation": "NOT_AUTHORIZED",
+    "raw_media_release": "NOT_AUTHORIZED",
+    "clip_frame_audio_release": "NOT_AUTHORIZED",
+    "transcript_or_timed_text_release": "NOT_AUTHORIZED",
+    "annotation_evaluator_release": "NOT_AUTHORIZED",
+    "derived_features_embeddings_release": "NOT_AUTHORIZED"
+  },
+  "next_actions": [
+    "None are authorized by Task 154.",
+    "If a later task reopens Commons discovery, search official Commons API/category pages for field procedures, repair/assembly, industrial/lab processes, and wildlife/environment observations rather than the existing lecture/ceremony inventory.",
+    "Require an exact pageid/oldid, direct original, complete license/source chain, uploader authority, and bounded technical metadata before a record enters the candidate count.",
+    "Keep semantic visual/audio statements as hypotheses until a separately authorized human prescreen."
+  ],
+  "evidence_manifest": {
+    "path": "data/source_recon/commons_event_sources_v1/evidence_manifest.json",
+    "note": "Generated after the evidence files; excluded from its own hash list."
+  }
+}

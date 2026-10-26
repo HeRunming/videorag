@@ -1,0 +1,24 @@
+{
+  "fixture_kind": "schema_faithful_release_identity",
+  "synthetic_values": true,
+  "provider": "huggingface",
+  "repository": {
+    "id": "MBZUAI/longshot-bench",
+    "url": "https://huggingface.co/datasets/MBZUAI/longshot-bench",
+    "revision": "b559813000000000000000000000000000000000",
+    "technical_access_status": "public_ungated",
+    "media_rights_status": "unknown_hold",
+    "license_resolution_status": "unresolved",
+    "license_evidence": [
+      {
+        "source": "hf_card_header",
+        "artifact_class": "dataset_release",
+        "name": "CC-BY-NC-SA-4.0",
+        "version": "4.0",
+        "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "scope": "Release-level statement; source media scope unresolved"
+      }
+    ]
+  },
+  "rows": []
+}

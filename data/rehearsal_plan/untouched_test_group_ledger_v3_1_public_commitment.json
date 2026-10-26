@@ -1,0 +1,602 @@
+{
+  "artifact_classification": "PUBLIC_IDENTITY_FREE_GOVERNANCE_AND_ROSTER_COMMITMENT",
+  "authoritative_inputs": [
+    {
+      "path": "data/restricted/untouched_test_group_ledger_v3_private.json",
+      "role": "Frozen v3 identity-bearing selected roster, locks, claims, custodian rules, and replacement policy",
+      "sha256": "d0295fd3081b45054941144f3f15f2499efad3c7e081cad6724e25f2b11b1f68"
+    },
+    {
+      "path": "data/rehearsal_plan/source_exposure_alias_manifest_v2.json",
+      "role": "Frozen v2 exposure identities and Assembly101/EPIC closure authority",
+      "sha256": "2c631f070505f60a49862a05d879c83e856d7dd60bca99fb34bfa16e8c064618"
+    },
+    {
+      "path": "data/restricted/holoassist_opaque_group_universe_v1.json",
+      "role": "Private HoloAssist closure identities and exact technical timing evidence",
+      "sha256": "bfed01c6cf5d1fb6ac5befb2959dacedeba649aa0d33112338e7eb49ae4bf529"
+    },
+    {
+      "path": "data/rehearsal_plan/holoassist_opaque_group_commitment_v1.json",
+      "role": "Public HoloAssist sealed commitment universe",
+      "sha256": "2b2b39da033e1b9be27901bea2a52bae5163f897844236113baed5bb4871d7ac"
+    },
+    {
+      "path": "data/rehearsal_plan/holoassist_exposure_supplement_v1.json",
+      "role": "HoloAssist exposure exclusions, timing closure, and unresolved video/audio access boundary",
+      "sha256": "47060b97dbf80e84c9ec4c5f7db07e2e2f841269293e402954321e825c85e890"
+    }
+  ],
+  "claims": {
+    "audio_available_claimed": false,
+    "media_acquired_claimed": false,
+    "release_authorized": false,
+    "rights_cleared_claimed": false,
+    "scientific_execution_authorized": false,
+    "test_validity_claimed": false
+  },
+  "commitment_id": "UNTOUCHED_TEST_GROUP_LEDGER_V3_1_PUBLIC_COMMITMENT",
+  "contamination_policy": {
+    "holoassist_policy": {
+      "frozen_manifest_v2_identity_absence_required": true,
+      "official_readme_examples_permanently_excluded": true,
+      "selected_commitment_conditions_sha256": "c8772d166dde8e076e493a141c79729803cc5a6ed5eb86df13b64d5eb44011b7",
+      "timing_metadata_is_nonsemantic": true,
+      "unknown_or_conflicting_identity_effect": "FAIL_CLOSED"
+    },
+    "inherited_v3_policy": {
+      "contaminating_event_types": [
+        "frozen_primary_pool",
+        "candidate_pool_member",
+        "candidate_route",
+        "candidate_selection_rank",
+        "selection_rationale",
+        "semantic_routing_target",
+        "semantic_prompt",
+        "semantic_dossier_description",
+        "transcript_or_page_content_observation",
+        "candidate_queue_review_or_mining",
+        "learned_ranking",
+        "media_acquired",
+        "media_indexed"
+      ],
+      "full_alias_closure_invalidation": true,
+      "manifest_policy_sha256": "21f94b6ab9c3bfc85fbfdea3fff4126a3ce2580cb04f450ffd7b4fc3de05ce83",
+      "selected_closure_event_requirement": "semantic_routing_event_count must equal zero and closure must be absent from contaminated_closures",
+      "unknown_or_conflicting_identity_effect": "FAIL_CLOSED"
+    }
+  },
+  "created_date": "2026-10-15",
+  "custodian_reveal_rules": {
+    "allowed_identity_recipients": [
+      "DESIGNATED_UNIVERSE_CUSTODIAN",
+      "INDEPENDENT_ALIAS_EXPOSURE_AUDITOR_UNDER_LEAST_PRIVILEGE"
+    ],
+    "forbidden_identity_recipients": [
+      "OPAQUE_SELECTOR",
+      "TEST_CONSTRUCTION_ROLE",
+      "QUESTION_OR_CLAIM_AUTHORING_ROLE",
+      "MODEL_DEVELOPMENT_ROLE",
+      "DISTRIBUTION_ROLE",
+      "PUBLIC_REVIEW_DOCUMENT"
+    ],
+    "identity_mapping_custodian_only": true,
+    "post_reveal_failure_rule": "Any eligibility failure after a selected identity has been revealed revokes the entire proposed split and requires a fresh seed, universe commitment, and versioned ledger.",
+    "preconditions": [
+      "independent audit verifies the committed mapping and closures",
+      "signed adjudication explicitly authorizes the named recipient",
+      "recipient accepts no-copy and no-semantic-inspection controls",
+      "all applicable construction and distribution locks remain enforced"
+    ],
+    "repair_state_rule": "REPAIR forbids reveal to construction, authoring, development, evaluation, distribution, or public roles."
+  },
+  "decision": {
+    "count_constraint_satisfied": true,
+    "decision": "FROZEN_PRIVATE_READY",
+    "holoassist_constraint_satisfied": true,
+    "lineage_constraint_satisfied": true,
+    "production_closure_constraint_satisfied": true,
+    "repair_reason": null
+  },
+  "eligibility_policy": {
+    "audio_exact_access_may_remain_unresolved": true,
+    "complete_production_closure_required": true,
+    "holoassist_group_must_be_absent_from_manifest_v2_identities": true,
+    "holoassist_group_must_be_absent_from_readme_exposed_ids": true,
+    "holoassist_group_must_be_public_private_commitment_matched": true,
+    "holoassist_group_must_be_timing_closed": true,
+    "semantic_selection_forbidden": true,
+    "status_if_eligible": "CONDITIONAL",
+    "v3_group_must_be_frozen_selected_group": true,
+    "video_exact_access_may_remain_unresolved": true
+  },
+  "final_marker": "UNTOUCHED_TEST_GROUP_LEDGER_V3_1_FROZEN_PRIVATE_READY",
+  "governance": {
+    "alias_and_exposure_policy": "Inherit v3 complete Assembly101/EPIC closures; for HoloAssist, merge every variant under its recording root and require the supplement's exact exposure exclusions.",
+    "automatic_fail_closed_rules": [
+      "fewer than twelve selected commitments",
+      "fewer than three independent dataset lineages",
+      "fewer than three selected HoloAssist commitments",
+      "fewer than twelve complete production closures",
+      "historical v3 no longer marked REPAIR",
+      "bound input hash or marker mismatch",
+      "selection input contains identity, timing, or semantic fields",
+      "HoloAssist identity appears in frozen manifest v2 or README IDs",
+      "HoloAssist technical timing closure is incomplete",
+      "HoloAssist exact video or audio access is falsely claimed",
+      "public identity disclosure",
+      "commitment, roster, or split-lock mismatch",
+      "permissions differ from private 0600 and public 0644"
+    ],
+    "count_and_lineage_constraints": {
+      "distinct_complete_production_closure_per_group": true,
+      "minimum_complete_production_closures": 12,
+      "minimum_exact_closure_count": 12,
+      "minimum_holoassist_commitments": 3,
+      "minimum_independent_dataset_lineages": 3
+    },
+    "independent_audit": {
+      "current_signed_go": false,
+      "required_before_non_custodian_reveal": true,
+      "required_checks": [
+        "bound input hashes and historical v3 REPAIR state",
+        "commitment-only deterministic replacement transcript",
+        "identity exclusion from manifest v2 and README examples",
+        "HoloAssist exact technical timing closure",
+        "count, lineage, and production-closure thresholds",
+        "private/public commitment verification",
+        "full-field governance split-lock",
+        "permissions and public non-disclosure"
+      ]
+    },
+    "prior_exclusions": "All v2 contaminated closures, all official README example identities, every HoloAssist identity present in frozen v2 history, and every unknown or conflicting closure.",
+    "replacement_protocol": {
+      "allowed_before_identity_reveal_only": true,
+      "diversity_deficit_rule": "A missing independent dataset lineage cannot be repaired by substitution when that lineage is absent from the authoritative neutral pool; expand and recommit the universe instead.",
+      "order": "same opaque dataset lineage first, then frozen selection score, then opaque candidate ID",
+      "replacement_must_preserve_or_improve_constraints": true,
+      "replacement_must_revalidate_full_closure": true,
+      "revealed_reserve_list_forbidden": true,
+      "source": "PRIVATE_UNSELECTED_NEUTRAL_POOL_ONLY"
+    },
+    "reveal_protocol": {
+      "allowed_identity_recipients": [
+        "DESIGNATED_UNIVERSE_CUSTODIAN",
+        "INDEPENDENT_ALIAS_EXPOSURE_AUDITOR_UNDER_LEAST_PRIVILEGE"
+      ],
+      "forbidden_identity_recipients": [
+        "OPAQUE_SELECTOR",
+        "TEST_CONSTRUCTION_ROLE",
+        "QUESTION_OR_CLAIM_AUTHORING_ROLE",
+        "MODEL_DEVELOPMENT_ROLE",
+        "DISTRIBUTION_ROLE",
+        "PUBLIC_REVIEW_DOCUMENT"
+      ],
+      "identity_mapping_custodian_only": true,
+      "post_reveal_failure_rule": "Any eligibility failure after a selected identity has been revealed revokes the entire proposed split and requires a fresh seed, universe commitment, and versioned ledger.",
+      "preconditions": [
+        "independent audit verifies the committed mapping and closures",
+        "signed adjudication explicitly authorizes the named recipient",
+        "recipient accepts no-copy and no-semantic-inspection controls",
+        "all applicable construction and distribution locks remain enforced"
+      ],
+      "repair_state_rule": "REPAIR forbids reveal to construction, authoring, development, evaluation, distribution, or public roles."
+    },
+    "rights_and_custody_gates": "Eligibility, rights, acquisition, processing, annotation, evaluation, release, and scientific claims remain separate fail-closed gates.",
+    "role_separation": {
+      "alias_exposure_auditor": "INDEPENDENT_PRE_REVEAL_AUDIT",
+      "construction_and_authoring": "NO_IDENTITY_ACCESS_WHILE_LOCKED",
+      "final_adjudicator": "SIGNED_GO_OR_REPAIR_ONLY",
+      "opaque_selector": "OPAQUE_TECHNICAL_VIEW_ONLY",
+      "rights_access_reviewer": "TECHNICAL_AND_RIGHTS_GATE_ONLY",
+      "universe_custodian": "IDENTITY_MAPPING_AND_PRIVATE_EVIDENCE_ONLY"
+    },
+    "selection_commitment_rule": {
+      "algorithm": "Select the three lexicographically lowest HoloAssist commitments; remove the three lexicographically highest v3 selected commitments; assign final slots by ascending source commitment.",
+      "allowed_fields": [
+        "source_commitment_sha256",
+        "source_pool"
+      ],
+      "forbidden_fields": [
+        "identity",
+        "closure_root",
+        "recording_root",
+        "exact_object",
+        "aliases",
+        "title",
+        "description",
+        "prompt",
+        "target",
+        "task",
+        "label",
+        "transcript",
+        "timing_path",
+        "pose_path"
+      ],
+      "rule_sha256": "af7f101137b91949507e8e3e3e29dbbc96f16527d4259df902f6a70d7d9e7bc6"
+    },
+    "universe_definition": "The twelve frozen v3 selected commitments plus the six sealed HoloAssist commitments bound by the private universe, public commitment, and exposure supplement."
+  },
+  "group_commitments": [
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-01",
+      "source_commitment_sha256": "034c3db48aaad0dfae276ae56c396e919f11b7e1e483d26f6e0b3e160415df70",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "e819e3f6a1f65fd5f8eb70c5e02093f7031896a37b19ee278d383adfd29ddbb0",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-02",
+      "source_commitment_sha256": "0e39640c9550ac5cc49338fef37a54b53f23f518f20fc6f7806b7c11cf2775f4",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "11702adb7e1ad69d8f5424c10454819e398f6e54794179adb59b92e34cad8e6b",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "EPIC",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-03",
+      "source_commitment_sha256": "13550c671fd57fb0b44a0951de442aedc2cea5ae0d1d585a8d4cef753db961a6",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "33bc3fb90ba0dddcc76772e966292e06ad717f33608440fcd7a7d488dd69de01",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "HOLOASSIST",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-04",
+      "source_commitment_sha256": "17a7835188b2110469ef8542cb103d1cbafeffabef7aaeb6d77fdf1e125c9aaf",
+      "source_pool": "HOLOASSIST_SEALED_COMMITMENT",
+      "test_construction_locked": true,
+      "timing_closed": true,
+      "v3_1_group_commitment_sha256": "b3eaafb1c7fca6687621cf97525f60ee841509a1a519c06bd0c4739b42ded8dc",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-05",
+      "source_commitment_sha256": "27f2fcd14cf20dbc52288d460898025281e7ec8478ef0c02077eaaf60bbad039",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "ea6227dc2a0c4c616e77f3673c77618b92cf5080761380cd7c3d030d2962e639",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-06",
+      "source_commitment_sha256": "3229d4fb3e4707aae30a0994810efcdbbf7d3faa7b4168cd0b9b680d39e97846",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "7073a315fb76ed16811896171535aa8e0b88004b9821abaf0064af1be2ccf2f3",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-07",
+      "source_commitment_sha256": "33b4071f1f7b1c18b5174459714d16674b09b4e817bae8b4bc286e7605d675e9",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "546443dbffddbbf9060ad1ca1101d208014acbc76879e9ca65ad449cc326b883",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "HOLOASSIST",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-08",
+      "source_commitment_sha256": "72dcf1da1fdb1ca4d61f86980701d5526b609f95d0e7dd8568af94bf0e832344",
+      "source_pool": "HOLOASSIST_SEALED_COMMITMENT",
+      "test_construction_locked": true,
+      "timing_closed": true,
+      "v3_1_group_commitment_sha256": "90bfa268be0fc615000c3d82b716ef65f609229a69d2ca02253f30237f7f44f4",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "HOLOASSIST",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-09",
+      "source_commitment_sha256": "7a2bc54215cc6c513b3af4714744d6af8428598e4765863e36c53482fdde44af",
+      "source_pool": "HOLOASSIST_SEALED_COMMITMENT",
+      "test_construction_locked": true,
+      "timing_closed": true,
+      "v3_1_group_commitment_sha256": "4f8744de9af14a8d33cd7cda60616633885e11c45348a0ff540234a84af450bd",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-10",
+      "source_commitment_sha256": "888de5d58b9b920e24af069823748e09d821588bb315edfe1a58d9bb4a74e5d2",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "2b11833e6374432e35d2943f29e150c92287ec84406fd15dd42cb3ca25dcb331",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "ASSEMBLY101",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-11",
+      "source_commitment_sha256": "beab9c8f2ba5292486816aaee55760af3af675ad8682eecbc91f4b7eed12570c",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "5503812067d843991d2c3f4593dc64cc553df0e440accefc66cccf921ccb8e15",
+      "video_exact_access_resolved": false
+    },
+    {
+      "audio_exact_access_resolved": false,
+      "commitment_algorithm": "SHA-256(private deterministic salt || NUL || canonical private group JSON)",
+      "conditional_status": "CONDITIONAL",
+      "dataset_lineage": "EPIC",
+      "distribution_locked": true,
+      "production_closure_complete": true,
+      "slot": "V3.1-TS-12",
+      "source_commitment_sha256": "c8c40de171a1eb75ce8e71d27965e59ae64352e2329cfb4fe7b293bd9351d642",
+      "source_pool": "FROZEN_V3_SELECTED_GROUP",
+      "test_construction_locked": true,
+      "timing_closed": null,
+      "v3_1_group_commitment_sha256": "dd02122d8c1aaa53cd677b88746432634720ef6da4f74cd9dceecc37ed7dd088",
+      "video_exact_access_resolved": false
+    }
+  ],
+  "historical_v3": {
+    "final_marker": "UNTOUCHED_TEST_GROUP_LEDGER_V3_REPAIR",
+    "path": "data/restricted/untouched_test_group_ledger_v3_private.json",
+    "sha256": "d0295fd3081b45054941144f3f15f2499efad3c7e081cad6724e25f2b11b1f68",
+    "status": "REPAIR_HISTORICAL_UNMODIFIED"
+  },
+  "lineage_composition": {
+    "lineage_constraint_satisfied": true,
+    "production_closure_constraint_satisfied": true,
+    "required_dataset_lineage_count": 3,
+    "required_production_closure_count": 12,
+    "selected_dataset_lineage_count": 3,
+    "selected_dataset_lineage_counts": {
+      "ASSEMBLY101": 7,
+      "EPIC": 2,
+      "HOLOASSIST": 3
+    },
+    "selected_dataset_lineages": [
+      "ASSEMBLY101",
+      "EPIC",
+      "HOLOASSIST"
+    ],
+    "selected_production_closure_count": 12
+  },
+  "locks": {
+    "distribution_locked": true,
+    "evaluation_execution_locked": true,
+    "identity_publication_locked": true,
+    "test_construction_locked": true,
+    "unlock_authorized": false
+  },
+  "replacement_policy": {
+    "allowed_before_identity_reveal_only": true,
+    "diversity_deficit_rule": "A missing independent dataset lineage cannot be repaired by substitution when that lineage is absent from the authoritative neutral pool; expand and recommit the universe instead.",
+    "order": "same opaque dataset lineage first, then frozen selection score, then opaque candidate ID",
+    "replacement_must_preserve_or_improve_constraints": true,
+    "replacement_must_revalidate_full_closure": true,
+    "revealed_reserve_list_forbidden": true,
+    "source": "PRIVATE_UNSELECTED_NEUTRAL_POOL_ONLY"
+  },
+  "roster_construction": {
+    "all_groups_conditional": true,
+    "committed_group_count": 12,
+    "complete_production_closure_count": 12,
+    "identities_withheld_publicly": true,
+    "replaced_v3_group_count": 3,
+    "selected_holoassist_group_count": 3,
+    "selection_used_commitment_hashes_only": true,
+    "target_group_count": 12
+  },
+  "schema_version": "av-trace.untouched-test-group-commitment/3.1",
+  "sealed_private_roster_commitment_sha256": "8d36f0c70233c0d3893f2b7b48bf8b1ba1dbb0de005ddded91b68a9b6b12e087",
+  "selection": {
+    "algorithm": "Lowest HoloAssist commitment hashes replace highest v3 selected commitment hashes; final slots sorted by commitment hash.",
+    "allowed_fields": [
+      "source_commitment_sha256",
+      "source_pool"
+    ],
+    "final_selection_transcript": [
+      {
+        "source_commitment_sha256": "034c3db48aaad0dfae276ae56c396e919f11b7e1e483d26f6e0b3e160415df70",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "0e39640c9550ac5cc49338fef37a54b53f23f518f20fc6f7806b7c11cf2775f4",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "13550c671fd57fb0b44a0951de442aedc2cea5ae0d1d585a8d4cef753db961a6",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "17a7835188b2110469ef8542cb103d1cbafeffabef7aaeb6d77fdf1e125c9aaf",
+        "source_pool": "HOLOASSIST_SEALED_COMMITMENT"
+      },
+      {
+        "source_commitment_sha256": "27f2fcd14cf20dbc52288d460898025281e7ec8478ef0c02077eaaf60bbad039",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "3229d4fb3e4707aae30a0994810efcdbbf7d3faa7b4168cd0b9b680d39e97846",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "33b4071f1f7b1c18b5174459714d16674b09b4e817bae8b4bc286e7605d675e9",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "72dcf1da1fdb1ca4d61f86980701d5526b609f95d0e7dd8568af94bf0e832344",
+        "source_pool": "HOLOASSIST_SEALED_COMMITMENT"
+      },
+      {
+        "source_commitment_sha256": "7a2bc54215cc6c513b3af4714744d6af8428598e4765863e36c53482fdde44af",
+        "source_pool": "HOLOASSIST_SEALED_COMMITMENT"
+      },
+      {
+        "source_commitment_sha256": "888de5d58b9b920e24af069823748e09d821588bb315edfe1a58d9bb4a74e5d2",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "beab9c8f2ba5292486816aaee55760af3af675ad8682eecbc91f4b7eed12570c",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      },
+      {
+        "source_commitment_sha256": "c8c40de171a1eb75ce8e71d27965e59ae64352e2329cfb4fe7b293bd9351d642",
+        "source_pool": "FROZEN_V3_SELECTED_GROUP"
+      }
+    ],
+    "forbidden_fields": [
+      "identity",
+      "closure_root",
+      "recording_root",
+      "exact_object",
+      "aliases",
+      "title",
+      "description",
+      "prompt",
+      "target",
+      "task",
+      "label",
+      "transcript",
+      "timing_path",
+      "pose_path"
+    ],
+    "holoassist_commitment_count": 6,
+    "removed_v3_commitments": [
+      "efc8e3e35a3bd695921cc470252ba36cf74f26eee521d5e3e73ba26df202bd1c",
+      "e62786f8c4644f8c40983f9783393b25cdbc7a09c36fab985029dafb7250c8c9",
+      "d3a73de426e6bd7cad67b90b892a65f3c217c8c9c1e2f74c9bedfbda1d0c6942"
+    ],
+    "retained_v3_commitments": [
+      "034c3db48aaad0dfae276ae56c396e919f11b7e1e483d26f6e0b3e160415df70",
+      "0e39640c9550ac5cc49338fef37a54b53f23f518f20fc6f7806b7c11cf2775f4",
+      "13550c671fd57fb0b44a0951de442aedc2cea5ae0d1d585a8d4cef753db961a6",
+      "27f2fcd14cf20dbc52288d460898025281e7ec8478ef0c02077eaaf60bbad039",
+      "3229d4fb3e4707aae30a0994810efcdbbf7d3faa7b4168cd0b9b680d39e97846",
+      "33b4071f1f7b1c18b5174459714d16674b09b4e817bae8b4bc286e7605d675e9",
+      "888de5d58b9b920e24af069823748e09d821588bb315edfe1a58d9bb4a74e5d2",
+      "beab9c8f2ba5292486816aaee55760af3af675ad8682eecbc91f4b7eed12570c",
+      "c8c40de171a1eb75ce8e71d27965e59ae64352e2329cfb4fe7b293bd9351d642"
+    ],
+    "selected_holoassist_commitments": [
+      "17a7835188b2110469ef8542cb103d1cbafeffabef7aaeb6d77fdf1e125c9aaf",
+      "72dcf1da1fdb1ca4d61f86980701d5526b609f95d0e7dd8568af94bf0e832344",
+      "7a2bc54215cc6c513b3af4714744d6af8428598e4765863e36c53482fdde44af"
+    ],
+    "selection_rule_commitment_sha256": "af7f101137b91949507e8e3e3e29dbbc96f16527d4259df902f6a70d7d9e7bc6",
+    "v3_selected_commitment_count": 12
+  },
+  "source_boundaries": {
+    "candidate_mining_performed": false,
+    "media_opened_or_inspected": false,
+    "model_or_learned_ranking_used": false,
+    "network_used": false,
+    "private_identity_use": "Post-selection validation, private evidence binding, exact-token exposure exclusion, and commitment construction only.",
+    "selection_input_boundary": "Existing SHA-256 commitment hashes and source-pool tags only.",
+    "semantic_annotation_bodies_opened": false,
+    "transcript_or_caption_bodies_opened": false
+  },
+  "split_lock": {
+    "algorithm": "SHA-256",
+    "canonicalization": "UTF-8 canonical JSON; sorted keys; compact separators",
+    "covered_top_level_fields": [
+      "schema_version",
+      "commitment_id",
+      "created_date",
+      "artifact_classification",
+      "authoritative_inputs",
+      "historical_v3",
+      "source_boundaries",
+      "contamination_policy",
+      "eligibility_policy",
+      "selection",
+      "roster_construction",
+      "lineage_composition",
+      "locks",
+      "claims",
+      "custodian_reveal_rules",
+      "replacement_policy",
+      "group_commitments",
+      "sealed_private_roster_commitment_sha256",
+      "governance",
+      "decision",
+      "final_marker"
+    ],
+    "governance_fields": [
+      "universe_definition",
+      "prior_exclusions",
+      "alias_and_exposure_policy",
+      "role_separation",
+      "selection_commitment_rule",
+      "count_and_lineage_constraints",
+      "rights_and_custody_gates",
+      "reveal_protocol",
+      "replacement_protocol",
+      "automatic_fail_closed_rules",
+      "independent_audit"
+    ],
+    "split_lock_sha256": "53135211c4a6903078cdea7bef7380fbd37bd6fbeed851f623a75709d8ad8ac2"
+  }
+}

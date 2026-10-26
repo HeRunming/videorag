@@ -1,0 +1,3030 @@
+{
+  "schema_version": "1.0.0",
+  "matrix_id": "av-trace-pilot-v4-prospective-candidate-matrix-task195",
+  "created_date": "2026-10-10",
+  "decision_token": "PILOT_V4_CANDIDATE_MATRIX_REPAIR",
+  "artifact_classification": "PROSPECTIVE_P_TIER_CANDIDATE_PLANNING_ONLY",
+  "scope": {
+    "source_count": 6,
+    "candidate_slot_count": 12,
+    "candidate_slots_per_source": 2,
+    "source_composition": {
+      "epic_source_groups": [
+        "P27",
+        "P28"
+      ],
+      "captaincook4d_person_environment_groups": [
+        "16_20",
+        "15_29",
+        "26_22"
+      ],
+      "noaa_development_source": "cand-052"
+    },
+    "task193_audio_replacement_count": 4,
+    "task194_candidate_codes": [
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ],
+    "human_review_performed": false,
+    "human_results_created": false,
+    "h_tiers_created": 0,
+    "accepted_ses_created": 0,
+    "necessity_assignments_created": 0,
+    "scientific_execution_authorized": false,
+    "gate_a_go_asserted": false,
+    "public_release_authorized": false
+  },
+  "authoritative_inputs": [
+    {
+      "path": "orchestration/results/145_exogenous_restoration_protocol.txt",
+      "sha256": "8c174d6016913b1b9a2a025426da8812f70f60e34a1c597f746dd767cb4e45ab",
+      "role": "Task145 inert exogenous intervention-v2 contract"
+    },
+    {
+      "path": "orchestration/results/149_cvpr_pivot_v2_addendum.txt",
+      "sha256": "77892de8764efb8187d9f1ef95a93141d29628a68bfd7e1044a093db78b7b6a5",
+      "role": "Pivot-v2 six-source/twelve-slot targets and Gate-A governance"
+    },
+    {
+      "path": "orchestration/results/153_semantic_av_source_prescreen_tooling.txt",
+      "sha256": "92f5b4f0510e7cd42408766f25757b3d9211456c0447c1de0721fc1771095fb6",
+      "role": "Task153 source-level semantic-prescreen boundary"
+    },
+    {
+      "path": "orchestration/results/192_pilot_v3_candidate_integration.txt",
+      "sha256": "a3bb3ccc18eb2a39b1346109ed17c828285e2d7ae2de6117170b8e472dc7fa95",
+      "role": "Task192 v3 slot composition and planning boundary"
+    },
+    {
+      "path": "data/rehearsal_plan/pilot_v3_candidate_matrix.json",
+      "sha256": "ce24bc6302d4bd97cd1c00530a81bb0bb5b530b200384e4d58fd45b141cf6beb",
+      "role": "Exact v3 slot, lineage, rights, and mechanism parent matrix"
+    },
+    {
+      "path": "orchestration/results/193_semantic_audio_discovery.txt",
+      "sha256": "9c3e1eb073e0cfb844bd9c5523f8c0227266c91f75c9ed64b8d22fd8c0fb0389",
+      "role": "Task193 learned semantic-audio lead decision"
+    },
+    {
+      "path": "data/restricted/semantic_audio_discovery_v1/provisional_audio_facts.json",
+      "sha256": "68bcfcaf77ddd26ee57311eb6e9f50a39ee71980a786d855fbd0d4b8408556c9",
+      "role": "Task193 exact retained fact hypotheses and substitute audit",
+      "internal_payload_sha256": "sha256:759be4f9cc7ea3373d11f76995735cf638cb21b839c35c9f8b3067d6a6f88a5a"
+    },
+    {
+      "path": "data/restricted/semantic_audio_discovery_v1/source_bindings.json",
+      "sha256": "da2a603a4c6e0b1594e9eb75ad75266ef2ed77698bf25a18f450e58886796c37",
+      "role": "Task193 exact source hashes and local timeline bindings"
+    },
+    {
+      "path": "orchestration/results/194_audio_candidate_prescreen_packets.txt",
+      "sha256": "e888a3ab4156f97f982ab531a82f4237ed2e8df70059be24355304a944a5d834",
+      "role": "Task194 packet-governance decision"
+    },
+    {
+      "path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/packet_manifest.json",
+      "sha256": "ce2127558bd1aec31387d03f00420e5bea69fa6bbf77c20cc2540f8f35e85987",
+      "role": "Task194 C01-C04 packet bindings and non-distribution status"
+    },
+    {
+      "path": "data/restricted/epic_family_candidates_v2_dev/candidate_registry.json",
+      "sha256": "ab0d4e70d912b9fe7bf7f84c48d717ba1809b1ac6ca4ed67464644e5d26bca5d",
+      "role": "EPIC source candidate registry and proposal lineage"
+    },
+    {
+      "path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+      "sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+      "role": "CaptainCook4D source candidate registry and proposal lineage"
+    },
+    {
+      "path": "data/restricted/mini_pilot_family_candidates_v2_dev/candidate_registry.json",
+      "sha256": "26831f0e204a2f68e93560ee6a7807ea4697d3b482dc597f94599699445c418e",
+      "role": "NOAA cand-052 repaired F11/F12 development lineage"
+    },
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+      "sha256": "fe533ed9f89e7222a43b4507672b3adc48e779a5b119d31b5f2d21395c9bdc47",
+      "role": "NOAA exact interval and review lineage"
+    },
+    {
+      "path": "data/candidates/source_candidates.csv",
+      "sha256": "b00f3a2045aafea8517f232080c87433292fe9d84430739a4c7a89b7d833923b",
+      "role": "Source-candidate registry rights and fallback metadata"
+    },
+    {
+      "path": "data/candidates/top30_review_queue.csv",
+      "sha256": "27f34bea47c228473a0fa214b16f7a4b4b0219c3b629644679e57e458a8bc376",
+      "role": "Reviewed source-candidate queue including cand-052 hold"
+    }
+  ],
+  "governance_boundary": {
+    "all_records_current_tier": "P0_MACHINE_CANDIDATE",
+    "tier_interpretation": "Task195 planning records only. Parent Task192/193 and source development records remain unpromoted and Gate-A ineligible.",
+    "requires_fresh_normal_mode_regeneration": true,
+    "parent_development_registries_remain_permanently_gate_a_ineligible": true,
+    "task194_packets_are_reviewer_blind_and_non_distributable": true,
+    "human_semantic_prescreen_complete": false,
+    "human_construct_review_complete": false,
+    "minimality_asserted": false,
+    "necessity_asserted": false,
+    "saturation_asserted": false,
+    "h1_assigned": false,
+    "h2_assigned": false,
+    "accepted_ses_count": 0,
+    "allowed_completeness_wording": "all accepted SESs discovered under the frozen saturation protocol",
+    "prohibited_claims": [
+      "human gold",
+      "exhaustive SES enumeration",
+      "all possible SESs",
+      "validated modality necessity",
+      "Task194 READY as Gate A",
+      "Gate A GO",
+      "scientific execution readiness",
+      "public release readiness"
+    ]
+  },
+  "source_selection": {
+    "noaa_choice": {
+      "selected": "cand-052",
+      "not_selected": "cand-049",
+      "substantive_reason": "cand-052 supplies two locally repaired substantive speech families: F11/North Atlantic Basin and F12/three hurricane-formation factors, both backed by exact accepted NOAA windows. cand-049 has one substantive V+S rescue lead but its ambient F09 lead was rejected because visible surf, narration, recurrence, and mix ambiguity defeat a distinct audio answer.",
+      "governance_reason": "Neither NOAA source has affirmative release authority. cand-052 is selected on two-slot substantive strength and exact existing machine-provisional lineage, not because its rights boundary is stronger. Its source-specific rights, privacy, human annotation, and release holds remain Gate-A blockers.",
+      "cand_052_lineage": [
+        "DEV-F11-NORTH-ATLANTIC-BASIN",
+        "DEV-F12-HURRICANE-FORMATION-FACTORS",
+        "noaa01-r016-three-factors-vs",
+        "noaa01-r017-north-atlantic-basin"
+      ],
+      "cand_049_shortfall": [
+        "DEV-F09-SURF-AUDIO-PROPERTY is REJECT",
+        "DEV-F10-RESCUE-RESPONSE-SEQUENCE is REPAIR with repeated animation, repeated speech, OCR/911, and speech-only substitute routes"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "P27_101",
+        "source_group_id": "P27",
+        "source_class": "EPIC_KITCHENS_EGOCENTRIC_PROCEDURE",
+        "duration_s": 1360.2,
+        "source_sha256": "3b843787ad5906fe48d6b440b305a4dd31346e9a1569211286b3705a3baa1c0d",
+        "candidate_slots": [
+          "PV4-P27-01",
+          "PV4-P27-02"
+        ],
+        "task153_status": "PLANNED_BLANK_NOT_REVIEWED",
+        "rights_release_boundary": {
+          "license_evidence": "EPIC-KITCHENS-100 project/annotation license evidence records CC BY-NC 4.0 and supports noncommercial processing subject to project governance.",
+          "human_annotation_authority": "NOT_GRANTED_BY_TASK162_SOURCE_MANIFEST",
+          "public_release_or_redistribution": "NOT_AUTHORIZED",
+          "required_repair": "source-specific privacy, annotation, file-level release, attribution/noncommercial, and custody decisions"
+        },
+        "task194_audio_candidate_codes": [
+          "C03"
+        ]
+      },
+      {
+        "source_id": "P28_103",
+        "source_group_id": "P28",
+        "source_class": "EPIC_KITCHENS_EGOCENTRIC_PROCEDURE",
+        "duration_s": 1825.16,
+        "source_sha256": "a2f1023ab698f790430ed126f9fddfd9b0de6258f57f6f89cdfb0ab131f9cf8e",
+        "candidate_slots": [
+          "PV4-P28-01",
+          "PV4-P28-02"
+        ],
+        "task153_status": "PLANNED_BLANK_NOT_REVIEWED",
+        "rights_release_boundary": {
+          "license_evidence": "EPIC-KITCHENS-100 project/annotation license evidence records CC BY-NC 4.0 and supports noncommercial processing subject to project governance.",
+          "human_annotation_authority": "NOT_GRANTED_BY_TASK162_SOURCE_MANIFEST",
+          "public_release_or_redistribution": "NOT_AUTHORIZED",
+          "required_repair": "source-specific privacy, annotation, file-level release, attribution/noncommercial, and custody decisions"
+        },
+        "task194_audio_candidate_codes": [
+          "C04"
+        ]
+      },
+      {
+        "source_id": "16_20",
+        "source_group_id": "cc4d_p01_e08",
+        "source_class": "CAPTAINCOOK4D_PERSON_1_ENVIRONMENT_8_GOPRO_PROCEDURE",
+        "duration_s": 1930.8956333333333,
+        "source_sha256": "8082945db8c24cb40e3dd76eafc11cb2b3df5a0b8bdb2e5c22e1ada98ae82f12",
+        "candidate_slots": [
+          "PV4-CC16-01",
+          "PV4-CC16-02"
+        ],
+        "task153_status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+        "rights_release_boundary": {
+          "dataset_license_statement": "Apache License 2.0",
+          "written_participant_consent_statement_verified": true,
+          "university_of_florida_irb_statement_verified": true,
+          "operative_linked_consent_document_archived": false,
+          "operative_linked_irb_document_archived": false,
+          "human_annotation_authority": "NOT_AUTHORIZED_BY_TASK188",
+          "public_release_or_redistribution": "NOT_AUTHORIZED",
+          "use_boundary": "Restricted internal research only pending separate governance"
+        },
+        "task194_audio_candidate_codes": [
+          "C02"
+        ]
+      },
+      {
+        "source_id": "15_29",
+        "source_group_id": "cc4d_p02_e02",
+        "source_class": "CAPTAINCOOK4D_PERSON_2_ENVIRONMENT_2_GOPRO_PROCEDURE",
+        "duration_s": 1292.8248666666666,
+        "source_sha256": "f1f77f09d6ffd35531f4d23fb3d4bfe3eb350e71a7240ced9ac9b4f28b8b048d",
+        "candidate_slots": [
+          "PV4-CC15-01",
+          "PV4-CC15-02"
+        ],
+        "task153_status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+        "rights_release_boundary": {
+          "dataset_license_statement": "Apache License 2.0",
+          "written_participant_consent_statement_verified": true,
+          "university_of_florida_irb_statement_verified": true,
+          "operative_linked_consent_document_archived": false,
+          "operative_linked_irb_document_archived": false,
+          "human_annotation_authority": "NOT_AUTHORIZED_BY_TASK188",
+          "public_release_or_redistribution": "NOT_AUTHORIZED",
+          "use_boundary": "Restricted internal research only pending separate governance"
+        },
+        "task194_audio_candidate_codes": [
+          "C01"
+        ]
+      },
+      {
+        "source_id": "26_22",
+        "source_group_id": "cc4d_p03_e03",
+        "source_class": "CAPTAINCOOK4D_PERSON_3_ENVIRONMENT_3_GOPRO_PROCEDURE",
+        "duration_s": 1324.2229,
+        "source_sha256": "3c4b69b4ad37c4318b24d034cf0fdd3fa2eb96b3e85136001b0ea531b5abbd7b",
+        "candidate_slots": [
+          "PV4-CC26-01",
+          "PV4-CC26-02"
+        ],
+        "task153_status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+        "rights_release_boundary": {
+          "dataset_license_statement": "Apache License 2.0",
+          "written_participant_consent_statement_verified": true,
+          "university_of_florida_irb_statement_verified": true,
+          "operative_linked_consent_document_archived": false,
+          "operative_linked_irb_document_archived": false,
+          "human_annotation_authority": "NOT_AUTHORIZED_BY_TASK188",
+          "public_release_or_redistribution": "NOT_AUTHORIZED",
+          "use_boundary": "Restricted internal research only pending separate governance"
+        },
+        "task194_audio_candidate_codes": []
+      },
+      {
+        "source_id": "cand-052",
+        "source_group_id": "cand-052",
+        "source_class": "NOAA_DEVELOPMENT_WEBINAR_SPEECH_RICH",
+        "duration_s": 3781.144042,
+        "source_sha256": "c4f5d8c6e60d6802bb60e26f811f5dcabc9698626a29c6cb8aabcc373db4eef1",
+        "candidate_slots": [
+          "PV4-NOAA52-01",
+          "PV4-NOAA52-02"
+        ],
+        "task153_status": "NOT_PLANNED",
+        "rights_release_boundary": {
+          "restricted_acquisition": "AUTHORIZED_FOR_EXACT_LOCAL_OBJECT",
+          "machine_provisional_processing": "AUTHORIZED_FOR_NARROW_LOCAL_MACHINE_MVP",
+          "human_annotation_authority": "NOT_ESTABLISHED",
+          "ownership_license_or_release_rights": "NOT_ESTABLISHED",
+          "public_transcript_release": "PROHIBITED",
+          "public_release_or_redistribution": "NOT_AUTHORIZED",
+          "persistent_media_derivatives": "NOT_AUTHORIZED",
+          "required_repair": "source-specific rights, privacy, human annotation, release, and custody approval"
+        },
+        "task194_audio_candidate_codes": []
+      }
+    ]
+  },
+  "replacement_plan": {
+    "replace_four_visual_slots_not_add_slots": true,
+    "not_in_place_relabeling": true,
+    "replacements": [
+      {
+        "task194_candidate_code": "C01",
+        "source_id": "15_29",
+        "replaces_v3_slot": "PV3-CC15-01",
+        "v4_slot": "PV4-CC15-01",
+        "new_profile_hypothesis": "A",
+        "selection_reason": "Use the three-burst blender lead while preserving the sole CC15 far/multi tomato-state slot."
+      },
+      {
+        "task194_candidate_code": "C02",
+        "source_id": "16_20",
+        "replaces_v3_slot": "PV3-CC16-02",
+        "v4_slot": "PV4-CC16-02",
+        "new_profile_hypothesis": "A",
+        "selection_reason": "Replace Task192's weakest newly-authored visual repair; the rejected arbitrary far parent remains rejected."
+      },
+      {
+        "task194_candidate_code": "C03",
+        "source_id": "P27_101",
+        "replaces_v3_slot": "PV3-P27-02",
+        "v4_slot": "PV4-P27-02",
+        "new_profile_hypothesis": "V+A",
+        "selection_reason": "Upgrade the same wrapper action lineage with the Task193 crinkling/tearing hypothesis without changing source count."
+      },
+      {
+        "task194_candidate_code": "C04",
+        "source_id": "P28_103",
+        "replaces_v3_slot": "PV3-P28-01",
+        "v4_slot": "PV4-P28-01",
+        "new_profile_hypothesis": "V+A",
+        "selection_reason": "Upgrade the same potato-peeling lineage with the corrected scraping lead after the earlier scissors false positive."
+      }
+    ]
+  },
+  "task194_packet_governance": {
+    "packet_set_id": "audio-candidate-prescreen-packets-v1",
+    "manifest_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/packet_manifest.json",
+    "packet_status": "DRAFT_NOT_DISTRIBUTABLE",
+    "candidate_count": 4,
+    "human_identity_count": 0,
+    "human_decision_count": 0,
+    "exposure_event_count": 0,
+    "distribution_authorized": false,
+    "inspection_order": [
+      "audio_only_focal",
+      "synchronized_av_focal",
+      "audio_only_recurrence_probes"
+    ],
+    "blindness": "Reviewer packets omit Task193 fact IDs, labels, ranks, scores, proposed questions, answers, and profiles.",
+    "exposure_bridge": "Any completed prescreener exposure must be bridged into the Task146-compatible source ledger before construct assignments freeze.",
+    "blind_role_exclusions": [
+      "blind_alternative_evidence_finder",
+      "blind_post_adjudication_saturation_auditor"
+    ],
+    "ready_interpretation": "Task194 READY would confer only constrained authoring eligibility, not minimality, necessity, H tier, Gate A, or release authority."
+  },
+  "task145_intervention_v2_template": {
+    "template_id": "task145-exogenous-restoration-v2",
+    "template_version": "2.0",
+    "template_only_not_executed": true,
+    "scientific_execution_authorized": false,
+    "states": [
+      "CLEAN",
+      "BLOCKED",
+      "RESTORED",
+      "NO_TRIGGER"
+    ],
+    "primary_schedule": {
+      "trigger_class": "fixed_action_index",
+      "index_base": "zero",
+      "action_index": 4,
+      "delivery_boundary": "after_four_completed_action_response_cycles_before_next_model_decision",
+      "depends_on_action_identity": false,
+      "depends_on_system_identity": false,
+      "depends_on_output_or_correctness": false,
+      "depends_on_get_channel_status": false,
+      "checkpoint_event": {
+        "event_type": "protocol_checkpoint",
+        "event_version": "2.0.0",
+        "message": "Scheduled protocol checkpoint completed.",
+        "cost": 0.0,
+        "public_bytes_identical_r_n": true,
+        "reveals_restoration": false
+      }
+    },
+    "paired_prefix": {
+      "construction": "single_blocked_prefix_then_fresh_replayed_fork",
+      "public_transcript_identical_through_event": true,
+      "fresh_continuation_sessions": true,
+      "early_terminal_policy": "retain_both_assignments_copy_terminal_prefix_no_post_terminal_event"
+    },
+    "analysis_boundary": {
+      "primary_contrast": "RESTORED_minus_NO_TRIGGER",
+      "population": "all_preregistered_assignments_intention_to_treat",
+      "mechanism_specific_only": true,
+      "pooled_primary_allowed": false,
+      "restored_minus_blocked_role": "secondary_mechanism_specific_state_contrast",
+      "get_channel_status_role": "SECONDARY_PER_PROTOCOL_ACTION_CONTINGENT"
+    },
+    "required_state_surface_controls": [
+      "question_and_claims_invariant",
+      "tool_menu_and_order_invariant",
+      "budgets_and_costs_invariant",
+      "unaffected_result_order_and_payload_invariant",
+      "result_shape_and_latency_bucket_invariant",
+      "private_state_fields_never_model_visible",
+      "r_n_prefix_plus_event_hash_match"
+    ],
+    "isolation_controls": [
+      "fresh_provider_session_per_state",
+      "fresh_continuation_session_per_arm",
+      "no_shared_model_kv_prompt_retrieval_or_tool_response_cache",
+      "no_cross_state_generated_memory"
+    ],
+    "preexecution_requirements": [
+      "independent_human_construct_validation",
+      "all accepted SESs discovered under the frozen saturation protocol",
+      "mechanism_specific_route_closure",
+      "state_surface_manifest",
+      "staged_adapter_eligibility",
+      "r_n_prefix_fork_replay",
+      "fresh_session_cache_attestation",
+      "williams_counterbalance_assignment",
+      "metadata_only_leakage_gate_pass",
+      "complete_itt_assignment_manifest"
+    ]
+  },
+  "candidate_slots": [
+    {
+      "slot_id": "PV4-P27-01",
+      "source_id": "P27_101",
+      "source_group_id": "P27",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_KEEP_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "registry_path": "data/restricted/epic_family_candidates_v2_dev/candidate_registry.json",
+        "registry_sha256": "ab0d4e70d912b9fe7bf7f84c48d717ba1809b1ac6ca4ed67464644e5d26bca5d",
+        "parent_proposal_id": "EPIC-DEV-P27-CLEANER-FROM-CUPBOARD",
+        "parent_proposal_payload_sha256": "sha256:268a3384db9341c779742098c6dc4448c873debd8f846af08a5087460d346ab5",
+        "parent_disposition": "KEEP",
+        "task171_author_verifier_packet_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/author_verifier_packets/EPIC-DEV-P27-CLEANER-FROM-CUPBOARD/author_verifier_form.json",
+        "transformation": "Question, answer, claims, and evidence are retained as planning lineage without promoting the development record.",
+        "local_evidence_references": [
+          "vision.seg.3b843787ad59.context.000074",
+          "vision.seg.3b843787ad59.context.000075",
+          "vision.seg.3b843787ad59.fine.000300",
+          "vision.seg.3b843787ad59.fine.000301",
+          "vision.seg.3b843787ad59.fine.000302"
+        ]
+      },
+      "question": "After opening the lower cupboard beside the sink, what item does the wearer bring back toward the stove?",
+      "answer_hypothesis": "A pink-and-blue spray bottle of cleaner.",
+      "atomic_claims": [
+        "The wearer opens the lower cupboard beside the sink.",
+        "The wearer retrieves a pink-and-blue spray-cleaner bottle and returns it toward the stove."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "e.p27.cleaner.v1",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 1205.5,
+            "end_s": 1212.0
+          },
+          "hypothesis": "The wearer opens the lower cupboard, reaches inside, takes a pink-and-blue spray bottle, and returns toward the hob.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "audio_note": "Door/cupboard AST hypotheses may route the event but do not identify the bottle.",
+        "speech_note": "No reliable speech hypothesis.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "scientific_basis": "One bounded visual event answers the object question."
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "affected_channels": [
+          "vision",
+          "ocr",
+          "visual_derivatives"
+        ],
+        "block_plan": "Silently withhold every candidate route showing the cupboard opening, bottle retrieval, and deterministic object-appearance derivatives.",
+        "restore_plan": "Restore only the registered candidate route group at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.p27.cleaner.visual_and_derivatives",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "completed trained-human Task153 source prescreen",
+        "frame-accurate human interval verification",
+        "full-source recurrence and near-duplicate closure",
+        "package/OCR and object-appearance shortcut closure",
+        "accepted SES ledger",
+        "leave-one-out minimality and necessity group",
+        "six-role construct decisions",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "EPIC CC BY-NC evidence supports noncommercial use subject to governance, but the exact source manifest grants neither human annotation nor public release/redistribution. This record remains restricted planning material.",
+      "gate_a_blockers": [
+        "parent development record is permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not completed",
+        "source-specific privacy/annotation/release decision incomplete",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-P27-01",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "PLANNED_BLANK_NOT_REVIEWED",
+          "plan_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/task153_plan.json",
+          "reviewer_form_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/prescreener_form.json",
+          "blank_import_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/blank_import.json",
+          "blank_exposure_ledger_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/blank_exposure_ledger.json",
+          "completed_ready_import_path": null,
+          "interpretation": "The checked-in Task153 materials are blank development packets. They do not establish source authoring eligibility."
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "Distinctive bottle color/shape or package text may answer from a single frame.",
+        "Other cupboard and cleaning episodes recur in the source.",
+        "Door/cupboard sounds route the event but do not identify the object."
+      ],
+      "rejection_fallback": {
+        "action": "REJECT_SLOT_AND_REMINE_SOURCE",
+        "fallback": "Do not reactivate the rejected long-handled-cleaning-tool lead. Generate a fresh independent P27 candidate or replace the source.",
+        "quota_effect": "One P27 slot becomes empty; source/slot invariants fail until repaired."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-P27-02",
+      "source_id": "P27_101",
+      "source_group_id": "P27",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPLACE_WITH_C03_V_PLUS_A_PENDING_HUMAN_PRESCREEN",
+      "lineage": {
+        "pilot_v3_parent_slot_id": "PV3-P27-02",
+        "pilot_v3_matrix_path": "data/rehearsal_plan/pilot_v3_candidate_matrix.json",
+        "pilot_v3_matrix_sha256": "ce24bc6302d4bd97cd1c00530a81bb0bb5b530b200384e4d58fd45b141cf6beb",
+        "replaced_v3_lineage": {
+          "registry_path": "data/restricted/epic_family_candidates_v2_dev/candidate_registry.json",
+          "registry_sha256": "ab0d4e70d912b9fe7bf7f84c48d717ba1809b1ac6ca4ed67464644e5d26bca5d",
+          "parent_proposal_id": "EPIC-DEV-P27-UNWRAP-FROZEN-ITEM",
+          "parent_proposal_payload_sha256": "sha256:b0c0ff7f999d1fcb1e0e51a09144447764bc770989a90a02db36a7717e487e53",
+          "parent_disposition": "KEEP",
+          "task171_author_verifier_packet_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/author_verifier_packets/EPIC-DEV-P27-UNWRAP-FROZEN-ITEM/author_verifier_form.json",
+          "transformation": "Retained as a near/local visual composition; the crinkling route is explicitly non-counting corroboration pending human listening.",
+          "local_evidence_references": [
+            "vision.seg.3b843787ad59.context.000079",
+            "vision.seg.3b843787ad59.context.000080",
+            "vision.seg.3b843787ad59.context.000081",
+            "vision.seg.3b843787ad59.fine.000320",
+            "vision.seg.3b843787ad59.fine.000321",
+            "vision.seg.3b843787ad59.fine.000322",
+            "vision.seg.3b843787ad59.fine.000323",
+            "vision.seg.3b843787ad59.fine.000324",
+            "ambient.seg.3b843787ad59.fine.000323"
+          ]
+        },
+        "task193_fact_registry_path": "data/restricted/semantic_audio_discovery_v1/provisional_audio_facts.json",
+        "task193_fact_registry_sha256": "68bcfcaf77ddd26ee57311eb6e9f50a39ee71980a786d855fbd0d4b8408556c9",
+        "task193_fact_id": "sad193.fact.p27.wrapper.open",
+        "task193_fact_status": "RETAIN_AUDIO_FACT",
+        "task193_human_listening_performed": false,
+        "task193_gate_a_eligible": false,
+        "task194_candidate_code": "C03",
+        "task194_packet_id": "task194.audio-candidate.C03",
+        "transformation": "C03 replaces the v3 wrapper visual slot using the same source/action lineage plus Task193's learned non-speech-audio lead. This is a new prospective record, not an in-place relabel."
+      },
+      "question": "After taking the small item from the freezer, what happens to its wrapper, and what repeated non-speech sound accompanies that action?",
+      "answer_hypothesis": "The wrapper is torn or opened and removed while repeated crinkling/tearing sounds occur.",
+      "atomic_claims": [
+        "A small wrapped item is taken from the freezer.",
+        "The wrapper is actively torn or opened and removed.",
+        "A repeated flexible-package crinkling/tearing sound accompanies the wrapper action."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "pv4.c03.vision.retrieve",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual_hypothesis",
+          "interval": {
+            "start_s": 1284.0,
+            "end_s": 1290.0
+          },
+          "hypothesis": "Vision binds the handled package to the just-retrieved freezer item.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c03.vision.wrapper",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual_hypothesis",
+          "interval": {
+            "start_s": 1288.0,
+            "end_s": 1301.0
+          },
+          "hypothesis": "Two-handed package manipulation visually supports active opening/removal.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c03.audio.wrapper",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 1288.0,
+            "end_s": 1301.0
+          },
+          "hypothesis": "A dense irregular broadband crinkle/tear cluster accompanies the action.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V+A",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_PENDING_TASK153_AND_TASK194",
+        "credit_condition": "May enter prospective profile accounting only after a valid Task194 READY import, a compatible Task153 source pass, direct authoring review, and fresh normal-mode regeneration.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "multi",
+        "temporal": "near_local",
+        "component_intervals": [
+          {
+            "start_s": 1284.0,
+            "end_s": 1290.0
+          },
+          {
+            "start_s": 1288.0,
+            "end_s": 1301.0
+          }
+        ],
+        "scientific_basis": "Multi-hop is used only when the answer requires aggregation across separate event episodes or a linked cross-modal component chain; all components remain within a local span under 120 seconds.",
+        "human_verification_status": "NOT_PERFORMED"
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "provisional_route_group_id": "rg.pv4.p27.c03.wrapper_av",
+        "affected_channels": [
+          "vision",
+          "non_speech_audio",
+          "visual_derivatives",
+          "audio_derivatives"
+        ],
+        "block_plan": "Use the slot's frozen mechanism to make the complete provisional answer-bearing route group unavailable, including deterministic derivatives, without changing the question, budgets, tool menu, or unaffected result surface.",
+        "restore_plan": "Restore only the registered provisional route group at zero-based action index 4 in RESTORED; NO_TRIGGER receives the byte-identical public checkpoint and remains blocked.",
+        "template_only_not_executed": true,
+        "scientific_execution_authorized": false,
+        "route_group_is_not_validated_necessity": true
+      },
+      "missing_fields": [
+        "valid completed Task194 human prescreen import",
+        "compatible completed Task153 source-level pass",
+        "fresh normal-mode candidate generation",
+        "human-authored question/answer/claim/evidence record",
+        "full-source recurrence and alternative-route closure",
+        "six-role construct packet and decisions",
+        "Task145 state-surface, exact R/N fork, session/cache, assignment, ITT, and leakage manifests"
+      ],
+      "rights_release_boundary": "EPIC CC BY-NC evidence supports noncommercial use subject to governance, but the exact source manifest grants neither human annotation nor public release/redistribution. This record remains restricted planning material.",
+      "gate_a_blockers": [
+        "Task194 packet is blank and non-distributable; no human decision exists",
+        "Task153 source authoring eligibility is incomplete",
+        "parent Task193/Task192 records are development/planning-only and Gate-A ineligible",
+        "fresh normal-mode regeneration has not occurred",
+        "source-specific annotation/privacy/release authority remains incomplete",
+        "human construct and Task145 execution interlocks remain incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-P27-02",
+      "replacement": {
+        "is_task193_audio_replacement": true,
+        "task194_candidate_code": "C03",
+        "replaces_visual_slot_not_added": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_relabel": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "trained-human event identity and count/description",
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "PLANNED_BLANK_NOT_REVIEWED",
+          "plan_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/task153_plan.json",
+          "reviewer_form_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/prescreener_form.json",
+          "blank_import_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/blank_import.json",
+          "blank_exposure_ledger_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P27_101/blank_exposure_ledger.json",
+          "completed_ready_import_path": null,
+          "interpretation": "The checked-in Task153 materials are blank development packets. They do not establish source authoring eligibility."
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": "C03",
+          "status": "DRAFT_NOT_DISTRIBUTABLE_HUMAN_DECISION_PENDING",
+          "packet_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C03/candidate_packet.json",
+          "packet_file_sha256": "e2d72d9c6678653b6c3a48ee8c92d3b7846129dc7784f2afebde9336fc2d6378",
+          "packet_payload_sha256": "sha256:fd68e3251575cd71966916084723655886d8322447c7e3e01f93273fc5ff8423",
+          "reviewer_form_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C03/reviewer_form.json",
+          "reviewer_form_file_sha256": "f53eabf5c62c047b23dff1701aa867555fc04199d442b39b3e3b8c60e256c157",
+          "current_import_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C03/blank_import.json",
+          "current_import_file_sha256": "c2c5b1b4faad90bface6c270f26c507c94a5b4764050d39fd52635c0527b10f7",
+          "current_readiness_token": "AUDIO_CANDIDATE_PRESCREEN_PACKETS_REPAIR",
+          "current_authoring_eligibility": "UNDECIDED",
+          "packet_manifest_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/packet_manifest.json",
+          "reviewer_assignment_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/reviewer_assignments.json",
+          "source_exposure_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/source_exposure_ledger.json",
+          "distribution_authorized": false,
+          "human_decision_recorded": false
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": true
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_HUMAN_PRESCREEN_DECISION",
+        "if_task194_ready": "Treat C03 as eligible for fresh constrained V+A authoring only if the reviewer identifies a concrete local non-speech wrapper event, resolves the count/description, and records substitution constraints.",
+        "if_task194_repair": "Keep the slot pending and implement the exact interval, recurrence, or substitution repairs in the valid import before authoring.",
+        "if_task194_no_go": "Reject C03 as V+A and execute the documented V-only/re-mine fallback.",
+        "if_task153_source_repair": "Hold both slots from this source; complete the source-level repair before any candidate authoring.",
+        "if_task153_source_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "exposure_rule": "Any completed Task194 prescreener exposure must be bridged into the Task146-compatible source ledger before construct assignments freeze; the prescreener is barred source-wide from both blind search roles."
+      },
+      "alternative_route_risks": [
+        "Vision clearly shows wrapper manipulation and may be a complete substitute for the action.",
+        "Wrapper-like sounds recur near 960-976 seconds and at isolated earlier hits.",
+        "Package appearance or readable text may identify the item without the intended chain.",
+        "No human has listened; CLAP and spectrum review can confuse rustling with other flexible-material handling."
+      ],
+      "rejection_fallback": {
+        "action": "FALL_BACK_TO_FRESH_V_ONLY_WRAPPER_SLOT",
+        "fallback": "If C03 audio fails but the visual chain survives, regenerate the Task192 wrapper family as V/multi/near after Task153. If the visual chain also fails, re-mine P27.",
+        "quota_effect": "V+A decreases by one and V increases by one."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-P28-01",
+      "source_id": "P28_103",
+      "source_group_id": "P28",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPLACE_WITH_C04_V_PLUS_A_PENDING_HUMAN_PRESCREEN",
+      "lineage": {
+        "pilot_v3_parent_slot_id": "PV3-P28-01",
+        "pilot_v3_matrix_path": "data/rehearsal_plan/pilot_v3_candidate_matrix.json",
+        "pilot_v3_matrix_sha256": "ce24bc6302d4bd97cd1c00530a81bb0bb5b530b200384e4d58fd45b141cf6beb",
+        "replaced_v3_lineage": {
+          "registry_path": "data/restricted/epic_family_candidates_v2_dev/candidate_registry.json",
+          "registry_sha256": "ab0d4e70d912b9fe7bf7f84c48d717ba1809b1ac6ca4ed67464644e5d26bca5d",
+          "parent_proposal_id": "EPIC-DEV-P28-PEEL-POTATO",
+          "parent_proposal_payload_sha256": "sha256:c651ef70d04fc2ab27576d57afc5694b4a163944016862153f1996ba7b472fb3",
+          "parent_disposition": "KEEP",
+          "task171_author_verifier_packet_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/author_verifier_packets/EPIC-DEV-P28-PEEL-POTATO/author_verifier_form.json",
+          "transformation": "Retained with the AST scissors label explicitly excluded from semantic evidence.",
+          "local_evidence_references": [
+            "vision.seg.a2f1023ab698.context.000011",
+            "vision.seg.a2f1023ab698.context.000012",
+            "vision.seg.a2f1023ab698.context.000013",
+            "vision.seg.a2f1023ab698.fine.000048",
+            "vision.seg.a2f1023ab698.fine.000049",
+            "vision.seg.a2f1023ab698.fine.000050",
+            "vision.seg.a2f1023ab698.fine.000051",
+            "vision.seg.a2f1023ab698.fine.000052"
+          ]
+        },
+        "task193_fact_registry_path": "data/restricted/semantic_audio_discovery_v1/provisional_audio_facts.json",
+        "task193_fact_registry_sha256": "68bcfcaf77ddd26ee57311eb6e9f50a39ee71980a786d855fbd0d4b8408556c9",
+        "task193_fact_id": "sad193.fact.p28.peel.scrape",
+        "task193_fact_status": "RETAIN_AUDIO_FACT",
+        "task193_human_listening_performed": false,
+        "task193_gate_a_eligible": false,
+        "task194_candidate_code": "C04",
+        "task194_packet_id": "task194.audio-candidate.C04",
+        "transformation": "C04 replaces the v3 P28 peeling visual slot using the same visual lineage and Task193's corrected scraping lead after the earlier AST scissors false positive. This is not a promotion of either parent."
+      },
+      "question": "What does the wearer do to the potato, and what repeated non-speech sound accompanies the action?",
+      "answer_hypothesis": "They peel the potato with a handheld peeler while repeated scraping sounds occur.",
+      "atomic_claims": [
+        "The wearer works on a potato with a handheld peeler.",
+        "Repeated peeler strokes remove the potato skin.",
+        "Repeated quiet broadband scraping accompanies the peeling action."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "pv4.c04.vision.peel",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual_hypothesis",
+          "interval": {
+            "start_s": 196.0,
+            "end_s": 224.0
+          },
+          "hypothesis": "Vision identifies the potato, handheld peeler, and repeated peeling strokes.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c04.audio.scrape",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 196.0,
+            "end_s": 224.0
+          },
+          "hypothesis": "Repeated quiet scraping/grating-like transients accompany the visible strokes.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V+A",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_PENDING_TASK153_AND_TASK194",
+        "credit_condition": "May enter prospective profile accounting only after a valid Task194 READY import, a compatible Task153 source pass, direct authoring review, and fresh normal-mode regeneration.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "component_intervals": [
+          {
+            "start_s": 196.0,
+            "end_s": 224.0
+          }
+        ],
+        "scientific_basis": "One bounded local event/action and its synchronized carriers support the hypothesis.",
+        "human_verification_status": "NOT_PERFORMED"
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "provisional_route_group_id": "rg.pv4.p28.c04.peel_av",
+        "affected_channels": [
+          "vision",
+          "non_speech_audio",
+          "visual_derivatives",
+          "audio_derivatives"
+        ],
+        "block_plan": "Use the slot's frozen mechanism to make the complete provisional answer-bearing route group unavailable, including deterministic derivatives, without changing the question, budgets, tool menu, or unaffected result surface.",
+        "restore_plan": "Restore only the registered provisional route group at zero-based action index 4 in RESTORED; NO_TRIGGER receives the byte-identical public checkpoint and remains blocked.",
+        "template_only_not_executed": true,
+        "scientific_execution_authorized": false,
+        "route_group_is_not_validated_necessity": true
+      },
+      "missing_fields": [
+        "valid completed Task194 human prescreen import",
+        "compatible completed Task153 source-level pass",
+        "fresh normal-mode candidate generation",
+        "human-authored question/answer/claim/evidence record",
+        "full-source recurrence and alternative-route closure",
+        "six-role construct packet and decisions",
+        "Task145 state-surface, exact R/N fork, session/cache, assignment, ITT, and leakage manifests"
+      ],
+      "rights_release_boundary": "EPIC CC BY-NC evidence supports noncommercial use subject to governance, but the exact source manifest grants neither human annotation nor public release/redistribution. This record remains restricted planning material.",
+      "gate_a_blockers": [
+        "Task194 packet is blank and non-distributable; no human decision exists",
+        "Task153 source authoring eligibility is incomplete",
+        "parent Task193/Task192 records are development/planning-only and Gate-A ineligible",
+        "fresh normal-mode regeneration has not occurred",
+        "source-specific annotation/privacy/release authority remains incomplete",
+        "human construct and Task145 execution interlocks remain incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-P28-01",
+      "replacement": {
+        "is_task193_audio_replacement": true,
+        "task194_candidate_code": "C04",
+        "replaces_visual_slot_not_added": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_relabel": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "trained-human event identity and count/description",
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "PLANNED_BLANK_NOT_REVIEWED",
+          "plan_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/task153_plan.json",
+          "reviewer_form_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/prescreener_form.json",
+          "blank_import_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/blank_import.json",
+          "blank_exposure_ledger_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/blank_exposure_ledger.json",
+          "completed_ready_import_path": null,
+          "interpretation": "The checked-in Task153 materials are blank development packets. They do not establish source authoring eligibility."
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": "C04",
+          "status": "DRAFT_NOT_DISTRIBUTABLE_HUMAN_DECISION_PENDING",
+          "packet_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C04/candidate_packet.json",
+          "packet_file_sha256": "6175a685889b28c48c7fe6360293d4e21bf1964517cda9a7b50ce71945428fa1",
+          "packet_payload_sha256": "sha256:611ff856b0962ce7d462950e935ec13985b0c3068a077e38469bd1c93c927d64",
+          "reviewer_form_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C04/reviewer_form.json",
+          "reviewer_form_file_sha256": "42f77bb2a1ab12947d805df2c3dea1618c6fd5d56332e5188bef8b40d102698a",
+          "current_import_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C04/blank_import.json",
+          "current_import_file_sha256": "a2318b44d47900b231f748eba15c40ae51065aaff610677ac6051eddc38a7371",
+          "current_readiness_token": "AUDIO_CANDIDATE_PRESCREEN_PACKETS_REPAIR",
+          "current_authoring_eligibility": "UNDECIDED",
+          "packet_manifest_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/packet_manifest.json",
+          "reviewer_assignment_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/reviewer_assignments.json",
+          "source_exposure_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/source_exposure_ledger.json",
+          "distribution_authorized": false,
+          "human_decision_recorded": false
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": true
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_HUMAN_PRESCREEN_DECISION",
+        "if_task194_ready": "Treat C04 as eligible for fresh constrained V+A authoring only if human review confirms a concrete repeated scrape correlated with the peeling action and records the full visual-substitution risk.",
+        "if_task194_repair": "Tighten the audible interval, revise the sound wording, or constrain the question as directed by the valid import.",
+        "if_task194_no_go": "Reject C04 as V+A and execute the documented V-only fallback.",
+        "if_task153_source_repair": "Hold both slots from this source; complete the source-level repair before any candidate authoring.",
+        "if_task153_source_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "exposure_rule": "Any completed Task194 prescreener exposure must be bridged into the Task146-compatible source ledger before construct assignments freeze; the prescreener is barred source-wide from both blind search roles."
+      },
+      "alternative_route_risks": [
+        "Vision independently identifies the potato and peeling action.",
+        "Scraping-like sounds recur and CLAP confuses peeling with grating.",
+        "The paired action-plus-sound wording may be artificial if the sound is incidental or not concrete.",
+        "No human has listened and the exact audible onset/offset is unresolved."
+      ],
+      "rejection_fallback": {
+        "action": "FALL_BACK_TO_FRESH_V_ONLY_PEEL_SLOT",
+        "fallback": "If C04 audio fails but vision survives, regenerate the original P28 peel family as V/one/near after Task153. If visual authoring also fails, use a fresh normal-mode P28 alternate.",
+        "quota_effect": "V+A decreases by one and V increases by one."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-P28-02",
+      "source_id": "P28_103",
+      "source_group_id": "P28",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_KEEP_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "registry_path": "data/restricted/epic_family_candidates_v2_dev/candidate_registry.json",
+        "registry_sha256": "ab0d4e70d912b9fe7bf7f84c48d717ba1809b1ac6ca4ed67464644e5d26bca5d",
+        "parent_proposal_id": "EPIC-DEV-P28-ADD-ADJUST-STIR",
+        "parent_proposal_payload_sha256": "sha256:3aff66cffc38340ba5552226b2d288d1762fc64f5f456573f520cdea6497f2a7",
+        "parent_disposition": "KEEP",
+        "task171_author_verifier_packet_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/author_verifier_packets/EPIC-DEV-P28-ADD-ADJUST-STIR/author_verifier_form.json",
+        "transformation": "Retained as a near/local visual composition; frying/sizzle/stir audio remains non-counting corroboration pending listening.",
+        "local_evidence_references": [
+          "vision.seg.a2f1023ab698.context.000057",
+          "vision.seg.a2f1023ab698.context.000058",
+          "vision.seg.a2f1023ab698.context.000059",
+          "vision.seg.a2f1023ab698.fine.000233",
+          "vision.seg.a2f1023ab698.fine.000234",
+          "vision.seg.a2f1023ab698.fine.000235",
+          "vision.seg.a2f1023ab698.fine.000236",
+          "vision.seg.a2f1023ab698.fine.000237",
+          "vision.seg.a2f1023ab698.fine.000238",
+          "vision.seg.a2f1023ab698.fine.000239"
+        ]
+      },
+      "question": "What sequence links the bowl of chopped vegetables to the next round of stirring?",
+      "answer_hypothesis": "The wearer tips the vegetables into the saucepan, adjusts a stove burner control knob, and then resumes stirring.",
+      "atomic_claims": [
+        "Chopped vegetables are tipped into the saucepan.",
+        "The wearer turns a stove burner control knob.",
+        "The wearer resumes stirring after the adjustment."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "e.p28.cook.v1",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 938.0,
+            "end_s": 944.5
+          },
+          "hypothesis": "Chopped vegetables are tipped from a bowl into the saucepan.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "e.p28.cook.v2",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 949.5,
+            "end_s": 954.5
+          },
+          "hypothesis": "The wearer's hand turns a stove control knob.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "e.p28.cook.v3",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 955.0,
+            "end_s": 959.5
+          },
+          "hypothesis": "The wearer returns to stirring the saucepan.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "e.p28.cook.a1",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 940.0,
+            "end_s": 960.0
+          },
+          "hypothesis": "AST routes frying, sizzle, and stir, but human listening has not established semantic support.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "audio_note": "Audio may corroborate ongoing cooking but cannot identify the burner-control adjustment and is not counted toward an A-bearing profile.",
+        "speech_note": "No reliable speech hypothesis.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "multi",
+        "temporal": "near_local",
+        "component_intervals": [
+          {
+            "start_s": 938.0,
+            "end_s": 944.5
+          },
+          {
+            "start_s": 949.5,
+            "end_s": 954.5
+          },
+          {
+            "start_s": 955.0,
+            "end_s": 959.5
+          }
+        ],
+        "composition": "add vegetables, adjust burner control, then resume stirring"
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "affected_channels": [
+          "vision",
+          "visual_derivatives"
+        ],
+        "block_plan": "Silently withhold all three candidate visual components and deterministic sequence summaries.",
+        "restore_plan": "Restore the complete registered visual chain at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.p28.add_adjust_stir.visual_chain",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "completed trained-human Task153 source prescreen",
+        "frame-accurate verification of all three components",
+        "human listening for audio hypothesis",
+        "full-source stirring/frying recurrence closure",
+        "proof that all three components are required",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "EPIC CC BY-NC evidence supports noncommercial use subject to governance, but the exact source manifest grants neither human annotation nor public release/redistribution. This record remains restricted planning material.",
+      "gate_a_blockers": [
+        "parent development record is permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not completed",
+        "audio semantics not human validated",
+        "source-specific privacy/annotation/release decision incomplete",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-P28-02",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "PLANNED_BLANK_NOT_REVIEWED",
+          "plan_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/task153_plan.json",
+          "reviewer_form_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/prescreener_form.json",
+          "blank_import_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/blank_import.json",
+          "blank_exposure_ledger_path": "data/rehearsal_plan/epic_dev_authoring_packets_v1/prescreener_packets/P28_103/blank_exposure_ledger.json",
+          "completed_ready_import_path": null,
+          "interpretation": "The checked-in Task153 materials are blank development packets. They do not establish source authoring eligibility."
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "Any one visible step may let a reviewer infer the routine without the full sequence.",
+        "Stirring/frying-like sounds recur and are not human-validated.",
+        "The three-step question may be overcompound if one component is nonessential."
+      ],
+      "rejection_fallback": {
+        "action": "FRESH_NORMAL_MODE_ALTERNATE",
+        "fallback": "Use the Task167 P28 dry-hands-with-white-towel KEEP lead only after fresh Task153-compatible authoring and independent verification.",
+        "quota_effect": "Likely converts one multi/near V slot to one/near V."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-CC16-01",
+      "source_id": "16_20",
+      "source_group_id": "cc4d_p01_e08",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_KEEP_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "registry_path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+        "registry_sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+        "parent_candidate_lead_id": "cc4d.lead.56a0afee3a48bd76",
+        "parent_candidate_sha256": "sha256:4fc290ff7183e8dc933326f1df0952657f86e24c6148742db0acb2a73afe9f53",
+        "parent_disposition": "KEEP",
+        "primary_segment_id": "seg.8082945db8c2.fine.000274",
+        "transformation": "Retained as a visual ingredient/action question; utensil-contact audio is explicitly unresolved.",
+        "local_evidence_references": [
+          "cc4d.lead.56a0afee3a48bd76.vision.stir",
+          "cc4d.lead.56a0afee3a48bd76.vision.after",
+          "cc4d.lead.56a0afee3a48bd76.audio.utensil",
+          "data/restricted/captaincook4d_wave0_index_v1/checkpoints/16_20/vision_clip.json",
+          "data/restricted/captaincook4d_wave0_index_v1/checkpoints/16_20/ambient.json"
+        ]
+      },
+      "question": "What ingredient is being stirred in the small pan before the utensil is handled with a paper towel?",
+      "answer_hypothesis": "Chopped red onion is being stirred.",
+      "atomic_claims": [
+        "Chopped red onion is visible in the small pan.",
+        "The participant stirs the onion with a dark utensil.",
+        "The utensil is then moved toward or handled with a paper towel."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "cc4d.lead.56a0afee3a48bd76.vision.stir",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 1096.0,
+            "end_s": 1101.0
+          },
+          "hypothesis": "Decoded frames show chopped red onion being stirred in a small pan.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.56a0afee3a48bd76.vision.after",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 1101.0,
+            "end_s": 1104.0
+          },
+          "hypothesis": "Decoded frames show the utensil moved away from the pan toward a paper towel.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.56a0afee3a48bd76.audio.utensil",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 1096.0,
+            "end_s": 1104.0
+          },
+          "hypothesis": "AST routes dishes, pots, cutlery, and transients; no semantic listening validation was performed.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "audio_note": "Audio identity is not human validated and is not required to identify the onion.",
+        "speech_note": "No speech hypothesis.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "scientific_basis": "The local visual action and ingredient state answer the question."
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "affected_channels": [
+          "vision",
+          "visual_derivatives"
+        ],
+        "block_plan": "Silently withhold the onion-stirring visual route and deterministic object/action summaries.",
+        "restore_plan": "Restore the registered route at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.cc16.onion_visual_and_derivatives",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "completed trained-human Task153 source prescreen",
+        "frame-accurate ingredient/action verification",
+        "human listening for utensil-contact hypothesis",
+        "full-source cookware/onion recurrence closure",
+        "person/environment leakage review",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "CaptainCook4D records a verified Apache-2.0 dataset statement and verified consent/IRB statements, but operative linked documents are not archived and Task188 authorizes only restricted internal research; annotation and public release remain unauthorized.",
+      "gate_a_blockers": [
+        "parent development record is permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not completed",
+        "audio semantics not human validated",
+        "operative governance documents and release decision incomplete",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-CC16-01",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+          "inventory_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+          "plan_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "Task153 reviewer form bound to the frozen plan",
+            "trained pseudonymous reviewer identity and timestamps",
+            "complete source-sample observations",
+            "privacy/safety and recurrence decisions",
+            "valid import report and source-level exposure event"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "Ingredient appearance may be answerable from a single static frame.",
+        "Chopping/stirring/utensil sounds recur and do not uniquely bind the onion.",
+        "Person/environment cues may become source shortcuts."
+      ],
+      "rejection_fallback": {
+        "action": "REJECT_SLOT_AND_REMINE_SOURCE",
+        "fallback": "Re-mine 16_20 prospectively; Task193 chopping/stirring leads are unpacketized alternatives and cannot be substituted automatically.",
+        "quota_effect": "One 16_20 slot becomes empty until a fresh replacement is authored."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-CC16-02",
+      "source_id": "16_20",
+      "source_group_id": "cc4d_p01_e08",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPLACE_WITH_C02_A_ONLY_PENDING_HUMAN_PRESCREEN",
+      "lineage": {
+        "pilot_v3_parent_slot_id": "PV3-CC16-02",
+        "pilot_v3_matrix_path": "data/rehearsal_plan/pilot_v3_candidate_matrix.json",
+        "pilot_v3_matrix_sha256": "ce24bc6302d4bd97cd1c00530a81bb0bb5b530b200384e4d58fd45b141cf6beb",
+        "replaced_v3_lineage": {
+          "registry_path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+          "registry_sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+          "parent_candidate_lead_id": "cc4d.lead.ce01b450ca70e10a",
+          "parent_candidate_sha256": "sha256:b8f89bf2905e11394d97f7749260656d2c2e5fd56ab1b0a510cede67854becd7",
+          "parent_disposition": "REJECT_AS_ARBITRARY_MULTI_HOP",
+          "primary_segment_id": "seg.8082945db8c2.fine.000056",
+          "transformation": "The rejected far pair is not reused. Task192 narrows only the locally substantive early 224-232-second component into a new one-hop visual candidate; the parent record remains rejected and unpromoted.",
+          "local_evidence_references": [
+            "cc4d.lead.ce01b450ca70e10a.vision.early_separate",
+            "cc4d.lead.ce01b450ca70e10a.audio.early_handling",
+            "data/restricted/captaincook4d_wave0_index_v1/checkpoints/16_20/vision_clip.json",
+            "data/restricted/captaincook4d_wave0_index_v1/checkpoints/16_20/ambient.json"
+          ]
+        },
+        "task193_fact_registry_path": "data/restricted/semantic_audio_discovery_v1/provisional_audio_facts.json",
+        "task193_fact_registry_sha256": "68bcfcaf77ddd26ee57311eb6e9f50a39ee71980a786d855fbd0d4b8408556c9",
+        "task193_fact_id": "sad193.fact.cc16.timer.beep.sequence",
+        "task193_fact_status": "RETAIN_AUDIO_FACT",
+        "task193_human_listening_performed": false,
+        "task193_gate_a_eligible": false,
+        "task194_candidate_code": "C02",
+        "task194_packet_id": "task194.audio-candidate.C02",
+        "transformation": "C02 replaces Task192's weak newly-authored hand-separation slot. The rejected parent far pair remains rejected; no part of it is promoted. The new slot derives solely from Task193's independent full-timeline audio lead."
+      },
+      "question": "How many distinct clusters of short electronic alert tones occur during the bounded preparation span?",
+      "answer_hypothesis": "Three distinct alert-tone clusters.",
+      "atomic_claims": [
+        "A first cluster of short stable tones occurs near 676-692 seconds.",
+        "A second separated tone cluster occurs near 708-720 seconds.",
+        "A third separated tone cluster occurs near 736-748 seconds.",
+        "The bounded span therefore contains three distinct alert-tone clusters."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "pv4.c02.audio.cluster1",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 676.0,
+            "end_s": 692.0
+          },
+          "hypothesis": "The first repeated stable tonal stack forms one alert cluster.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c02.audio.cluster2",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 708.0,
+            "end_s": 720.0
+          },
+          "hypothesis": "A temporally separated second tonal stack forms another alert cluster.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c02.audio.cluster3",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 736.0,
+            "end_s": 748.0
+          },
+          "hypothesis": "A third separated tonal stack forms the final bounded alert cluster.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "A",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_PENDING_TASK153_AND_TASK194",
+        "credit_condition": "May enter prospective profile accounting only after a valid Task194 READY import, a compatible Task153 source pass, direct authoring review, and fresh normal-mode regeneration.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "multi",
+        "temporal": "near_local",
+        "component_intervals": [
+          {
+            "start_s": 676.0,
+            "end_s": 692.0
+          },
+          {
+            "start_s": 708.0,
+            "end_s": 720.0
+          },
+          {
+            "start_s": 736.0,
+            "end_s": 748.0
+          }
+        ],
+        "scientific_basis": "Multi-hop is used only when the answer requires aggregation across separate event episodes or a linked cross-modal component chain; all components remain within a local span under 120 seconds.",
+        "human_verification_status": "NOT_PERFORMED"
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "provisional_route_group_id": "rg.pv4.cc16.c02.alert_clusters_audio",
+        "affected_channels": [
+          "non_speech_audio",
+          "audio_derivatives"
+        ],
+        "block_plan": "Use the slot's frozen mechanism to make the complete provisional answer-bearing route group unavailable, including deterministic derivatives, without changing the question, budgets, tool menu, or unaffected result surface.",
+        "restore_plan": "Restore only the registered provisional route group at zero-based action index 4 in RESTORED; NO_TRIGGER receives the byte-identical public checkpoint and remains blocked.",
+        "template_only_not_executed": true,
+        "scientific_execution_authorized": false,
+        "route_group_is_not_validated_necessity": true
+      },
+      "missing_fields": [
+        "valid completed Task194 human prescreen import",
+        "compatible completed Task153 source-level pass",
+        "fresh normal-mode candidate generation",
+        "human-authored question/answer/claim/evidence record",
+        "full-source recurrence and alternative-route closure",
+        "six-role construct packet and decisions",
+        "Task145 state-surface, exact R/N fork, session/cache, assignment, ITT, and leakage manifests"
+      ],
+      "rights_release_boundary": "CaptainCook4D records a verified Apache-2.0 dataset statement and verified consent/IRB statements, but operative linked documents are not archived and Task188 authorizes only restricted internal research; annotation and public release remain unauthorized.",
+      "gate_a_blockers": [
+        "Task194 packet is blank and non-distributable; no human decision exists",
+        "Task153 source authoring eligibility is incomplete",
+        "parent Task193/Task192 records are development/planning-only and Gate-A ineligible",
+        "fresh normal-mode regeneration has not occurred",
+        "source-specific annotation/privacy/release authority remains incomplete",
+        "human construct and Task145 execution interlocks remain incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-CC16-02",
+      "replacement": {
+        "is_task193_audio_replacement": true,
+        "task194_candidate_code": "C02",
+        "replaces_visual_slot_not_added": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_relabel": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "trained-human event identity and count/description",
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+          "inventory_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+          "plan_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "Task153 reviewer form bound to the frozen plan",
+            "trained pseudonymous reviewer identity and timestamps",
+            "complete source-sample observations",
+            "privacy/safety and recurrence decisions",
+            "valid import report and source-level exposure event"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": "C02",
+          "status": "DRAFT_NOT_DISTRIBUTABLE_HUMAN_DECISION_PENDING",
+          "packet_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C02/candidate_packet.json",
+          "packet_file_sha256": "aaddfe083d3cbc7a18eb2ec4250cf6acd713cd70a21491b962a601dcd425a3cf",
+          "packet_payload_sha256": "sha256:c0e3656950c0f2fad17422b26ec50e770c3fa9f8fc3e585c4f6038d414fd0dc1",
+          "reviewer_form_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C02/reviewer_form.json",
+          "reviewer_form_file_sha256": "50025cc333e9307bd20e0e1e68e716aa706c1f43817c1462ea89a8ac676545dd",
+          "current_import_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C02/blank_import.json",
+          "current_import_file_sha256": "7bfddb8787a1473940180469e75af00744c70a69cf8085af0798dd9b6f455340",
+          "current_readiness_token": "AUDIO_CANDIDATE_PRESCREEN_PACKETS_REPAIR",
+          "current_authoring_eligibility": "UNDECIDED",
+          "packet_manifest_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/packet_manifest.json",
+          "reviewer_assignment_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/reviewer_assignments.json",
+          "source_exposure_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/source_exposure_ledger.json",
+          "distribution_authorized": false,
+          "human_decision_recorded": false
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": true
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_HUMAN_PRESCREEN_DECISION",
+        "if_task194_ready": "Treat C02 as eligible for fresh A-only count authoring only if audio-first review independently finds three concrete non-speech clusters and A/V review does not reveal a complete visual/text route.",
+        "if_task194_repair": "Apply reviewer-requested count-boundary, recurrence, emitter-wording, or substitution constraints before fresh authoring.",
+        "if_task194_no_go": "Reject C02 and execute the conditional visual/re-mine fallback.",
+        "if_task153_source_repair": "Hold both slots from this source; complete the source-level repair before any candidate authoring.",
+        "if_task153_source_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "exposure_rule": "Any completed Task194 prescreener exposure must be bridged into the Task146-compatible source ledger before construct assignments freeze; the prescreener is barred source-wide from both blind search roles."
+      },
+      "alternative_route_risks": [
+        "The emitting appliance is not visible in bounded frames.",
+        "Weaker beep-like detections recur elsewhere in the source.",
+        "Tonal utensil/electronic sounds may be mistaken for separate clusters.",
+        "Speech/music dominance and exact cluster boundaries remain human-unknown.",
+        "Question wording itself may expose that the expected answer is a small count."
+      ],
+      "rejection_fallback": {
+        "action": "CONDITIONAL_VISUAL_FALLBACK_OR_SOURCE_REMINE",
+        "fallback": "Use Task192's local hand-separation visual hypothesis only if a fresh human author can safely identify the object/action and normal-mode regeneration succeeds; otherwise re-mine or replace 16_20.",
+        "quota_effect": "A decreases by one and V may increase by one; multi decreases by one if the visual fallback is one-hop."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-CC15-01",
+      "source_id": "15_29",
+      "source_group_id": "cc4d_p02_e02",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPLACE_WITH_C01_A_ONLY_PENDING_HUMAN_PRESCREEN",
+      "lineage": {
+        "pilot_v3_parent_slot_id": "PV3-CC15-01",
+        "pilot_v3_matrix_path": "data/rehearsal_plan/pilot_v3_candidate_matrix.json",
+        "pilot_v3_matrix_sha256": "ce24bc6302d4bd97cd1c00530a81bb0bb5b530b200384e4d58fd45b141cf6beb",
+        "replaced_v3_lineage": {
+          "registry_path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+          "registry_sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+          "parent_candidate_lead_id": "cc4d.lead.9f54485d9d61833c",
+          "parent_candidate_sha256": "sha256:aeb4e522803d2cdf4b7e6b533456254f41d6327f51384a30676d446d78ec20b4",
+          "parent_disposition": "KEEP",
+          "primary_segment_id": "seg.f1f77f09d6ff.fine.000158",
+          "transformation": "Retained as a visual object-state/action question; pan-process audio remains unresolved.",
+          "local_evidence_references": [
+            "cc4d.lead.9f54485d9d61833c.vision.ingredient",
+            "cc4d.lead.9f54485d9d61833c.vision.movement",
+            "cc4d.lead.9f54485d9d61833c.audio.process",
+            "data/restricted/captaincook4d_wave0_index_v1/checkpoints/15_29/vision_clip.json",
+            "data/restricted/captaincook4d_wave0_index_v1/checkpoints/15_29/ambient.json"
+          ]
+        },
+        "task193_fact_registry_path": "data/restricted/semantic_audio_discovery_v1/provisional_audio_facts.json",
+        "task193_fact_registry_sha256": "68bcfcaf77ddd26ee57311eb6e9f50a39ee71980a786d855fbd0d4b8408556c9",
+        "task193_fact_id": "sad193.fact.cc15.blender.pulses",
+        "task193_fact_status": "RETAIN_AUDIO_FACT",
+        "task193_human_listening_performed": false,
+        "task193_gate_a_eligible": false,
+        "task194_candidate_code": "C01",
+        "task194_packet_id": "task194.audio-candidate.C01",
+        "transformation": "C01 replaces the local diced-tomato visual slot, preserving the separate CC15 far/multi tomato-state hypothesis. It derives from Task193's independent audio lead and does not promote Task191 records."
+      },
+      "question": "How many separate motor bursts does the countertop blender or food processor make during the bounded span before the participant returns to the pan?",
+      "answer_hypothesis": "Three separate motor bursts.",
+      "atomic_claims": [
+        "A first sustained motor-sound burst occurs near 836-844 seconds.",
+        "A second separated motor-sound burst occurs near 848-860 seconds.",
+        "A third separated motor-sound burst occurs near 868-876 seconds.",
+        "The bounded operation therefore contains three separate motor bursts."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "pv4.c01.audio.burst1",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 836.0,
+            "end_s": 844.0
+          },
+          "hypothesis": "A sustained low-frequency motor block forms the first operation burst.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c01.audio.burst2",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 848.0,
+            "end_s": 860.0
+          },
+          "hypothesis": "A separated second sustained motor block forms the second burst.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "pv4.c01.audio.burst3",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 868.0,
+            "end_s": 876.0
+          },
+          "hypothesis": "A separated third sustained motor block forms the final burst.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "A",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_PENDING_TASK153_AND_TASK194",
+        "credit_condition": "May enter prospective profile accounting only after a valid Task194 READY import, a compatible Task153 source pass, direct authoring review, and fresh normal-mode regeneration.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "multi",
+        "temporal": "near_local",
+        "component_intervals": [
+          {
+            "start_s": 836.0,
+            "end_s": 844.0
+          },
+          {
+            "start_s": 848.0,
+            "end_s": 860.0
+          },
+          {
+            "start_s": 868.0,
+            "end_s": 876.0
+          }
+        ],
+        "scientific_basis": "Multi-hop is used only when the answer requires aggregation across separate event episodes or a linked cross-modal component chain; all components remain within a local span under 120 seconds.",
+        "human_verification_status": "NOT_PERFORMED"
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "provisional_route_group_id": "rg.pv4.cc15.c01.motor_bursts_audio",
+        "affected_channels": [
+          "non_speech_audio",
+          "audio_derivatives"
+        ],
+        "block_plan": "Use the slot's frozen mechanism to make the complete provisional answer-bearing route group unavailable, including deterministic derivatives, without changing the question, budgets, tool menu, or unaffected result surface.",
+        "restore_plan": "Restore only the registered provisional route group at zero-based action index 4 in RESTORED; NO_TRIGGER receives the byte-identical public checkpoint and remains blocked.",
+        "template_only_not_executed": true,
+        "scientific_execution_authorized": false,
+        "route_group_is_not_validated_necessity": true
+      },
+      "missing_fields": [
+        "valid completed Task194 human prescreen import",
+        "compatible completed Task153 source-level pass",
+        "fresh normal-mode candidate generation",
+        "human-authored question/answer/claim/evidence record",
+        "full-source recurrence and alternative-route closure",
+        "six-role construct packet and decisions",
+        "Task145 state-surface, exact R/N fork, session/cache, assignment, ITT, and leakage manifests"
+      ],
+      "rights_release_boundary": "CaptainCook4D records a verified Apache-2.0 dataset statement and verified consent/IRB statements, but operative linked documents are not archived and Task188 authorizes only restricted internal research; annotation and public release remain unauthorized.",
+      "gate_a_blockers": [
+        "Task194 packet is blank and non-distributable; no human decision exists",
+        "Task153 source authoring eligibility is incomplete",
+        "parent Task193/Task192 records are development/planning-only and Gate-A ineligible",
+        "fresh normal-mode regeneration has not occurred",
+        "source-specific annotation/privacy/release authority remains incomplete",
+        "human construct and Task145 execution interlocks remain incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-CC15-01",
+      "replacement": {
+        "is_task193_audio_replacement": true,
+        "task194_candidate_code": "C01",
+        "replaces_visual_slot_not_added": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_relabel": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "trained-human event identity and count/description",
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+          "inventory_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+          "plan_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "Task153 reviewer form bound to the frozen plan",
+            "trained pseudonymous reviewer identity and timestamps",
+            "complete source-sample observations",
+            "privacy/safety and recurrence decisions",
+            "valid import report and source-level exposure event"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": "C01",
+          "status": "DRAFT_NOT_DISTRIBUTABLE_HUMAN_DECISION_PENDING",
+          "packet_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C01/candidate_packet.json",
+          "packet_file_sha256": "ca7594f5f69f84662b2dd35ad74794d59ee2b665b5999eda1a2c73bcc9e83f39",
+          "packet_payload_sha256": "sha256:eaed2a1698e6d18be5ec710e7457018655fcf02051b73582b1a9b9556ae6c37d",
+          "reviewer_form_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C01/reviewer_form.json",
+          "reviewer_form_file_sha256": "34def07895242245b4d9fab2c4602921852fc6564ee3e1757dbe1f8fe1174de0",
+          "current_import_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/candidates/C01/blank_import.json",
+          "current_import_file_sha256": "6c563cb0208f16b2d936c9db99a103952a318bfa24db802ceabaff08f6df6b26",
+          "current_readiness_token": "AUDIO_CANDIDATE_PRESCREEN_PACKETS_REPAIR",
+          "current_authoring_eligibility": "UNDECIDED",
+          "packet_manifest_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/packet_manifest.json",
+          "reviewer_assignment_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/reviewer_assignments.json",
+          "source_exposure_ledger_path": "data/rehearsal_plan/audio_candidate_prescreen_packets_v1/coordinator/source_exposure_ledger.json",
+          "distribution_authorized": false,
+          "human_decision_recorded": false
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": true
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_HUMAN_PRESCREEN_DECISION",
+        "if_task194_ready": "Treat C01 as eligible for fresh A-only count authoring only if audio-first review independently confirms three motor bursts and A/V review does not expose a complete visual/text count substitute.",
+        "if_task194_repair": "Apply reviewer-requested pulse-boundary, appliance-grounding, recurrence, or substitution constraints before authoring.",
+        "if_task194_no_go": "Reject C01 and execute the documented V-only fallback.",
+        "if_task153_source_repair": "Hold both slots from this source; complete the source-level repair before any candidate authoring.",
+        "if_task153_source_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "exposure_rule": "Any completed Task194 prescreener exposure must be bridged into the Task146-compatible source ledger before construct assignments freeze; the prescreener is barred source-wide from both blind search roles."
+      },
+      "alternative_route_risks": [
+        "Vision identifies the appliance and may expose some operation periods.",
+        "Sparse machine-reviewed frames did not establish the full count, but a human A/V review might.",
+        "Weak blender-like detections at 676-708 and 1056-1064 seconds create recurrence/substitute risk.",
+        "Motor sounds may come from another appliance or continuous operation segmented by noise.",
+        "No human has listened; exact three-burst boundaries remain provisional."
+      ],
+      "rejection_fallback": {
+        "action": "FALL_BACK_TO_FRESH_V_ONLY_DICED_TOMATO_SLOT",
+        "fallback": "If C01 fails, regenerate the Task192 diced-tomato-board family as V/one/near only after Task153 and explicit duplicate accounting against the retained far tomato-state slot.",
+        "quota_effect": "A decreases by one, V increases by one, and multi decreases by one."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-CC15-02",
+      "source_id": "15_29",
+      "source_group_id": "cc4d_p02_e02",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPAIR_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "registry_path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+        "registry_sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+        "parent_candidate_lead_id": "cc4d.lead.96416b3c53aeb206",
+        "parent_candidate_sha256": "sha256:48904628f1eeceba58cee5241eacd83fefa05704e80eea0f93bec653cfe9e1de",
+        "parent_disposition": "REPAIR",
+        "primary_segment_id": "seg.f1f77f09d6ff.fine.000009",
+        "transformation": "Retained as the strongest available far/separated same-material state-change hypothesis; same-physical-object identity remains unverified and the duplicated late component is explicit.",
+        "local_evidence_references": [
+          "cc4d.lead.96416b3c53aeb206.vision.early_sink",
+          "cc4d.lead.96416b3c53aeb206.vision.early_move",
+          "cc4d.lead.96416b3c53aeb206.vision.late_diced",
+          "cc4d.lead.96416b3c53aeb206.audio.early_water",
+          "cc4d.lead.96416b3c53aeb206.audio.late_pan",
+          "seg.f1f77f09d6ff.fine.000009",
+          "seg.f1f77f09d6ff.fine.000158"
+        ]
+      },
+      "question": "How do the tomatoes differ between the early sink/stove interval and the later cutting-board interval?",
+      "answer_hypothesis": "They appear as whole tomatoes being rinsed and set near the stove early, and as diced tomatoes on a cutting board later.",
+      "atomic_claims": [
+        "Whole tomatoes are handled at the sink and moved toward the stove early in the source.",
+        "Diced tomatoes are visible on a cutting board beside the stovetop later in the source.",
+        "The two intervals support a same-ingredient-type whole-to-diced state-change hypothesis, not yet same-physical-object identity."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "cc4d.lead.96416b3c53aeb206.vision.early_sink",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 36.0,
+            "end_s": 38.0
+          },
+          "hypothesis": "Decoded frames show whole tomatoes held at the sink under the faucet area.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.96416b3c53aeb206.vision.early_move",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 38.0,
+            "end_s": 44.0
+          },
+          "hypothesis": "Decoded frames show the whole tomatoes carried to and placed beside the stove.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.96416b3c53aeb206.vision.late_diced",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 632.0,
+            "end_s": 640.0
+          },
+          "hypothesis": "Decoded frames show diced tomatoes on a cutting board beside the stove.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "audio_note": "Water and pan-process hypotheses are not human validated and neither establishes the state transition.",
+        "speech_note": "No speech hypothesis.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "multi",
+        "temporal": "far_separated",
+        "separation_s": 596.0,
+        "component_intervals": [
+          {
+            "start_s": 36.0,
+            "end_s": 44.0
+          },
+          {
+            "start_s": 632.0,
+            "end_s": 640.0
+          }
+        ],
+        "composition": "same ingredient type observed whole early and diced later; same physical tomatoes remain unproven"
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "affected_channels": [
+          "vision",
+          "visual_derivatives"
+        ],
+        "block_plan": "Silently withhold both state-bearing visual components and deterministic cross-time summaries.",
+        "restore_plan": "Restore the complete registered candidate route group at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.cc15.tomato_state_visual_chain",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "human determination of same-ingredient versus same-physical-object wording",
+        "completed trained-human Task153 source prescreen",
+        "frame-accurate verification of both components",
+        "full-source water/tomato recurrence and near-duplicate closure",
+        "duplicate accounting with PV3-CC15-01",
+        "person/environment leakage review",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "CaptainCook4D records a verified Apache-2.0 dataset statement and verified consent/IRB statements, but operative linked documents are not archived and Task188 authorizes only restricted internal research; annotation and public release remain unauthorized.",
+      "gate_a_blockers": [
+        "parent development record is REPAIR and permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "same-physical-object relation unverified",
+        "Task153 not completed",
+        "operative governance documents and release decision incomplete",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-CC15-02",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+          "inventory_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+          "plan_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "Task153 reviewer form bound to the frozen plan",
+            "trained pseudonymous reviewer identity and timestamps",
+            "complete source-sample observations",
+            "privacy/safety and recurrence decisions",
+            "valid import report and source-level exposure event"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "The early and late tomatoes may be the same ingredient type but not the same physical objects.",
+        "The late diced-tomato evidence was also used by the replaced v3 local slot.",
+        "Water and pan sounds recur and do not establish the state transition."
+      ],
+      "rejection_fallback": {
+        "action": "REJECT_FAR_HYPOTHESIS_AND_REOPEN_POOL",
+        "fallback": "No known same-source far composition survives. Reopen source/slot selection rather than pairing unrelated intervals.",
+        "quota_effect": "The only far/separated slot is lost; far count becomes zero."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-CC26-01",
+      "source_id": "26_22",
+      "source_group_id": "cc4d_p03_e03",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_KEEP_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "registry_path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+        "registry_sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+        "parent_candidate_lead_id": "cc4d.lead.e77b56c376c244a3",
+        "parent_candidate_sha256": "sha256:6eb3d725ce6bf64a66a01e4205dc1e3ecbb31ead177e7e704d859a44a7df7d78",
+        "parent_disposition": "KEEP",
+        "primary_segment_id": "seg.3c4b69b4ad37.fine.000230",
+        "transformation": "Retained as a visual appliance-interaction sequence; microwave/beep audio remains unresolved.",
+        "local_evidence_references": [
+          "cc4d.lead.e77b56c376c244a3.vision.open_retrieve",
+          "cc4d.lead.e77b56c376c244a3.vision.stir",
+          "cc4d.lead.e77b56c376c244a3.audio.microwave",
+          "data/restricted/captaincook4d_wave0_index_v1/checkpoints/26_22/vision_clip.json",
+          "data/restricted/captaincook4d_wave0_index_v1/checkpoints/26_22/ambient.json"
+        ]
+      },
+      "question": "What does the participant do immediately after opening the microwave?",
+      "answer_hypothesis": "They remove a mug and stir the mug's contents with a spoon.",
+      "atomic_claims": [
+        "The participant opens the microwave door.",
+        "The participant removes a mug from the microwave.",
+        "The participant stirs the mug contents with a spoon after retrieval."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "cc4d.lead.e77b56c376c244a3.vision.open_retrieve",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 921.0,
+            "end_s": 925.0
+          },
+          "hypothesis": "Decoded frames show the microwave door opening and a mug being removed.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.e77b56c376c244a3.vision.stir",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 925.0,
+            "end_s": 928.0
+          },
+          "hypothesis": "Decoded frames show the mug contents being stirred with a spoon.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.e77b56c376c244a3.audio.microwave",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 920.0,
+            "end_s": 925.0
+          },
+          "hypothesis": "AST routes microwave oven and beep/bleep; semantic listening validation was not performed.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "audio_note": "Microwave/beep audio may route the appliance event but does not establish mug removal and stirring.",
+        "speech_note": "No speech hypothesis.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "scientific_basis": "Task191 classifies the complete local open-retrieve-stir event as one bounded one-hop proposal."
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "affected_channels": [
+          "vision",
+          "visual_derivatives"
+        ],
+        "block_plan": "Return the frozen typed vision-channel unavailable response and hide the complete open-retrieve-stir route.",
+        "restore_plan": "Restore the complete registered visual route at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.cc26.microwave_visual_chain",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "completed trained-human Task153 source prescreen",
+        "frame-accurate appliance/action verification",
+        "human listening for microwave/beep hypothesis",
+        "full-source appliance recurrence closure",
+        "person/environment leakage review",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "CaptainCook4D records a verified Apache-2.0 dataset statement and verified consent/IRB statements, but operative linked documents are not archived and Task188 authorizes only restricted internal research; annotation and public release remain unauthorized.",
+      "gate_a_blockers": [
+        "parent development record is permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not completed",
+        "audio semantics not human validated",
+        "operative governance documents and release decision incomplete",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-CC26-01",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+          "inventory_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+          "plan_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "Task153 reviewer form bound to the frozen plan",
+            "trained pseudonymous reviewer identity and timestamps",
+            "complete source-sample observations",
+            "privacy/safety and recurrence decisions",
+            "valid import report and source-level exposure event"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "Vision may completely answer the open-remove-stir sequence.",
+        "Microwave-like hum and beep events recur elsewhere.",
+        "The local sequence may collapse to a single action rather than a composition."
+      ],
+      "rejection_fallback": {
+        "action": "REPAIR_OR_REGENERATE_LOCAL_SLOT",
+        "fallback": "A Task193 microwave-stop V+A hypothesis may be separately packetized and reviewed, but it is not an automatic replacement.",
+        "quota_effect": "Source retains at most one slot until a fresh second slot is approved."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-CC26-02",
+      "source_id": "26_22",
+      "source_group_id": "cc4d_p03_e03",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPAIR_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "registry_path": "data/restricted/captaincook4d_family_candidates_v1_dev/candidate_registry.json",
+        "registry_sha256": "23ee9356b530fe9d7bace1948f55818a590736b6c264438bf9f13abcbfac62fa",
+        "parent_candidate_lead_id": "cc4d.lead.96b7ab9298d78633",
+        "parent_candidate_sha256": "sha256:b2ade1ec230ffabda922de2d62c216679b5c78f8c1cd02550c8601b015645c95",
+        "parent_disposition": "REPAIR",
+        "primary_segment_id": "seg.3c4b69b4ad37.fine.000115",
+        "transformation": "Retained after Task191 removed the arbitrary microwave pairing and narrowed the record to the local red-spoon rinsing action.",
+        "local_evidence_references": [
+          "cc4d.lead.96b7ab9298d78633.vision.rinse",
+          "cc4d.lead.96b7ab9298d78633.vision.move",
+          "cc4d.lead.96b7ab9298d78633.audio.water",
+          "data/restricted/captaincook4d_wave0_index_v1/checkpoints/26_22/vision_clip.json",
+          "data/restricted/captaincook4d_wave0_index_v1/checkpoints/26_22/ambient.json"
+        ]
+      },
+      "question": "What small red utensil is rinsed under the faucet and then carried away from the sink?",
+      "answer_hypothesis": "A small red spoon, possibly a measuring spoon, is rinsed and carried away.",
+      "atomic_claims": [
+        "A small red spoon is held at the faucet in the sink.",
+        "The participant carries the red spoon away from the sink.",
+        "The more specific measuring-spoon identity remains a human-review question."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "cc4d.lead.96b7ab9298d78633.vision.rinse",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 460.0,
+            "end_s": 464.0
+          },
+          "hypothesis": "Decoded frames show a small red spoon held at the faucet in the sink.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.96b7ab9298d78633.vision.move",
+          "modality": "vision",
+          "carrier_class": "dynamic_nontext_visual",
+          "interval": {
+            "start_s": 464.0,
+            "end_s": 468.0
+          },
+          "hypothesis": "Decoded frames show the red spoon carried away from the sink.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        },
+        {
+          "evidence_id": "cc4d.lead.96b7ab9298d78633.audio.water",
+          "modality": "audio",
+          "carrier_class": "non_speech_audio_hypothesis",
+          "interval": {
+            "start_s": 460.0,
+            "end_s": 464.0
+          },
+          "hypothesis": "AST routes water, faucet, and sink; semantic listening validation was not performed.",
+          "human_semantic_validation_status": "NOT_PERFORMED"
+        }
+      ],
+      "profile": {
+        "label": "V",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "audio_note": "Running-water identity is unresolved and the visible faucet context can substitute.",
+        "speech_note": "No speech hypothesis.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "scientific_basis": "The arbitrary far pairing was removed; only the coherent local rinse-and-carry event remains."
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "affected_channels": [
+          "vision",
+          "visual_derivatives"
+        ],
+        "block_plan": "Silently withhold the red-spoon rinse-and-carry visual route and deterministic summaries.",
+        "restore_plan": "Restore the registered local route at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.cc26.red_spoon_visual_and_derivatives",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "human decision on spoon versus measuring-spoon wording",
+        "completed trained-human Task153 source prescreen",
+        "frame-accurate action verification",
+        "human listening for running-water hypothesis",
+        "full-source water/sink recurrence closure",
+        "person/environment leakage review",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "CaptainCook4D records a verified Apache-2.0 dataset statement and verified consent/IRB statements, but operative linked documents are not archived and Task188 authorizes only restricted internal research; annotation and public release remain unauthorized.",
+      "gate_a_blockers": [
+        "parent development record is REPAIR and permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not completed",
+        "object wording and audio semantics unresolved",
+        "operative governance documents and release decision incomplete",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-CC26-02",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NONSEMANTIC_PLAN_ONLY_FORM_AND_IMPORT_AUTHORING_NEEDED",
+          "inventory_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_inventory.json",
+          "plan_path": "data/restricted/captaincook4d_wave0_sources_v3/prescreen/captaincook4d_wave0_semantic_source_prescreen_plan.json",
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "Task153 reviewer form bound to the frozen plan",
+            "trained pseudonymous reviewer identity and timestamps",
+            "complete source-sample observations",
+            "privacy/safety and recurrence decisions",
+            "valid import report and source-level exposure event"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "Running water recurs and the visible faucet can substitute for sound.",
+        "Spoon versus measuring-spoon identity is unresolved.",
+        "A single object frame may bypass the rinse-and-carry sequence."
+      ],
+      "rejection_fallback": {
+        "action": "REPAIR_OBJECT_WORDING_OR_REMINE",
+        "fallback": "A Task193 red-utensil rinse V+A hypothesis may be separately packetized; otherwise re-mine 26_22.",
+        "quota_effect": "No automatic quota-preserving fallback exists."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-NOAA52-01",
+      "source_id": "cand-052",
+      "source_group_id": "cand-052",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_KEEP_NARROWED_REQUIRES_FRESH_NORMAL_MODE_REGENERATION",
+      "lineage": {
+        "development_registry_path": "data/restricted/mini_pilot_family_candidates_v2_dev/candidate_registry.json",
+        "development_registry_sha256": "26831f0e204a2f68e93560ee6a7807ea4697d3b482dc597f94599699445c418e",
+        "parent_proposal_id": "DEV-F11-NORTH-ATLANTIC-BASIN",
+        "parent_source_lead": "F11",
+        "parent_disposition": "KEEP_NARROWED",
+        "exact_noaa_family_path": "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+        "exact_noaa_family_id": "noaa01-r017-north-atlantic-basin",
+        "exact_noaa_review_id": "noaa01-review-017",
+        "transformation": "Retained as a narrow speech control; visible webinar panes are not treated as evidence and all speech-derived text routes remain grouped.",
+        "local_evidence_references": [
+          "asr.ddde423a3db6b38552d1",
+          "noaa01-r017-north-atlantic-basin",
+          "noaa01-review-017"
+        ]
+      },
+      "question": "Which basin does the speaker identify as one of the main areas of hurricane activity?",
+      "answer_hypothesis": "The North Atlantic Basin.",
+      "atomic_claims": [
+        "The speaker identifies a main area of hurricane activity.",
+        "The named area is the North Atlantic Basin."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "e.r017.speech",
+          "modality": "speech",
+          "carrier_class": "speech",
+          "interval": {
+            "start_s": 2663.396,
+            "end_s": 2671.396
+          },
+          "hypothesis": "The speaker identifies the North Atlantic Basin as a main area of hurricane activity.",
+          "human_semantic_validation_status": "NOT_PERFORMED_MACHINE_PROVISIONAL"
+        }
+      ],
+      "profile": {
+        "label": "S",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "visual_note": "The inspected webinar interface does not visibly display the basin answer, but chat, slides, captions, and repeated mentions remain open alternatives.",
+        "audio_note": "Non-speech environmental audio has no answer role.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "scientific_basis": "One local speech interval supplies the basin answer."
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "EXPLICIT_CHANNEL_OUTAGE",
+        "affected_channels": [
+          "speech",
+          "transcript",
+          "captions",
+          "speech_derivatives"
+        ],
+        "block_plan": "Return the frozen typed speech-channel unavailable response and disable the speech route plus deterministic transcript/caption derivatives carrying the basin claim.",
+        "restore_plan": "Restore only the registered speech-derived route group at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.noaa52.basin_speech_and_text_derivatives",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "source-specific Task153 plan, trained-human form, and import",
+        "human speech verification and interval tightening",
+        "full-source chat/slide/caption/repeated-speech closure",
+        "question-only geography shortcut test",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "source rights/privacy/human-annotation decision",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "NOAA exact restricted acquisition and narrow machine-provisional processing are authorized, but ownership/license/release rights and human annotation authority are not established. Public transcripts, media derivatives, release, and redistribution remain prohibited.",
+      "gate_a_blockers": [
+        "parent development record is permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not planned or completed for cand-052",
+        "source rights/privacy/human annotation/release hold",
+        "speech-derived duplicate routes not closed",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-NOAA52-01",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NOT_PLANNED",
+          "inventory_path": null,
+          "plan_path": null,
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "source-specific nonsemantic Task153 inventory",
+            "source-uniform Task153 plan",
+            "trained-human reviewer form",
+            "valid import report and exposure ledger"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "Chat, slides, captions, transcripts, lower-thirds, or repeated speech may expose the basin.",
+        "Question-only geography priors may yield a plausible guess.",
+        "Webinar source and speaker identity may create metadata shortcuts."
+      ],
+      "rejection_fallback": {
+        "action": "REJECT_SLOT_AND_REOPEN_NOAA_SOURCE_CHOICE",
+        "fallback": "Search cand-052 for a different substantive speech proposition or reconsider cand-049 only after its independent rights and semantic repairs.",
+        "quota_effect": "The S target and two-slots-per-source invariant become incomplete."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    },
+    {
+      "slot_id": "PV4-NOAA52-02",
+      "source_id": "cand-052",
+      "source_group_id": "cand-052",
+      "current_tier": "P0_MACHINE_CANDIDATE",
+      "matrix_disposition": "PROSPECTIVE_REPAIR_NARROWED_TO_SPEECH_COUNT",
+      "lineage": {
+        "development_registry_path": "data/restricted/mini_pilot_family_candidates_v2_dev/candidate_registry.json",
+        "development_registry_sha256": "26831f0e204a2f68e93560ee6a7807ea4697d3b482dc597f94599699445c418e",
+        "parent_proposal_id": "DEV-F12-HURRICANE-FORMATION-FACTORS",
+        "parent_source_lead": "F12",
+        "parent_disposition": "REPAIR",
+        "exact_noaa_family_path": "data/restricted/noaa01/real_av_mvp/provisional_families.json",
+        "exact_noaa_family_id": "noaa01-r016-three-factors-vs",
+        "exact_noaa_review_id": "noaa01-review-016",
+        "transformation": "Narrowed from listing all three factors to the Task144 speech question asking how many factors the narration states. The graphic/OCR route remains an explicit complete duplicate and prevents necessity claims.",
+        "local_evidence_references": [
+          "asr.11a2eaf6b4520c2f6f19",
+          "seg.c4f5d8c6e60d.fine.000332",
+          "seg.c4f5d8c6e60d.fine.000333",
+          "seg.c4f5d8c6e60d.fine.000334",
+          "seg.c4f5d8c6e60d.fine.000335",
+          "noaa01-r016-three-factors-vs",
+          "noaa01-review-016"
+        ]
+      },
+      "question": "How many hurricane-formation factors does the narration state?",
+      "answer_hypothesis": "Three.",
+      "atomic_claims": [
+        "The narration states that hurricane formation depends on a fixed number of factors.",
+        "The stated number is three."
+      ],
+      "evidence_hypotheses": [
+        {
+          "evidence_id": "e.r016.speech",
+          "modality": "speech",
+          "carrier_class": "speech",
+          "interval": {
+            "start_s": 1331.698,
+            "end_s": 1339.698
+          },
+          "hypothesis": "The narration states that hurricane formation depends on three factors and begins listing them.",
+          "human_semantic_validation_status": "NOT_PERFORMED_MACHINE_PROVISIONAL"
+        },
+        {
+          "evidence_id": "e.r016.visual_duplicate",
+          "modality": "vision",
+          "carrier_class": "static_diagram_and_onscreen_text",
+          "interval": {
+            "start_s": 1331.698,
+            "end_s": 1339.698
+          },
+          "hypothesis": "The educational graphic introduces three hurricane-formation factors and may independently expose the count through OCR.",
+          "human_semantic_validation_status": "NOT_PERFORMED_MACHINE_PROVISIONAL"
+        }
+      ],
+      "profile": {
+        "label": "S",
+        "status": "PROSPECTIVE_PROFILE_HYPOTHESIS_NOT_NECESSITY",
+        "visual_note": "On-screen text/graphic is a complete duplicate route for the count; therefore this is not evidence that speech is necessary.",
+        "audio_note": "Non-speech environmental audio has no answer role.",
+        "necessity_claimed": false
+      },
+      "hop_temporal": {
+        "hop": "one",
+        "temporal": "near_local",
+        "scientific_basis": "One local narration interval answers the count question; the co-timed graphic is modeled as an alternative route, not a second hop."
+      },
+      "intervention_v2": {
+        "template_ref": "task145-exogenous-restoration-v2",
+        "mechanism": "SILENT_ROUTE_WITHHOLDING",
+        "affected_channels": [
+          "speech",
+          "transcript",
+          "captions",
+          "vision",
+          "ocr",
+          "speech_derivatives",
+          "visual_text_derivatives"
+        ],
+        "block_plan": "Silently withhold every candidate route carrying the count, including narration, captions/transcript, on-screen graphic text, OCR, and deterministic derivatives.",
+        "restore_plan": "Restore the complete registered all-route group at fixed action index 4 in RESTORED.",
+        "template_only_not_executed": true,
+        "provisional_route_group_id": "ng.pv3.noaa52.factor_count_all_routes",
+        "route_group_is_not_validated_necessity": true,
+        "scientific_execution_authorized": false
+      },
+      "missing_fields": [
+        "source-specific Task153 plan, trained-human form, and import",
+        "human speech verification",
+        "complete OCR/caption/transcript route inventory",
+        "full-source repeated factor-count closure",
+        "decision whether tractable all-route withholding preserves the construct",
+        "accepted SES ledger and leave-one-out tests",
+        "six-role construct decisions",
+        "source rights/privacy/human-annotation decision",
+        "state-surface and R/N fork manifests"
+      ],
+      "rights_release_boundary": "NOAA exact restricted acquisition and narrow machine-provisional processing are authorized, but ownership/license/release rights and human annotation authority are not established. Public transcripts, media derivatives, release, and redistribution remain prohibited.",
+      "gate_a_blockers": [
+        "parent development record is REPAIR and permanently Gate-A ineligible",
+        "fresh normal-mode regeneration required",
+        "Task153 not planned or completed for cand-052",
+        "source rights/privacy/human annotation/release hold",
+        "speech and visible-text duplicate routes not closed",
+        "human construct and Task145 execution interlocks incomplete"
+      ],
+      "supersedes_v3_slot_id": "PV3-NOAA52-02",
+      "replacement": {
+        "is_task193_audio_replacement": false,
+        "retained_as_prospective_lineage": true,
+        "fresh_normal_mode_regeneration_required": true,
+        "not_an_in_place_promotion": true
+      },
+      "substantive_authoring": {
+        "question_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "answer_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESIS",
+        "claim_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "evidence_status": "MACHINE_EXPERT_PROVISIONAL_HYPOTHESES",
+        "authoring_needed_fields": [
+          "reviewer-authored final question wording",
+          "reviewer-authored final answer wording",
+          "atomic claim acceptance or repair",
+          "frame/sample-accurate evidence bounds",
+          "full-source recurrence and substitute-route closure",
+          "fresh normal-mode candidate record independent of development artifacts"
+        ]
+      },
+      "reviewer_packet_links": {
+        "task153_source_prescreen": {
+          "protocol_task": 153,
+          "status": "NOT_PLANNED",
+          "inventory_path": null,
+          "plan_path": null,
+          "reviewer_form_path": null,
+          "completed_ready_import_path": null,
+          "authoring_needed_fields": [
+            "source-specific nonsemantic Task153 inventory",
+            "source-uniform Task153 plan",
+            "trained-human reviewer form",
+            "valid import report and exposure ledger"
+          ]
+        },
+        "task194_candidate_prescreen": {
+          "protocol_task": 194,
+          "candidate_code": null,
+          "status": "NOT_APPLICABLE_NO_TASK193_AUDIO_REPLACEMENT",
+          "packet_path": null,
+          "reviewer_form_path": null,
+          "current_import_path": null
+        },
+        "construct_review_packet": {
+          "status": "AUTHORING_NEEDED_AFTER_SOURCE_PRESCREEN",
+          "task": "future Task146-compatible six-role packet",
+          "source_exposure_bridge_required_before_assignment_freeze": false
+        }
+      },
+      "prescreen_contingency": {
+        "current_status": "PENDING_NO_COMPLETED_TASK153_SOURCE_DECISION",
+        "if_task153_ready": "Source-level authoring may begin, but this candidate still requires fresh direct interval authoring, full-source alternative search, and normal-mode regeneration.",
+        "if_task153_repair": "Hold both slots from this source and complete the source repair before candidate authoring.",
+        "if_task153_no_go": "Reject both source slots and replace the source under Pivot-v2 capture-format, lineage, rights, and profile constraints.",
+        "task194": "Not applicable to this non-Task193 replacement slot."
+      },
+      "alternative_route_risks": [
+        "The on-screen graphic/OCR route completely duplicates the count.",
+        "Captions/transcript and repeated narration may expose the same answer.",
+        "The generic count question has a strong question-only shortcut risk."
+      ],
+      "rejection_fallback": {
+        "action": "REJECT_DUPLICATE_ROUTE_SLOT",
+        "fallback": "Do not restore the original three-factor list as V+S. Author a new cand-052 family or reopen the source pool.",
+        "quota_effect": "The second S slot is lost; no V+S credit is created."
+      },
+      "construct_boundary": {
+        "question_accepted": false,
+        "answer_accepted": false,
+        "claims_accepted": false,
+        "evidence_accepted": false,
+        "accepted_ses_created": false,
+        "minimality_assigned": false,
+        "necessity_assigned": false,
+        "h_tier_assigned": false
+      }
+    }
+  ],
+  "quota_accounting": {
+    "pivot_v2_targets": {
+      "profiles": {
+        "V": 2,
+        "S": 2,
+        "A": 2,
+        "V+S": 2,
+        "V+A_or_S+A": 2,
+        "V+S+A": 2
+      },
+      "hop": {
+        "one": 6,
+        "multi": 6
+      },
+      "temporal": {
+        "near_local": 6,
+        "far_separated": 6
+      },
+      "mechanism": {
+        "SILENT_ROUTE_WITHHOLDING": 6,
+        "EXPLICIT_CHANNEL_OUTAGE": 6
+      },
+      "targets_are_forced_labels": false
+    },
+    "task192_v3_baseline": {
+      "profiles": {
+        "V": 10,
+        "S": 2,
+        "A": 0,
+        "V+S": 0,
+        "V+A_or_S+A": 0,
+        "V+S+A": 0
+      },
+      "hop": {
+        "one": 9,
+        "multi": 3
+      },
+      "temporal": {
+        "near_local": 11,
+        "far_separated": 1
+      },
+      "mechanism": {
+        "SILENT_ROUTE_WITHHOLDING": 6,
+        "EXPLICIT_CHANNEL_OUTAGE": 6
+      }
+    },
+    "task195_prospective_hypothesis_counts": {
+      "profiles": {
+        "V": 6,
+        "S": 2,
+        "A": 2,
+        "V+S": 0,
+        "V+A_or_S+A": 2,
+        "V+A": 2,
+        "S+A": 0,
+        "V+S+A": 0
+      },
+      "hop": {
+        "one": 7,
+        "multi": 5
+      },
+      "temporal": {
+        "near_local": 11,
+        "far_separated": 1
+      },
+      "mechanism": {
+        "SILENT_ROUTE_WITHHOLDING": 6,
+        "EXPLICIT_CHANNEL_OUTAGE": 6
+      },
+      "source_slots": {
+        "P27_101": 2,
+        "P28_103": 2,
+        "16_20": 2,
+        "15_29": 2,
+        "26_22": 2,
+        "cand-052": 2
+      },
+      "interpretation": "These are prospective authoring hypotheses, not human-confirmed construct credits. C01-C04 remain conditional on valid Task194 READY imports and compatible Task153 source passes."
+    },
+    "fail_closed_current_gate_a_credits": {
+      "task153_ready_sources": 0,
+      "task194_ready_candidates": 0,
+      "normal_mode_candidate_records": 0,
+      "human_accepted_questions": 0,
+      "human_accepted_answers": 0,
+      "human_accepted_claim_sets": 0,
+      "human_accepted_evidence_sets": 0,
+      "accepted_ses": 0,
+      "h_tiers": 0
+    },
+    "exact_remaining_shortages": [
+      {
+        "dimension": "V+S",
+        "target": 2,
+        "prospective_hypotheses": 0,
+        "shortage": 2,
+        "reason": "cand-052 has substantive speech, but F11 lacks independent dynamic visual evidence and F12's graphic/OCR is a complete duplicate text route, not independent dynamic visual reasoning."
+      },
+      {
+        "dimension": "V+S+A",
+        "target": 2,
+        "prospective_hypotheses": 0,
+        "shortage": 2,
+        "reason": "No selected interval has substantive speech, dynamic non-text vision, and concrete non-speech audio jointly carrying the authored answer."
+      },
+      {
+        "dimension": "S+A_subclass",
+        "target": "allowed inside the two V+A_or_S+A cells",
+        "prospective_hypotheses": 0,
+        "shortage": "not a separate frozen quota",
+        "reason": "Task193 found no quality-passing substantive speech overlapping an independently answer-bearing non-speech event."
+      },
+      {
+        "dimension": "multi_hop",
+        "target": 6,
+        "prospective_hypotheses": 5,
+        "shortage": 1,
+        "reason": "C01 and C02 honestly add count aggregation across separated audio episodes, while C03 retains a linked retrieval/wrapper chain. No sixth coherent composition exists."
+      },
+      {
+        "dimension": "far_separated",
+        "target": 6,
+        "prospective_hypotheses": 1,
+        "shortage": 5,
+        "reason": "Only the CC15 whole-to-diced state hypothesis is a plausible far composition. C01-C04 are bounded local spans; relabeling them far would be false."
+      },
+      {
+        "dimension": "joint_structural_repair",
+        "target": "6 one/6 multi and 6 near/6 far",
+        "prospective_hypotheses": "7 one/5 multi and 11 near/1 far",
+        "shortage": "Five current near slots need defensible far compositions; one of those five must also convert one-hop to multi-hop, while four existing near/multi slots must become genuinely far.",
+        "reason": "One-hop/far remains structurally prohibited."
+      },
+      {
+        "dimension": "human_prescreen_and_governance",
+        "target": "6 Task153-ready sources; 4 valid Task194 decisions for the audio replacements; affirmative source-specific annotation/privacy/custody decisions",
+        "prospective_hypotheses": "0 Task153-ready sources; 0 Task194 human decisions; no source has complete annotation/release authority",
+        "shortage": "6 source prescreens, 4 candidate listening decisions, and all unresolved source-specific governance closures"
+      }
+    ]
+  },
+  "gate_a_decision": {
+    "gate_id": "A",
+    "name": "MINI_PILOT_INPUT_READY",
+    "decision_under_pivot_v2": "REPAIR",
+    "go_asserted": false,
+    "no_go_asserted": false,
+    "rationale": [
+      "The matrix preserves six sources, twelve slots, and exactly two slots per source.",
+      "C01-C04 create a plausible governed path to two A and two V+A hypotheses without adding slots.",
+      "No Task194 human decision or completed Task153 source pass exists.",
+      "The V+S and V+S+A quotas remain empty.",
+      "Hop and temporal structure remain 7/5 and 11/1 rather than 6/6 and 6/6.",
+      "Rights, fresh normal-mode authoring, calibrations, staffing, assignment freeze, and Task145 execution interlocks remain incomplete.",
+      "REPAIR rather than NO_GO is retained because source/slot replacement and prescreen repair paths remain prospectively available without weakening the frozen rules."
+    ],
+    "conditional_no_go_boundary": "If the exact six current sources are frozen against replacement, or if C01-C04 and reopened-source attempts cannot supply the missing V+S, V+S+A, and far/multi strata under unchanged rights and construct rules, the broad Pivot-v2 matrix becomes NO_GO rather than eligible for relabeling.",
+    "authorizes": [],
+    "does_not_authorize": [
+      "Task194 packet distribution",
+      "pilot construct packet distribution",
+      "human annotation absent source-specific authority",
+      "H-tier assignment",
+      "accepted SES creation by this artifact",
+      "scientific intervention or model execution",
+      "public release or redistribution"
+    ]
+  },
+  "global_gate_a_blockers": [
+    "All twelve records remain prospective P0 planning records; none is a fresh normal-mode Gate-A input.",
+    "C01-C04 have blank Task194 imports and no human listening decisions.",
+    "Zero of six sources has a completed valid Task153 READY source import.",
+    "EPIC exact source manifests do not grant human annotation or public redistribution.",
+    "CaptainCook4D operative linked consent/IRB documents are not archived and annotation/release remain unauthorized.",
+    "NOAA cand-052 ownership/license/release rights and human annotation authority remain unestablished.",
+    "No question, answer, claim set, or evidence set has been accepted by the six-role human process.",
+    "No accepted SES, minimality, necessity, saturation, H1, or H2 result exists.",
+    "V+S is short by two and V+S+A is short by two.",
+    "Hop balance is 7 one/5 multi and temporal balance is 11 near/1 far.",
+    "Two excluded calibrations, at least eight trained reviewers, six-role assignments, exposure ledgers, and assignment freeze are absent.",
+    "Task145 state-surface, exact R/N fork, fresh-session/cache, Williams assignment, ITT, and metadata-only leakage gates are incomplete.",
+    "Pilot packet distribution, scientific model execution, and public release remain unauthorized."
+  ],
+  "required_next_actions": [
+    "Obtain source-specific human annotation, privacy, custody, and artifact-release decisions for all six sources.",
+    "Complete valid Task153 source prescreens/imports for all six sources.",
+    "Under separate authorization, distribute and complete Task194 C01-C04 packets in the frozen audio-first order and bridge exposures.",
+    "Apply each C01-C04 READY/REPAIR/NO_GO contingency without relabeling failed candidates.",
+    "Regenerate all twelve surviving records in fresh normal mode with human-authored question, answer, claims, and exact evidence bounds.",
+    "Reopen source/slot selection for two V+S, two V+S+A, one additional multi, and five additional far hypotheses under unchanged rules.",
+    "Complete two excluded calibrations, recruit/train at least eight reviewers, and freeze source-blind six-role assignments and ledgers.",
+    "Instantiate Task145 state-surface and R/N manifests only after construct review and pass the metadata-only leakage gate before scientific execution.",
+    "Re-audit Gate A; do not distribute pilot construct packets unless the decision becomes GO."
+  ],
+  "final_boundary_statement": "Task195 prospectively integrates four Task193 audio leads under Task194 packet governance while preserving six sources, twelve slots, two slots per source, source lineage, rights holds, and inert Task145 templates. It creates no human result, H tier, accepted SES, necessity finding, Gate-A GO, scientific execution authority, or release authority."
+}

@@ -1,0 +1,373 @@
+{
+  "completion": {
+    "protocol_valid": true,
+    "status": "completed",
+    "total_cost": 4.0,
+    "total_steps": 3
+  },
+  "episode_start": {
+    "available_tools": [
+      "search_visual",
+      "search_speech",
+      "search_ambient_audio",
+      "inspect_clip",
+      "read_transcript",
+      "get_channel_status",
+      "finalize"
+    ],
+    "budget": {
+      "cost_limit": 12.0,
+      "max_steps": 10
+    },
+    "episode_id": "syn_f06_motor_identity.clean",
+    "family_id": "syn_f06_motor_identity",
+    "protocol_version": "0.2.0",
+    "question": "What ambient machine sound occurred, and how many click pulses sounded later?",
+    "state_role": "CLEAN",
+    "tool_costs": {
+      "finalize": 0.0,
+      "get_channel_status": 0.25,
+      "inspect_clip": 2.0,
+      "read_transcript": 1.0,
+      "search_ambient_audio": 1.0,
+      "search_speech": 1.0,
+      "search_visual": 1.0
+    },
+    "video_duration_s": 360.0
+  },
+  "events": [
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": true,
+            "include_video": false,
+            "interval": {
+              "end_s": 282.0,
+              "start_s": 276.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_two_clicks.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f06_motor_identity.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "step_index": 0
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:45Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 10.0,
+        "cost_used_total": 2.0,
+        "episode_id": "syn_f06_motor_identity.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0000",
+        "response_hash": "sha256:8c28ef621b87a6a2934c668259b175fb1d7eaa134fbf0a846f4ccf0ad6a3139e",
+        "results": [
+          {
+            "interval": {
+              "end_s": 282.0,
+              "start_s": 276.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51",
+            "payload": {
+              "_route_refs": [
+                "sha256:01f59a0fc59d87897792d6c20eb7d4866e88f5a5967f8d2acda1ce3e903c521a"
+              ],
+              "audio_event": "TWO CLICK PULSES",
+              "audio_parameters": {
+                "frequency_hz": 698,
+                "kind": "bell_pulses",
+                "pulse_count": 2
+              },
+              "description": "TWO CLICK PULSES",
+              "inspection": {
+                "include_audio": true,
+                "include_video": false,
+                "inspected_duration_s": 6.0,
+                "requested_interval": {
+                  "end_s": 282.0,
+                  "start_s": 276.0
+                }
+              }
+            },
+            "payload_hash": "sha256:86bcf7f4cc1433777bf745f1033abdb3765b9d4b91321063c3c5b30614fbb018",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 0,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "include_audio": true,
+            "include_video": false,
+            "interval": {
+              "end_s": 118.0,
+              "start_s": 110.0
+            }
+          },
+          "tool": "inspect_clip"
+        },
+        "belief_state": {
+          "missing_hop_types": [
+            "ambient_event",
+            "temporal_order"
+          ],
+          "missing_modality_probabilities": {
+            "ambient": 0.97,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.82,
+            "evidence_in_source_but_inaccessible": 0.08,
+            "not_missing": 0.02,
+            "source_evidence_absent": 0.02,
+            "uncertain": 0.06
+          },
+          "next_action_rationale": "Acquire validator evidence route s3_motor.",
+          "p_sufficient": 0.03,
+          "verdict": "insufficient"
+        },
+        "episode_id": "syn_f06_motor_identity.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "step_index": 1
+      },
+      "active_hook_ids": [],
+      "event_type": "tool_exchange",
+      "recorded_at": "2000-08-22T12:01:46Z",
+      "response": {
+        "backend_version": "synthetic-fixed-v1",
+        "cost_charged": 2.0,
+        "cost_remaining": 8.0,
+        "cost_used_total": 4.0,
+        "episode_id": "syn_f06_motor_identity.clean",
+        "error": null,
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0001",
+        "response_hash": "sha256:3685c7752f2745e0bc6b7e07f2a1df391c776300f42070dc78ed8e5707950d0c",
+        "results": [
+          {
+            "interval": {
+              "end_s": 118.0,
+              "start_s": 110.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d",
+            "payload": {
+              "_route_refs": [
+                "sha256:8bab3e0880f9ab82e05913d67bdb5a6777361502f7f9b7f6bfe78806140ca496"
+              ],
+              "audio_event": "LOW MOTOR HUM",
+              "audio_parameters": {
+                "frequency_hz": 110,
+                "kind": "motor_hum"
+              },
+              "description": "LOW MOTOR HUM",
+              "inspection": {
+                "include_audio": true,
+                "include_video": false,
+                "inspected_duration_s": 8.0,
+                "requested_interval": {
+                  "end_s": 118.0,
+                  "start_s": 110.0
+                }
+              }
+            },
+            "payload_hash": "sha256:145ae738308cceb47982cf359b79eb661814c59c0d0008fd967bd3f01141ca8c",
+            "result_type": "observation"
+          }
+        ],
+        "status": "ok",
+        "step_index": 1,
+        "tool": "inspect_clip"
+      }
+    },
+    {
+      "action": {
+        "action": {
+          "arguments": {
+            "answer_mode": "answer",
+            "claims": [
+              {
+                "citations": [
+                  {
+                    "interval": {
+                      "end_s": 282.0,
+                      "start_s": 276.0
+                    },
+                    "modalities": [
+                      "ambient"
+                    ],
+                    "observation_id": "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51"
+                  },
+                  {
+                    "interval": {
+                      "end_s": 118.0,
+                      "start_s": 110.0
+                    },
+                    "modalities": [
+                      "ambient"
+                    ],
+                    "observation_id": "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d"
+                  }
+                ],
+                "claim_id": "validator.claim.0",
+                "confidence": 0.99,
+                "registered_claim_id": "claim_syn_f06_motor_identity",
+                "text": "A low motor hum occurred, and two click pulses sounded later."
+              }
+            ],
+            "diagnosis": {
+              "cause_probabilities": {
+                "evidence_accessible_but_not_found": 0.01,
+                "evidence_in_source_but_inaccessible": 0.01,
+                "not_missing": 0.96,
+                "source_evidence_absent": 0.01,
+                "uncertain": 0.01
+              },
+              "description": "An accepted minimal sufficient evidence set was acquired.",
+              "hop_types": [],
+              "modality_probabilities": {
+                "ambient": 0.02,
+                "speech": 0.02,
+                "vision": 0.02
+              },
+              "recovery_route_declared": false
+            },
+            "natural_language_answer": "A low motor hum occurred, and two click pulses sounded later.",
+            "p_sufficient": 0.98,
+            "termination_reason": "sufficient_evidence",
+            "verdict": "sufficient"
+          },
+          "tool": "finalize"
+        },
+        "belief_state": {
+          "missing_hop_types": [],
+          "missing_modality_probabilities": {
+            "ambient": 0.02,
+            "speech": 0.02,
+            "vision": 0.02
+          },
+          "missingness_cause_probabilities": {
+            "evidence_accessible_but_not_found": 0.01,
+            "evidence_in_source_but_inaccessible": 0.01,
+            "not_missing": 0.96,
+            "source_evidence_absent": 0.01,
+            "uncertain": 0.01
+          },
+          "next_action_rationale": "All required claims have an accepted citable SES.",
+          "p_sufficient": 0.98,
+          "verdict": "sufficient"
+        },
+        "episode_id": "syn_f06_motor_identity.clean",
+        "protocol_version": "0.2.0",
+        "request_id": "validator-synthetic_validator_b.r0002",
+        "step_index": 2
+      },
+      "active_hook_ids": [],
+      "event_type": "finalize",
+      "recorded_at": "2000-08-22T12:01:47Z"
+    }
+  ],
+  "final_output": {
+    "answer_mode": "answer",
+    "claims": [
+      {
+        "citations": [
+          {
+            "interval": {
+              "end_s": 282.0,
+              "start_s": 276.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.20d1dfc9ce0a2f734fad46d12554457c30e82a161234148c5b7ee9f4959ebe51"
+          },
+          {
+            "interval": {
+              "end_s": 118.0,
+              "start_s": 110.0
+            },
+            "modalities": [
+              "ambient"
+            ],
+            "observation_id": "obs.clip.6f593a933adca41b1079ac7343783a34fa2212b805503c0e3d2ef8ac89aa118d"
+          }
+        ],
+        "claim_id": "validator.claim.0",
+        "confidence": 0.99,
+        "registered_claim_id": "claim_syn_f06_motor_identity",
+        "text": "A low motor hum occurred, and two click pulses sounded later."
+      }
+    ],
+    "diagnosis": {
+      "cause_probabilities": {
+        "evidence_accessible_but_not_found": 0.01,
+        "evidence_in_source_but_inaccessible": 0.01,
+        "not_missing": 0.96,
+        "source_evidence_absent": 0.01,
+        "uncertain": 0.01
+      },
+      "description": "An accepted minimal sufficient evidence set was acquired.",
+      "hop_types": [],
+      "modality_probabilities": {
+        "ambient": 0.02,
+        "speech": 0.02,
+        "vision": 0.02
+      },
+      "recovery_route_declared": false
+    },
+    "natural_language_answer": "A low motor hum occurred, and two click pulses sounded later.",
+    "p_sufficient": 0.98,
+    "termination_reason": "sufficient_evidence",
+    "verdict": "sufficient"
+  },
+  "replay": {
+    "backend_hash": "sha256:ec9e8aebeda3c32a864c59d5638ae5bd2c6b596132f0cd2678239560c9dd7c50",
+    "backend_version": "synthetic-fixed-v1",
+    "intervention_manifest_hash": "sha256:1262cc8216a06d6b522a577adc0a725885d56912170a904d2713b76a7e2f15c1",
+    "replay_seed": 20260905,
+    "trajectory_hash": "sha256:5d1314df0633e7e998aff01cc2f48b705322d544b4586d5053cdd7fabaea41fe"
+  },
+  "schema_version": "0.2.0",
+  "track": "EXTERNAL_COMPATIBILITY_UNPOOLED",
+  "trajectory_id": "traj.validator-synthetic_validator_b.syn_f06_motor_identity.clean"
+}

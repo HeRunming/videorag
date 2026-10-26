@@ -1,0 +1,2867 @@
+{
+  "adapter_schema_version": "av-trace.granite-native-adapter/2.0",
+  "case_balance": {
+    "controller": 24,
+    "controller_cases_per_stratum": 3,
+    "controller_strata": [
+      "route_vision",
+      "route_speech",
+      "route_ambient",
+      "blocked_status",
+      "restoration_recovery",
+      "finalize_ready",
+      "premature_stop_guard",
+      "no_route_abstain"
+    ],
+    "finalizer": 16,
+    "finalizer_cases_per_stratum": 4,
+    "finalizer_strata": [
+      "supported_single",
+      "supported_dual",
+      "restored_support",
+      "blocked_abstention"
+    ],
+    "total": 40
+  },
+  "content_boundary": {
+    "media_present": false,
+    "private_labels_present_in_prompt_projection": false,
+    "public_fictional": true,
+    "real_source_identifiers_present": false,
+    "restricted_content_present": false,
+    "scientific_content_present": false,
+    "source_free": true,
+    "text_packets_only": true
+  },
+  "evaluator_private": {
+    "labels": {
+      "egpc-controller-001": {
+        "expected_action_index": 0,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_vision"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-002": {
+        "expected_action_index": 0,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_vision"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-003": {
+        "expected_action_index": 0,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_vision"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-controller-004": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_speech"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-005": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_speech"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-006": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_speech"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-controller-007": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_ambient"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-008": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_ambient"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-009": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_ambient"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-controller-010": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "evidence_in_source_but_inaccessible",
+          "p_sufficient": 0.0,
+          "recovery_intent": "check_channel_status"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-011": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "evidence_in_source_but_inaccessible",
+          "p_sufficient": 0.0,
+          "recovery_intent": "check_channel_status"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-012": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "evidence_in_source_but_inaccessible",
+          "p_sufficient": 0.0,
+          "recovery_intent": "check_channel_status"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-controller-013": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "evidence_in_source_but_inaccessible",
+          "p_sufficient": 0.0,
+          "recovery_intent": "retry_restored_route"
+        },
+        "premature_stop_case": false,
+        "restoration_case": true,
+        "variant": 1
+      },
+      "egpc-controller-014": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "evidence_in_source_but_inaccessible",
+          "p_sufficient": 0.0,
+          "recovery_intent": "retry_restored_route"
+        },
+        "premature_stop_case": false,
+        "restoration_case": true,
+        "variant": 2
+      },
+      "egpc-controller-015": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "evidence_in_source_but_inaccessible",
+          "p_sufficient": 0.0,
+          "recovery_intent": "retry_restored_route"
+        },
+        "premature_stop_case": false,
+        "restoration_case": true,
+        "variant": 3
+      },
+      "egpc-controller-016": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [
+            "egpc.slot.ready.1"
+          ],
+          "missing_hops": [],
+          "missing_modalities": [],
+          "missingness_cause": "not_missing",
+          "p_sufficient": 1.0,
+          "recovery_intent": "finalize_answer"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-017": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [
+            "egpc.slot.ready.2"
+          ],
+          "missing_hops": [],
+          "missing_modalities": [],
+          "missingness_cause": "not_missing",
+          "p_sufficient": 1.0,
+          "recovery_intent": "finalize_answer"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-018": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [
+            "egpc.slot.ready.3"
+          ],
+          "missing_hops": [],
+          "missing_modalities": [],
+          "missingness_cause": "not_missing",
+          "p_sufficient": 1.0,
+          "recovery_intent": "finalize_answer"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-controller-019": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_ambient"
+        },
+        "premature_stop_case": true,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-020": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_vision"
+        },
+        "premature_stop_case": true,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-021": {
+        "expected_action_index": 1,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "evidence_accessible_but_not_found",
+          "p_sufficient": 0.0,
+          "recovery_intent": "search_speech"
+        },
+        "premature_stop_case": true,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-controller-022": {
+        "expected_action_index": 0,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "entity_identity"
+          ],
+          "missing_modalities": [
+            "vision"
+          ],
+          "missingness_cause": "source_evidence_absent",
+          "p_sufficient": 0.0,
+          "recovery_intent": "finalize_abstain"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 1
+      },
+      "egpc-controller-023": {
+        "expected_action_index": 0,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "speech_content"
+          ],
+          "missing_modalities": [
+            "speech"
+          ],
+          "missingness_cause": "source_evidence_absent",
+          "p_sufficient": 0.0,
+          "recovery_intent": "finalize_abstain"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 2
+      },
+      "egpc-controller-024": {
+        "expected_action_index": 0,
+        "expected_evidence_state": {
+          "covered_claim_handles": [],
+          "missing_hops": [
+            "ambient_event"
+          ],
+          "missing_modalities": [
+            "ambient"
+          ],
+          "missingness_cause": "source_evidence_absent",
+          "p_sufficient": 0.0,
+          "recovery_intent": "finalize_abstain"
+        },
+        "premature_stop_case": false,
+        "restoration_case": false,
+        "variant": 3
+      },
+      "egpc-finalizer-001": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "copper kite"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.single.1": [
+            "egpc.obs.final.single.1"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.single.1": [
+            "copper kite"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-002": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "juniper ferry"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.single.2": [
+            "egpc.obs.final.single.2"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.single.2": [
+            "juniper ferry"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-003": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "three velvet ticks"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.single.3": [
+            "egpc.obs.final.single.3"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.single.3": [
+            "three velvet ticks"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-004": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "lilac chevron"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.single.4": [
+            "egpc.obs.final.single.4"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.single.4": [
+            "lilac chevron"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-005": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "umber spindle",
+          "four reed taps"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.dual.1.a": [
+            "egpc.obs.final.dual.1.a"
+          ],
+          "egpc.slot.final.dual.1.b": [
+            "egpc.obs.final.dual.1.b"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.dual.1.a": [
+            "umber spindle"
+          ],
+          "egpc.slot.final.dual.1.b": [
+            "four reed taps"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-006": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "pearl ladder",
+          "moss lantern"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.dual.2.a": [
+            "egpc.obs.final.dual.2.a"
+          ],
+          "egpc.slot.final.dual.2.b": [
+            "egpc.obs.final.dual.2.b"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.dual.2.a": [
+            "pearl ladder"
+          ],
+          "egpc.slot.final.dual.2.b": [
+            "moss lantern"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-007": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "azure notch",
+          "two hushed chimes"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.dual.3.a": [
+            "egpc.obs.final.dual.3.a"
+          ],
+          "egpc.slot.final.dual.3.b": [
+            "egpc.obs.final.dual.3.b"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.dual.3.a": [
+            "azure notch"
+          ],
+          "egpc.slot.final.dual.3.b": [
+            "two hushed chimes"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-008": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "coral wicket",
+          "bracken key"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.dual.4.a": [
+            "egpc.obs.final.dual.4.a"
+          ],
+          "egpc.slot.final.dual.4.b": [
+            "egpc.obs.final.dual.4.b"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.dual.4.a": [
+            "coral wicket"
+          ],
+          "egpc.slot.final.dual.4.b": [
+            "bracken key"
+          ]
+        },
+        "restoration_case": false
+      },
+      "egpc-finalizer-009": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "silver trefoil"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.restored.1": [
+            "egpc.obs.final.restored.1"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.restored.1": [
+            "silver trefoil"
+          ]
+        },
+        "restoration_case": true
+      },
+      "egpc-finalizer-010": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "orchard comet"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.restored.2": [
+            "egpc.obs.final.restored.2"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.restored.2": [
+            "orchard comet"
+          ]
+        },
+        "restoration_case": true
+      },
+      "egpc-finalizer-011": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "one cork flutter"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.restored.3": [
+            "egpc.obs.final.restored.3"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.restored.3": [
+            "one cork flutter"
+          ]
+        },
+        "restoration_case": true
+      },
+      "egpc-finalizer-012": {
+        "answer_mode": "answer",
+        "answer_terms": [
+          "violet causeway"
+        ],
+        "expected_citations": {
+          "egpc.slot.final.restored.4": [
+            "egpc.obs.final.restored.4"
+          ]
+        },
+        "required_terms_by_claim": {
+          "egpc.slot.final.restored.4": [
+            "violet causeway"
+          ]
+        },
+        "restoration_case": true
+      },
+      "egpc-finalizer-013": {
+        "answer_mode": "abstain",
+        "answer_terms": [],
+        "expected_citations": {},
+        "required_missing_hop": "entity_identity",
+        "required_missing_modality": "vision",
+        "required_terms_by_claim": {},
+        "restoration_case": false
+      },
+      "egpc-finalizer-014": {
+        "answer_mode": "abstain",
+        "answer_terms": [],
+        "expected_citations": {},
+        "required_missing_hop": "speech_content",
+        "required_missing_modality": "speech",
+        "required_terms_by_claim": {},
+        "restoration_case": false
+      },
+      "egpc-finalizer-015": {
+        "answer_mode": "abstain",
+        "answer_terms": [],
+        "expected_citations": {},
+        "required_missing_hop": "ambient_event",
+        "required_missing_modality": "ambient",
+        "required_terms_by_claim": {},
+        "restoration_case": false
+      },
+      "egpc-finalizer-016": {
+        "answer_mode": "abstain",
+        "answer_terms": [],
+        "expected_citations": {},
+        "required_missing_hop": "temporal_order",
+        "required_missing_modality": "vision",
+        "required_terms_by_claim": {},
+        "restoration_case": false
+      }
+    },
+    "private_canary": "egpc-private-canary-7f4dbd4b5ee5431aa8d21b8cc8c41e1d",
+    "schema_version": "av-trace.external-gateway-public-competence-private-evaluator/1.0",
+    "suite_id": "external-gateway-public-fictional-competence-20261012"
+  },
+  "freeze_label": "EXTERNAL_GATEWAY_PUBLIC_COMPETENCE_SUITE_2026-10-12",
+  "freeze_manifest": {
+    "case_count": 40,
+    "component_hashes": {
+      "evaluator_private": "sha256:f59b596f479ac33bb481b6adef4847e3d218410f79f1fdac823aad324c7ae6c8",
+      "overlap_audit": "sha256:9b671d11f8c65de78a802373e269d9a8ce75898bc0a3988be72c7d3f03823b7e",
+      "prompt_policy": "sha256:4b8b57d51c64325cb0ecd0dde7a669a455e380daace518fb5f496ef9b3fbe140",
+      "public_suite": "sha256:c95a5c0d65797c11bb68d0ecfd6b96581739cec3b862561e1a4c768ee946aa5c",
+      "thresholds": "sha256:1c32abdb4d42502419e32c734aa3d117b00075879cdd46b999a758b0da8b6bbe"
+    },
+    "deterministic_generation": true,
+    "freeze_payload_sha256": "sha256:3d6fdb2adba08bdc8810765c23446b761e475e249294e546f1405fcd4388db67",
+    "generated_at_runtime": false,
+    "packet_hashes": {
+      "egpc-controller-001": "sha256:ca3c5f42114aacefb0044525aa41cfbaf159df79c54fa55c31cc44d5253e2046",
+      "egpc-controller-002": "sha256:b96a53f0b6665abf1bf3721730a00b13ef18641e37ab729513f80295eecdb0cd",
+      "egpc-controller-003": "sha256:4176d1afbda26c66f7db0405f59a43b1282084cc0dad9d576e37b62d831c2885",
+      "egpc-controller-004": "sha256:85a27204282b06412ca96b38d9606efcad77d65a4ea932a595161d1784fa6975",
+      "egpc-controller-005": "sha256:62379a11f020b85c3a07b0eafa7c5c564c7fd47395a85b8464e77c18c75b77b8",
+      "egpc-controller-006": "sha256:ef66153e5122d03b03e5366f23dcab22af189808b736d48ffd9332755b61800b",
+      "egpc-controller-007": "sha256:d56f423e2b30330b846c5f7082e545b198242b1d02f9aac5317d29f75a6b1940",
+      "egpc-controller-008": "sha256:260363b3d80883479b08aee55875f56d2024e2b7833452867f4a4eecf6dbf2c6",
+      "egpc-controller-009": "sha256:858c85b93928e93e6e8db0ac4e9786ad08e26e4c424955c7aadd3a351f7c0dda",
+      "egpc-controller-010": "sha256:38d4fbf298c9eef853b3e7e8746118f31f646be33619385771e53b7e8868a336",
+      "egpc-controller-011": "sha256:25d64f3b9abf8e9c9892950cc5551c19f459662f328adf5d7ef14239a4f6c4eb",
+      "egpc-controller-012": "sha256:7e2ceb87cb7346533cd892c6456b754807fc026229b780ac3149bcbfdf31366b",
+      "egpc-controller-013": "sha256:cf5b00a17f8ad5820b558df1a1f492867ca0dd4d55e0848ac6ded4b85287d410",
+      "egpc-controller-014": "sha256:22532dedcd6982ac577e4e5867a3c7043d52d0c38028aaa4fcdb01bd056cf69c",
+      "egpc-controller-015": "sha256:88bd8674fe5b2f1b0b03fc8856fd1e868ba12f0168b7aec79d264fceb25a5300",
+      "egpc-controller-016": "sha256:4ecebcf43f6e0792eda0fd6f7c1e17826dde2e69c5165b67cbd015f4df07ebb5",
+      "egpc-controller-017": "sha256:b1a9e0166d5c25a020b0d2a73950bf9d3b502ab26efea9f613fc996f01aca608",
+      "egpc-controller-018": "sha256:c7f58c698c35ede7ecb77d21ef2d123ece8b3d0cc4232467f9a9e717b86d79b2",
+      "egpc-controller-019": "sha256:fa08ef948a102f0ec551c28b2718de66d2c66c5bb9340df730c6e87779160cc0",
+      "egpc-controller-020": "sha256:597668701c916340ccc2f706168a689c946e9fd47cc6af4c57aee99e934bacc6",
+      "egpc-controller-021": "sha256:a2f151530bddaad8b21cc6d5bf760295d543d2b60238f9af1c397413f5323f66",
+      "egpc-controller-022": "sha256:8f1ecd91a92de815f571bdd7888648f3476df3db2baf1250add87b54b8aa7563",
+      "egpc-controller-023": "sha256:8a986dbb3cd3756a1e53589a95675de7e845512c45d6fcc08781d86ec93f63f7",
+      "egpc-controller-024": "sha256:e9744fb03428e25912e5df448df4df968c43e2c87078d208795a53e50fdbe46f",
+      "egpc-finalizer-001": "sha256:b8b88efb12d355e9576edcaaea82c6f8b97716bb3bc9274b755e480da978028d",
+      "egpc-finalizer-002": "sha256:fcd6928f30f021dfca0ba0b5a967664340400c18d7cad1bf3c581555af71156e",
+      "egpc-finalizer-003": "sha256:e7329ca23d7dbf288768aa69d87975d2fed9458113d18a2fb196b0d4b221e69d",
+      "egpc-finalizer-004": "sha256:2ed540f74f28b9f41785ddc605a82b00c90feb635716d71392341f9409795933",
+      "egpc-finalizer-005": "sha256:01afbb28a59b8173f08122693ea2fa968351be25b20e502988b41dc305f38354",
+      "egpc-finalizer-006": "sha256:aa4589741d2852565256927aa49c5f0707c8651b91a9fb681a4d687e08052bfd",
+      "egpc-finalizer-007": "sha256:e63695799cf0ae5bac331910d3ab0b97fc04e57812cf5e701737f52fcd42f211",
+      "egpc-finalizer-008": "sha256:f9d4bf0a3b3a024767bf3ae9efcd4665bdc65be1f0d80da1e8406d43b2e661e1",
+      "egpc-finalizer-009": "sha256:18100a4d227b7bd3c9c8d32f5d08a27ea4d20fc49d7139f7596440d05e2c3b4f",
+      "egpc-finalizer-010": "sha256:2301a702bd439588b9df8a4a9bceecb6ec3010aca8a0bb1a581769e4762b7548",
+      "egpc-finalizer-011": "sha256:94276081f79aa7fe7ee83a5c462b789cbb1e6c463d3d1fde744f1aa7e85fd937",
+      "egpc-finalizer-012": "sha256:391c85cfa17f0cb094cc7c9caf46c3d078c9668f90c3e30818599ff798bdf899",
+      "egpc-finalizer-013": "sha256:f65356f7f7c6f65ceb6af4882ff3b14cf15af060dfa16398cc530716c17552bb",
+      "egpc-finalizer-014": "sha256:90950cbc6cf98a0bd85063a769cb7808c31fc94b58e335ad7873519789b5e484",
+      "egpc-finalizer-015": "sha256:876c684155042d6bd038a002878292b803f34da1bec9b1526c8792e32f9f823e",
+      "egpc-finalizer-016": "sha256:fc319cd67c5e18cbc555bcadde99abbde0748706aa2efff1ff8fb1d5f536fc3e"
+    },
+    "randomness_used": false,
+    "reference_file_hashes": {
+      "data/rehearsal_plan/granite_adapter_v2_holdout_public.json": "sha256:2d2bec156d238032dd75a54a40d91f4e31bea352d25f51fe1f75307a0b12837b",
+      "data/rehearsal_plan/qwen3_adapter_v2_holdout_public.json": "sha256:b8e7529ff620522c0de45d22988cf0d5c706cfc70123332943d3090e0bf66696"
+    },
+    "schema_version": "av-trace.external-gateway-public-competence-manifest/1.0",
+    "suite_id": "external-gateway-public-fictional-competence-20261012"
+  },
+  "frozen_date": "2026-10-12",
+  "gate_purpose": "Prospective Gate C competence sensitivity for an external strong controller/finalizer; no scientific claim.",
+  "non_overlap_audit": {
+    "comparators": {
+      "external_gateway_smoke": {
+        "case_id_overlap": [],
+        "normalized_question_overlap": [],
+        "public_input_hash_overlap": [],
+        "reference_case_count": 2
+      },
+      "granite_v2": {
+        "case_id_overlap": [],
+        "normalized_question_overlap": [],
+        "public_input_hash_overlap": [],
+        "reference_case_count": 51
+      },
+      "qwen3_v2": {
+        "case_id_overlap": [],
+        "normalized_question_overlap": [],
+        "public_input_hash_overlap": [],
+        "reference_case_count": 51
+      }
+    },
+    "criteria": [
+      "no_case_id_overlap",
+      "no_normalized_question_overlap",
+      "no_complete_public_input_hash_overlap"
+    ],
+    "schema_version": "av-trace.external-gateway-public-competence-overlap-audit/1.0",
+    "smoke_fixture_case_id_overlap": [],
+    "status": "PASS"
+  },
+  "one_shot_state": {
+    "execution_authorized_by_freeze": false,
+    "full_suite_runs": 0,
+    "gateway_calls": 0,
+    "maximum_full_suite_runs": 1,
+    "model_outputs_present": false,
+    "partial_runs": 0,
+    "reruns_after_any_model_output": 0,
+    "separate_explicit_execution_authorization_required": true,
+    "state": "NOT_RUN"
+  },
+  "prompt_policy": {
+    "adapter_semantics": "factorized_controller_and_finalizer_v2",
+    "answer_substitution": false,
+    "best_of_n": 1,
+    "controller_instruction": "Use only this public fictional source-free packet and its exact action menu. Select one menu action and independently author all six evidence-state fields. Do not infer an answer from an unobserved route. Continue recovery when a useful route exists; finalize an answer only from sufficient observed text; otherwise finalize an abstention only when no useful route remains.",
+    "cross_factor_retries": 0,
+    "finalizer_instruction": "Use only the public fictional source-free question, claim slots, and observed textual evidence. Author disposition, answer text, claims, citation selections, and diagnosis independently. Every answered claim must be directly supported by selected observed IDs. If the required evidence is absent, abstain with empty answer, claims, and citations and diagnose the missing modality and reasoning hop.",
+    "maximum_schema_only_retries_per_factor": 1,
+    "private_labels_exposed": false,
+    "public_projection_only": true,
+    "schema_version": "av-trace.external-gateway-public-competence-prompt-policy/1.0",
+    "semantic_retries": 0
+  },
+  "public_suite": {
+    "execution_status": "NOT_RUN",
+    "freeze_label": "EXTERNAL_GATEWAY_PUBLIC_COMPETENCE_SUITE_2026-10-12",
+    "packets": [
+      {
+        "case_id": "egpc-controller-001",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional mirthquartz seal ink color variant 1",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "unrelated spoken ledger variant 1",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.visual.1",
+              "description": "Unobserved visual fact."
+            }
+          ],
+          "question": "What is the fictional ink color of mirthquartz seal variant 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_vision"
+      },
+      {
+        "case_id": "egpc-controller-002",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional vellichor dial call sign variant 2",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "unrelated spoken ledger variant 2",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.visual.2",
+              "description": "Unobserved visual fact."
+            }
+          ],
+          "question": "What is the fictional call sign of vellichor dial variant 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_vision"
+      },
+      {
+        "case_id": "egpc-controller-003",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional tessera cradle closing sound variant 3",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "unrelated spoken ledger variant 3",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.visual.3",
+              "description": "Unobserved visual fact."
+            }
+          ],
+          "question": "What is the fictional closing sound of tessera cradle variant 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_vision"
+      },
+      {
+        "case_id": "egpc-controller-004",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional quillkeeper garment variant 1",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional quillkeeper passphrase variant 1",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.speech.1",
+              "description": "Unheard fictional phrase."
+            }
+          ],
+          "question": "Which invented passphrase does the fictional quillkeeper utter in variant 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_speech"
+      },
+      {
+        "case_id": "egpc-controller-005",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional quillkeeper garment variant 2",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional quillkeeper passphrase variant 2",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.speech.2",
+              "description": "Unheard fictional phrase."
+            }
+          ],
+          "question": "Which invented passphrase does the fictional quillkeeper utter in variant 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_speech"
+      },
+      {
+        "case_id": "egpc-controller-006",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional quillkeeper garment variant 3",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional quillkeeper passphrase variant 3",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.speech.3",
+              "description": "Unheard fictional phrase."
+            }
+          ],
+          "question": "Which invented passphrase does the fictional quillkeeper utter in variant 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_speech"
+      },
+      {
+        "case_id": "egpc-controller-007",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional rune latch sound variant 1",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "unrelated narration variant 1",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.ambient.1",
+              "description": "Unheard ambient event."
+            }
+          ],
+          "question": "Which invented non-speech sound follows the fictional rune latch in variant 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_ambient"
+      },
+      {
+        "case_id": "egpc-controller-008",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional rune latch sound variant 2",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "unrelated narration variant 2",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.ambient.2",
+              "description": "Unheard ambient event."
+            }
+          ],
+          "question": "Which invented non-speech sound follows the fictional rune latch in variant 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_ambient"
+      },
+      {
+        "case_id": "egpc-controller-009",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional rune latch sound variant 3",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "unrelated narration variant 3",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.route.ambient.3",
+              "description": "Unheard ambient event."
+            }
+          ],
+          "question": "Which invented non-speech sound follows the fictional rune latch in variant 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 5,
+            "cost_remaining": 7.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "route_ambient"
+      },
+      {
+        "case_id": "egpc-controller-010",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "repeat fictional alcove fact variant 1",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.blocked.1",
+              "description": "Unavailable route fact."
+            }
+          ],
+          "question": "Resolve the unavailable fictional route fact for clockwork alcove variant 1.",
+          "recent_public_history": [
+            {
+              "action": {
+                "arguments": {
+                  "exclude_result_ids": [],
+                  "query": "fictional alcove fact variant 1",
+                  "speaker_hint": null,
+                  "time_range": {
+                    "end_s": 64.0,
+                    "start_s": 0.0
+                  },
+                  "top_k": 5
+                },
+                "tool": "search_speech"
+              },
+              "response": {
+                "error": {
+                  "code": "CHANNEL_UNAVAILABLE",
+                  "retryable": true
+                },
+                "status": "channel_unavailable"
+              }
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 4,
+            "cost_remaining": 6.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_status"
+      },
+      {
+        "case_id": "egpc-controller-011",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "ambient"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "repeat fictional alcove fact variant 2",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.blocked.2",
+              "description": "Unavailable route fact."
+            }
+          ],
+          "question": "Resolve the unavailable fictional route fact for clockwork alcove variant 2.",
+          "recent_public_history": [
+            {
+              "action": {
+                "arguments": {
+                  "exclude_result_ids": [],
+                  "query": "fictional alcove fact variant 2",
+                  "time_range": {
+                    "end_s": 64.0,
+                    "start_s": 0.0
+                  },
+                  "top_k": 5
+                },
+                "tool": "search_ambient_audio"
+              },
+              "response": {
+                "error": {
+                  "code": "CHANNEL_UNAVAILABLE",
+                  "retryable": true
+                },
+                "status": "channel_unavailable"
+              }
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 4,
+            "cost_remaining": 6.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_status"
+      },
+      {
+        "case_id": "egpc-controller-012",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "channels": [
+                  "visual"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "repeat fictional alcove fact variant 3",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.blocked.3",
+              "description": "Unavailable route fact."
+            }
+          ],
+          "question": "Resolve the unavailable fictional route fact for clockwork alcove variant 3.",
+          "recent_public_history": [
+            {
+              "action": {
+                "arguments": {
+                  "exclude_result_ids": [],
+                  "query": "fictional alcove fact variant 3",
+                  "time_range": {
+                    "end_s": 64.0,
+                    "start_s": 0.0
+                  },
+                  "top_k": 5
+                },
+                "tool": "search_visual"
+              },
+              "response": {
+                "error": {
+                  "code": "CHANNEL_UNAVAILABLE",
+                  "retryable": true
+                },
+                "status": "channel_unavailable"
+              }
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 4,
+            "cost_remaining": 6.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_status"
+      },
+      {
+        "case_id": "egpc-controller-013",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "channels": [
+                  "visual"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "restored fictional opalwork fact variant 1",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.restored.1",
+              "description": "Recoverable fictional fact."
+            }
+          ],
+          "question": "Recover the fictional fact after route restoration for opalwork bay variant 1.",
+          "recent_public_history": [
+            {
+              "event_type": "public_route_status",
+              "message": "The fictional route is now available; no fact content is included in this status.",
+              "route": "vision",
+              "status": "restored"
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 4,
+            "cost_remaining": 6.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restoration_recovery"
+      },
+      {
+        "case_id": "egpc-controller-014",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "channels": [
+                  "speech"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "restored fictional opalwork fact variant 2",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.restored.2",
+              "description": "Recoverable fictional fact."
+            }
+          ],
+          "question": "Recover the fictional fact after route restoration for opalwork bay variant 2.",
+          "recent_public_history": [
+            {
+              "event_type": "public_route_status",
+              "message": "The fictional route is now available; no fact content is included in this status.",
+              "route": "speech",
+              "status": "restored"
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 4,
+            "cost_remaining": 6.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restoration_recovery"
+      },
+      {
+        "case_id": "egpc-controller-015",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "channels": [
+                  "ambient"
+                ]
+              },
+              "tool": "get_channel_status"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "restored fictional opalwork fact variant 3",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.restored.3",
+              "description": "Recoverable fictional fact."
+            }
+          ],
+          "question": "Recover the fictional fact after route restoration for opalwork bay variant 3.",
+          "recent_public_history": [
+            {
+              "event_type": "public_route_status",
+              "message": "The fictional route is now available; no fact content is included in this status.",
+              "route": "ambient",
+              "status": "restored"
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 4,
+            "cost_remaining": 6.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restoration_recovery"
+      },
+      {
+        "case_id": "egpc-controller-016",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [
+                  "egpc.obs.ready.1"
+                ],
+                "query": "redundant fictional fact variant 1",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 21.0,
+                "start_s": 20.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.ready.1",
+              "payload": {
+                "text": "In this fictional packet, the crest is saffron fork."
+              }
+            }
+          ],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.ready.1",
+              "description": "Observed fictional fact."
+            }
+          ],
+          "question": "What completed fictional fact is recorded in variant 1?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 3,
+            "cost_remaining": 5.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "finalize_ready"
+      },
+      {
+        "case_id": "egpc-controller-017",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [
+                  "egpc.obs.ready.2"
+                ],
+                "query": "redundant fictional fact variant 2",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 22.0,
+                "start_s": 21.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "egpc.obs.ready.2",
+              "payload": {
+                "text": "In this fictional packet, the watchphrase is willow ember."
+              }
+            }
+          ],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.ready.2",
+              "description": "Observed fictional fact."
+            }
+          ],
+          "question": "What completed fictional fact is recorded in variant 2?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 3,
+            "cost_remaining": 5.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "finalize_ready"
+      },
+      {
+        "case_id": "egpc-controller-018",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {
+                "exclude_result_ids": [
+                  "egpc.obs.ready.3"
+                ],
+                "query": "redundant fictional fact variant 3",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            },
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 23.0,
+                "start_s": 22.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "egpc.obs.ready.3",
+              "payload": {
+                "text": "In this fictional packet, the latch makes two felt knocks."
+              }
+            }
+          ],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.ready.3",
+              "description": "Observed fictional fact."
+            }
+          ],
+          "question": "What completed fictional fact is recorded in variant 3?",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 3,
+            "cost_remaining": 5.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "finalize_ready"
+      },
+      {
+        "case_id": "egpc-controller-019",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional heliotrope cabinet fact variant 1",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_ambient_audio"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.continue.1",
+              "description": "Still-unobserved fact."
+            }
+          ],
+          "question": "Do not stop before finding the fictional missing fact for heliotrope cabinet variant 1.",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 3,
+            "cost_remaining": 5.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "premature_stop_guard"
+      },
+      {
+        "case_id": "egpc-controller-020",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional heliotrope cabinet fact variant 2",
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_visual"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.continue.2",
+              "description": "Still-unobserved fact."
+            }
+          ],
+          "question": "Do not stop before finding the fictional missing fact for heliotrope cabinet variant 2.",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 3,
+            "cost_remaining": 5.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "premature_stop_guard"
+      },
+      {
+        "case_id": "egpc-controller-021",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            },
+            {
+              "arguments": {
+                "exclude_result_ids": [],
+                "query": "fictional heliotrope cabinet fact variant 3",
+                "speaker_hint": null,
+                "time_range": {
+                  "end_s": 64.0,
+                  "start_s": 0.0
+                },
+                "top_k": 5
+              },
+              "tool": "search_speech"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.continue.3",
+              "description": "Still-unobserved fact."
+            }
+          ],
+          "question": "Do not stop before finding the fictional missing fact for heliotrope cabinet variant 3.",
+          "recent_public_history": [],
+          "remaining_budget": {
+            "actions_remaining": 3,
+            "cost_remaining": 5.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "premature_stop_guard"
+      },
+      {
+        "case_id": "egpc-controller-022",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.no.route.1",
+              "description": "Absent fictional fact."
+            }
+          ],
+          "question": "Safely close the fictional unsupplied fact request for lacquer moonbox variant 1.",
+          "recent_public_history": [
+            {
+              "event_type": "public_route_status",
+              "message": "This source-free packet provides no acquisition route for the requested fictional fact.",
+              "route": "vision",
+              "status": "not_provided"
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 1,
+            "cost_remaining": 1.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "no_route_abstain"
+      },
+      {
+        "case_id": "egpc-controller-023",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.no.route.2",
+              "description": "Absent fictional fact."
+            }
+          ],
+          "question": "Safely close the fictional unsupplied fact request for lacquer moonbox variant 2.",
+          "recent_public_history": [
+            {
+              "event_type": "public_route_status",
+              "message": "This source-free packet provides no acquisition route for the requested fictional fact.",
+              "route": "speech",
+              "status": "not_provided"
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 1,
+            "cost_remaining": 1.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "no_route_abstain"
+      },
+      {
+        "case_id": "egpc-controller-024",
+        "case_type": "controller",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "action_menu": [
+            {
+              "arguments": {},
+              "tool": "finalize"
+            }
+          ],
+          "known_pointers": [],
+          "observed_evidence": [],
+          "policy": "evidence_sufficiency",
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.no.route.3",
+              "description": "Absent fictional fact."
+            }
+          ],
+          "question": "Safely close the fictional unsupplied fact request for lacquer moonbox variant 3.",
+          "recent_public_history": [
+            {
+              "event_type": "public_route_status",
+              "message": "This source-free packet provides no acquisition route for the requested fictional fact.",
+              "route": "ambient",
+              "status": "not_provided"
+            }
+          ],
+          "remaining_budget": {
+            "actions_remaining": 1,
+            "cost_remaining": 1.0
+          },
+          "task": "choose_next_action"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "no_route_abstain"
+      },
+      {
+        "case_id": "egpc-finalizer-001",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 41.0,
+                "start_s": 40.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.single.1",
+              "payload": {
+                "text": "The fictional palimpsest pod 1 records its archived mark as copper kite."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.single.1",
+              "description": "Archived fictional mark."
+            }
+          ],
+          "question": "What archived mark belongs to fictional palimpsest pod 1?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_single"
+      },
+      {
+        "case_id": "egpc-finalizer-002",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 42.0,
+                "start_s": 41.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "egpc.obs.final.single.2",
+              "payload": {
+                "text": "The fictional palimpsest pod 2 records its archived mark as juniper ferry."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.single.2",
+              "description": "Archived fictional mark."
+            }
+          ],
+          "question": "What archived mark belongs to fictional palimpsest pod 2?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_single"
+      },
+      {
+        "case_id": "egpc-finalizer-003",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 43.0,
+                "start_s": 42.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "egpc.obs.final.single.3",
+              "payload": {
+                "text": "The fictional palimpsest pod 3 records its archived mark as three velvet ticks."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.single.3",
+              "description": "Archived fictional mark."
+            }
+          ],
+          "question": "What archived mark belongs to fictional palimpsest pod 3?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_single"
+      },
+      {
+        "case_id": "egpc-finalizer-004",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 44.0,
+                "start_s": 43.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.single.4",
+              "payload": {
+                "text": "The fictional palimpsest pod 4 records its archived mark as lilac chevron."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.single.4",
+              "description": "Archived fictional mark."
+            }
+          ],
+          "question": "What archived mark belongs to fictional palimpsest pod 4?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_single"
+      },
+      {
+        "case_id": "egpc-finalizer-005",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 51.0,
+                "start_s": 50.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.dual.1.a",
+              "payload": {
+                "text": "The first attribute of fictional cadenza drawer 1 is umber spindle."
+              }
+            },
+            {
+              "interval": {
+                "end_s": 52.0,
+                "start_s": 51.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "egpc.obs.final.dual.1.b",
+              "payload": {
+                "text": "The second attribute of fictional cadenza drawer 1 is four reed taps."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.dual.1.a",
+              "description": "First archived fictional attribute."
+            },
+            {
+              "claim_handle": "egpc.slot.final.dual.1.b",
+              "description": "Second archived fictional attribute."
+            }
+          ],
+          "question": "Report both archived attributes of fictional cadenza drawer 1 in the order requested.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_dual"
+      },
+      {
+        "case_id": "egpc-finalizer-006",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 53.0,
+                "start_s": 52.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.dual.2.a",
+              "payload": {
+                "text": "The first attribute of fictional cadenza drawer 2 is pearl ladder."
+              }
+            },
+            {
+              "interval": {
+                "end_s": 54.0,
+                "start_s": 53.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "egpc.obs.final.dual.2.b",
+              "payload": {
+                "text": "The second attribute of fictional cadenza drawer 2 is moss lantern."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.dual.2.a",
+              "description": "First archived fictional attribute."
+            },
+            {
+              "claim_handle": "egpc.slot.final.dual.2.b",
+              "description": "Second archived fictional attribute."
+            }
+          ],
+          "question": "Report both archived attributes of fictional cadenza drawer 2 in the order requested.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_dual"
+      },
+      {
+        "case_id": "egpc-finalizer-007",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 55.0,
+                "start_s": 54.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.dual.3.a",
+              "payload": {
+                "text": "The first attribute of fictional cadenza drawer 3 is azure notch."
+              }
+            },
+            {
+              "interval": {
+                "end_s": 56.0,
+                "start_s": 55.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "egpc.obs.final.dual.3.b",
+              "payload": {
+                "text": "The second attribute of fictional cadenza drawer 3 is two hushed chimes."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.dual.3.a",
+              "description": "First archived fictional attribute."
+            },
+            {
+              "claim_handle": "egpc.slot.final.dual.3.b",
+              "description": "Second archived fictional attribute."
+            }
+          ],
+          "question": "Report both archived attributes of fictional cadenza drawer 3 in the order requested.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_dual"
+      },
+      {
+        "case_id": "egpc-finalizer-008",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_complete",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 57.0,
+                "start_s": 56.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.dual.4.a",
+              "payload": {
+                "text": "The first attribute of fictional cadenza drawer 4 is coral wicket."
+              }
+            },
+            {
+              "interval": {
+                "end_s": 58.0,
+                "start_s": 57.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "egpc.obs.final.dual.4.b",
+              "payload": {
+                "text": "The second attribute of fictional cadenza drawer 4 is bracken key."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.dual.4.a",
+              "description": "First archived fictional attribute."
+            },
+            {
+              "claim_handle": "egpc.slot.final.dual.4.b",
+              "description": "Second archived fictional attribute."
+            }
+          ],
+          "question": "Report both archived attributes of fictional cadenza drawer 4 in the order requested.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "supported_dual"
+      },
+      {
+        "case_id": "egpc-finalizer-009",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_route_recovered",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 71.0,
+                "start_s": 70.0
+              },
+              "modalities": [
+                "vision"
+              ],
+              "observation_id": "egpc.obs.final.restored.1",
+              "payload": {
+                "text": "After the public fictional route recovered, fictional meridian folio 1 yielded the value silver trefoil."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.restored.1",
+              "description": "Recovered archived fictional value."
+            }
+          ],
+          "question": "What recovered archived value belongs to fictional meridian folio 1?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restored_support"
+      },
+      {
+        "case_id": "egpc-finalizer-010",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_route_recovered",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 72.0,
+                "start_s": 71.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "egpc.obs.final.restored.2",
+              "payload": {
+                "text": "After the public fictional route recovered, fictional meridian folio 2 yielded the value orchard comet."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.restored.2",
+              "description": "Recovered archived fictional value."
+            }
+          ],
+          "question": "What recovered archived value belongs to fictional meridian folio 2?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restored_support"
+      },
+      {
+        "case_id": "egpc-finalizer-011",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_route_recovered",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 73.0,
+                "start_s": 72.0
+              },
+              "modalities": [
+                "ambient"
+              ],
+              "observation_id": "egpc.obs.final.restored.3",
+              "payload": {
+                "text": "After the public fictional route recovered, fictional meridian folio 3 yielded the value one cork flutter."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.restored.3",
+              "description": "Recovered archived fictional value."
+            }
+          ],
+          "question": "What recovered archived value belongs to fictional meridian folio 3?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restored_support"
+      },
+      {
+        "case_id": "egpc-finalizer-012",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_route_recovered",
+          "observed_evidence": [
+            {
+              "interval": {
+                "end_s": 74.0,
+                "start_s": 73.0
+              },
+              "modalities": [
+                "speech"
+              ],
+              "observation_id": "egpc.obs.final.restored.4",
+              "payload": {
+                "text": "After the public fictional route recovered, fictional meridian folio 4 yielded the value violet causeway."
+              }
+            }
+          ],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.restored.4",
+              "description": "Recovered archived fictional value."
+            }
+          ],
+          "question": "What recovered archived value belongs to fictional meridian folio 4?",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "restored_support"
+      },
+      {
+        "case_id": "egpc-finalizer-013",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_incomplete",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.blocked.1",
+              "description": "Deliberately absent fictional value."
+            }
+          ],
+          "question": "Supply the deliberately absent fictional value for kinetic vellum cell 1.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_abstention"
+      },
+      {
+        "case_id": "egpc-finalizer-014",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_incomplete",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.blocked.2",
+              "description": "Deliberately absent fictional value."
+            }
+          ],
+          "question": "Supply the deliberately absent fictional value for kinetic vellum cell 2.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_abstention"
+      },
+      {
+        "case_id": "egpc-finalizer-015",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_incomplete",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.blocked.3",
+              "description": "Deliberately absent fictional value."
+            }
+          ],
+          "question": "Supply the deliberately absent fictional value for kinetic vellum cell 3.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_abstention"
+      },
+      {
+        "case_id": "egpc-finalizer-016",
+        "case_type": "finalizer",
+        "packet_notice": "This is a wholly fictional, synthetic, source-free closed-world competence packet. It contains no real source material or media.",
+        "prospective_unseen": true,
+        "public_fictional": true,
+        "public_input": {
+          "condition": "public_fictional_incomplete",
+          "observed_evidence": [],
+          "public_claim_slots": [
+            {
+              "claim_handle": "egpc.slot.final.blocked.4",
+              "description": "Deliberately absent fictional value."
+            }
+          ],
+          "question": "Supply the deliberately absent fictional value for kinetic vellum cell 4.",
+          "task": "grounded_finalization"
+        },
+        "schema_version": "av-trace.external-gateway-public-competence-packet/1.0",
+        "source_free": true,
+        "stratum": "blocked_abstention"
+      }
+    ],
+    "schema_version": "av-trace.external-gateway-public-competence-public-suite/1.0",
+    "suite_id": "external-gateway-public-fictional-competence-20261012"
+  },
+  "schema_version": "av-trace.external-gateway-public-competence-freeze/1.0",
+  "status": "EXTERNAL_GATEWAY_PUBLIC_COMPETENCE_SUITE_FROZEN_NOT_RUN",
+  "suite_id": "external-gateway-public-fictional-competence-20261012",
+  "thresholds": {
+    "blocked_correct_abstention_min": 0.75,
+    "complete_case_set_required": true,
+    "correct_first_actions_each_stratum_min": 0.6666666666666666,
+    "correct_first_actions_overall_min": 0.875,
+    "deterministic_answer_substitutions_max": 0,
+    "each_state_component_min": 0.875,
+    "exact_citation_selection_min": 0.9166666666666666,
+    "exact_six_field_state_min": 0.8,
+    "minimum_cases": 40,
+    "premature_stop_prevention_min": 1.0,
+    "private_label_exposures_max": 0,
+    "restoration_recovery_min": 0.8571428571428571,
+    "supported_finalization_min": 0.8333333333333334,
+    "unobserved_citation_selections_max": 0,
+    "unsupported_required_claims_max": 0,
+    "valid_structured_model_calls_min": 0.95
+  }
+}

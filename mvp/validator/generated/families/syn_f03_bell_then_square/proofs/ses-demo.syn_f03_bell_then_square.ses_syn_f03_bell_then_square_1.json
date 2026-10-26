@@ -1,0 +1,68 @@
+{
+  "claim_ids": [
+    "claim_syn_f03_bell_then_square"
+  ],
+  "demonstration_id": "ses-demo.syn_f03_bell_then_square.ses_syn_f03_bell_then_square_1",
+  "evidence_ids": [
+    "s2_bell",
+    "s2_red_square"
+  ],
+  "family_annotation_version": "synthetic-v1",
+  "family_id": "syn_f03_bell_then_square",
+  "hop_ids": [
+    "hop_extract_s2_bell",
+    "hop_extract_s2_red_square",
+    "hop_syn_f03_bell_then_square_route_1"
+  ],
+  "satisfiable": true,
+  "schema_version": "1.0.0",
+  "set_id": "ses_syn_f03_bell_then_square_1",
+  "validator_demonstrations": [
+    {
+      "clean_observation_ids_by_evidence": {
+        "s2_bell": [
+          "obs.clip.6d610ac130d40678f1e4f6c65a12692821b2ed6a3abb10b43ba4f53f12a90d12"
+        ],
+        "s2_red_square": [
+          "obs.clip.4e87bf067369e4a074c1c61248e327da6164d1e1dc2559e0b08584feca4d196f"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:cc2629158d28e1d090e6279eed8f1c113176d474ffcf70d16954a9c9f3ef2a37",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_a.syn_f03_bell_then_square.clean",
+      "restored_observation_ids_by_evidence": {
+        "s2_bell": [
+          "obs.clip.6d610ac130d40678f1e4f6c65a12692821b2ed6a3abb10b43ba4f53f12a90d12"
+        ],
+        "s2_red_square": [
+          "obs.clip.4e87bf067369e4a074c1c61248e327da6164d1e1dc2559e0b08584feca4d196f"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:ad1a31401722ddbc2585d886f0ea7c9f03e55df5ace22c1d35a854d782383d9f",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_a.syn_f03_bell_then_square.restored",
+      "validator_id": "synthetic_validator_a"
+    },
+    {
+      "clean_observation_ids_by_evidence": {
+        "s2_bell": [
+          "obs.clip.6d610ac130d40678f1e4f6c65a12692821b2ed6a3abb10b43ba4f53f12a90d12"
+        ],
+        "s2_red_square": [
+          "obs.clip.4e87bf067369e4a074c1c61248e327da6164d1e1dc2559e0b08584feca4d196f"
+        ]
+      },
+      "clean_trajectory_hash": "sha256:3ab16ea0aca3446478d82758d5595278267680e4825f2e422689651e11a939e0",
+      "clean_trajectory_id": "traj.validator-synthetic_validator_b.syn_f03_bell_then_square.clean",
+      "restored_observation_ids_by_evidence": {
+        "s2_bell": [
+          "obs.clip.6d610ac130d40678f1e4f6c65a12692821b2ed6a3abb10b43ba4f53f12a90d12"
+        ],
+        "s2_red_square": [
+          "obs.clip.4e87bf067369e4a074c1c61248e327da6164d1e1dc2559e0b08584feca4d196f"
+        ]
+      },
+      "restored_trajectory_hash": "sha256:3d026d7528db6f0968271e6d01d6a18011a07b59924312a4a0e740a9ff3ee361",
+      "restored_trajectory_id": "traj.validator-synthetic_validator_b.syn_f03_bell_then_square.restored",
+      "validator_id": "synthetic_validator_b"
+    }
+  ]
+}

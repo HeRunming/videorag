@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:av-trace:schema:controller-v2-state:2.0.0",
+  "title": "AV-TRACE controller v2 separately constrained six-field public state",
+  "description": "This object estimates public evidence state only. It cannot contain an action, answer, assertion, citation, private identifier, or evaluator label.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "p_sufficient",
+    "covered_claim_handles",
+    "missing_modalities",
+    "missing_hops",
+    "missingness_cause",
+    "recovery_intent"
+  ],
+  "properties": {
+    "p_sufficient": {
+      "type": "number",
+      "enum": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "covered_claim_handles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^v2slot\\.[a-z0-9][a-z0-9_-]{0,47}$",
+        "x-av-trace-dynamic-enum-source": "public_claim_slots[*].claim_handle"
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "missing_modalities": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "vision",
+          "speech",
+          "ambient"
+        ]
+      },
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "missing_hops": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "entity_identity",
+          "event_detection",
+          "speech_content",
+          "ambient_event",
+          "temporal_order",
+          "cross_modal_binding",
+          "causal_link",
+          "state_change",
+          "comparison",
+          "counting",
+          "other"
+        ]
+      },
+      "maxItems": 11,
+      "uniqueItems": true
+    },
+    "missingness_cause": {
+      "enum": [
+        "source_evidence_absent",
+        "evidence_in_source_but_inaccessible",
+        "evidence_accessible_but_not_found",
+        "not_missing",
+        "uncertain"
+      ]
+    },
+    "recovery_intent": {
+      "enum": [
+        "none",
+        "search_vision",
+        "search_speech",
+        "search_ambient",
+        "observe_pointer",
+        "check_channel_status",
+        "retry_restored_route",
+        "finalize_answer",
+        "finalize_abstain"
+      ]
+    }
+  },
+  "x-av-trace-canonical-array-order": {
+    "covered_claim_handles": "the order in public_claim_slots",
+    "missing_modalities": [
+      "vision",
+      "speech",
+      "ambient"
+    ],
+    "missing_hops": [
+      "entity_identity",
+      "event_detection",
+      "speech_content",
+      "ambient_event",
+      "temporal_order",
+      "cross_modal_binding",
+      "causal_link",
+      "state_change",
+      "comparison",
+      "counting",
+      "other"
+    ]
+  },
+  "x-av-trace-parser": {
+    "encoding": "UTF-8",
+    "maximum_bytes": 1024,
+    "surrounding_whitespace": "JSON whitespace only",
+    "duplicate_keys": "reject",
+    "non_finite_numbers": "reject",
+    "trailing_content": "reject",
+    "dynamic_claim_handles": "reject values not present in public_claim_slots",
+    "array_order": "reject non-canonical order",
+    "normalization": "none"
+  }
+}
