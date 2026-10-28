@@ -1,0 +1,249 @@
+{
+  "schema_version": "av-trace.private-derived-release/1.0",
+  "generated_date": "2026-10-28",
+  "classification": "PRIVATE",
+  "purpose": "Narrow development-restoration allowlist for private-derived indexes and outputs; this is not the full data/restricted tree and is not a public release manifest.",
+  "source_asset_manifest": "data/migration/hf_asset_manifest.json",
+  "allowlist": [
+    {
+      "logical_asset": "derived.captaincook4d.index_and_candidates",
+      "roots": [
+        {
+          "path": "data/restricted/captaincook4d_wave0_index_v1",
+          "reason": "CaptainCook4D development restoration index"
+        },
+        {
+          "path": "data/restricted/captaincook4d_family_candidates_v1_dev",
+          "reason": "CaptainCook4D development restoration candidates"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.epic.indexes_and_candidates",
+      "roots": [
+        {
+          "path": "data/restricted/epic_wave1_index_v1",
+          "reason": "EPIC wave-1 development restoration index"
+        },
+        {
+          "path": "data/restricted/epic_p23_102_full_timeline_index_v1",
+          "reason": "EPIC P23_102 development restoration index"
+        },
+        {
+          "path": "data/restricted/epic_family_candidates_v1_dev",
+          "reason": "EPIC development restoration candidates v1"
+        },
+        {
+          "path": "data/restricted/epic_family_candidates_v2_dev",
+          "reason": "EPIC development restoration candidates v2"
+        },
+        {
+          "path": "data/restricted/epic_p23_102_family_mining_v1_dev",
+          "reason": "EPIC P23_102 family-mining development outputs"
+        },
+        {
+          "path": "data/restricted/epic_p23_102_machine_provisional_families_v1",
+          "reason": "EPIC P23_102 provisional family outputs"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.mini_pilot.index_and_candidates",
+      "roots": [
+        {
+          "path": "data/restricted/mini_pilot_index_v1",
+          "reason": "mini-pilot development restoration index"
+        },
+        {
+          "path": "data/restricted/mini_pilot_family_candidates_v1",
+          "reason": "mini-pilot development restoration candidates v1"
+        },
+        {
+          "path": "data/restricted/mini_pilot_family_candidates_v2_dev",
+          "reason": "mini-pilot development restoration candidates v2"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.noaa01.outputs",
+      "roots": [
+        {
+          "path": "data/restricted/noaa01/machine_review",
+          "reason": "NOAA machine-review restoration outputs"
+        },
+        {
+          "path": "data/restricted/noaa01/manifests",
+          "reason": "NOAA restoration manifests and media audit"
+        },
+        {
+          "path": "data/restricted/noaa01/real_av_mvp",
+          "reason": "NOAA real-AV MVP restoration outputs"
+        },
+        {
+          "path": "data/restricted/noaa01/recon",
+          "reason": "NOAA reconstruction and candidate-window outputs"
+        },
+        {
+          "path": "data/restricted/noaa01/review",
+          "reason": "NOAA review queues and templates"
+        },
+        {
+          "path": "data/restricted/noaa01/scale1a",
+          "reason": "NOAA Scale1A development restoration outputs"
+        },
+        {
+          "path": "data/restricted/noaa_targeted_family_candidates_v5_dev",
+          "reason": "NOAA targeted development candidates"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.scale1b",
+      "roots": [
+        {
+          "path": "data/restricted/scale1b/controller_dev",
+          "reason": "Scale1B controller development outputs"
+        },
+        {
+          "path": "data/restricted/scale1b/controller_dev_qwen7b",
+          "reason": "Scale1B Qwen7B controller development outputs"
+        },
+        {
+          "path": "data/restricted/scale1b/controller_v2",
+          "reason": "Scale1B controller v2 restoration metadata"
+        },
+        {
+          "path": "data/restricted/scale1b/controller_v2_holdout_evaluation",
+          "reason": "Scale1B controller v2 holdout evaluation outputs"
+        },
+        {
+          "path": "data/restricted/scale1b/controller_v2_holdout_run",
+          "reason": "Scale1B controller v2 holdout run outputs"
+        },
+        {
+          "path": "data/restricted/scale1b/controller_v3_dev",
+          "reason": "Scale1B controller v3 development outputs"
+        },
+        {
+          "path": "data/restricted/scale1b/ga_pilot",
+          "reason": "Scale1B GA pilot outputs"
+        },
+        {
+          "path": "data/restricted/scale1b/manifests",
+          "reason": "Scale1B restoration manifests"
+        },
+        {
+          "path": "data/restricted/scale1b/wave_r",
+          "reason": "Scale1B wave-R indexes, measurements, and audits"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.strong_baselines",
+      "roots": [
+        {
+          "path": "data/restricted/strong_baselines/granite33_competence_v1",
+          "reason": "strong-baseline Granite competence outputs"
+        },
+        {
+          "path": "data/restricted/strong_baselines/granite_v2_holdout",
+          "reason": "strong-baseline holdout definitions and outputs"
+        },
+        {
+          "path": "data/restricted/strong_baselines/granite_v2_holdout_run",
+          "reason": "strong-baseline holdout run outputs"
+        },
+        {
+          "path": "data/restricted/strong_baselines/manifests",
+          "reason": "strong-baseline restoration manifests"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.semantic_audio",
+      "roots": [
+        {
+          "path": "data/restricted/semantic_audio_discovery_v1",
+          "reason": "semantic-audio discovery restoration outputs"
+        }
+      ]
+    },
+    {
+      "logical_asset": "derived.holoassist.private_timing",
+      "roots": [
+        {
+          "path": "data/restricted/holoassist_technical_timing_cache_v1",
+          "include_basenames": [
+            "VideoMp4Timing.txt"
+          ],
+          "reason": "HoloAssist timing-only technical metadata; no media or sealed identity universe"
+        }
+      ]
+    }
+  ],
+  "global_exclusions": {
+    "path_components": [
+      "models",
+      "media",
+      "raw",
+      "staging",
+      "acquisition_records"
+    ],
+    "suffixes": [
+      ".mp4",
+      ".m4v",
+      ".safetensors",
+      ".bin",
+      ".headers",
+      ".body",
+      ".html",
+      ".m3u8",
+      ".curlmeta",
+      ".pid",
+      ".lock"
+    ],
+    "categories": [
+      "authorizations",
+      "receipts",
+      "nonces",
+      "private keys",
+      "credentials",
+      "untouched-test private identities and ledgers",
+      "source dossiers",
+      "source provenance logs",
+      "HTTP bodies and headers",
+      "runtime authentication state",
+      "caches and bytecode",
+      "raw media",
+      "model weights"
+    ],
+    "content_failures": [
+      "known credential patterns",
+      "private key material",
+      "internal proxy or domain strings",
+      "/jizhicfs/karonhe/AV-TRACE"
+    ],
+    "out_of_scope_private_derived_logical_assets": [
+      "derived.source_dossiers",
+      "metadata.captaincook4d.private_provenance",
+      "metadata.epic.private_provenance"
+    ]
+  },
+  "explicit_exclusions": [
+    {
+      "path": "data/restricted/noaa01/real_av_mvp/redteam.json",
+      "reason": "contains internal proxy/domain red-team evidence"
+    },
+    {
+      "path": "data/restricted/strong_baselines/granite_v2_holdout_run/preflight_report.json",
+      "reason": "contains one-run runtime authorization state"
+    }
+  ],
+  "regenerable_old_path_exclusions": [
+    "data/restricted/noaa01/scale1a/observation_manifest.json",
+    "data/restricted/scale1b/controller_v2_holdout_run/execution_manifest.json",
+    "data/restricted/scale1b/ga_pilot/experiment_manifest.json",
+    "data/restricted/strong_baselines/manifests/qwen25_omni7b_acquisition.json",
+    "data/restricted/strong_baselines/manifests/qwen3_8b_acquisition.json"
+  ]
+}
